@@ -1,0 +1,271 @@
+/* ── VOTING SYSTEM STYLES ── */
+
+/* Vote row (mirrors .score-row) */
+.vote-row {
+  padding: 0.7rem 1.3rem;
+  background: #f8f5ef;
+  border-top: 1px solid var(--border);
+}
+.vote-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+.vote-row-title {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent2);
+}
+.vote-row-avg {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.vote-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.vote-row-stars {
+  margin-bottom: 0.35rem;
+}
+.vote-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.vote-star {
+  background: none;
+  border: none;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #ddd;
+  padding: 2px 3px;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.12s, transform 0.12s;
+  border-radius: 4px;
+}
+.vote-star:hover {
+  transform: scale(1.15);
+  color: var(--accent2);
+}
+.vote-star-filled {
+  color: var(--accent2);
+}
+.vote-row-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+.vote-chip {
+  font-size: 0.72rem;
+  background: #fff7ed;
+  color: #92400e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Small inline stars (rankings, readonly) */
+.vote-star-sm {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+.vote-star-sm-filled {
+  color: var(--accent2);
+}
+
+/* Rankings section */
+.rankings-section {
+  padding: 1.5rem 1.5rem 0;
+}
+.rankings-table a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.rankings-table a:hover {
+  text-decoration: underline;
+}
+
+/* Overview table family column */
+.th-family {
+  text-align: center;
+}
+.td-family {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Nav user pill */
+.nav-user {
+  font-size: 0.75rem;
+  color: #c5d5c9;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(45, 90, 61, 0.5);
+  border-radius: 6px;
+}
+.nav-user strong {
+  color: #fff;
+}
+.nav-user-switch {
+  background: none;
+  border: none;
+  color: var(--accent2);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0;
+}
+.nav-user-switch:hover {
+  text-decoration: underline;
+}
+
+/* Nav rankings link */
+.nav-rankings-link {
+  background: rgba(196, 124, 42, 0.15) !important;
+  border-color: var(--accent2) !important;
+  color: #f0c87a !important;
+}
+.nav-rankings-link:hover {
+  background: var(--accent2) !important;
+  color: #fff !important;
+}
+
+/* ── USER MODAL ── */
+.vote-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.vote-modal-card {
+  background: var(--surface);
+  border-radius: var(--card-r);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+}
+.vote-modal-title {
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.vote-modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.vote-modal-quick {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  background: #eef3ee;
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.vote-modal-quick:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.vote-modal-divider {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 1rem 0;
+  position: relative;
+}
+.vote-modal-divider::before,
+.vote-modal-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: var(--border);
+}
+.vote-modal-divider::before { left: 0; }
+.vote-modal-divider::after { right: 0; }
+.vote-modal-form {
+  display: flex;
+  gap: 0.5rem;
+}
+.vote-modal-input {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.vote-modal-input:focus {
+  border-color: var(--accent);
+}
+.vote-modal-submit {
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.vote-modal-submit:hover {
+  background: #2d5a3d;
+}
+
+/* ── PRINT: hide voting UI ── */
+@media print {
+  .vote-row, .vote-modal, .nav-user, .rankings-section,
+  .nav-rankings-link, .th-family, .td-family { display: none !important; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .vote-modal-card {
+    padding: 1.5rem;
+  }
+  .vote-modal-form {
+    flex-direction: column;
+  }
+  .vote-star {
+    font-size: 1.8rem;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .nav-user {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+  }
+}

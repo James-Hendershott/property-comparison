@@ -1,0 +1,14 @@
+{
+  "name": "property-comparison",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Family property comparison dashboard with voting",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "sql.js": "^1.11.0"
+  }
+}

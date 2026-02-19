@@ -1,0 +1,361 @@
+(function () {
+  'use strict';
+
+  // --- Property name map (derived from nav links) ---
+  const PROPERTY_NAMES = {};
+  document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
+    const id = a.getAttribute('href').slice(1);
+    PROPERTY_NAMES[id] = a.textContent.trim();
+  });
+
+  const API = {
+    getUsers: function () { return fetch('/api/users').then(r => r.json()); },
+    createUser: function (name) {
+      return fetch('/api/users', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name })
+      }).then(r => r.json());
+    },
+    getVotes: function () { return fetch('/api/votes').then(r => r.json()); },
+    castVote: function (userId, propertyId, rating) {
+      return fetch('/api/votes', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, rating: rating })
+      }).then(r => r.json());
+    },
+    getRankings: function () { return fetch('/api/rankings').then(r => r.json()); },
+  };
+
+  // --- User state ---
+  var currentUser = null;
+
+  function loadUser() {
+    var stored = localStorage.getItem('vote_user');
+    if (stored) {
+      try { currentUser = JSON.parse(stored); } catch (e) { currentUser = null; }
+    }
+  }
+
+  function saveUser(user) {
+    currentUser = user;
+    localStorage.setItem('vote_user', JSON.stringify(user));
+  }
+
+  function clearUser() {
+    currentUser = null;
+    localStorage.removeItem('vote_user');
+  }
+
+  // --- User pill in nav ---
+  function renderNavPill() {
+    var existing = document.querySelector('.nav-user');
+    if (existing) existing.remove();
+
+    if (!currentUser) return;
+
+    var pill = document.createElement('div');
+    pill.className = 'nav-user';
+    pill.innerHTML = 'Voting as: <strong>' + escapeHtml(currentUser.name) + '</strong> ' +
+      '<button class="nav-user-switch">(switch)</button>';
+    pill.querySelector('.nav-user-switch').addEventListener('click', function () {
+      clearUser();
+      renderNavPill();
+      showUserModal();
+    });
+
+    var navRight = document.querySelector('.nav-right');
+    navRight.parentNode.insertBefore(pill, navRight);
+  }
+
+  // --- Rankings nav link ---
+  function addRankingsNavLink() {
+    var nav = document.querySelector('.nav');
+    var navRight = document.querySelector('.nav-right');
+    var link = document.createElement('a');
+    link.href = '#rankings';
+    link.textContent = 'Rankings';
+    link.className = 'nav-rankings-link';
+    nav.insertBefore(link, navRight);
+  }
+
+  // --- User modal ---
+  function showUserModal() {
+    var overlay = document.createElement('div');
+    overlay.className = 'vote-modal';
+
+    var card = document.createElement('div');
+    card.className = 'vote-modal-card';
+    card.innerHTML =
+      '<h2 class="vote-modal-title">Who\'s voting?</h2>' +
+      '<div class="vote-modal-buttons" id="vote-modal-buttons"></div>' +
+      '<div class="vote-modal-divider">or enter your name</div>' +
+      '<form class="vote-modal-form" id="vote-modal-form">' +
+      '  <input type="text" class="vote-modal-input" id="vote-modal-input" placeholder="Your name" maxlength="30" autocomplete="off">' +
+      '  <button type="submit" class="vote-modal-submit">Start Voting</button>' +
+      '</form>';
+
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    // Load existing users as quick-select buttons
+    API.getUsers().then(function (users) {
+      var container = document.getElementById('vote-modal-buttons');
+      if (users.length === 0) {
+        container.style.display = 'none';
+        document.querySelector('.vote-modal-divider').style.display = 'none';
+        return;
+      }
+      users.forEach(function (u) {
+        var btn = document.createElement('button');
+        btn.className = 'vote-modal-quick';
+        btn.textContent = u.name;
+        btn.addEventListener('click', function () {
+          saveUser(u);
+          overlay.remove();
+          renderNavPill();
+          refreshAllVotes();
+        });
+        container.appendChild(btn);
+      });
+    });
+
+    document.getElementById('vote-modal-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('vote-modal-input').value.trim();
+      if (!name) return;
+      API.createUser(name).then(function (user) {
+        saveUser(user);
+        overlay.remove();
+        renderNavPill();
+        refreshAllVotes();
+      });
+    });
+
+    setTimeout(function () {
+      document.getElementById('vote-modal-input').focus();
+    }, 100);
+  }
+
+  // --- Star rendering ---
+  function createStars(propertyId, currentRating, onRate) {
+    var container = document.createElement('div');
+    container.className = 'vote-stars';
+    for (var i = 1; i <= 5; i++) {
+      (function (rating) {
+        var star = document.createElement('button');
+        star.className = 'vote-star' + (rating <= currentRating ? ' vote-star-filled' : '');
+        star.textContent = '\u2605';
+        star.title = rating + ' star' + (rating > 1 ? 's' : '');
+        star.setAttribute('aria-label', 'Rate ' + rating + ' stars');
+        star.addEventListener('click', function () {
+          if (!currentUser) { showUserModal(); return; }
+          onRate(rating);
+        });
+        container.appendChild(star);
+      })(i);
+    }
+    return container;
+  }
+
+  function renderStarsReadonly(rating) {
+    var s = '';
+    for (var i = 1; i <= 5; i++) {
+      s += '<span class="vote-star-sm' + (i <= Math.round(rating) ? ' vote-star-sm-filled' : '') + '">\u2605</span>';
+    }
+    return s;
+  }
+
+  // --- Inject vote rows into each card ---
+  function injectVoteRows() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      var pid = card.id;
+      if (card.querySelector('.vote-row')) return; // already injected
+
+      var scoreRow = card.querySelector('.score-row');
+      if (!scoreRow) return;
+
+      var voteRow = document.createElement('div');
+      voteRow.className = 'vote-row';
+      voteRow.setAttribute('data-property', pid);
+      voteRow.innerHTML =
+        '<div class="vote-row-header">' +
+        '  <span class="vote-row-title">Family Rating</span>' +
+        '  <span class="vote-row-avg" data-avg></span>' +
+        '</div>' +
+        '<div class="vote-row-stars" data-stars></div>' +
+        '<div class="vote-row-details" data-details></div>';
+
+      scoreRow.parentNode.insertBefore(voteRow, scoreRow.nextSibling);
+    });
+  }
+
+  // --- Update vote UI with current data ---
+  function updateVoteRows(allVotes) {
+    document.querySelectorAll('.vote-row').forEach(function (row) {
+      var pid = row.getAttribute('data-property');
+      var data = allVotes[pid];
+
+      // Stars
+      var starsContainer = row.querySelector('[data-stars]');
+      starsContainer.innerHTML = '';
+      var myRating = 0;
+      if (data && currentUser) {
+        for (var i = 0; i < data.votes.length; i++) {
+          if (data.votes[i].userId === currentUser.id) {
+            myRating = data.votes[i].rating;
+            break;
+          }
+        }
+      }
+      var stars = createStars(pid, myRating, function (rating) {
+        API.castVote(currentUser.id, pid, rating).then(function () {
+          refreshAllVotes();
+        });
+      });
+      starsContainer.appendChild(stars);
+
+      // Average
+      var avgEl = row.querySelector('[data-avg]');
+      if (data && data.count > 0) {
+        avgEl.innerHTML = data.avg.toFixed(1) + ' \u2605 <span class="vote-count">(' + data.count + ' vote' + (data.count > 1 ? 's' : '') + ')</span>';
+      } else {
+        avgEl.textContent = 'No votes yet';
+      }
+
+      // Individual votes
+      var detailsEl = row.querySelector('[data-details]');
+      if (data && data.votes.length > 0) {
+        detailsEl.innerHTML = data.votes.map(function (v) {
+          return '<span class="vote-chip">' + escapeHtml(v.userName) + ': ' + v.rating + '\u2605</span>';
+        }).join(' ');
+      } else {
+        detailsEl.innerHTML = '';
+      }
+    });
+  }
+
+  // --- Rankings section ---
+  function updateRankings(allVotes) {
+    var container = document.getElementById('rankings');
+    if (!container) return;
+
+    // Build sorted array
+    var entries = [];
+    for (var pid in allVotes) {
+      if (allVotes[pid].count > 0) {
+        entries.push({
+          pid: pid,
+          name: PROPERTY_NAMES[pid] || pid,
+          avg: allVotes[pid].avg,
+          count: allVotes[pid].count,
+          votes: allVotes[pid].votes
+        });
+      }
+    }
+    entries.sort(function (a, b) { return b.avg - a.avg || b.count - a.count; });
+
+    if (entries.length === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    var html = '<div class="section rankings-section">' +
+      '<div class="section-title">Family Rankings</div>' +
+      '<div class="table-wrap"><table class="qt rankings-table"><thead><tr>' +
+      '<th>Rank</th><th>Property</th><th>Avg Rating</th><th>Votes</th><th>Individual Ratings</th>' +
+      '</tr></thead><tbody>';
+
+    entries.forEach(function (e, idx) {
+      var voteCells = e.votes.map(function (v) {
+        return escapeHtml(v.userName) + ': ' + v.rating + '\u2605';
+      }).join(', ');
+
+      html += '<tr>' +
+        '<td><strong>' + (idx + 1) + '</strong></td>' +
+        '<td><a href="#' + e.pid + '">' + escapeHtml(e.name) + '</a></td>' +
+        '<td>' + renderStarsReadonly(e.avg) + ' <strong>' + e.avg.toFixed(1) + '</strong></td>' +
+        '<td>' + e.count + '</td>' +
+        '<td style="font-size:0.78rem">' + voteCells + '</td>' +
+        '</tr>';
+    });
+
+    html += '</tbody></table></div></div>';
+    container.innerHTML = html;
+  }
+
+  // --- Overview table augmentation ---
+  function updateOverviewTable(allVotes) {
+    var table = document.querySelector('#overview table.qt');
+    if (!table) return;
+
+    // Add header if not already present
+    var headerRow = table.querySelector('thead tr');
+    if (!headerRow.querySelector('.th-family')) {
+      var th = document.createElement('th');
+      th.className = 'th-family';
+      th.textContent = 'Family';
+      headerRow.appendChild(th);
+    }
+
+    // Add/update cells
+    var rows = table.querySelectorAll('tbody tr');
+    rows.forEach(function (row) {
+      var link = row.querySelector('a[href^="#p"]');
+      if (!link) return;
+      var pid = link.getAttribute('href').slice(1);
+      var data = allVotes[pid];
+
+      var existingCell = row.querySelector('.td-family');
+      if (!existingCell) {
+        existingCell = document.createElement('td');
+        existingCell.className = 'td-family';
+        row.appendChild(existingCell);
+      }
+
+      if (data && data.count > 0) {
+        existingCell.innerHTML = '<strong style="color:var(--accent2)">' + data.avg.toFixed(1) + '</strong> \u2605';
+      } else {
+        existingCell.textContent = '\u2014';
+      }
+    });
+  }
+
+  // --- Master refresh ---
+  function refreshAllVotes() {
+    API.getVotes().then(function (allVotes) {
+      updateVoteRows(allVotes);
+      updateRankings(allVotes);
+      updateOverviewTable(allVotes);
+    });
+  }
+
+  // --- Utility ---
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  // --- Init ---
+  function init() {
+    loadUser();
+    addRankingsNavLink();
+    injectVoteRows();
+    renderNavPill();
+
+    if (!currentUser) {
+      showUserModal();
+    }
+
+    refreshAllVotes();
+
+    // Poll every 30 seconds
+    setInterval(refreshAllVotes, 30000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
