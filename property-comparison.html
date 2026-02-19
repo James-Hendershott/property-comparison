@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James & Savanah — Property Comparison 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #f4f1eb;
+  --surface:  #ffffff;
+  --border:   #ddd8cc;
+  --text:     #2c2a25;
+  --muted:    #6b6358;
+  --accent:   #3a6b4a;
+  --accent2:  #c47c2a;
+  --red:      #c0392b;
+  --green:    #27624a;
+  --james:    #2c5282;
+  --savanah:  #8b4513;
+  --both:     #5b21b6;
+  --tag-bg:   #eef3ee;
+  --tag-text: #2d5a3d;
+  --warn-bg:  #fff8e6;
+  --warn-text:#7a4f00;
+  --card-r:   14px;
+  --shadow:   0 2px 16px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.header {
+  background: #1e3528;
+  color: #e8e4da;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+}
+.header h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #f0ece3;
+}
+.header p {
+  font-size: 0.92rem;
+  color: #b5c4b8;
+  margin-top: 0.4rem;
+}
+.legend {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.leg {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.leg-j  { background: #2c5282; color: #fff; }
+.leg-s  { background: #8b4513; color: #fff; }
+.leg-b  { background: #5b21b6; color: #fff; }
+.leg-w  { background: #c0392b; color: #fff; }
+
+/* ── STICKY NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #1e3528;
+  border-bottom: 2px solid #2d5a3d;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #78a88a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav a {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  color: #c5d5c9;
+  text-decoration: none;
+  border: 1px solid #2d5a3d;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.nav a:hover { background: #2d5a3d; color: #fff; }
+.nav-right { margin-left: auto; flex-shrink: 0; }
+.print-btn {
+  padding: 0.3rem 0.9rem;
+  border-radius: 6px;
+  background: var(--accent2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+/* ── QUICK TABLE ── */
+.section { padding: 1.5rem 1.5rem 0; }
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 1.35rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border);
+}
+.table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+table.qt {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.qt th {
+  background: #1e3528;
+  color: #d4e8da;
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.qt td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.qt tr:nth-child(even) td { background: rgba(58,107,74,0.04); }
+.qt tr:hover td { background: rgba(58,107,74,0.08); }
+.td-price { font-weight: 700; color: var(--accent); }
+.td-mo    { font-weight: 600; color: #444; }
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.b-james  { background: #dbeafe; color: #1d4ed8; }
+.b-sav    { background: #fef3c7; color: #92400e; }
+.b-both   { background: #ede9fe; color: #5b21b6; }
+.b-pend   { background: #fee2e2; color: #b91c1c; }
+.b-mfg    { background: #fff7ed; color: #c2410c; }
+.b-sfr    { background: #dcfce7; color: #166534; }
+.b-oor    { background: #f3f4f6; color: #6b7280; }
+
+/* Score + offer top summary */
+.score-offer-band {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+  background: #f9f8f5;
+  flex-wrap: wrap;
+}
+.sob-score {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.8rem 1.4rem;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.sob-score-num {
+  font-family: 'Lora', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.sob-score-num.na { color: var(--muted); font-size: 1.4rem; }
+.sob-score-denom { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+.sob-score-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+}
+.sob-mini-bar { }
+.sob-mini-label {
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+}
+.sob-mini-track {
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.sob-mini-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+.sob-offer {
+  padding: 0.8rem 1.4rem;
+  flex: 1;
+  min-width: 240px;
+}
+.sob-offer-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.sob-offer-price {
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent2);
+}
+.sob-offer-rationale {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 0.3rem;
+  line-height: 1.5;
+}
+.sob-offer-rationale ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.2rem;
+}
+.sob-offer-rationale li {
+  padding: 0.1rem 0;
+  display: flex;
+  gap: 0.4rem;
+}
+.sob-offer-rationale li::before {
+  content: "→";
+  color: var(--accent2);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.sob-strategy {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #444;
+  padding: 0.3rem 0.7rem;
+  background: rgba(196, 124, 42, 0.1);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.cards { padding: 0 1.5rem 2rem; }
+.card {
+  background: var(--surface);
+  border-radius: var(--card-r);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+.card-top {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 240px;
+}
+@media (max-width: 768px) {
+  .card-top { grid-template-columns: 1fr; }
+}
+
+/* Map iframe container */
+.card-map {
+  position: relative;
+  background: #c8d8c8;
+  overflow: hidden;
+  min-height: 240px;
+}
+.card-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  min-height: 240px;
+}
+.map-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.55));
+  padding: 0.6rem 0.8rem 0.5rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.photo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.92);
+  color: #1e3528;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+}
+.photo-btn:hover { background: white; }
+.photo-btn svg { width: 13px; height: 13px; }
+
+/* Card header */
+.card-header {
+  padding: 1.1rem 1.3rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.card-title-group {}
+.card-address {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+.card-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.4rem; }
+
+.card-price-block { text-align: right; flex-shrink: 0; }
+.card-price {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.card-monthly {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+.card-down { font-size: 0.75rem; color: var(--muted); }
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.stat {
+  padding: 0.65rem 1.1rem;
+  border-right: 1px solid var(--border);
+  min-width: 90px;
+}
+.stat:last-child { border-right: none; }
+.stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.stat-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 0.1rem;
+}
+.stat-sub {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* Body sections */
+.card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+@media (max-width: 640px) {
+  .card-body { grid-template-columns: 1fr; }
+}
+.card-section {
+  padding: 1rem 1.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.card-section:nth-child(odd) { border-right: 1px solid var(--border); }
+.card-section-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.card-section ul {
+  list-style: none;
+  padding: 0;
+}
+.card-section ul li {
+  font-size: 0.85rem;
+  color: var(--text);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+.card-section ul li:last-child { border-bottom: none; }
+.li-icon { flex-shrink: 0; margin-top: 0.1rem; font-size: 0.75rem; }
+
+/* Highlight band */
+.highlight-band {
+  background: var(--tag-bg);
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 1.3rem;
+  font-size: 0.85rem;
+  color: var(--tag-text);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.highlight-band strong { font-weight: 600; flex-shrink: 0; }
+
+/* Warning band */
+.warn-band {
+  background: var(--warn-bg);
+  border-top: 1px solid #f0d88a;
+  padding: 0.65rem 1.3rem;
+  font-size: 0.8rem;
+  color: var(--warn-text);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.warn-band strong { flex-shrink: 0; }
+
+/* Full-width notes section */
+.notes-section {
+  grid-column: 1 / -1;
+  padding: 0.9rem 1.3rem;
+  border-bottom: 1px solid var(--border);
+  background: #faf9f6;
+}
+.notes-section .card-section-title { margin-bottom: 0.5rem; }
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+}
+@media (max-width: 640px) {
+  .notes-grid { grid-template-columns: 1fr; }
+}
+.note-item {
+  font-size: 0.83rem;
+  color: var(--text);
+  padding: 0.2rem 0;
+}
+.note-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Pros / cons columns */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 640px) {
+  .pros-cons { grid-template-columns: 1fr; }
+}
+.pros { border-right: 1px solid var(--border); }
+.pros, .cons { padding: 0.9rem 1.3rem; }
+.pros .card-section-title { color: #27624a; }
+.cons .card-section-title { color: #b91c1c; }
+.pros li::before { content: "✓"; color: #27624a; font-weight: 700; }
+.cons li::before { content: "✗"; color: #c0392b; font-weight: 700; }
+
+/* score row */
+.score-row {
+  padding: 0.7rem 1.3rem;
+  background: #f8f5ef;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.score-big {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.score-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+.score-bars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  flex: 1;
+}
+.score-item { min-width: 120px; }
+.score-item-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.score-track {
+  height: 5px;
+  background: #ddd;
+  border-radius: 3px;
+  margin-top: 3px;
+  overflow: hidden;
+}
+.score-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* status badges */
+.status-active { color: #166534; font-weight: 700; }
+.status-pending { color: #b91c1c; font-weight: 700; }
+.status-unknown { color: #92400e; font-weight: 600; }
+.status-contract { color: #b91c1c; font-weight: 700; }
+
+/* footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* PRINT */
+@media print {
+  .nav, .print-btn { display: none !important; }
+  .card { page-break-inside: avoid; }
+  body { background: white; }
+  .card-map { display: none; }
+  .card-top { grid-template-columns: 1fr; }
+}
+
+/* ── OOR / warning card style ── */
+.card.oor { opacity: 0.78; }
+.card.oor .card-address { color: #777; }
+.oor-banner {
+  background: #f3f4f6;
+  border-top: 3px solid #9ca3af;
+  padding: 0.5rem 1.3rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="header">
+  <h1>🏡 James & Savanah — Property Comparison 2026</h1>
+  <p>10 Properties · Pacific Northwest + Midwest · From Farmington, UT</p>
+  <div class="legend">
+    <span class="leg leg-j">🔵 James's List</span>
+    <span class="leg leg-s">🟠 Savanah's List</span>
+    <span class="leg leg-b">🟣 Both Lists</span>
+    <span class="leg leg-w">🔴 Status Warning</span>
+  </div>
+</header>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <span class="nav-label">Jump to:</span>
+  <a href="#overview">Overview Table</a>
+  <a href="#p1">Appleton</a>
+  <a href="#p2">Kettle Falls</a>
+  <a href="#p3">Goldendale</a>
+  <a href="#p4">Colville</a>
+  <a href="#p5">Dayton</a>
+  <a href="#p6">Malo</a>
+  <a href="#p7">Evans</a>
+  <a href="#p8">Addy</a>
+  <a href="#p9">Milnor ND</a>
+  <a href="#p10">Donnelly MN</a>
+  <div class="nav-right">
+    <button class="print-btn" onclick="window.print()">🖨 Print</button>
+  </div>
+</nav>
+
+<!-- ── QUICK OVERVIEW TABLE ── -->
+<div class="section" id="overview">
+  <div class="section-title">📊 Quick Comparison Overview</div>
+  <div class="table-wrap">
+    <table class="qt">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Address</th>
+          <th>List</th>
+          <th>Price</th>
+          <th>Est. /mo</th>
+          <th>3% Down</th>
+          <th>Beds/Ba</th>
+          <th>Sqft</th>
+          <th>Acres</th>
+          <th>Type</th>
+          <th>Built</th>
+          <th>Drive</th>
+          <th>Score</th>
+          <th>Realistic Offer</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="#p1">25 Chuckwagon Rd, Appleton WA</a></td>
+          <td><span class="badge b-james">James</span></td>
+          <td class="td-price">$415,000</td>
+          <td class="td-mo">~$2,804</td>
+          <td>$12,450</td>
+          <td>4 / 2</td>
+          <td>1,558</td>
+          <td>5</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1976</td>
+          <td>~8.5 hr</td>
+          <td><strong style="color:var(--accent)">72</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$385,000–$395,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">82+ DOM, multiple cuts, cosmetic work needed</span></td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="#p2">3714 Sand Creek Rd B, Kettle Falls WA</a></td>
+          <td><span class="badge b-james">James</span></td>
+          <td class="td-price">$450,000</td>
+          <td class="td-mo">~$2,999</td>
+          <td>$13,500</td>
+          <td>3 / 2</td>
+          <td>1,780</td>
+          <td>20</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1972</td>
+          <td>~9.5 hr</td>
+          <td><strong style="color:var(--accent)">81</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$425,000–$435,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Fresh listing, strong package, limited comp discount</span></td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="#p3">2147 Glenwood Hwy, Goldendale WA</a></td>
+          <td><span class="badge b-james">James</span></td>
+          <td class="td-price">$389,999</td>
+          <td class="td-mo">~$2,584</td>
+          <td>$11,700</td>
+          <td>3 / 2</td>
+          <td>1,456</td>
+          <td>6.85</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1970</td>
+          <td>~9 hr</td>
+          <td><strong style="color:var(--accent)">71</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$365,000–$375,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">⚠ Pending — verify status first</span></td>
+          <td><span class="status-pending">⚠ Pending</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><a href="#p4">2184 Clugston Onion Creek Rd, Colville WA</a></td>
+          <td><span class="badge b-both">Both ★</span></td>
+          <td class="td-price">$388,000</td>
+          <td class="td-mo">~$2,653</td>
+          <td>$11,640</td>
+          <td>3 / 2</td>
+          <td>2,688</td>
+          <td>16.68</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>Unk</td>
+          <td>~9.5 hr</td>
+          <td><strong style="color:var(--accent)">84</strong>/100 ★</td>
+          <td style="white-space:nowrap"><strong>$365,000–$375,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Multiple cuts from $405K; unknown yr built = leverage</span></td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><a href="#p5">111 Tamarack Ln, Dayton WA</a></td>
+          <td><span class="badge b-james">James</span></td>
+          <td class="td-price">$375,000</td>
+          <td class="td-mo">~$2,494</td>
+          <td>$11,250</td>
+          <td>3 / 2</td>
+          <td>1,671</td>
+          <td>25.81</td>
+          <td><span class="badge b-mfg">Manuf.</span></td>
+          <td>1990</td>
+          <td>~9 hr</td>
+          <td><strong style="color:var(--accent)">79</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$350,000–$360,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">MFG financing constraints limit buyer pool = leverage</span></td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><a href="#p6">17 Kingsford Pl, Malo WA</a></td>
+          <td><span class="badge b-james">James</span></td>
+          <td class="td-price">$325,000</td>
+          <td class="td-mo">~$2,163</td>
+          <td>$9,750</td>
+          <td>3 / 2</td>
+          <td>1,440</td>
+          <td>14.85</td>
+          <td><span class="badge b-mfg">Manuf.</span></td>
+          <td>1978</td>
+          <td>~10 hr</td>
+          <td><strong style="color:var(--muted)">62</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$300,000–$310,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">⚠ Under contract — backup offer only</span></td>
+          <td><span class="status-contract">⚠ Under Contract</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><a href="#p7">1170 Hodgson Rd N, Evans WA</a></td>
+          <td><span class="badge b-sav">Savanah</span></td>
+          <td class="td-price">$395,000</td>
+          <td class="td-mo">~$2,695</td>
+          <td>$11,850</td>
+          <td>4 / 2</td>
+          <td>1,344</td>
+          <td>10.6</td>
+          <td><span class="badge b-mfg">Manuf.</span></td>
+          <td>1980</td>
+          <td>~9.5 hr</td>
+          <td><strong style="color:var(--accent)">70</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$370,000–$382,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">1980 MFG; unknown outbuildings = inspection contingency</span></td>
+          <td><span class="status-unknown">Verify</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><a href="#p8">2477 Cedonia Addy Rd, Addy WA</a></td>
+          <td><span class="badge b-sav">Savanah</span></td>
+          <td class="td-price">$289,000</td>
+          <td class="td-mo">~$1,956</td>
+          <td>$8,670</td>
+          <td>3 / 2</td>
+          <td>2,717</td>
+          <td>21</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1910</td>
+          <td>~9.5 hr</td>
+          <td><strong style="color:var(--accent)">83</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$270,000–$280,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">1910 log age = strong inspection leverage; fresh listing</span></td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><a href="#p9">8416 141st Ave SE, Milnor ND</a></td>
+          <td><span class="badge b-sav">Savanah</span></td>
+          <td class="td-price">$415,000</td>
+          <td class="td-mo">~$2,908</td>
+          <td>$12,450</td>
+          <td>5 / 2.5</td>
+          <td>2,539</td>
+          <td>7.19</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1920</td>
+          <td>~20 hr</td>
+          <td><strong style="color:var(--muted)">N/A</strong></td>
+          <td style="white-space:nowrap"><strong>$390,000–$400,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">If pursuing: 1920 structure, rural ND = moderate room</span></td>
+          <td><span class="status-unknown">Verify</span></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><a href="#p10">53007 140th St, Donnelly MN</a></td>
+          <td><span class="badge b-sav">Savanah</span></td>
+          <td class="td-price">~$219,000</td>
+          <td class="td-mo">~$1,520</td>
+          <td>~$6,570</td>
+          <td>5 / 2</td>
+          <td>2,156</td>
+          <td>Unk</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>Unk</td>
+          <td>~20 hr</td>
+          <td><strong style="color:var(--muted)">N/A</strong></td>
+          <td style="white-space:nowrap"><strong>$200,000–$210,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">⚠ Pending — backup offer only if pursuing</span></td>
+          <td><span class="status-pending">⚠ Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.78rem;color:var(--muted);padding-bottom:1rem;">
+    † Monthly estimate = 6.5% / 30yr / 3% down + est. taxes & insurance. PMI (~0.8%/yr) applies until 20% equity. Manufactured homes require specialty financing — rates may be higher.
+    ND and MN properties are ~20 hrs from Farmington, UT — outside the stated 10-hr target.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #1 — APPLETON WA
+═══════════════════════════════════════════════════ -->
+<div class="cards">
+
+<div class="card" id="p1">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=25+Chuckwagon+Rd,+Appleton,+WA+98602&zoom=15&maptype=satellite"
+        title="25 Chuckwagon Rd satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.redfin.com/WA/Appleton/25-Chuckwagon-Rd-98602/home/68951939" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+        <a class="photo-btn" href="https://www.williamsteamhomes.com/property/65-343192705-25-chuckwagon-rd-appleton-WA-98602" target="_blank">Listing Details</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">25 Chuckwagon Rd</div>
+          <div class="card-sub">Appleton, WA 98602 · Klickitat County</div>
+          <div class="card-badges">
+            <span class="badge b-james">James's List</span>
+            <span class="badge b-sfr">Site-Built</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$415,000</div>
+          <div class="card-monthly">~$2,804/mo (est.)</div>
+          <div class="card-down">$12,450 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,558</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">5</div><div class="stat-sub">Forested</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1976</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~8.5 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~25 min</div><div class="stat-sub">White Salmon</div></div>
+        <div class="stat"><div class="stat-label">Well GPM</div><div class="stat-val">20</div><div class="stat-sub">Verified</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">72</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>10/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>9/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>13/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$385,000 – $395,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Listed $415K; has been cut to $415K from higher — 82+ days on market signals real motivation</li>
+          <li>Cosmetic work needed (seller acknowledged) → inspection findings give room to go lower</li>
+          <li>Only 5 acres limits competing buyer interest; manufactured/rural buyer pool is thin</li>
+          <li>Median $/sqft for Appleton area ~$250–$265 → $385K puts you at ~$247/sqft, fair</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $380K, land at $385–390K with seller credits for repairs. Include inspection contingency.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Closest drive of all listings (~8.5 hrs). Mature timber on all 5 acres gives genuine seclusion. 20 GPM well is excellent. Price-cut seller = negotiating room.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🌲</span> 5 acres entirely surrounded by mature timber — true seclusion</li>
+        <li><span class="li-icon">🏔</span> Master bedroom has peek-a-boo Mt. Adams views</li>
+        <li><span class="li-icon">💧</span> 20 GPM well — well above average for rural properties</li>
+        <li><span class="li-icon">🔧</span> Updates: laminate floors, fresh paint, new bathrooms, wood stove, pressure tank</li>
+        <li><span class="li-icon">🚗</span> Widened driveway with new outbuildings + woodshed</li>
+        <li><span class="li-icon">📍</span> Closest to Farmington of all listings (~8.5 hrs via I-84)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> White Salmon Valley SD — Niche C+ overall</li>
+        <li><span class="li-icon">🏫</span> Appleton Elem: GreatSchools 4/10</li>
+        <li><span class="li-icon">🏥</span> Providence Hood River ~30 min (Level III trauma)</li>
+        <li><span class="li-icon">🛒</span> White Salmon ~25 min · Hood River OR ~35 min</li>
+        <li><span class="li-icon">🛣</span> I-84 corridor access for Columbia Gorge region</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Shortest drive from Farmington of all 10 properties</li>
+        <li><span class="li-icon">✓</span> Full forested acreage — great privacy & timber value</li>
+        <li><span class="li-icon">✓</span> Strong 20 GPM well already verified</li>
+        <li><span class="li-icon">✓</span> Multiple price reductions = seller motivated to deal</li>
+        <li><span class="li-icon">✓</span> Chalet-style home with loft character</li>
+        <li><span class="li-icon">✓</span> Columbia Gorge recreational area (windsurfing, hiking)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Only 5 acres — smallest lot on James's list</li>
+        <li><span class="li-icon">✗</span> 1,558 sqft is compact for a family</li>
+        <li><span class="li-icon">✗</span> "Needs cosmetic work" — rehab loan may be required</li>
+        <li><span class="li-icon">✗</span> HOA ($11/yr) — minor but verify restrictions</li>
+        <li><span class="li-icon">✗</span> Schools below state average for WA</li>
+        <li><span class="li-icon">✗</span> Wildfire risk in Klickitat County (verify FireRisk.com)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Chalet/loft style is visually charming for kids</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">White Salmon area has strong outdoor culture — good for active family</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Hood River 35 min provides full services, hospitals, bigger schools</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Extent of cosmetic work needed — get inspection ASAP</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">HOA rules — what restrictions exist on rural use?</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Internet options — very rural Klickitat, check Starlink feasibility</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">72</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>10/20</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>13/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #2 — KETTLE FALLS WA
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p2">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=3714+Sand+Creek+Rd,+Kettle+Falls,+WA+99141&zoom=15&maptype=satellite"
+        title="3714 Sand Creek Rd satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://washingtonviews.com/listings/residential/3714-sand-creek-rd-b-kettle-falls-wa-99141-45484" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+        <a class="photo-btn" href="https://www.zillow.com/homes/3714-Sand-Creek-Rd-Kettle-Falls-WA_rb/" target="_blank">Zillow</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">3714 Sand Creek Rd B</div>
+          <div class="card-sub">Kettle Falls, WA 99141 · Stevens County</div>
+          <div class="card-badges">
+            <span class="badge b-james">James's List</span>
+            <span class="badge b-sfr">Site-Built</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$450,000</div>
+          <div class="card-monthly">~$2,999/mo (est.)</div>
+          <div class="card-down">$13,500 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,780</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">20</div><div class="stat-sub">Flat/Park-like</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1972</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~10 min</div><div class="stat-sub">Kettle Falls</div></div>
+        <div class="stat"><div class="stat-label">Outbuildings</div><div class="stat-val">5+</div><div class="stat-sub">Best package</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">81</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>10/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:67%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>17/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:85%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>15/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>9/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>10/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$425,000 – $435,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Fresh active listing with a strong, well-presented package — seller has less urgency than others on this list</li>
+          <li>1972 build is a legitimate risk factor: roof, electrical, plumbing all 50+ years old → use inspection findings to push toward $425K</li>
+          <li>Greenhouse, hobby shop, and 20 acres give it a premium that's genuinely hard to find</li>
+          <li>Comparable 20-ac rural WA parcels with outbuilding packages have sold $430–460K in Stevens County 2024–25</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $420K. Use 1972 inspection findings for credits. Likely land $428–432K. Don't go full ask — they have room.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Best outbuilding package of all 10 properties — 2-car garage, hobby shop, greenhouse, carport, shed + fenced garden. 20 acres, flat and usable. Near Kettle River recreation. Closest town access at ~10 min.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🔨</span> 2-car garage + hobby shop + greenhouse + carport + storage shed</li>
+        <li><span class="li-icon">🌿</span> Fenced garden beds — established growing infrastructure</li>
+        <li><span class="li-icon">🏞</span> Flat, park-like 20 acres on Kettle River corridor</li>
+        <li><span class="li-icon">🏘</span> Only ~10 min to Kettle Falls town center</li>
+        <li><span class="li-icon">🎣</span> Kettle River access for fishing, kayaking, recreation</li>
+        <li><span class="li-icon">📶</span> Better rural internet access than more remote listings</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Kettle Falls SD: GreatSchools 5/10 overall</li>
+        <li><span class="li-icon">🏫</span> Kettle Falls Elem/Middle 4-5/10; High School 5/10</li>
+        <li><span class="li-icon">🏥</span> Stevens County Medical ~20 min (Colville)</li>
+        <li><span class="li-icon">🛒</span> Grocery + hardware + gas in Kettle Falls town</li>
+        <li><span class="li-icon">🌊</span> Lake Roosevelt (Columbia River) 5 min away</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> #1 outbuilding package on all 10 properties reviewed</li>
+        <li><span class="li-icon">✓</span> 20 flat, usable acres — best land utility of any listing</li>
+        <li><span class="li-icon">✓</span> Closest to town services (~10 min) of rural listings</li>
+        <li><span class="li-icon">✓</span> Established greenhouse and garden — ready to produce</li>
+        <li><span class="li-icon">✓</span> Lake Roosevelt NRA nearby for recreation</li>
+        <li><span class="li-icon">✓</span> Actively listed on Washington Views (fresh listing)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Highest price of the Washington listings at $450K</li>
+        <li><span class="li-icon">✗</span> 1972 build — will need careful inspection for structural, roof, systems</li>
+        <li><span class="li-icon">✗</span> ~9.5 hr drive — edge of comfortable one-day trip</li>
+        <li><span class="li-icon">✗</span> Schools average — not standout for the price</li>
+        <li><span class="li-icon">✗</span> Flat land = less natural privacy than forested alternatives</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Close to town = easier for kids' activities, sports, school events</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Greenhouse + garden is excellent for family food production projects</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Lake Roosevelt 5 min away — summer recreation for kids</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">1972 roof, foundation, and electrical condition — full inspection critical</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Well output and water quality test</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Flood risk — Sand Creek corridor near Kettle River</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">81</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>17/20</span></div><div class="score-track"><div class="score-fill" style="width:85%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>10/10</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #3 — GOLDENDALE WA (PENDING)
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p3">
+  <div class="warn-band">⚠️ <strong>Status Warning:</strong> Multiple sources show this listing as PENDING. Verify with agent before planning a tour. May still fall out of escrow.
+  </div>
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=2147+Glenwood+Hwy,+Goldendale,+WA+98620&zoom=15&maptype=satellite"
+        title="2147 Glenwood Hwy satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.redfin.com/WA/Goldendale/2147-Glenwood-Hwy-98620/home/53005566" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View Listing (Verify Status)
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">2147 Glenwood Hwy</div>
+          <div class="card-sub">Goldendale, WA 98620 · Klickitat County</div>
+          <div class="card-badges">
+            <span class="badge b-james">James's List</span>
+            <span class="badge b-sfr">Site-Built</span>
+            <span class="badge b-pend">⚠ PENDING</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$389,999</div>
+          <div class="card-monthly">~$2,584/mo (est.)</div>
+          <div class="card-down">$11,700 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,456</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">6.85</div><div class="stat-sub">Creek + pasture</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1970</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~15 min</div><div class="stat-sub">Goldendale</div></div>
+        <div class="stat"><div class="stat-label">Water</div><div class="stat-val">Rights</div><div class="stat-sub">Irrigated pasture</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">⚠ Pending</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">71</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>11/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:55%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range <span style="color:var(--red);font-size:0.75rem;font-weight:700;">⚠ VERIFY STATUS FIRST</span></div>
+      <div class="sob-offer-price">$365,000 – $375,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Pending status is the first gate — call the listing agent before doing anything else</li>
+          <li>If it falls out of escrow: 1970 build + water rights due diligence uncertainty = meaningful discount from ask</li>
+          <li>Water right transfer needs legal confirmation → use as contingency and pricing leverage (~$5–8K credit)</li>
+          <li>Klickitat County comps for 6–7 ac creek properties 2024: $340–380K range</li>
+        </ul>
+        <div class="sob-strategy">Strategy: If it becomes available, open at $362K citing pending risk + 1970 age + water right due diligence. Target $370K.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stood Out (verify status first):</strong> Best equestrian/ag setup — barn, outbuildings, Bowman Creek, water rights, 3 ac irrigated pasture. Good price for ~7 acres with water features.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🌊</span> Bowman Creek runs through property with legal water rights</li>
+        <li><span class="li-icon">🐴</span> 26×62 barn with stalls — equestrian-ready</li>
+        <li><span class="li-icon">💧</span> 3 acres irrigated pasture (~10 ac-ft/yr water right)</li>
+        <li><span class="li-icon">🌿</span> Fenced & cross-fenced — livestock ready</li>
+        <li><span class="li-icon">🔧</span> New roof, new well pump, pond, spring on property</li>
+        <li><span class="li-icon">🏔</span> Open views toward Simcoe Mountains</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Goldendale SD: Niche B- · GreatSchools 5-6/10</li>
+        <li><span class="li-icon">🏫</span> Goldendale Elementary 5/10; High School 6/10</li>
+        <li><span class="li-icon">🏥</span> Klickitat Valley Health (Goldendale) ~15 min</li>
+        <li><span class="li-icon">🛒</span> Goldendale has grocery, hardware, pharmacy</li>
+        <li><span class="li-icon">🍷</span> Columbia River Gorge wine/recreation corridor nearby</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Water rights + creek = rare and valuable asset</li>
+        <li><span class="li-icon">✓</span> Best ag/equestrian setup on James's list</li>
+        <li><span class="li-icon">✓</span> Good school district relative to rural peers</li>
+        <li><span class="li-icon">✓</span> Close to Goldendale services (~15 min)</li>
+        <li><span class="li-icon">✓</span> Reasonable price for 6.85 ac with creek + barn</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Currently showing PENDING — may not be available</li>
+        <li><span class="li-icon">✗</span> 1970 build — older systems, inspection critical</li>
+        <li><span class="li-icon">✗</span> Only 6.85 acres — limited expansion potential</li>
+        <li><span class="li-icon">✗</span> Creek on property = potential flood zone liability</li>
+        <li><span class="li-icon">✗</span> Water right requires buyer due diligence (confirm transferable)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">71</div>
+      <div class="score-label">/ 100 (if active)</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>11/20</span></div><div class="score-track"><div class="score-fill" style="width:55%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #4 — COLVILLE WA (BOTH LISTS ★)
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p4">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=2184+Clugston+Onion+Creek+Rd,+Colville,+WA+99114&zoom=15&maptype=satellite"
+        title="2184 Clugston Onion Creek Rd satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/2184-Clugston-Onion-Creek-Rd-Colville-WA_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos (Zillow)
+        </a>
+        <a class="photo-btn" href="https://www.redfin.com/WA/Colville/2184-Clugston-Onion-Creek-Rd-99114/home/183624802" target="_blank">Redfin</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">2184 Clugston Onion Creek Rd</div>
+          <div class="card-sub">Colville, WA 99114 · Stevens County</div>
+          <div class="card-badges">
+            <span class="badge b-both">★ Both Lists</span>
+            <span class="badge b-sfr">Site-Built</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$388,000</div>
+          <div class="card-monthly">~$2,653/mo (est.)</div>
+          <div class="card-down">$11,640 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,688</div><div class="stat-sub">Largest home</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">16.68</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">Unk</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Colville</div><div class="stat-val">~20 min</div></div>
+        <div class="stat"><div class="stat-label">Price Cuts</div><div class="stat-val">Multiple</div><div class="stat-sub">Was $405K</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band" style="border-top:2px solid #c4b5fd;">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num" style="color:#5b21b6;">84</div>
+        <div class="sob-score-denom">/ 100 ★ Top Pick</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>15/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:75%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>15/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$365,000 – $375,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Has been reduced multiple times from ~$405K to $388K — seller has clearly shown a willingness to move</li>
+          <li>Year built unknown = unknown systems age → very strong justification for an inspection contingency and lower offer</li>
+          <li>Outbuildings unconfirmed = if they're minimal or absent, that's a material gap at this price</li>
+          <li>Stevens County comps for 16+ ac site-built 2,500+ sqft homes: $360–400K range in 2024–25</li>
+          <li>Being the #1 pick on both lists means you want it — but don't show urgency; the days-on-market work in your favor</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $360K citing unknown year built + outbuilding gap. Negotiate to $368–372K with a $5–8K inspection/repair credit. This is your best shot at a home you both want below ask.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band" style="background:#ede9fe;border-top:1px solid #c4b5fd;">
+    <strong>★ BOTH LISTS — Strong Signal:</strong> James and Savanah independently chose this property. Largest home at 2,688 sqft. 16.68 acres on the Colville corridor. Multiple price reductions to $388K — motivated seller. This is the top priority to tour.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏠</span> Largest home at 2,688 sqft — multi-story layout</li>
+        <li><span class="li-icon">🌲</span> 16.68 acres — good balance of size and privacy</li>
+        <li><span class="li-icon">💰</span> Price reduced multiple times from ~$405K to $388K</li>
+        <li><span class="li-icon">🌊</span> Onion Creek drainage area — scenic rural corridor</li>
+        <li><span class="li-icon">📍</span> ~20 min from Colville (full services, hospital)</li>
+        <li><span class="li-icon">🏫</span> Good access to Colville schools</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Colville SD: Niche B · GreatSchools 6-7/10</li>
+        <li><span class="li-icon">🏫</span> Colville Elem 7/10 · Colville HS 6/10</li>
+        <li><span class="li-icon">🏥</span> Providence St. Joseph's (Colville) ~20 min</li>
+        <li><span class="li-icon">🛒</span> Colville has full grocery, hardware, dining</li>
+        <li><span class="li-icon">🎿</span> 49° North ski area 20 min away</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> <strong>Chosen independently by BOTH</strong> — highest confidence signal</li>
+        <li><span class="li-icon">✓</span> Largest living space (2,688 sqft) of all 10 properties</li>
+        <li><span class="li-icon">✓</span> Colville has best schools of any rural town in the comparison</li>
+        <li><span class="li-icon">✓</span> Multiple price reductions = room to negotiate</li>
+        <li><span class="li-icon">✓</span> 16.68 acres — substantial without being overwhelming to maintain</li>
+        <li><span class="li-icon">✓</span> 49° North ski area very close — great winter family activity</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Outbuildings UNKNOWN — critical to verify before offering</li>
+        <li><span class="li-icon">✗</span> Year built unknown — may have hidden age-related issues</li>
+        <li><span class="li-icon">✗</span> ~9.5 hr drive from Farmington — long moving haul</li>
+        <li><span class="li-icon">✗</span> Multiple price reductions may signal underlying issues</li>
+        <li><span class="li-icon">✗</span> Multi-story layout may not suit all family configurations</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Best schools of any rural listing — major win for kids</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">2,688 sqft gives everyone space — important for family comfort</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">49° North ski area is 20 min — exceptional family winter activity</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">WHY has it had multiple price reductions? Ask agent directly.</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm outbuilding presence, size, and condition</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Full inspection — year built unknown means unknowns in systems</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">84</div>
+      <div class="score-label">/ 100 ★ Top Pick</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>15/20</span></div><div class="score-track"><div class="score-fill" style="width:75%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>15/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #5 — DAYTON WA
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p5">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=111+Tamarack+Ln,+Dayton,+WA+99328&zoom=14&maptype=satellite"
+        title="111 Tamarack Ln satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/111-Tamarack-Ln-Dayton-WA_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">111 Tamarack Ln</div>
+          <div class="card-sub">Dayton, WA 99328 · Columbia County</div>
+          <div class="card-badges">
+            <span class="badge b-james">James's List</span>
+            <span class="badge b-mfg">Manufactured 1990</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$375,000</div>
+          <div class="card-monthly">~$2,494/mo (est.)</div>
+          <div class="card-down">$11,250 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,671</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">25.81</div><div class="stat-sub">Most acreage</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1990</div><div class="stat-sub">Manufactured</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~7 min</div><div class="stat-sub">Dayton</div></div>
+        <div class="stat"><div class="stat-label">Shop</div><div class="stat-val">1,080 sqft</div><div class="stat-sub">Heated + cooler</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">79</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>20/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$350,000 – $362,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Manufactured home classification significantly shrinks the qualified buyer pool — this is your single biggest lever</li>
+          <li>Many conventional lenders won't touch a 1990 manufactured without MH Advantage compliance — ask if it qualifies</li>
+          <li>At $375K ask, you're paying a premium that the manufactured label doesn't fully support vs. a comparable site-built</li>
+          <li>River frontage + shop are genuinely premium features that soften the discount, so don't go too low or you'll lose it</li>
+          <li>Columbia County comps for manufactured-on-land 20+ acres: $320–360K range (2024)</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $345K citing manufactured financing constraints + school district. Expect counter around $365K. Land at $355–360K. Ask about seller concessions toward closing costs.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Most acreage (25.81 ac) + 350 ft Touchet River frontage + 1,080 sqft heated shop with walk-in cooler. 7 min to Dayton town center. Not in flood plain. Ski Bluewood 7 miles away.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">📐</span> Most acreage of all 10 properties at 25.81 acres</li>
+        <li><span class="li-icon">🌊</span> 350+ ft Touchet River frontage — fishing, recreation</li>
+        <li><span class="li-icon">🔨</span> 1,080 sqft heated shop with walk-in cooler — excellent workspace</li>
+        <li><span class="li-icon">🏔</span> Ski Bluewood ski area only 7 miles away</li>
+        <li><span class="li-icon">✅</span> Verified NOT in flood plain (confirmed via listing)</li>
+        <li><span class="li-icon">🏘</span> Only 7 min to Dayton — remarkably close for 25+ acres</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Dayton SD: GreatSchools 4-5/10</li>
+        <li><span class="li-icon">🏫</span> Small district — limited extracurricular options</li>
+        <li><span class="li-icon">🏥</span> Dayton General Hospital ~10 min</li>
+        <li><span class="li-icon">🛒</span> Dayton: grocery, hardware, charming historic downtown</li>
+        <li><span class="li-icon">🍷</span> Walla Walla wine country 40 min — weekend destination</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> 25+ acres = maximum land for the price among all listings</li>
+        <li><span class="li-icon">✓</span> River frontage = rare and permanent recreational amenity</li>
+        <li><span class="li-icon">✓</span> Heated 1,080 sqft shop is outstanding work/hobby space</li>
+        <li><span class="li-icon">✓</span> Not in flood plain despite river frontage</li>
+        <li><span class="li-icon">✓</span> Ski access 7 miles — unique value for a mountain family</li>
+        <li><span class="li-icon">✓</span> Lowest combined drive + acreage value ratio</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> <strong>Manufactured home</strong> — specialty financing required (FHA Title I, Fannie MH Advantage, or USDA). Higher rates possible.</li>
+        <li><span class="li-icon">✗</span> 1990 manufactured: HUD inspection may be required</li>
+        <li><span class="li-icon">✗</span> Schools below state average (4-5/10)</li>
+        <li><span class="li-icon">✗</span> Columbia County is very rural — limited social/cultural options</li>
+        <li><span class="li-icon">✗</span> Resale value of manufactured homes appreciates more slowly</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">River frontage = magical for kids — swimming, fishing, exploring</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Ski Bluewood 7 mi = family ski days without a long drive</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Dayton is a tight-knit small town — strong community feel</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Get pre-approved for manufactured home financing BEFORE touring</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm HUD certification tag is present (required for financing)</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Internet options — rural Columbia County, check Starlink</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">79</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>20/20</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #6 — MALO WA (UNDER CONTRACT)
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p6">
+  <div class="warn-band">⚠️ <strong>Status Warning:</strong> Multiple sources show this listing as UNDER CONTRACT. Verify with agent — may still fall through.
+  </div>
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=17+Kingsford+Pl,+Malo,+WA+99150&zoom=14&maptype=satellite"
+        title="17 Kingsford Pl satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/17-Kingsford-Pl-Malo-WA_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View Listing (Verify Status)
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">17 Kingsford Pl</div>
+          <div class="card-sub">Malo, WA 99150 · Ferry County</div>
+          <div class="card-badges">
+            <span class="badge b-james">James's List</span>
+            <span class="badge b-mfg">Manufactured 1978</span>
+            <span class="badge b-pend">⚠ Under Contract</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$325,000</div>
+          <div class="card-monthly">~$2,163/mo (est.)</div>
+          <div class="card-down">$9,750 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,440</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">14.85</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1978</div><div class="stat-sub">Manufactured</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~10 hr</div><div class="stat-sub">Edge of range</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~20 min</div><div class="stat-sub">Republic</div></div>
+        <div class="stat"><div class="stat-label">Monthly</div><div class="stat-val">~$2,163</div><div class="stat-sub">Lowest!</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-contract">Under Contract</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num" style="color:var(--muted)">62</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>13/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:65%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>10/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:67%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>5/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:33%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>4/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:40%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range <span style="color:var(--red);font-size:0.75rem;font-weight:700;">⚠ UNDER CONTRACT — BACKUP ONLY</span></div>
+      <div class="sob-offer-price">$300,000 – $312,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Under contract — if you want in, submit a backup offer immediately so you're first in line if it falls through</li>
+          <li>1978 manufactured homes are very difficult to finance conventionally — the current contract may fail on financing</li>
+          <li>Ferry County remoteness + limited services + weak schools = legitimate discount factors</li>
+          <li>At $325K ask, you're already getting good value; $300–310K would be where comp data supports a backup position</li>
+        </ul>
+        <div class="sob-strategy">Backup strategy: Submit at $305K cash-equivalent offer or with a strong pre-approval for manufactured home financing. Position as "ready to close fast if primary falls through."</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stood Out:</strong> Lowest monthly payment (~$2,163/mo). Empire Creek frontage + barn with power/water + multiple lean-tos. Kettle Crest Mountain views. Best price-per-outbuilding value on the list — if status clears.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏔</span> Kettle Crest Mountain views — stunning scenery</li>
+        <li><span class="li-icon">🌊</span> Empire Creek frontage on property</li>
+        <li><span class="li-icon">🔨</span> Barn with power + water + multiple lean-tos</li>
+        <li><span class="li-icon">💰</span> Lowest asking price ($325K) = lowest monthly payment</li>
+        <li><span class="li-icon">🦌</span> Very remote, exceptional wildlife and hunting access</li>
+        <li><span class="li-icon">🌲</span> Ferry County — some of most scenic terrain in WA</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Republic SD: GreatSchools ~4/10</li>
+        <li><span class="li-icon">🏥</span> Ferry County is extremely rural — nearest hospital Republic (~20 min, very small)</li>
+        <li><span class="li-icon">⚠️</span> Curlew SD or Republic SD — confirm catchment</li>
+        <li><span class="li-icon">🛒</span> Republic (~20 min) has basic groceries/hardware</li>
+        <li><span class="li-icon">🦅</span> Exceptional outdoor recreation — Kettle Range wilderness</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Lowest monthly cost of all properties at ~$2,163/mo</li>
+        <li><span class="li-icon">✓</span> Beautiful mountain views + creek + barn package</li>
+        <li><span class="li-icon">✓</span> 14.85 acres — solid land holding at this price</li>
+        <li><span class="li-icon">✓</span> Very remote = maximum privacy and quiet</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Currently UNDER CONTRACT — may not be available</li>
+        <li><span class="li-icon">✗</span> 1978 manufactured home — oldest manufactured on the list, HUD pre-dates modern standards</li>
+        <li><span class="li-icon">✗</span> ~10 hr drive — at absolute limit of stated range</li>
+        <li><span class="li-icon">✗</span> Ferry County extremely remote — emergency services, healthcare very limited</li>
+        <li><span class="li-icon">✗</span> Schools are weak; limited extracurricular for kids</li>
+        <li><span class="li-icon">✗</span> Financing for 1978 manufactured may be very difficult</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">62</div>
+      <div class="score-label">/ 100 (if active)</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>13/20</span></div><div class="score-track"><div class="score-fill" style="width:65%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>4/10</span></div><div class="score-track"><div class="score-fill" style="width:40%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #7 — EVANS WA
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p7">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=1170+Hodgson+Rd+N,+Evans,+WA+99126&zoom=14&maptype=satellite"
+        title="1170 Hodgson Rd N satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/1170-Hodgson-Rd-N-Evans-WA_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">1170 Hodgson Rd N</div>
+          <div class="card-sub">Evans, WA 99126 · Stevens County</div>
+          <div class="card-badges">
+            <span class="badge b-sav">Savanah's List</span>
+            <span class="badge b-mfg">Manufactured 1980</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$395,000</div>
+          <div class="card-monthly">~$2,695/mo (est.)</div>
+          <div class="card-down">$11,850 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,344</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">10.6</div><div class="stat-sub">Seasonal pond</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1980</div><div class="stat-sub">Manufactured</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Colville</div><div class="stat-val">~10 min</div></div>
+        <div class="stat"><div class="stat-label">Outbuildings</div><div class="stat-val">Unknown</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-unknown">Verify</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">70</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>13/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:65%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>5/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:33%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$370,000 – $382,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>$395K for a 1980 manufactured is on the high side — comparable 1980s manufactured homes on 10 ac in Stevens County trade $340–380K</li>
+          <li>Outbuildings completely unknown — if the tour reveals minimal outbuilding infrastructure, that's immediate pricing leverage ($10–15K gap)</li>
+          <li>Location proximity to Colville (schools, hospital) is a genuine premium worth acknowledging in your offer</li>
+          <li>Savanah's preference is a valid emotional factor — just don't let it push you above market</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $368K citing 1980 manufactured financing friction + unknown outbuildings. Use inspection to target $372–378K final with seller credits.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why Savanah Chose It:</strong> 4 bedrooms on 10.6 acres with a seasonal pond. Only ~10 min from Colville (best schools + services). Stevens County corridor with Savanah's family connection to the area.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🛁</span> 4 bedrooms — one of two 4BR listings on the combined list</li>
+        <li><span class="li-icon">💧</span> Seasonal pond on property — wildlife, aesthetics</li>
+        <li><span class="li-icon">📍</span> ~10 min from Colville = best school access of rural listings</li>
+        <li><span class="li-icon">🌲</span> 10.6 acres — good balance of privacy and manageability</li>
+        <li><span class="li-icon">🏘</span> Evans community near Lake Roosevelt NRA</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Colville SD: Niche B · GreatSchools 6-7/10 (strong)</li>
+        <li><span class="li-icon">🏥</span> Providence St. Joseph's (Colville) ~10-15 min</li>
+        <li><span class="li-icon">🛒</span> Colville full services (grocery, hardware, dining) ~10 min</li>
+        <li><span class="li-icon">🌊</span> Lake Roosevelt (Columbia River) very nearby for recreation</li>
+        <li><span class="li-icon">🎿</span> 49° North ski area ~25 min</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> 4 bedrooms — gives flexibility for guests/office/kids</li>
+        <li><span class="li-icon">✓</span> Best school access of any rural listing (~10 min to Colville)</li>
+        <li><span class="li-icon">✓</span> Seasonal pond adds property character and value</li>
+        <li><span class="li-icon">✓</span> Savanah chose it — strong personal resonance</li>
+        <li><span class="li-icon">✓</span> Stevens County = known area for the family</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Manufactured 1980 — specialty financing; 45-yr-old structure</li>
+        <li><span class="li-icon">✗</span> Outbuildings completely unknown — major gap to fill</li>
+        <li><span class="li-icon">✗</span> 1,344 sqft — smallest livable square footage on all lists</li>
+        <li><span class="li-icon">✗</span> $395K for manufactured 1980 feels high relative to value</li>
+        <li><span class="li-icon">✗</span> Status not confirmed — verify listing is still active</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">70</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>13/20</span></div><div class="score-track"><div class="score-fill" style="width:65%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #8 — ADDY WA (Best Value/Acre)
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p8">
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=2477+Cedonia+Addy+Rd,+Addy,+WA+99101&zoom=15&maptype=satellite"
+        title="2477 Cedonia Addy Rd satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://washingtonviews.com/listings/residential/2477-cedonia-addy-rd-addy-wa-99101-45520" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+        <a class="photo-btn" href="https://www.homes.com/property/2477-cedonia-addy-rd-addy-wa/c64e59qepvk3j/" target="_blank">Homes.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">2477 Cedonia Addy Rd</div>
+          <div class="card-sub">Addy, WA 99101 · Stevens County</div>
+          <div class="card-badges">
+            <span class="badge b-sav">Savanah's List</span>
+            <span class="badge b-sfr">Site-Built 1910</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$289,000</div>
+          <div class="card-monthly">~$1,956/mo (est.)</div>
+          <div class="card-down">$8,670 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,717</div><div class="stat-sub">Log+addition</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">21</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1910</div><div class="stat-sub">Log home</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
+        <div class="stat"><div class="stat-label">To Colville</div><div class="stat-val">~25 min</div></div>
+        <div class="stat"><div class="stat-label">$/Acre</div><div class="stat-val">$13,762</div><div class="stat-sub">Best value!</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">83</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>15/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>17/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:85%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$268,000 – $278,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>A 1910 log home is a genuinely rare and desirable asset — but also carries significant unknowns (settling, log rot, chinking, insulation) that justify a meaningful discount from ask</li>
+          <li>Listed Feb 2026 — fresh listing, so seller may be testing the market; early offers tend to get attention</li>
+          <li>$289K ask for 21 acres + shop + creek in Stevens County is already priced to move; you have room but don't lowball aggressively or you'll lose it</li>
+          <li>Best value/acre of all listings at $13,762/ac — the data supports the price, so the inspection is your main lever</li>
+          <li>Log home insurance premium could add $50–100/mo to costs — factor into negotiation</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $265K, noting 1910 structural unknowns. Target $272–275K. Request $5–8K credit toward log structure inspection + chinking repairs. This is exceptional value if inspection is clean.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Best value-per-acre at $13,762/ac. 1910 log home with addition has character no other property can match. Year-round Smith Creek through the property. 1,520 sqft shop/barn. Fully fenced 21 acres. Lowest price of any site-built WA listing.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🪵</span> 1910 log home + addition — irreplaceable character and craftsmanship</li>
+        <li><span class="li-icon">🌊</span> Year-round Smith Creek runs through property</li>
+        <li><span class="li-icon">🔨</span> 1,520 sqft shop/barn + lean-to + chicken/goat sheds</li>
+        <li><span class="li-icon">🐐</span> Fully fenced 21 acres — animal-ready</li>
+        <li><span class="li-icon">💰</span> Best value-per-acre of any listing at $13,762/ac</li>
+        <li><span class="li-icon">🚗</span> Paved access to Hwy 395 — good road access for rural property</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Summit Valley School (K-8 in Addy, very small district)</li>
+        <li><span class="li-icon">🏫</span> High school likely Colville SD (~25 min) — Niche B, 6-7/10</li>
+        <li><span class="li-icon">🏥</span> Providence St. Joseph's (Colville) ~25 min</li>
+        <li><span class="li-icon">🛒</span> Colville full services ~25 min via Hwy 395</li>
+        <li><span class="li-icon">🌊</span> Columbia River recreation (Lake Roosevelt) nearby</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Lowest price of all site-built WA listings at $289K</li>
+        <li><span class="li-icon">✓</span> Log home character is unique and desirable</li>
+        <li><span class="li-icon">✓</span> 21 fully fenced acres = real working farm potential</li>
+        <li><span class="li-icon">✓</span> Year-round creek — water feature + livestock potential</li>
+        <li><span class="li-icon">✓</span> 1,520 sqft shop is substantial work/storage space</li>
+        <li><span class="li-icon">✓</span> Paved road access — no gravel concerns in winter</li>
+        <li><span class="li-icon">✓</span> Freshest listing (listed Feb 2026)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> 1910 structure — logs may have settling, rot, or insulation issues</li>
+        <li><span class="li-icon">✗</span> "Ready for your personal touch" = some work needed</li>
+        <li><span class="li-icon">✗</span> Loft bedrooms — may not feel like proper rooms for older kids</li>
+        <li><span class="li-icon">✗</span> Summit Valley K-8 is very small — limited peer group for kids</li>
+        <li><span class="li-icon">✗</span> Only 1 bath listed (verify if second bath is full or half)</li>
+        <li><span class="li-icon">✗</span> Log home insurance can be higher and harder to obtain</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Year-round creek is perfect for kids' exploration and play</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Chicken/goat sheds already in place — farm animal experience for kids</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Lower mortgage leaves budget for improvements and family activities</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Log structure inspection — specifically check for rot, settling, chinking</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm bathroom count and which school district for HS</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Wildfire risk for Addy corridor — check Oregon/WA wildfire risk maps</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">83</div>
+      <div class="score-label">/ 100 ★ Strong Value</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>17/20</span></div><div class="score-track"><div class="score-fill" style="width:85%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #9 — MILNOR ND (~20 hr / Out of Range)
+═══════════════════════════════════════════════════ -->
+<div class="card oor" id="p9">
+  <div class="oor-banner">📍 OUT OF RANGE — ~20 hrs from Farmington, UT (well beyond the 10-hr target). Included per Savanah's list.</div>
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=8416+141st+Ave+SE,+Milnor,+ND+58060&zoom=14&maptype=satellite"
+        title="8416 141st Ave SE satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/8416-141st-Ave-SE-Milnor-ND_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">8416 141st Ave SE</div>
+          <div class="card-sub">Milnor, ND 58060 · Sargent County</div>
+          <div class="card-badges">
+            <span class="badge b-sav">Savanah's List</span>
+            <span class="badge b-sfr">Site-Built 1920</span>
+            <span class="badge b-oor">~20 hrs away</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$415,000</div>
+          <div class="card-monthly">~$2,908/mo (est.)</div>
+          <div class="card-down">$12,450 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">5 / 2.5</div><div class="stat-sub">Largest BD count</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,539</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">7.19</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1920</div><div class="stat-sub">New metal roof 2023</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~20 hr</div><div class="stat-sub">⚠ Out of range</div></div>
+        <div class="stat"><div class="stat-label">Schools</div><div class="stat-val">9-10/10</div><div class="stat-sub">Milnor SD</div></div>
+        <div class="stat"><div class="stat-label">Outbuildings</div><div class="stat-val">4</div><div class="stat-sub">Heated shop + barn</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-unknown">Verify</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num na">N/A</div>
+        <div class="sob-score-denom">Out of Range</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>★★★</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:97%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>★★★</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Space</span><span>★★★</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:85%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Drive</span><span>✗✗✗</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:20%;background:var(--red)"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range (if pursuing despite distance)</div>
+      <div class="sob-offer-price">$390,000 – $400,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Rural North Dakota market is less competitive than Pacific Northwest — less upward pressure on offers</li>
+          <li>1920 farmhouse: century-old structure always carries inspection risk → room for 2–3% below ask</li>
+          <li>New metal roof (2023) is a significant positive — one major expense already handled, which limits downward pressure</li>
+          <li>Sargent County ND comps for 5–10 ac hobby farm properties: $380–430K range (2024)</li>
+        </ul>
+        <div class="sob-strategy">If seriously pursuing: Open at $388K citing 1920 age + remote location. The roof neutralizes some inspection leverage. Target $392–396K.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band" style="background:#f3f4f6;border-top:1px solid #d1d5db;">
+    <strong>Key Data:</strong> Best schools of any listing (9-10/10). Most bedrooms (5). Heated garage + heated shop + barn + shed. New metal roof 2023. But ~20 hrs from Farmington — requires real reconsideration of the 10-hr requirement to be viable.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Milnor SD: GreatSchools 9-10/10 — #1 schools of all 10 properties</li>
+        <li><span class="li-icon">🔨</span> Heated garage + heated shop + storage shed + barn/pasture</li>
+        <li><span class="li-icon">🏠</span> 5 bedrooms, 2.5 baths — most sleeping space on any list</li>
+        <li><span class="li-icon">🏗</span> New metal roof 2023 — major expense already done</li>
+        <li><span class="li-icon">🌾</span> North Dakota prairie farming community</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">⚠️ Out-of-Range Considerations</div>
+      <ul>
+        <li><span class="li-icon">🚗</span> ~20 hrs from Farmington — 2 full driving days each way</li>
+        <li><span class="li-icon">❄️</span> North Dakota winters are severe (−20°F possible)</li>
+        <li><span class="li-icon">🌾</span> Flat prairie landscape — very different from PNW goals</li>
+        <li><span class="li-icon">🏔</span> No mountain/forest character — open agricultural land</li>
+        <li><span class="li-icon">✈️</span> Nearest major airport: Fargo ND (~2 hrs)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ What's Great About It</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Best school ratings of all 10 properties (9-10/10)</li>
+        <li><span class="li-icon">✓</span> Most bedrooms (5) — plenty of space for family + guests</li>
+        <li><span class="li-icon">✓</span> Outstanding outbuilding package — both shops are heated</li>
+        <li><span class="li-icon">✓</span> New roof = no major repair coming soon</li>
+        <li><span class="li-icon">✓</span> Very affordable housing market in ND</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Significant Concerns</div>
+      <ul>
+        <li><span class="li-icon">✗</span> ~20 hr drive is twice the stated maximum — major logistical issue</li>
+        <li><span class="li-icon">✗</span> Prairie ND doesn't match stated PNW lifestyle goal</li>
+        <li><span class="li-icon">✗</span> Extreme winters require significant infrastructure + expense</li>
+        <li><span class="li-icon">✗</span> 1920 farmhouse — inspections critical for century-old structure</li>
+        <li><span class="li-icon">✗</span> Very isolated community — limited services, social life</li>
+      </ul>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">N/A</div>
+      <div class="score-label">Out of Range</div>
+    </div>
+    <div style="font-size:0.82rem;color:var(--muted);align-self:center;">
+      Strong property on its own merits — schools and outbuildings are exceptional. Drive distance is the single disqualifying factor against your stated criteria. Would need family discussion about whether to expand the search radius.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY #10 — DONNELLY MN (~20 hr / Out of Range + Pending)
+═══════════════════════════════════════════════════ -->
+<div class="card oor" id="p10">
+  <div class="oor-banner">📍 OUT OF RANGE — ~20 hrs from Farmington, UT. Also shows PENDING status. Included per Savanah's list.</div>
+  <div class="card-top">
+    <div class="card-map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=53007+140th+St,+Donnelly,+MN+56235&zoom=14&maptype=satellite"
+        title="53007 140th St Donnelly MN satellite view">
+      </iframe>
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homes/53007-140th-St-Donnelly-MN_rb/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View Listing (Verify Status)
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">53007 140th St</div>
+          <div class="card-sub">Donnelly, MN 56235 · Stevens County, MN</div>
+          <div class="card-badges">
+            <span class="badge b-sav">Savanah's List</span>
+            <span class="badge b-sfr">Site-Built</span>
+            <span class="badge b-oor">~20 hrs away</span>
+            <span class="badge b-pend">⚠ Pending</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">~$219,000</div>
+          <div class="card-monthly">~$1,520/mo (est.)</div>
+          <div class="card-down">~$6,570 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">5 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,156</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">Unknown</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">Unknown</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~20 hr</div><div class="stat-sub">⚠ Out of range</div></div>
+        <div class="stat"><div class="stat-label">Price</div><div class="stat-val">Most Afford.</div><div class="stat-sub">~$1,520/mo</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">⚠ Pending</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCORE + OFFER BAND -->
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num na">N/A</div>
+        <div class="sob-score-denom">OOR + Pending</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>★★★</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Drive</span><span>✗✗✗</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:20%;background:var(--red)"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Status</span><span>✗✗✗</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:10%;background:var(--red)"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer (backup position only)</div>
+      <div class="sob-offer-price">$200,000 – $210,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Currently pending — a backup offer at this price could position you well if escrow fails</li>
+          <li>MN rural market is notably softer than WA/PNW — $219K ask likely has room</li>
+          <li>Acreage is unknown — that gap in data alone justifies coming in below ask until verified</li>
+          <li>The ~$1,520/mo payment vs. $2,600+ for WA properties is the only compelling case for expanding the search radius</li>
+        </ul>
+        <div class="sob-strategy">Only pursue as a backup offer if you're seriously reconsidering the distance requirement. The affordability is real, but the lifestyle trade-offs are significant.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band" style="background:#f3f4f6;border-top:1px solid #d1d5db;">
+    <strong>Key Data:</strong> Most affordable of all 10 properties (~$219K, ~$1,520/mo). 5 bedrooms. But ~20 hrs from Farmington AND showing PENDING. Two separate disqualifying factors. Noted for completeness.
+  </div>
+
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">✅ What's Notable</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Most affordable option — $219K / $1,520/mo changes financial picture significantly</li>
+        <li><span class="li-icon">✓</span> 5 bedrooms, 2,156 sqft — spacious for the price</li>
+        <li><span class="li-icon">✓</span> Minnesota farm country — strong agricultural heritage</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Disqualifying Issues</div>
+      <ul>
+        <li><span class="li-icon">✗</span> ~20 hr drive = 2 full days travel each way from Farmington</li>
+        <li><span class="li-icon">✗</span> Currently PENDING — may not be available</li>
+        <li><span class="li-icon">✗</span> Acreage unknown — critical gap in data</li>
+        <li><span class="li-icon">✗</span> MN prairie landscape — very different from stated PNW goals</li>
+        <li><span class="li-icon">✗</span> Extreme continental winters — cold, snow, isolation</li>
+      </ul>
+    </div>
+    <div class="card-section" style="grid-column: 1/-1;">
+      <div class="card-section-title">💡 Note</div>
+      <p style="font-size:0.85rem;color:var(--text);">If the 10-hr range were expanded and this cleared its pending status, the affordability would be worth revisiting — $1,520/mo vs $2,653/mo is a $1,133/month difference, or ~$13,600/yr. That's real money. But it requires fully reconsidering the geographic target.</p>
+    </div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">N/A</div>
+      <div class="score-label">Out of Range + Pending</div>
+    </div>
+    <div style="font-size:0.82rem;color:var(--muted);align-self:center;">
+      Pending status + drive distance together make this one to monitor but not actively pursue at this time.
+    </div>
+  </div>
+</div>
+
+</div><!-- /cards -->
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <p>Data compiled Feb 2026 · Sources: Zillow, Redfin, Realtor.com, WashingtonViews.com, Homes.com, GreatSchools.org, Niche.com</p>
+  <p style="margin-top:0.4rem;">Mortgage estimates: 6.5% / 30yr / 3% down + est. taxes & insurance. Not a commitment to lend. Verify all listing statuses before touring. Maps © Google.</p>
+</footer>
+
+</body>
+</html>
