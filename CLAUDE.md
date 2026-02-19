@@ -8,27 +8,29 @@ A property comparison dashboard for evaluating 13 real estate listings across WA
 
 ## Architecture
 
-```
-property-comparison/
-├── server.js              ← Express server (static files + REST API)
-├── database.js            ← SQLite helpers via sql.js (schema, queries)
-├── package.json           ← express + sql.js
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-├── public/
-│   ├── index.html         ← Main HTML page (~2,960 lines, all CSS inline)
-│   ├── app.js             ← Client-side voting logic (vanilla JS IIFE)
-│   └── app.css            ← Voting-specific styles
-└── data/
-    └── votes.db           ← SQLite DB, created at runtime, persisted via Docker volume
+- **server.js**: Express server serving `public/` as static files with REST API under `/api/`
+- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
+- **public/index.html**: ~600 lines CSS in `<style>`, ~2,360 lines HTML. CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`
+- **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, 30s polling
+- **public/app.css**: Voting-only styles prefixed `vote-` / `rankings-` / `nav-user`
+
+## Commands
+
+```bash
+npm install
+npm start          # http://localhost:3000 (PORT env var overrides)
 ```
 
-- **server.js**: Express server serving `public/` as static files with REST API under `/api/`
-- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`
-- **public/index.html**: ~600 lines CSS in `<style>`, ~2,360 lines HTML. CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`
-- **public/app.js**: Vanilla JS IIFE — user identification (localStorage + modal), star rating injection into each `.card`, rankings table, overview table augmentation, 30s polling
-- **public/app.css**: Voting-only styles prefixed `vote-` / `rankings-` / `nav-user`
+Docker deployment:
+```bash
+docker-compose up --build   # http://localhost:3080, maps to container :3000
+```
+
+No test framework or linter is configured. There are no build steps — all frontend code is vanilla JS/CSS served as static files.
+
+## Prerequisites
+
+The `data/` directory must exist before starting the server (the DB file `data/votes.db` is created at runtime). Docker handles this via `mkdir -p /app/data` in the Dockerfile. Locally, create it manually if missing.
 
 ## API Routes
 
@@ -47,18 +49,6 @@ property-comparison/
 - **Badge classes**: `.b-james`, `.b-sav`, `.b-both`, `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`
 - **Nav anchors**: `#p1` through `#p13` matching card `id` attributes
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings
-
-## How to Run
-
-```bash
-npm install
-npm start          # http://localhost:3000
-```
-
-Or via Docker:
-```bash
-docker-compose up --build   # http://localhost:3080
-```
 
 ## When Adding a New Property
 
