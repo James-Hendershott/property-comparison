@@ -63,6 +63,47 @@ app.get('/api/rankings', (_req, res) => {
   }
 });
 
+app.post('/api/notes', (req, res) => {
+  try {
+    const { userId, propertyId, content } = req.body;
+    if (!userId || !propertyId || !content || !content.trim()) {
+      return res.status(400).json({ error: 'userId, propertyId, and content are required' });
+    }
+    const id = db.createNote(userId, propertyId, content.trim());
+    res.json({ ok: true, id: id });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/notes', (_req, res) => {
+  try {
+    res.json(db.getAllNotes());
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+  try {
+    const noteId = parseInt(req.params.id);
+    const { userId } = req.body;
+    if (!userId) {
+      return res.status(400).json({ error: 'userId is required' });
+    }
+    db.deleteNote(noteId, userId);
+    res.json({ ok: true });
+  } catch (err) {
+    if (err.message === 'Not authorized') {
+      return res.status(403).json({ error: err.message });
+    }
+    if (err.message === 'Note not found') {
+      return res.status(404).json({ error: err.message });
+    }
+    res.status(500).json({ error: err.message });
+  }
+});
+
 db.init().then(() => {
   app.listen(PORT, () => {
     console.log(`Property Comparison server running on http://localhost:${PORT}`);

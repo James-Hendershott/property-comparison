@@ -4,7 +4,7 @@
   // --- Property name map (derived from nav links) ---
   const PROPERTY_NAMES = {};
   document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
-    const id = a.getAttribute('href').slice(1);
+    var id = a.getAttribute('href').slice(1);
     PROPERTY_NAMES[id] = a.textContent.trim();
   });
 
@@ -24,6 +24,19 @@
       }).then(r => r.json());
     },
     getRankings: function () { return fetch('/api/rankings').then(r => r.json()); },
+    getNotes: function () { return fetch('/api/notes').then(r => r.json()); },
+    createNote: function (userId, propertyId, content) {
+      return fetch('/api/notes', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, content: content })
+      }).then(r => r.json());
+    },
+    deleteNote: function (noteId, userId) {
+      return fetch('/api/notes/' + noteId, {
+        method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId })
+      }).then(r => r.json());
+    },
   };
 
   // --- User state ---
@@ -114,6 +127,7 @@
           overlay.remove();
           renderNavPill();
           refreshAllVotes();
+          refreshAllNotes();
         });
         container.appendChild(btn);
       });
@@ -128,6 +142,7 @@
         overlay.remove();
         renderNavPill();
         refreshAllVotes();
+        refreshAllNotes();
       });
     });
 
@@ -320,6 +335,107 @@
     });
   }
 
+  // --- Notes system ---
+  function injectNoteRows() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      var pid = card.id;
+      if (card.querySelector('.notes-row')) return;
+
+      var voteRow = card.querySelector('.vote-row');
+      if (!voteRow) return;
+
+      var notesRow = document.createElement('div');
+      notesRow.className = 'notes-row';
+      notesRow.setAttribute('data-notes-property', pid);
+      notesRow.innerHTML =
+        '<div class="notes-row-title">Family Notes</div>' +
+        '<div class="notes-list" data-notes-list></div>' +
+        '<div class="notes-form-wrap" data-notes-form-wrap></div>';
+
+      voteRow.parentNode.insertBefore(notesRow, voteRow.nextSibling);
+    });
+  }
+
+  function updateNoteRows(allNotes) {
+    document.querySelectorAll('.notes-row').forEach(function (row) {
+      var pid = row.getAttribute('data-notes-property');
+      var notes = allNotes[pid] || [];
+
+      // Render notes list
+      var listEl = row.querySelector('[data-notes-list]');
+      if (notes.length > 0) {
+        listEl.innerHTML = notes.map(function (n) {
+          var deleteBtn = '';
+          if (currentUser && n.userId === currentUser.id) {
+            deleteBtn = ' <button class="notes-delete" data-note-id="' + n.id + '">[delete]</button>';
+          }
+          var date = n.createdAt ? new Date(n.createdAt + 'Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+          return '<div class="notes-item">' +
+            '<div class="notes-meta"><strong>' + escapeHtml(n.userName) + '</strong> \u00b7 ' + date + deleteBtn + '</div>' +
+            '<div>' + escapeHtml(n.content) + '</div>' +
+            '</div>';
+        }).join('');
+
+        // Attach delete handlers
+        listEl.querySelectorAll('.notes-delete').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var noteId = parseInt(btn.getAttribute('data-note-id'));
+            if (!currentUser) return;
+            API.deleteNote(noteId, currentUser.id).then(function () {
+              refreshAllNotes();
+            });
+          });
+        });
+      } else {
+        listEl.innerHTML = '<div style="font-size:0.78rem;color:var(--muted);padding:0.2rem 0;">No notes yet. Be the first to add one!</div>';
+      }
+
+      // Render form
+      var formWrap = row.querySelector('[data-notes-form-wrap]');
+      formWrap.innerHTML =
+        '<form class="notes-form">' +
+        '  <textarea class="notes-textarea" placeholder="Add a note..." maxlength="500" rows="1"></textarea>' +
+        '  <button type="submit" class="notes-submit">Post</button>' +
+        '</form>';
+
+      formWrap.querySelector('.notes-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!currentUser) { showUserModal(); return; }
+        var textarea = formWrap.querySelector('.notes-textarea');
+        var content = textarea.value.trim();
+        if (!content) return;
+        textarea.value = '';
+        API.createNote(currentUser.id, pid, content).then(function () {
+          refreshAllNotes();
+        });
+      });
+    });
+  }
+
+  function refreshAllNotes() {
+    API.getNotes().then(function (allNotes) {
+      updateNoteRows(allNotes);
+    });
+  }
+
+  // --- Monthly breakdown toggle ---
+  function initMonthlyToggles() {
+    document.querySelectorAll('.monthly-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var breakdown = btn.parentElement.querySelector('.monthly-breakdown');
+        if (!breakdown) return;
+        var hidden = breakdown.hasAttribute('hidden');
+        if (hidden) {
+          breakdown.removeAttribute('hidden');
+          btn.textContent = '\u25B4 hide';
+        } else {
+          breakdown.setAttribute('hidden', '');
+          btn.textContent = '\u25BE details';
+        }
+      });
+    });
+  }
+
   // --- Master refresh ---
   function refreshAllVotes() {
     API.getVotes().then(function (allVotes) {
@@ -341,6 +457,8 @@
     loadUser();
     addRankingsNavLink();
     injectVoteRows();
+    injectNoteRows();
+    initMonthlyToggles();
     renderNavPill();
 
     if (!currentUser) {
@@ -348,9 +466,13 @@
     }
 
     refreshAllVotes();
+    refreshAllNotes();
 
     // Poll every 30 seconds
-    setInterval(refreshAllVotes, 30000);
+    setInterval(function () {
+      refreshAllVotes();
+      refreshAllNotes();
+    }, 30000);
   }
 
   if (document.readyState === 'loading') {

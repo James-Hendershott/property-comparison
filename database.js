@@ -42,6 +42,16 @@ async function init() {
     )
   `);
 
+  db.run(`
+    CREATE TABLE IF NOT EXISTS notes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL REFERENCES users(id),
+      property_id TEXT NOT NULL,
+      content TEXT NOT NULL,
+      created_at TEXT DEFAULT (datetime('now'))
+    )
+  `);
+
   save();
 }
 
@@ -126,4 +136,44 @@ function getUsers() {
   return query('SELECT id, name FROM users ORDER BY name');
 }
 
-module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers };
+function createNote(userId, propertyId, content) {
+  run(
+    'INSERT INTO notes (user_id, property_id, content) VALUES (?, ?, ?)',
+    [userId, propertyId, content]
+  );
+  const inserted = query('SELECT last_insert_rowid() AS id');
+  save();
+  return inserted[0].id;
+}
+
+function getAllNotes() {
+  const rows = query(`
+    SELECT n.id, n.property_id, n.user_id, u.name AS user_name, n.content, n.created_at
+    FROM notes n JOIN users u ON n.user_id = u.id
+    ORDER BY n.property_id, n.created_at DESC
+  `);
+  const grouped = {};
+  for (const row of rows) {
+    if (!grouped[row.property_id]) {
+      grouped[row.property_id] = [];
+    }
+    grouped[row.property_id].push({
+      id: row.id,
+      userId: row.user_id,
+      userName: row.user_name,
+      content: row.content,
+      createdAt: row.created_at
+    });
+  }
+  return grouped;
+}
+
+function deleteNote(noteId, userId) {
+  const rows = query('SELECT user_id FROM notes WHERE id = ?', [noteId]);
+  if (rows.length === 0) throw new Error('Note not found');
+  if (rows[0].user_id !== userId) throw new Error('Not authorized');
+  run('DELETE FROM notes WHERE id = ?', [noteId]);
+  save();
+}
+
+module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote };

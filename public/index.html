@@ -639,6 +639,43 @@ table.qt {
   color: #6b7280;
   font-weight: 600;
 }
+
+/* ── MUST DO SECTION ── */
+.must-do {
+  background: #fef2f2;
+  border-top: 3px solid #dc2626;
+  padding: 1rem 1.3rem;
+}
+.must-do-title {
+  font-family: 'Lora', serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 0.6rem;
+}
+.must-do-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 1.2rem;
+}
+.must-do-item {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  padding: 0.2rem 0;
+  color: #444;
+}
+.must-do-item::before {
+  content: '\2610 ';
+  color: #dc2626;
+  font-weight: 700;
+  margin-right: 0.2rem;
+}
+@media (max-width: 640px) {
+  .must-do-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  .must-do { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
@@ -702,7 +739,7 @@ table.qt {
           <td>1</td>
           <td><a href="#p1">25 Chuckwagon Rd, Appleton WA</a></td>
           <td class="td-price">$415,000</td>
-          <td class="td-mo">~$2,804</td>
+          <td class="td-mo">~$3,185</td>
           <td>$12,450</td>
           <td>4 / 2</td>
           <td>1,558</td>
@@ -718,7 +755,7 @@ table.qt {
           <td>2</td>
           <td><a href="#p2">3714 Sand Creek Rd B, Kettle Falls WA</a></td>
           <td class="td-price">$450,000</td>
-          <td class="td-mo">~$2,999</td>
+          <td class="td-mo">~$3,454</td>
           <td>$13,500</td>
           <td>3 / 2</td>
           <td>1,780</td>
@@ -734,7 +771,7 @@ table.qt {
           <td>3</td>
           <td><a href="#p3">2147 Glenwood Hwy, Goldendale WA</a></td>
           <td class="td-price">$389,999</td>
-          <td class="td-mo">~$2,584</td>
+          <td class="td-mo">~$2,994</td>
           <td>$11,700</td>
           <td>3 / 2</td>
           <td>1,456</td>
@@ -750,7 +787,7 @@ table.qt {
           <td>4</td>
           <td><a href="#p4">2184 Clugston Onion Creek Rd, Colville WA</a></td>
           <td class="td-price">$388,000</td>
-          <td class="td-mo">~$2,653</td>
+          <td class="td-mo">~$2,980</td>
           <td>$11,640</td>
           <td>3 / 2</td>
           <td>2,688</td>
@@ -766,7 +803,7 @@ table.qt {
           <td>5</td>
           <td><a href="#p5">111 Tamarack Ln, Dayton WA</a></td>
           <td class="td-price">$375,000</td>
-          <td class="td-mo">~$2,494</td>
+          <td class="td-mo">~$2,969</td>
           <td>$11,250</td>
           <td>3 / 2</td>
           <td>1,671</td>
@@ -782,7 +819,7 @@ table.qt {
           <td>6</td>
           <td><a href="#p6">2477 Cedonia Addy Rd, Addy WA</a></td>
           <td class="td-price">$289,000</td>
-          <td class="td-mo">~$1,956</td>
+          <td class="td-mo">~$2,242</td>
           <td>$8,670</td>
           <td>3 / 2</td>
           <td>2,717</td>
@@ -797,9 +834,9 @@ table.qt {
         <tr>
           <td>7</td>
           <td><a href="#p7">267 Black Tail Ln, Grangeville ID</a></td>
-          <td class="td-price">$525,000</td>
-          <td class="td-mo">~$3,502</td>
-          <td>$15,750</td>
+          <td class="td-price">$499,000</td>
+          <td class="td-mo">~$3,713</td>
+          <td>$14,970</td>
           <td>3 / 2</td>
           <td>2,528</td>
           <td>4.73</td>
@@ -807,14 +844,14 @@ table.qt {
           <td>1977</td>
           <td>~9h 20m</td>
           <td><strong style="color:var(--accent)">68</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$465,000–$480,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price cuts from $549K; remodel adds value, 4.73 acres</span></td>
+          <td style="white-space:nowrap"><strong>$465,000–$480,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price cuts from $549K to $499K; remodel adds value, 4.73 acres</span></td>
           <td><span class="status-active">Active</span></td>
         </tr>
         <tr>
           <td>8</td>
           <td><a href="#p8">20235 Valley View Dr, Lewiston ID</a></td>
           <td class="td-price">$489,000</td>
-          <td class="td-mo">~$2,771/mo</td>
+          <td class="td-mo">~$3,641</td>
           <td>$14,670</td>
           <td>3 / 2</td>
           <td>2,112</td>
@@ -830,7 +867,7 @@ table.qt {
           <td>9</td>
           <td><a href="#p9">2223 Glenwood Rd, Kamiah ID</a></td>
           <td class="td-price">$439,000</td>
-          <td class="td-mo">~$2,293/mo</td>
+          <td class="td-mo">~$3,270</td>
           <td>$13,170</td>
           <td>2 / 2</td>
           <td>1,851</td>
@@ -846,7 +883,7 @@ table.qt {
           <td>10</td>
           <td><a href="#p10">84609 N Yakima River Dr, West Richland WA</a></td>
           <td class="td-price">$410,000</td>
-          <td class="td-mo">~$2,274/mo</td>
+          <td class="td-mo">~$3,148</td>
           <td>$12,300</td>
           <td>3 / 2</td>
           <td>1,340</td>
@@ -862,7 +899,7 @@ table.qt {
           <td>11</td>
           <td><a href="#p11">1334 Clugston-Onion Cr Rd #1, Colville WA</a></td>
           <td class="td-price">$400,000</td>
-          <td class="td-mo">~$2,217/mo</td>
+          <td class="td-mo">~$3,074</td>
           <td>$12,000</td>
           <td>3 / 2</td>
           <td>2,640</td>
@@ -878,7 +915,7 @@ table.qt {
           <td>12</td>
           <td><a href="#p12">4583 Furze Rd, Clayton WA</a></td>
           <td class="td-price">$479,000</td>
-          <td class="td-mo">~$2,626/mo</td>
+          <td class="td-mo">~$3,669</td>
           <td>$14,370</td>
           <td>3 / 2</td>
           <td>1,665</td>
@@ -894,7 +931,7 @@ table.qt {
           <td>13</td>
           <td><a href="#p13">2801 US Highway 93 S, Eureka MT</a></td>
           <td class="td-price">$499,000</td>
-          <td class="td-mo">~$2,706/mo</td>
+          <td class="td-mo">~$3,755</td>
           <td>$14,970</td>
           <td>3 / 2</td>
           <td>1,144</td>
@@ -910,7 +947,7 @@ table.qt {
           <td>14</td>
           <td><a href="#p14">151 Park Ln, Cusick WA</a></td>
           <td class="td-price">$475,000</td>
-          <td class="td-mo">~$2,612/mo</td>
+          <td class="td-mo">~$3,639</td>
           <td>$14,250</td>
           <td>3 / 2</td>
           <td>1,512</td>
@@ -926,7 +963,7 @@ table.qt {
           <td>15</td>
           <td><a href="#p15">43 Oakes Dr, Tonasket WA</a></td>
           <td class="td-price">$459,900</td>
-          <td class="td-mo">~$2,667/mo</td>
+          <td class="td-mo">~$3,627</td>
           <td>$13,797</td>
           <td>3 / 3</td>
           <td>3,216</td>
@@ -942,7 +979,7 @@ table.qt {
           <td>16</td>
           <td><a href="#p16">31600 Sontag Rdg E, Davenport WA</a></td>
           <td class="td-price">$419,900</td>
-          <td class="td-mo">~$2,403/mo</td>
+          <td class="td-mo">~$3,329</td>
           <td>$12,597</td>
           <td>3 / 2</td>
           <td>—</td>
@@ -958,7 +995,7 @@ table.qt {
     </table>
   </div>
   <p style="font-size:0.78rem;color:var(--muted);padding-bottom:1rem;">
-    † Monthly estimate = 6.5% / 30yr / 3% down + est. taxes & insurance. PMI (~0.8%/yr) applies until 20% equity. Manufactured homes require specialty financing — rates may be higher.
+    † Monthly estimate = 6.5% / 30yr / 3% down. Includes P&amp;I + property tax (WA 1.0%, ID 0.75%, MT 0.85%) + insurance + PMI (0.55%/yr on loan). HOA included for P15/P16. Flood ins. included for P5 (Touchet River zone). MFG homes may require specialty financing.
   </p>
 </div>
 
@@ -997,7 +1034,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$415,000</div>
-          <div class="card-monthly">~$2,804/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,185/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,544</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$346</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$185</span></div>
+            </div>
+          </div>
           <div class="card-down">$12,450 down @ 3%</div>
         </div>
       </div>
@@ -1112,6 +1158,18 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Appleton, WA (Klickitat County)</div>
     <div class="env-hazards-grid">
@@ -1170,7 +1228,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$450,000</div>
-          <div class="card-monthly">~$2,537/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,454/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,759</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$375</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$200</span></div>
+            </div>
+          </div>
           <div class="card-down">$13,500 down @ 3%</div>
         </div>
       </div>
@@ -1284,6 +1351,16 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Kettle Falls, WA (Stevens County)</div>
     <div class="env-hazards-grid">
@@ -1343,7 +1420,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$389,999</div>
-          <div class="card-monthly">~$2,584/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$2,994/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,391</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$325</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$105</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$173</span></div>
+            </div>
+          </div>
           <div class="card-down">$11,700 down @ 3%</div>
         </div>
       </div>
@@ -1438,6 +1524,37 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Bowman Creek + barn = best equestrian/ag setup for kids and animals</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Water rights are genuinely rare — valuable long-term asset</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Goldendale has decent school ratings and community feel</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm listing status — currently pending</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Verify water right is legally transferable to new owner</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">1970 build — get full inspection on foundation, roof, electrical, plumbing</li>
+      </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+      <div class="must-do-item">Verify listing status before proceeding (pending)</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Goldendale, WA (Klickitat County)</div>
     <div class="env-hazards-grid">
@@ -1495,7 +1612,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$388,000</div>
-          <div class="card-monthly">~$2,150/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$2,980/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,379</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$323</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$105</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$173</span></div>
+            </div>
+          </div>
           <div class="card-down">$11,640 down @ 3%</div>
         </div>
       </div>
@@ -1545,7 +1671,7 @@ table.qt {
     </div>
   </div>
   <div class="highlight-band" style="background:#ede9fe;border-top:1px solid #c4b5fd;">
-    <strong>★ BOTH LISTS — Strong Signal:</strong> James and Savanah independently chose this property. Largest home at 2,688 sqft. 16.68 acres on the Colville corridor. Multiple price reductions to $388K — motivated seller. This is the top priority to tour.
+    <strong>★ Top Pick:</strong> Largest home at 2,688 sqft. 16.68 acres on the Colville corridor. Multiple price reductions to $388K — motivated seller. This is the top priority to tour.
   </div>
 
   <div class="card-body">
@@ -1610,6 +1736,18 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Colville, WA (Stevens County)</div>
     <div class="env-hazards-grid">
@@ -1665,7 +1803,17 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$375,000</div>
-          <div class="card-monthly">~$2,145/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$2,969/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,299</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$313</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$105</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$167</span></div>
+              <div class="mb-line"><span>Flood Insurance</span><span>$85</span></div>
+            </div>
+          </div>
           <div class="card-down">$11,250 down @ 3%</div>
         </div>
       </div>
@@ -1780,6 +1928,21 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">HUD certification tag verification</div>
+      <div class="must-do-item">Manufactured-home-specific financing confirmation</div>
+      <div class="must-do-item">FEMA flood map for parcel</div>
+      <div class="must-do-item">Flood insurance quote</div>
+      <div class="must-do-item">Riparian setback requirements (Touchet River)</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Dayton, WA (Columbia County)</div>
     <div class="env-hazards-grid">
@@ -1835,7 +1998,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$289,000</div>
-          <div class="card-monthly">~$1,634/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$2,242/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$1,772</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$241</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$100</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$129</span></div>
+            </div>
+          </div>
           <div class="card-down">$8,670 down @ 3%</div>
         </div>
       </div>
@@ -1952,6 +2124,20 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Full structural assessment of 1910 log structure</div>
+      <div class="must-do-item">Foundation check (1910 build)</div>
+      <div class="must-do-item">Fire insurance quote (severe wildfire risk)</div>
+      <div class="must-do-item">Defensible space plan</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Addy, WA (Stevens County)</div>
     <div class="env-hazards-grid">
@@ -2008,7 +2194,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$499,000</div>
-          <div class="card-monthly">~$2,680/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,713/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$3,059</span></div>
+              <div class="mb-line"><span>Property Tax (ID 0.75%)</span><span>$312</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$222</span></div>
+            </div>
+          </div>
           <div class="card-down">$14,970 down @ 3%</div>
         </div>
       </div>
@@ -2047,7 +2242,7 @@ table.qt {
       <div class="sob-offer-price">$495,000 – $510,000</div>
       <div class="sob-offer-rationale">
         <ul>
-          <li>$525K is the highest price on our full list — on 4.73 acres</li>
+          <li>$499K is near the top of our list — on only 4.73 acres</li>
           <li>Remodeled kitchen and spring-fed pond add genuine value, but 1977 structure still carries systems-age risk (HVAC, plumbing, electrical)</li>
           <li>Idaho County rural comps: Grangeville 3bd site-built on small lots trade $380–500K range — $525K is at the top</li>
           <li>In-town convenience (hospital, schools, shopping within minutes) is a real premium worth paying for</li>
@@ -2057,7 +2252,7 @@ table.qt {
     </div>
   </div>
   <div class="highlight-band">
-    <strong>Key Data:</strong> Sweeping prairie views with epic sunsets. Spring-fed pond teeming with wildlife. Fully remodeled kitchen with granite, copper sink, walk-in pantry. In-town convenience — schools, hospital, downtown all minutes away. But only ~1.5 acres and highest price on the list at $525K.
+    <strong>Key Data:</strong> Sweeping prairie views with epic sunsets. Spring-fed pond teeming with wildlife. Fully remodeled kitchen with granite, copper sink, walk-in pantry. In-town convenience — schools, hospital, downtown all minutes away. 4.73 acres at $499K (reduced from $525K).
   </div>
 
   <div class="card-body">
@@ -2094,7 +2289,7 @@ table.qt {
     <div class="card-section">
       <div class="card-section-title">❌ Cons</div>
       <ul>
-        <li><span class="li-icon">✗</span> Highest price on entire list at $525K (~$3,502/mo)</li>
+        <li><span class="li-icon">✗</span> Near top of list at $499K (~$3,713/mo est.)</li>
         <li><span class="li-icon">✗</span> 4.73 acres — somewhat limited for homesteading/livestock goals</li>
         <li><span class="li-icon">✗</span> No outbuildings mentioned — would need to build shop/barn</li>
         <li><span class="li-icon">✗</span> 1977 structure — HVAC, plumbing, electrical may need updating</li>
@@ -2118,6 +2313,18 @@ table.qt {
         <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Well GPM — not listed, verify with listing agent</li>
         <li style="font-size:0.85rem;padding:0.25rem 0;">1977 systems age — get full inspection on HVAC, plumbing, electrical</li>
       </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
     </div>
   </div>
     <div class="env-hazards">
@@ -2176,7 +2383,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$489,000</div>
-          <div class="card-monthly">~$2,771/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,641/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,998</span></div>
+              <div class="mb-line"><span>Property Tax (ID 0.75%)</span><span>$306</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$217</span></div>
+            </div>
+          </div>
           <div class="card-down">$14,670 down @ 3%</div>
         </div>
       </div>
@@ -2291,6 +2507,18 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Lewiston, ID (Nez Perce County)</div>
     <div class="env-hazards-grid">
@@ -2347,7 +2575,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$439,000</div>
-          <div class="card-monthly">~$2,293/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,270/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,691</span></div>
+              <div class="mb-line"><span>Property Tax (ID 0.75%)</span><span>$274</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$195</span></div>
+            </div>
+          </div>
           <div class="card-down">$13,170 down @ 3%</div>
         </div>
       </div>
@@ -2462,6 +2699,19 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Log condition assessment; chinking/staining needs</div>
+      <div class="must-do-item">Road maintenance agreement; winter plowing</div>
+      <div class="must-do-item">Fire insurance quote; defensible space plan</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Kamiah, ID (Lewis/Idaho County)</div>
     <div class="env-hazards-grid">
@@ -2518,7 +2768,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$410,000</div>
-          <div class="card-monthly">~$2,274/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,148/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,514</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$342</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$182</span></div>
+            </div>
+          </div>
           <div class="card-down">$12,300 down @ 3%</div>
         </div>
       </div>
@@ -2633,6 +2892,19 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+      <div class="must-do-item">Riparian setback requirements (Yakima River)</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — West Richland, WA (Benton County)</div>
     <div class="env-hazards-grid">
@@ -2689,7 +2961,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$400,000</div>
-          <div class="card-monthly">~$2,217/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,074/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,452</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$333</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$178</span></div>
+            </div>
+          </div>
           <div class="card-down">$12,000 down @ 3%</div>
         </div>
       </div>
@@ -2804,6 +3085,16 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Colville, WA (Stevens County)</div>
     <div class="env-hazards-grid">
@@ -2860,7 +3151,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$479,000</div>
-          <div class="card-monthly">~$2,626/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,669/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,937</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$399</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$213</span></div>
+            </div>
+          </div>
           <div class="card-down">$14,370 down @ 3%</div>
         </div>
       </div>
@@ -2975,6 +3275,16 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Clayton, WA (Stevens County)</div>
     <div class="env-hazards-grid">
@@ -3031,7 +3341,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$499,000</div>
-          <div class="card-monthly">~$2,706/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,755/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$3,059</span></div>
+              <div class="mb-line"><span>Property Tax (MT 0.85%)</span><span>$354</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$222</span></div>
+            </div>
+          </div>
           <div class="card-down">$14,970 down @ 3%</div>
         </div>
       </div>
@@ -3146,6 +3465,18 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Fire insurance quote (high wildfire risk)</div>
+      <div class="must-do-item">Defensible space plan</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Eureka, MT (Lincoln County)</div>
     <div class="env-hazards-grid">
@@ -3202,7 +3533,16 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$475,000</div>
-          <div class="card-monthly">~$2,612/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,639/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,912</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$396</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$211</span></div>
+            </div>
+          </div>
           <div class="card-down">$14,250 down @ 3%</div>
         </div>
       </div>
@@ -3317,6 +3657,17 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Road maintenance agreement; winter plowing</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Cusick, WA (Pend Oreille County)</div>
     <div class="env-hazards-grid">
@@ -3373,7 +3724,17 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$459,900</div>
-          <div class="card-monthly">~$2,667/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,627/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,819</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$383</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$204</span></div>
+              <div class="mb-line"><span>HOA</span><span>$100</span></div>
+            </div>
+          </div>
           <div class="card-down">$13,797 down @ 3%</div>
         </div>
       </div>
@@ -3488,6 +3849,22 @@ table.qt {
       </ul>
     </div>
   </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
+      <div class="must-do-item">Verify electrical panel age and capacity</div>
+      <div class="must-do-item">Log condition assessment; chinking/staining needs</div>
+      <div class="must-do-item">Request CC&Rs from HOA</div>
+      <div class="must-do-item">Verify animal/outbuilding rules with HOA</div>
+      <div class="must-do-item">Fire insurance quote; defensible space plan</div>
+    </div>
+  </div>
     <div class="env-hazards">
     <div class="env-hazards-title">Environmental Hazards — Tonasket, WA (Okanogan County)</div>
     <div class="env-hazards-grid">
@@ -3544,7 +3921,17 @@ table.qt {
         </div>
         <div class="card-price-block">
           <div class="card-price">$419,900</div>
-          <div class="card-monthly">~$2,403/mo (est.)</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,329/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,574</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$350</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$187</span></div>
+              <div class="mb-line"><span>HOA</span><span>$108</span></div>
+            </div>
+          </div>
           <div class="card-down">$12,597 down @ 3%</div>
         </div>
       </div>
@@ -3657,6 +4044,19 @@ table.qt {
         <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">HOA rules in detail — what animals, building, business uses are allowed?</li>
         <li style="font-size:0.85rem;padding:0.25rem 0;">Well/septic vs. community systems — what’s the water source?</li>
       </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection</div>
+      <div class="must-do-item">Verify property boundaries (get survey)</div>
+      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Get septic inspection and pump history</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Request CC&Rs from HOA</div>
+      <div class="must-do-item">Verify animal/outbuilding rules with HOA</div>
+      <div class="must-do-item">Get actual square footage (major red flag — undisclosed)</div>
     </div>
   </div>
     <div class="env-hazards">

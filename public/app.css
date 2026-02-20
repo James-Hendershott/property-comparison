@@ -245,10 +245,128 @@
   background: #2d5a3d;
 }
 
-/* ── PRINT: hide voting UI ── */
+/* ── MONTHLY BREAKDOWN ── */
+.monthly-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0 0.3rem;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.monthly-toggle:hover {
+  opacity: 1;
+}
+.monthly-breakdown {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.mb-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding: 0.12rem 0;
+}
+.mb-line span:last-child {
+  font-weight: 600;
+  color: #444;
+}
+
+/* ── NOTES SYSTEM ── */
+.notes-row {
+  padding: 0.7rem 1.3rem;
+  background: #f5f5f0;
+  border-top: 1px solid var(--border);
+}
+.notes-row-title {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.notes-list {
+  margin-bottom: 0.5rem;
+}
+.notes-item {
+  padding: 0.4rem 0 0.4rem 0.6rem;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.notes-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+.notes-meta strong {
+  color: var(--accent);
+}
+.notes-delete {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0 0.2rem;
+  margin-left: 0.4rem;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+.notes-delete:hover {
+  opacity: 1;
+}
+.notes-form {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+.notes-textarea {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  resize: vertical;
+  min-height: 2.2rem;
+  max-height: 6rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.notes-textarea:focus {
+  border-color: var(--accent);
+}
+.notes-submit {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.notes-submit:hover {
+  background: #2d5a3d;
+}
+
+/* ── PRINT: hide voting & notes UI ── */
 @media print {
   .vote-row, .vote-modal, .nav-user, .rankings-section,
-  .nav-rankings-link, .th-family, .td-family { display: none !important; }
+  .nav-rankings-link, .th-family, .td-family,
+  .notes-row, .monthly-toggle, .monthly-breakdown { display: none !important; }
 }
 
 /* ── MOBILE ── */
@@ -267,5 +385,11 @@
   .nav-user {
     font-size: 0.68rem;
     padding: 0.2rem 0.5rem;
+  }
+  .notes-form {
+    flex-direction: column;
+  }
+  .notes-textarea {
+    min-height: 2.5rem;
   }
 }
