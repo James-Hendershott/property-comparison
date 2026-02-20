@@ -174,6 +174,9 @@ table.qt {
 .b-mfg    { background: #fff7ed; color: #c2410c; }
 .b-sfr    { background: #dcfce7; color: #166534; }
 .b-oor    { background: #f3f4f6; color: #6b7280; }
+.b-new    { background: #d1fae5; color: #065f46; animation: pulse-new 2s ease-in-out infinite; }
+@keyframes pulse-new { 0%,100% { opacity:1; } 50% { opacity:0.7; } }
+.b-removed { background: #f3f4f6; color: #6b7280; }
 
 /* Score + offer top summary */
 .score-offer-band {
@@ -677,6 +680,62 @@ table.qt {
 @media print {
   .must-do { break-inside: avoid; }
 }
+
+/* ── GRAVEYARD ── */
+.graveyard {
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.graveyard .section-title {
+  color: #6b7280;
+}
+.graveyard-subtitle {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.graveyard-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+}
+.graveyard-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #374151;
+}
+.graveyard-header span:last-child {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+.graveyard-reason {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #6b7280;
+}
+.graveyard-link {
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.graveyard-link:hover {
+  color: #374151;
+}
+@media (max-width: 640px) {
+  .graveyard-card { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -707,6 +766,7 @@ table.qt {
   <a href="#p14">Cusick</a>
   <a href="#p15">Tonasket</a>
   <a href="#p16">Davenport</a>
+  <a href="#graveyard" style="color:#9ca3af; border-color:#4b5563;">Graveyard</a>
   <div class="nav-right">
     <button class="print-btn" onclick="window.print()">🖨 Print</button>
   </div>
@@ -4088,6 +4148,13 @@ table.qt {
   </div>
 </div>
 </div><!-- /cards -->
+
+<!-- ── GRAVEYARD ── -->
+<div class="graveyard" id="graveyard">
+  <div class="section-title" style="color:#6b7280;">Property Graveyard</div>
+  <p class="graveyard-subtitle">Properties removed from active consideration. Kept for reference.</p>
+  <!-- Empty for now — entries added when properties are removed -->
+</div>
 
 <!-- ── FOOTER ── -->
 <footer class="footer">
