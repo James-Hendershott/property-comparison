@@ -21,12 +21,31 @@ npm install
 npm start          # http://localhost:3000 (PORT env var overrides)
 ```
 
-Docker deployment:
+Docker deployment (local):
 ```bash
 docker-compose up --build   # http://localhost:3080, maps to container :3000
 ```
 
 No test framework or linter is configured. There are no build steps — all frontend code is vanilla JS/CSS served as static files.
+
+## Unraid Deployment
+
+**Server:** ShottsServer (Dell PowerEdge R730) — Unraid 7.2.2
+**SSH:** `ssh unraid` (configured in `~/.ssh/config`, uses `~/.ssh/id_unraid` key, connects as `root@192.168.1.153`)
+**Container name:** `homes-shottsserver`
+**App path:** `/mnt/cache/appdata/property-comparison/`
+**Volume mount:** Only `data/` is mounted (`-v .../data:/app/data`). The `public/` folder is baked into the image.
+**Port mapping:** Host 3080 → Container 3000
+**Note:** `docker-compose` is not installed on this Unraid; use `docker build` + `docker run` directly.
+
+Deploy steps:
+```bash
+# 1. SCP files to Unraid
+scp -r public/ root@192.168.1.153:/mnt/cache/appdata/property-comparison/public/
+
+# 2. Rebuild image and restart container
+ssh unraid "cd /mnt/cache/appdata/property-comparison && docker build -t property-comparison . && docker stop homes-shottsserver && docker rm homes-shottsserver && docker run -d --name homes-shottsserver --restart unless-stopped -p 3080:3000 -v /mnt/cache/appdata/property-comparison/data:/app/data property-comparison"
+```
 
 ## Prerequisites
 
@@ -52,7 +71,8 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **Monthly breakdown**: Each `.card-monthly` has expandable breakdown (`.monthly-toggle` + `.monthly-breakdown`). Calculated at 6.5%/30yr/3% down with P&I + tax + insurance + PMI (0.55%)
 - **MUST DO section**: `.must-do` with `.must-do-grid` (2-col) containing `.must-do-item` elements. Universal + conditional items per property
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
-- **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`
+- **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
+- **Graveyard section**: `#graveyard` below cards — holds removed properties with `.graveyard-card` entries
 - **Nav anchors**: `#p1` through `#p16` matching card `id` attributes
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings
 
