@@ -6,8 +6,17 @@ services:
     ports:
       - "3080:3000"
     volumes:
-      - ./data:/app/data
+      - /mnt/cache/appdata/property-comparison/data:/app/data
     restart: unless-stopped
     environment:
       - NODE_ENV=production
       - PORT=3000
+      - PUID=99
+      - PGID=100
+      - TZ=America/Denver
+    networks:
+      - shottsproxy
+
+networks:
+  shottsproxy:
+    external: true
