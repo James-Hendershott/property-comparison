@@ -198,9 +198,6 @@
       var pid = card.id;
       if (card.querySelector('.vote-row')) return; // already injected
 
-      var scoreRow = card.querySelector('.score-row');
-      if (!scoreRow) return;
-
       var voteRow = document.createElement('div');
       voteRow.className = 'vote-row';
       voteRow.setAttribute('data-property', pid);
@@ -212,7 +209,7 @@
         '<div class="vote-row-stars" data-stars></div>' +
         '<div class="vote-row-details" data-details></div>';
 
-      scoreRow.parentNode.insertBefore(voteRow, scoreRow.nextSibling);
+      card.appendChild(voteRow);
     });
   }
 
@@ -453,28 +450,13 @@
     document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
       if (card.querySelector('.graveyard-btn')) return;
       var pid = card.id;
-      var header = card.querySelector('.vote-row-header');
-      if (!header) {
-        // Fallback: put button in card-top area
-        var cardTop = card.querySelector('.card-top');
-        if (!cardTop) return;
-        var btn = document.createElement('button');
-        btn.className = 'graveyard-btn';
-        btn.textContent = 'Move to Graveyard';
-        btn.addEventListener('click', function () { showGraveyardModal(pid); });
-        cardTop.appendChild(btn);
-        return;
-      }
-      var scoreRow = card.querySelector('.score-row');
-      if (!scoreRow) return;
-      var wrap = document.createElement('div');
-      wrap.style.cssText = 'text-align:right; padding: 0.3rem 0.8rem 0;';
+      var badges = card.querySelector('.card-badges');
+      if (!badges) return;
       var btn = document.createElement('button');
       btn.className = 'graveyard-btn';
       btn.textContent = 'Move to Graveyard';
       btn.addEventListener('click', function () { showGraveyardModal(pid); });
-      wrap.appendChild(btn);
-      scoreRow.parentNode.insertBefore(wrap, scoreRow);
+      badges.appendChild(btn);
     });
   }
 

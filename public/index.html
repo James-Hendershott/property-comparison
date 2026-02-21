@@ -311,33 +311,9 @@ table.qt {
   min-height: 240px;
   object-fit: cover;
 }
-.map-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.55));
-  padding: 0.6rem 0.8rem 0.5rem;
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.photo-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.92);
-  color: #1e3528;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: background 0.15s;
-}
-.photo-btn:hover { background: white; }
-.photo-btn svg { width: 13px; height: 13px; }
+.card-img-link { display: block; width: 100%; height: 100%; }
+.card-img-link img { transition: opacity 0.15s; }
+.card-img-link:hover img { opacity: 0.85; }
 
 /* Card header */
 .card-header {
@@ -520,51 +496,6 @@ table.qt {
 .cons .card-section-title { color: #b91c1c; }
 .pros li::before { content: "✓"; color: #27624a; font-weight: 700; }
 .cons li::before { content: "✗"; color: #c0392b; font-weight: 700; }
-
-/* score row */
-.score-row {
-  padding: 0.7rem 1.3rem;
-  background: #f8f5ef;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-.score-big {
-  font-family: 'Lora', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-.score-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
-.score-bars {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.2rem;
-  flex: 1;
-}
-.score-item { min-width: 120px; }
-.score-item-label {
-  font-size: 0.7rem;
-  color: var(--muted);
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-}
-.score-track {
-  height: 5px;
-  background: #ddd;
-  border-radius: 3px;
-  margin-top: 3px;
-  overflow: hidden;
-}
-.score-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 3px;
-}
 
 /* status badges */
 .status-active { color: #166534; font-weight: 700; }
@@ -1085,18 +1016,13 @@ table.qt {
 <div class="card" id="p1">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.redfin.com/WA/Appleton/25-Chuckwagon-Rd-98602/home/68951939" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://ssl.cdn-redfin.com/photo/84/bigphoto/705/343192705_0.jpg"
         alt="25 Chuckwagon Rd, Appleton WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.redfin.com/WA/Appleton/25-Chuckwagon-Rd-98602/home/68951939" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.williamsteamhomes.com/property/65-343192705-25-chuckwagon-rd-appleton-WA-98602" target="_blank">Listing Details</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -1255,21 +1181,6 @@ table.qt {
     </div>
     <div class="env-note">Columbia River Gorge wind corridor. Klickitat County is a high wildfire risk area. Seismic zone near Cascadia Subduction Zone.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">72</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>10/20</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>13/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -1278,19 +1189,13 @@ table.qt {
 <div class="card" id="p2">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://washingtonviews.com/listings/residential/3714-sand-creek-rd-b-kettle-falls-wa-99141-45484" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://washingtonviews.com/site/assets/files/133889/20260204190022498778000000-o.240x180.jpg"
         alt="3714 Sand Creek Rd, Kettle Falls WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://washingtonviews.com/listings/residential/3714-sand-creek-rd-b-kettle-falls-wa-99141-45484" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.homes.com/property/3714-sand-creek-rd-kettle-falls-wa/5k510mntm72ez/" target="_blank">Homes.com</a>
-        <a class="photo-btn" href="https://vimeo.com/1072227405?fl=pl&fe=sh" target="_blank">Video Tour</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -1446,21 +1351,6 @@ table.qt {
     </div>
     <div class="env-note">Stevens County sees heavy wildfire smoke in summer (2023 was severe). Low flood risk at this elevation. Air quality can be hazardous during fire season.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">81</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>17/20</span></div><div class="score-track"><div class="score-fill" style="width:85%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>10/10</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -1471,17 +1361,13 @@ table.qt {
   </div>
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.redfin.com/WA/Goldendale/2147-Glenwood-Hwy-98620/home/53005566" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://ssl.cdn-redfin.com/photo/1/bigphoto/764/2428764_0.jpg"
         alt="2147 Glenwood Hwy, Goldendale WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.redfin.com/WA/Goldendale/2147-Glenwood-Hwy-98620/home/53005566" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View Listing (Verify Status)
-        </a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -1640,21 +1526,6 @@ table.qt {
     </div>
     <div class="env-note">Gorge wind corridor — sustained 30-40 mph gusts common. Klickitat County wildfire risk elevated. Near Cascadia Subduction Zone fault system.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">71</div>
-      <div class="score-label">/ 100 (if active)</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>11/20</span></div><div class="score-track"><div class="score-fill" style="width:55%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -1665,18 +1536,13 @@ table.qt {
   </div>
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.redfin.com/WA/Colville/2184-Clugston-Onion-Creek-Rd-99114/home/183624802" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/977295f5ce03f27013b76f2b775ac70c-cc_ft_1152.webp"
         alt="2184 Clugston Onion Creek Rd, Colville WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.redfin.com/WA/Colville/2184-Clugston-Onion-Creek-Rd-99114/home/183624802" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos (Redfin)
-        </a>
-        <a class="photo-btn" href="https://www.redfin.com/WA/Colville/2184-Clugston-Onion-Creek-Rd-99114/home/183624802" target="_blank">Redfin</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -1834,21 +1700,6 @@ table.qt {
     </div>
     <div class="env-note">Stevens County had major fires in 2023. Colville River area has some flood plain. Summer smoke from regional fires common.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">84</div>
-      <div class="score-label">/ 100 ★ Top Pick</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>15/20</span></div><div class="score-track"><div class="score-fill" style="width:75%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>15/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -1857,18 +1708,13 @@ table.qt {
 <div class="card" id="p7">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.redfin.com/ID/Grangeville/267-Black-Tail-Ln-83530/home/106939350" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://ssl.cdn-redfin.com/photo/228/bigphoto/650/98973650_0.jpg"
         alt="267 Black Tail Ln, Grangeville ID"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.redfin.com/ID/Grangeville/267-Black-Tail-Ln-83530/home/106939350" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/267-Black-Tail-Ln-Grangeville-ID-83530/115522984_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2023,21 +1869,6 @@ table.qt {
     </div>
     <div class="env-note">Camas Prairie surrounded by national forest — wildfire smoke corridor. Idaho County has significant fire history. Check seasonal smoke patterns.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">68</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>6/15</span></div><div class="score-track"><div class="score-fill" style="width:40%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>3/20</span></div><div class="score-track"><div class="score-fill" style="width:15%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>3/15</span></div><div class="score-track"><div class="score-fill" style="width:20%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -2046,18 +1877,13 @@ table.qt {
 <div class="card" id="p9">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/2223-Glenwood-Rd-Kamiah-ID-83536/123354602_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/ba0a4a0194639c05ce92ac4ecde1bbd7-uncropped_scaled_within_1536_1152.webp"
         alt="2223 Glenwood Rd, Kamiah ID"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/2223-Glenwood-Rd-Kamiah-ID-83536/123354602_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/2223-Glenwood-Rd-Kamiah-ID-83536/123354602_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2216,21 +2042,6 @@ table.qt {
     </div>
     <div class="env-note">Clearwater River canyon funnels wildfire smoke. 2023 and 2024 fires came close. Remote location limits firefighting response. Smoke inversions common.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">76</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>18/20</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -2239,18 +2050,13 @@ table.qt {
 <div class="card" id="p10">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/84609-N-Yakima-River-Dr-West-Richland-WA-99353/205017796_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/4b3dc7dd01dd061c8c1d4d994ca3ee6f-cc_ft_1152.webp"
         alt="84609 N Yakima River Dr, West Richland WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/84609-N-Yakima-River-Dr-West-Richland-WA-99353/205017796_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/84609-N-Yakima-River-Dr-West-Richland-WA-99353/205017796_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2409,21 +2215,6 @@ table.qt {
     </div>
     <div class="env-note">Hanford Nuclear Reservation 15 miles north — largest nuclear cleanup site in US. Yakima River flood potential. Desert climate, low precipitation. Wind-blown dust events.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">71</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>4/20</span></div><div class="score-track"><div class="score-fill" style="width:20%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -2432,18 +2223,13 @@ table.qt {
 <div class="card" id="p11">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/1334-Clugston-Onion-Creek-Rd-1-Colville-WA-99114/458193718_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/4c4e8f32ae24e0a8269e59e7f35fe1bc-cc_ft_1152.webp"
         alt="1334 Clugston-Onion Cr Rd #1, Colville WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/1334-Clugston-Onion-Creek-Rd-1-Colville-WA-99114/458193718_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/1334-Clugston-Onion-Creek-Rd-1-Colville-WA-99114/458193718_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2599,21 +2385,6 @@ table.qt {
     </div>
     <div class="env-note">Same Stevens County wildfire and smoke risk as other Colville properties. Verify distance from Colville River flood plain. Defensible space recommended.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">80</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>10/20</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -2622,18 +2393,13 @@ table.qt {
 <div class="card" id="p12">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/4583-Furze-Rd-Clayton-WA-99110/108189390_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/88ff28359c526ee3e8235b10e1624cdc-uncropped_scaled_within_1536_1152.webp"
         alt="4583 Furze Rd, Clayton WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/4583-Furze-Rd-Clayton-WA-99110/108189390_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/4583-Furze-Rd-Clayton-WA-99110/108189390_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2789,21 +2555,6 @@ table.qt {
     </div>
     <div class="env-note">Rural Stevens County — elevated wildfire risk. 20 acres provides defensible space buffer. Summer smoke from regional fires. Well water area — check aquifer quality.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">74</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>10/20</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -2812,18 +2563,13 @@ table.qt {
 <div class="card" id="p14">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/151-Park-Ln-Cusick-WA-99119/108180230_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/26e2174fa80a63e52d3a54b0c3438260-cc_ft_1152.webp"
         alt="151 Park Ln, Cusick WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/151-Park-Ln-Cusick-WA-99119/108180230_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/151-Park-Ln-Cusick-WA-99119/108180230_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -2980,21 +2726,6 @@ table.qt {
     </div>
     <div class="env-note">Pend Oreille River valley — check flood plain for this parcel. Forested county with significant fire risk. Remote — limited fire response infrastructure.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">73</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>6/20</span></div><div class="score-track"><div class="score-fill" style="width:30%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -3003,18 +2734,13 @@ table.qt {
 <div class="card" id="p15">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/43-Oakes-Dr-Tonasket-WA-98855/102639823_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/dbadc12768f4ce224c429c93e62f4dea-uncropped_scaled_within_1536_1152.webp"
         alt="43 Oakes Dr, Tonasket WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/43-Oakes-Dr-Tonasket-WA-98855/102639823_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/43-Oakes-Dr-Tonasket-WA-98855/102639823_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -3177,21 +2903,6 @@ table.qt {
     </div>
     <div class="env-note">Okanogan County is WA's #1 wildfire county. 2023 and 2024 saw major fires. Okanogan River flood potential. Canadian wildfire smoke adds to local fire smoke. Evacuation routes limited.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">77</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>5/20</span></div><div class="score-track"><div class="score-fill" style="width:25%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -3200,18 +2911,13 @@ table.qt {
 <div class="card" id="p16">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.zillow.com/homedetails/31600-Sontag-Rdg-E-Davenport-WA-99122/441260275_zpid/" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://photos.zillowstatic.com/fp/5f4eb27460b8ff760df84ade36307449-cc_ft_1152.webp"
         alt="31600 Sontag Rdg E, Davenport WA"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/31600-Sontag-Rdg-E-Davenport-WA-99122/441260275_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/31600-Sontag-Rdg-E-Davenport-WA-99122/441260275_zpid/" target="_blank">Zillow</a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -3371,21 +3077,6 @@ table.qt {
     </div>
     <div class="env-note">Channeled Scablands terrain — grassland fire risk rather than forest fire. Lincoln County wheat country. Low tree cover means less smoke trapping but more wind exposure.</div>
   </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">72</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>14/20</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>3/15</span></div><div class="score-track"><div class="score-fill" style="width:20%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>9/15</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -3394,17 +3085,13 @@ table.qt {
 <div class="card" id="p17">
   <div class="card-top">
     <div class="card-map">
-      <img
+      <a href="https://www.trulia.com/home/4821-vay-rd-priest-river-id-83856-103892821" target="_blank" class="card-img-link">
+<img
         loading="lazy"
         src="https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/06f5ae822e28cc55417ae58533bdee79-full.webp"
         alt="4821 Vay Rd, Priest River ID"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.trulia.com/home/4821-vay-rd-priest-river-id-83856-103892821" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View Listing
-        </a>
-      </div>
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -3578,21 +3265,6 @@ table.qt {
     </div>
     <div class="env-note">99% of Priest River properties face wildfire risk (First Street Foundation). Pioneer Fire (2021) burned 355 acres ~3 mi away. Vay Valley is wildland-urban interface — heavy timber, Stimson land, National Forest surround. Defensible space assessment critical. Flood risk moderate from creek systems in valley. Significant winter snow — Vay Rd is county-plowed but verify driveway access.</div>
   </div>
-  <div class="score-row">
-    <div>
-      <div class="score-big">58</div>
-      <div class="score-label">/ 100 <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(provisional)</span></div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>14/20</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>3/15</span></div><div class="score-track"><div class="score-fill" style="width:20%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -3601,13 +3273,9 @@ table.qt {
 <div class="card" id="p18">
   <div class="card-top">
     <div class="card-map">
-      <img loading="lazy" src="https://photos.zillowstatic.com/fp/3f6386d7583672c4d71702ec4e5d3efc-cc_ft_1152.webp" alt="398462 Highway 20, Cusick WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/398462-Highway-20-Cusick-WA-99139/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-      </div>
+      <a href="https://www.zillow.com/homedetails/398462-Highway-20-Cusick-WA-99139/" target="_blank" class="card-img-link">
+<img loading="lazy" src="https://photos.zillowstatic.com/fp/3f6386d7583672c4d71702ec4e5d3efc-cc_ft_1152.webp" alt="398462 Highway 20, Cusick WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -3766,21 +3434,6 @@ table.qt {
     </div>
     <div class="env-note">Heavily forested Pend Oreille County with significant wildfire risk. Volunteer fire department coverage (District 5). Pend Oreille River flood risk — check FEMA maps for this parcel. Summer wildfire smoke common in the valley.</div>
   </div>
-  <div class="score-row">
-    <div>
-      <div class="score-big">66</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>16/20</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>4/15</span></div><div class="score-track"><div class="score-fill" style="width:27%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -3789,13 +3442,9 @@ table.qt {
 <div class="card" id="p19">
   <div class="card-top">
     <div class="card-map">
-      <img loading="lazy" src="https://photos.zillowstatic.com/fp/0651cca91d276e793926aaa57114d0af-cc_ft_1152.webp" alt="226 Powerline Way, Libby MT" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/226-Powerline-Way-Libby-MT-59923/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-      </div>
+      <a href="https://www.zillow.com/homedetails/226-Powerline-Way-Libby-MT-59923/" target="_blank" class="card-img-link">
+<img loading="lazy" src="https://photos.zillowstatic.com/fp/0651cca91d276e793926aaa57114d0af-cc_ft_1152.webp" alt="226 Powerline Way, Libby MT" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -3954,21 +3603,6 @@ table.qt {
     </div>
     <div class="env-note">W.R. Grace vermiculite mine contaminated Libby with asbestos — 694 deaths, only EPA public health emergency ever declared. Residential cleanup completed 2018 but mine site (OU3) NOT yet remediated. Dec 2025 historic flooding destroyed bridges, caused tens of millions in damage, and raised concerns about mobilizing mine waste. Kootenai National Forest wildfire risk includes Gibraltar Ridge (13K acres), Caribou (25K acres, 10 homes destroyed).</div>
   </div>
-  <div class="score-row">
-    <div>
-      <div class="score-big">57</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>7/20</span></div><div class="score-track"><div class="score-fill" style="width:35%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>4/10</span></div><div class="score-track"><div class="score-fill" style="width:40%"></div></div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -3977,13 +3611,9 @@ table.qt {
 <div class="card" id="p20">
   <div class="card-top">
     <div class="card-map">
-      <img loading="lazy" src="https://photos.zillowstatic.com/fp/572764eed75a1daba001eb339bae977c-cc_ft_1152.webp" alt="4217 Northport Flat Creek Rd, Northport WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/4217-Northport-Flat-Creek-Rd-Northport-WA-99157/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-      </div>
+      <a href="https://www.zillow.com/homedetails/4217-Northport-Flat-Creek-Rd-Northport-WA-99157/" target="_blank" class="card-img-link">
+<img loading="lazy" src="https://photos.zillowstatic.com/fp/572764eed75a1daba001eb339bae977c-cc_ft_1152.webp" alt="4217 Northport Flat Creek Rd, Northport WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      </a>
     </div>
     <div>
       <div class="card-header">
@@ -4143,21 +3773,6 @@ table.qt {
       <span class="env-pill env-pill-mod">Flood: Moderate (elevated)</span>
     </div>
     <div class="env-note">Hope Fire (July 2025) burned 7,891 acres in the Flat Creek drainage — this property is ON Flat Creek Rd. Level 3 evacuations were ordered; at least 2 homes destroyed. WALERT assessment specifically flags Northport Flat Creek Rd for elevated debris flow and flash flood risk with "little time for occupants to evacuate." Post-fire hazards may persist for several years. Canadian cross-border wildfire smoke also a factor.</div>
-  </div>
-  <div class="score-row">
-    <div>
-      <div class="score-big">59</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>15/20</span></div><div class="score-track"><div class="score-fill" style="width:75%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
-    </div>
   </div>
 </div>
 </div><!-- /cards -->
