@@ -37,6 +37,18 @@
         body: JSON.stringify({ userId: userId })
       }).then(r => r.json());
     },
+    getGraveyard: function () { return fetch('/api/graveyard').then(r => r.json()); },
+    moveToGraveyard: function (userId, propertyId, reason) {
+      return fetch('/api/graveyard', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, reason: reason })
+      }).then(r => r.json());
+    },
+    restoreFromGraveyard: function (propertyId) {
+      return fetch('/api/graveyard/' + propertyId, {
+        method: 'DELETE'
+      }).then(r => r.json());
+    },
   };
 
   // --- User state ---
@@ -436,6 +448,130 @@
     });
   }
 
+  // --- Graveyard system ---
+  function injectGraveyardButtons() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      if (card.querySelector('.graveyard-btn')) return;
+      var pid = card.id;
+      var header = card.querySelector('.vote-row-header');
+      if (!header) {
+        // Fallback: put button in card-top area
+        var cardTop = card.querySelector('.card-top');
+        if (!cardTop) return;
+        var btn = document.createElement('button');
+        btn.className = 'graveyard-btn';
+        btn.textContent = 'Move to Graveyard';
+        btn.addEventListener('click', function () { showGraveyardModal(pid); });
+        cardTop.appendChild(btn);
+        return;
+      }
+      var scoreRow = card.querySelector('.score-row');
+      if (!scoreRow) return;
+      var wrap = document.createElement('div');
+      wrap.style.cssText = 'text-align:right; padding: 0.3rem 0.8rem 0;';
+      var btn = document.createElement('button');
+      btn.className = 'graveyard-btn';
+      btn.textContent = 'Move to Graveyard';
+      btn.addEventListener('click', function () { showGraveyardModal(pid); });
+      wrap.appendChild(btn);
+      scoreRow.parentNode.insertBefore(wrap, scoreRow);
+    });
+  }
+
+  function showGraveyardModal(pid) {
+    if (!currentUser) { showUserModal(); return; }
+    var name = PROPERTY_NAMES[pid] || pid;
+    var overlay = document.createElement('div');
+    overlay.className = 'graveyard-modal';
+    var card = document.createElement('div');
+    card.className = 'graveyard-modal-card';
+    card.innerHTML =
+      '<h3>Move "' + escapeHtml(name) + '" to Graveyard</h3>' +
+      '<textarea placeholder="Reason for removal (e.g., went off-market, too expensive, bad inspection...)" maxlength="300"></textarea>' +
+      '<div class="graveyard-modal-actions">' +
+      '  <button class="graveyard-modal-cancel">Cancel</button>' +
+      '  <button class="graveyard-modal-confirm">Remove</button>' +
+      '</div>';
+
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    card.querySelector('.graveyard-modal-cancel').addEventListener('click', function () {
+      overlay.remove();
+    });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) overlay.remove();
+    });
+    card.querySelector('.graveyard-modal-confirm').addEventListener('click', function () {
+      var reason = card.querySelector('textarea').value.trim();
+      if (!reason) { card.querySelector('textarea').focus(); return; }
+      API.moveToGraveyard(currentUser.id, pid, reason).then(function () {
+        overlay.remove();
+        refreshGraveyard();
+      });
+    });
+
+    setTimeout(function () { card.querySelector('textarea').focus(); }, 100);
+  }
+
+  function refreshGraveyard() {
+    API.getGraveyard().then(function (entries) {
+      // Hide/show cards based on graveyard state
+      var graveyardIds = {};
+      entries.forEach(function (e) { graveyardIds[e.property_id] = e; });
+
+      document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+        if (graveyardIds[card.id]) {
+          card.classList.add('graveyarded');
+        } else {
+          card.classList.remove('graveyarded');
+        }
+      });
+
+      // Hide/show nav links and overview rows
+      document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
+        var pid = a.getAttribute('href').slice(1);
+        a.style.display = graveyardIds[pid] ? 'none' : '';
+      });
+      document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+        var link = row.querySelector('a[href^="#p"]');
+        if (!link) return;
+        var pid = link.getAttribute('href').slice(1);
+        row.style.display = graveyardIds[pid] ? 'none' : '';
+      });
+
+      // Render dynamic graveyard entries
+      var container = document.getElementById('graveyard-dynamic');
+      if (!container) return;
+      if (entries.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+      container.innerHTML = entries.map(function (e) {
+        var name = PROPERTY_NAMES[e.property_id] || e.property_id;
+        var date = e.moved_at ? new Date(e.moved_at + 'Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+        return '<div class="graveyard-card">' +
+          '<div class="graveyard-header">' +
+          '  <span class="badge b-removed">REMOVED</span>' +
+          '  <strong>' + escapeHtml(e.property_id.toUpperCase()) + ' \u2014 ' + escapeHtml(name) + '</strong>' +
+          '  <span>Moved by ' + escapeHtml(e.user_name) + ' \u00b7 ' + date + '</span>' +
+          '  <button class="graveyard-restore" data-restore-pid="' + escapeHtml(e.property_id) + '">Restore</button>' +
+          '</div>' +
+          '<div class="graveyard-reason">Reason: ' + escapeHtml(e.reason) + '</div>' +
+          '</div>';
+      }).join('');
+
+      container.querySelectorAll('.graveyard-restore').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var pid = btn.getAttribute('data-restore-pid');
+          API.restoreFromGraveyard(pid).then(function () {
+            refreshGraveyard();
+          });
+        });
+      });
+    });
+  }
+
   // --- Master refresh ---
   function refreshAllVotes() {
     API.getVotes().then(function (allVotes) {
@@ -458,6 +594,7 @@
     addRankingsNavLink();
     injectVoteRows();
     injectNoteRows();
+    injectGraveyardButtons();
     initMonthlyToggles();
     renderNavPill();
 
@@ -467,11 +604,13 @@
 
     refreshAllVotes();
     refreshAllNotes();
+    refreshGraveyard();
 
     // Poll every 30 seconds
     setInterval(function () {
       refreshAllVotes();
       refreshAllNotes();
+      refreshGraveyard();
     }, 30000);
   }
 

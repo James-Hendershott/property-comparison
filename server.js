@@ -104,6 +104,39 @@ app.delete('/api/notes/:id', (req, res) => {
   }
 });
 
+app.post('/api/graveyard', (req, res) => {
+  try {
+    const { userId, propertyId, reason } = req.body;
+    if (!userId || !propertyId || !reason || !reason.trim()) {
+      return res.status(400).json({ error: 'userId, propertyId, and reason are required' });
+    }
+    db.moveToGraveyard(propertyId, userId, reason.trim());
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/graveyard', (_req, res) => {
+  try {
+    res.json(db.getGraveyard());
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/graveyard/:propertyId', (req, res) => {
+  try {
+    db.restoreFromGraveyard(req.params.propertyId);
+    res.json({ ok: true });
+  } catch (err) {
+    if (err.message === 'Property not in graveyard') {
+      return res.status(404).json({ error: err.message });
+    }
+    res.status(500).json({ error: err.message });
+  }
+});
+
 db.init().then(() => {
   app.listen(PORT, () => {
     console.log(`Property Comparison server running on http://localhost:${PORT}`);

@@ -52,6 +52,16 @@ async function init() {
     )
   `);
 
+  db.run(`
+    CREATE TABLE IF NOT EXISTS graveyard (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id TEXT UNIQUE NOT NULL,
+      user_id INTEGER NOT NULL REFERENCES users(id),
+      reason TEXT NOT NULL,
+      moved_at TEXT DEFAULT (datetime('now'))
+    )
+  `);
+
   save();
 }
 
@@ -176,4 +186,30 @@ function deleteNote(noteId, userId) {
   save();
 }
 
-module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote };
+function moveToGraveyard(propertyId, userId, reason) {
+  run(
+    `INSERT INTO graveyard (property_id, user_id, reason)
+     VALUES (?, ?, ?)
+     ON CONFLICT(property_id)
+     DO UPDATE SET reason = excluded.reason, user_id = excluded.user_id, moved_at = datetime('now')`,
+    [propertyId, userId, reason]
+  );
+  save();
+}
+
+function getGraveyard() {
+  return query(`
+    SELECT g.property_id, g.reason, u.name AS user_name, g.moved_at
+    FROM graveyard g JOIN users u ON g.user_id = u.id
+    ORDER BY g.moved_at DESC
+  `);
+}
+
+function restoreFromGraveyard(propertyId) {
+  const rows = query('SELECT id FROM graveyard WHERE property_id = ?', [propertyId]);
+  if (rows.length === 0) throw new Error('Property not in graveyard');
+  run('DELETE FROM graveyard WHERE property_id = ?', [propertyId]);
+  save();
+}
+
+module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote, moveToGraveyard, getGraveyard, restoreFromGraveyard };

@@ -736,6 +736,20 @@ table.qt {
 @media (max-width: 640px) {
   .graveyard-card { grid-template-columns: 1fr; }
 }
+.graveyard-btn { background: none; border: 1px solid #d1d5db; color: #6b7280; font-size: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 4px; cursor: pointer; margin-left: auto; }
+.graveyard-btn:hover { background: #fee2e2; color: #dc2626; border-color: #fca5a5; }
+.graveyard-restore { background: none; border: 1px solid #d1d5db; color: #6b7280; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; cursor: pointer; white-space: nowrap; }
+.graveyard-restore:hover { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+.graveyard-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.graveyard-modal-card { background: #1e293b; border-radius: 12px; padding: 1.5rem; width: 90%; max-width: 420px; }
+.graveyard-modal-card h3 { margin: 0 0 1rem; color: #f1f5f9; font-size: 1.1rem; }
+.graveyard-modal-card textarea { width: 100%; min-height: 80px; padding: 0.5rem; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #f1f5f9; font-size: 0.9rem; resize: vertical; box-sizing: border-box; }
+.graveyard-modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 0.75rem; }
+.graveyard-modal-actions button { padding: 0.4rem 1rem; border-radius: 6px; border: none; cursor: pointer; font-size: 0.85rem; }
+.graveyard-modal-cancel { background: #475569; color: #f1f5f9; }
+.graveyard-modal-confirm { background: #dc2626; color: #fff; }
+.graveyard-modal-confirm:hover { background: #b91c1c; }
+.card.graveyarded { display: none !important; }
 </style>
 </head>
 <body>
@@ -743,7 +757,7 @@ table.qt {
 <!-- ── HEADER ── -->
 <header class="header">
   <h1>Hendershott Family House Hunt 2026</h1>
-  <p>17 Properties · Pacific Northwest + Idaho + Montana · From Farmington, UT</p>
+  <p>16 Properties · Pacific Northwest + Idaho + Montana · From Farmington, UT</p>
   </header>
 
 <!-- ── NAV ── -->
@@ -754,19 +768,18 @@ table.qt {
   <a href="#p2">Kettle Falls</a>
   <a href="#p3">Goldendale</a>
   <a href="#p4">Colville</a>
-  <a href="#p5">Dayton</a>
-  <a href="#p6">Addy</a>
   <a href="#p7">Grangeville ID</a>
-  <a href="#p8">Lewiston ID</a>
   <a href="#p9">Kamiah ID</a>
   <a href="#p10">West Richland</a>
   <a href="#p11">Colville 1334</a>
   <a href="#p12">Clayton Furze</a>
-  <a href="#p13">Eureka MT</a>
   <a href="#p14">Cusick</a>
   <a href="#p15">Tonasket</a>
   <a href="#p16">Davenport</a>
   <a href="#p17">Priest River ID</a>
+  <a href="#p18">Cusick Hwy 20</a>
+  <a href="#p19">Libby MT</a>
+  <a href="#p20">Northport</a>
   <a href="#graveyard" style="color:#9ca3af; border-color:#4b5563;">Graveyard</a>
   <div class="nav-right">
     <button class="print-btn" onclick="window.print()">🖨 Print</button>
@@ -862,38 +875,6 @@ table.qt {
           <td><span class="status-contingent">⚠ Contingent</span></td>
         </tr>
         <tr>
-          <td>5</td>
-          <td><a href="#p5">111 Tamarack Ln, Dayton WA</a></td>
-          <td class="td-price">$375,000</td>
-          <td class="td-mo">~$2,969</td>
-          <td>$11,250</td>
-          <td>3 / 2</td>
-          <td>1,671</td>
-          <td>25.81</td>
-          <td><span class="badge b-mfg">Manuf.</span></td>
-          <td>1990</td>
-          <td>~9 hr</td>
-          <td><strong style="color:var(--accent)">79</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$350,000–$360,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">MFG financing constraints limit buyer pool = leverage</span></td>
-          <td><span class="status-active">Active</span></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><a href="#p6">2477 Cedonia Addy Rd, Addy WA</a></td>
-          <td class="td-price">$289,000</td>
-          <td class="td-mo">~$2,242</td>
-          <td>$8,670</td>
-          <td>3 / 2</td>
-          <td>2,717</td>
-          <td>21</td>
-          <td><span class="badge b-sfr">Site-Built</span></td>
-          <td>1910</td>
-          <td>~9.5 hr</td>
-          <td><strong style="color:var(--accent)">83</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$270,000–$280,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">1910 log age = strong inspection leverage; fresh listing</span></td>
-          <td><span class="status-active">Active</span></td>
-        </tr>
-        <tr>
           <td>7</td>
           <td><a href="#p7">267 Black Tail Ln, Grangeville ID</a></td>
           <td class="td-price">$499,000</td>
@@ -907,22 +888,6 @@ table.qt {
           <td>~9h 20m</td>
           <td><strong style="color:var(--accent)">68</strong>/100</td>
           <td style="white-space:nowrap"><strong>$465,000–$480,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price cuts from $549K to $499K; remodel adds value, 4.73 acres</span></td>
-          <td><span class="status-active">Active</span></td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td><a href="#p8">20235 Valley View Dr, Lewiston ID</a></td>
-          <td class="td-price">$489,000</td>
-          <td class="td-mo">~$3,641</td>
-          <td>$14,670</td>
-          <td>3 / 2</td>
-          <td>2,112</td>
-          <td>2.09</td>
-          <td><span class="badge b-sfr">Site-Built</span></td>
-          <td>1979</td>
-          <td>~9 hr</td>
-          <td><strong style="color:var(--accent)">55</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$460,000 – $475,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">Zestimate $475.9K under asking; 40 DOM, steep slope</span></td>
           <td><span class="status-active">Active</span></td>
         </tr>
         <tr>
@@ -990,22 +955,6 @@ table.qt {
           <td><span class="status-active">Active</span></td>
         </tr>
         <tr>
-          <td>13</td>
-          <td><a href="#p13">2801 US Highway 93 S, Eureka MT</a></td>
-          <td class="td-price">$499,000</td>
-          <td class="td-mo">~$3,755</td>
-          <td>$14,970</td>
-          <td>3 / 2</td>
-          <td>1,144</td>
-          <td>12.27</td>
-          <td><span class="badge b-sfr">Site-Built</span></td>
-          <td>2006</td>
-          <td>~8 hr</td>
-          <td><strong style="color:var(--accent)">70</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$380,000 – $420,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">631 DOM extreme leverage; $436/sqft way overpriced</span></td>
-          <td><span class="status-active">Active</span></td>
-        </tr>
-        <tr>
           <td>14</td>
           <td><a href="#p14">151 Park Ln, Cusick WA</a></td>
           <td class="td-price">$475,000</td>
@@ -1067,6 +1016,54 @@ table.qt {
           <td>~10.5 hr</td>
           <td><strong style="color:var(--accent)">58</strong>/100</td>
           <td style="white-space:nowrap"><strong>$400,000 – $425,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">New listing, bd/ba discrepancy, unknowns on outbldgs &amp; forest</span></td>
+          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td><a href="#p18">398462 Highway 20, Cusick WA</a></td>
+          <td class="td-price">$369,500</td>
+          <td class="td-mo">~$2,838</td>
+          <td>$11,085</td>
+          <td>3 / 2</td>
+          <td>1,790</td>
+          <td>13.6</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1985</td>
+          <td>~11.75 hr</td>
+          <td><strong style="color:var(--accent)">66</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$340,000 – $355,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">New listing, 1985 build, unfinished basement, wood heat</span></td>
+          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td><a href="#p19">226 Powerline Way, Libby MT</a></td>
+          <td class="td-price">$450,000</td>
+          <td class="td-mo">~$3,398</td>
+          <td>$13,500</td>
+          <td>4 / 3</td>
+          <td>1,906</td>
+          <td>5.02</td>
+          <td><span class="badge b-mfg">Manuf.</span></td>
+          <td>1992</td>
+          <td>~12 hr</td>
+          <td><strong style="color:var(--accent)">57</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$390,000 – $415,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">10 DOM, MFG valuation, Superfund nearby, Dec 2025 flood</span></td>
+          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td><a href="#p20">4217 Northport Flat Creek Rd, Northport WA</a></td>
+          <td class="td-price">$475,000</td>
+          <td class="td-mo">~$3,629</td>
+          <td>$14,250</td>
+          <td>3 / 2</td>
+          <td>1,814</td>
+          <td>14.63</td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
+          <td>1985</td>
+          <td>~13 hr</td>
+          <td><strong style="color:var(--accent)">59</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$420,000 – $445,000</strong><br><span style="font-size:0.72rem;color:var(--muted)">49 DOM, price cut, Hope Fire burn scar on Flat Creek Rd</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
         </tr>
       </tbody>
@@ -1855,396 +1852,6 @@ table.qt {
 </div>
 
 <!-- ══════════════════════════════════════════════════
-     PROPERTY #5 — DAYTON WA
-═══════════════════════════════════════════════════ -->
-<div class="card" id="p5">
-  <div class="card-top">
-    <div class="card-map">
-      <img
-        loading="lazy"
-        src="https://photos.zillowstatic.com/fp/51d910ac3116ec64dd0060e347fa813c-cc_ft_1152.webp"
-        alt="111 Tamarack Ln, Dayton WA"
-        style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/111-Tamarack-Ln-Dayton-WA-99328/108178658_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos (Zillow)
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="card-header">
-        <div class="card-title-group">
-          <div class="card-address">111 Tamarack Ln</div>
-          <div class="card-sub">Dayton, WA 99328 · Columbia County</div>
-          <div class="card-badges">
-            <span class="badge b-mfg">Manufactured 1990</span>
-          </div>
-        </div>
-        <div class="card-price-block">
-          <div class="card-price">$375,000</div>
-          <div class="card-monthly">
-            <span class="monthly-total">~$2,969/mo</span>
-            <button class="monthly-toggle">&#9662; details</button>
-            <div class="monthly-breakdown" hidden>
-              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,299</span></div>
-              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$313</span></div>
-              <div class="mb-line"><span>Insurance</span><span>$105</span></div>
-              <div class="mb-line"><span>PMI (3% down)</span><span>$167</span></div>
-              <div class="mb-line"><span>Flood Insurance</span><span>$85</span></div>
-            </div>
-          </div>
-          <div class="card-down">$11,250 down @ 3%</div>
-        </div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,671</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">25.81</div><div class="stat-sub">Most acreage</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1990</div><div class="stat-sub">Manufactured</div></div>
-        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9 hr</div><div class="stat-sub">Google Maps</div></div>
-        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~7 min</div><div class="stat-sub">Dayton</div></div>
-        <div class="stat"><div class="stat-label">Shop</div><div class="stat-val">1,080 sqft</div><div class="stat-sub">Heated + cooler</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCORE + OFFER BAND -->
-  <div class="score-offer-band">
-    <div class="sob-score">
-      <div>
-        <div class="sob-score-num">79</div>
-        <div class="sob-score-denom">/ 100</div>
-      </div>
-      <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>20/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
-      </div>
-    </div>
-    <div class="sob-offer">
-      <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$350,000 – $362,000</div>
-      <div class="sob-offer-rationale">
-        <ul>
-          <li>Manufactured home classification significantly shrinks the qualified buyer pool — this is your single biggest lever</li>
-          <li>Many conventional lenders won't touch a 1990 manufactured without MH Advantage compliance — ask if it qualifies</li>
-          <li>At $375K ask, you're paying a premium that the manufactured label doesn't fully support vs. a comparable site-built</li>
-          <li>River frontage + shop are genuinely premium features that soften the discount, so don't go too low or you'll lose it</li>
-          <li>Columbia County comps for manufactured-on-land 20+ acres: $320–360K range (2024)</li>
-        </ul>
-        <div class="sob-strategy">Strategy: Open at $345K citing manufactured financing constraints + school district. Expect counter around $365K. Land at $355–360K. Ask about seller concessions toward closing costs.</div>
-      </div>
-    </div>
-  </div>
-  <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> Most acreage (25.81 ac) + 350 ft Touchet River frontage + 1,080 sqft heated shop with walk-in cooler. 7 min to Dayton town center. Not in flood plain. Ski Bluewood 7 miles away.
-  </div>
-
-  <div class="card-body">
-    <div class="card-section">
-      <div class="card-section-title">🏡 Property Highlights</div>
-      <ul>
-        <li><span class="li-icon">📐</span> Most acreage of all 10 properties at 25.81 acres</li>
-        <li><span class="li-icon">🌊</span> 350+ ft Touchet River frontage — fishing, recreation</li>
-        <li><span class="li-icon">🔨</span> 1,080 sqft heated shop with walk-in cooler — excellent workspace</li>
-        <li><span class="li-icon">🏔</span> Ski Bluewood ski area only 7 miles away</li>
-        <li><span class="li-icon">✅</span> Verified NOT in flood plain (confirmed via listing)</li>
-        <li><span class="li-icon">🏘</span> Only 7 min to Dayton — remarkably close for 25+ acres</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Dayton SD: GreatSchools 4-5/10</li>
-        <li><span class="li-icon">🏫</span> Small district — limited extracurricular options</li>
-        <li><span class="li-icon">🏥</span> Dayton General Hospital ~10 min</li>
-        <li><span class="li-icon">🛒</span> Dayton: grocery, hardware, charming historic downtown</li>
-        <li><span class="li-icon">🍷</span> Walla Walla wine country 40 min — weekend destination</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">✅ Pros</div>
-      <ul>
-        <li><span class="li-icon">✓</span> 25+ acres = maximum land for the price among all listings</li>
-        <li><span class="li-icon">✓</span> River frontage = rare and permanent recreational amenity</li>
-        <li><span class="li-icon">✓</span> Heated 1,080 sqft shop is outstanding work/hobby space</li>
-        <li><span class="li-icon">✓</span> Not in flood plain despite river frontage</li>
-        <li><span class="li-icon">✓</span> Ski access 7 miles — unique value for a mountain family</li>
-        <li><span class="li-icon">✓</span> Lowest combined drive + acreage value ratio</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">❌ Cons</div>
-      <ul>
-        <li><span class="li-icon">✗</span> <strong>Manufactured home</strong> — specialty financing required (FHA Title I, Fannie MH Advantage, or USDA). Higher rates possible.</li>
-        <li><span class="li-icon">✗</span> 1990 manufactured: HUD inspection may be required</li>
-        <li><span class="li-icon">✗</span> Schools below state average (4-5/10)</li>
-        <li><span class="li-icon">✗</span> Columbia County is very rural — limited social/cultural options</li>
-        <li><span class="li-icon">✗</span> Resale value of manufactured homes appreciates more slowly</li>
-      </ul>
-    </div>
-  </div>
-  <div class="pros-cons">
-    <div class="pros">
-      <div class="card-section-title">💬 Family Fit Notes</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">River frontage = magical for kids — swimming, fishing, exploring</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Ski Bluewood 7 mi = family ski days without a long drive</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Dayton is a tight-knit small town — strong community feel</li>
-      </ul>
-    </div>
-    <div class="cons">
-      <div class="card-section-title">⚠️ Verify Before Offering</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Get pre-approved for manufactured home financing BEFORE touring</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm HUD certification tag is present (required for financing)</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Internet options — rural Columbia County, check Starlink</li>
-      </ul>
-    </div>
-  </div>
-  <div class="must-do">
-    <div class="must-do-title">MUST DO Before Offering</div>
-    <div class="must-do-grid">
-      <div class="must-do-item">Schedule home inspection</div>
-      <div class="must-do-item">Verify property boundaries (get survey)</div>
-      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
-      <div class="must-do-item">Get septic inspection and pump history</div>
-      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
-      <div class="must-do-item">HUD certification tag verification</div>
-      <div class="must-do-item">Manufactured-home-specific financing confirmation</div>
-      <div class="must-do-item">FEMA flood map for parcel</div>
-      <div class="must-do-item">Flood insurance quote</div>
-      <div class="must-do-item">Riparian setback requirements (Touchet River)</div>
-    </div>
-  </div>
-    <div class="env-hazards">
-    <div class="env-hazards-title">Environmental Hazards — Dayton, WA (Columbia County)</div>
-    <div class="env-hazards-grid">
-      <span class="env-pill env-pill-high">Wildfire: Moderate-High</span>
-      <span class="env-pill env-pill-high">Flood: High</span>
-      <span class="env-pill env-pill-mod">Wind: Moderate</span>
-    </div>
-    <div class="env-note">Touchet River flood zone — check FEMA maps for this parcel. Columbia County grassland fire risk. Property may require flood insurance.</div>
-  </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">79</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>20/20</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-    </div>
-  </div>
-</div>
-<!-- ══════════════════════════════════════════════════
-     PROPERTY #6 — ADDY WA (Best Value/Acre)
-═══════════════════════════════════════════════════ -->
-<div class="card" id="p6">
-  <div class="card-top">
-    <div class="card-map">
-      <img
-        loading="lazy"
-        src="https://washingtonviews.com/site/assets/files/134094/20260217213515368773000000-o.240x180.jpg"
-        alt="2477 Cedonia Addy Rd, Addy WA"
-        style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://washingtonviews.com/listings/residential/2477-cedonia-addy-rd-addy-wa-99101-45520" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.homes.com/property/2477-cedonia-addy-rd-addy-wa/c64e59qepvk3j/" target="_blank">Homes.com</a>
-      </div>
-    </div>
-    <div>
-      <div class="card-header">
-        <div class="card-title-group">
-          <div class="card-address">2477 Cedonia Addy Rd</div>
-          <div class="card-sub">Addy, WA 99101 · Stevens County</div>
-          <div class="card-badges">
-            <span class="badge b-sfr">Site-Built 1910</span>
-          </div>
-        </div>
-        <div class="card-price-block">
-          <div class="card-price">$289,000</div>
-          <div class="card-monthly">
-            <span class="monthly-total">~$2,242/mo</span>
-            <button class="monthly-toggle">&#9662; details</button>
-            <div class="monthly-breakdown" hidden>
-              <div class="mb-line"><span>Principal &amp; Interest</span><span>$1,772</span></div>
-              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$241</span></div>
-              <div class="mb-line"><span>Insurance</span><span>$100</span></div>
-              <div class="mb-line"><span>PMI (3% down)</span><span>$129</span></div>
-            </div>
-          </div>
-          <div class="card-down">$8,670 down @ 3%</div>
-        </div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 1</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,717</div><div class="stat-sub">Log+addition</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">21</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1910</div><div class="stat-sub">Log home</div></div>
-        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
-        <div class="stat"><div class="stat-label">To Colville</div><div class="stat-val">~25 min</div></div>
-        <div class="stat"><div class="stat-label">$/Acre</div><div class="stat-val">$13,762</div><div class="stat-sub">Best value!</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCORE + OFFER BAND -->
-  <div class="score-offer-band">
-    <div class="sob-score">
-      <div>
-        <div class="sob-score-num">83</div>
-        <div class="sob-score-denom">/ 100</div>
-      </div>
-      <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>15/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>17/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:85%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
-      </div>
-    </div>
-    <div class="sob-offer">
-      <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$268,000 – $278,000</div>
-      <div class="sob-offer-rationale">
-        <ul>
-          <li>A 1910 log home is a genuinely rare and desirable asset — but also carries significant unknowns (settling, log rot, chinking, insulation) that justify a meaningful discount from ask</li>
-          <li>Listed Feb 2026 — fresh listing, so seller may be testing the market; early offers tend to get attention</li>
-          <li>$289K ask for 21 acres + shop + creek in Stevens County is already priced to move; you have room but don't lowball aggressively or you'll lose it</li>
-          <li>Best value/acre of all listings at $13,762/ac — the data supports the price, so the inspection is your main lever</li>
-          <li>Log home insurance premium could add $50–100/mo to costs — factor into negotiation</li>
-        </ul>
-        <div class="sob-strategy">Strategy: Open at $265K, noting 1910 structural unknowns. Target $272–275K. Request $5–8K credit toward log structure inspection + chinking repairs. This is exceptional value if inspection is clean.</div>
-      </div>
-    </div>
-  </div>
-  <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> Best value-per-acre at $13,762/ac. 1910 log home with addition has character no other property can match. Year-round Smith Creek through the property. 1,520 sqft shop/barn. Fully fenced 21 acres. Lowest price of any site-built WA listing.
-  </div>
-
-  <div class="card-body">
-    <div class="card-section">
-      <div class="card-section-title">🏡 Property Highlights</div>
-      <ul>
-        <li><span class="li-icon">🪵</span> 1910 log home + addition — irreplaceable character and craftsmanship</li>
-        <li><span class="li-icon">🌊</span> Year-round Smith Creek runs through property</li>
-        <li><span class="li-icon">🔨</span> 1,520 sqft shop/barn + lean-to + chicken/goat sheds</li>
-        <li><span class="li-icon">🐐</span> Fully fenced 21 acres — animal-ready</li>
-        <li><span class="li-icon">💰</span> Best value-per-acre of any listing at $13,762/ac</li>
-        <li><span class="li-icon">🚗</span> Paved access to Hwy 395 — good road access for rural property</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Summit Valley School (K-8 in Addy, very small district)</li>
-        <li><span class="li-icon">🏫</span> High school likely Colville SD (~25 min) — Niche B, 6-7/10</li>
-        <li><span class="li-icon">🏥</span> Providence St. Joseph's (Colville) ~25 min</li>
-        <li><span class="li-icon">🛒</span> Colville full services ~25 min via Hwy 395</li>
-        <li><span class="li-icon">🌊</span> Columbia River recreation (Lake Roosevelt) nearby</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">✅ Pros</div>
-      <ul>
-        <li><span class="li-icon">✓</span> Lowest price of all site-built WA listings at $289K</li>
-        <li><span class="li-icon">✓</span> Log home character is unique and desirable</li>
-        <li><span class="li-icon">✓</span> 21 fully fenced acres = real working farm potential</li>
-        <li><span class="li-icon">✓</span> Year-round creek — water feature + livestock potential</li>
-        <li><span class="li-icon">✓</span> 1,520 sqft shop is substantial work/storage space</li>
-        <li><span class="li-icon">✓</span> Paved road access — no gravel concerns in winter</li>
-        <li><span class="li-icon">✓</span> Freshest listing (listed Feb 2026)</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">❌ Cons</div>
-      <ul>
-        <li><span class="li-icon">✗</span> 1910 structure — logs may have settling, rot, or insulation issues</li>
-        <li><span class="li-icon">✗</span> "Ready for your personal touch" = some work needed</li>
-        <li><span class="li-icon">✗</span> Loft bedrooms — may not feel like proper rooms for older kids</li>
-        <li><span class="li-icon">✗</span> Summit Valley K-8 is very small — limited peer group for kids</li>
-        <li><span class="li-icon">✗</span> Only 1 bath listed (verify if second bath is full or half)</li>
-        <li><span class="li-icon">✗</span> Log home insurance can be higher and harder to obtain</li>
-      </ul>
-    </div>
-  </div>
-  <div class="pros-cons">
-    <div class="pros">
-      <div class="card-section-title">💬 Family Fit Notes</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Year-round creek is perfect for kids' exploration and play</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Chicken/goat sheds already in place — farm animal experience for kids</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Lower mortgage leaves budget for improvements and family activities</li>
-      </ul>
-    </div>
-    <div class="cons">
-      <div class="card-section-title">⚠️ Verify Before Offering</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Log structure inspection — specifically check for rot, settling, chinking</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Confirm bathroom count and which school district for HS</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Wildfire risk for Addy corridor — check Oregon/WA wildfire risk maps</li>
-      </ul>
-    </div>
-  </div>
-  <div class="must-do">
-    <div class="must-do-title">MUST DO Before Offering</div>
-    <div class="must-do-grid">
-      <div class="must-do-item">Schedule home inspection</div>
-      <div class="must-do-item">Verify property boundaries (get survey)</div>
-      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
-      <div class="must-do-item">Get septic inspection and pump history</div>
-      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
-      <div class="must-do-item">Full structural assessment of 1910 log structure</div>
-      <div class="must-do-item">Foundation check (1910 build)</div>
-      <div class="must-do-item">Fire insurance quote (severe wildfire risk)</div>
-      <div class="must-do-item">Defensible space plan</div>
-    </div>
-  </div>
-    <div class="env-hazards">
-    <div class="env-hazards-title">Environmental Hazards — Addy, WA (Stevens County)</div>
-    <div class="env-hazards-grid">
-      <span class="env-pill env-pill-severe">Wildfire: Severe</span>
-      <span class="env-pill env-pill-low">Flood: Minimal</span>
-      <span class="env-pill env-pill-severe">Air Quality: Extreme</span>
-    </div>
-    <div class="env-note">First Street wildfire risk 8/10, air quality 9/10. Oregon Rd fires in 2023 came within miles. Summer smoke regularly exceeds hazardous levels. Defensible space critical.</div>
-  </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">83</div>
-      <div class="score-label">/ 100 ★ Strong Value</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>17/20</span></div><div class="score-track"><div class="score-fill" style="width:85%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════
      PROPERTY #7 — GRANGEVILLE ID (Black Tail Ln)
 ═══════════════════════════════════════════════════ -->
 <div class="card" id="p7">
@@ -2429,198 +2036,6 @@ table.qt {
       <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>15/15</span></div><div class="score-track"><div class="score-fill" style="width:100%"></div></div></div>
       <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
       <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     PROPERTY #8 — LEWISTON ID
-═══════════════════════════════════════════════════ -->
-<div class="card" id="p8">
-  <div class="card-top">
-    <div class="card-map">
-      <img
-        loading="lazy"
-        src="https://photos.zillowstatic.com/fp/1de6b52619fb77825c6dd50548e9b1f6-uncropped_scaled_within_1536_1152.webp"
-        alt="20235 Valley View Dr, Lewiston ID"
-        style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/20235-Valley-View-Dr-Lewiston-ID-83501/110323333_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/20235-Valley-View-Dr-Lewiston-ID-83501/110323333_zpid/" target="_blank">Zillow</a>
-      </div>
-    </div>
-    <div>
-      <div class="card-header">
-        <div class="card-title-group">
-          <div class="card-address">20235 Valley View Dr</div>
-          <div class="card-sub">Lewiston, ID 83501 · Nez Perce County</div>
-          <div class="card-badges">
-            <span class="badge b-sfr">Site-Built</span>
-          </div>
-        </div>
-        <div class="card-price-block">
-          <div class="card-price">$489,000</div>
-          <div class="card-monthly">
-            <span class="monthly-total">~$3,641/mo</span>
-            <button class="monthly-toggle">&#9662; details</button>
-            <div class="monthly-breakdown" hidden>
-              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,998</span></div>
-              <div class="mb-line"><span>Property Tax (ID 0.75%)</span><span>$306</span></div>
-              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
-              <div class="mb-line"><span>PMI (3% down)</span><span>$217</span></div>
-            </div>
-          </div>
-          <div class="card-down">$14,670 down @ 3%</div>
-        </div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,112</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">2.09</div><div class="stat-sub">Wooded hillside</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1979</div></div>
-        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9 hr</div><div class="stat-sub">Google Maps</div></div>
-        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~20 min</div><div class="stat-sub">Lewiston</div></div>
-        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$3,363/yr</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCORE + OFFER BAND -->
-  <div class="score-offer-band">
-    <div class="sob-score">
-      <div>
-        <div class="sob-score-num">55</div>
-        <div class="sob-score-denom">/ 100</div>
-      </div>
-      <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>2/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:10%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>5/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:33%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>14/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:93%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
-      </div>
-    </div>
-    <div class="sob-offer">
-      <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$460,000 – $475,000</div>
-      <div class="sob-offer-rationale">
-        <ul>
-          <li>Listed $489K but Zestimate only $475.9K — already priced above market estimate</li>
-          <li>40 DOM with only 2.09 acres limits buyer pool for rural-minded buyers</li>
-          <li>Good kitchen reno adds value, but steep hillside lot reduces usable acreage significantly</li>
-          <li>Comparable Lewiston-area homes with 2+ acres trading $210–$230/sqft → $460K is fair</li>
-        </ul>
-        <div class="sob-strategy">Strategy: Open at $455K, target $460–470K. Use steep slope and small lot size as leverage. Inspection contingency on 1979 systems.</div>
-      </div>
-    </div>
-  </div>
-  <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> Renovated kitchen with quartz countertops. Walk-out basement with wood stove and bonus room. Circular driveway, oversized garage, greenhouse. Near Craig Mountain Wildlife Management Area (72,000 acres).
-  </div>
-
-  <div class="card-body">
-    <div class="card-section">
-      <div class="card-section-title">🏡 Property Highlights</div>
-      <ul>
-        <li><span class="li-icon">🏠</span> Recently renovated kitchen with quartz countertops and modern finishes</li>
-        <li><span class="li-icon">🚪</span> Walk-out basement with bonus room and wood stove — extra living space</li>
-        <li><span class="li-icon">🚗</span> Circular driveway with oversized 2-car garage</li>
-        <li><span class="li-icon">🌿</span> Greenhouse on property — year-round growing potential</li>
-        <li><span class="li-icon">🌲</span> Wooded 2.09 acres in Waha area above Lewiston valley</li>
-        <li><span class="li-icon">💧</span> Community water system + septic — no well maintenance</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Lewiston Independent SD — solid mid-range Idaho district</li>
-        <li><span class="li-icon">🏫</span> Multiple school options in Lewiston/Clarkston metro area</li>
-        <li><span class="li-icon">🏥</span> St. Joseph Regional Medical Center ~20 min</li>
-        <li><span class="li-icon">🛒</span> Full services in Lewiston — Costco, Walmart, Home Depot</li>
-        <li><span class="li-icon">🏞️</span> Craig Mountain WMA (72,000 acres) for hunting/hiking nearby</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">✅ Pros</div>
-      <ul>
-        <li><span class="li-icon">✓</span> Beautifully renovated kitchen — move-in ready upstairs</li>
-        <li><span class="li-icon">✓</span> Lewiston has full big-box services — best town access of ID listings</li>
-        <li><span class="li-icon">✓</span> Walk-out basement adds functional bonus living space</li>
-        <li><span class="li-icon">✓</span> Community water = no well pump worries</li>
-        <li><span class="li-icon">✓</span> Greenhouse for year-round food production</li>
-        <li><span class="li-icon">✓</span> Oversized garage handles trucks/equipment</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">❌ Cons</div>
-      <ul>
-        <li><span class="li-icon">✗</span> Only 2.09 acres — smallest lot on entire list by far</li>
-        <li><span class="li-icon">✗</span> Steep hillside limits usable outdoor space for kids/animals</li>
-        <li><span class="li-icon">✗</span> Priced above Zestimate ($475.9K) at $489K</li>
-        <li><span class="li-icon">✗</span> No spring water source — community water has monthly fees</li>
-        <li><span class="li-icon">✗</span> Waha area is 20 min from Lewiston — winding mountain road</li>
-        <li><span class="li-icon">✗</span> 1979 build — verify plumbing, electrical, roof condition</li>
-      </ul>
-    </div>
-  </div>
-  <div class="pros-cons">
-    <div class="pros">
-      <div class="card-section-title">💬 Family Fit Notes</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Full Lewiston services nearby make daily family life convenient</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">School options are better than most rural listings on this list</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Bonus basement room works great as playroom or teen hangout</li>
-      </ul>
-    </div>
-    <div class="cons">
-      <div class="card-section-title">⚠️ Verify Before Offering</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Septic system age and condition — hillside can complicate drainage</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Community water fees and any use restrictions</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Road condition to property in winter — steep grades + snow/ice</li>
-      </ul>
-    </div>
-  </div>
-  <div class="must-do">
-    <div class="must-do-title">MUST DO Before Offering</div>
-    <div class="must-do-grid">
-      <div class="must-do-item">Schedule home inspection</div>
-      <div class="must-do-item">Verify property boundaries (get survey)</div>
-      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
-      <div class="must-do-item">Get septic inspection and pump history</div>
-      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
-      <div class="must-do-item">Lead paint disclosure (pre-1978 build)</div>
-      <div class="must-do-item">Verify electrical panel age and capacity</div>
-    </div>
-  </div>
-    <div class="env-hazards">
-    <div class="env-hazards-title">Environmental Hazards — Lewiston, ID (Nez Perce County)</div>
-    <div class="env-hazards-grid">
-      <span class="env-pill env-pill-mod">Wildfire: Moderate</span>
-      <span class="env-pill env-pill-high">Flood: High</span>
-      <span class="env-pill env-pill-mod">Air Quality: Moderate</span>
-    </div>
-    <div class="env-note">Confluence of Snake and Clearwater rivers — check FEMA flood maps. Temperature inversions trap smoke in valley. Lewiston has the lowest elevation in Idaho.</div>
-  </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">55</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>2/20</span></div><div class="score-track"><div class="score-fill" style="width:10%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>14/15</span></div><div class="score-track"><div class="score-fill" style="width:93%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
     </div>
   </div>
 </div>
@@ -3392,198 +2807,6 @@ table.qt {
 </div>
 
 <!-- ══════════════════════════════════════════════════
-     PROPERTY #13 — EUREKA MT
-═══════════════════════════════════════════════════ -->
-<div class="card" id="p13">
-  <div class="card-top">
-    <div class="card-map">
-      <img
-        loading="lazy"
-        src="https://photos.zillowstatic.com/fp/63d95c6096b74432a101867334e9efdb-cc_ft_1152.webp"
-        alt="2801 US Highway 93 S, Eureka MT"
-        style="width:100%;height:100%;object-fit:cover;min-height:240px;">
-      <div class="map-overlay">
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/2801-Us-Highway-93-S-Eureka-MT-59917/92069757_zpid/" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          View All Photos
-        </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/2801-Us-Highway-93-S-Eureka-MT-59917/92069757_zpid/" target="_blank">Zillow</a>
-      </div>
-    </div>
-    <div>
-      <div class="card-header">
-        <div class="card-title-group">
-          <div class="card-address">2801 US Highway 93 S</div>
-          <div class="card-sub">Eureka, MT 59917 · Lincoln County</div>
-          <div class="card-badges">
-            <span class="badge b-sfr">Site-Built</span>
-          </div>
-        </div>
-        <div class="card-price-block">
-          <div class="card-price">$499,000</div>
-          <div class="card-monthly">
-            <span class="monthly-total">~$3,755/mo</span>
-            <button class="monthly-toggle">&#9662; details</button>
-            <div class="monthly-breakdown" hidden>
-              <div class="mb-line"><span>Principal &amp; Interest</span><span>$3,059</span></div>
-              <div class="mb-line"><span>Property Tax (MT 0.85%)</span><span>$354</span></div>
-              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
-              <div class="mb-line"><span>PMI (3% down)</span><span>$222</span></div>
-            </div>
-          </div>
-          <div class="card-down">$14,970 down @ 3%</div>
-        </div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,144</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">12.27</div><div class="stat-sub">Wooded, no covenants</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2006</div></div>
-        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~8 hr</div><div class="stat-sub">Google Maps</div></div>
-        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~10 min</div><div class="stat-sub">Eureka</div></div>
-        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$1,610/yr</div><div class="stat-sub">Low</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCORE + OFFER BAND -->
-  <div class="score-offer-band">
-    <div class="sob-score">
-      <div>
-        <div class="sob-score-num">70</div>
-        <div class="sob-score-denom">/ 100</div>
-      </div>
-      <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>6/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:40%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>14/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>10/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:67%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
-      </div>
-    </div>
-    <div class="sob-offer">
-      <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$380,000 – $420,000</div>
-      <div class="sob-offer-rationale">
-        <ul>
-          <li>631 DOM is the highest on the list by far — extreme leverage; this has been listed nearly 2 years</li>
-          <li>$436/sqft for only 1,144 sqft is dramatically overpriced for Lincoln County MT</li>
-          <li>Tax assessed value is only $54,960 — massive gap between assessment and asking price</li>
-          <li>Log cabin + quonset with living quarters + greenhouse is unique but hard to comp</li>
-        </ul>
-        <div class="sob-strategy">Strategy: Open at $360K citing 631 DOM and $55K tax assessment. Target $390–410K. Seller has been waiting nearly 2 years — they need to sell. Be patient.</div>
-      </div>
-    </div>
-  </div>
-  <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> 12 wooded acres with views and NO covenants. Log cabin with utilities. 30x40 quonset with living quarters. Greenhouse, multiple sheds. 500+ ft Hwy 93 frontage. Minutes from Eureka; <1 hr from Whitefish/Kalispell.
-  </div>
-
-  <div class="card-body">
-    <div class="card-section">
-      <div class="card-section-title">🏡 Property Highlights</div>
-      <ul>
-        <li><span class="li-icon">🌲</span> 12.27 wooded acres with views and total seclusion feel</li>
-        <li><span class="li-icon">📜</span> NO covenants — complete freedom to build, modify, use as you wish</li>
-        <li><span class="li-icon">🏠</span> Log cabin with power, water, heat — open floor plan</li>
-        <li><span class="li-icon">🏭</span> 30x40 quonset with living quarters — workshop + guest space</li>
-        <li><span class="li-icon">🌿</span> Greenhouse + multiple sheds for homestead operations</li>
-        <li><span class="li-icon">🛣️</span> 500+ feet of Hwy 93 frontage — easy access, potential commercial value</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Eureka SD — small rural Montana district</li>
-        <li><span class="li-icon">🏫</span> Lincoln County schools — GreatSchools 5–6/10</li>
-        <li><span class="li-icon">🏥</span> Cabinet Peaks Medical Center (Libby) ~45 min; Kalispell ~50 min</li>
-        <li><span class="li-icon">🛒</span> Eureka has basic services; Whitefish/Kalispell ~50 min for full retail</li>
-        <li><span class="li-icon">🎿</span> Near Whitefish Mountain Resort — skiing, outdoor recreation hub</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">✅ Pros</div>
-      <ul>
-        <li><span class="li-icon">✓</span> 631 DOM = most leverage of any property on the list</li>
-        <li><span class="li-icon">✓</span> No covenants — rare freedom for building, animals, business use</li>
-        <li><span class="li-icon">✓</span> 12+ wooded acres with views and genuine mountain seclusion</li>
-        <li><span class="li-icon">✓</span> Quonset with living quarters is essentially a second dwelling</li>
-        <li><span class="li-icon">✓</span> Near Whitefish/Kalispell — world-class outdoor recreation area</li>
-        <li><span class="li-icon">✓</span> Low taxes ($1,610/yr) keep ongoing costs manageable</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">❌ Cons</div>
-      <ul>
-        <li><span class="li-icon">✗</span> Only 1,144 sqft main house — too small for most families</li>
-        <li><span class="li-icon">✗</span> $436/sqft is absurdly high — deeply overpriced at asking</li>
-        <li><span class="li-icon">✗</span> Tax assessment of $54,960 vs. $499K asking is a red flag</li>
-        <li><span class="li-icon">✗</span> Highway frontage means road noise — less private than it appears</li>
-        <li><span class="li-icon">✗</span> Lincoln County is remote — limited job market and services</li>
-        <li><span class="li-icon">✗</span> Multiple structures may have permit/code compliance issues</li>
-      </ul>
-    </div>
-  </div>
-  <div class="pros-cons">
-    <div class="pros">
-      <div class="card-section-title">💬 Family Fit Notes</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Whitefish area is a dream for outdoor family — skiing, hiking, lakes</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">No covenants means kids can have any animals, build forts, explore freely</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">1,144 sqft is a real challenge for a family — quonset quarters help but aren’t ideal</li>
-      </ul>
-    </div>
-    <div class="cons">
-      <div class="card-section-title">⚠️ Verify Before Offering</div>
-      <ul style="list-style:none;padding:0;">
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Why 631 DOM? — investigate if there are hidden issues (zoning, access, contamination)</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Permit status on all structures — log cabin, quonset, greenhouse</li>
-        <li style="font-size:0.85rem;padding:0.25rem 0;">Well/septic status and water quality — Hwy 93 proximity may affect groundwater</li>
-      </ul>
-    </div>
-  </div>
-  <div class="must-do">
-    <div class="must-do-title">MUST DO Before Offering</div>
-    <div class="must-do-grid">
-      <div class="must-do-item">Schedule home inspection</div>
-      <div class="must-do-item">Verify property boundaries (get survey)</div>
-      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
-      <div class="must-do-item">Get septic inspection and pump history</div>
-      <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
-      <div class="must-do-item">Fire insurance quote (high wildfire risk)</div>
-      <div class="must-do-item">Defensible space plan</div>
-    </div>
-  </div>
-    <div class="env-hazards">
-    <div class="env-hazards-title">Environmental Hazards — Eureka, MT (Lincoln County)</div>
-    <div class="env-hazards-grid">
-      <span class="env-pill env-pill-severe">Wildfire: Very High</span>
-      <span class="env-pill env-pill-mod">Flood: Moderate</span>
-      <span class="env-pill env-pill-high">Air Quality: High</span>
-    </div>
-    <div class="env-note">Lincoln County is one of MT's highest wildfire risk counties. Tobacco River corridor. Canadian border fires add cross-border smoke. Kootenai National Forest surrounds area.</div>
-  </div>
-<div class="score-row">
-    <div>
-      <div class="score-big">70</div>
-      <div class="score-label">/ 100</div>
-    </div>
-    <div class="score-bars">
-      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>6/15</span></div><div class="score-track"><div class="score-fill" style="width:40%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>14/20</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>9/10</span></div><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
-      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>6/10</span></div><div class="score-track"><div class="score-fill" style="width:60%"></div></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════
      PROPERTY #14 — CUSICK WA
 ═══════════════════════════════════════════════════ -->
 <div class="card" id="p14">
@@ -4173,7 +3396,7 @@ table.qt {
     <div class="card-map">
       <img
         loading="lazy"
-        src="https://photos.zillowstatic.com/fp/d9020a90e7f4e6f0e53e3c95ee4cb004-cc_ft_1152.webp"
+        src="https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/06f5ae822e28cc55417ae58533bdee79-full.webp"
         alt="4821 Vay Rd, Priest River ID"
         style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       <div class="map-overlay">
@@ -4181,7 +3404,6 @@ table.qt {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           View Listing
         </a>
-        <a class="photo-btn" href="https://www.zillow.com/homedetails/4751-Vay-Rd-Priest-River-ID-83856/221476254_zpid/" target="_blank">Zillow (nearby comp)</a>
       </div>
     </div>
     <div>
@@ -4372,13 +3594,615 @@ table.qt {
     </div>
   </div>
 </div>
+
+<!-- ═══════════════════════════════════════════════════
+     PROPERTY #18 — CUSICK WA (Highway 20)
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p18">
+  <div class="card-top">
+    <div class="card-map">
+      <img loading="lazy" src="https://photos.zillowstatic.com/fp/3f6386d7583672c4d71702ec4e5d3efc-cc_ft_1152.webp" alt="398462 Highway 20, Cusick WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homedetails/398462-Highway-20-Cusick-WA-99139/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">398462 Highway 20</div>
+          <div class="card-sub">Cusick, WA 99139 · Pend Oreille County</div>
+          <div class="card-badges">
+            <span class="badge b-new">NEW</span>
+            <span class="badge b-sfr">Site-Built</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$369,500</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$2,838/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,266</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$308</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$100</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$164</span></div>
+            </div>
+          </div>
+          <div class="card-down">$11,085 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,790</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">13.6</div><div class="stat-sub">Level, irregular lot</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1985</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~11.75 hr</div><div class="stat-sub">~774 mi</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~10 mi</div><div class="stat-sub">Ione / Cusick</div></div>
+        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$1,154/yr</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">66</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>16/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>4/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:27%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>10/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:67%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$340,000 – $355,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Just listed today — no DOM leverage yet, but 1985 build gives inspection leverage</li>
+          <li>Unfinished basement and wood-heat dependency justify below-asking offer</li>
+          <li>Remote location (65 mi to Costco) limits buyer pool</li>
+          <li>Fiber internet is a major differentiator — don't overpay for it though</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Open at $340K citing 40-year-old home condition, unfinished walkout basement, and wood heat as primary. Target $345-355K. Fiber internet and public land access are strong positives but don't change the structure age.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Cabin in the woods on 13.6 acres bordering hundreds of acres of public land. <strong>Fiber optic internet</strong> — rarest amenity on any rural listing. Near Pend Oreille River and multiple fishing lakes. Lowest price on the active list at $369.5K. Selkirk schools rate 9/10 (HS).
+  </div>
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏠</span> Craftsman-style 3/2 with loft, walkout basement, floor-to-ceiling windows, brick fireplace</li>
+        <li><span class="li-icon">🌲</span> 13.6 acres bordering hundreds of acres of public land — ultimate privacy + recreation</li>
+        <li><span class="li-icon">🌐</span> <strong>Fiber optic internet</strong> — rarest rural amenity; enables full remote work</li>
+        <li><span class="li-icon">🔥</span> Wood stove + forced-air wood/electric Taeger furnace in walkout basement</li>
+        <li><span class="li-icon">⚡</span> 200 amp service, wired for generator, portable generator included</li>
+        <li><span class="li-icon">🆕</span> Fresh paint throughout, new flooring/carpet, new propane cooktop, new front door, new gas water heater</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Selkirk Elementary — GreatSchools 6/10 (Average)</li>
+        <li><span class="li-icon">🏫</span> Selkirk Middle — GreatSchools 8/10; Selkirk High — <strong style="color:var(--green)">9/10</strong> (top 20% in WA)</li>
+        <li><span class="li-icon">🏥</span> Newport Community Hospital ~30 min; Spokane ~1.5 hr</li>
+        <li><span class="li-icon">🛒</span> Ione (~10 mi) for basics; "65 miles north of Costco" per listing</li>
+        <li><span class="li-icon">🎣</span> Pend Oreille River + multiple fishing lakes nearby</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Cheapest active listing at $369.5K — $130K under budget ceiling</li>
+        <li><span class="li-icon">✓</span> 13.6 acres level lot bordering public land — exceptional for the price</li>
+        <li><span class="li-icon">✓</span> Fiber optic internet — only rural property on the list with this</li>
+        <li><span class="li-icon">✓</span> Selkirk HS rated 9/10 — second-best school on the entire list</li>
+        <li><span class="li-icon">✓</span> Recently refreshed — new flooring, paint, appliances, water heater</li>
+        <li><span class="li-icon">✓</span> Walkout basement with workshop — 1,200 sqft of bonus space</li>
+        <li><span class="li-icon">✓</span> Paved road, built-in vacuum, metal roof</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> Built 1985 — 41 years old; foundation, plumbing, electrical need inspection</li>
+        <li><span class="li-icon">✗</span> Primary heat is wood — requires constant wood supply and maintenance</li>
+        <li><span class="li-icon">✗</span> ~11.75 hr drive to Farmington — exceeds 10-hour limit by nearly 2 hours</li>
+        <li><span class="li-icon">✗</span> Very remote — Ione is tiny, Cusick is tiny, "65 miles to Costco"</li>
+        <li><span class="li-icon">✗</span> No separate outbuilding/shop mentioned — basement workshop only</li>
+        <li><span class="li-icon">✗</span> Only 3 bedrooms — may be tight for a growing family</li>
+        <li><span class="li-icon">✗</span> Drilled well AND dug well — dug wells are more prone to contamination</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Same Selkirk School District as P14 (Cusick) — strong schools, small class sizes</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Public land access means unlimited hiking, hunting, exploring right from the property</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Loft area with fireplace could serve as kids' space or home office</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Well water test — two wells (drilled + dug) need flow rate and quality testing</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Septic capacity — verify rated for 3+ bedrooms</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Basement moisture — walkout basements in WA can have water intrusion issues</li>
+      </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item">Schedule home inspection (focus on 1985 foundation, plumbing, electrical)</div>
+      <div class="must-do-item">Well water test — GPM, bacteria, nitrates (both wells)</div>
+      <div class="must-do-item">Septic inspection and capacity verification</div>
+      <div class="must-do-item">Verify property boundaries / survey (13.6 acres)</div>
+      <div class="must-do-item">Confirm fiber internet service active at this address</div>
+      <div class="must-do-item">Inspect walkout basement for moisture/water intrusion</div>
+      <div class="must-do-item">Check zoning for outbuilding construction</div>
+      <div class="must-do-item">Verify roof age and condition (metal roof)</div>
+    </div>
+  </div>
+  <div class="env-hazards">
+    <div class="env-hazards-title">Environmental Hazards — Cusick, WA (Pend Oreille County)</div>
+    <div class="env-hazards-grid">
+      <span class="env-pill env-pill-high">Wildfire: High</span>
+      <span class="env-pill env-pill-mod">Flood: Moderate (river)</span>
+      <span class="env-pill env-pill-mod">Smoke: Moderate-High (summer)</span>
+    </div>
+    <div class="env-note">Heavily forested Pend Oreille County with significant wildfire risk. Volunteer fire department coverage (District 5). Pend Oreille River flood risk — check FEMA maps for this parcel. Summer wildfire smoke common in the valley.</div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">66</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>16/20</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>4/15</span></div><div class="score-track"><div class="score-fill" style="width:27%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>10/15</span></div><div class="score-track"><div class="score-fill" style="width:67%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PROPERTY #19 — LIBBY MT
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p19">
+  <div class="card-top">
+    <div class="card-map">
+      <img loading="lazy" src="https://photos.zillowstatic.com/fp/0651cca91d276e793926aaa57114d0af-cc_ft_1152.webp" alt="226 Powerline Way, Libby MT" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homedetails/226-Powerline-Way-Libby-MT-59923/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">226 Powerline Way</div>
+          <div class="card-sub">Libby, MT 59923 · Lincoln County</div>
+          <div class="card-badges">
+            <span class="badge b-new">NEW</span>
+            <span class="badge b-mfg">Manuf.</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$450,000</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,398/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,759</span></div>
+              <div class="mb-line"><span>Property Tax (MT 0.85%)</span><span>$319</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$200</span></div>
+            </div>
+          </div>
+          <div class="card-down">$13,500 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 3</div><div class="stat-sub">2 living quarters</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,906</div><div class="stat-sub">+ 500 sqft bonus</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">5.02</div><div class="stat-sub">Wooded + meadow</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1992</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~12 hr</div><div class="stat-sub">~700 mi</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~5 min</div><div class="stat-sub">Libby (~2,800 pop)</div></div>
+        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$323/yr</div><div class="stat-sub">MT assessed value</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">57</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>8/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:53%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>7/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:35%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>13/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:87%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>11/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:73%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>4/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:40%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$390,000 – $415,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>Manufactured home at $450K is aggressive — manufactured homes depreciate, not appreciate</li>
+          <li>Libby asbestos Superfund site is a unique stigma that affects property values and insurance</li>
+          <li>Dec 2025 historic flooding in Lincoln County — elevated risk awareness</li>
+          <li>Only 5 acres barely meets minimum — limits future expansion</li>
+        </ul>
+        <div class="sob-strategy">Strategy: Lead with $390K citing manufactured home valuation norms and Superfund proximity. The outbuildings are the real value here — price the land and structures, not the manufactured home.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Best outbuilding package on the entire list — log 24×24 garage with living quarters above, dry cabin, shed with lean-tos, greenhouse, chicken coop, fenced garden. NO covenants. Horses, pigs, cows welcome. Two living quarters with potential for more. Minutes from Libby.
+  </div>
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏠</span> 3/2 manufactured home (1992) + bonus 1/1 living quarters over log garage — two residences</li>
+        <li><span class="li-icon">🏗️</span> Log 24×24 garage, 12×24 dry cabin w/ power, 12×16 shed with lean-tos — massive covered storage</li>
+        <li><span class="li-icon">🌿</span> Greenhouse, chicken coop, fenced garden, pond (drained but rebuildable)</li>
+        <li><span class="li-icon">🐴</span> NO covenants — horses, pigs, cows welcome; splittable lot</li>
+        <li><span class="li-icon">🅿️</span> 5 covered parking spaces (2 garage + 3 carport), propane + wood stove heat</li>
+        <li><span class="li-icon">🔐</span> Security system, smoke detectors, vaulted ceilings, 2 fireplaces</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Libby Elementary — GreatSchools 7/10 (Above Average)</li>
+        <li><span class="li-icon">🏫</span> Libby Middle — 4/10; Libby High — 4/10 (Below Average)</li>
+        <li><span class="li-icon">🏥</span> Cabinet Peaks Medical Center in Libby (~5 min)</li>
+        <li><span class="li-icon">🛒</span> Libby has grocery, hardware, restaurants — most services within 5 min</li>
+        <li><span class="li-icon">⛷️</span> Turner Mountain Ski Area (~30 min), Kootenai National Forest surrounds</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> Best outbuilding package on the list — garage, cabin, shed, greenhouse, coop</li>
+        <li><span class="li-icon">✓</span> Two separate living quarters — rental income or multi-generational potential</li>
+        <li><span class="li-icon">✓</span> NO covenants, NO HOA — full freedom for homesteading, livestock, building</li>
+        <li><span class="li-icon">✓</span> Property tax only $323/yr — absurdly low (MT assessed value system)</li>
+        <li><span class="li-icon">✓</span> Minutes from Libby — real town with hospital, grocery, hardware, restaurants</li>
+        <li><span class="li-icon">✓</span> Wooded + meadow land, mountain views, privacy</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> <strong style="color:var(--red)">MANUFACTURED HOME</strong> — financing restrictions (FHA/VA may require permanent foundation), depreciates</li>
+        <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Libby asbestos Superfund site</strong> — 694 deaths from W.R. Grace mine contamination; EPA cleanup ongoing; mine site not yet remediated</li>
+        <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Dec 2025 historic flooding</strong> — Lincoln County flood disaster destroyed bridges, "tens of millions" in damage; floodwaters may have mobilized mine waste</li>
+        <li><span class="li-icon">✗</span> Only 5.02 acres — barely meets minimum; limits expansion</li>
+        <li><span class="li-icon">✗</span> ~12 hr drive to Farmington — longest drive on the list</li>
+        <li><span class="li-icon">✗</span> Middle/High school rated 4/10 — below average</li>
+        <li><span class="li-icon">✗</span> Wildfire risk very high — Kootenai National Forest surrounds; multiple major fires nearby</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Libby is a real community (~2,800 pop) with hospital, schools, and services — not as isolated as some listings</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">The outbuilding package is exactly what the family wants for homesteading</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Asbestos concern is the elephant in the room — EPA says residential areas are safe, but it's a permanent stigma</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Asbestos testing</strong> — test soil and air on the property; verify EPA remediation status for this specific parcel</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Manufactured home foundation</strong> — permanent foundation required for conventional financing</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Flood damage</strong> — was this property affected by Dec 2025 flooding?</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;"><strong>Insurance quotes</strong> — wildfire + Superfund proximity may spike premiums</li>
+      </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item"><span class="must-do-icon">!</span> Asbestos soil/air test on the property</div>
+      <div class="must-do-item"><span class="must-do-icon">!</span> Verify manufactured home permanent foundation for financing</div>
+      <div class="must-do-item"><span class="must-do-icon">!</span> Check Dec 2025 flood damage to this property</div>
+      <div class="must-do-item">Home inspection (focus on MFG home condition, roof, skirting)</div>
+      <div class="must-do-item">Well water test — GPM, quality, contamination</div>
+      <div class="must-do-item">Septic inspection</div>
+      <div class="must-do-item">Get wildfire + Superfund insurance quotes</div>
+      <div class="must-do-item">Verify all outbuildings are on the title/survey</div>
+    </div>
+  </div>
+  <div class="env-hazards">
+    <div class="env-hazards-title">Environmental Hazards — Libby, MT (Lincoln County)</div>
+    <div class="env-hazards-grid">
+      <span class="env-pill env-pill-severe">Asbestos: Superfund Site</span>
+      <span class="env-pill env-pill-high">Wildfire: Very High</span>
+      <span class="env-pill env-pill-high">Flood: High (Dec 2025)</span>
+    </div>
+    <div class="env-note">W.R. Grace vermiculite mine contaminated Libby with asbestos — 694 deaths, only EPA public health emergency ever declared. Residential cleanup completed 2018 but mine site (OU3) NOT yet remediated. Dec 2025 historic flooding destroyed bridges, caused tens of millions in damage, and raised concerns about mobilizing mine waste. Kootenai National Forest wildfire risk includes Gibraltar Ridge (13K acres), Caribou (25K acres, 10 homes destroyed).</div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">57</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>8/15</span></div><div class="score-track"><div class="score-fill" style="width:53%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>7/20</span></div><div class="score-track"><div class="score-fill" style="width:35%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>7/10</span></div><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>13/15</span></div><div class="score-track"><div class="score-fill" style="width:87%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>11/15</span></div><div class="score-track"><div class="score-fill" style="width:73%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>4/10</span></div><div class="score-track"><div class="score-fill" style="width:40%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PROPERTY #20 — NORTHPORT WA
+═══════════════════════════════════════════════════ -->
+<div class="card" id="p20">
+  <div class="card-top">
+    <div class="card-map">
+      <img loading="lazy" src="https://photos.zillowstatic.com/fp/572764eed75a1daba001eb339bae977c-cc_ft_1152.webp" alt="4217 Northport Flat Creek Rd, Northport WA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
+      <div class="map-overlay">
+        <a class="photo-btn" href="https://www.zillow.com/homedetails/4217-Northport-Flat-Creek-Rd-Northport-WA-99157/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          View All Photos
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-address">4217 Northport Flat Creek Rd</div>
+          <div class="card-sub">Northport, WA 99157 · Stevens County</div>
+          <div class="card-badges">
+            <span class="badge b-new">NEW</span>
+            <span class="badge b-sfr">Site-Built</span>
+          </div>
+        </div>
+        <div class="card-price-block">
+          <div class="card-price">$475,000</div>
+          <div class="card-monthly">
+            <span class="monthly-total">~$3,629/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,912</span></div>
+              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$396</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$110</span></div>
+              <div class="mb-line"><span>PMI (3% down)</span><span>$211</span></div>
+            </div>
+          </div>
+          <div class="card-down">$14,250 down @ 3%</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,814</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">14.63</div><div class="stat-sub">Pasture + steep + level</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1985</div></div>
+        <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~13 hr</div><div class="stat-sub">~827 mi</div></div>
+        <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">Northport</div><div class="stat-sub">Pop. 207</div></div>
+        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$1,009/yr</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div><div class="stat-sub">Price cut $9.9K</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="score-offer-band">
+    <div class="sob-score">
+      <div>
+        <div class="sob-score-num">59</div>
+        <div class="sob-score-denom">/ 100</div>
+      </div>
+      <div class="sob-score-bars">
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>15/20</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:75%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Privacy</span><span>8/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>7/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:47%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Town</span><span>5/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:33%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>12/15</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:80%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Practical</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
+      </div>
+    </div>
+    <div class="sob-offer">
+      <div class="sob-offer-label">💰 Realistic Offer Range</div>
+      <div class="sob-offer-price">$420,000 – $445,000</div>
+      <div class="sob-offer-rationale">
+        <ul>
+          <li>49 DOM + price cut shows seller flexibility — originally listed higher</li>
+          <li><strong>Hope Fire (July 2025) burned 7,891 acres on this exact road</strong> — massive leverage</li>
+          <li>WALERT report flags Flat Creek Rd for elevated debris flow and flash flood risk</li>
+          <li>Medical clinic temporarily closed; Northport pop. 207 — extreme remoteness</li>
+        </ul>
+        <div class="sob-strategy">Strategy: The Hope Fire burn scar on Flat Creek Rd is unique leverage no other buyer can ignore. Open at $415K citing fire risk, debris flow hazard, elevated insurance, and medical access concerns. Target $430-440K.</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <strong>⭐ Why It Stands Out:</strong> Columbia River views from nearly every room. 14.63 acres with garden, orchard, grapevines, greenhouse, shop, shed, barn. Updated with mini-splits, new flooring, metal roof. Northport schools rated 10/10 (HS) — best school on the entire list. Zestimate $458.6K supports value.
+  </div>
+  <div class="card-body">
+    <div class="card-section">
+      <div class="card-section-title">🏡 Property Highlights</div>
+      <ul>
+        <li><span class="li-icon">🏠</span> Craftsman 3/2 with sunken living room, wood stove, vaulted ceilings, kitchen island</li>
+        <li><span class="li-icon">🏔️</span> Columbia River views from nearly every room — mountain and valley views</li>
+        <li><span class="li-icon">🌿</span> 25'×50' fenced garden, orchard, grapevines, greenhouse, fenced dog run</li>
+        <li><span class="li-icon">🏗️</span> 20'×20' shop + shed + barn — decent outbuilding package</li>
+        <li><span class="li-icon">❄️</span> Mini-splits for efficient year-round heating/cooling + wood stove backup</li>
+        <li><span class="li-icon">🆕</span> New flooring, updated bathrooms, newer metal roof, new covered deck</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">📍 Location & Schools</div>
+      <ul>
+        <li><span class="li-icon">🏫</span> Northport Elementary — GreatSchools 8/10 (Above Average)</li>
+        <li><span class="li-icon">🏫</span> Northport High — <strong style="color:var(--green)">GreatSchools 10/10</strong> — outperforms 94% of similar WA schools</li>
+        <li><span class="li-icon">🏥</span> Northport Medical Clinic: <strong style="color:var(--red)">TEMPORARILY CLOSED</strong> — Colville hospital ~55 min</li>
+        <li><span class="li-icon">🛒</span> Northport (pop. 207): 1 convenience store. Colville ~35 mi for services. Spokane ~2.5 hr</li>
+        <li><span class="li-icon">🇨🇦</span> 8 miles from Canadian border</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">✅ Pros</div>
+      <ul>
+        <li><span class="li-icon">✓</span> 14.63 acres — 3rd largest on the active list; pasture + garden + orchard</li>
+        <li><span class="li-icon">✓</span> Columbia River views — stunning and irreplaceable</li>
+        <li><span class="li-icon">✓</span> Northport HS rated 10/10 — best school on the entire list</li>
+        <li><span class="li-icon">✓</span> Recently updated — mini-splits, flooring, bathrooms, metal roof, deck</li>
+        <li><span class="li-icon">✓</span> Self-sufficient setup — garden, orchard, greenhouse, shop, barn</li>
+        <li><span class="li-icon">✓</span> No HOA, 200 amp service, cedar/wood construction</li>
+        <li><span class="li-icon">✓</span> Zestimate $458.6K supports value at $475K (after $9.9K price cut)</li>
+      </ul>
+    </div>
+    <div class="card-section">
+      <div class="card-section-title">❌ Cons</div>
+      <ul>
+        <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Hope Fire (July 2025) burned 7,891 acres on Flat Creek drainage</strong> — this exact road; Level 3 evacuations, homes destroyed</li>
+        <li><span class="li-icon">✗</span> <strong style="color:var(--red)">WALERT report flags Flat Creek Rd for debris flow + flash flood risk</strong> — "little time for occupants to evacuate"</li>
+        <li><span class="li-icon">✗</span> Medical clinic temporarily closed — nearest hospital 55 min in Colville</li>
+        <li><span class="li-icon">✗</span> ~13 hr drive to Farmington — longest on the list by far</li>
+        <li><span class="li-icon">✗</span> Northport pop. 207 (declining) — 1 convenience store, no full grocery</li>
+        <li><span class="li-icon">✗</span> Gravel road access (partially paved) — winter maintenance concern</li>
+        <li><span class="li-icon">✗</span> Built 1985, some steep terrain, no basement</li>
+        <li><span class="li-icon">✗</span> Only 3 bedrooms — may be tight for family</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <div class="card-section-title">💬 Family Fit Notes</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">Best school rating on the list (10/10 HS) but tiny school — very small class sizes</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);">The river views and self-sufficient setup (garden/orchard) perfectly match homestead goals</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;">Extreme remoteness is a real concern with kids — medical clinic is closed, Colville is 55 min</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <div class="card-section-title">⚠️ Verify Before Offering</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Fire damage assessment</strong> — walk the property; check for burn scars, damaged trees, erosion</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Debris flow risk</strong> — get the full WALERT report; assess drainage patterns on property</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;border-bottom:1px solid rgba(0,0,0,0.05);"><strong>Insurance quotes</strong> — post-fire wildfire premiums may be significantly elevated</li>
+        <li style="font-size:0.85rem;padding:0.25rem 0;"><strong>Road access in winter</strong> — gravel + post-fire erosion + steep terrain = access concern</li>
+      </ul>
+    </div>
+  </div>
+  <div class="must-do">
+    <div class="must-do-title">MUST DO Before Offering</div>
+    <div class="must-do-grid">
+      <div class="must-do-item"><span class="must-do-icon">!</span> Walk property for Hope Fire damage — burn scars, erosion, dead trees</div>
+      <div class="must-do-item"><span class="must-do-icon">!</span> Get WALERT debris flow report for this specific parcel</div>
+      <div class="must-do-item"><span class="must-do-icon">!</span> Get post-fire wildfire insurance quotes</div>
+      <div class="must-do-item">Home inspection (1985 build, crawl space foundation)</div>
+      <div class="must-do-item">Well water test — GPM, quality (drilled well)</div>
+      <div class="must-do-item">Septic inspection</div>
+      <div class="must-do-item">Verify road maintenance — winter plowing on gravel?</div>
+      <div class="must-do-item">Check internet options (likely Starlink only)</div>
+    </div>
+  </div>
+  <div class="env-hazards">
+    <div class="env-hazards-title">Environmental Hazards — Northport, WA (Stevens County)</div>
+    <div class="env-hazards-grid">
+      <span class="env-pill env-pill-severe">Wildfire: Very High (Hope Fire 2025)</span>
+      <span class="env-pill env-pill-high">Debris Flow: Elevated Post-Fire</span>
+      <span class="env-pill env-pill-mod">Flood: Moderate (elevated)</span>
+    </div>
+    <div class="env-note">Hope Fire (July 2025) burned 7,891 acres in the Flat Creek drainage — this property is ON Flat Creek Rd. Level 3 evacuations were ordered; at least 2 homes destroyed. WALERT assessment specifically flags Northport Flat Creek Rd for elevated debris flow and flash flood risk with "little time for occupants to evacuate." Post-fire hazards may persist for several years. Canadian cross-border wildfire smoke also a factor.</div>
+  </div>
+  <div class="score-row">
+    <div>
+      <div class="score-big">59</div>
+      <div class="score-label">/ 100</div>
+    </div>
+    <div class="score-bars">
+      <div class="score-item"><div class="score-item-label"><span>Price Value</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Acreage</span><span>15/20</span></div><div class="score-track"><div class="score-fill" style="width:75%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Trees/Privacy</span><span>8/10</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Outbuildings</span><span>7/15</span></div><div class="score-track"><div class="score-fill" style="width:47%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Town Proximity</span><span>5/15</span></div><div class="score-track"><div class="score-fill" style="width:33%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Schools</span><span>12/15</span></div><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      <div class="score-item"><div class="score-item-label"><span>Practicality</span><span>5/10</span></div><div class="score-track"><div class="score-fill" style="width:50%"></div></div></div>
+    </div>
+  </div>
+</div>
 </div><!-- /cards -->
 
 <!-- ── GRAVEYARD ── -->
 <div class="graveyard" id="graveyard">
   <div class="section-title" style="color:#6b7280;">Property Graveyard</div>
   <p class="graveyard-subtitle">Properties removed from active consideration. Kept for reference.</p>
-  <!-- Empty for now — entries added when properties are removed -->
+  <div class="graveyard-card">
+    <div class="graveyard-header">
+      <span class="badge b-removed">REMOVED</span>
+      <strong>P5 — 111 Tamarack Ln</strong>
+      <span>Dayton, WA · $375,000 · 3/2 · 1,671 sqft · 25.81 ac · Score: 79</span>
+    </div>
+    <div class="graveyard-reason">Reason: Family rated lowest (1.5★ avg). Manufactured home with financing constraints; Touchet River flood zone.</div>
+    <a class="graveyard-link" href="https://www.zillow.com/homedetails/111-Tamarack-Ln-Dayton-WA-99328/108178658_zpid/" target="_blank">View listing</a>
+  </div>
+  <div class="graveyard-card">
+    <div class="graveyard-header">
+      <span class="badge b-removed">REMOVED</span>
+      <strong>P6 — 2477 Cedonia Addy Rd</strong>
+      <span>Addy, WA · $289,000 · 3/2 · 2,717 sqft · 21 ac · Score: 83</span>
+    </div>
+    <div class="graveyard-reason">Reason: Family rated lowest (1.0★ avg). 1910 log home requires extensive renovation — too much deferred work.</div>
+    <a class="graveyard-link" href="https://washingtonviews.com/listings/residential/2477-cedonia-addy-rd-addy-wa-99101-45520" target="_blank">View listing</a>
+  </div>
+  <div class="graveyard-card">
+    <div class="graveyard-header">
+      <span class="badge b-removed">REMOVED</span>
+      <strong>P8 — 20235 Valley View Dr</strong>
+      <span>Lewiston, ID · $489,000 · 3/2 · 2,112 sqft · 2.09 ac · Score: 55</span>
+    </div>
+    <div class="graveyard-reason">Reason: Only 2.09 acres — well below 5-acre minimum. Suburban feel doesn't match homestead goals. Steep slope concerns.</div>
+    <a class="graveyard-link" href="https://www.zillow.com/homedetails/20235-Valley-View-Dr-Lewiston-ID-83501/110323333_zpid/" target="_blank">View listing</a>
+  </div>
+  <div class="graveyard-card">
+    <div class="graveyard-header">
+      <span class="badge b-removed">REMOVED</span>
+      <strong>P13 — 2801 US Highway 93 S</strong>
+      <span>Eureka, MT · $499,000 · 3/2 · 1,144 sqft · 12.27 ac · Score: 70</span>
+    </div>
+    <div class="graveyard-reason">Reason: 631 days on market — no buyer interest. $436/sqft grossly overpriced for 1,144 sqft cabin. Family rated 2.0★.</div>
+    <a class="graveyard-link" href="https://www.zillow.com/homedetails/2801-Us-Highway-93-S-Eureka-MT-59917/92069757_zpid/" target="_blank">View listing</a>
+  </div>
+  <div id="graveyard-dynamic"></div>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -4387,6 +4211,6 @@ table.qt {
   <p style="margin-top:0.4rem;">Mortgage estimates: 6.5% / 30yr / 3% down + est. taxes & insurance. Not a commitment to lend. Verify all listing statuses before touring. Maps © Google.</p>
 </footer>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

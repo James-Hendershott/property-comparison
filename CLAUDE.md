@@ -9,9 +9,9 @@ A property comparison dashboard for evaluating 16 real estate listings across WA
 ## Architecture
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
-- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
+- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
 - **public/index.html**: ~640 lines CSS in `<style>`, ~3,600 lines HTML (16 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`
-- **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, 30s polling for votes + notes
+- **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, graveyard move/restore UI, 30s polling for votes + notes + graveyard
 - **public/app.css**: Voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), nav user (`nav-user`)
 
 ## Commands
@@ -63,6 +63,9 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 | `POST` | `/api/notes` | Create note: `{ userId, propertyId, content }` |
 | `GET` | `/api/notes` | All notes grouped by property |
 | `DELETE` | `/api/notes/:id` | Delete own note: `{ userId }` in body |
+| `POST` | `/api/graveyard` | Move property: `{ userId, propertyId, reason }` |
+| `GET` | `/api/graveyard` | List all graveyarded properties |
+| `DELETE` | `/api/graveyard/:propertyId` | Restore property from graveyard |
 
 ## Key Patterns
 
@@ -72,8 +75,8 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **MUST DO section**: `.must-do` with `.must-do-grid` (2-col) containing `.must-do-item` elements. Universal + conditional items per property
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
 - **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
-- **Graveyard section**: `#graveyard` below cards — holds removed properties with `.graveyard-card` entries
-- **Nav anchors**: `#p1` through `#p16` matching card `id` attributes
+- **Graveyard section**: `#graveyard` below cards — static `.graveyard-card` entries for permanently removed properties + `#graveyard-dynamic` container for DB-driven entries (move/restore via UI)
+- **Nav anchors**: `#p1` through `#p20` matching card `id` attributes (gaps for removed properties)
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings
 
 ## When Adding a New Property
