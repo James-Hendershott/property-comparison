@@ -583,6 +583,22 @@ table.qt {
 .card-doc-link:hover { background: #bfdbfe; }
 .card-doc-link i { font-size: 0.85rem; }
 
+/* Internet guide */
+.guide { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1rem 0; }
+.guide-toggle { background: none; border: none; cursor: pointer; font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; width: 100%; text-align: left; padding: 0; }
+.guide-toggle i { font-size: 1.1rem; }
+.guide-body { display: none; margin-top: 1rem; }
+.guide-body.open { display: block; }
+.guide h4 { font-family: 'Lora', serif; font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 1rem 0 0.4rem; }
+.guide h4:first-child { margin-top: 0; }
+.guide ol, .guide ul { margin: 0.3rem 0; padding-left: 1.3rem; font-size: 0.82rem; line-height: 1.6; }
+.guide li { margin-bottom: 0.15rem; }
+.guide code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.78rem; }
+.guide-table { width: 100%; font-size: 0.75rem; border-collapse: collapse; margin: 0.5rem 0; }
+.guide-table th { text-align: left; padding: 0.3rem 0.5rem; background: #f8f5ef; border-bottom: 1px solid var(--border); font-weight: 600; }
+.guide-table td { padding: 0.3rem 0.5rem; border-bottom: 1px solid #eee; }
+.guide-note { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-top: 0.3rem; }
+
 /* PRINT */
 @media print {
   .nav, .print-btn { display: none !important; }
@@ -740,6 +756,7 @@ table.qt {
   <a href="#p18">Cusick Hwy 20</a>
   <a href="#p19">Libby MT</a>
   <a href="#p20">Northport</a>
+  <a href="#internet-guide" style="color:#0284c7; border-color:#0284c7;"><i class="bi bi-wifi"></i> Internet</a>
   <a href="#graveyard" style="color:#9ca3af; border-color:#4b5563;">Graveyard</a>
   <div class="nav-right">
     <button class="print-btn" onclick="window.print()">🖨 Print</button>
@@ -1036,6 +1053,140 @@ table.qt {
 
 <!-- ── FAMILY RANKINGS (injected by app.js) ── -->
 <div id="rankings"></div>
+
+<!-- ── INTERNET VERIFICATION GUIDE ── -->
+<div class="guide" id="internet-guide">
+  <button class="guide-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('i').classList.toggle('bi-chevron-down'); this.querySelector('i').classList.toggle('bi-chevron-up');">
+    <i class="bi bi-wifi"></i> Internet Verification Guide — How to Confirm Connectivity at Rural Properties
+    <i class="bi bi-chevron-down" style="margin-left:auto;"></i>
+  </button>
+  <div class="guide-body">
+
+    <h4>1. Check Starlink Availability</h4>
+    <ol>
+      <li>Go to <a href="https://starlink.com/map" target="_blank">starlink.com/map</a></li>
+      <li>Enter the full street address including zip code</li>
+      <li>Look for the status:</li>
+    </ol>
+    <table class="guide-table">
+      <tr><th>Status</th><th>What It Means</th></tr>
+      <tr><td><strong>Available</strong></td><td>Order immediately — equipment ships right away, no wait.</td></tr>
+      <tr><td><strong>Waitlist</strong></td><td>Area at capacity. Pay a $99 refundable deposit and wait for notification.</td></tr>
+      <tr><td><strong>Best Effort</strong></td><td>Available but lower priority than full subscribers. Speeds may be reduced during peak congestion.</td></tr>
+    </table>
+    <p class="guide-note">As of early 2026, most US areas are available but some PNW areas still have capacity constraints. Always check the specific address.</p>
+
+    <h4>Starlink Pricing (early 2026)</h4>
+    <table class="guide-table">
+      <tr><th>Plan</th><th>Monthly</th><th>Speeds</th><th>Notes</th></tr>
+      <tr><td>Residential 100 Mbps</td><td>$50/mo</td><td>Up to 100 Mbps</td><td>Select areas with excess bandwidth only</td></tr>
+      <tr><td>Residential 200 Mbps</td><td>$80/mo</td><td>Up to 200 Mbps</td><td>Select areas</td></tr>
+      <tr><td>Residential MAX</td><td>$120/mo</td><td>Up to 400+ Mbps</td><td>Available everywhere Starlink operates</td></tr>
+    </table>
+    <p class="guide-note">One-time: Standard Kit $349, Mini Kit $199–$499, Shipping $50. Some areas have a $100–$1,000 congestion charge. Confirm exact cost at <a href="https://starlink.com" target="_blank">starlink.com</a>.</p>
+
+    <h4>2. Use the Starlink App Obstruction Checker On-Site</h4>
+    <p style="font-size:0.82rem;margin:0.3rem 0;">You do <strong>NOT</strong> need a Starlink dish or account — the app is free and uses your phone's camera.</p>
+    <ol>
+      <li>Download the <strong>Starlink app</strong> — <a href="https://apps.apple.com/us/app/starlink/id1537177988" target="_blank">iOS</a> · <a href="https://play.google.com/store/apps/details?id=com.starlink.mobile" target="_blank">Android</a></li>
+      <li>Stand at the exact location where you'd mount the dish (roof, pole mount, clear ground)</li>
+      <li>Open the app → <strong>"Check for Obstructions"</strong></li>
+      <li>Point phone camera straight up and slowly sweep it around in all directions to collect all green dots</li>
+      <li>Review results:
+        <br>• <strong>&lt;2% obstruction</strong> = ideal
+        <br>• <strong>2–5%</strong> = occasional brief dropouts
+        <br>• <strong>&gt;5%</strong> = find a better spot or clear trees</li>
+    </ol>
+    <p class="guide-note">Test at dish height (roof, not ground). Check 2–3 spots. Save screenshots of each result.</p>
+
+    <h4>3. Check the FCC Broadband Map</h4>
+    <ol>
+      <li>Go to <a href="https://broadbandmap.fcc.gov/home" target="_blank">broadbandmap.fcc.gov</a></li>
+      <li>Search by full address</li>
+      <li>Review all listed providers, technology types, and advertised speeds</li>
+    </ol>
+    <table class="guide-table">
+      <tr><th>Technology</th><th>What It Means</th><th>Reality</th></tr>
+      <tr><td>Fiber</td><td>Best option — true high-speed</td><td>Verify with provider; may be planned but not built</td></tr>
+      <tr><td>Cable</td><td>Good option</td><td>Usually towns only, not rural</td></tr>
+      <tr><td>DSL</td><td>Copper phone lines</td><td>Speeds drop dramatically with distance; may show 100 Mbps but deliver 5</td></tr>
+      <tr><td>Fixed Wireless</td><td>Radio from local tower</td><td>Requires line-of-sight; terrain dependent</td></tr>
+      <tr><td>Satellite</td><td>Viasat/HughesNet/Starlink</td><td>Available almost everywhere but varies</td></tr>
+    </table>
+    <p class="guide-note">FCC data is ISP-reported and often overstated. Always verify directly with the provider.</p>
+
+    <h4>4. Check T-Mobile &amp; Verizon Home Internet</h4>
+    <ul>
+      <li><strong>T-Mobile:</strong> <a href="https://www.t-mobile.com/home-internet/eligibility" target="_blank">t-mobile.com/home-internet/eligibility</a> — Enter the exact street address (not just zip). Plans $35–$55/mo, speeds 25–100 Mbps rural, no data caps, no contract.</li>
+      <li><strong>Verizon:</strong> <a href="https://www.verizon.com/home/internet/5g/" target="_blank">verizon.com/home/internet/5g</a> — Plans $25–$60/mo. Very limited in eastern WA/north ID/western MT. Worth checking West Richland.</li>
+    </ul>
+    <p class="guide-note">Availability is extremely address-specific. Your neighbor may qualify while you don't. Always check each exact address.</p>
+
+    <h4>5. Local Fiber &amp; Rural Broadband by Area</h4>
+    <table class="guide-table">
+      <tr><th>Location</th><th>Best Realistic Option</th><th>Fiber?</th><th>Who to Call</th></tr>
+      <tr><td>Stevens Co — Colville/Kettle Falls</td><td>Stevens PUD fiber (town), Starlink (rural)</td><td>Yes, in town. DNG fiber expanding Hwy 25 (2026)</td><td>Stevens PUD (509) 684-2261</td></tr>
+      <tr><td>Stevens Co — Northport</td><td>DNG fiber (coming 2026), Starlink</td><td>DNG 100-mi project includes Northport</td><td>DNG / Stevens PUD</td></tr>
+      <tr><td>Klickitat Co — Goldendale</td><td>Blue Mtn Networks fiber, Spectrum (town)</td><td>Limited in Goldendale</td><td>Blue Mountain Networks</td></tr>
+      <tr><td>Klickitat Co — Appleton</td><td>Starlink</td><td>Very unlikely near-term</td><td>—</td></tr>
+      <tr><td>Idaho Co — Grangeville</td><td>AirBridge wireless, DSL, Starlink</td><td>Middle-mile 2027, no last-mile yet</td><td>AirBridge Broadband</td></tr>
+      <tr><td>Benton Co — West Richland</td><td>Spectrum cable, Benton PUD fiber</td><td><strong>Yes — excellent options</strong></td><td>Spectrum / Benton PUD</td></tr>
+      <tr><td>Lewis Co ID — Kamiah</td><td>AirBridge wireless, Starlink</td><td>0% fiber coverage</td><td>AirBridge Broadband</td></tr>
+      <tr><td>Pend Oreille Co — Cusick</td><td>PO PUD fiber</td><td><strong>Yes — PUD fiber active</strong></td><td>PO PUD: popud.org</td></tr>
+      <tr><td>Okanogan Co — Tonasket</td><td>Okanogan PUD fiber/wireless, Starlink</td><td>22% of Tonasket has PUD fiber</td><td>Okanogan PUD</td></tr>
+      <tr><td>Lincoln Co WA — Davenport</td><td>County open-access fiber (live 2025)</td><td><strong>Yes — fiber in city limits</strong></td><td>lincolncountywa.com</td></tr>
+      <tr><td>Bonner Co ID — Priest River</td><td>Ziply Fiber (town), Starlink (rural)</td><td><strong>Yes — Ziply up to 10 Gbps in town</strong></td><td>Ziply Fiber</td></tr>
+      <tr><td>Lincoln Co MT — Libby</td><td>MontanaSky, Ziply, InterBel, Starlink</td><td>Yes in town, InterBel expanding rural</td><td>MontanaSky / Ziply</td></tr>
+    </table>
+
+    <h4>6. Property Visit Internet Checklist</h4>
+    <p style="font-size:0.82rem;margin:0.3rem 0 0.2rem;"><strong>Before you go:</strong> Download <a href="https://www.opensignal.com/apps" target="_blank">OpenSignal</a>, <a href="https://www.speedtest.net/" target="_blank">Speedtest by Ookla</a>, and the <a href="https://apps.apple.com/us/app/starlink/id1537177988" target="_blank">Starlink app</a>.</p>
+    <p style="font-size:0.82rem;margin:0.2rem 0;"><strong>Cell signal — measure in dBm, not bars:</strong></p>
+    <table class="guide-table">
+      <tr><th>dBm Range</th><th>Quality</th><th>Good Enough For</th></tr>
+      <tr><td>-50 to -75</td><td>Excellent</td><td>Everything — T-Mobile Home Internet will work great</td></tr>
+      <tr><td>-76 to -90</td><td>Good</td><td>Adequate for home internet gateway</td></tr>
+      <tr><td>-91 to -105</td><td>Fair</td><td>Calls OK, data unreliable</td></tr>
+      <tr><td>-106 to -120</td><td>Poor/None</td><td>T-Mobile/Verizon Home Internet will NOT work here</td></tr>
+    </table>
+    <p class="guide-note">iPhone: dial *3001#12345#* → Serving Cell Meas → RSRP value. Android: Settings → About Phone → Status → Signal Strength.</p>
+
+    <p style="font-size:0.82rem;margin:0.5rem 0 0.2rem;"><strong>On-site checklist:</strong></p>
+    <ul>
+      <li>Check cell signal (dBm) for T-Mobile, AT&amp;T, and Verizon</li>
+      <li>Run speed tests at 3+ spots on property (front, back, high ground)</li>
+      <li>Run Starlink obstruction check at 2–3 potential dish locations</li>
+      <li>Save screenshots of all results</li>
+      <li><strong>Ask neighbors</strong> — "What internet do you use? How fast is it really? Does it go down? Is fiber coming to this road? Which cell carrier works best?"</li>
+      <li>Look for infrastructure: fiber pedestals (small green boxes at road edge), cable pedestals, cell towers on ridges</li>
+      <li>Note terrain: valley, ridge, tall timber — all affect cell, fixed wireless, and Starlink</li>
+    </ul>
+
+    <h4>7. Speed Requirements</h4>
+    <table class="guide-table">
+      <tr><th>Scenario</th><th>Download</th><th>Upload</th></tr>
+      <tr><td>1 person, remote work + video calls</td><td>25 Mbps</td><td>10 Mbps</td></tr>
+      <tr><td>2 people, both remote + streaming</td><td>50 Mbps</td><td>20 Mbps</td></tr>
+      <tr><td>Family: 2 remote workers + kids school</td><td>75–100 Mbps</td><td>20–30 Mbps</td></tr>
+      <tr><td>Family: remote work + school + streaming + gaming</td><td>100–200 Mbps</td><td>30+ Mbps</td></tr>
+    </table>
+    <p class="guide-note"><strong>Upload speed is what makes or breaks remote work.</strong> Video calls send your camera feed upstream — below 3 Mbps upload means choppy, frozen, or dropped calls even if download is "fast."</p>
+
+    <h4>Quick Reference Links</h4>
+    <table class="guide-table">
+      <tr><th>What</th><th>URL</th></tr>
+      <tr><td>Starlink availability</td><td><a href="https://starlink.com/map" target="_blank">starlink.com/map</a></td></tr>
+      <tr><td>FCC Broadband Map</td><td><a href="https://broadbandmap.fcc.gov/home" target="_blank">broadbandmap.fcc.gov</a></td></tr>
+      <tr><td>T-Mobile Home Internet</td><td><a href="https://www.t-mobile.com/home-internet/eligibility" target="_blank">t-mobile.com/home-internet/eligibility</a></td></tr>
+      <tr><td>Verizon Home Internet</td><td><a href="https://www.verizon.com/home/internet/5g/" target="_blank">verizon.com/home/internet/5g</a></td></tr>
+      <tr><td>WA State Broadband</td><td><a href="https://www.commerce.wa.gov/wsbo/" target="_blank">commerce.wa.gov/wsbo</a></td></tr>
+      <tr><td>Idaho Broadband</td><td><a href="https://linkup.idaho.gov/" target="_blank">linkup.idaho.gov</a></td></tr>
+      <tr><td>Montana ConnectMT</td><td><a href="https://connectmt.mt.gov/" target="_blank">connectmt.mt.gov</a></td></tr>
+      <tr><td>Speedtest by Ookla</td><td><a href="https://www.speedtest.net/" target="_blank">speedtest.net</a></td></tr>
+    </table>
+
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════════
      PROPERTY #1 — APPLETON WA
