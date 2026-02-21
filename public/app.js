@@ -445,6 +445,25 @@
     });
   }
 
+  // --- Environmental hazards key ---
+  function injectEnvKeys() {
+    var keyHtml =
+      '<div class="env-key">' +
+      '<span class="env-key-label">Key:</span>' +
+      '<span class="env-key-item"><span class="env-key-swatch" style="background:#dcfce7"></span> Low \u2014 minimal risk</span>' +
+      '<span class="env-key-item"><span class="env-key-swatch" style="background:#fef3c7"></span> Moderate \u2014 may affect insurance</span>' +
+      '<span class="env-key-item"><span class="env-key-swatch" style="background:#fee2e2"></span> High \u2014 higher insurance, mitigation needed</span>' +
+      '<span class="env-key-item"><span class="env-key-swatch" style="background:#b91c1c"></span> Severe \u2014 specialty insurance required</span>' +
+      '<span class="env-key-item"><span class="env-key-swatch" style="background:#ede9fe"></span> Special \u2014 unique hazard (Superfund, industrial)</span>' +
+      '</div>';
+    document.querySelectorAll('.env-hazards').forEach(function (section) {
+      if (section.querySelector('.env-key')) return;
+      var title = section.querySelector('.env-hazards-title');
+      if (!title) return;
+      title.insertAdjacentHTML('afterend', keyHtml);
+    });
+  }
+
   // --- Graveyard system ---
   function injectGraveyardButtons() {
     document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
@@ -578,6 +597,7 @@
     injectVoteRows();
     injectNoteRows();
     injectGraveyardButtons();
+    injectEnvKeys();
     initMonthlyToggles();
     renderNavPill();
 

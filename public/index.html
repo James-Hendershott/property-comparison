@@ -554,6 +554,21 @@ table.qt {
   margin-top: 0.3rem;
   line-height: 1.4;
 }
+.env-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.65rem;
+  color: var(--muted);
+  align-items: center;
+}
+.env-key-label { font-weight: 600; margin-right: 0.1rem; }
+.env-key-item { display: inline-flex; align-items: center; gap: 0.25rem; }
+.env-key-swatch {
+  width: 10px; height: 10px; border-radius: 3px; display: inline-block;
+}
+.env-key-desc { font-style: italic; }
 
 /* PRINT */
 @media print {
@@ -3827,6 +3842,6 @@ table.qt {
   <p style="margin-top:0.4rem;">Mortgage estimates: 6.5% / 30yr / 3% down + est. taxes & insurance. Not a commitment to lend. Verify all listing statuses before touring. Maps © Google.</p>
 </footer>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
