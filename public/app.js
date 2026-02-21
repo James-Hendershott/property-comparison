@@ -454,7 +454,8 @@
       if (!badges) return;
       var btn = document.createElement('button');
       btn.className = 'graveyard-btn';
-      btn.textContent = 'Move to Graveyard';
+      btn.innerHTML = '<i class="bi bi-x-circle"></i>';
+      btn.title = 'Move to Graveyard';
       btn.addEventListener('click', function () { showGraveyardModal(pid); });
       badges.appendChild(btn);
     });
