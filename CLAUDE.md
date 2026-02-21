@@ -40,8 +40,8 @@ No test framework or linter is configured. There are no build steps — all fron
 
 Deploy steps:
 ```bash
-# 1. SCP files to Unraid
-scp -r public/ root@192.168.1.153:/mnt/cache/appdata/property-comparison/public/
+# 1. SCP individual files to Unraid (don't use `scp -r public/ .../public/` — it nests)
+scp public/* root@192.168.1.153:/mnt/cache/appdata/property-comparison/public/
 
 # 2. Rebuild image and restart container
 ssh unraid "cd /mnt/cache/appdata/property-comparison && docker build -t property-comparison . && docker stop homes-shottsserver && docker rm homes-shottsserver && docker run -d --name homes-shottsserver --restart unless-stopped -p 3080:3000 -v /mnt/cache/appdata/property-comparison/data:/app/data property-comparison"
