@@ -570,6 +570,19 @@ table.qt {
 }
 .env-key-desc { font-style: italic; }
 
+/* Document links */
+.card-docs { padding: 0.7rem 1.3rem; background: #f0f4f8; border-top: 1px solid var(--border); }
+.card-docs-title { font-family: 'Lora', serif; font-size: 0.85rem; font-weight: 600; color: #1e40af; margin-bottom: 0.4rem; }
+.card-docs-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.card-doc-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.75rem; font-weight: 500; padding: 0.3rem 0.7rem;
+  border-radius: 6px; background: #dbeafe; color: #1e40af;
+  text-decoration: none; transition: background 0.15s;
+}
+.card-doc-link:hover { background: #bfdbfe; }
+.card-doc-link i { font-size: 0.85rem; }
+
 /* PRINT */
 @media print {
   .nav, .print-btn { display: none !important; }
@@ -777,7 +790,7 @@ table.qt {
           <td>2</td>
           <td><a href="#p2">3714 Sand Creek Rd B, Kettle Falls WA</a></td>
           <td class="td-price">$450,000</td>
-          <td class="td-mo">~$3,454</td>
+          <td class="td-mo">~$3,300</td>
           <td>$13,500</td>
           <td>3 / 2</td>
           <td>1,780</td>
@@ -1225,11 +1238,11 @@ table.qt {
         <div class="card-price-block">
           <div class="card-price">$450,000</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$3,454/mo</span>
+            <span class="monthly-total">~$3,300/mo</span>
             <button class="monthly-toggle">&#9662; details</button>
             <div class="monthly-breakdown" hidden>
               <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,759</span></div>
-              <div class="mb-line"><span>Property Tax (WA 1.0%)</span><span>$375</span></div>
+              <div class="mb-line"><span>Property Tax (actual)</span><span>$221</span></div>
               <div class="mb-line"><span>Insurance</span><span>$120</span></div>
               <div class="mb-line"><span>PMI (3% down)</span><span>$200</span></div>
             </div>
@@ -1240,11 +1253,11 @@ table.qt {
       <div class="stats-row">
         <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,780</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">20</div><div class="stat-sub">Flat/Park-like</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1972</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">20</div><div class="stat-sub">Level/park-like</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1972</div><div class="stat-sub">Frame/crawl</div></div>
         <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~9.5 hr</div><div class="stat-sub">Google Maps</div></div>
         <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~10 min</div><div class="stat-sub">Kettle Falls</div></div>
-        <div class="stat"><div class="stat-label">Outbuildings</div><div class="stat-val">5+</div><div class="stat-sub">Best package</div></div>
+        <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$2,648/yr</div><div class="stat-sub">Actual assessed</div></div>
         <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
       </div>
     </div>
@@ -1289,12 +1302,14 @@ table.qt {
     <div class="card-section">
       <div class="card-section-title">🏡 Property Highlights</div>
       <ul>
-        <li><span class="li-icon">🔨</span> 2-car garage + hobby shop + greenhouse + carport + storage shed</li>
-        <li><span class="li-icon">🌿</span> Fenced garden beds — established growing infrastructure</li>
-        <li><span class="li-icon">🏞</span> Flat, park-like 20 acres on Kettle River corridor</li>
-        <li><span class="li-icon">🏘</span> Only ~10 min to Kettle Falls town center</li>
-        <li><span class="li-icon">🎣</span> Kettle River access for fishing, kayaking, recreation</li>
-        <li><span class="li-icon">📶</span> Better rural internet access than more remote listings</li>
+        <li><span class="li-icon">🔨</span> 2-car attached garage + detached garage + hobby shop + greenhouse</li>
+        <li><span class="li-icon">🌿</span> Fenced garden + orchard — established growing infrastructure</li>
+        <li><span class="li-icon">🏞</span> Flat, park-like 20 acres at 1,914 ft elevation</li>
+        <li><span class="li-icon">🏘</span> Only ~10 min to Kettle Falls; ~5 mi to Orient</li>
+        <li><span class="li-icon">🏠</span> Metal roof (durable), frame construction, crawl space foundation</li>
+        <li><span class="li-icon">🔥</span> Heating: wood stove + electric + wall unit (no central HVAC)</li>
+        <li><span class="li-icon">💧</span> Drilled well + septic with drainfield</li>
+        <li><span class="li-icon">🍳</span> Appliances included: fridge, dishwasher, gas range, cooktop, microwave</li>
       </ul>
     </div>
     <div class="card-section">
@@ -1322,10 +1337,12 @@ table.qt {
       <div class="card-section-title">❌ Cons</div>
       <ul>
         <li><span class="li-icon">✗</span> Highest price of the Washington listings at $450K</li>
-        <li><span class="li-icon">✗</span> 1972 build — will need careful inspection for structural, roof, systems</li>
+        <li><span class="li-icon">✗</span> 1972 build — plumbing, electrical, foundation all 50+ years old</li>
+        <li><span class="li-icon">✗</span> Hardboard (Masonite) siding — prone to moisture damage and swelling</li>
+        <li><span class="li-icon">✗</span> No central HVAC — relies on wood stove + electric + wall unit</li>
+        <li><span class="li-icon">✗</span> Pre-1978 build = lead paint risk (disclosure required)</li>
         <li><span class="li-icon">✗</span> ~9.5 hr drive — edge of comfortable one-day trip</li>
-        <li><span class="li-icon">✗</span> Schools average — not standout for the price</li>
-        <li><span class="li-icon">✗</span> Flat land = less natural privacy than forested alternatives</li>
+        <li><span class="li-icon">✗</span> Minimal tree cover — flat land = less natural privacy</li>
       </ul>
     </div>
   </div>
@@ -1350,11 +1367,24 @@ table.qt {
   <div class="must-do">
     <div class="must-do-title">MUST DO Before Offering</div>
     <div class="must-do-grid">
-      <div class="must-do-item">Schedule home inspection</div>
-      <div class="must-do-item">Verify property boundaries (get survey)</div>
-      <div class="must-do-item">Check internet options (Starlink/fiber availability)</div>
+      <div class="must-do-item">Schedule home inspection (1972 systems critical)</div>
+      <div class="must-do-item">Lead paint disclosure and testing (pre-1978)</div>
+      <div class="must-do-item">Hardboard siding inspection for moisture damage</div>
       <div class="must-do-item">Get septic inspection and pump history</div>
       <div class="must-do-item">Well water test — GPM, bacteria, nitrates, arsenic</div>
+      <div class="must-do-item">Electrical panel capacity check (50+ yr old)</div>
+      <div class="must-do-item">Crawl space inspection — moisture, ventilation, pests</div>
+    </div>
+  </div>
+  <div class="card-docs">
+    <div class="card-docs-title"><i class="bi bi-folder2-open"></i> Property Documents</div>
+    <div class="card-docs-grid">
+      <a class="card-doc-link" href="https://washingtonviews.com/site/assets/files/133889/20260202215746292843000000-1.pdf" target="_blank"><i class="bi bi-map"></i> Aerial Map</a>
+      <a class="card-doc-link" href="https://washingtonviews.com/site/assets/files/133889/20260202215631133188000000-1.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i> ALTA Title — Legal Description</a>
+      <a class="card-doc-link" href="https://washingtonviews.com/site/assets/files/133889/20260202215724435899000000-1.pdf" target="_blank"><i class="bi bi-file-earmark-check"></i> Seller's Disclosure</a>
+    </div>
+    <div style="font-size:0.68rem;color:var(--muted);margin-top:0.4rem;line-height:1.4;">
+      <strong>What is the ALTA Commitment?</strong> A preliminary title report from the title company. Exhibit "A" contains the <em>legal description</em> — the precise legal boundaries of the property. It also lists any exceptions the title insurance won't cover (easements, liens, restrictions). Review it to confirm there are no surprise encumbrances before making an offer.
     </div>
   </div>
     <div class="env-hazards">
