@@ -10,9 +10,23 @@ A property comparison dashboard for evaluating 16 real estate listings across WA
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
 - **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
-- **public/index.html**: ~640 lines CSS in `<style>`, ~3,600 lines HTML (16 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`
+- **public/index.html**: ~640 lines CSS in `<style>`, ~3,600 lines HTML (16 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`. This file is a hybrid: properties p1–p7 were hand-written, p8–p16 were injected by `generate-cards.js`, and env hazards were injected by `add-env-hazards.js`. All content is now hand-edited directly — **do not re-run the generator scripts** as they use one-time insertion markers.
 - **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, graveyard move/restore UI, 30s polling for votes + notes + graveyard
 - **public/app.css**: Voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), nav user (`nav-user`)
+
+### One-Time Utility Scripts (do not re-run)
+
+- **generate-cards.js**: Generated HTML for properties p8–p16 (nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
+- **add-env-hazards.js**: Injected `.env-hazards` sections for all properties (p1–p16) before each `.score-row`. Already run.
+- **add-properties.js**: Updated header subtitle and added additional properties. Already run.
+
+### Database Schema
+
+Four tables in `data/votes.db`:
+- **users**: `id`, `name` (UNIQUE, COLLATE NOCASE), `created_at`
+- **votes**: `id`, `user_id` (FK→users), `property_id` (text like "p1"), `rating` (1–5), `updated_at` — UNIQUE(user_id, property_id) enables upsert
+- **notes**: `id`, `user_id` (FK→users), `property_id`, `content`, `created_at`
+- **graveyard**: `id`, `property_id` (UNIQUE), `user_id` (FK→users), `reason`, `moved_at`
 
 ## Commands
 
