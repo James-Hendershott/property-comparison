@@ -399,25 +399,28 @@
         listEl.innerHTML = '<div style="font-size:0.78rem;color:var(--muted);padding:0.2rem 0;">No notes yet. Be the first to add one!</div>';
       }
 
-      // Render form
+      // Render form — skip if user is actively typing
       var formWrap = row.querySelector('[data-notes-form-wrap]');
-      formWrap.innerHTML =
-        '<form class="notes-form">' +
-        '  <textarea class="notes-textarea" placeholder="Add a note..." maxlength="500" rows="1"></textarea>' +
-        '  <button type="submit" class="notes-submit">Post</button>' +
-        '</form>';
+      var existingTextarea = formWrap.querySelector('.notes-textarea');
+      if (!existingTextarea || (!existingTextarea.value && document.activeElement !== existingTextarea)) {
+        formWrap.innerHTML =
+          '<form class="notes-form">' +
+          '  <textarea class="notes-textarea" placeholder="Add a note..." maxlength="500" rows="1"></textarea>' +
+          '  <button type="submit" class="notes-submit">Post</button>' +
+          '</form>';
 
-      formWrap.querySelector('.notes-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!currentUser) { showUserModal(); return; }
-        var textarea = formWrap.querySelector('.notes-textarea');
-        var content = textarea.value.trim();
-        if (!content) return;
-        textarea.value = '';
-        API.createNote(currentUser.id, pid, content).then(function () {
-          refreshAllNotes();
+        formWrap.querySelector('.notes-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!currentUser) { showUserModal(); return; }
+          var textarea = formWrap.querySelector('.notes-textarea');
+          var content = textarea.value.trim();
+          if (!content) return;
+          textarea.value = '';
+          API.createNote(currentUser.id, pid, content).then(function () {
+            refreshAllNotes();
+          });
         });
-      });
+      }
     });
   }
 

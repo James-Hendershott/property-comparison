@@ -726,6 +726,53 @@ table.qt {
 .graveyard-modal-confirm { background: #dc2626; color: #fff; }
 .graveyard-modal-confirm:hover { background: #b91c1c; }
 .card.graveyarded { display: none !important; }
+
+/* ── PROXIMITY GRID ── */
+.proximity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 1.2rem;
+}
+@media (max-width: 640px) {
+  .proximity-grid { grid-template-columns: 1fr; }
+}
+.prox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.prox-item:last-child { border-bottom: none; }
+.prox-icon {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+.prox-detail { min-width: 0; }
+.prox-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.prox-value {
+  font-size: 0.83rem;
+  color: var(--text);
+  line-height: 1.35;
+}
+.prox-item-ref {
+  opacity: 0.55;
+}
+.prox-item-ref .prox-label::after {
+  content: ' (ref)';
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -733,7 +780,7 @@ table.qt {
 <!-- ── HEADER ── -->
 <header class="header">
   <h1>Hendershott Family House Hunt 2026</h1>
-  <p>16 Properties · Pacific Northwest + Idaho + Montana · From Farmington, UT</p>
+  <p>16 Properties · Pacific Northwest + Idaho + Montana</p>
   </header>
 
 <!-- ── NAV ── -->
@@ -1273,7 +1320,7 @@ table.qt {
     </div>
   </div>
   <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> Closest drive of all listings (~8.5 hrs). Mature timber on all 5 acres gives genuine seclusion. 20 GPM well is excellent. Price-cut seller = negotiating room.
+    <strong>⭐ Why It Stands Out:</strong> Mature timber on all 5 acres gives genuine seclusion. 20 GPM well is excellent. Price-cut seller = negotiating room.
   </div>
 
   <div class="card-body">
@@ -1285,23 +1332,22 @@ table.qt {
         <li><span class="li-icon">💧</span> 20 GPM well — well above average for rural properties</li>
         <li><span class="li-icon">🔧</span> Updates: laminate floors, fresh paint, new bathrooms, wood stove, pressure tank</li>
         <li><span class="li-icon">🚗</span> Widened driveway with new outbuildings + woodshed</li>
-        <li><span class="li-icon">📍</span> Closest to Farmington of all listings (~8.5 hrs via I-84)</li>
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> White Salmon Valley SD — Niche C+ overall</li>
-        <li><span class="li-icon">🏫</span> Appleton Elem: GreatSchools 4/10</li>
-        <li><span class="li-icon">🏥</span> Providence Hood River ~30 min (Level III trauma)</li>
-        <li><span class="li-icon">🛒</span> White Salmon ~25 min · Hood River OR ~35 min</li>
-        <li><span class="li-icon">🛣</span> I-84 corridor access for Columbia Gorge region</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">White Salmon — 25 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">White Salmon — 25 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Portland, OR (650K) — 1 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Providence Hood River — 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">White Salmon Valley SD — C+</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~8.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
       <ul>
-        <li><span class="li-icon">✓</span> Shortest drive from Farmington of all 10 properties</li>
         <li><span class="li-icon">✓</span> Full forested acreage — great privacy & timber value</li>
         <li><span class="li-icon">✓</span> Strong 20 GPM well already verified</li>
         <li><span class="li-icon">✓</span> Multiple price reductions = seller motivated to deal</li>
@@ -1467,14 +1513,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Kettle Falls SD: GreatSchools 5/10 overall</li>
-        <li><span class="li-icon">🏫</span> Kettle Falls Elem/Middle 4-5/10; High School 5/10</li>
-        <li><span class="li-icon">🏥</span> Stevens County Medical ~20 min (Colville)</li>
-        <li><span class="li-icon">🛒</span> Grocery + hardware + gas in Kettle Falls town</li>
-        <li><span class="li-icon">🌊</span> Lake Roosevelt (Columbia River) 5 min away</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Kettle Falls — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Kettle Falls — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 2 hr 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Providence Mt. Carmel, Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Kettle Falls SD — 5/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -1662,14 +1709,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Goldendale SD: Niche B- · GreatSchools 5-6/10</li>
-        <li><span class="li-icon">🏫</span> Goldendale Elementary 5/10; High School 6/10</li>
-        <li><span class="li-icon">🏥</span> Klickitat Valley Health (Goldendale) ~15 min</li>
-        <li><span class="li-icon">🛒</span> Goldendale has grocery, hardware, pharmacy</li>
-        <li><span class="li-icon">🍷</span> Columbia River Gorge wine/recreation corridor nearby</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Goldendale — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Goldendale — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Portland, OR (650K) — 2 hr</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Klickitat Valley Health — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Goldendale SD — B- / 5-6/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -1837,14 +1885,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Colville SD: Niche B · GreatSchools 6-7/10</li>
-        <li><span class="li-icon">🏫</span> Colville Elem 7/10 · Colville HS 6/10</li>
-        <li><span class="li-icon">🏥</span> Providence St. Joseph's (Colville) ~20 min</li>
-        <li><span class="li-icon">🛒</span> Colville has full grocery, hardware, dining</li>
-        <li><span class="li-icon">🎿</span> 49° North ski area 20 min away</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Safeway, Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 1 hr 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Providence St. Joseph's, Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Colville SD — B / 6-7/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -1862,7 +1911,6 @@ table.qt {
       <ul>
         <li><span class="li-icon">✗</span> Outbuildings UNKNOWN — critical to verify before offering</li>
         <li><span class="li-icon">✗</span> Year built unknown — may have hidden age-related issues</li>
-        <li><span class="li-icon">✗</span> ~9.5 hr drive from Farmington — long moving haul</li>
         <li><span class="li-icon">✗</span> Multiple price reductions may signal underlying issues</li>
         <li><span class="li-icon">✗</span> Multi-story layout may not suit all family configurations</li>
       </ul>
@@ -2007,14 +2055,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Mountain View SD #244 — Grangeville Elementary/Middle + High School</li>
-        <li><span class="li-icon">🏥</span> Syringa Hospital & Clinics — in town, 24/7 acute care</li>
-        <li><span class="li-icon">🛒</span> Full services in Grangeville (pop. ~3,500) — grocery, hardware, dining</li>
-        <li><span class="li-icon">🌲</span> Minutes from Nez Perce National Forest</li>
-        <li><span class="li-icon">🚗</span> South side of town — convenient access to everything</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Grangeville — 5 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Grangeville — 5 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Lewiston, ID (35K) — 1 hr 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Syringa Hospital — in town</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Mountain View SD #244</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9 hr 20 min</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -2177,14 +2226,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Kamiah Joint SD — small rural Idaho district</li>
-        <li><span class="li-icon">🏫</span> Kamiah Elementary and Kamiah High School nearby</li>
-        <li><span class="li-icon">🏥</span> Syringa Hospital (Grangeville) ~45 min</li>
-        <li><span class="li-icon">🛒</span> Kamiah has basic groceries; Grangeville ~45 min for more</li>
-        <li><span class="li-icon">🏞️</span> Nez Perce-Clearwater National Forest surrounds the area</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Kamiah — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Kamiah (basic) — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Lewiston, ID (35K) — 1 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Syringa Hospital, Grangeville — 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Kamiah Joint SD — small rural</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -2205,7 +2255,6 @@ table.qt {
         <li><span class="li-icon">✗</span> Kamiah is remote — limited services, 45 min to larger town</li>
         <li><span class="li-icon">✗</span> Log home maintenance is ongoing and specialized</li>
         <li><span class="li-icon">✗</span> Schools are very small rural — limited programs and activities</li>
-        <li><span class="li-icon">✗</span> 9.5 hour drive from Farmington — among the farthest</li>
       </ul>
     </div>
   </div>
@@ -2334,7 +2383,7 @@ table.qt {
     </div>
   </div>
   <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> YAKIMA RIVER FRONTAGE on 4+ acres. Guest house with bedroom/bath + RV hookups. Detached garage with finished space above. Motivated seller. Shortest drive from Farmington at ~7.5 hours.
+    <strong>⭐ Why It Stands Out:</strong> YAKIMA RIVER FRONTAGE on 4+ acres. Guest house with bedroom/bath + RV hookups. Detached garage with finished space above. Motivated seller.
   </div>
 
   <div class="card-body">
@@ -2346,24 +2395,23 @@ table.qt {
         <li><span class="li-icon">🚗</span> Detached garage with finished space above — studio or office potential</li>
         <li><span class="li-icon">🔥</span> Wood burning fireplace + stainless steel appliances</li>
         <li><span class="li-icon">📦</span> Two storage containers for equipment/tool storage</li>
-        <li><span class="li-icon">⏱️</span> Shortest drive from Farmington UT at ~7.5 hours</li>
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Richland SD — highly rated WA district, GreatSchools 7–8/10</li>
-        <li><span class="li-icon">🏫</span> Good K–12 options in Richland/West Richland area</li>
-        <li><span class="li-icon">🏥</span> Kadlec Regional Medical Center ~20 min (Level II trauma)</li>
-        <li><span class="li-icon">🛒</span> Tri-Cities metro ~20 min — full big-box retail and services</li>
-        <li><span class="li-icon">🏞️</span> Yakima River recreation corridor — kayaking, tubing, fishing</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">West Richland — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Fred Meyer, Richland — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Tri-Cities, WA (100K+) — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Kadlec Regional Medical — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Richland SD — 7-8/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~7.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
       <ul>
         <li><span class="li-icon">✓</span> Yakima River frontage is genuinely rare — can’t buy that later</li>
-        <li><span class="li-icon">✓</span> Shortest drive from Farmington UT (~7.5 hrs) of all listings</li>
         <li><span class="li-icon">✓</span> Tri-Cities metro nearby — best town access and schools on the list</li>
         <li><span class="li-icon">✓</span> Guest house adds income potential or guest accommodation</li>
         <li><span class="li-icon">✓</span> Motivated seller = maximum negotiating leverage</li>
@@ -2523,14 +2571,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Colville SD — GreatSchools 5–6/10, solid for rural WA</li>
-        <li><span class="li-icon">🏫</span> Colville Junior High and Colville High School</li>
-        <li><span class="li-icon">🏥</span> Providence Mount Carmel Hospital ~20 min (Colville)</li>
-        <li><span class="li-icon">🛒</span> Colville has grocery, hardware, medical — full small-town services</li>
-        <li><span class="li-icon">🛣️</span> 13 miles on paved county road — easy year-round access</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Safeway, Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 1 hr 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Providence Mt. Carmel, Colville — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Colville SD — 5-6/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -2549,7 +2598,6 @@ table.qt {
         <li><span class="li-icon">✗</span> Shared drilled well — need to verify GPM and sharing agreement terms</li>
         <li><span class="li-icon">✗</span> 1992 build approaching 35 years — check roof, HVAC, septic age</li>
         <li><span class="li-icon">✗</span> 7 acres is mid-range — not the large acreage some buyers seek</li>
-        <li><span class="li-icon">✗</span> ~9.5 hr drive from Farmington — among the farther listings</li>
         <li><span class="li-icon">✗</span> Colville area job market is limited — need remote work or commute plan</li>
         <li><span class="li-icon">✗</span> Stevens County has cold, snowy winters — 4WD essential Nov–Mar</li>
       </ul>
@@ -2693,14 +2741,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Deer Park SD — GreatSchools 5–6/10</li>
-        <li><span class="li-icon">🏫</span> Deer Park Elementary/Middle/High School ~20 min</li>
-        <li><span class="li-icon">🏥</span> MultiCare Deaconess Hospital (Spokane) ~45 min</li>
-        <li><span class="li-icon">🛒</span> Deer Park has groceries/hardware; Spokane full services ~45 min</li>
-        <li><span class="li-icon">🛣️</span> Minutes from Hwy 395 — good regional access</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Deer Park — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Safeway, Deer Park — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">MultiCare Deaconess, Spokane — 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Deer Park SD — 5-6/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~8.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -2863,14 +2912,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Cusick SD — small rural Washington district</li>
-        <li><span class="li-icon">🏫</span> Cusick Elementary and Cusick Jr/Sr High School</li>
-        <li><span class="li-icon">🏥</span> Newport Hospital & Health Services ~30 min</li>
-        <li><span class="li-icon">🛒</span> Ione ~10 min for basics; Newport ~30 min for full services</li>
-        <li><span class="li-icon">🚣</span> Tiger Slough area — community boat launch for Pend Oreille River access</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Ione — 10 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Super 1, Newport — 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 1 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Newport Hospital — 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Cusick SD — small rural</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~9 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -2891,7 +2941,6 @@ table.qt {
         <li><span class="li-icon">✗</span> Brand new listing (6 DOM) — almost no negotiating leverage</li>
         <li><span class="li-icon">✗</span> Cusick is very small and remote — limited school programs</li>
         <li><span class="li-icon">✗</span> Zestimate $458.8K is $16K below asking — priced above market</li>
-        <li><span class="li-icon">✗</span> ~9 hr drive from Farmington — longer commute for family visits</li>
       </ul>
     </div>
   </div>
@@ -3035,14 +3084,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Tonasket SD — GreatSchools 4–5/10</li>
-        <li><span class="li-icon">🏫</span> Tonasket Elementary/Middle/High School</li>
-        <li><span class="li-icon">🏥</span> North Valley Hospital (Tonasket) ~15 min</li>
-        <li><span class="li-icon">🛒</span> Tonasket has groceries and basic services ~15 min</li>
-        <li><span class="li-icon">🌲</span> Okanogan National Forest access — hiking, hunting, recreation</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Tonasket — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">IGA, Tonasket — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Wenatchee, WA (35K) — 2 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">North Valley Hospital — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Tonasket SD — 4-5/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~10 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3062,7 +3112,6 @@ table.qt {
         <li><span class="li-icon">✗</span> HOA of $1,200/yr adds to ongoing costs</li>
         <li><span class="li-icon">✗</span> Dirt road access — could be challenging in winter</li>
         <li><span class="li-icon">✗</span> 1977 log home — nearly 50 years old, maintenance concerns</li>
-        <li><span class="li-icon">✗</span> ~10 hours from Farmington — the longest drive on the list</li>
         <li><span class="li-icon">✗</span> Tonasket is small and remote with limited services/jobs</li>
       </ul>
     </div>
@@ -3212,14 +3261,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Davenport SD — GreatSchools 5–7/10</li>
-        <li><span class="li-icon">🏫</span> Davenport Elementary and Davenport High School</li>
-        <li><span class="li-icon">🏥</span> Lincoln Hospital (Davenport) ~20 min; Spokane ~1 hr</li>
-        <li><span class="li-icon">🛒</span> Davenport has basic services; Spokane ~1 hr for full retail</li>
-        <li><span class="li-icon">🚣</span> Lake Roosevelt and Hawk Creek for outdoor recreation</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Davenport — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Harvest Foods, Davenport — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 1 hr</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Lincoln Hospital, Davenport — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Davenport SD — 5-7/10</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~8.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3386,15 +3436,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Priest River Elementary — GreatSchools 5/10, 425 students, 15:1 ratio</li>
-        <li><span class="li-icon">🏫</span> Priest River Lamanna High — GreatSchools <strong style="color:var(--red)">1/10</strong>, 67% grad rate, 22% math proficiency</li>
-        <li><span class="li-icon">⚠️</span> West Bonner County SD in crisis — failed audits, state funding withheld, middle school closed due to budget</li>
-        <li><span class="li-icon">🏥</span> Bonner General Health in Sandpoint (~20 min) — nearest ER</li>
-        <li><span class="li-icon">🛒</span> Priest River (~12 min): grocery, library, basic services. Sandpoint (~20 min): full retail/dining</li>
-        <li><span class="li-icon">🌐</span> Internet: likely Starlink only — Ziply Fiber covers 31% of Priest River homes (mostly in-town)</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Priest River — 12 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Super 1, Priest River — 12 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Coeur d'Alene, ID (56K) — 1 hr 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Bonner General, Sandpoint — 20 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">West Bonner SD — <strong style="color:var(--red)">1/10 HS (crisis)</strong></div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~10.5 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3415,7 +3465,6 @@ table.qt {
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Bed/bath discrepancy:</strong> county records show 2bd/1ba vs listing 5bd/2ba — likely unpermitted additions</li>
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">High school rated 1/10</strong> — worst-rated high school on any shortlist; 22% math proficiency</li>
         <li><span class="li-icon">✗</span> School district in institutional crisis — levy failures, superintendent scandal, audit noncompliance</li>
-        <li><span class="li-icon">✗</span> Drive to Farmington ~10.5 hrs — exceeds 10-hour soft limit</li>
         <li><span class="li-icon">✗</span> Outbuildings: UNKNOWN — no listing description retrievable; cannot confirm shop/barn</li>
         <li><span class="li-icon">✗</span> Forest cover: UNKNOWN — satellite suggests timbered but unverified for this parcel</li>
         <li><span class="li-icon">✗</span> 99% of Priest River properties face wildfire risk — wildland-urban interface, Pioneer Fire (2021) burned 3 mi away</li>
@@ -3567,14 +3616,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Selkirk Elementary — GreatSchools 6/10 (Average)</li>
-        <li><span class="li-icon">🏫</span> Selkirk Middle — GreatSchools 8/10; Selkirk High — <strong style="color:var(--green)">9/10</strong> (top 20% in WA)</li>
-        <li><span class="li-icon">🏥</span> Newport Community Hospital ~30 min; Spokane ~1.5 hr</li>
-        <li><span class="li-icon">🛒</span> Ione (~10 mi) for basics; "65 miles north of Costco" per listing</li>
-        <li><span class="li-icon">🎣</span> Pend Oreille River + multiple fishing lakes nearby</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Ione — 15 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Super 1, Newport — 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 1 hr 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Newport Community Hospital — 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Selkirk SD — <strong style="color:var(--green)">9/10 HS</strong></div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~11.75 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3593,7 +3643,6 @@ table.qt {
       <ul>
         <li><span class="li-icon">✗</span> Built 1985 — 41 years old; foundation, plumbing, electrical need inspection</li>
         <li><span class="li-icon">✗</span> Primary heat is wood — requires constant wood supply and maintenance</li>
-        <li><span class="li-icon">✗</span> ~11.75 hr drive to Farmington — exceeds 10-hour limit by nearly 2 hours</li>
         <li><span class="li-icon">✗</span> Very remote — Ione is tiny, Cusick is tiny, "65 miles to Costco"</li>
         <li><span class="li-icon">✗</span> No separate outbuilding/shop mentioned — basement workshop only</li>
         <li><span class="li-icon">✗</span> Only 3 bedrooms — may be tight for a growing family</li>
@@ -3736,14 +3785,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Libby Elementary — GreatSchools 7/10 (Above Average)</li>
-        <li><span class="li-icon">🏫</span> Libby Middle — 4/10; Libby High — 4/10 (Below Average)</li>
-        <li><span class="li-icon">🏥</span> Cabinet Peaks Medical Center in Libby (~5 min)</li>
-        <li><span class="li-icon">🛒</span> Libby has grocery, hardware, restaurants — most services within 5 min</li>
-        <li><span class="li-icon">⛷️</span> Turner Mountain Ski Area (~30 min), Kootenai National Forest surrounds</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Libby — 5 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Rosauers, Libby — 5 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Kalispell, MT (28K) — 1 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Cabinet Peaks Medical — 5 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Libby SD — 7/10 Elem, 4/10 HS</div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~12 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3763,7 +3813,6 @@ table.qt {
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Libby asbestos Superfund site</strong> — 694 deaths from W.R. Grace mine contamination; EPA cleanup ongoing; mine site not yet remediated</li>
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Dec 2025 historic flooding</strong> — Lincoln County flood disaster destroyed bridges, "tens of millions" in damage; floodwaters may have mobilized mine waste</li>
         <li><span class="li-icon">✗</span> Only 5.02 acres — barely meets minimum; limits expansion</li>
-        <li><span class="li-icon">✗</span> ~12 hr drive to Farmington — longest drive on the list</li>
         <li><span class="li-icon">✗</span> Middle/High school rated 4/10 — below average</li>
         <li><span class="li-icon">✗</span> Wildfire risk very high — Kootenai National Forest surrounds; multiple major fires nearby</li>
       </ul>
@@ -3905,14 +3954,15 @@ table.qt {
       </ul>
     </div>
     <div class="card-section">
-      <div class="card-section-title">📍 Location & Schools</div>
-      <ul>
-        <li><span class="li-icon">🏫</span> Northport Elementary — GreatSchools 8/10 (Above Average)</li>
-        <li><span class="li-icon">🏫</span> Northport High — <strong style="color:var(--green)">GreatSchools 10/10</strong> — outperforms 94% of similar WA schools</li>
-        <li><span class="li-icon">🏥</span> Northport Medical Clinic: <strong style="color:var(--red)">TEMPORARILY CLOSED</strong> — Colville hospital ~55 min</li>
-        <li><span class="li-icon">🛒</span> Northport (pop. 207): 1 convenience store. Colville ~35 mi for services. Spokane ~2.5 hr</li>
-        <li><span class="li-icon">🇨🇦</span> 8 miles from Canadian border</li>
-      </ul>
+      <div class="card-section-title">🚗 Proximity & Drive Times</div>
+      <div class="proximity-grid">
+        <div class="prox-item"><span class="prox-icon">⛽</span><div class="prox-detail"><div class="prox-label">Gas Station</div><div class="prox-value">Colville — 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🛒</span><div class="prox-detail"><div class="prox-label">Grocery Store</div><div class="prox-value">Safeway, Colville — 45 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏙️</span><div class="prox-detail"><div class="prox-label">Big City</div><div class="prox-value">Spokane, WA (230K) — 2 hr 30 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏥</span><div class="prox-detail"><div class="prox-label">Hospital</div><div class="prox-value">Providence Mt. Carmel, Colville — 55 min</div></div></div>
+        <div class="prox-item"><span class="prox-icon">🏫</span><div class="prox-detail"><div class="prox-label">Schools</div><div class="prox-value">Northport SD — <strong style="color:var(--green)">10/10 HS</strong></div></div></div>
+        <div class="prox-item prox-item-ref"><span class="prox-icon">📍</span><div class="prox-detail"><div class="prox-label">Farmington UT</div><div class="prox-value">~13 hr</div></div></div>
+      </div>
     </div>
     <div class="card-section">
       <div class="card-section-title">✅ Pros</div>
@@ -3932,7 +3982,6 @@ table.qt {
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">Hope Fire (July 2025) burned 7,891 acres on Flat Creek drainage</strong> — this exact road; Level 3 evacuations, homes destroyed</li>
         <li><span class="li-icon">✗</span> <strong style="color:var(--red)">WALERT report flags Flat Creek Rd for debris flow + flash flood risk</strong> — "little time for occupants to evacuate"</li>
         <li><span class="li-icon">✗</span> Medical clinic temporarily closed — nearest hospital 55 min in Colville</li>
-        <li><span class="li-icon">✗</span> ~13 hr drive to Farmington — longest on the list by far</li>
         <li><span class="li-icon">✗</span> Northport pop. 207 (declining) — 1 convenience store, no full grocery</li>
         <li><span class="li-icon">✗</span> Gravel road access (partially paved) — winter maintenance concern</li>
         <li><span class="li-icon">✗</span> Built 1985, some steep terrain, no basement</li>
