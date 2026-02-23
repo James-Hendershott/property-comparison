@@ -104,6 +104,27 @@ app.delete('/api/notes/:id', (req, res) => {
   }
 });
 
+app.get('/api/property-names', (_req, res) => {
+  try {
+    res.json(db.getPropertyNames());
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/property-names', (req, res) => {
+  try {
+    const { userId, propertyId, name } = req.body;
+    if (!userId || !propertyId) {
+      return res.status(400).json({ error: 'userId and propertyId are required' });
+    }
+    db.setPropertyName(propertyId, name || '', userId);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post('/api/graveyard', (req, res) => {
   try {
     const { userId, propertyId, reason } = req.body;

@@ -1,12 +1,18 @@
 (function () {
   'use strict';
 
-  // --- Property name map (derived from nav links) ---
-  const PROPERTY_NAMES = {};
+  // --- Property name map (default from nav links, overridden by custom names) ---
+  var DEFAULT_NAMES = {};
+  var CUSTOM_NAMES = {};
   document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
     var id = a.getAttribute('href').slice(1);
-    PROPERTY_NAMES[id] = a.textContent.trim();
+    DEFAULT_NAMES[id] = a.textContent.trim();
   });
+
+  function getDisplayName(pid) {
+    return (CUSTOM_NAMES[pid] && CUSTOM_NAMES[pid].name) || DEFAULT_NAMES[pid] || pid;
+  }
+
 
   const API = {
     getUsers: function () { return fetch('/api/users').then(r => r.json()); },
@@ -47,6 +53,13 @@
     restoreFromGraveyard: function (propertyId) {
       return fetch('/api/graveyard/' + propertyId, {
         method: 'DELETE'
+      }).then(r => r.json());
+    },
+    getPropertyNames: function () { return fetch('/api/property-names').then(r => r.json()); },
+    setPropertyName: function (userId, propertyId, name) {
+      return fetch('/api/property-names', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, name: name })
       }).then(r => r.json());
     },
   };
@@ -269,7 +282,7 @@
       if (allVotes[pid].count > 0) {
         entries.push({
           pid: pid,
-          name: PROPERTY_NAMES[pid] || pid,
+          name: getDisplayName(pid),
           avg: allVotes[pid].avg,
           count: allVotes[pid].count,
           votes: allVotes[pid].votes
@@ -485,7 +498,7 @@
 
   function showGraveyardModal(pid) {
     if (!currentUser) { showUserModal(); return; }
-    var name = PROPERTY_NAMES[pid] || pid;
+    var name = getDisplayName(pid);
     var overlay = document.createElement('div');
     overlay.className = 'graveyard-modal';
     var card = document.createElement('div');
@@ -553,7 +566,7 @@
         return;
       }
       container.innerHTML = entries.map(function (e) {
-        var name = PROPERTY_NAMES[e.property_id] || e.property_id;
+        var name = getDisplayName(e.property_id);
         var date = e.moved_at ? new Date(e.moved_at + 'Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
         return '<div class="graveyard-card">' +
           '<div class="graveyard-header">' +
@@ -574,6 +587,117 @@
           });
         });
       });
+    });
+  }
+
+  // --- Property nicknames ---
+  function injectNicknameUI() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      if (card.querySelector('.card-nickname')) return;
+      var pid = card.id;
+      var header = card.querySelector('.card-header .card-title-group');
+      if (!header) return;
+
+      var row = document.createElement('div');
+      row.className = 'card-nickname';
+      row.setAttribute('data-nickname-pid', pid);
+
+      // Insert after card-sub (address line 2)
+      var cardSub = header.querySelector('.card-sub');
+      if (cardSub) {
+        cardSub.parentNode.insertBefore(row, cardSub.nextSibling);
+      } else {
+        header.appendChild(row);
+      }
+
+      renderNicknameRow(pid);
+    });
+  }
+
+  function renderNicknameRow(pid) {
+    var row = document.querySelector('[data-nickname-pid="' + pid + '"]');
+    if (!row) return;
+    var custom = CUSTOM_NAMES[pid];
+    row.innerHTML =
+      '<span class="nickname-label">aka</span> ' +
+      '<span class="nickname-display" data-nickname-text></span>' +
+      '<button class="nickname-edit-btn" title="Edit nickname"><i class="bi bi-pencil-square"></i></button>';
+
+    var textEl = row.querySelector('[data-nickname-text]');
+    if (custom && custom.name) {
+      textEl.textContent = '"' + custom.name + '"';
+      row.classList.add('has-nickname');
+    } else {
+      textEl.textContent = 'add nickname';
+      textEl.classList.add('nickname-placeholder');
+      row.classList.remove('has-nickname');
+    }
+
+    row.querySelector('.nickname-edit-btn').addEventListener('click', function () {
+      if (!currentUser) { showUserModal(); return; }
+      var current = (CUSTOM_NAMES[pid] && CUSTOM_NAMES[pid].name) || '';
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'nickname-input';
+      input.value = current;
+      input.placeholder = 'e.g. "The Log Cabin"';
+      input.maxLength = 50;
+
+      row.innerHTML = '';
+      row.appendChild(input);
+
+      var saveBtn = document.createElement('button');
+      saveBtn.className = 'nickname-save-btn';
+      saveBtn.textContent = 'Save';
+      row.appendChild(saveBtn);
+
+      var cancelBtn = document.createElement('button');
+      cancelBtn.className = 'nickname-cancel-btn';
+      cancelBtn.textContent = 'Cancel';
+      row.appendChild(cancelBtn);
+
+      input.focus();
+      input.select();
+
+      function save() {
+        var val = input.value.trim();
+        API.setPropertyName(currentUser.id, pid, val).then(function () {
+          refreshPropertyNames();
+        });
+      }
+      function cancel() {
+        renderNicknameRow(pid);
+      }
+      saveBtn.addEventListener('click', save);
+      cancelBtn.addEventListener('click', cancel);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); save(); }
+        if (e.key === 'Escape') cancel();
+      });
+    });
+  }
+
+  function updateNavNames() {
+    document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
+      var pid = a.getAttribute('href').slice(1);
+      a.textContent = getDisplayName(pid);
+    });
+  }
+
+  function refreshPropertyNames() {
+    API.getPropertyNames().then(function (names) {
+      CUSTOM_NAMES = names;
+      // Update nickname displays on each card (skip if user is editing)
+      Object.keys(DEFAULT_NAMES).forEach(function (pid) {
+        var row = document.querySelector('[data-nickname-pid="' + pid + '"]');
+        if (row && row.querySelector('.nickname-input')) return; // editing in progress
+        renderNicknameRow(pid);
+      });
+      // Update nav links
+      updateNavNames();
+      // Re-render rankings and overview with new names
+      refreshAllVotes();
+      refreshGraveyard();
     });
   }
 
@@ -600,6 +724,7 @@
     injectVoteRows();
     injectNoteRows();
     injectGraveyardButtons();
+    injectNicknameUI();
     injectEnvKeys();
     initMonthlyToggles();
     renderNavPill();
@@ -608,12 +733,14 @@
       showUserModal();
     }
 
+    refreshPropertyNames();
     refreshAllVotes();
     refreshAllNotes();
     refreshGraveyard();
 
     // Poll every 30 seconds
     setInterval(function () {
+      refreshPropertyNames();
       refreshAllVotes();
       refreshAllNotes();
       refreshGraveyard();

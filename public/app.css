@@ -362,11 +362,90 @@
   background: #2d5a3d;
 }
 
+/* ── PROPERTY NICKNAMES ── */
+.card-nickname {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+.nickname-label {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-style: italic;
+}
+.nickname-display {
+  color: var(--accent2);
+  font-weight: 600;
+  font-style: italic;
+}
+.nickname-placeholder {
+  color: var(--muted);
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.6;
+}
+.nickname-edit-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.72rem;
+  padding: 0 0.15rem;
+  opacity: 0.4;
+  transition: opacity 0.15s, color 0.15s;
+}
+.nickname-edit-btn:hover {
+  opacity: 1;
+  color: var(--accent2);
+}
+.nickname-input {
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid var(--accent2);
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  outline: none;
+  width: 160px;
+  max-width: 50vw;
+}
+.nickname-input:focus {
+  border-color: var(--accent);
+}
+.nickname-save-btn, .nickname-cancel-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nickname-save-btn {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.nickname-save-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.nickname-cancel-btn {
+  color: var(--muted);
+}
+.nickname-cancel-btn:hover {
+  background: #eee;
+}
+
 /* ── PRINT: hide voting & notes UI ── */
 @media print {
   .vote-row, .vote-modal, .nav-user, .rankings-section,
   .nav-rankings-link, .th-family, .td-family,
-  .notes-row, .monthly-toggle, .monthly-breakdown { display: none !important; }
+  .notes-row, .monthly-toggle, .monthly-breakdown,
+  .nickname-edit-btn { display: none !important; }
 }
 
 /* ── MOBILE ── */

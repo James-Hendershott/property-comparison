@@ -53,6 +53,16 @@ async function init() {
   `);
 
   db.run(`
+    CREATE TABLE IF NOT EXISTS property_names (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id TEXT UNIQUE NOT NULL,
+      name TEXT NOT NULL,
+      user_id INTEGER NOT NULL REFERENCES users(id),
+      updated_at TEXT DEFAULT (datetime('now'))
+    )
+  `);
+
+  db.run(`
     CREATE TABLE IF NOT EXISTS graveyard (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       property_id TEXT UNIQUE NOT NULL,
@@ -186,6 +196,34 @@ function deleteNote(noteId, userId) {
   save();
 }
 
+function getPropertyNames() {
+  const rows = query(`
+    SELECT pn.property_id, pn.name, u.name AS user_name, pn.updated_at
+    FROM property_names pn JOIN users u ON pn.user_id = u.id
+  `);
+  const map = {};
+  for (const row of rows) {
+    map[row.property_id] = { name: row.name, userName: row.user_name, updatedAt: row.updated_at };
+  }
+  return map;
+}
+
+function setPropertyName(propertyId, name, userId) {
+  const trimmed = name.trim();
+  if (!trimmed) {
+    run('DELETE FROM property_names WHERE property_id = ?', [propertyId]);
+  } else {
+    run(
+      `INSERT INTO property_names (property_id, name, user_id, updated_at)
+       VALUES (?, ?, ?, datetime('now'))
+       ON CONFLICT(property_id)
+       DO UPDATE SET name = excluded.name, user_id = excluded.user_id, updated_at = datetime('now')`,
+      [propertyId, trimmed, userId]
+    );
+  }
+  save();
+}
+
 function moveToGraveyard(propertyId, userId, reason) {
   run(
     `INSERT INTO graveyard (property_id, user_id, reason)
@@ -212,4 +250,4 @@ function restoreFromGraveyard(propertyId) {
   save();
 }
 
-module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote, moveToGraveyard, getGraveyard, restoreFromGraveyard };
+module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote, getPropertyNames, setPropertyName, moveToGraveyard, getGraveyard, restoreFromGraveyard };
