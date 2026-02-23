@@ -86,7 +86,7 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **CSS custom properties** in `:root`: `--accent` (green), `--accent2` (orange), `--james` (blue), `--savanah` (brown), `--both` (purple)
 - **Property cards**: `.card` > `.card-top` > `.score-offer-band` > `.highlight-band` > `.card-body` > `.pros-cons` > `.must-do` > `.env-hazards` > `.score-row` > `.vote-row` > `.notes-row`
 - **Proximity grid**: `.proximity-grid` (2-col grid) > `.prox-item` (icon + label + value). `.prox-item-ref` for muted reference entries (e.g. Farmington UT drive time). Replaces the old "Location & Schools" card-section.
-- **Monthly breakdown**: Each `.card-monthly` has expandable breakdown (`.monthly-toggle` + `.monthly-breakdown`). Calculated at 6.5%/30yr/3% down with P&I + tax + insurance + PMI (0.55%)
+- **Monthly breakdown**: Each `.card-monthly` has expandable breakdown (`.monthly-toggle` + `.monthly-breakdown`). Calculated at 6.5%/30yr/3.5% down (FHA) with P&I + tax + insurance + PMI (0.55%)
 - **MUST DO section**: `.must-do` with `.must-do-grid` (2-col) containing `.must-do-item` elements. Universal + conditional items per property
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
 - **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
