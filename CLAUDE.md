@@ -4,20 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A property comparison dashboard for evaluating 16 real estate listings across WA, ID, and MT. Includes a family voting system (1-5 star ratings) so the Hendershott family can rate properties and see aggregate rankings. Served via Express + Docker at `homes.shottsserver.com`.
+A comprehensive real estate comparison dashboard for evaluating 50 rural property listings across 7 states: Washington, Idaho, Montana, Wyoming, Colorado, Oregon, and North Carolina. Includes a family voting system (1-5 star ratings) so the Hendershott family can rate properties and see aggregate rankings. Served via Express + Docker at `homes.shottsserver.com`.
 
 ## Architecture
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
 - **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
-- **public/index.html**: ~640 lines CSS in `<style>`, ~3,600 lines HTML (16 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`. This file is a hybrid: properties p1–p7 were hand-written, p8–p16 were injected by `generate-cards.js`, and env hazards were injected by `add-env-hazards.js`. All content is now hand-edited directly — **do not re-run the generator scripts** as they use one-time insertion markers.
+- **public/index.html**: Extensive CSS in `<style>`, ~8,000+ lines HTML (50 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`. This file is a composite: properties p1–p7 were hand-written, p8–p20 were injected by `generate-cards.js`, p21–p54 (20 western + 14 NC) were injected by `generate-batch2.js`, and env hazards were injected by `add-env-hazards.js`. All content is now hand-edited or generator-injected — **do not re-run the generator scripts** as they use one-time insertion markers.
 - **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, graveyard move/restore UI, 30s polling for votes + notes + graveyard
 - **public/app.css**: Voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), nav user (`nav-user`)
 
 ### One-Time Utility Scripts (do not re-run)
 
-- **generate-cards.js**: Generated HTML for properties p8–p16 (nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
-- **add-env-hazards.js**: Injected `.env-hazards` sections for all properties (p1–p16) before each `.score-row`. Already run.
+- **generate-cards.js**: Generated HTML for properties p8–p20 (nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
+- **generate-batch2.js**: Generated HTML for properties p21–p54 (20 western + 14 North Carolina; nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
+- **add-env-hazards.js**: Injected `.env-hazards` sections for all properties (p1–p20) before each `.score-row`. Already run.
 - **add-properties.js**: Updated header subtitle and added additional properties. Already run.
 
 ### Database Schema
@@ -94,7 +95,7 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
 - **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
 - **Graveyard section**: `#graveyard` below cards — static `.graveyard-card` entries for permanently removed properties + `#graveyard-dynamic` container for DB-driven entries (move/restore via UI)
-- **Nav anchors**: `#p1` through `#p20` matching card `id` attributes (gaps for removed properties)
+- **Nav anchors**: `#p1` through `#p54` matching card `id` attributes (gaps for removed properties, gaps in numbering for excluded listings)
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings
 
 ## When Adding a New Property
