@@ -56,8 +56,7 @@ module.exports = [
       { icon: '🏔️', text: 'Brown Mountain OHV 15-20 mi — best ATV access in NC group' },
       { icon: '💰', text: '5 price reductions (13.3% cut) — strong negotiation leverage' },
       { icon: '🌲', text: 'Pisgah National Forest & Wilson Creek ~15-20 mi' },
-      { icon: '🏥', text: 'Caldwell UNC Health ~10 mi' },
-      { icon: '🗳️', text: 'Trump 78%, +57 — Deep Red' }
+      { icon: '🏥', text: 'Caldwell UNC Health ~10 mi' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',       value: '~8-10 mi' },
@@ -172,8 +171,7 @@ module.exports = [
       { icon: '🏠', text: '2-story river cabin (640 sqft she-shed) included' },
       { icon: '💰', text: '23% price reduction from $649K — motivated seller' },
       { icon: '🌐', text: 'Fiber/cable internet (Wilkes Communications, Spectrum)' },
-      { icon: '⛰️', text: 'Stone Mountain State Park ~10-12 mi' },
-      { icon: '🗳️', text: 'Trump 80.5%, +62 — reddest county in NC group' }
+      { icon: '⛰️', text: 'Stone Mountain State Park ~10-12 mi' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',         value: '~10-12 mi' },
@@ -189,8 +187,7 @@ module.exports = [
       'Massive 23% reduction from $649K — extreme negotiation leverage',
       'Newer 2017 build — modern systems, less maintenance',
       'Fiber/cable internet available (Wilkes Communications, Spectrum)',
-      'Stone Mountain State Park ~10-12 mi for hiking',
-      'Reddest county in NC group (Trump 80.5%)'
+      'Stone Mountain State Park ~10-12 mi for hiking'
     ],
     cons: [
       'HIGH FLOOD RISK — 200+ ft river frontage, verify FEMA zone',
@@ -403,8 +400,7 @@ module.exports = [
       { icon: '🌾', text: '19.79 acres — best acreage in NC group by far' },
       { icon: '💰', text: '$21,200/acre (house + land) — exceptional value' },
       { icon: '🏠', text: '4bd/2ba, 2,280 sqft — solid family size' },
-      { icon: '⛰️', text: 'Hanging Rock State Park ~20-25 mi for hiking' },
-      { icon: '🗳️', text: 'Trump 71.5%, +44 — Deep Red' }
+      { icon: '⛰️', text: 'Hanging Rock State Park ~20-25 mi for hiking' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~8-10 mi' },
@@ -419,8 +415,7 @@ module.exports = [
       'Exceptional land value at ~$21,200/acre including house',
       '4bd/2ba provides solid family living space',
       'Brand new listing — opportunity to move fast',
-      'Hanging Rock State Park ~20-25 mi for recreation',
-      'Deep Red politics (Trump 71.5%)'
+      'Hanging Rock State Park ~20-25 mi for recreation'
     ],
     cons: [
       'Year built UNVERIFIED — could be older than expected',
@@ -518,8 +513,7 @@ module.exports = [
       { icon: '⚡', text: 'Whole-house generator included — off-grid ready' },
       { icon: '💵', text: 'Lowest tax rate in NC group — $1,628/yr at 0.38%' },
       { icon: '🏠', text: '4bd/2ba, 2,228 sqft with outbuilding + 2-car garage' },
-      { icon: '⛰️', text: 'Cherokee County mountains — largely spared by Helene' },
-      { icon: '🗳️', text: 'Trump 79.7%, +61 — Deep Red' }
+      { icon: '⛰️', text: 'Cherokee County mountains — largely spared by Helene' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',          value: '~10-15 mi' },
@@ -633,8 +627,7 @@ module.exports = [
       { icon: '🔧', text: 'All major systems replaced — roof, HVAC, windows, plumbing' },
       { icon: '🏗️', text: '1,000+ sqft detached workshop with electricity' },
       { icon: '🛍️', text: 'Costco 20-25 min, near Raleigh metro' },
-      { icon: '🏥', text: 'UNC Health Johnston ~5-10 min' },
-      { icon: '🗳️', text: 'Trump 66%, +34 — Deep Red' }
+      { icon: '🏥', text: 'UNC Health Johnston ~5-10 min' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',          value: '~3-5 mi' },
@@ -748,8 +741,7 @@ module.exports = [
       { icon: '🏗️', text: 'Best outbuildings in NC — double garage/workshop + storage' },
       { icon: '🏍️', text: 'Uwharrie OHV ~25-30 mi — decent ATV access' },
       { icon: '🌳', text: '8.22 acres of rural Piedmont land' },
-      { icon: '⚠️', text: 'Tax assessment $221K vs $465K — verify valuation' },
-      { icon: '🗳️', text: 'Trump 78%, +57 — Deep Red' }
+      { icon: '⚠️', text: 'Tax assessment $221K vs $465K — verify valuation' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~8-10 mi' },
@@ -854,8 +846,7 @@ module.exports = [
       'New construction by Adams Homes — production builder (value over quality)',
       '7.17 acre lot in subdivision of 0.5-acre lots — may contain wetlands',
       'Nashville Elem 4/10 with 93% economically disadvantaged population',
-      'Flat eastern NC — zero mountain/ATV recreation',
-      'Nash County is barely red (Trump 52.5%, +6) — swing county'
+      'Flat eastern NC — zero mountain/ATV recreation'
     ],
     offerStrategy: 'New construction offers different leverage — negotiate on upgrades, closing costs, and lot premium rather than base price. Start at $400K or ask for $30K in upgrades/credits. Verify lot for wetlands before committing. Adams Homes is a production builder — expect basic quality.',
     highlight: 'New construction 5bd/3.5ba on 7.17 acres — everything brand new with warranties. But Adams Homes is a production builder prioritizing value over quality. The 7.17 acre lot sits in a subdivision of 0.5-acre lots — may contain unbuildable wetlands. Flat eastern NC with zero mountain access.',
@@ -863,8 +854,7 @@ module.exports = [
       { icon: '🏗️', text: 'NEW CONSTRUCTION — everything brand new with warranties' },
       { icon: '🏠', text: '5bd/3.5ba, 2,628 sqft — largest bedroom count in NC group' },
       { icon: '🌾', text: '7.17 acre lot — but verify wetlands' },
-      { icon: '⚠️', text: 'Adams Homes production builder — basic quality' },
-      { icon: '🗳️', text: 'Trump 52.5%, +6 — barely red, swing county' }
+      { icon: '⚠️', text: 'Adams Homes production builder — basic quality' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',         value: '~5-8 mi' },
@@ -887,7 +877,6 @@ module.exports = [
       '7.17 acre lot in 0.5-acre subdivision — may be wetlands',
       'Nashville Elem 4/10 (40% math, 34% reading, 93% economically disadvantaged)',
       'Flat eastern NC — ZERO mountain/ATV access',
-      'Barely red swing county (Trump 52.5%, +6)',
       '$250/yr HOA in a rural subdivision',
       'No outbuildings included — starting from scratch'
     ],
@@ -978,8 +967,7 @@ module.exports = [
       { icon: '🧱', text: 'All-brick single-story — durable construction' },
       { icon: '🚗', text: '3-car garage included' },
       { icon: '📐', text: '3,678 sqft — largest in NC group' },
-      { icon: '⚠️', text: 'FSBO with vague listing — red flags' },
-      { icon: '🗳️', text: 'Trump 65%, +31 — Deep Red' }
+      { icon: '⚠️', text: 'FSBO with vague listing — red flags' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~5-8 mi' },
@@ -1093,8 +1081,7 @@ module.exports = [
       { icon: '🏔️', text: 'Borders Blue Ridge Parkway land — irreplaceable location' },
       { icon: '🏫', text: 'Best schools — Glade Creek 7/10, Alleghany HS 8/10' },
       { icon: '💰', text: '$275K entry point — lowest in NC group' },
-      { icon: '⚠️', text: '31-year-old double-wide = financing nightmare' },
-      { icon: '🗳️', text: 'Trump 72.2%, +46 — Deep Red' }
+      { icon: '⚠️', text: '31-year-old double-wide = financing nightmare' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',          value: '~12-15 mi' },
@@ -1209,8 +1196,7 @@ module.exports = [
       { icon: '🏠', text: '2022 build — newest construction in NC group' },
       { icon: '🏫', text: 'Grandy Primary 10/10 local rating' },
       { icon: '🏘️', text: 'Dual-address (554 & 554A) — second structure included' },
-      { icon: '🏖️', text: 'Near Virginia Beach/Norfolk metro 40-50 mi' },
-      { icon: '🗳️', text: 'Trump 75.2%, +52 — Deep Red' }
+      { icon: '🏖️', text: 'Near Virginia Beach/Norfolk metro 40-50 mi' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~8-10 mi' },
@@ -1324,8 +1310,7 @@ module.exports = [
       { icon: '🔒', text: 'Seaside Bay gated community — security and maintained roads' },
       { icon: '🏖️', text: 'Near NC beaches — coastal lifestyle' },
       { icon: '⚠️', text: 'HOA likely — verify outbuilding/livestock restrictions' },
-      { icon: '🌊', text: 'Coastal flood and hurricane risk' },
-      { icon: '🗳️', text: 'Trump 63.8%, +29 — Red' }
+      { icon: '🌊', text: 'Coastal flood and hurricane risk' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~5-8 mi' },
@@ -1430,17 +1415,14 @@ module.exports = [
       'Previous owner bought for $385K in 2023 — now asking $459,900 (19% flip markup)',
       'Zestimate $390,700 vs $459,900 asking — significantly overpriced',
       'Part of sqft is UNPERMITTED — insurance, financing, and resale issues',
-      '~180 DOM — market is rejecting the price',
-      'Only blue county in NC set (Harris +22) — political mismatch'
+      '~180 DOM — market is rejecting the price'
     ],
     offerStrategy: 'Start at $375K citing Zestimate, unpermitted sqft, flip markup from $385K purchase, and 180 DOM. Seller paid $385K in 2023 and is trying a 19% flip — market is not biting. Unpermitted sqft gives strong leverage. Settle around $390-400K max.',
-    highlight: 'Best outbuilding complex — metal garage, workshop, multiple sheds, carports on 10 acres. But part of sqft is UNPERMITTED (insurance/financing/resale issues), previous owner bought at $385K in 2023 and is attempting a 19% flip markup. Only blue county in the NC group.',
     highlights: [
       { icon: '🏗️', text: 'Metal garage, workshop, sheds, carports — best outbuilding complex' },
       { icon: '🌾', text: '10 acres — second-best acreage in NC group' },
       { icon: '⚠️', text: 'Unpermitted sqft — financing/insurance/resale risk' },
-      { icon: '💸', text: '$385K purchase in 2023 → $459,900 ask — flip attempt' },
-      { icon: '🗳️', text: 'Harris +22 — BLUE county (only one in NC group)' }
+      { icon: '💸', text: '$385K purchase in 2023 → $459,900 ask — flip attempt' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~5-10 mi' },
@@ -1463,14 +1445,12 @@ module.exports = [
       'Zestimate $390,700 vs $459,900 asking — significantly overpriced',
       'Previous owner bought $385K in 2023 — blatant flip attempt at 19% markup',
       '~180 DOM — market is clearly rejecting the price',
-      'Only blue county in NC group (Harris +22) — political mismatch',
       'Flat eastern NC — zero mountain/ATV access',
       'Highest tax rate in NC group (~0.85%)'
     ],
     familyFit: [
       'Outbuilding complex is exactly what James needs for workshop/projects',
-      'Unpermitted sqft and flip pricing make this a risky financial proposition',
-      'Blue county politics may not align with family preference'
+      'Unpermitted sqft and flip pricing make this a risky financial proposition'
     ],
     verifyBefore: [
       { title: 'Unpermitted Square Footage', detail: 'Critical: which portion is unpermitted? Can it be permitted retroactively? What does it cost? Lender may not finance unpermitted space' },
@@ -1546,8 +1526,7 @@ module.exports = [
       '108 DOM with recent $16K reduction — seller is feeling pressure',
       'Off-frame modular ~2000 — 26 years old, verify construction type for financing',
       'FEMA Flood Fringe zone — flood insurance required',
-      'Poor schools — Sylvan Elem 4/10, Southern Mid 2/10',
-      'Chatham County trending bluer (Harris +13)'
+      'Poor schools — Sylvan Elem 4/10, Southern Mid 2/10'
     ],
     offerStrategy: 'Start at $400K citing 108 DOM, modular construction concerns, flood fringe zone, and school quality. Recent $16K reduction shows seller is moving — push for another $20-30K off. Creek access and horse-friendly are nice lifestyle features but do not justify premium pricing.',
     highlight: 'Creek access with horses allowed on 5.29 acres — equestrian-friendly property. Recent $16K price reduction after 108 DOM. But off-frame modular construction, FEMA Flood Fringe zone, and poor schools (2-4/10) create significant headwinds. Chatham County is trending blue.',
@@ -1555,8 +1534,7 @@ module.exports = [
       { icon: '🐴', text: 'Horses allowed — equestrian-friendly property' },
       { icon: '🏞️', text: 'Creek access on 5.29 acres' },
       { icon: '💰', text: 'Recent $16K reduction — seller under pressure' },
-      { icon: '🌊', text: 'FEMA Flood Fringe zone — insurance required' },
-      { icon: '🗳️', text: 'Harris +13 — Lean Blue, trending bluer' }
+      { icon: '🌊', text: 'FEMA Flood Fringe zone — insurance required' }
     ],
     proximity: [
       { icon: '⛽', label: 'Gas Station',        value: '~8-10 mi' },
@@ -1578,7 +1556,6 @@ module.exports = [
       'Off-frame modular ~2000 — 26 years old, financing may be challenging',
       'FEMA Flood Fringe zone — flood insurance required',
       'Poor schools — Sylvan Elem 4/10, Southern Mid 2/10 (worst in NC group)',
-      'Chatham County trending blue (Harris +13) — political mismatch',
       '108 DOM indicates market resistance',
       '$150/yr HOA despite rural setting',
       'No significant outbuildings mentioned'

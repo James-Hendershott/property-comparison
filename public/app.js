@@ -4,6 +4,7 @@
   // --- Property name map (default from nav links, overridden by custom names) ---
   var DEFAULT_NAMES = {};
   var CUSTOM_NAMES = {};
+  var GRAVEYARD_IDS = {};
   document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
     var id = a.getAttribute('href').slice(1);
     DEFAULT_NAMES[id] = a.textContent.trim();
@@ -279,7 +280,7 @@
     // Build sorted array
     var entries = [];
     for (var pid in allVotes) {
-      if (allVotes[pid].count > 0) {
+      if (allVotes[pid].count > 0 && !GRAVEYARD_IDS[pid]) {
         entries.push({
           pid: pid,
           name: getDisplayName(pid),
@@ -525,7 +526,7 @@
       if (!reason) { card.querySelector('textarea').focus(); return; }
       API.moveToGraveyard(currentUser.id, pid, reason).then(function () {
         overlay.remove();
-        refreshGraveyard();
+        refreshGraveyard().then(function () { refreshAllVotes(); });
       });
     });
 
@@ -533,13 +534,13 @@
   }
 
   function refreshGraveyard() {
-    API.getGraveyard().then(function (entries) {
+    return API.getGraveyard().then(function (entries) {
       // Hide/show cards based on graveyard state
-      var graveyardIds = {};
-      entries.forEach(function (e) { graveyardIds[e.property_id] = e; });
+      GRAVEYARD_IDS = {};
+      entries.forEach(function (e) { GRAVEYARD_IDS[e.property_id] = e; });
 
       document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
-        if (graveyardIds[card.id]) {
+        if (GRAVEYARD_IDS[card.id]) {
           card.classList.add('graveyarded');
         } else {
           card.classList.remove('graveyarded');
@@ -549,13 +550,13 @@
       // Hide/show nav links and overview rows
       document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
         var pid = a.getAttribute('href').slice(1);
-        a.style.display = graveyardIds[pid] ? 'none' : '';
+        a.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
       });
       document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
         var link = row.querySelector('a[href^="#p"]');
         if (!link) return;
         var pid = link.getAttribute('href').slice(1);
-        row.style.display = graveyardIds[pid] ? 'none' : '';
+        row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
       });
 
       // Render dynamic graveyard entries
@@ -583,7 +584,7 @@
         btn.addEventListener('click', function () {
           var pid = btn.getAttribute('data-restore-pid');
           API.restoreFromGraveyard(pid).then(function () {
-            refreshGraveyard();
+            refreshGraveyard().then(function () { refreshAllVotes(); });
           });
         });
       });
