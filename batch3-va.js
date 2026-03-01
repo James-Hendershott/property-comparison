@@ -31,7 +31,7 @@ module.exports = [
     taxLabel: 'Tazewell Co. 0.49%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/78fc71bf2dccc9a021df07e73803f755-full.webp',
-    listingLink: 'https://www.trulia.com/home/299-drews-ln-cedar-bluff-va-24609',
+    listingLink: 'https://www.zillow.com/homedetails/299-Drews-Ln-Cedar-Bluff-VA-24609/229720244_zpid/',
     score: 78,
     scores: {
       price:        { val: 14, max: 15 },
@@ -152,7 +152,7 @@ module.exports = [
     taxLabel: 'Scott Co. 0.34%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/1aaf57fe1073206bf7295b6046ac9012-full.webp',
-    listingLink: 'https://www.trulia.com/home/2153-daniel-boone-rd-gate-city-va-24251',
+    listingLink: 'https://www.redfin.com/VA/Gate-City/2153-Daniel-Boone-Rd-24251/home/132186206',
     score: 77,
     scores: {
       price:        { val: 13, max: 15 },
@@ -272,7 +272,7 @@ module.exports = [
     taxLabel: 'Carroll Co. 0.46%',
     hoa: 17,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/853c2a4d66c44b7ae76c311179a48320-full.webp',
-    listingLink: 'https://www.trulia.com/home/619-maplewood-dr-galax-va-24333',
+    listingLink: 'https://www.zillow.com/homedetails/619-Maplewood-Dr-Galax-VA-24333/107849520_zpid/',
     score: 74,
     scores: {
       price:        { val: 9,  max: 15 },
@@ -391,7 +391,7 @@ module.exports = [
     taxLabel: 'Bath Co. 0.48%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/e2a2783a4640cec4589ac1b4ce885be3-full.webp',
-    listingLink: 'https://www.trulia.com/home/65-cubbley-rd-hot-springs-va-24445',
+    listingLink: 'https://www.zillow.com/homedetails/65-Cubbley-Rd-Hot-Springs-VA-24445/107842768_zpid/',
     score: 73,
     scores: {
       price:        { val: 10, max: 15 },
@@ -509,7 +509,7 @@ module.exports = [
     taxLabel: 'Carroll Co. 0.46%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/de9601685e90cec720699d4d4c2a9765-full.webp',
-    listingLink: 'https://www.trulia.com/home/2875-sylvatus-smith-rd-hillsville-va-24343',
+    listingLink: 'https://www.redfin.com/VA/Hillsville/2875-Sylvatus-Smith-Rd-24343/home/68302703',
     score: 72,
     scores: {
       price:        { val: 13, max: 15 },
@@ -628,7 +628,7 @@ module.exports = [
     taxLabel: 'Franklin Co. 0.27%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/68a9fdff85cd5bbd1222cd24b5aeb897-full.webp',
-    listingLink: 'https://www.trulia.com/home/5930-edwardsville-rd-hardy-va-24101',
+    listingLink: 'https://www.redfin.com/VA/Hardy/5930-Edwardsville-Rd-24101/home/125223611',
     score: 71,
     scores: {
       price:        { val: 10, max: 15 },
@@ -747,7 +747,7 @@ module.exports = [
     taxLabel: 'Carroll Co. 0.37%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/8b54f29213b11983ce9274043feb1526-full.webp',
-    listingLink: 'https://www.trulia.com/home/147-journey-ln-dugspur-va-24325',
+    listingLink: 'https://www.redfin.com/VA/Dugspur/147-Journey-Ln-24325/home/68294592',
     score: 68,
     scores: {
       price:        { val: 13, max: 15 },
@@ -866,7 +866,7 @@ module.exports = [
     taxLabel: 'Russell Co. 0.35%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/25beac0813fa8088951da302d5a5edde-full.webp',
-    listingLink: 'https://www.trulia.com/home/630-artrip-rd-cleveland-va-24225',
+    listingLink: 'https://www.redfin.com/VA/Cleveland/630-Artrip-Rd-24225/home/68428820',
     score: 67,
     scores: {
       price:        { val: 9,  max: 15 },
@@ -985,7 +985,7 @@ module.exports = [
     taxLabel: 'Patrick Co. 0.44%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/36464e0b29eccb0a1fd9ff9cef717eeb-full.webp',
-    listingLink: 'https://www.trulia.com/home/217-alpine-ridge-ln-meadows-of-dan-va-24120',
+    listingLink: 'https://www.redfin.com/VA/Meadows-of-Dan/217-Alpine-Ridge-Ln-24091/home/179053812',
     score: 66,
     scores: {
       price:        { val: 10, max: 15 },
@@ -1104,7 +1104,7 @@ module.exports = [
     taxLabel: 'Charlotte Co. 0.28%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/b185a48ea0194f8548dc7bc340985f17-full.webp',
-    listingLink: 'https://www.trulia.com/home/300-sondra-ln-saxe-va-23967',
+    listingLink: 'https://www.redfin.com/VA/Saxe/300-Sondra-Ln-23967/home/68756430',
     score: 65,
     scores: {
       price:        { val: 14, max: 15 },
@@ -1224,7 +1224,7 @@ module.exports = [
     taxLabel: 'Fluvanna Co. 0.53%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/b76e1351217c98767463102e307a39cc-full.webp',
-    listingLink: 'https://www.trulia.com/home/2019-bybee-rd-louisa-va-23093',
+    listingLink: 'https://www.longandfoster.com/realestate/details/56143924/2019-bybee-rd-louisa-va-23093',
     score: 64,
     scores: {
       price:        { val: 6,  max: 15 },
@@ -1342,7 +1342,7 @@ module.exports = [
     taxLabel: 'Amherst Co. 0.28%',
     hoa: 25,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/f807117c631bf3c1d567b2811efae8f2-full.webp',
-    listingLink: 'https://www.trulia.com/home/214-victoria-dr-amherst-va-24521',
+    listingLink: 'https://www.redfin.com/VA/Amherst/214-Victoria-Dr-24521/home/101399962',
     score: 63,
     scores: {
       price:        { val: 10, max: 15 },
@@ -1462,7 +1462,7 @@ module.exports = [
     taxLabel: 'Orange Co. 0.72%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/be2be15051acc8807a0994236d534a8d-full.webp',
-    listingLink: 'https://www.trulia.com/home/4496-rolling-hills-dr-culpeper-va-22701',
+    listingLink: 'https://www.redfin.com/VA/Culpeper/4496-Rolling-Hills-Dr-22701/home/15553708',
     score: 62,
     scores: {
       price:        { val: 7,  max: 15 },
@@ -1582,7 +1582,7 @@ module.exports = [
     taxLabel: 'Augusta Co. 0.25%',
     hoa: 29,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/c0286a229d38304a9cf0ba84b8aeb78b-full.webp',
-    listingLink: 'https://www.trulia.com/home/65-mountain-deer-run-west-augusta-va-24485',
+    listingLink: 'https://www.redfin.com/VA/West-Augusta/65-Mountain-Deer-Run-24485/home/121643851',
     score: 60,
     scores: {
       price:        { val: 6,  max: 15 },
@@ -1703,7 +1703,7 @@ module.exports = [
     taxLabel: 'Gloucester Co. 0.47%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/01013501314e064b7fc1ab371508919a-full.webp',
-    listingLink: 'https://www.trulia.com/home/9273-sheldon-ln-gloucester-va-23061',
+    listingLink: 'https://www.redfin.com/VA/Gloucester/9273-Sheldon-Ln-23061/home/125945908',
     score: 59,
     scores: {
       price:        { val: 9,  max: 15 },
@@ -1825,7 +1825,7 @@ module.exports = [
     taxLabel: 'Lee Co. 0.38%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/8736158f750219be92c248a366d04cc2-full.webp',
-    listingLink: 'https://www.trulia.com/home/788-dooley-hollow-rd-ewing-va-24248',
+    listingLink: 'https://www.zillow.com/homedetails/788-Dooley-Hollow-Rd-Ewing-VA-24248/113810634_zpid/',
     score: 55,
     scores: {
       price:        { val: 15, max: 15 },
@@ -1946,7 +1946,7 @@ module.exports = [
     taxLabel: 'Nottoway Co. 0.35%',
     hoa: 0,
     image: 'https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/ba6c067ee6467504bc7450f7f55e110b-full.webp',
-    listingLink: 'https://www.trulia.com/home/2240-s-genito-rd-burkeville-va-23922',
+    listingLink: 'https://www.redfin.com/VA/Burkeville/2240-S-Genito-Rd-23922/home/101587149',
     score: 52,
     scores: {
       price:        { val: 7,  max: 15 },

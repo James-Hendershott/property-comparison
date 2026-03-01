@@ -312,8 +312,26 @@ table.qt {
   min-height: 240px;
   object-fit: cover;
 }
-.card-img-link { display: block; width: 100%; height: 100%; }
-.card-img-link img { transition: opacity 0.15s; }
+.card-img-link { display: block; width: 100%; height: 100%; position: relative; }
+.card-img-link img { transition: opacity 0.2s; }
+.card-img-link::after {
+  content: '\1F50D  Click for listing details';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  border-radius: 4px;
+}
+.card-img-link:hover::after { opacity: 1; }
 .card-img-link:hover img { opacity: 0.85; }
 
 /* Card header */
@@ -10511,7 +10529,7 @@ table.qt {
 <div class="card" id="p55">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/299-drews-ln-cedar-bluff-va-24609" target="_blank" class="card-img-link">
+      <a href="https://www.zillow.com/homedetails/299-Drews-Ln-Cedar-Bluff-VA-24609/229720244_zpid/" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/78fc71bf2dccc9a021df07e73803f755-full.webp" alt="299 Drews Ln, Cedar Bluff VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -10681,7 +10699,7 @@ table.qt {
 <div class="card" id="p56">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/2153-daniel-boone-rd-gate-city-va-24251" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Gate-City/2153-Daniel-Boone-Rd-24251/home/132186206" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/1aaf57fe1073206bf7295b6046ac9012-full.webp" alt="2153 Daniel Boone Rd, Gate City VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -10850,7 +10868,7 @@ table.qt {
 <div class="card" id="p57">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/619-maplewood-dr-galax-va-24333" target="_blank" class="card-img-link">
+      <a href="https://www.zillow.com/homedetails/619-Maplewood-Dr-Galax-VA-24333/107849520_zpid/" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/853c2a4d66c44b7ae76c311179a48320-full.webp" alt="619 Maplewood Dr, Galax VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11019,7 +11037,7 @@ table.qt {
 <div class="card" id="p58">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/65-cubbley-rd-hot-springs-va-24445" target="_blank" class="card-img-link">
+      <a href="https://www.zillow.com/homedetails/65-Cubbley-Rd-Hot-Springs-VA-24445/107842768_zpid/" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/e2a2783a4640cec4589ac1b4ce885be3-full.webp" alt="65 Cubbley Rd, Hot Springs VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11186,7 +11204,7 @@ table.qt {
 <div class="card" id="p59">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/2875-sylvatus-smith-rd-hillsville-va-24343" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Hillsville/2875-Sylvatus-Smith-Rd-24343/home/68302703" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/de9601685e90cec720699d4d4c2a9765-full.webp" alt="2875 Sylvatus Smith Rd, Hillsville VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11354,7 +11372,7 @@ table.qt {
 <div class="card" id="p60">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/5930-edwardsville-rd-hardy-va-24101" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Hardy/5930-Edwardsville-Rd-24101/home/125223611" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/68a9fdff85cd5bbd1222cd24b5aeb897-full.webp" alt="5930 Edwardsville Rd, Hardy VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11522,7 +11540,7 @@ table.qt {
 <div class="card" id="p61">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/147-journey-ln-dugspur-va-24325" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Dugspur/147-Journey-Ln-24325/home/68294592" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/8b54f29213b11983ce9274043feb1526-full.webp" alt="147 Journey Ln, Dugspur VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11690,7 +11708,7 @@ table.qt {
 <div class="card" id="p62">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/630-artrip-rd-cleveland-va-24225" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Cleveland/630-Artrip-Rd-24225/home/68428820" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/25beac0813fa8088951da302d5a5edde-full.webp" alt="630 Artrip Rd, Cleveland VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -11858,7 +11876,7 @@ table.qt {
 <div class="card" id="p63">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/217-alpine-ridge-ln-meadows-of-dan-va-24120" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Meadows-of-Dan/217-Alpine-Ridge-Ln-24091/home/179053812" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/36464e0b29eccb0a1fd9ff9cef717eeb-full.webp" alt="217 Alpine Ridge Ln, Meadows of Dan VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12026,7 +12044,7 @@ table.qt {
 <div class="card" id="p64">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/300-sondra-ln-saxe-va-23967" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Saxe/300-Sondra-Ln-23967/home/68756430" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/b185a48ea0194f8548dc7bc340985f17-full.webp" alt="300 Sondra Ln, Saxe VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12195,7 +12213,7 @@ table.qt {
 <div class="card" id="p65">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/2019-bybee-rd-louisa-va-23093" target="_blank" class="card-img-link">
+      <a href="https://www.longandfoster.com/realestate/details/56143924/2019-bybee-rd-louisa-va-23093" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/b76e1351217c98767463102e307a39cc-full.webp" alt="2019 Bybee Rd, Louisa VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12362,7 +12380,7 @@ table.qt {
 <div class="card" id="p66">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/214-victoria-dr-amherst-va-24521" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Amherst/214-Victoria-Dr-24521/home/101399962" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/f807117c631bf3c1d567b2811efae8f2-full.webp" alt="214 Victoria Dr, Amherst VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12532,7 +12550,7 @@ table.qt {
 <div class="card" id="p67">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/4496-rolling-hills-dr-culpeper-va-22701" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Culpeper/4496-Rolling-Hills-Dr-22701/home/15553708" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/be2be15051acc8807a0994236d534a8d-full.webp" alt="4496 Rolling Hills Dr, Culpeper VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12701,7 +12719,7 @@ table.qt {
 <div class="card" id="p68">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/65-mountain-deer-run-west-augusta-va-24485" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/West-Augusta/65-Mountain-Deer-Run-24485/home/121643851" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/c0286a229d38304a9cf0ba84b8aeb78b-full.webp" alt="65 Mountain Deer Run, West Augusta VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -12872,7 +12890,7 @@ table.qt {
 <div class="card" id="p69">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/9273-sheldon-ln-gloucester-va-23061" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Gloucester/9273-Sheldon-Ln-23061/home/125945908" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/01013501314e064b7fc1ab371508919a-full.webp" alt="9273 Sheldon Ln, Gloucester VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -13043,7 +13061,7 @@ table.qt {
 <div class="card" id="p70">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/788-dooley-hollow-rd-ewing-va-24248" target="_blank" class="card-img-link">
+      <a href="https://www.zillow.com/homedetails/788-Dooley-Hollow-Rd-Ewing-VA-24248/113810634_zpid/" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/8736158f750219be92c248a366d04cc2-full.webp" alt="788 Dooley Hollow Rd, Ewing VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
@@ -13213,7 +13231,7 @@ table.qt {
 <div class="card" id="p71">
   <div class="card-top">
     <div class="card-map">
-      <a href="https://www.trulia.com/home/2240-s-genito-rd-burkeville-va-23922" target="_blank" class="card-img-link">
+      <a href="https://www.redfin.com/VA/Burkeville/2240-S-Genito-Rd-23922/home/101587149" target="_blank" class="card-img-link">
 <img loading="lazy" src="https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/ba6c067ee6467504bc7450f7f55e110b-full.webp" alt="2240 S Genito Rd, Burkeville VA" style="width:100%;height:100%;object-fit:cover;min-height:240px;">
       </a>
     </div>
