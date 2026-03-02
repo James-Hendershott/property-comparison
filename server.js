@@ -146,6 +146,27 @@ app.get('/api/graveyard', (_req, res) => {
   }
 });
 
+app.get('/api/property-edits', (_req, res) => {
+  try {
+    res.json(db.getPropertyEdits());
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/property-edits', (req, res) => {
+  try {
+    const { userId, propertyId, edits } = req.body;
+    if (!userId || !propertyId || !edits) {
+      return res.status(400).json({ error: 'userId, propertyId, and edits are required' });
+    }
+    db.setPropertyEdits(userId, propertyId, edits);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.delete('/api/graveyard/:propertyId', (req, res) => {
   try {
     db.restoreFromGraveyard(req.params.propertyId);

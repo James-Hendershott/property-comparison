@@ -72,6 +72,16 @@ async function init() {
     )
   `);
 
+  db.run(`
+    CREATE TABLE IF NOT EXISTS property_edits (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      property_id TEXT UNIQUE NOT NULL,
+      edits TEXT NOT NULL,
+      user_id INTEGER NOT NULL REFERENCES users(id),
+      updated_at TEXT DEFAULT (datetime('now'))
+    )
+  `);
+
   save();
 }
 
@@ -250,4 +260,31 @@ function restoreFromGraveyard(propertyId) {
   save();
 }
 
-module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote, getPropertyNames, setPropertyName, moveToGraveyard, getGraveyard, restoreFromGraveyard };
+function getPropertyEdits() {
+  const rows = query(`
+    SELECT pe.property_id, pe.edits, u.name AS user_name, pe.updated_at
+    FROM property_edits pe JOIN users u ON pe.user_id = u.id
+  `);
+  const map = {};
+  for (const row of rows) {
+    map[row.property_id] = {
+      edits: JSON.parse(row.edits),
+      userName: row.user_name,
+      updatedAt: row.updated_at
+    };
+  }
+  return map;
+}
+
+function setPropertyEdits(userId, propertyId, editsJson) {
+  run(
+    `INSERT INTO property_edits (property_id, edits, user_id, updated_at)
+     VALUES (?, ?, ?, datetime('now'))
+     ON CONFLICT(property_id)
+     DO UPDATE SET edits = excluded.edits, user_id = excluded.user_id, updated_at = datetime('now')`,
+    [propertyId, JSON.stringify(editsJson), userId]
+  );
+  save();
+}
+
+module.exports = { init, getOrCreateUser, castVote, getAllVotes, getRankings, getUsers, createNote, getAllNotes, deleteNote, getPropertyNames, setPropertyName, moveToGraveyard, getGraveyard, restoreFromGraveyard, getPropertyEdits, setPropertyEdits };

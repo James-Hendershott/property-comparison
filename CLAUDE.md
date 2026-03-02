@@ -9,7 +9,7 @@ A comprehensive real estate comparison dashboard for evaluating 50 rural propert
 ## Architecture
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
-- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
+- **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`, `getPropertyEdits()`, `setPropertyEdits()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
 - **public/index.html**: Extensive CSS in `<style>`, ~8,000+ lines HTML (50 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`. This file is a composite: properties p1–p7 were hand-written, p8–p20 were injected by `generate-cards.js`, p21–p54 (20 western + 14 NC) were injected by `generate-batch2.js`, and env hazards were injected by `add-env-hazards.js`. All content is now hand-edited or generator-injected — **do not re-run the generator scripts** as they use one-time insertion markers.
 - **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, graveyard move/restore UI, 30s polling for votes + notes + graveyard
 - **public/app.css**: Voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), nav user (`nav-user`)
@@ -29,6 +29,7 @@ Four tables in `data/votes.db`:
 - **notes**: `id`, `user_id` (FK→users), `property_id`, `content`, `created_at`
 - **property_names**: `id`, `property_id` (UNIQUE), `name`, `user_id` (FK→users), `updated_at` — custom nicknames for properties
 - **graveyard**: `id`, `property_id` (UNIQUE), `user_id` (FK→users), `reason`, `moved_at`
+- **property_edits**: `id`, `property_id` (UNIQUE), `user_id` (FK→users), `edits` (JSON blob of field overrides), `updated_at`
 
 ## Commands
 
@@ -83,6 +84,8 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 | `POST` | `/api/property-names` | Set/clear nickname: `{ userId, propertyId, name }` (empty name deletes) |
 | `POST` | `/api/graveyard` | Move property: `{ userId, propertyId, reason }` |
 | `GET` | `/api/graveyard` | List all graveyarded properties |
+| `GET` | `/api/property-edits` | All property field overrides (JSON blobs) |
+| `POST` | `/api/property-edits` | Upsert field edits: `{ userId, propertyId, edits }` |
 | `DELETE` | `/api/graveyard/:propertyId` | Restore property from graveyard |
 
 ## Key Patterns

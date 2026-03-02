@@ -63,6 +63,13 @@
         body: JSON.stringify({ userId: userId, propertyId: propertyId, name: name })
       }).then(r => r.json());
     },
+    getPropertyEdits: function () { return fetch('/api/property-edits').then(r => r.json()); },
+    setPropertyEdits: function (userId, propertyId, edits) {
+      return fetch('/api/property-edits', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, edits: edits })
+      }).then(r => r.json());
+    },
   };
 
   // --- User state ---
@@ -591,6 +598,536 @@
     });
   }
 
+  // --- Property edits system ---
+  var PROPERTY_EDITS = {};
+
+  function injectEditButtons() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      if (card.querySelector('.edit-btn')) return;
+      var badges = card.querySelector('.card-badges');
+      if (!badges) return;
+      var btn = document.createElement('button');
+      btn.className = 'edit-btn';
+      btn.title = 'Edit listing';
+      btn.innerHTML = '<i class="bi bi-pencil-square"></i>';
+      btn.addEventListener('click', function () { showEditModal(card.id); });
+      badges.insertBefore(btn, badges.firstChild);
+    });
+  }
+
+  // Score category config: label, max points, index in sob-mini-bar list
+  var SCORE_CATS = [
+    { key: 'price', label: 'Price', max: 15 },
+    { key: 'acreage', label: 'Acreage', max: 20 },
+    { key: 'privacy', label: 'Privacy', max: 10 },
+    { key: 'outbuildings', label: 'Outbuildings', max: 15 },
+    { key: 'town', label: 'Town', max: 15 },
+    { key: 'schools', label: 'Schools', max: 15 },
+    { key: 'practical', label: 'Practical', max: 10 }
+  ];
+
+  function readCardValues(pid) {
+    var card = document.getElementById(pid);
+    if (!card) return {};
+    var vals = {};
+
+    // Price
+    var priceEl = card.querySelector('.card-price');
+    if (priceEl) vals.price = priceEl.textContent.trim();
+
+    // Listing link & image
+    var imgLink = card.querySelector('.card-img-link');
+    if (imgLink) vals.listingLink = imgLink.getAttribute('href') || '';
+    var img = card.querySelector('.card-img-link img');
+    if (img) vals.imageUrl = img.getAttribute('src') || '';
+
+    // Stats row
+    var statVals = card.querySelectorAll('.stat-val');
+    var statSubs = card.querySelectorAll('.stat-sub');
+    if (statVals[0]) vals.beds = statVals[0].textContent.trim();
+    if (statVals[1]) vals.sqft = statVals[1].textContent.trim();
+    if (statVals[2]) vals.acres = statVals[2].textContent.trim();
+    if (statSubs[2]) vals.acresSub = statSubs[2] ? statSubs[2].textContent.trim() : '';
+    if (statVals[3]) vals.yearBuilt = statVals[3].textContent.trim();
+    if (statVals[4]) vals.drive = statVals[4].textContent.trim();
+    if (statVals[5]) vals.toTown = statVals[5].textContent.trim();
+    if (statVals[6]) vals.tax = statVals[6].textContent.trim();
+
+    // Status (last stat-val or look for status class)
+    var statusEl = card.querySelector('.stat-val.status-active') || card.querySelector('.stat-val.status-pending') || (statVals[7] || null);
+    if (statusEl) vals.status = statusEl.textContent.trim();
+
+    // Scores
+    vals.scores = {};
+    var miniBars = card.querySelectorAll('.sob-mini-bar');
+    SCORE_CATS.forEach(function (cat, i) {
+      if (miniBars[i]) {
+        var labelSpans = miniBars[i].querySelectorAll('.sob-mini-label span');
+        var scoreText = labelSpans[1] ? labelSpans[1].textContent.trim() : '0';
+        // Extract number from "12/15" format
+        var match = scoreText.match(/(\d+)/);
+        vals.scores[cat.key] = match ? parseInt(match[1]) : 0;
+      }
+    });
+
+    // Highlight band
+    var highlightEl = card.querySelector('.highlight-band');
+    if (highlightEl) vals.highlight = highlightEl.textContent.trim();
+
+    // Offer range & strategy
+    var offerPrice = card.querySelector('.sob-offer-price');
+    if (offerPrice) vals.offerRange = offerPrice.textContent.trim();
+    var strategy = card.querySelector('.sob-strategy');
+    if (strategy) vals.offerStrategy = strategy.textContent.trim();
+
+    // Offer rationale
+    var rationaleUl = card.querySelector('.sob-offer-rationale ul');
+    if (rationaleUl) {
+      vals.offerRationale = Array.from(rationaleUl.querySelectorAll('li')).map(function (li) {
+        return li.textContent.trim();
+      });
+    }
+
+    // Card-body sections: Highlights list (first section with ul)
+    var sections = card.querySelectorAll('.card-body > .card-section');
+    sections.forEach(function (sec) {
+      var title = sec.querySelector('.card-section-title');
+      if (!title) return;
+      var titleText = title.textContent.trim().toLowerCase();
+      var ul = sec.querySelector('ul');
+      if (!ul) return;
+      var items = Array.from(ul.querySelectorAll('li')).map(function (li) {
+        // Remove the li-icon span and get remaining text
+        var clone = li.cloneNode(true);
+        var icon = clone.querySelector('.li-icon');
+        if (icon) icon.remove();
+        return clone.textContent.trim();
+      });
+      if (titleText.indexOf('highlight') !== -1) vals.highlights = items;
+    });
+
+    // Pros/Cons (inside .pros-cons)
+    var prosUl = card.querySelector('.pros-cons .pros ul');
+    if (prosUl) {
+      vals.pros = Array.from(prosUl.querySelectorAll('li')).map(function (li) {
+        return li.textContent.trim().replace(/^[✓✔]\s*/, '');
+      });
+    }
+    var consUl = card.querySelector('.pros-cons .cons ul');
+    if (consUl) {
+      vals.cons = Array.from(consUl.querySelectorAll('li')).map(function (li) {
+        return li.textContent.trim().replace(/^[⚠✗]\s*/, '');
+      });
+    }
+
+    // Must-do items
+    var mustDoGrid = card.querySelector('.must-do-grid');
+    if (mustDoGrid) {
+      vals.mustDo = Array.from(mustDoGrid.querySelectorAll('.must-do-item')).map(function (item) {
+        return item.textContent.trim();
+      });
+    }
+
+    return vals;
+  }
+
+  function showEditModal(pid) {
+    if (!currentUser) { showUserModal(); return; }
+
+    var domVals = readCardValues(pid);
+    // Override with saved edits if they exist
+    var saved = PROPERTY_EDITS[pid];
+    var vals = Object.assign({}, domVals);
+    if (saved && saved.edits) {
+      Object.keys(saved.edits).forEach(function (k) {
+        if (k === 'scores') {
+          vals.scores = Object.assign({}, vals.scores || {}, saved.edits.scores);
+        } else {
+          vals[k] = saved.edits[k];
+        }
+      });
+    }
+
+    var name = getDisplayName(pid);
+
+    var overlay = document.createElement('div');
+    overlay.className = 'edit-overlay';
+
+    var modal = document.createElement('div');
+    modal.className = 'edit-modal';
+
+    // Header
+    var header = document.createElement('div');
+    header.className = 'edit-modal-header';
+    header.innerHTML = '<span class="edit-modal-title">Edit ' + escapeHtml(name) + '</span>' +
+      '<button class="edit-modal-close">&times;</button>';
+
+    // Body
+    var body = document.createElement('div');
+    body.className = 'edit-modal-body';
+
+    // Build sections
+    var sectionsHtml = '';
+
+    // Basic Info
+    sectionsHtml += buildSection('Basic Info', [
+      field('price', 'Asking Price', 'text', vals.price || ''),
+      field('status', 'Status', 'select', vals.status || 'Active', ['Active', 'Pending', 'Sold', 'Coming Soon']),
+      field('listingLink', 'Listing URL', 'url', vals.listingLink || ''),
+      field('imageUrl', 'Image URL', 'url', vals.imageUrl || '')
+    ]);
+
+    // Property Details
+    sectionsHtml += buildSection('Property Details', [
+      field('beds', 'Beds/Bath', 'text', vals.beds || ''),
+      field('sqft', 'Sq Ft', 'text', vals.sqft || ''),
+      field('acres', 'Acres', 'text', vals.acres || ''),
+      field('acresSub', 'Acres Subtitle', 'text', vals.acresSub || ''),
+      field('yearBuilt', 'Year Built', 'text', vals.yearBuilt || ''),
+      field('drive', 'Drive Time', 'text', vals.drive || ''),
+      field('toTown', 'To Town', 'text', vals.toTown || ''),
+      field('tax', 'Annual Tax', 'text', vals.tax || '')
+    ]);
+
+    // Scores
+    var scoresContent = '<div class="edit-scores-grid">';
+    SCORE_CATS.forEach(function (cat) {
+      var v = (vals.scores && vals.scores[cat.key]) || 0;
+      scoresContent += '<div class="edit-field">' +
+        '<label>' + escapeHtml(cat.label) + ' (0-' + cat.max + ')</label>' +
+        '<input type="number" data-score="' + cat.key + '" min="0" max="' + cat.max + '" value="' + v + '">' +
+        '</div>';
+    });
+    scoresContent += '</div><div class="edit-score-total" data-score-total>Total: 0 / 100</div>';
+    sectionsHtml += '<div class="edit-section"><div class="edit-section-title">Scores <span class="chevron">&#9660;</span></div>' +
+      '<div class="edit-section-content">' + scoresContent + '</div></div>';
+
+    // Content
+    sectionsHtml += buildSection('Content', [
+      field('highlight', 'Highlight Banner', 'textarea', vals.highlight || ''),
+      field('offerRange', 'Offer Range', 'text', vals.offerRange || ''),
+      field('offerStrategy', 'Offer Strategy', 'textarea', vals.offerStrategy || '')
+    ]);
+
+    // Lists
+    sectionsHtml += buildSection('Lists', [
+      field('highlights', 'Property Highlights (one per line)', 'textarea', Array.isArray(vals.highlights) ? vals.highlights.join('\n') : ''),
+      field('pros', 'Family Fit / Pros (one per line)', 'textarea', Array.isArray(vals.pros) ? vals.pros.join('\n') : ''),
+      field('cons', 'Verify / Cons (one per line)', 'textarea', Array.isArray(vals.cons) ? vals.cons.join('\n') : '')
+    ]);
+
+    // Offer Rationale + Must-Do
+    sectionsHtml += buildSection('Other', [
+      field('offerRationale', 'Offer Rationale (one per line)', 'textarea', Array.isArray(vals.offerRationale) ? vals.offerRationale.join('\n') : ''),
+      field('mustDo', 'Must-Do Items (one per line)', 'textarea', Array.isArray(vals.mustDo) ? vals.mustDo.join('\n') : '')
+    ]);
+
+    body.innerHTML = sectionsHtml;
+
+    // Footer
+    var footer = document.createElement('div');
+    footer.className = 'edit-modal-footer';
+    var lastEdited = '';
+    if (saved && saved.userName) {
+      var date = saved.updatedAt ? new Date(saved.updatedAt + 'Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+      lastEdited = '<div class="edit-last-edited">Last edited by ' + escapeHtml(saved.userName) + ' &middot; ' + date + '</div>';
+    } else {
+      lastEdited = '<div class="edit-last-edited"></div>';
+    }
+    footer.innerHTML = lastEdited +
+      '<div class="edit-modal-actions">' +
+      '<button class="edit-cancel-btn">Cancel</button>' +
+      '<button class="edit-save-btn">Save Changes</button>' +
+      '</div>';
+
+    modal.appendChild(header);
+    modal.appendChild(body);
+    modal.appendChild(footer);
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    // Section toggle handlers
+    body.querySelectorAll('.edit-section-title').forEach(function (title) {
+      title.addEventListener('click', function () {
+        title.parentElement.classList.toggle('collapsed');
+      });
+    });
+
+    // Score total calculation
+    function updateScoreTotal() {
+      var total = 0;
+      body.querySelectorAll('[data-score]').forEach(function (inp) {
+        total += parseInt(inp.value) || 0;
+      });
+      var totalEl = body.querySelector('[data-score-total]');
+      if (totalEl) totalEl.textContent = 'Total: ' + total + ' / 100';
+    }
+    body.querySelectorAll('[data-score]').forEach(function (inp) {
+      inp.addEventListener('input', updateScoreTotal);
+    });
+    updateScoreTotal();
+
+    // Close handlers
+    function closeModal() { overlay.remove(); }
+    header.querySelector('.edit-modal-close').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+    footer.querySelector('.edit-cancel-btn').addEventListener('click', closeModal);
+
+    // Save handler
+    footer.querySelector('.edit-save-btn').addEventListener('click', function () {
+      var edits = collectEdits(body, domVals);
+      // Only save if there are actual changes
+      if (Object.keys(edits).length === 0) {
+        closeModal();
+        return;
+      }
+      API.setPropertyEdits(currentUser.id, pid, edits).then(function () {
+        closeModal();
+        refreshPropertyEdits();
+      });
+    });
+  }
+
+  function field(key, label, type, value, options) {
+    return { key: key, label: label, type: type, value: value, options: options };
+  }
+
+  function buildSection(title, fields) {
+    var html = '<div class="edit-section"><div class="edit-section-title">' + escapeHtml(title) + ' <span class="chevron">&#9660;</span></div><div class="edit-section-content">';
+    fields.forEach(function (f) {
+      html += '<div class="edit-field"><label>' + escapeHtml(f.label) + '</label>';
+      if (f.type === 'select') {
+        html += '<select data-edit-key="' + f.key + '">';
+        (f.options || []).forEach(function (opt) {
+          html += '<option value="' + escapeHtml(opt) + '"' + (f.value === opt ? ' selected' : '') + '>' + escapeHtml(opt) + '</option>';
+        });
+        html += '</select>';
+      } else if (f.type === 'textarea') {
+        html += '<textarea data-edit-key="' + f.key + '" rows="3">' + escapeHtml(f.value) + '</textarea>';
+      } else if (f.type === 'url') {
+        html += '<input type="url" data-edit-key="' + f.key + '" value="' + escapeHtml(f.value) + '">';
+      } else {
+        html += '<input type="text" data-edit-key="' + f.key + '" value="' + escapeHtml(f.value) + '">';
+      }
+      html += '</div>';
+    });
+    html += '</div></div>';
+    return html;
+  }
+
+  // List field keys — these get split by newline
+  var LIST_KEYS = ['highlights', 'pros', 'cons', 'offerRationale', 'mustDo'];
+
+  function collectEdits(body, domVals) {
+    var edits = {};
+
+    // Regular fields
+    body.querySelectorAll('[data-edit-key]').forEach(function (inp) {
+      var key = inp.getAttribute('data-edit-key');
+      var val = inp.value.trim();
+
+      if (LIST_KEYS.indexOf(key) !== -1) {
+        // List field: split by newline
+        var items = val.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 0; });
+        var origItems = domVals[key] || [];
+        // Only save if different from DOM original
+        if (JSON.stringify(items) !== JSON.stringify(origItems)) {
+          edits[key] = items;
+        }
+      } else {
+        // Simple field: only save if different from DOM original
+        var orig = (domVals[key] !== undefined && domVals[key] !== null) ? String(domVals[key]) : '';
+        if (val !== orig) {
+          edits[key] = val;
+        }
+      }
+    });
+
+    // Scores
+    var scores = {};
+    var hasScoreChange = false;
+    body.querySelectorAll('[data-score]').forEach(function (inp) {
+      var key = inp.getAttribute('data-score');
+      var val = parseInt(inp.value) || 0;
+      scores[key] = val;
+      var orig = (domVals.scores && domVals.scores[key] !== undefined) ? domVals.scores[key] : 0;
+      if (val !== orig) hasScoreChange = true;
+    });
+    if (hasScoreChange) edits.scores = scores;
+
+    return edits;
+  }
+
+  function applyPropertyEdits(allEdits) {
+    for (var pid in allEdits) {
+      var card = document.getElementById(pid);
+      if (!card) continue;
+      var edits = allEdits[pid].edits;
+
+      // Price
+      if (edits.price) {
+        var priceEl = card.querySelector('.card-price');
+        if (priceEl) priceEl.textContent = edits.price;
+      }
+
+      // Status
+      if (edits.status) {
+        var statVals = card.querySelectorAll('.stat-val');
+        var statusEl = card.querySelector('.stat-val.status-active') || card.querySelector('.stat-val.status-pending') || (statVals[7] || null);
+        if (statusEl) {
+          statusEl.textContent = edits.status;
+          statusEl.className = 'stat-val';
+          if (edits.status === 'Active') statusEl.classList.add('status-active');
+          else if (edits.status === 'Pending') statusEl.classList.add('status-pending');
+        }
+      }
+
+      // Listing link
+      if (edits.listingLink) {
+        var imgLink = card.querySelector('.card-img-link');
+        if (imgLink) imgLink.setAttribute('href', edits.listingLink);
+      }
+
+      // Image URL
+      if (edits.imageUrl) {
+        var img = card.querySelector('.card-img-link img');
+        if (img) img.setAttribute('src', edits.imageUrl);
+      }
+
+      // Stats row values
+      var allStatVals = card.querySelectorAll('.stat-val');
+      var allStatSubs = card.querySelectorAll('.stat-sub');
+      if (edits.beds && allStatVals[0]) allStatVals[0].textContent = edits.beds;
+      if (edits.sqft && allStatVals[1]) allStatVals[1].textContent = edits.sqft;
+      if (edits.acres && allStatVals[2]) allStatVals[2].textContent = edits.acres;
+      if (edits.acresSub && allStatSubs[2]) allStatSubs[2].textContent = edits.acresSub;
+      if (edits.yearBuilt && allStatVals[3]) allStatVals[3].textContent = edits.yearBuilt;
+      if (edits.drive && allStatVals[4]) allStatVals[4].textContent = edits.drive;
+      if (edits.toTown && allStatVals[5]) allStatVals[5].textContent = edits.toTown;
+      if (edits.tax && allStatVals[6]) allStatVals[6].textContent = edits.tax;
+
+      // Highlight band
+      if (edits.highlight) {
+        var hlEl = card.querySelector('.highlight-band');
+        if (hlEl) hlEl.textContent = edits.highlight;
+      }
+
+      // Offer range
+      if (edits.offerRange) {
+        var offerEl = card.querySelector('.sob-offer-price');
+        if (offerEl) offerEl.textContent = edits.offerRange;
+      }
+
+      // Offer strategy
+      if (edits.offerStrategy) {
+        var stratEl = card.querySelector('.sob-strategy');
+        if (stratEl) stratEl.textContent = edits.offerStrategy;
+      }
+
+      // Offer rationale
+      if (edits.offerRationale && Array.isArray(edits.offerRationale)) {
+        var ratUl = card.querySelector('.sob-offer-rationale ul');
+        if (ratUl) {
+          ratUl.innerHTML = edits.offerRationale.map(function (item) {
+            return '<li>' + escapeHtml(item) + '</li>';
+          }).join('');
+        }
+      }
+
+      // Highlights list (first card-section in card-body with "highlights" in title)
+      if (edits.highlights && Array.isArray(edits.highlights)) {
+        var bodySections = card.querySelectorAll('.card-body > .card-section');
+        bodySections.forEach(function (sec) {
+          var title = sec.querySelector('.card-section-title');
+          if (title && title.textContent.trim().toLowerCase().indexOf('highlight') !== -1) {
+            var ul = sec.querySelector('ul');
+            if (ul) {
+              ul.innerHTML = edits.highlights.map(function (item) {
+                return '<li><span class="li-icon">\u2728</span> ' + escapeHtml(item) + '</li>';
+              }).join('');
+            }
+          }
+        });
+      }
+
+      // Pros
+      if (edits.pros && Array.isArray(edits.pros)) {
+        var prosUl = card.querySelector('.pros-cons .pros ul');
+        if (prosUl) {
+          prosUl.innerHTML = edits.pros.map(function (item) {
+            return '<li>\u2713 ' + escapeHtml(item) + '</li>';
+          }).join('');
+        }
+      }
+
+      // Cons
+      if (edits.cons && Array.isArray(edits.cons)) {
+        var consUl = card.querySelector('.pros-cons .cons ul');
+        if (consUl) {
+          consUl.innerHTML = edits.cons.map(function (item) {
+            return '<li>\u26A0 ' + escapeHtml(item) + '</li>';
+          }).join('');
+        }
+      }
+
+      // Must-do items
+      if (edits.mustDo && Array.isArray(edits.mustDo)) {
+        var mustDoGrid = card.querySelector('.must-do-grid');
+        if (mustDoGrid) {
+          mustDoGrid.innerHTML = edits.mustDo.map(function (item) {
+            return '<div class="must-do-item">' + escapeHtml(item) + '</div>';
+          }).join('');
+        }
+      }
+
+      // Scores
+      if (edits.scores) {
+        var miniBars = card.querySelectorAll('.sob-mini-bar');
+        var total = 0;
+        SCORE_CATS.forEach(function (cat, i) {
+          if (miniBars[i] && edits.scores[cat.key] !== undefined) {
+            var score = edits.scores[cat.key];
+            total += score;
+            var labelSpans = miniBars[i].querySelectorAll('.sob-mini-label span');
+            if (labelSpans[1]) labelSpans[1].textContent = score + '/' + cat.max;
+            var fill = miniBars[i].querySelector('.sob-mini-fill');
+            if (fill) fill.style.width = Math.round((score / cat.max) * 100) + '%';
+          } else if (miniBars[i]) {
+            // Add existing score to total
+            var existingLabel = miniBars[i].querySelectorAll('.sob-mini-label span');
+            var existingMatch = existingLabel[1] ? existingLabel[1].textContent.match(/(\d+)/) : null;
+            total += existingMatch ? parseInt(existingMatch[1]) : 0;
+          }
+        });
+        // Update total score
+        var scoreNum = card.querySelector('.sob-score-num');
+        if (scoreNum) scoreNum.textContent = total;
+      }
+
+      // Update overview table row
+      if (edits.price || edits.status) {
+        var overviewRow = document.querySelector('#overview table.qt tbody tr a[href="#' + pid + '"]');
+        if (overviewRow) {
+          var tr = overviewRow.closest('tr');
+          if (tr) {
+            var tds = tr.querySelectorAll('td');
+            // Price is typically the 3rd column (index 2)
+            if (edits.price && tds[2]) tds[2].textContent = edits.price;
+          }
+        }
+      }
+    }
+  }
+
+  function refreshPropertyEdits() {
+    API.getPropertyEdits().then(function (edits) {
+      PROPERTY_EDITS = edits;
+      applyPropertyEdits(edits);
+    });
+  }
+
   // --- Property nicknames ---
   function injectNicknameUI() {
     document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
@@ -725,6 +1262,7 @@
     injectVoteRows();
     injectNoteRows();
     injectGraveyardButtons();
+    injectEditButtons();
     injectNicknameUI();
     injectEnvKeys();
     initMonthlyToggles();
@@ -738,6 +1276,7 @@
     refreshAllVotes();
     refreshAllNotes();
     refreshGraveyard();
+    refreshPropertyEdits();
 
     // Poll every 30 seconds
     setInterval(function () {
@@ -745,6 +1284,7 @@
       refreshAllVotes();
       refreshAllNotes();
       refreshGraveyard();
+      refreshPropertyEdits();
     }, 30000);
   }
 
