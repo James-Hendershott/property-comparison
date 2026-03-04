@@ -653,30 +653,81 @@
 }
 
 /* ── COLLAPSIBLE CARD DETAILS ── */
+.card-details-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.3rem;
+  background: #eef3ee;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.card-details-bar:hover {
+  background: #e2ebe3;
+}
+.card-details-bar-label {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.card-details-bar-arrow {
+  font-size: 0.8rem;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.card-details-bar.expanded .card-details-bar-arrow {
+  transform: rotate(180deg);
+}
 .card-details-content {
   display: none;
 }
 .card-details-content.expanded {
   display: block;
 }
-.card-details-toggle {
-  background: none;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 6px;
-  color: var(--accent);
+
+/* ── COLLAPSIBLE GRAVEYARD ── */
+.graveyard-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: #f3f3f0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.78rem;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  margin-left: auto;
-  float: right;
-  transition: all 0.15s;
+  user-select: none;
+  transition: background 0.15s;
+  margin-bottom: 0;
 }
-.card-details-toggle:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
+.graveyard-toggle-bar:hover {
+  background: #eaeae6;
+}
+.graveyard-toggle-bar.expanded {
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+.graveyard-toggle-label {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+.graveyard-toggle-arrow {
+  font-size: 0.85rem;
+  color: #6b7280;
+  transition: transform 0.2s;
+}
+.graveyard-toggle-bar.expanded .graveyard-toggle-arrow {
+  transform: rotate(180deg);
+}
+.graveyard-content {
+  display: none;
+}
+.graveyard-content.expanded {
+  display: block;
 }
 
 /* ── TABLE FILTER ── */
@@ -760,8 +811,9 @@ thead th {
   .nav-rankings-link, .th-family, .td-family,
   .notes-row, .monthly-toggle, .monthly-breakdown,
   .nickname-edit-btn, .edit-btn, .edit-overlay,
-  .card-details-toggle, .table-filter-bar { display: none !important; }
-  .card-details-content { display: block !important; }
+  .card-details-bar, .table-filter-bar,
+  .graveyard-toggle-bar { display: none !important; }
+  .card-details-content, .graveyard-content { display: block !important; }
 }
 
 /* ── MOBILE ── */

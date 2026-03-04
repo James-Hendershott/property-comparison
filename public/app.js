@@ -1274,21 +1274,61 @@
       }
       if (toWrap.length === 0) return;
 
+      // Create toggle heading as its own section
+      var toggleBar = document.createElement('div');
+      toggleBar.className = 'card-details-bar';
+      toggleBar.innerHTML = '<span class="card-details-bar-label">Property Details</span><span class="card-details-bar-arrow">&#9662;</span>';
+
       // Create wrapper
       var wrapper = document.createElement('div');
       wrapper.className = 'card-details-content';
-      highlight.parentNode.insertBefore(wrapper, toWrap[0]);
+      highlight.parentNode.insertBefore(toggleBar, toWrap[0]);
+      highlight.parentNode.insertBefore(wrapper, toggleBar.nextSibling);
       toWrap.forEach(function (el) { wrapper.appendChild(el); });
 
-      // Add toggle button to highlight band
-      var toggle = document.createElement('button');
-      toggle.className = 'card-details-toggle';
-      toggle.innerHTML = '&#9662; Show Details';
-      toggle.addEventListener('click', function () {
+      toggleBar.addEventListener('click', function () {
         var expanded = wrapper.classList.toggle('expanded');
-        toggle.innerHTML = expanded ? '&#9652; Hide Details' : '&#9662; Show Details';
+        toggleBar.classList.toggle('expanded', expanded);
+        toggleBar.querySelector('.card-details-bar-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
       });
-      highlight.appendChild(toggle);
+    });
+  }
+
+  // --- Collapsible graveyard section ---
+  function initCollapsibleGraveyard() {
+    var gy = document.getElementById('graveyard');
+    if (!gy || gy.querySelector('.graveyard-toggle-bar')) return;
+
+    var title = gy.querySelector('.section-title');
+    var subtitle = gy.querySelector('.graveyard-subtitle');
+
+    // Create toggle bar
+    var bar = document.createElement('div');
+    bar.className = 'graveyard-toggle-bar';
+    bar.innerHTML = '<span class="graveyard-toggle-label">Property Graveyard</span><span class="graveyard-toggle-arrow">&#9662;</span>';
+
+    // Wrap all content after title+subtitle in a container
+    var content = document.createElement('div');
+    content.className = 'graveyard-content';
+
+    // Move all children except title into content wrapper
+    var children = Array.from(gy.children);
+    children.forEach(function (child) {
+      if (child !== title && child !== subtitle) {
+        content.appendChild(child);
+      }
+    });
+
+    // Replace title/subtitle with toggle bar
+    if (title) title.remove();
+    if (subtitle) subtitle.remove();
+    gy.insertBefore(bar, gy.firstChild);
+    gy.appendChild(content);
+
+    bar.addEventListener('click', function () {
+      var expanded = content.classList.toggle('expanded');
+      bar.classList.toggle('expanded', expanded);
+      bar.querySelector('.graveyard-toggle-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
     });
   }
 
@@ -1453,6 +1493,7 @@
     injectEnvKeys();
     initMonthlyToggles();
     initCollapsibleDetails();
+    initCollapsibleGraveyard();
     initTableFilter();
     renderNavPill();
 
