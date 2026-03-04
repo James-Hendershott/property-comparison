@@ -652,12 +652,116 @@
   background: #2d5a3d;
 }
 
+/* ── COLLAPSIBLE CARD DETAILS ── */
+.card-details-content {
+  display: none;
+}
+.card-details-content.expanded {
+  display: block;
+}
+.card-details-toggle {
+  background: none;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  margin-left: auto;
+  float: right;
+  transition: all 0.15s;
+}
+.card-details-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── TABLE FILTER ── */
+.table-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+.table-filter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.table-filter-input:focus {
+  border-color: var(--accent);
+}
+.table-filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.table-filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.table-filter-select {
+  padding: 0.3rem 0.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  outline: none;
+  background: #fff;
+  cursor: pointer;
+}
+.table-filter-select:focus {
+  border-color: var(--accent);
+}
+.table-filter-clear {
+  padding: 0.3rem 0.7rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.table-filter-clear:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+thead th[data-sort="asc"]::after {
+  content: ' \25B2';
+  font-size: 0.65rem;
+}
+thead th[data-sort="desc"]::after {
+  content: ' \25BC';
+  font-size: 0.65rem;
+}
+thead th {
+  user-select: none;
+}
+
 /* ── PRINT: hide voting & notes UI ── */
 @media print {
   .vote-row, .vote-modal, .nav-user, .rankings-section,
   .nav-rankings-link, .th-family, .td-family,
   .notes-row, .monthly-toggle, .monthly-breakdown,
-  .nickname-edit-btn, .edit-btn, .edit-overlay { display: none !important; }
+  .nickname-edit-btn, .edit-btn, .edit-overlay,
+  .card-details-toggle, .table-filter-bar { display: none !important; }
+  .card-details-content { display: block !important; }
 }
 
 /* ── MOBILE ── */

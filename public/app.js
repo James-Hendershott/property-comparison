@@ -1255,6 +1255,192 @@
     return div.innerHTML;
   }
 
+  // --- Collapsible card details (below "Why it Stands Out") ---
+  function initCollapsibleDetails() {
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      var highlight = card.querySelector('.highlight-band');
+      if (!highlight) return;
+      if (card.querySelector('.card-details-content')) return; // already done
+
+      // Collect elements after highlight-band, excluding vote-row and notes-row
+      var toWrap = [];
+      var sibling = highlight.nextElementSibling;
+      while (sibling) {
+        var next = sibling.nextElementSibling;
+        if (!sibling.classList.contains('vote-row') && !sibling.classList.contains('notes-row')) {
+          toWrap.push(sibling);
+        }
+        sibling = next;
+      }
+      if (toWrap.length === 0) return;
+
+      // Create wrapper
+      var wrapper = document.createElement('div');
+      wrapper.className = 'card-details-content';
+      highlight.parentNode.insertBefore(wrapper, toWrap[0]);
+      toWrap.forEach(function (el) { wrapper.appendChild(el); });
+
+      // Add toggle button to highlight band
+      var toggle = document.createElement('button');
+      toggle.className = 'card-details-toggle';
+      toggle.innerHTML = '&#9662; Show Details';
+      toggle.addEventListener('click', function () {
+        var expanded = wrapper.classList.toggle('expanded');
+        toggle.innerHTML = expanded ? '&#9652; Hide Details' : '&#9662; Show Details';
+      });
+      highlight.appendChild(toggle);
+    });
+  }
+
+  // --- Overview table filter ---
+  function initTableFilter() {
+    var section = document.getElementById('overview');
+    if (!section) return;
+    var table = section.querySelector('table.qt');
+    if (!table) return;
+    if (section.querySelector('.table-filter-bar')) return;
+
+    var bar = document.createElement('div');
+    bar.className = 'table-filter-bar';
+    bar.innerHTML =
+      '<input type="text" class="table-filter-input" placeholder="Filter by address, city, county..." autocomplete="off">' +
+      '<div class="table-filter-controls">' +
+      '  <label class="table-filter-label">Price: ' +
+      '    <select class="table-filter-select" data-filter="price">' +
+      '      <option value="">Any</option>' +
+      '      <option value="0-300000">Under $300K</option>' +
+      '      <option value="300000-400000">$300K–$400K</option>' +
+      '      <option value="400000-500000">$400K–$500K</option>' +
+      '      <option value="500000-999999">$500K+</option>' +
+      '    </select>' +
+      '  </label>' +
+      '  <label class="table-filter-label">Acres: ' +
+      '    <select class="table-filter-select" data-filter="acres">' +
+      '      <option value="">Any</option>' +
+      '      <option value="0-5">Under 5</option>' +
+      '      <option value="5-10">5–10</option>' +
+      '      <option value="10-20">10–20</option>' +
+      '      <option value="20-999">20+</option>' +
+      '    </select>' +
+      '  </label>' +
+      '  <label class="table-filter-label">Beds: ' +
+      '    <select class="table-filter-select" data-filter="beds">' +
+      '      <option value="">Any</option>' +
+      '      <option value="2">2+</option>' +
+      '      <option value="3">3+</option>' +
+      '      <option value="4">4+</option>' +
+      '    </select>' +
+      '  </label>' +
+      '  <button class="table-filter-clear">Clear</button>' +
+      '</div>';
+
+    var tableWrap = section.querySelector('.table-wrap');
+    section.insertBefore(bar, tableWrap);
+
+    var textInput = bar.querySelector('.table-filter-input');
+    var priceSelect = bar.querySelector('[data-filter="price"]');
+    var acresSelect = bar.querySelector('[data-filter="acres"]');
+    var bedsSelect = bar.querySelector('[data-filter="beds"]');
+    var clearBtn = bar.querySelector('.table-filter-clear');
+
+    function parseNum(str) {
+      return parseFloat(String(str).replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function applyFilters() {
+      var text = textInput.value.toLowerCase().trim();
+      var priceRange = priceSelect.value;
+      var acresRange = acresSelect.value;
+      var minBeds = bedsSelect.value ? parseInt(bedsSelect.value) : 0;
+
+      var rows = table.querySelectorAll('tbody tr');
+      rows.forEach(function (row) {
+        // Skip already hidden by graveyard
+        var link = row.querySelector('a[href^="#p"]');
+        if (link) {
+          var pid = link.getAttribute('href').slice(1);
+          if (GRAVEYARD_IDS[pid]) { row.style.display = 'none'; return; }
+        }
+
+        var show = true;
+
+        // Text filter (address column)
+        if (text) {
+          var rowText = row.textContent.toLowerCase();
+          if (rowText.indexOf(text) === -1) show = false;
+        }
+
+        // Price filter
+        if (show && priceRange) {
+          var priceTd = row.querySelector('.td-price');
+          var price = priceTd ? parseNum(priceTd.textContent) : 0;
+          var parts = priceRange.split('-');
+          if (price < parseInt(parts[0]) || price > parseInt(parts[1])) show = false;
+        }
+
+        // Acres filter
+        if (show && acresRange) {
+          var tds = row.querySelectorAll('td');
+          var acresVal = tds[7] ? parseNum(tds[7].textContent) : 0;
+          var aParts = acresRange.split('-');
+          if (acresVal < parseInt(aParts[0]) || acresVal > parseInt(aParts[1])) show = false;
+        }
+
+        // Beds filter
+        if (show && minBeds) {
+          var bedsTd = row.querySelectorAll('td');
+          var bedsVal = bedsTd[5] ? parseInt(bedsTd[5].textContent) : 0;
+          if (bedsVal < minBeds) show = false;
+        }
+
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    textInput.addEventListener('input', applyFilters);
+    priceSelect.addEventListener('change', applyFilters);
+    acresSelect.addEventListener('change', applyFilters);
+    bedsSelect.addEventListener('change', applyFilters);
+    clearBtn.addEventListener('click', function () {
+      textInput.value = '';
+      priceSelect.value = '';
+      acresSelect.value = '';
+      bedsSelect.value = '';
+      applyFilters();
+    });
+
+    // Make column headers sortable
+    var headers = table.querySelectorAll('thead th');
+    headers.forEach(function (th, colIdx) {
+      th.style.cursor = 'pointer';
+      th.title = 'Click to sort';
+      var sortDir = 0; // 0=none, 1=asc, -1=desc
+      th.addEventListener('click', function () {
+        // Reset other headers
+        headers.forEach(function (h) { h.removeAttribute('data-sort'); });
+        sortDir = sortDir === 1 ? -1 : 1;
+        th.setAttribute('data-sort', sortDir === 1 ? 'asc' : 'desc');
+
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort(function (a, b) {
+          var aCell = a.querySelectorAll('td')[colIdx];
+          var bCell = b.querySelectorAll('td')[colIdx];
+          var aText = aCell ? aCell.textContent.trim() : '';
+          var bText = bCell ? bCell.textContent.trim() : '';
+          // Try numeric sort
+          var aNum = parseFloat(aText.replace(/[^0-9.-]/g, ''));
+          var bNum = parseFloat(bText.replace(/[^0-9.-]/g, ''));
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            return sortDir * (aNum - bNum);
+          }
+          return sortDir * aText.localeCompare(bText);
+        });
+        rows.forEach(function (r) { tbody.appendChild(r); });
+      });
+    });
+  }
+
   // --- Init ---
   function init() {
     loadUser();
@@ -1266,6 +1452,8 @@
     injectNicknameUI();
     injectEnvKeys();
     initMonthlyToggles();
+    initCollapsibleDetails();
+    initTableFilter();
     renderNavPill();
 
     if (!currentUser) {
@@ -1273,18 +1461,22 @@
     }
 
     refreshPropertyNames();
-    refreshAllVotes();
     refreshAllNotes();
-    refreshGraveyard();
     refreshPropertyEdits();
+
+    // Load graveyard first, then votes (so rankings exclude graveyarded)
+    refreshGraveyard().then(function () {
+      refreshAllVotes();
+    });
 
     // Poll every 30 seconds
     setInterval(function () {
       refreshPropertyNames();
-      refreshAllVotes();
       refreshAllNotes();
-      refreshGraveyard();
       refreshPropertyEdits();
+      refreshGraveyard().then(function () {
+        refreshAllVotes();
+      });
     }, 30000);
   }
 
