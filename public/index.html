@@ -519,6 +519,8 @@ table.qt {
 /* status badges */
 .status-active { color: #166534; font-weight: 700; }
 .status-pending { color: #b91c1c; font-weight: 700; }
+.status-sold { color: #6b7280; font-weight: 700; text-decoration: line-through; }
+.status-off { color: #d97706; font-weight: 700; }
 .status-contingent { color: #d97706; font-weight: 700; }
 .status-unknown { color: #92400e; font-weight: 600; }
 .status-contract { color: #b91c1c; font-weight: 700; }
@@ -885,16 +887,16 @@ table.qt {
         <tr>
           <td>1</td>
           <td><a href="#p1">5933 Nubbin Creek Rd, Lenoir NC</a></td>
-          <td class="td-price">$389,900</td>
-          <td class="td-mo">~$2,855</td>
-          <td>$13,647</td>
+          <td class="td-price">$429,900</td>
+          <td class="td-mo">~$3,137</td>
+          <td>$15,047</td>
           <td>3 / 2</td>
           <td>2,262</td>
           <td>7.52</td>
           <td><span class="badge b-sfr">Site-Built</span></td>
           <td>1996</td>
-          <td><strong style="color:var(--accent)">62</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$350K – $375K</strong><br><span style="font-size:0.72rem;color:var(--muted)">5 reductions = strong leverage</span></td>
+          <td><strong style="color:var(--accent)">60</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$395K – $415K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price raised from $389K — less leverage</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
         </tr>
         <tr>
@@ -922,7 +924,7 @@ table.qt {
           <td>2,967</td>
           <td>6.84</td>
           <td><span class="badge b-sfr">Log Home</span></td>
-          <td>2014</td>
+          <td>2006</td>
           <td><strong style="color:var(--accent)">68</strong>/100</td>
           <td style="white-space:nowrap"><strong>$460K – $485K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Zestimate $482K, ~6 months total DOM</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
@@ -1008,11 +1010,11 @@ table.qt {
           <td class="td-price">$499,900</td>
           <td class="td-mo">~$3,630</td>
           <td>$17,497</td>
-          <td>3 / 2</td>
+          <td>4 / 3.5</td>
           <td>3,678</td>
-          <td>5.22</td>
+          <td>5.72</td>
           <td><span class="badge b-sfr">Site-Built</span></td>
-          <td>1998</td>
+          <td>2007</td>
           <td><strong style="color:var(--accent)">61</strong>/100</td>
           <td style="white-space:nowrap"><strong>$425K – $460K</strong><br><span style="font-size:0.72rem;color:var(--muted)">FSBO cut $100K — suspiciously vague listing</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
@@ -1060,7 +1062,7 @@ table.qt {
           <td>2005</td>
           <td><strong style="color:var(--accent)">54</strong>/100</td>
           <td style="white-space:nowrap"><strong>$365K – $385K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Gated community likely has HOA restrictions</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-removed">REMOVED</span> <span class="status-sold">Gone</span></td>
         </tr>
         <tr>
           <td>13</td>
@@ -1068,11 +1070,11 @@ table.qt {
           <td class="td-price">$459,900</td>
           <td class="td-mo">~$3,444</td>
           <td>$16,097</td>
-          <td>3 / 2</td>
-          <td>3,600</td>
+          <td>3 / 3</td>
+          <td>2,848</td>
           <td>10</td>
           <td><span class="badge b-sfr">Site-Built</span></td>
-          <td>2010</td>
+          <td>2006</td>
           <td><strong style="color:var(--accent)">61</strong>/100</td>
           <td style="white-space:nowrap"><strong>$375K – $400K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Zestimate $390K, unpermitted sqft, flip markup</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
@@ -1135,7 +1137,7 @@ table.qt {
           <td>2017</td>
           <td><strong style="color:var(--accent)">61</strong>/100</td>
           <td style="white-space:nowrap"><strong>$390K – $415K</strong><br><span style="font-size:0.72rem;color:var(--muted)">2017 build, 13.65 acres, creek frontage</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="status-off">Off-Market</span></td>
         </tr>
         <tr>
           <td>18</td>
@@ -1150,7 +1152,7 @@ table.qt {
           <td>—</td>
           <td><strong style="color:var(--accent)">60</strong>/100</td>
           <td style="white-space:nowrap"><strong>$400K – $430K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Country views, 7+ acres, year built unknown</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="status-off">Off-Market</span></td>
         </tr>
         <tr>
           <td>19</td>
@@ -1270,7 +1272,7 @@ table.qt {
           <td>—</td>
           <td><strong style="color:var(--accent)">66</strong>/100</td>
           <td style="white-space:nowrap"><strong>$430K – $460K</strong><br><span style="font-size:0.72rem;color:var(--muted)">16 wooded acres, hunting property, 1.5 bath</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-pend">PENDING</span> <span class="status-pending">Under Contract</span></td>
         </tr>
         <tr>
           <td>27</td>
@@ -1315,7 +1317,7 @@ table.qt {
           <td>1997</td>
           <td><strong style="color:var(--accent)">65</strong>/100</td>
           <td style="white-space:nowrap"><strong>$120K – $135K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Manufactured, ultra-cheap — may already be sold</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-removed">SOLD</span> <span class="status-sold">Sold</span></td>
         </tr>
         <tr>
           <td>30</td>
@@ -1425,16 +1427,16 @@ table.qt {
         <tr>
           <td>37</td>
           <td><a href="#p37">2754 Olivian Corbett Rd, Cedar Grove NC</a></td>
-          <td class="td-price">$439,900</td>
-          <td class="td-mo">~$3,244</td>
-          <td>$15,397</td>
+          <td class="td-price">$563,000</td>
+          <td class="td-mo">~$4,226</td>
+          <td>$19,705</td>
           <td>4 / 3</td>
-          <td>2,083</td>
-          <td>5.0</td>
+          <td>2,430</td>
+          <td>7.06</td>
           <td><span class="badge b-sfr">Site-Built</span></td>
           <td>1997</td>
-          <td><strong style="color:var(--accent)">67</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$400K – $425K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Best schools (Orange Co.), Research Triangle</span></td>
+          <td><strong style="color:var(--accent)">61</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$490K – $520K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price jumped to $563K — over budget</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
         </tr>
         <tr>
@@ -1450,7 +1452,7 @@ table.qt {
           <td>1975</td>
           <td><strong style="color:var(--accent)">60</strong>/100</td>
           <td style="white-space:nowrap"><strong>$390K – $420K</strong><br><span style="font-size:0.72rem;color:var(--muted)">13 acres w/ fishing pond, high flood risk</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-pend">PENDING</span> <span class="status-pending">Pending</span></td>
         </tr>
         <tr>
           <td>39</td>
@@ -1510,7 +1512,7 @@ table.qt {
           <td>1965</td>
           <td><strong style="color:var(--accent)">62</strong>/100</td>
           <td style="white-space:nowrap"><strong>$400K – $430K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Horse-ready: barn + round pen, 6.25 level acres</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-pend">PENDING</span> <span class="status-pending">Pending</span></td>
         </tr>
         <tr>
           <td>43</td>
@@ -1570,7 +1572,7 @@ table.qt {
           <td>—</td>
           <td><strong style="color:var(--accent)">73</strong>/100</td>
           <td style="white-space:nowrap"><strong>$360K – $385K</strong><br><span style="font-size:0.72rem;color:var(--muted)">4/3 farmhouse 11 acres, 8 wooded, great value</span></td>
-          <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
+          <td><span class="badge b-pend">PENDING</span> <span class="status-pending">Sale Pending</span></td>
         </tr>
         <tr>
           <td>47</td>
@@ -1800,18 +1802,18 @@ table.qt {
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$389,900</div>
+          <div class="card-price">$429,900</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$2,855/mo</span>
+            <span class="monthly-total">~$3,137/mo</span>
             <button class="monthly-toggle">&#9662; details</button>
             <div class="monthly-breakdown" hidden>
-              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,378</span></div>
-              <div class="mb-line"><span>Property Tax (Caldwell Co. 0.60%)</span><span>$195</span></div>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,622</span></div>
+              <div class="mb-line"><span>Property Tax (Caldwell Co. 0.60%)</span><span>$215</span></div>
               <div class="mb-line"><span>Insurance</span><span>$110</span></div>
-              <div class="mb-line"><span>PMI (3.5% down)</span><span>$172</span></div>
+              <div class="mb-line"><span>PMI (3.5% down)</span><span>$190</span></div>
             </div>
           </div>
-          <div class="card-down">$13,647 down @ 3.5%</div>
+          <div class="card-down">$15,047 down @ 3.5%</div>
         </div>
       </div>
       <div class="stats-row">
@@ -1822,18 +1824,18 @@ table.qt {
         <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~29 hr</div><div class="stat-sub">cross-country from Farmington UT</div></div>
         <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~15 min</div><div class="stat-sub">to Lenoir Walmart</div></div>
         <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$2,359/yr</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div><div class="stat-sub">Reduced 5 times from $449,900 — 13.3% total cut</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div><div class="stat-sub">Price raised to $429,900 (was $389,900)</div></div>
       </div>
     </div>
   </div>
   <div class="score-offer-band">
     <div class="sob-score">
       <div>
-        <div class="sob-score-num">62</div>
+        <div class="sob-score-num">60</div>
         <div class="sob-score-denom">/ 100</div>
       </div>
       <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>9/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:90%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>4/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:40%"></div></div></div>
@@ -1847,9 +1849,9 @@ table.qt {
     </div>
     <div class="sob-offer">
       <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$350K – $375K</div>
+      <div class="sob-offer-price">$395K – $415K</div>
       <div class="sob-offer-rationale">
-        <div class="sob-strategy">5 reductions = strong leverage</div>
+        <div class="sob-strategy">Price raised from $389K — less leverage</div>
       </div>
     </div>
   </div>
@@ -2143,7 +2145,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 5</div></div>
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,967</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">6.84</div><div class="stat-sub">log cabin mountain acreage</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2014</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2006</div></div>
         <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~30 hr</div><div class="stat-sub">cross-country from Farmington UT</div></div>
         <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~5-7 min</div><div class="stat-sub">to Murphy Walmart</div></div>
         <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$2,495/yr</div></div>
@@ -3109,10 +3111,10 @@ table.qt {
         </div>
       </div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 3.5</div></div>
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">3,678</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">5.22</div><div class="stat-sub">all-brick estate</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1998</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">5.72</div><div class="stat-sub">all-brick estate</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2007</div></div>
         <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~28 hr</div><div class="stat-sub">cross-country from Farmington UT</div></div>
         <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~10-15 min</div><div class="stat-sub">to Whiteville Walmart</div></div>
         <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$1,900/yr</div></div>
@@ -3558,7 +3560,7 @@ table.qt {
     <div class="env-note">Extreme NE NC is highly exposed to hurricanes, nor'easters, and coastal flooding. 2022 construction should meet modern wind codes, but flood risk from flat terrain is significant.</div>
   </div>
 </div>
-<div class="card" id="p12">
+<div class="card" id="p12" data-status="removed">
   <div class="card-top">
     <div class="card-map">
       <a href="https://www.zillow.com/homes/380-Hardwood-Dr-SW-Supply-NC-28462_rb/" target="_blank" class="card-img-link">
@@ -3753,10 +3755,10 @@ table.qt {
         </div>
       </div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 2</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">3,600</div></div>
+        <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">3 / 3</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,848</div><div class="stat-sub">permitted (3,600 total incl. unpermitted)</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">10</div><div class="stat-sub">with workshops and outbuildings</div></div>
-        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2010</div></div>
+        <div class="stat"><div class="stat-label">Built</div><div class="stat-val">2006</div></div>
         <div class="stat"><div class="stat-label">Drive</div><div class="stat-val">~28 hr</div><div class="stat-sub">cross-country from Farmington UT</div></div>
         <div class="stat"><div class="stat-label">To Town</div><div class="stat-val">~15-20 min</div><div class="stat-sub">to Scotland Neck/Halifax</div></div>
         <div class="stat"><div class="stat-label">Tax</div><div class="stat-val">$2,100/yr</div></div>
@@ -4378,9 +4380,9 @@ table.qt {
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$425,000</div>
+          <div class="card-price" style="text-decoration:line-through;opacity:0.6">$425,000</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$3,104/mo</span>
+            <span class="monthly-total" style="text-decoration:line-through;opacity:0.6">~$3,104/mo</span>
             <button class="monthly-toggle">&#9662; details</button>
             <div class="monthly-breakdown" hidden>
               <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,593</span></div>
@@ -4536,9 +4538,9 @@ table.qt {
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$445,000</div>
+          <div class="card-price" style="text-decoration:line-through;opacity:0.6">$445,000</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$3,252/mo</span>
+            <span class="monthly-total" style="text-decoration:line-through;opacity:0.6">~$3,252/mo</span>
             <button class="monthly-toggle">&#9662; details</button>
             <div class="monthly-breakdown" hidden>
               <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,715</span></div>
@@ -5609,7 +5611,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,057</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">16</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">—</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">Under Contract</div></div>
       </div>
     </div>
   </div>
@@ -5964,7 +5966,7 @@ table.qt {
   </div>
 
 </div>
-<div class="card" id="p29">
+<div class="card" id="p29" data-status="sold">
   <div class="card-top">
     <div class="card-map">
       <a href="https://www.zillow.com/homedetails/2222-Elevation-Rd-Four-Oaks-NC-27524/69118215_zpid/" target="_blank" class="card-img-link">
@@ -5993,7 +5995,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,512</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">7.51</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1997</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-sold">Sold</div></div>
       </div>
     </div>
   </div>
@@ -6987,17 +6989,17 @@ table.qt {
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$439,900</div>
+          <div class="card-price">$563,000</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$3,244/mo</span>
+            <span class="monthly-total">~$4,226/mo</span>
           </div>
-          <div class="card-down">$15,397 down @ 3.5%</div>
+          <div class="card-down">$19,705 down @ 3.5%</div>
         </div>
       </div>
       <div class="stats-row">
         <div class="stat"><div class="stat-label">Beds/Bath</div><div class="stat-val">4 / 3</div></div>
-        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,083</div></div>
-        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">5.0</div></div>
+        <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,430</div></div>
+        <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">7.06</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1997</div></div>
         <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
       </div>
@@ -7006,11 +7008,11 @@ table.qt {
   <div class="score-offer-band">
     <div class="sob-score">
       <div>
-        <div class="sob-score-num">67</div>
+        <div class="sob-score-num">61</div>
         <div class="sob-score-denom">/ 100</div>
       </div>
       <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>1/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:10%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>10/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
@@ -7024,9 +7026,9 @@ table.qt {
     </div>
     <div class="sob-offer">
       <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$400K – $425K</div>
+      <div class="sob-offer-price">$490K – $520K</div>
       <div class="sob-offer-rationale">
-        <div class="sob-strategy">Best schools (Orange Co.), Research Triangle</div>
+        <div class="sob-strategy">Price jumped to $563K — over budget</div>
       </div>
     </div>
   </div>
@@ -7126,7 +7128,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,636</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">13.5</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1975</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">Pending</div></div>
       </div>
     </div>
   </div>
@@ -7631,7 +7633,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">2,202</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">6.25</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1965</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">Pending</div></div>
       </div>
     </div>
   </div>
@@ -8144,7 +8146,7 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">3,069</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">11</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">—</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-pending">Sale Pending</div></div>
       </div>
     </div>
   </div>
