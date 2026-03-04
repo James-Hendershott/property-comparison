@@ -617,13 +617,16 @@
 
   // Score category config: label, max points, index in sob-mini-bar list
   var SCORE_CATS = [
-    { key: 'price', label: 'Price', max: 15 },
-    { key: 'acreage', label: 'Acreage', max: 20 },
-    { key: 'privacy', label: 'Privacy', max: 10 },
-    { key: 'outbuildings', label: 'Outbuildings', max: 15 },
-    { key: 'town', label: 'Town', max: 15 },
-    { key: 'schools', label: 'Schools', max: 15 },
-    { key: 'practical', label: 'Practical', max: 10 }
+    { key: 'price', label: 'Price', max: 10 },
+    { key: 'acreage', label: 'Acreage', max: 10 },
+    { key: 'schools', label: 'Schools', max: 10 },
+    { key: 'outbuildings', label: 'Outbuildings', max: 10 },
+    { key: 'town', label: 'Town', max: 10 },
+    { key: 'hospital', label: 'Hospital', max: 10 },
+    { key: 'hazards', label: 'Hazards', max: 10 },
+    { key: 'beach', label: 'Beach', max: 10 },
+    { key: 'forested', label: 'Forested', max: 10 },
+    { key: 'living', label: 'Living', max: 10 }
   ];
 
   function readCardValues(pid) {
