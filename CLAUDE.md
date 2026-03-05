@@ -4,22 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A comprehensive real estate comparison dashboard for evaluating 50 rural property listings across 7 states: Washington, Idaho, Montana, Wyoming, Colorado, Oregon, and North Carolina. Includes a family voting system (1-5 star ratings) so the Hendershott family can rate properties and see aggregate rankings. Served via Express + Docker at `homes.shottsserver.com`.
+A comprehensive real estate comparison dashboard for evaluating 47 rural property listings in North Carolina. Includes a family voting system (1-5 star ratings), interactive Leaflet map with property pins, and aggregate rankings. Served via Express + Docker at `homes.shottsserver.com`.
 
 ## Architecture
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
 - **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`, `getPropertyEdits()`, `setPropertyEdits()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
-- **public/index.html**: Extensive CSS in `<style>`, ~8,000+ lines HTML (50 property cards). CSS custom properties in `:root`. Zero inline JS except `onclick="window.print()"`. This file is a composite: properties p1–p7 were hand-written, p8–p20 were injected by `generate-cards.js`, p21–p54 (20 western + 14 NC) were injected by `generate-batch2.js`, and env hazards were injected by `add-env-hazards.js`. All content is now hand-edited or generator-injected — **do not re-run the generator scripts** as they use one-time insertion markers.
-- **public/app.js**: Vanilla JS IIFE — user identification (localStorage key `vote_user` + modal), star rating injection into each `.card`, rankings table, overview table augmentation, notes system (per-property), monthly breakdown toggles, graveyard move/restore UI, 30s polling for votes + notes + graveyard
-- **public/app.css**: Voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), nav user (`nav-user`)
+- **public/index.html**: CSS in `<style>`, lightweight HTML (~1,100 lines) — CSS custom properties in `:root`, containers for rendered content, Leaflet map section, internet guide, graveyard, footer. Leaflet CDN loaded in `<head>`.
+- **public/properties-data.js**: Single source of truth for all 47 properties as `var PROPERTIES = [...]`. Each property has `lat`/`lng` for map pins. Rendered client-side by `render.js`.
+- **public/render.js**: Renders nav links, overview table rows, and property cards from PROPERTIES data.
+- **public/app.js**: Vanilla JS IIFE — user identification, star ratings, rankings table, overview table augmentation, notes system, monthly breakdown toggles, graveyard move/restore, property edit modal, **interactive Leaflet map** with hover popups, **collapsible overview table**, collapsible graveyard, table filtering/sorting, 30s polling
+- **public/app.css**: Map popup styles (`map-popup-`), voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings (`rankings-`), collapsible overview (`overview-toggle-`), collapsible graveyard (`graveyard-toggle-`), nav user (`nav-user`)
 
-### One-Time Utility Scripts (do not re-run)
+### One-Time Utility Scripts (`scripts/` — do not re-run)
 
-- **generate-cards.js**: Generated HTML for properties p8–p20 (nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
-- **generate-batch2.js**: Generated HTML for properties p21–p54 (20 western + 14 North Carolina; nav links, table rows, card blocks) and injected into index.html. Already run; re-running would duplicate content.
-- **add-env-hazards.js**: Injected `.env-hazards` sections for all properties (p1–p20) before each `.score-row`. Already run.
-- **add-properties.js**: Updated header subtitle and added additional properties. Already run.
+All one-time scripts are in the `scripts/` directory. These were used during initial data setup and should never be re-run:
+- `generate-cards.js`, `generate-batch2.js`, `generate-batch3.js` — HTML card generators (pre-migration)
+- `extract-properties.js` — extracted property data from HTML into `properties-data.js`
+- `geocode-properties.js` — geocoded all 47 properties via Nominatim, added `lat`/`lng`
+- `gen-realtor-list.js` — generated `realtor-list.txt` from property data
+- `slim-html.js` — slimmed HTML after migration to data-driven architecture
+- `add-env-hazards.js`, `add-livestock-notes.js`, `add-properties.js` — content injectors
+- `audit-update.js`, `overhaul-scores.js`, `fix-nc-monthly.js` — data correction scripts
+- `batch2-nc.js`, `batch2-western.js`, `batch3-va.js` — property data source files
 
 ### Database Schema
 
@@ -98,14 +105,14 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
 - **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
 - **Graveyard section**: `#graveyard` below cards — static `.graveyard-card` entries for permanently removed properties + `#graveyard-dynamic` container for DB-driven entries (move/restore via UI)
-- **Nav anchors**: `#p1` through `#p54` matching card `id` attributes (gaps for removed properties, gaps in numbering for excluded listings)
-- **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings
+- **Nav anchors**: `#p1` through `#p47` matching card `id` attributes (gaps for removed properties)
+- **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings. Collapsed by default via `initCollapsibleOverview()`
+- **Property map**: Leaflet map (`#property-map`) with circle markers for all non-graveyarded properties. Hover shows popup with thumbnail + stats. Click navigates to card. Map syncs with graveyard state.
+- **Collapsible sections**: Overview table and graveyard both use toggle-bar pattern (starts collapsed, click to expand)
 
 ## When Adding a New Property
 
-1. Add a row to the overview `<table>` inside `#overview`
-2. Add a nav link `<a href="#pN">Name</a>` to the `<nav class="nav">` bar
-3. Copy an existing `.card` block, update `id="pN"`, and fill in all sections
-4. Update the header subtitle property count
-5. Add an `.env-hazards` section (between `.pros-cons` and `.score-row`) with local wildfire, flood, and other hazard data
-6. Voting UI is auto-injected by `app.js` for any `.card[id^="p"]`
+1. Add property object to `public/properties-data.js` with all required fields including `lat`/`lng`
+2. Update the header subtitle property count in `index.html`
+3. Nav links, overview table rows, and cards are auto-rendered by `render.js`
+4. Voting UI, notes, edit buttons, and map pins are auto-injected by `app.js`

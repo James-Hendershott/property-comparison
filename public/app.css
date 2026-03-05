@@ -1,3 +1,54 @@
+/* ── PROPERTY MAP ── */
+.map-popup {
+  width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.map-popup-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+.map-popup-overlay {
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+}
+.map-popup-id {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.map-popup-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+.map-popup-stats {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+.map-popup-score {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+/* Remove default Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+.leaflet-popup-tip {
+  background: rgba(0,0,0,0.75) !important;
+}
+@media print {
+  #property-map-section { display: none !important; }
+}
+
 /* ── VOTING SYSTEM STYLES ── */
 
 /* Vote row (mirrors .score-row) */
@@ -688,6 +739,48 @@
   display: block;
 }
 
+/* ── COLLAPSIBLE OVERVIEW ── */
+.overview-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: #f3f3f0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+  margin-bottom: 0;
+}
+.overview-toggle-bar:hover {
+  background: #eaeae6;
+}
+.overview-toggle-bar.expanded {
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+.overview-toggle-label {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.overview-toggle-arrow {
+  font-size: 0.85rem;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.overview-toggle-bar.expanded .overview-toggle-arrow {
+  transform: rotate(180deg);
+}
+.overview-content {
+  display: none;
+}
+.overview-content.expanded {
+  display: block;
+}
+
 /* ── COLLAPSIBLE GRAVEYARD ── */
 .graveyard-toggle-bar {
   display: flex;
@@ -812,8 +905,8 @@ thead th {
   .notes-row, .monthly-toggle, .monthly-breakdown,
   .nickname-edit-btn, .edit-btn, .edit-overlay,
   .card-details-bar, .table-filter-bar,
-  .graveyard-toggle-bar { display: none !important; }
-  .card-details-content, .graveyard-content { display: block !important; }
+  .overview-toggle-bar, .graveyard-toggle-bar { display: none !important; }
+  .card-details-content, .overview-content, .graveyard-content { display: block !important; }
 }
 
 /* ── MOBILE ── */

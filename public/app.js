@@ -563,6 +563,17 @@
         }
       });
 
+      // Sync map markers with graveyard state
+      if (propertyMap) {
+        Object.keys(PROPERTY_MAP).forEach(function (pid) {
+          if (GRAVEYARD_IDS[pid]) {
+            removeMapMarker(pid);
+          } else {
+            addMapMarker(pid);
+          }
+        });
+      }
+
       // Hide/show nav links and overview rows
       document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
         var pid = a.getAttribute('href').slice(1);
@@ -1296,6 +1307,42 @@
     });
   }
 
+  // --- Collapsible overview table ---
+  function initCollapsibleOverview() {
+    var ov = document.getElementById('overview');
+    if (!ov || ov.querySelector('.overview-toggle-bar')) return;
+
+    var title = ov.querySelector('.section-title');
+
+    // Create toggle bar
+    var bar = document.createElement('div');
+    bar.className = 'overview-toggle-bar';
+    bar.innerHTML = '<span class="overview-toggle-label">\ud83d\udcca Quick Comparison Overview</span><span class="overview-toggle-arrow">&#9662;</span>';
+
+    // Wrap all content after title in a container
+    var content = document.createElement('div');
+    content.className = 'overview-content';
+
+    // Move all children except title into content wrapper
+    var children = Array.from(ov.children);
+    children.forEach(function (child) {
+      if (child !== title) {
+        content.appendChild(child);
+      }
+    });
+
+    // Replace title with toggle bar
+    if (title) title.remove();
+    ov.insertBefore(bar, ov.firstChild);
+    ov.appendChild(content);
+
+    bar.addEventListener('click', function () {
+      var expanded = content.classList.toggle('expanded');
+      bar.classList.toggle('expanded', expanded);
+      bar.querySelector('.overview-toggle-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
+    });
+  }
+
   // --- Collapsible graveyard section ---
   function initCollapsibleGraveyard() {
     var gy = document.getElementById('graveyard');
@@ -1503,6 +1550,122 @@
     });
   }
 
+  // --- Property Map (Leaflet) ---
+  var propertyMap = null;
+  var mapMarkers = {}; // pid -> marker
+
+  function initPropertyMap() {
+    var container = document.getElementById('property-map');
+    if (!container || typeof L === 'undefined') return;
+
+    propertyMap = L.map('property-map', { scrollWheelZoom: true });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(propertyMap);
+
+    var bounds = [];
+    Object.keys(PROPERTY_MAP).forEach(function (pid) {
+      if (GRAVEYARD_IDS[pid]) return;
+      var p = PROPERTY_MAP[pid];
+      if (!p.lat || !p.lng) return;
+
+      var latlng = [p.lat, p.lng];
+      bounds.push(latlng);
+
+      var totalScore = 0;
+      if (p.scores) {
+        Object.keys(p.scores).forEach(function (k) { totalScore += p.scores[k]; });
+      }
+
+      var popupHtml =
+        '<div class="map-popup" onclick="document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' +
+          '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
+          '<div class="map-popup-overlay">' +
+            '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +
+            '<div class="map-popup-price">$' + (p.price ? p.price.toLocaleString() : '?') + '</div>' +
+            '<div class="map-popup-stats">' + (p.beds || '?') + 'bd/' + (p.bath || '?') + 'ba · ' +
+              (p.sqft ? p.sqft.toLocaleString() : '?') + ' sqft · ' + (p.acres || '?') + ' ac</div>' +
+            '<div class="map-popup-score">Score: ' + (totalScore || 'N/A') + '/100</div>' +
+          '</div>' +
+        '</div>';
+
+      var marker = L.circleMarker(latlng, {
+        radius: 8,
+        fillColor: '#3a6b4a',
+        color: '#1e3528',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.85
+      }).addTo(propertyMap);
+
+      marker.bindPopup(popupHtml, { closeButton: false, maxWidth: 300, className: '' });
+      marker.on('mouseover', function () { this.openPopup(); });
+
+      // Bind tooltip with property ID for quick reference
+      marker.bindTooltip(pid.toUpperCase(), {
+        permanent: false,
+        direction: 'top',
+        offset: [0, -10],
+        className: 'map-marker-tooltip'
+      });
+
+      mapMarkers[pid] = marker;
+    });
+
+    if (bounds.length > 0) {
+      propertyMap.fitBounds(bounds, { padding: [30, 30] });
+    } else {
+      propertyMap.setView([35.5, -80.0], 7);
+    }
+  }
+
+  function addMapMarker(pid) {
+    if (!propertyMap || mapMarkers[pid]) return;
+    var p = PROPERTY_MAP[pid];
+    if (!p || !p.lat || !p.lng) return;
+
+    var totalScore = 0;
+    if (p.scores) {
+      Object.keys(p.scores).forEach(function (k) { totalScore += p.scores[k]; });
+    }
+
+    var popupHtml =
+      '<div class="map-popup" onclick="document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' +
+        '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
+        '<div class="map-popup-overlay">' +
+          '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +
+          '<div class="map-popup-price">$' + (p.price ? p.price.toLocaleString() : '?') + '</div>' +
+          '<div class="map-popup-stats">' + (p.beds || '?') + 'bd/' + (p.bath || '?') + 'ba · ' +
+            (p.sqft ? p.sqft.toLocaleString() : '?') + ' sqft · ' + (p.acres || '?') + ' ac</div>' +
+          '<div class="map-popup-score">Score: ' + (totalScore || 'N/A') + '/100</div>' +
+        '</div>' +
+      '</div>';
+
+    var marker = L.circleMarker([p.lat, p.lng], {
+      radius: 8,
+      fillColor: '#3a6b4a',
+      color: '#1e3528',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.85
+    }).addTo(propertyMap);
+
+    marker.bindPopup(popupHtml, { closeButton: false, maxWidth: 300 });
+    marker.on('mouseover', function () { this.openPopup(); });
+    marker.bindTooltip(pid.toUpperCase(), {
+      permanent: false, direction: 'top', offset: [0, -10]
+    });
+
+    mapMarkers[pid] = marker;
+  }
+
+  function removeMapMarker(pid) {
+    if (!propertyMap || !mapMarkers[pid]) return;
+    propertyMap.removeLayer(mapMarkers[pid]);
+    delete mapMarkers[pid];
+  }
+
   // --- Init ---
   function init() {
     restructureCardHeaders();
@@ -1517,8 +1680,10 @@
     injectScoreTips();
     initMonthlyToggles();
     initCollapsibleDetails();
+    initCollapsibleOverview();
     initCollapsibleGraveyard();
     initTableFilter();
+    initPropertyMap();
     renderNavPill();
 
     if (!currentUser) {

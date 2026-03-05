@@ -23,7 +23,9 @@ map showing home location© Google
 -- mins to 
 Commute Destination
 Description
-HUNTERS PARADISE! Torn down to the studs and totally renovated. Everything is new! The unique blend of natural beauty and tranquility will inspire a sense of possibility and renewal. Seventy foot of deck have a clear view of ;you next door neighbor which is the National Forest. Enjoy your serene oasis, perfect for those seeking a peaceful retreat to make your home! Perfect for those that have extended guests or a multi generational situation since it has two kitchens and separate entrances.
+HUNTERS PARADISE! Torn down to the studs and totally renovated. Everything is new! The unique blend of natural beauty and tranquility will inspire a sense of possibility and renewal. Seventy foot of deck have a clear view of ;you next door neighbor which is the National Forest. Enjoy your serene oasis, perfect for those seeking a peaceful retreat to make your home! Perfect for those that have extended guests or a multi generational situation since it has two kitc
+
+hens and separate entrances.
 Home Highlights
 
 Parking
@@ -34,6 +36,7 @@ Deck
 
 A/C
 Heating & Cooling
+
 
 HOA
 $29/Monthly

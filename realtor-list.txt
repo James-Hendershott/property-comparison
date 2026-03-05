@@ -1,0 +1,559 @@
+EXCLUDED: static graveyard=p5,p6,p8,p13 | removed=p12 | db graveyard=p55,p56,p57,p58,p59,p60,p61,p62,p63,p64,p65,p66,p67,p68,p69,p70,p71
+ACTIVE: 42 properties
+
+=== Alleghany County (1 properties) ===
+
+P10: 290 Stardust Ln, Glade Valley NC 28627
+  $275,000 | 3bd/2ba | 1,729 sqft | 6.79 ac | Built 1995
+  Status: Active (310+ DOM — fell out of contingency once, likely financing issues)
+  Listing: https://www.zillow.com/homes/290-Stardust-Ln-Glade-Valley-NC-28627_rb/
+  Questions for realtor:
+    - Financing Options - 31-year-old manufactured home = no conventional mortgage. Cash, land loan, or chattel loan only. Verify lending options before pursuing
+    - Shared Well Agreement - Shared well = dependency on neighbors for water. Get legal agreement, flow rate, maintenance responsibility
+    - Land Value Assessment - Get land-only appraisal to understand true value independent of 31-year-old structure
+    - Replacement Home Costs - If treating as land purchase, get quotes for new manufactured/modular home delivered and set up
+    - Verify financing options — 31-year-old manufactured home severely limits lending
+    - Shared well legal agreement and flow test
+    - Land-only appraisal to establish true property value
+    - Replacement home cost estimates if pursuing as land purchase
+    - Survey to confirm acreage and Blue Ridge Parkway boundary
+
+=== Anson County (1 properties) ===
+
+P30: 4815 State Hwy 109 S, Wadesboro NC 28170
+  $499,000 | 4bd/2ba | 2,330 sqft | 6.55 ac | Built 0
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/4815-State-Highway-109-S-Wadesboro-NC-28170/225254703_zpid/
+  Questions for realtor:
+    - VERIFY PRICE — Zillow shows $7.25M which is a likely error; actual is ~$329,900
+    - Visit property to assess condition (limited online info)
+    - Well and septic inspection
+    - Check school options — district rated very low
+
+=== Ashe County (2 properties) ===
+
+P15: 1411 Cabbage Creek Rd, Creston NC 28615
+  $449,000 | 3bd/1ba | 1,245 sqft | 43.97 ac | Built 1964
+  Status: Active (MLS #258386)
+  Listing: https://www.zillow.com/homedetails/1411-Cabbage-Creek-Rd-Creston-NC-28615/457180935_zpid/
+  Questions for realtor:
+    - Home Condition - 1964 build, 1 bath — get full inspection, structural assessment
+    - Well & Septic - Rural property — verify well flow rate and septic for 44 acres
+    - Internet - Verify Starlink or any broadband availability in Creston
+    - Timber Value - Have timber stands appraised — could offset renovation costs
+    - Full home inspection — 1964 build needs thorough structural check
+    - Renovation cost estimate — 1 bath, small sqft needs major work
+    - Well water test and flow rate verification
+    - Septic inspection — verify capacity for potential expansion
+    - Timber appraisal — stands may have significant value
+
+P47: 1424 Fairview Church Rd, Lansing NC 28643
+  $470,000 | 5bd/2ba | 2,128 sqft | 15.82 ac | Built 1948
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1424-Fairview-Church-Rd-Lansing-NC-28643/114793940_zpid/
+  Questions for realtor:
+    - Plan for AC installation — critical upgrade needed
+    - Well and septic inspection
+    - Barn condition assessment
+    - Verify propane system and tank
+    - Check internet availability — very rural area
+    - Get propane cost estimates for heating
+
+=== Caldwell County (5 properties) ===
+
+P1: 5933 Nubbin Creek Rd, Lenoir NC 28645
+  $389,900 | 3bd/2ba | 2,262 sqft | 7.52 ac | Built 1996
+  Status: Active (150+ DOM with 5 price cuts — motivated seller)
+  Listing: https://www.redfin.com/NC/Lenoir/5933-Nubbin-Creek-Rd-28645/home/119524579
+  Questions for realtor:
+    - Hurricane Helene Damage - Caldwell County was in FEMA disaster declaration — inspect foundation, drainage, and any flood/wind damage
+    - HVAC Situation - No central HVAC — ductless heat pump + stone fireplace only. Get quotes for full HVAC install
+    - Internet Options - DSL/satellite likely — check Starlink availability and any fiber build-out plans
+    - Well & Septic - Rural mountain property — verify well flow rate and septic condition/age
+    - Helene damage inspection — Caldwell Co. FEMA disaster area
+    - Full HVAC assessment — no central system currently
+    - Well water test and flow rate verification
+    - Septic inspection and tank pump history
+    - Internet speed test — DSL/satellite limitations
+
+P17: 4913 Celia Creek Rd, Lenoir NC 28645
+  $425,000 | 3bd/3ba | 1,798 sqft | 13.65 ac | Built 2017
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/4913-Celia-Creek-Rd-Lenoir-NC-28645/249250112_zpid/
+  Questions for realtor:
+    - Hurricane Helene Damage - Caldwell County FEMA disaster area — inspect thoroughly
+    - Appraisal Risk - $225K assessed vs $425K asking — lender may not approve
+    - Internet - DSL/satellite likely — check Starlink availability
+    - Creek Flood Zone - Verify FEMA flood designation for creek frontage
+    - Helene damage inspection — Caldwell Co. FEMA disaster area
+    - Appraisal contingency — assessed value far below asking
+    - Well water test and flow rate verification
+    - Septic inspection
+    - Flood zone verification — creek on property
+
+P24: 255 Wildwood Rd, Lenoir NC 28645
+  $499,000 | 4bd/35ba | 3,180 sqft | 5 ac | Built 1914
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/255-Wildwood-Rd-Lenoir-NC-28645/70093766_zpid/
+  Questions for realtor:
+    - Full structural inspection — 110+ year old home
+    - Electrical and plumbing assessment — likely updated but verify
+    - Pool inspection — condition, liner, pump, compliance
+    - Septic inspection and perk test
+    - Check for lead paint, asbestos (pre-1978 home)
+    - Insurance quote — historic homes can be expensive to insure
+
+P35: 1906 Dogwood Vis, Lenoir NC 28645
+  $380,000 | 3bd/2ba | 3,662 sqft | 20.47 ac | Built 1983
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1906-Dogwood-Vis-Lenoir-NC-28645/227260098_zpid/
+  Questions for realtor:
+    - Schedule tour as soon as listing goes active
+    - Full systems inspection — 1983 home (roof, HVAC, plumbing, electric)
+    - Well and septic inspection
+    - Property survey — verify 20.47 acre boundaries
+    - Check timber value on acreage
+    - Check Helene impact on this specific area
+
+P44: 4263 Fox Rd, Lenoir NC 28645
+  $439,900 | 3bd/2ba | 1,860 sqft | 11 ac | Built 1938
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/4263-Fox-Rd-Lenoir-NC-28645/70082517_zpid/
+  Questions for realtor:
+    - Get full listing details from agent (year built, condition)
+    - Well and septic inspection
+    - Check Helene impact on this area
+    - Property survey — verify 11 acre boundaries
+
+=== Camden County (1 properties) ===
+
+P11: 554 N Trotman Rd, Camden NC 27921
+  $359,000 | 3bd/2ba | 1,242 sqft | 5 ac | Built 2022
+  Status: Active (~120 DOM — dual-address listing (554 & 554A))
+  Listing: https://www.zillow.com/homes/554-N-Trotman-Rd-Camden-NC-27921_rb/
+  Questions for realtor:
+    - Dual-Address Clarification - What is 554A? Second dwelling, detached garage, or outbuilding? This changes value, financing, and insurance significantly
+    - Actual Square Footage - Public listing reports 1,242 sqft in primary dwelling; verify any secondary structure area separately
+    - Financing Feasibility - Dual-address properties can complicate conventional mortgages — verify with lender before pursuing
+    - Why 120 DOM? - 2022 build sitting 120 days — investigate why. Price? Location? Dual-address issues?
+    - Clarify dual-address situation — what is 554A?
+    - Verify financing feasibility with lender for dual-address property
+    - Accurate sqft verification for primary and secondary structures
+    - Full inspection of both structures
+    - Title search confirming both addresses on same parcel
+
+=== Chatham County (1 properties) ===
+
+P14: 596 Greenbrier Farm Trl, Siler City NC 27344
+  $465,000 | 3bd/2ba | 2,522 sqft | 5.29 ac | Built 2002
+  Status: Active (108 DOM, recent $16K reduction)
+  Listing: https://www.zillow.com/homedetails/596-Greenbrier-Farm-Trl-Siler-City-NC-27344/67326602_zpid/
+  Questions for realtor:
+    - Modular Construction Type - Off-frame modular vs HUD-code — verify for financing eligibility. At 26 years old, this matters even more
+    - Flood Insurance Cost - FEMA Flood Fringe zone — get flood insurance quote before offer. Could add $1-3K+/yr
+    - Creek Flooding History - Creek access in flood fringe — has the property ever flooded? Get history from neighbors and county records
+    - School Alternatives - Southern Mid 2/10 is extremely poor — research charter, private, or homeschool co-op options in Chatham County
+    - 🐴 Request HOA CC&Rs ($150/yr) — horses confirmed, verify goats, cattle, and chickens also permitted
+    - Verify modular construction type and financing eligibility
+    - Flood insurance quote — FEMA Flood Fringe zone
+    - Creek flooding history research
+    - School alternatives investigation — 2/10 middle school is unacceptable
+    - Well and septic inspection
+
+=== Cherokee County (5 properties) ===
+
+P3: 530 Hanging Dog Rd, Murphy NC 28906
+  $499,800 | 4bd/5ba | 2,967 sqft | 6.84 ac | Built 2006
+  Status: Active (Reduced from $549,800 — re-listed after ~6 months total)
+  Listing: https://www.zillow.com/homedetails/530-Hanging-Dog-Rd-Murphy-NC-28906/106957286_zpid/?utm_campaign=zillowwebmessage&utm_medium=referral&utm_source=txtshare
+  Questions for realtor:
+    - Outbuilding Potential - No garage/workshop currently — verify zoning allows construction of detached outbuildings on 6.84 acres
+    - Log Cabin Condition - Log homes need chinking, staining, and pest treatment — inspect for rot, insect damage, and maintenance history
+    - Fiber Internet Confirmation - Verify fiber is actually connected to the property, not just available in the area
+    - Helene Impact Check - Cherokee County was largely spared but verify road access and any drainage changes
+    - Log cabin inspection — chinking, staining, rot, insect damage
+    - Zoning verification for outbuilding construction
+    - Well and septic inspection
+    - Property survey — verify 6.84 acre boundaries
+
+P19: 981 Sunset Ln, Murphy NC 28906
+  $439,800 | 3bd/3ba | 2,715 sqft | 3 ac | Built 2002
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/981-Sunset-Ln-Murphy-NC-28906/106956471_zpid/
+  Questions for realtor:
+    - Verify current asking price (history shows fluctuation)
+    - Well and septic inspection
+    - Check internet availability (rural mountain area)
+    - Inspect for any Helene-related drainage changes
+
+P20: 1054 Dickey Rd, Murphy NC 28906
+  $499,999 | 2bd/2ba | 1,456 sqft | 6.89 ac | Built 0
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1054-Dickey-Rd-Murphy-NC-28906/106955983_zpid/
+  Questions for realtor:
+    - Get full property details (sqft, year built, condition)
+    - Well and septic inspection
+    - Survey to confirm 6.89 acre boundaries
+    - Check internet availability
+
+P21: 344 Woody Branch Rd, Murphy NC 28906
+  $407,500 | 3bd/2ba | 2,352 sqft | 13.52 ac | Built 1990
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/344-Woody-Branch-Rd-Murphy-NC-28906/230511291_zpid/
+  Questions for realtor:
+    - Well and septic inspection (1990 systems may need updating)
+    - Foundation inspection — mountaintop properties can have issues
+    - Verify gated access is deeded and maintained
+    - Check internet availability at mountaintop location
+    - Property survey — verify 13.52 acre boundaries
+
+P22: 97 Concord Trl, Murphy NC 28906
+  $304,900 | 3bd/2ba | 1,344 sqft | 3.22 ac | Built 1999
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/97-Concord-Trl-Murphy-NC-28906/106956689_zpid/
+  Questions for realtor:
+    - Well and septic inspection — critical for mountain property
+    - Property survey — verify 2-parcel boundaries and total acreage
+    - Confirm USFS land adjacency and access rights
+    - Check internet availability
+    - Inspect plumbing/electrical (cosmetic reno may mask older systems)
+
+=== Columbus County (1 properties) ===
+
+P9: 701 Best Rd, Whiteville NC 28472
+  $499,900 | 4bd/35ba | 3,678 sqft | 5.72 ac | Built 2007
+  Status: Active (FSBO slashed $100K (16.7%) from $600K)
+  Listing: https://www.redfin.com/NC/Whiteville/701-Best-Rd-28472/home/65225830
+  Questions for realtor:
+    - Interior Condition - Listing is suspiciously vague — require full interior walkthrough and detailed photos before investing in inspection
+    - FSBO Motivation - Why FSBO? Why the $100K cut? Research property history, previous sales, and any liens
+    - Foundation & Structure - All-brick 1998 construction — check for settling, brick mortar condition, and foundation issues
+    - Why Vague? - Ask directly why listing lacks interior details — water damage? Mold? Structural issues?
+    - Comprehensive home inspection if proceeding
+    - Well and septic inspection
+    - Verify actual usable sqft vs listed 3,678
+
+=== Davidson County (1 properties) ===
+
+P39: 156 Payne Rd, Thomasville NC 27360
+  $449,900 | 3bd/2ba | 1,971 sqft | 5.23 ac | Built 1936
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/156-Payne-Rd-Thomasville-NC-27360/5741573_zpid/
+  Questions for realtor:
+    - Verify current status, disclosures, and renovation permit history
+
+=== Franklin County (1 properties) ===
+
+P28: 45 Softwood Dr, Franklinton NC 27525
+  $499,000 | 3bd/2ba | 1,318 sqft | 10.01 ac | Built 1990
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/45-Softwood-Dr-Franklinton-NC-27525/49962656_zpid/
+  Questions for realtor:
+    - Verify current price — may have been reduced to $474,900
+    - Septic inspection
+    - Workshop condition assessment
+    - Check internet availability
+    - Well water quality test
+
+=== Johnston County (1 properties) ===
+
+P29: 2222 Elevation Rd, Four Oaks NC 27524
+  $450,000 | 3bd/2ba | 1,512 sqft | 7.51 ac | Built 1997
+  Status: Active (Price corrected to $450,000)
+  Listing: https://www.zillow.com/homedetails/2222-Elevation-Rd-Four-Oaks-NC-27524/69118215_zpid/
+  Questions for realtor:
+    - VERIFY AVAILABILITY — property appears sold as of Sept 2025
+    - If available: manufactured home foundation inspection
+    - Well and septic inspection
+
+=== Mitchell County (1 properties) ===
+
+P23: 1010-1014 Melton Branch Rd, Bakersville NC 28705
+  $500,000 | 3bd/3ba | 2,894 sqft | 5.5 ac | Built 1980
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1010-1014-Melton-Branch-Rd-Bakersville-NC-28705/2066502815_zpid/
+  Questions for realtor:
+    - Verify Airbnb income records and occupancy rates
+    - Full inspection of 1876 cabin — structural, electrical, plumbing
+    - Well water quality test (new pump but old well)
+    - Verify internet speed and provider
+    - Check Helene impact on road access and property
+    - Verify all 3 structures have proper permits/inspections
+
+=== Montgomery County (2 properties) ===
+
+P40: 445 Warner Rd, Troy NC 27371
+  $498,500 | 3bd/3ba | 2,612 sqft | 9.99 ac | Built 1986
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/445-Warner-Rd-Troy-NC-27371/114824936_zpid/
+  Questions for realtor:
+    - VERIFY AVAILABILITY — may be off-market
+    - Log cabin inspection — chinking, staining, pest treatment
+    - Well and septic inspection
+    - Dual HVAC system inspection
+
+P46: 132 W Moore St, Candor NC 27229
+  $399,000 | 4bd/3ba | 3,069 sqft | 11 ac | Built 0
+  Status: Sale Pending
+  Listing: https://www.zillow.com/homedetails/132-W-Moore-St-Candor-NC-27229/2082265136_zpid/
+  Questions for realtor:
+    - Full systems inspection — 1960 home (electrical, plumbing, roof, HVAC)
+    - Well water quality test (well house present)
+    - Septic inspection
+    - Check for lead paint, asbestos (pre-1978 home)
+    - Foundation inspection — partial basement condition
+
+=== Nash County (1 properties) ===
+
+P36: 199 Rainbow Trl, Rocky Mount NC 27801
+  $344,900 | 3bd/2ba | 1,831 sqft | 6.98 ac | Built 1988
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/199-Rainbow-Trl-Rocky-Mount-NC-27801/83181967_zpid/
+  Questions for realtor:
+    - Get complete listing details (lot size, year built, condition)
+    - Check school choice and charter school options
+    - Well/septic or city water/sewer verification
+    - Full home inspection
+
+=== Onslow County (1 properties) ===
+
+P41: 153 Porters Ridge Rd, Jacksonville NC 28540
+  $499,750 | 3bd/25ba | 2,930 sqft | 5 ac | Built 2004
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/153-Porters-Ridge-Rd-Jacksonville-NC-28540/65060900_zpid/
+  Questions for realtor:
+    - Verify year built and major system ages
+    - Flood zone verification — coastal Onslow County
+    - Well and septic inspection
+    - Get hurricane/flood insurance quotes before offer
+    - Check internet options
+
+=== Orange County (1 properties) ===
+
+P37: 2754 Olivian Corbett Rd, Cedar Grove NC 27231
+  $439,900 | 4bd/3ba | 2,430 sqft | 7.06 ac | Built 1997
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/2754-Olivian-Corbett-Rd-Cedar-Grove-NC-27231/50044134_zpid/
+  Questions for realtor:
+    - VERIFY AVAILABILITY — may be under contract
+    - Well and septic inspection (rural Orange County)
+    - Property tax assessment — Orange County rates
+    - Check commute times to Durham/Chapel Hill/Raleigh
+
+=== Person County (1 properties) ===
+
+P27: 409 Reaves Ln, Semora NC 27343
+  $450,000 | 3bd/3ba | 2,016 sqft | 10.28 ac | Built 1996
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/409-Reaves-Ln-Semora-NC-27343/119395225_zpid/
+  Questions for realtor:
+    - Verify modular home construction type and FHA eligibility
+    - Well and septic inspection
+    - Pond maintenance and dam condition assessment
+    - Property survey — 10.28 acres with water features
+    - Check internet availability — very rural area
+
+=== Pitt County (1 properties) ===
+
+P43: 2122 Briley Rd, Greenville NC 27834
+  $399,999 | 3bd/2ba | 2,040 sqft | 13.38 ac | Built 2020
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/2122-Briley-Rd-Greenville-NC-27834/339553502_zpid/
+  Questions for realtor:
+    - Verify manufactured home type — HUD code vs modular
+    - Check FHA/VA financing eligibility for manufactured home
+    - Flood zone verification — eastern NC
+    - Well and septic inspection
+    - Foundation type verification (permanent foundation required for some loans)
+
+=== Randolph County (1 properties) ===
+
+P7: 6916 Lawrence Farm Ln, Randleman NC 27317
+  $465,000 | 4bd/3ba | 2,424 sqft | 8.22 ac | Built 2014
+  Status: Active (Reduced from $475K — tax assessment $221K vs $465K asking)
+  Listing: https://www.zillow.com/homes/6916-Lawrence-Farm-Ln-Randleman-NC-27317_rb/
+  Questions for realtor:
+    - Construction Type - Critical: verify if off-frame modular (treated as site-built for financing) or HUD-code manufactured (financing restrictions). This changes everything
+    - Tax Assessment Gap - $221K assessment vs $465K asking — investigate why the gap is so extreme. May indicate appraisal will fall short
+    - Appraisal Risk - With tax assessment at $221K, conventional appraisal may not support $465K. Discuss with lender before investing in inspection
+    - Outbuilding Details - Verify garage/workshop dimensions, electrical service, concrete floors, and permitted status
+    - Verify construction type — off-frame modular vs HUD-code manufactured
+    - Get pre-qualification confirming lender will finance this property type
+    - Investigate tax assessment gap — $221K vs $465K
+    - Outbuilding inspection — electrical, foundation, permits
+    - Appraisal contingency is essential
+
+=== Robeson County (1 properties) ===
+
+P38: 10765 Barker Ten Mile Rd, Saint Pauls NC 28384
+  $450,000 | 3bd/3ba | 2,636 sqft | 13.5 ac | Built 1975
+  Status: Pending
+  Listing: https://www.zillow.com/homedetails/10765-Barker-Ten-Mile-Rd-Saint-Pauls-NC-28384/220560908_zpid/
+  Questions for realtor:
+    - Full systems inspection — 1975 home (electrical, plumbing, roof)
+    - Well and septic inspection
+    - Flood zone verification — pond and creek on property
+    - Check school choice options — district rated very low
+    - Insurance quote — pond liability and flood risk
+
+=== Rockingham County (1 properties) ===
+
+P4: 485 Amos Rd, Madison NC 27025
+  $419,900 | 4bd/2ba | 2,280 sqft | 19.79 ac | Built 2006
+  Status: Active (Brand new listing — year built & details unverified)
+  Listing: https://www.zillow.com/homes/485-Amos-Rd-Madison-NC-27025_rb/
+  Questions for realtor:
+    - Year Built & Construction - Full listing details not accessible — verify year built, construction type (site-built vs manufactured), and foundation
+    - Outbuildings - Unknown what outbuildings exist — could be a major pro or con
+    - Property Condition - With year built unknown, full inspection is critical before any offer
+    - Internet & Utilities - Verify internet options, water source (well vs municipal), and septic vs sewer
+    - Get full listing details — year built, outbuildings, construction type all unknown
+    - Property inspection once details are confirmed
+    - Well and septic verification
+    - Internet availability check
+    - Survey to confirm 19.79 acre boundaries
+
+=== Rutherford County (6 properties) ===
+
+P16: 2459 Camp Creek Rd, Union Mills NC 28167
+  $424,900 | 3bd/25ba | 1,944 sqft | 5.39 ac | Built 1997
+  Status: Active
+  Listing: https://www.redfin.com/NC/Union-Mills/2459-Camp-Creek-Rd-28167/home/112651972
+  Questions for realtor:
+    - Flood Zone - Creek on property — verify FEMA flood zone designation
+    - HVAC/Roof Age - 1997 build — check all major system ages
+    - Internet - Verify broadband availability in Union Mills area
+    - Well & Septic - Rural property — verify well flow and septic condition
+    - Flood zone verification — creek runs through property
+    - Major systems inspection — HVAC, roof, plumbing (28 yr old)
+    - Well water test and flow rate verification
+    - Septic inspection and pump history
+    - Internet speed test — broadband availability
+
+P18: 188 California Branch, Union Mills NC 28167
+  $445,000 | 3bd/3ba | 2,335 sqft | 7 ac | Built 0
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/188-California-Br-Union-Mills-NC-28167/102128901_zpid/
+  Questions for realtor:
+    - Year Built - Unknown — critical to determine age and condition
+    - Full Inspection - Limited listing details mean in-person verification essential
+    - Internet - Verify broadband availability in rural Union Mills
+    - Well & Septic - Rural property — verify well flow and septic condition
+    - Determine year built — critical for valuation and inspection scope
+    - Full home inspection — limited listing details available
+    - Well water test and flow rate verification
+    - Septic inspection
+    - Internet availability check — broadband/Starlink
+
+P32: 485 Mountain Lookout Dr, Bostic NC 28018
+  $384,900 | 3bd/2ba | 1,530 sqft | 5.81 ac | Built 2004
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/485-Mountain-Lookout-Dr-Bostic-NC-28018/102237364_zpid/
+  Questions for realtor:
+    - Well water quality test
+    - Septic inspection (perked for septic)
+    - Review HOA covenants and restrictions
+    - Verify current price ($384,900 vs $409,000)
+
+P33: 206 Amelia Ln, Bostic NC 28018
+  $467,800 | 3bd/2ba | 1,360 sqft | 11.13 ac | Built 2003
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/206-Amelia-Ln-Bostic-NC-28018/102145362_zpid/
+  Questions for realtor:
+    - Well water quality test
+    - Septic system verification
+    - Review HOA covenants and restrictions
+    - Builder warranty terms and coverage
+    - Verify lot size — conflicting data (7 vs 11+ acres)
+
+P34: 203 Burnt Chimney Ln, Rutherfordton NC 28139
+  $419,000 | 3bd/2ba | 1,400 sqft | 5.15 ac | Built 2024
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/203-Burnt-Chimney-Ln-Rutherfordton-NC-28139/208216381_zpid/
+  Questions for realtor:
+    - VERIFY LISTING STATUS — may not be currently available
+    - Get full property details from listing agent
+    - Well and septic inspection
+    - Full home inspection — condition unknown
+
+P42: 159 Big Island Rd, Forest City NC 28043
+  $449,000 | 3bd/2ba | 2,202 sqft | 6.25 ac | Built 1965
+  Status: Pending
+  Listing: https://www.zillow.com/homedetails/159-Big-Island-Rd-Forest-City-NC-28043/102147657_zpid/
+  Questions for realtor:
+    - VERIFY STATUS — may be pending/under contract
+    - Barn and fencing inspection
+    - Well and septic inspection
+    - Basement moisture/water assessment
+    - Check Helene impact on this specific area
+
+=== Scotland County (1 properties) ===
+
+P45: 8701 X Way Rd, Gibson NC 28343
+  $515,000 | 4bd/3ba | 3,247 sqft | 8.67 ac | Built 1947
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/8701-X-Way-Rd-Gibson-NC-28343/93086021_zpid/
+  Questions for realtor:
+    - Full structural inspection — 200-year-old home
+    - Electrical and plumbing assessment — likely upgraded but verify
+    - Check for lead paint, asbestos (pre-1978 home)
+    - Insurance quote — historic homes cost more to insure
+    - Well water quality test
+    - Verify all outbuildings have proper permits
+    - Pond maintenance responsibility and liability
+
+=== Surry County (1 properties) ===
+
+P26: 200 Englewood Trl, Mount Airy NC 27030
+  $480,000 | 3bd/15ba | 2,057 sqft | 16 ac | Built 0
+  Status: Under Contract
+  Listing: https://www.zillow.com/homedetails/200-Englewood-Trl-Mount-Airy-NC-27030/218817220_zpid/
+  Questions for realtor:
+    - Verify exact listing — conflicting data online (price, beds, acres)
+    - Well and septic inspection
+    - Check for timber value on 16+ wooded acres
+    - Property survey — verify all parcel boundaries
+    - Verify listing status — may be under contract
+
+=== Union County (1 properties) ===
+
+P31: 1925 Sojourn Rd, Marshville NC 28103
+  $469,900 | 3bd/2ba | 1,530 sqft | 5.8 ac | Built 1986
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1925-Sojourn-Rd-Marshville-NC-28103/6332643_zpid/
+  Questions for realtor:
+    - Full systems inspection — 1986 home (roof, HVAC, plumbing, electric)
+    - Well and septic inspection
+    - Metal building condition assessment
+    - Check school choice options — middle/high rated low
+
+=== Wilkes County (1 properties) ===
+
+P2: 128 Golden Trout Dr, Hays NC 28635
+  $499,998 | 3bd/2ba | 2,311 sqft | 7.4 ac | Built 2017
+  Status: Active (Reduced from $649,000 — massive 23% cut)
+  Listing: https://www.redfin.com/NC/Hays/128-Golden-Trout-Dr-28635/home/65085874
+  Questions for realtor:
+    - FEMA Flood Zone - 200+ ft river frontage = high flood risk. Verify exact FEMA zone, flood insurance costs, and whether structures are in floodplain
+    - Hurricane Helene Damage - Wilkes County in FEMA disaster declaration — flooding reported. Inspect for water damage, erosion, and river bank stability
+    - HOA Restrictions - $200/yr HOA — verify what restrictions apply: outbuildings, livestock, vehicles, short-term rental
+    - River Cabin Permits - Verify the 640 sqft she-shed/cabin is properly permitted and insured
+    - 🐴 Request HOA CC&Rs ($200/yr) — verify livestock (horses, chickens, goats) are permitted under covenants
+    - FEMA flood zone verification — 200+ ft river frontage
+    - Helene flood damage inspection — Wilkes Co. disaster area
+    - Flood insurance quote before offer finalization
+    - River bank erosion assessment
+    - HOA covenant review — verify outbuilding/livestock rules
+
+=== Yadkin County (1 properties) ===
+
+P25: 1012 Tuckda Way, Hamptonville NC 27020
+  $450,000 | 4bd/3ba | 2,467 sqft | 5.6 ac | Built 1999
+  Status: Active
+  Listing: https://www.zillow.com/homedetails/1012-Tuckda-Way-Hamptonville-NC-27020/194257691_zpid/
+  Questions for realtor:
+    - Well water quality test
+    - Septic inspection
+    - HVAC inspection — multiple systems may mean complexity
+    - Check internet availability and speed
+    - Foundation check — unfinished basement condition
