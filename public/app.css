@@ -818,6 +818,16 @@ thead th {
 
 /* ── MOBILE ── */
 @media (max-width: 640px) {
+  .card-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .card-price-center { order: -1; }
+  .card-title-group { text-align: center; }
+  .card-title-group .card-badges { justify-content: center; }
+  .card-price-block { text-align: center; }
+  .card-price { font-size: 1.8rem; }
   .vote-modal-card {
     padding: 1.5rem;
   }

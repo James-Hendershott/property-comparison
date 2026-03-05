@@ -210,7 +210,25 @@ table.qt {
   gap: 4px;
   min-width: 130px;
 }
-.sob-mini-bar { }
+.sob-mini-bar { position: relative; cursor: help; }
+.sob-mini-bar[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute; left: 50%; bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  background: #1e3528; color: #e8e4da;
+  font-size: 0.72rem; padding: 0.4rem 0.7rem;
+  border-radius: 6px; z-index: 50; max-width: 300px;
+  width: max-content;
+  white-space: normal; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  pointer-events: none;
+  text-transform: none; letter-spacing: normal;
+}
+.sob-mini-bar[data-tip]:hover::before {
+  content: ''; position: absolute; left: 50%; bottom: calc(100% + 2px);
+  transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: #1e3528; z-index: 50;
+  pointer-events: none;
+}
 .sob-mini-label {
   font-size: 0.62rem;
   color: var(--muted);
@@ -338,11 +356,10 @@ table.qt {
 .card-header {
   padding: 1.1rem 1.3rem 0.8rem;
   border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 .card-title-group {}
 .card-address {
@@ -359,14 +376,26 @@ table.qt {
 }
 .card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.4rem; }
 
-.card-price-block { text-align: right; flex-shrink: 0; }
+.card-price-center {
+  text-align: center;
+  flex-shrink: 0;
+}
+.card-price-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.1rem;
+}
 .card-price {
   font-family: 'Lora', serif;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
 }
+.card-price-block { text-align: right; flex-shrink: 0; }
 .card-monthly {
   font-size: 0.8rem;
   color: var(--muted);
@@ -1307,17 +1336,17 @@ table.qt {
         <tr>
           <td>29</td>
           <td><a href="#p29">2222 Elevation Rd, Four Oaks NC</a></td>
-          <td class="td-price">$140,000</td>
-          <td class="td-mo">~$1,108</td>
-          <td>$4,900</td>
+          <td class="td-price">$450,000</td>
+          <td class="td-mo">~$3,375</td>
+          <td>$15,750</td>
           <td>3 / 2</td>
           <td>1,512</td>
           <td>7.51</td>
-          <td><span class="badge b-mfg">Manufactured</span></td>
+          <td><span class="badge b-sfr">Site-Built</span></td>
           <td>1997</td>
-          <td><strong style="color:var(--accent)">65</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$120K – $135K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Manufactured, ultra-cheap — may already be sold</span></td>
-          <td><span class="badge b-removed">SOLD</span> <span class="status-sold">Sold</span></td>
+          <td><strong style="color:var(--accent)">61</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$400K – $430K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Site-built on 7.5 acres, near I-95 corridor</span></td>
+          <td><span class="badge b-sfr">SFR</span> <span class="status-active">Active</span></td>
         </tr>
         <tr>
           <td>30</td>
@@ -1427,16 +1456,16 @@ table.qt {
         <tr>
           <td>37</td>
           <td><a href="#p37">2754 Olivian Corbett Rd, Cedar Grove NC</a></td>
-          <td class="td-price">$563,000</td>
-          <td class="td-mo">~$4,226</td>
-          <td>$19,705</td>
+          <td class="td-price">$439,900</td>
+          <td class="td-mo">~$3,449</td>
+          <td>$15,397</td>
           <td>4 / 3</td>
           <td>2,430</td>
           <td>7.06</td>
           <td><span class="badge b-sfr">Site-Built</span></td>
           <td>1997</td>
-          <td><strong style="color:var(--accent)">61</strong>/100</td>
-          <td style="white-space:nowrap"><strong>$490K – $520K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Price jumped to $563K — over budget</span></td>
+          <td><strong style="color:var(--accent)">67</strong>/100</td>
+          <td style="white-space:nowrap"><strong>$400K – $425K</strong><br><span style="font-size:0.72rem;color:var(--muted)">Best schools (10/10), Research Triangle area</span></td>
           <td><span class="badge b-new">NEW</span> <span class="status-active">Active</span></td>
         </tr>
         <tr>
@@ -5966,7 +5995,7 @@ table.qt {
   </div>
 
 </div>
-<div class="card" id="p29" data-status="sold">
+<div class="card" id="p29" data-status="active">
   <div class="card-top">
     <div class="card-map">
       <a href="https://www.zillow.com/homedetails/2222-Elevation-Rd-Four-Oaks-NC-27524/69118215_zpid/" target="_blank" class="card-img-link">
@@ -5979,15 +6008,22 @@ table.qt {
           <div class="card-address">2222 Elevation Rd</div>
           <div class="card-sub">Four Oaks, NC 27524 · Johnston</div>
           <div class="card-badges">
-            <span class="badge b-mfg">Manufactured</span>
+            <span class="badge b-sfr">Site-Built</span>
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$140,000</div>
+          <div class="card-price">$450,000</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$1,108/mo</span>
+            <span class="monthly-total">~$3,375/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,745</span></div>
+              <div class="mb-line"><span>Property Tax (Johnston Co. 0.83%)</span><span>$311</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3.5% down)</span><span>$199</span></div>
+            </div>
           </div>
-          <div class="card-down">$4,900 down @ 3.5%</div>
+          <div class="card-down">$15,750 down @ 3.5%</div>
         </div>
       </div>
       <div class="stats-row">
@@ -5995,18 +6031,18 @@ table.qt {
         <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-val">1,512</div></div>
         <div class="stat"><div class="stat-label">Acres</div><div class="stat-val">7.51</div></div>
         <div class="stat"><div class="stat-label">Built</div><div class="stat-val">1997</div></div>
-        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-sold">Sold</div></div>
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-val status-active">Active</div><div class="stat-sub">Price corrected to $450,000</div></div>
       </div>
     </div>
   </div>
   <div class="score-offer-band">
     <div class="sob-score">
       <div>
-        <div class="sob-score-num">65</div>
+        <div class="sob-score-num">61</div>
         <div class="sob-score-denom">/ 100</div>
       </div>
       <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>10/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>6/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:60%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
@@ -6020,21 +6056,21 @@ table.qt {
     </div>
     <div class="sob-offer">
       <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$120K – $135K</div>
+      <div class="sob-offer-price">$400K – $430K</div>
       <div class="sob-offer-rationale">
-        <div class="sob-strategy">Manufactured, ultra-cheap — may already be sold</div>
+        <div class="sob-strategy">Site-built on 7.5 acres in Johnston County, near I-95 corridor</div>
       </div>
     </div>
   </div>
   <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> Manufactured home on 7.5 acres in Johnston County. Rural setting near Four Oaks.
+    <strong>⭐ Why It Stands Out:</strong> Site-built home on 7.5 acres in Johnston County. Rural setting near Four Oaks with easy I-95 access.
   </div>
   <div class="card-body">
     <div class="card-section">
       <div class="card-section-title">🏡 Property Highlights</div>
       <ul>
-        <li><span class="li-icon">🏡</span> Manufactured home on 7.51 acres</li>
-        <li><span class="li-icon">💰</span> Listed at $140,000 — most affordable in entire comparison</li>
+        <li><span class="li-icon">🏡</span> Site-built home on 7.51 acres</li>
+        <li><span class="li-icon">💰</span> Listed at $450,000</li>
         <li><span class="li-icon">📍</span> ~35 mi southeast of Raleigh off I-95 corridor</li>
       </ul>
     </div>
@@ -6989,11 +7025,18 @@ table.qt {
           </div>
         </div>
         <div class="card-price-block">
-          <div class="card-price">$563,000</div>
+          <div class="card-price">$439,900</div>
           <div class="card-monthly">
-            <span class="monthly-total">~$4,226/mo</span>
+            <span class="monthly-total">~$3,449/mo</span>
+            <button class="monthly-toggle">&#9662; details</button>
+            <div class="monthly-breakdown" hidden>
+              <div class="mb-line"><span>Principal &amp; Interest</span><span>$2,683</span></div>
+              <div class="mb-line"><span>Property Tax (Orange Co. 1.23%)</span><span>$451</span></div>
+              <div class="mb-line"><span>Insurance</span><span>$120</span></div>
+              <div class="mb-line"><span>PMI (3.5% down)</span><span>$195</span></div>
+            </div>
           </div>
-          <div class="card-down">$19,705 down @ 3.5%</div>
+          <div class="card-down">$15,397 down @ 3.5%</div>
         </div>
       </div>
       <div class="stats-row">
@@ -7008,11 +7051,11 @@ table.qt {
   <div class="score-offer-band">
     <div class="sob-score">
       <div>
-        <div class="sob-score-num">61</div>
+        <div class="sob-score-num">67</div>
         <div class="sob-score-denom">/ 100</div>
       </div>
       <div class="sob-score-bars">
-        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>1/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:10%"></div></div></div>
+        <div class="sob-mini-bar"><div class="sob-mini-label"><span>Price</span><span>7/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:70%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Acreage</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Schools</span><span>10/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:100%"></div></div></div>
         <div class="sob-mini-bar"><div class="sob-mini-label"><span>Outbldgs</span><span>5/10</span></div><div class="sob-mini-track"><div class="sob-mini-fill" style="width:50%"></div></div></div>
@@ -7026,14 +7069,14 @@ table.qt {
     </div>
     <div class="sob-offer">
       <div class="sob-offer-label">💰 Realistic Offer Range</div>
-      <div class="sob-offer-price">$490K – $520K</div>
+      <div class="sob-offer-price">$400K – $425K</div>
       <div class="sob-offer-rationale">
-        <div class="sob-strategy">Price jumped to $563K — over budget</div>
+        <div class="sob-strategy">Best schools (10/10), Research Triangle area, price corrected to $439,900</div>
       </div>
     </div>
   </div>
   <div class="highlight-band">
-    <strong>⭐ Why It Stands Out:</strong> 4-bed, 3-bath on 5 acres in Orange County. Cedar Grove area, about 20 minutes north of Chapel Hill/Durham.
+    <strong>⭐ Why It Stands Out:</strong> Best schools in entire comparison (10/10). 4-bed, 3-bath on 7 acres in Orange County, Research Triangle area. Cedar Grove, ~20 min north of Chapel Hill/Durham.
   </div>
   <div class="card-body">
     <div class="card-section">
@@ -8440,6 +8483,7 @@ table.qt {
   <p style="margin-top:0.4rem;">Mortgage estimates: 6.5% / 30yr / 3.5% down (FHA) + est. taxes & insurance. Not a commitment to lend. Verify all listing statuses before touring. Maps © Google.</p>
 </footer>
 
-<script src="app.js?v=5"></script>
+<script src="score-tips.js?v=1"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

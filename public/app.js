@@ -1484,8 +1484,54 @@
     });
   }
 
+  // --- Restructure card headers: 3-column grid with big centered price ---
+  function restructureCardHeaders() {
+    document.querySelectorAll('.card[id^="p"] .card-header').forEach(function (header) {
+      if (header.querySelector('.card-price-center')) return; // already done
+      var priceBlock = header.querySelector('.card-price-block');
+      var priceEl = priceBlock ? priceBlock.querySelector('.card-price') : null;
+      if (!priceEl || !priceBlock) return;
+
+      // Create centered price column
+      var center = document.createElement('div');
+      center.className = 'card-price-center';
+      var label = document.createElement('div');
+      label.className = 'card-price-label';
+      label.textContent = 'List Price';
+      center.appendChild(label);
+
+      // Move price element into center
+      center.appendChild(priceEl);
+
+      // Insert center before price-block
+      header.insertBefore(center, priceBlock);
+    });
+  }
+
+  // --- Score categories in display order ---
+  var SCORE_CATS = [
+    { key: 'price' }, { key: 'acreage' }, { key: 'schools' }, { key: 'outbldgs' },
+    { key: 'town' }, { key: 'hospital' }, { key: 'hazards' }, { key: 'beach' },
+    { key: 'forested' }, { key: 'living' }
+  ];
+
+  // --- Inject score bar tooltips ---
+  function injectScoreTips() {
+    if (typeof SCORE_TIPS === 'undefined') return;
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      var tips = SCORE_TIPS[card.id];
+      if (!tips) return;
+      card.querySelectorAll('.sob-mini-bar').forEach(function (bar, i) {
+        if (SCORE_CATS[i] && tips[SCORE_CATS[i].key]) {
+          bar.setAttribute('data-tip', tips[SCORE_CATS[i].key]);
+        }
+      });
+    });
+  }
+
   // --- Init ---
   function init() {
+    restructureCardHeaders();
     loadUser();
     addRankingsNavLink();
     injectVoteRows();
@@ -1494,6 +1540,7 @@
     injectEditButtons();
     injectNicknameUI();
     injectEnvKeys();
+    injectScoreTips();
     initMonthlyToggles();
     initCollapsibleDetails();
     initCollapsibleGraveyard();
