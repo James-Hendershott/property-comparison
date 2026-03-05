@@ -1,13 +1,22 @@
 (function () {
   'use strict';
 
-  // --- Property name map (default from nav links, overridden by custom names) ---
+  // --- Property data map (single source of truth from PROPERTIES array) ---
+  var PROPERTY_MAP = {};   // pid -> merged property data (base + edits)
+  var PROPERTY_BASE = {};  // pid -> original unedited property data
+  if (typeof PROPERTIES !== 'undefined') {
+    PROPERTIES.forEach(function (p) {
+      PROPERTY_MAP[p.id] = JSON.parse(JSON.stringify(p));
+      PROPERTY_BASE[p.id] = p;
+    });
+  }
+
+  // --- Property name map (default from data, overridden by custom names) ---
   var DEFAULT_NAMES = {};
   var CUSTOM_NAMES = {};
   var GRAVEYARD_IDS = {};
-  document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
-    var id = a.getAttribute('href').slice(1);
-    DEFAULT_NAMES[id] = a.textContent.trim();
+  Object.keys(PROPERTY_MAP).forEach(function (pid) {
+    DEFAULT_NAMES[pid] = PROPERTY_MAP[pid].navLabel;
   });
 
   function getDisplayName(pid) {
@@ -620,7 +629,7 @@
     { key: 'price', label: 'Price', max: 10 },
     { key: 'acreage', label: 'Acreage', max: 10 },
     { key: 'schools', label: 'Schools', max: 10 },
-    { key: 'outbuildings', label: 'Outbuildings', max: 10 },
+    { key: 'outbldgs', label: 'Outbldgs', max: 10 },
     { key: 'town', label: 'Town', max: 10 },
     { key: 'hospital', label: 'Hospital', max: 10 },
     { key: 'hazards', label: 'Hazards', max: 10 },
@@ -630,106 +639,43 @@
   ];
 
   function readCardValues(pid) {
-    var card = document.getElementById(pid);
-    if (!card) return {};
+    var p = PROPERTY_BASE[pid];
+    if (!p) return {};
     var vals = {};
 
-    // Price
-    var priceEl = card.querySelector('.card-price');
-    if (priceEl) vals.price = priceEl.textContent.trim();
-
-    // Listing link & image
-    var imgLink = card.querySelector('.card-img-link');
-    if (imgLink) vals.listingLink = imgLink.getAttribute('href') || '';
-    var img = card.querySelector('.card-img-link img');
-    if (img) vals.imageUrl = img.getAttribute('src') || '';
-
-    // Stats row
-    var statVals = card.querySelectorAll('.stat-val');
-    var statSubs = card.querySelectorAll('.stat-sub');
-    if (statVals[0]) vals.beds = statVals[0].textContent.trim();
-    if (statVals[1]) vals.sqft = statVals[1].textContent.trim();
-    if (statVals[2]) vals.acres = statVals[2].textContent.trim();
-    if (statSubs[2]) vals.acresSub = statSubs[2] ? statSubs[2].textContent.trim() : '';
-    if (statVals[3]) vals.yearBuilt = statVals[3].textContent.trim();
-    if (statVals[4]) vals.drive = statVals[4].textContent.trim();
-    if (statVals[5]) vals.toTown = statVals[5].textContent.trim();
-    if (statVals[6]) vals.tax = statVals[6].textContent.trim();
-
-    // Status (last stat-val or look for status class)
-    var statusEl = card.querySelector('.stat-val.status-active') || card.querySelector('.stat-val.status-pending') || (statVals[7] || null);
-    if (statusEl) vals.status = statusEl.textContent.trim();
+    // Simple fields from data (formatted as strings to match edit modal expectations)
+    vals.price = PropertyRenderer.fmtPrice(p.price);
+    vals.listingLink = p.listingLink || '';
+    vals.imageUrl = p.image || '';
+    vals.beds = p.beds + ' / ' + p.bath;
+    vals.sqft = PropertyRenderer.fmt(p.sqft);
+    vals.acres = String(p.acres);
+    vals.acresSub = p.acresSub || '';
+    vals.yearBuilt = String(p.yearBuilt || '');
+    vals.drive = p.drive || '';
+    vals.toTown = p.toTown || '';
+    vals.tax = p.taxAnnual ? PropertyRenderer.fmtPrice(p.taxAnnual) + '/yr' : '';
+    vals.status = p.status || 'Active';
 
     // Scores
     vals.scores = {};
-    var miniBars = card.querySelectorAll('.sob-mini-bar');
-    SCORE_CATS.forEach(function (cat, i) {
-      if (miniBars[i]) {
-        var labelSpans = miniBars[i].querySelectorAll('.sob-mini-label span');
-        var scoreText = labelSpans[1] ? labelSpans[1].textContent.trim() : '0';
-        // Extract number from "12/15" format
-        var match = scoreText.match(/(\d+)/);
-        vals.scores[cat.key] = match ? parseInt(match[1]) : 0;
-      }
+    SCORE_CATS.forEach(function (cat) {
+      vals.scores[cat.key] = (p.scores && p.scores[cat.key]) || 0;
     });
 
-    // Highlight band
-    var highlightEl = card.querySelector('.highlight-band');
-    if (highlightEl) vals.highlight = highlightEl.textContent.trim();
+    // Content
+    vals.highlight = p.highlight || '';
+    vals.offerRange = p.offerRange || '';
+    vals.offerStrategy = p.offerStrategy || '';
+    vals.offerRationale = (p.offerRationale || []).slice();
 
-    // Offer range & strategy
-    var offerPrice = card.querySelector('.sob-offer-price');
-    if (offerPrice) vals.offerRange = offerPrice.textContent.trim();
-    var strategy = card.querySelector('.sob-strategy');
-    if (strategy) vals.offerStrategy = strategy.textContent.trim();
-
-    // Offer rationale
-    var rationaleUl = card.querySelector('.sob-offer-rationale ul');
-    if (rationaleUl) {
-      vals.offerRationale = Array.from(rationaleUl.querySelectorAll('li')).map(function (li) {
-        return li.textContent.trim();
-      });
-    }
-
-    // Card-body sections: Highlights list (first section with ul)
-    var sections = card.querySelectorAll('.card-body > .card-section');
-    sections.forEach(function (sec) {
-      var title = sec.querySelector('.card-section-title');
-      if (!title) return;
-      var titleText = title.textContent.trim().toLowerCase();
-      var ul = sec.querySelector('ul');
-      if (!ul) return;
-      var items = Array.from(ul.querySelectorAll('li')).map(function (li) {
-        // Remove the li-icon span and get remaining text
-        var clone = li.cloneNode(true);
-        var icon = clone.querySelector('.li-icon');
-        if (icon) icon.remove();
-        return clone.textContent.trim();
-      });
-      if (titleText.indexOf('highlight') !== -1) vals.highlights = items;
+    // Lists (as string arrays for edit modal)
+    vals.highlights = (p.highlights || []).map(function (h) { return h.text; });
+    vals.pros = (p.familyFit || []).slice();
+    vals.cons = (p.verifyItems || []).map(function (v) {
+      return v.label ? v.label + ' — ' + v.text : v.text;
     });
-
-    // Pros/Cons (inside .pros-cons)
-    var prosUl = card.querySelector('.pros-cons .pros ul');
-    if (prosUl) {
-      vals.pros = Array.from(prosUl.querySelectorAll('li')).map(function (li) {
-        return li.textContent.trim().replace(/^[✓✔]\s*/, '');
-      });
-    }
-    var consUl = card.querySelector('.pros-cons .cons ul');
-    if (consUl) {
-      vals.cons = Array.from(consUl.querySelectorAll('li')).map(function (li) {
-        return li.textContent.trim().replace(/^[⚠✗]\s*/, '');
-      });
-    }
-
-    // Must-do items
-    var mustDoGrid = card.querySelector('.must-do-grid');
-    if (mustDoGrid) {
-      vals.mustDo = Array.from(mustDoGrid.querySelectorAll('.must-do-item')).map(function (item) {
-        return item.textContent.trim();
-      });
-    }
+    vals.mustDo = (p.mustDo || []).map(function (m) { return m.text; });
 
     return vals;
   }
@@ -965,162 +911,208 @@
 
   function applyPropertyEdits(allEdits) {
     for (var pid in allEdits) {
-      var card = document.getElementById(pid);
-      if (!card) continue;
+      var base = PROPERTY_BASE[pid];
+      if (!base) continue;
       var edits = allEdits[pid].edits;
 
-      // Price
+      // Merge edits into PROPERTY_MAP (start from base copy)
+      var merged = JSON.parse(JSON.stringify(base));
+
+      // Apply scalar edits (convert formatted strings back to data types)
       if (edits.price) {
-        var priceEl = card.querySelector('.card-price');
-        if (priceEl) priceEl.textContent = edits.price;
+        var priceNum = parseInt(String(edits.price).replace(/[^0-9]/g, ''), 10);
+        if (priceNum > 0) merged.price = priceNum;
       }
-
-      // Status
       if (edits.status) {
-        var statVals = card.querySelectorAll('.stat-val');
-        var statusEl = card.querySelector('.stat-val.status-active') || card.querySelector('.stat-val.status-pending') || (statVals[7] || null);
-        if (statusEl) {
-          statusEl.textContent = edits.status;
-          statusEl.className = 'stat-val';
-          if (edits.status === 'Active') statusEl.classList.add('status-active');
-          else if (edits.status === 'Pending') statusEl.classList.add('status-pending');
-        }
+        merged.status = edits.status;
+        merged.statusClass = edits.status === 'Active' ? 'status-active' :
+                             edits.status === 'Pending' ? 'status-pending' :
+                             edits.status === 'Sold' ? 'status-sold' : '';
       }
-
-      // Listing link
-      if (edits.listingLink) {
-        var imgLink = card.querySelector('.card-img-link');
-        if (imgLink) imgLink.setAttribute('href', edits.listingLink);
+      if (edits.listingLink) merged.listingLink = edits.listingLink;
+      if (edits.imageUrl) merged.image = edits.imageUrl;
+      if (edits.beds) {
+        var bedParts = edits.beds.split('/').map(function (s) { return parseInt(s.trim()); });
+        if (bedParts[0]) merged.beds = bedParts[0];
+        if (bedParts[1]) merged.bath = bedParts[1];
       }
-
-      // Image URL
-      if (edits.imageUrl) {
-        var img = card.querySelector('.card-img-link img');
-        if (img) img.setAttribute('src', edits.imageUrl);
+      if (edits.sqft) merged.sqft = parseInt(String(edits.sqft).replace(/[^0-9]/g, ''), 10) || merged.sqft;
+      if (edits.acres) merged.acres = parseFloat(edits.acres) || merged.acres;
+      if (edits.acresSub !== undefined) merged.acresSub = edits.acresSub;
+      if (edits.yearBuilt) merged.yearBuilt = parseInt(edits.yearBuilt) || merged.yearBuilt;
+      if (edits.drive) merged.drive = edits.drive;
+      if (edits.toTown) merged.toTown = edits.toTown;
+      if (edits.tax) {
+        var taxNum = parseInt(String(edits.tax).replace(/[^0-9]/g, ''), 10);
+        if (taxNum > 0) merged.taxAnnual = taxNum;
       }
+      if (edits.highlight) merged.highlight = edits.highlight;
+      if (edits.offerRange) merged.offerRange = edits.offerRange;
+      if (edits.offerStrategy) merged.offerStrategy = edits.offerStrategy;
 
-      // Stats row values
-      var allStatVals = card.querySelectorAll('.stat-val');
-      var allStatSubs = card.querySelectorAll('.stat-sub');
-      if (edits.beds && allStatVals[0]) allStatVals[0].textContent = edits.beds;
-      if (edits.sqft && allStatVals[1]) allStatVals[1].textContent = edits.sqft;
-      if (edits.acres && allStatVals[2]) allStatVals[2].textContent = edits.acres;
-      if (edits.acresSub && allStatSubs[2]) allStatSubs[2].textContent = edits.acresSub;
-      if (edits.yearBuilt && allStatVals[3]) allStatVals[3].textContent = edits.yearBuilt;
-      if (edits.drive && allStatVals[4]) allStatVals[4].textContent = edits.drive;
-      if (edits.toTown && allStatVals[5]) allStatVals[5].textContent = edits.toTown;
-      if (edits.tax && allStatVals[6]) allStatVals[6].textContent = edits.tax;
-
-      // Highlight band
-      if (edits.highlight) {
-        var hlEl = card.querySelector('.highlight-band');
-        if (hlEl) hlEl.textContent = edits.highlight;
-      }
-
-      // Offer range
-      if (edits.offerRange) {
-        var offerEl = card.querySelector('.sob-offer-price');
-        if (offerEl) offerEl.textContent = edits.offerRange;
-      }
-
-      // Offer strategy
-      if (edits.offerStrategy) {
-        var stratEl = card.querySelector('.sob-strategy');
-        if (stratEl) stratEl.textContent = edits.offerStrategy;
-      }
-
-      // Offer rationale
+      // Lists
       if (edits.offerRationale && Array.isArray(edits.offerRationale)) {
-        var ratUl = card.querySelector('.sob-offer-rationale ul');
-        if (ratUl) {
-          ratUl.innerHTML = edits.offerRationale.map(function (item) {
-            return '<li>' + escapeHtml(item) + '</li>';
-          }).join('');
-        }
+        merged.offerRationale = edits.offerRationale;
       }
-
-      // Highlights list (first card-section in card-body with "highlights" in title)
       if (edits.highlights && Array.isArray(edits.highlights)) {
-        var bodySections = card.querySelectorAll('.card-body > .card-section');
-        bodySections.forEach(function (sec) {
-          var title = sec.querySelector('.card-section-title');
-          if (title && title.textContent.trim().toLowerCase().indexOf('highlight') !== -1) {
-            var ul = sec.querySelector('ul');
-            if (ul) {
-              ul.innerHTML = edits.highlights.map(function (item) {
-                return '<li><span class="li-icon">\u2728</span> ' + escapeHtml(item) + '</li>';
-              }).join('');
-            }
-          }
+        merged.highlights = edits.highlights.map(function (text) {
+          return { icon: '\u2728', text: text };
         });
       }
-
-      // Pros
       if (edits.pros && Array.isArray(edits.pros)) {
-        var prosUl = card.querySelector('.pros-cons .pros ul');
-        if (prosUl) {
-          prosUl.innerHTML = edits.pros.map(function (item) {
-            return '<li>\u2713 ' + escapeHtml(item) + '</li>';
-          }).join('');
-        }
+        merged.familyFit = edits.pros;
       }
-
-      // Cons
       if (edits.cons && Array.isArray(edits.cons)) {
-        var consUl = card.querySelector('.pros-cons .cons ul');
-        if (consUl) {
-          consUl.innerHTML = edits.cons.map(function (item) {
-            return '<li>\u26A0 ' + escapeHtml(item) + '</li>';
-          }).join('');
-        }
+        merged.verifyItems = edits.cons.map(function (text) {
+          return { label: '', text: text };
+        });
       }
-
-      // Must-do items
       if (edits.mustDo && Array.isArray(edits.mustDo)) {
-        var mustDoGrid = card.querySelector('.must-do-grid');
-        if (mustDoGrid) {
-          mustDoGrid.innerHTML = edits.mustDo.map(function (item) {
-            return '<div class="must-do-item">' + escapeHtml(item) + '</div>';
-          }).join('');
-        }
+        merged.mustDo = edits.mustDo.map(function (text) {
+          return { urgent: false, text: text };
+        });
       }
 
       // Scores
       if (edits.scores) {
-        var miniBars = card.querySelectorAll('.sob-mini-bar');
-        var total = 0;
-        SCORE_CATS.forEach(function (cat, i) {
-          if (miniBars[i] && edits.scores[cat.key] !== undefined) {
-            var score = edits.scores[cat.key];
-            total += score;
-            var labelSpans = miniBars[i].querySelectorAll('.sob-mini-label span');
-            if (labelSpans[1]) labelSpans[1].textContent = score + '/' + cat.max;
-            var fill = miniBars[i].querySelector('.sob-mini-fill');
-            if (fill) fill.style.width = Math.round((score / cat.max) * 100) + '%';
-          } else if (miniBars[i]) {
-            // Add existing score to total
-            var existingLabel = miniBars[i].querySelectorAll('.sob-mini-label span');
-            var existingMatch = existingLabel[1] ? existingLabel[1].textContent.match(/(\d+)/) : null;
-            total += existingMatch ? parseInt(existingMatch[1]) : 0;
-          }
-        });
-        // Update total score
-        var scoreNum = card.querySelector('.sob-score-num');
-        if (scoreNum) scoreNum.textContent = total;
+        merged.scores = Object.assign({}, merged.scores, edits.scores);
       }
 
-      // Update overview table row
-      if (edits.price || edits.status) {
-        var overviewRow = document.querySelector('#overview table.qt tbody tr a[href="#' + pid + '"]');
-        if (overviewRow) {
-          var tr = overviewRow.closest('tr');
-          if (tr) {
-            var tds = tr.querySelectorAll('td');
-            // Price is typically the 3rd column (index 2)
-            if (edits.price && tds[2]) tds[2].textContent = edits.price;
-          }
-        }
+      // Store merged data
+      PROPERTY_MAP[pid] = merged;
+
+      // Re-render card + table row
+      PropertyRenderer.rerenderProperty(merged);
+
+      // Re-inject dynamic UI for this card
+      reinjectCardUI(pid);
+    }
+  }
+
+  function reinjectCardUI(pid) {
+    var card = document.getElementById(pid);
+    if (!card) return;
+
+    // Re-inject vote row
+    if (!card.querySelector('.vote-row')) {
+      var voteRow = document.createElement('div');
+      voteRow.className = 'vote-row';
+      voteRow.setAttribute('data-property', pid);
+      voteRow.innerHTML =
+        '<div class="vote-row-header">' +
+        '  <span class="vote-row-title">Family Rating</span>' +
+        '  <span class="vote-row-avg" data-avg></span>' +
+        '</div>' +
+        '<div class="vote-row-stars" data-stars></div>' +
+        '<div class="vote-row-details" data-details></div>';
+      card.appendChild(voteRow);
+    }
+
+    // Re-inject notes row
+    var voteRow = card.querySelector('.vote-row');
+    if (voteRow && !card.querySelector('.notes-row')) {
+      var notesRow = document.createElement('div');
+      notesRow.className = 'notes-row';
+      notesRow.setAttribute('data-notes-property', pid);
+      notesRow.innerHTML =
+        '<div class="notes-row-title">Family Notes</div>' +
+        '<div class="notes-list" data-notes-list></div>' +
+        '<div class="notes-form-wrap" data-notes-form-wrap></div>';
+      voteRow.parentNode.insertBefore(notesRow, voteRow.nextSibling);
+    }
+
+    // Re-inject buttons
+    var badges = card.querySelector('.card-badges');
+    if (badges) {
+      if (!card.querySelector('.edit-btn')) {
+        var editBtn = document.createElement('button');
+        editBtn.className = 'edit-btn';
+        editBtn.title = 'Edit listing';
+        editBtn.innerHTML = '<i class="bi bi-pencil-square"></i>';
+        editBtn.addEventListener('click', function () { showEditModal(pid); });
+        badges.insertBefore(editBtn, badges.firstChild);
       }
+      if (!card.querySelector('.graveyard-btn')) {
+        var gyBtn = document.createElement('button');
+        gyBtn.className = 'graveyard-btn';
+        gyBtn.innerHTML = '<i class="bi bi-x-circle"></i>';
+        gyBtn.title = 'Move to Graveyard';
+        gyBtn.addEventListener('click', function () { showGraveyardModal(pid); });
+        badges.appendChild(gyBtn);
+      }
+    }
+
+    // Re-inject nickname
+    if (!card.querySelector('.card-nickname')) {
+      var header = card.querySelector('.card-header .card-title-group');
+      if (header) {
+        var nickRow = document.createElement('div');
+        nickRow.className = 'card-nickname';
+        nickRow.setAttribute('data-nickname-pid', pid);
+        var cardSub = header.querySelector('.card-sub');
+        if (cardSub) {
+          cardSub.parentNode.insertBefore(nickRow, cardSub.nextSibling);
+        } else {
+          header.appendChild(nickRow);
+        }
+        renderNicknameRow(pid);
+      }
+    }
+
+    // Re-inject env key
+    var envSection = card.querySelector('.env-hazards');
+    if (envSection && !envSection.querySelector('.env-key')) {
+      var title = envSection.querySelector('.env-hazards-title');
+      if (title) {
+        var keyHtml =
+          '<div class="env-key">' +
+          '<span class="env-key-label">Key:</span>' +
+          '<span class="env-key-item"><span class="env-key-swatch" style="background:#dcfce7"></span> Low \u2014 minimal risk</span>' +
+          '<span class="env-key-item"><span class="env-key-swatch" style="background:#fef3c7"></span> Moderate \u2014 may affect insurance</span>' +
+          '<span class="env-key-item"><span class="env-key-swatch" style="background:#fee2e2"></span> High \u2014 higher insurance, mitigation needed</span>' +
+          '<span class="env-key-item"><span class="env-key-swatch" style="background:#b91c1c"></span> Severe \u2014 specialty insurance required</span>' +
+          '<span class="env-key-item"><span class="env-key-swatch" style="background:#ede9fe"></span> Special \u2014 unique hazard (Superfund, industrial)</span>' +
+          '</div>';
+        title.insertAdjacentHTML('afterend', keyHtml);
+      }
+    }
+
+    // Re-inject score tips
+    if (typeof SCORE_TIPS !== 'undefined') {
+      var tips = SCORE_TIPS[pid];
+      if (tips) {
+        card.querySelectorAll('.sob-mini-bar').forEach(function (bar, i) {
+          if (SCORE_CATS[i] && tips[SCORE_CATS[i].key]) {
+            bar.setAttribute('data-tip', tips[SCORE_CATS[i].key]);
+          }
+        });
+      }
+    }
+
+    // Re-init monthly toggle
+    card.querySelectorAll('.monthly-toggle').forEach(function (btn) {
+      if (btn._hasToggle) return;
+      btn._hasToggle = true;
+      btn.addEventListener('click', function () {
+        var breakdown = btn.parentElement.querySelector('.monthly-breakdown');
+        if (!breakdown) return;
+        var hidden = breakdown.hasAttribute('hidden');
+        if (hidden) {
+          breakdown.removeAttribute('hidden');
+          btn.textContent = '\u25B4 hide';
+        } else {
+          breakdown.setAttribute('hidden', '');
+          btn.textContent = '\u25BE details';
+        }
+      });
+    });
+
+    // Re-init collapsible details
+    initCollapsibleDetailsForCard(card);
+
+    // Apply graveyard state
+    if (GRAVEYARD_IDS[pid]) {
+      card.classList.add('graveyarded');
     }
   }
 
@@ -1128,6 +1120,9 @@
     API.getPropertyEdits().then(function (edits) {
       PROPERTY_EDITS = edits;
       applyPropertyEdits(edits);
+      // After re-rendering, refresh votes and notes to re-populate the new DOM
+      refreshAllVotes();
+      refreshAllNotes();
     });
   }
 
@@ -1259,41 +1254,45 @@
   }
 
   // --- Collapsible card details (below "Why it Stands Out") ---
+  function initCollapsibleDetailsForCard(card) {
+    var highlight = card.querySelector('.highlight-band');
+    if (!highlight) return;
+    if (card.querySelector('.card-details-content')) return; // already done
+
+    // Collect elements after highlight-band, excluding vote-row and notes-row
+    var toWrap = [];
+    var sibling = highlight.nextElementSibling;
+    while (sibling) {
+      var next = sibling.nextElementSibling;
+      if (!sibling.classList.contains('vote-row') && !sibling.classList.contains('notes-row')) {
+        toWrap.push(sibling);
+      }
+      sibling = next;
+    }
+    if (toWrap.length === 0) return;
+
+    // Create toggle heading as its own section
+    var toggleBar = document.createElement('div');
+    toggleBar.className = 'card-details-bar';
+    toggleBar.innerHTML = '<span class="card-details-bar-label">Property Details</span><span class="card-details-bar-arrow">&#9662;</span>';
+
+    // Create wrapper
+    var wrapper = document.createElement('div');
+    wrapper.className = 'card-details-content';
+    highlight.parentNode.insertBefore(toggleBar, toWrap[0]);
+    highlight.parentNode.insertBefore(wrapper, toggleBar.nextSibling);
+    toWrap.forEach(function (el) { wrapper.appendChild(el); });
+
+    toggleBar.addEventListener('click', function () {
+      var expanded = wrapper.classList.toggle('expanded');
+      toggleBar.classList.toggle('expanded', expanded);
+      toggleBar.querySelector('.card-details-bar-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
+    });
+  }
+
   function initCollapsibleDetails() {
     document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
-      var highlight = card.querySelector('.highlight-band');
-      if (!highlight) return;
-      if (card.querySelector('.card-details-content')) return; // already done
-
-      // Collect elements after highlight-band, excluding vote-row and notes-row
-      var toWrap = [];
-      var sibling = highlight.nextElementSibling;
-      while (sibling) {
-        var next = sibling.nextElementSibling;
-        if (!sibling.classList.contains('vote-row') && !sibling.classList.contains('notes-row')) {
-          toWrap.push(sibling);
-        }
-        sibling = next;
-      }
-      if (toWrap.length === 0) return;
-
-      // Create toggle heading as its own section
-      var toggleBar = document.createElement('div');
-      toggleBar.className = 'card-details-bar';
-      toggleBar.innerHTML = '<span class="card-details-bar-label">Property Details</span><span class="card-details-bar-arrow">&#9662;</span>';
-
-      // Create wrapper
-      var wrapper = document.createElement('div');
-      wrapper.className = 'card-details-content';
-      highlight.parentNode.insertBefore(toggleBar, toWrap[0]);
-      highlight.parentNode.insertBefore(wrapper, toggleBar.nextSibling);
-      toWrap.forEach(function (el) { wrapper.appendChild(el); });
-
-      toggleBar.addEventListener('click', function () {
-        var expanded = wrapper.classList.toggle('expanded');
-        toggleBar.classList.toggle('expanded', expanded);
-        toggleBar.querySelector('.card-details-bar-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
-      });
+      initCollapsibleDetailsForCard(card);
     });
   }
 
@@ -1485,35 +1484,10 @@
   }
 
   // --- Restructure card headers: 3-column grid with big centered price ---
+  // NOTE: render.js now handles this directly in renderCard() — no DOM manipulation needed
   function restructureCardHeaders() {
-    document.querySelectorAll('.card[id^="p"] .card-header').forEach(function (header) {
-      if (header.querySelector('.card-price-center')) return; // already done
-      var priceBlock = header.querySelector('.card-price-block');
-      var priceEl = priceBlock ? priceBlock.querySelector('.card-price') : null;
-      if (!priceEl || !priceBlock) return;
-
-      // Create centered price column
-      var center = document.createElement('div');
-      center.className = 'card-price-center';
-      var label = document.createElement('div');
-      label.className = 'card-price-label';
-      label.textContent = 'List Price';
-      center.appendChild(label);
-
-      // Move price element into center
-      center.appendChild(priceEl);
-
-      // Insert center before price-block
-      header.insertBefore(center, priceBlock);
-    });
+    // No-op: render.js already creates the 3-column header structure
   }
-
-  // --- Score categories in display order ---
-  var SCORE_CATS = [
-    { key: 'price' }, { key: 'acreage' }, { key: 'schools' }, { key: 'outbldgs' },
-    { key: 'town' }, { key: 'hospital' }, { key: 'hazards' }, { key: 'beach' },
-    { key: 'forested' }, { key: 'living' }
-  ];
 
   // --- Inject score bar tooltips ---
   function injectScoreTips() {
