@@ -1424,7 +1424,7 @@
       '</div>';
 
     var tableWrap = section.querySelector('.table-wrap');
-    section.insertBefore(bar, tableWrap);
+    tableWrap.parentNode.insertBefore(bar, tableWrap);
 
     var textInput = bar.querySelector('.table-filter-input');
     var priceSelect = bar.querySelector('[data-filter="price"]');
@@ -1558,11 +1558,44 @@
     var container = document.getElementById('property-map');
     if (!container || typeof L === 'undefined') return;
 
-    propertyMap = L.map('property-map', { scrollWheelZoom: true });
+    // NC bounding box with padding for maxBounds
+    var ncBounds = L.latLngBounds(
+      L.latLng(33.5, -84.8),  // SW corner (with padding)
+      L.latLng(37.0, -75.0)   // NE corner (with padding)
+    );
+
+    propertyMap = L.map('property-map', {
+      scrollWheelZoom: true,
+      maxBounds: ncBounds,
+      maxBoundsViscosity: 1.0,
+      minZoom: 6
+    });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 18
     }).addTo(propertyMap);
+
+    // Gray mask outside NC boundary
+    if (typeof NC_BOUNDARY !== 'undefined') {
+      var ncLatLngs = NC_BOUNDARY.map(function (c) { return [c[1], c[0]]; });
+      // World polygon with NC cut out (inverted mask)
+      var world = [
+        [90, -180], [90, 180], [-90, 180], [-90, -180], [90, -180]
+      ];
+      L.polygon([world, ncLatLngs], {
+        color: 'none',
+        fillColor: '#888',
+        fillOpacity: 0.45,
+        interactive: false
+      }).addTo(propertyMap);
+      // NC border outline
+      L.polyline(ncLatLngs, {
+        color: '#2d5a3a',
+        weight: 2,
+        opacity: 0.7,
+        interactive: false
+      }).addTo(propertyMap);
+    }
 
     var bounds = [];
     Object.keys(PROPERTY_MAP).forEach(function (pid) {
