@@ -118,25 +118,10 @@
       showUserModal();
     });
 
-    var nav = document.querySelector('.nav');
-    if (nav) nav.appendChild(pill);
+    var navRight = document.querySelector('.nav-right');
+    if (navRight) navRight.appendChild(pill);
   }
 
-  // --- Rankings nav link ---
-  function addRankingsNavLink() {
-    var nav = document.querySelector('.nav');
-    if (!nav) return;
-    var graveLink = nav.querySelector('.nav-grave');
-    var link = document.createElement('a');
-    link.href = '#rankings';
-    link.textContent = 'Rankings';
-    link.className = 'nav-rankings-link';
-    if (graveLink) {
-      nav.insertBefore(link, graveLink);
-    } else {
-      nav.appendChild(link);
-    }
-  }
 
   // --- User modal ---
   function showUserModal() {
@@ -873,7 +858,9 @@
 
       // Hide/show nav links and overview rows
       document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
-        var pid = a.getAttribute('href').slice(1);
+        var href = a.getAttribute('href');
+        if (!/^#p\d+$/.test(href)) return;
+        var pid = href.slice(1);
         a.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
       });
       document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
@@ -912,6 +899,9 @@
           });
         });
       });
+
+      // Rebuild map region buttons to reflect graveyard changes
+      addMapRegionButtons();
     });
   }
 
@@ -1523,7 +1513,10 @@
 
   function updateNavNames() {
     document.querySelectorAll('.nav a[href^="#p"]').forEach(function (a) {
-      var pid = a.getAttribute('href').slice(1);
+      var href = a.getAttribute('href');
+      // Only update property card links (#p followed by digits), not #property-map-section etc.
+      if (!/^#p\d+$/.test(href)) return;
+      var pid = href.slice(1);
       a.textContent = getDisplayName(pid);
     });
   }
@@ -1996,11 +1989,133 @@
     delete mapMarkers[pid];
   }
 
+  // --- Map region filtering ---
+  var activeRegionFilter = null;
+
+  function buildRegionPidMap() {
+    var regions = PropertyRenderer.REGIONS;
+    var propById = {};
+    Object.keys(PROPERTY_MAP).forEach(function (pid) {
+      if (!GRAVEYARD_IDS[pid]) propById[pid] = true;
+    });
+    var map = {};
+    var assigned = {};
+    regions.forEach(function (region) {
+      var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      var pids = [];
+      region.ids.forEach(function (id) {
+        if (propById[id]) { pids.push(id); assigned[id] = true; }
+      });
+      if (pids.length) map[sectionId] = { name: region.name, pids: pids };
+    });
+    var stragPids = Object.keys(propById).filter(function (pid) { return !assigned[pid]; });
+    if (stragPids.length) map['region-other'] = { name: 'Other', pids: stragPids };
+    return map;
+  }
+
+  function filterMapRegion(regionPids) {
+    if (!propertyMap) return;
+    var regionSet = {};
+    regionPids.forEach(function (id) { regionSet[id] = true; });
+
+    Object.keys(mapMarkers).forEach(function (pid) {
+      var m = mapMarkers[pid];
+      if (regionSet[pid]) {
+        if (!propertyMap.hasLayer(m)) propertyMap.addLayer(m);
+        m.setStyle({ fillColor: '#f59e0b', color: '#b45309', weight: 3, fillOpacity: 1, radius: 10 });
+      } else {
+        if (propertyMap.hasLayer(m)) propertyMap.removeLayer(m);
+      }
+    });
+
+    var bounds = [];
+    regionPids.forEach(function (pid) {
+      if (mapMarkers[pid]) bounds.push(mapMarkers[pid].getLatLng());
+    });
+    if (bounds.length > 0) {
+      propertyMap.fitBounds(bounds, { padding: [60, 60], maxZoom: 10 });
+    }
+    activeRegionFilter = regionPids;
+  }
+
+  function clearMapFilter() {
+    if (!propertyMap) return;
+    Object.keys(mapMarkers).forEach(function (pid) {
+      var m = mapMarkers[pid];
+      if (!propertyMap.hasLayer(m) && !GRAVEYARD_IDS[pid]) propertyMap.addLayer(m);
+      m.setStyle({ fillColor: '#3a6b4a', color: '#1e3528', weight: 2, fillOpacity: 0.85, radius: 8 });
+    });
+    var bounds = [];
+    Object.keys(mapMarkers).forEach(function (pid) {
+      if (!GRAVEYARD_IDS[pid]) bounds.push(mapMarkers[pid].getLatLng());
+    });
+    if (bounds.length > 0) {
+      propertyMap.fitBounds(bounds, { padding: [30, 30] });
+    }
+    activeRegionFilter = null;
+    // Reset button states
+    document.querySelectorAll('.map-region-btn.active').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    var allBtn = document.querySelector('.map-region-btn[data-region="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  }
+
+  function addMapRegionButtons() {
+    if (!propertyMap) return;
+    // Remove existing bar if rebuilding
+    var old = document.querySelector('.map-region-bar');
+    if (old) old.remove();
+
+    var regionData = buildRegionPidMap();
+
+    var container = document.createElement('div');
+    container.className = 'map-region-bar';
+
+    // "All" button
+    var allBtn = document.createElement('button');
+    allBtn.className = 'map-region-btn active';
+    allBtn.setAttribute('data-region', 'all');
+    allBtn.textContent = 'All';
+    allBtn.addEventListener('click', function () {
+      clearMapFilter();
+    });
+    container.appendChild(allBtn);
+
+    Object.keys(regionData).forEach(function (sectionId) {
+      var region = regionData[sectionId];
+      var btn = document.createElement('button');
+      btn.className = 'map-region-btn';
+      btn.setAttribute('data-region', sectionId);
+      btn.textContent = region.name;
+      var countSpan = document.createElement('span');
+      countSpan.className = 'map-region-btn-count';
+      countSpan.textContent = region.pids.length;
+      btn.appendChild(countSpan);
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.map-region-btn.active').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        filterMapRegion(region.pids);
+      });
+      container.appendChild(btn);
+    });
+
+    // Insert above the map
+    var mapSection = document.getElementById('property-map-section');
+    var mapDiv = document.getElementById('property-map');
+    if (mapSection && mapDiv) {
+      mapSection.insertBefore(container, mapDiv);
+    }
+  }
+
+  // Expose for render.js region toggles
+  window._mapFilterRegion = filterMapRegion;
+  window._mapClearFilter = clearMapFilter;
+
   // --- Init ---
   function init() {
     restructureCardHeaders();
     loadUser();
-    addRankingsNavLink();
     injectVoteRows();
     injectNoteRows();
     injectGraveyardButtons();
@@ -2012,8 +2127,77 @@
     initCollapsibleDetails();
     initCollapsibleOverview();
     initCollapsibleGraveyard();
+
+    // --- Nav spacer: match fixed nav height ---
+    function syncNavSpacer() {
+      var nav = document.querySelector('.nav');
+      var spacer = document.querySelector('.nav-spacer');
+      if (nav && spacer) spacer.style.height = nav.offsetHeight + 'px';
+    }
+    syncNavSpacer();
+    window.addEventListener('resize', syncNavSpacer);
+
+    // --- Helpers: expand / collapse collapsible sections ---
+    function expandSection(container, contentSel, barSel, arrowSel) {
+      if (!container) return;
+      var content = container.querySelector(contentSel);
+      var bar = container.querySelector(barSel);
+      if (content && !content.classList.contains('expanded')) {
+        content.classList.add('expanded');
+        if (bar) {
+          bar.classList.add('expanded');
+          var arrow = bar.querySelector(arrowSel);
+          if (arrow) arrow.innerHTML = '&#9652;';
+        }
+      }
+    }
+    function collapseSection(container, contentSel, barSel, arrowSel) {
+      if (!container) return;
+      var content = container.querySelector(contentSel);
+      var bar = container.querySelector(barSel);
+      if (content && content.classList.contains('expanded')) {
+        content.classList.remove('expanded');
+        if (bar) {
+          bar.classList.remove('expanded');
+          var arrow = bar.querySelector(arrowSel);
+          if (arrow) arrow.innerHTML = '&#9662;';
+        }
+      }
+    }
+
+    // --- Nav link click handlers: open target, collapse others ---
+    var rankingsNavLink = document.querySelector('.nav-rankings');
+    var tableNavLink = document.querySelector('.nav-table');
+    var mapNavLink = document.querySelector('.nav-map');
+    var graveNavLink = document.querySelector('.nav-grave');
+
+    if (rankingsNavLink) {
+      rankingsNavLink.addEventListener('click', function () {
+        collapseSection(document.getElementById('overview'), '.overview-content', '.overview-toggle-bar', '.overview-toggle-arrow');
+        collapseSection(document.getElementById('graveyard'), '.graveyard-content', '.graveyard-toggle-bar', '.graveyard-toggle-arrow');
+      });
+    }
+    if (tableNavLink) {
+      tableNavLink.addEventListener('click', function () {
+        expandSection(document.getElementById('overview'), '.overview-content', '.overview-toggle-bar', '.overview-toggle-arrow');
+        collapseSection(document.getElementById('graveyard'), '.graveyard-content', '.graveyard-toggle-bar', '.graveyard-toggle-arrow');
+      });
+    }
+    if (mapNavLink) {
+      mapNavLink.addEventListener('click', function () {
+        collapseSection(document.getElementById('overview'), '.overview-content', '.overview-toggle-bar', '.overview-toggle-arrow');
+        collapseSection(document.getElementById('graveyard'), '.graveyard-content', '.graveyard-toggle-bar', '.graveyard-toggle-arrow');
+      });
+    }
+    if (graveNavLink) {
+      graveNavLink.addEventListener('click', function () {
+        expandSection(document.getElementById('graveyard'), '.graveyard-content', '.graveyard-toggle-bar', '.graveyard-toggle-arrow');
+        collapseSection(document.getElementById('overview'), '.overview-content', '.overview-toggle-bar', '.overview-toggle-arrow');
+      });
+    }
     initTableFilter();
     initPropertyMap();
+    addMapRegionButtons();
     renderNavPill();
 
     if (!currentUser) {

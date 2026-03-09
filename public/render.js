@@ -485,11 +485,13 @@ var PropertyRenderer = (function () {
       });
       if (items.length === 0) return;
 
+      var hasNew = items.some(function (p) { return p.badges && p.badges.indexOf('b-new') >= 0; });
       var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       html += '<div class="region-section" id="' + sectionId + '">';
       html += '<button class="region-toggle" data-region="' + sectionId + '">';
       html += '<span class="region-toggle-name">' + esc(region.name) + '</span>';
       html += '<span class="region-toggle-count">' + items.length + ' properties</span>';
+      if (hasNew) html += '<span class="badge b-new">NEW</span>';
       html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
       html += '</button>';
       html += '<div class="region-cards">';
@@ -500,10 +502,12 @@ var PropertyRenderer = (function () {
     // Stragglers
     var stragglers = props.filter(function (p) { return !assigned[p.id]; });
     if (stragglers.length > 0) {
+      var stragHasNew = stragglers.some(function (p) { return p.badges && p.badges.indexOf('b-new') >= 0; });
       html += '<div class="region-section" id="region-other">';
       html += '<button class="region-toggle" data-region="region-other">';
       html += '<span class="region-toggle-name">Other</span>';
       html += '<span class="region-toggle-count">' + stragglers.length + ' properties</span>';
+      if (stragHasNew) html += '<span class="badge b-new">NEW</span>';
       html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
       html += '</button>';
       html += '<div class="region-cards">';
@@ -555,12 +559,43 @@ var PropertyRenderer = (function () {
     }
   }
 
+  // --- Build reverse map: section id → list of property ids ---
+  function buildSectionToPids(props) {
+    var propById = {};
+    props.forEach(function (p) { propById[p.id] = true; });
+    var map = {};
+    var assigned = {};
+    REGIONS.forEach(function (region) {
+      var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      var pids = [];
+      region.ids.forEach(function (id) {
+        if (propById[id]) { pids.push(id); assigned[id] = true; }
+      });
+      if (pids.length) map[sectionId] = pids;
+    });
+    var stragPids = props.filter(function (p) { return !assigned[p.id]; }).map(function (p) { return p.id; });
+    if (stragPids.length) map['region-other'] = stragPids;
+    return map;
+  }
+
   // --- Region section toggle behavior ---
   function initRegionToggles() {
+    var sectionPids = buildSectionToPids(typeof PROPERTIES !== 'undefined' ? PROPERTIES : []);
+
     document.querySelectorAll('.region-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var section = btn.closest('.region-section');
+        var wasCollapsed = section.classList.contains('region-collapsed');
         section.classList.toggle('region-collapsed');
+
+        // Highlight/clear map markers for this region
+        var sectionId = section.id;
+        var pids = sectionPids[sectionId];
+        if (wasCollapsed && pids && window._mapFilterRegion) {
+          window._mapFilterRegion(pids);
+        } else if (!wasCollapsed && window._mapClearFilter) {
+          window._mapClearFilter();
+        }
       });
     });
 
