@@ -47,8 +47,8 @@ app.post('/api/votes', (req, res) => {
     if (!userId || !propertyId || !rating) {
       return res.status(400).json({ error: 'userId, propertyId, and rating are required' });
     }
-    if (rating < 1 || rating > 5) {
-      return res.status(400).json({ error: 'Rating must be between 1 and 5' });
+    if (rating < 1 || rating > 7) {
+      return res.status(400).json({ error: 'Rating must be between 1 and 7' });
     }
     db.castVote(userId, propertyId, rating);
     res.json({ ok: true });

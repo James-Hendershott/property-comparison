@@ -197,12 +197,12 @@
   function createStars(propertyId, currentRating, onRate) {
     var container = document.createElement('div');
     container.className = 'vote-stars';
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= 7; i++) {
       (function (rating) {
         var star = document.createElement('button');
         star.className = 'vote-star' + (rating <= currentRating ? ' vote-star-filled' : '');
         star.textContent = '\u2605';
-        star.title = rating + ' star' + (rating > 1 ? 's' : '');
+        star.title = rating + ' — ' + (RATING_LABELS[rating] || '');
         star.setAttribute('aria-label', 'Rate ' + rating + ' stars');
         star.addEventListener('click', function () {
           if (!currentUser) { showUserModal(); return; }
@@ -216,7 +216,7 @@
 
   function renderStarsReadonly(rating) {
     var s = '';
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= 7; i++) {
       s += '<span class="vote-star-sm' + (i <= Math.round(rating) ? ' vote-star-sm-filled' : '') + '">\u2605</span>';
     }
     return s;
@@ -288,23 +288,102 @@
     });
   }
 
-  // --- Rankings section ---
-  function updateRankings(allVotes) {
-    var container = document.getElementById('rankings');
-    if (!container) return;
+  // --- Rankings section (podium + tier cards) ---
+  var MAX_STARS = 7;
+  var RATING_COLORS = {
+    1: '#ef4444', 2: '#f97316', 3: '#eab308', 4: '#a3a3a3',
+    5: '#60a5fa', 6: '#22c55e', 7: '#16a34a'
+  };
+  var RATING_LABELS = {
+    1: 'Absolutely not', 2: 'Not great', 3: 'Below average', 4: 'Neutral',
+    5: 'Pretty good', 6: 'Really like it', 7: 'Love it'
+  };
+  var TIER_DEFS = [
+    { key: 'S', min: 6.0, label: 'Top Picks', range: '6.0 – 7.0', cls: 'rank-tier-s' },
+    { key: 'A', min: 5.0, label: 'Strong',    range: '5.0 – 5.9', cls: 'rank-tier-a' },
+    { key: 'B', min: 4.0, label: 'Decent',    range: '4.0 – 4.9', cls: 'rank-tier-b' },
+    { key: 'C', min: 2.5, label: 'Weak',      range: '2.5 – 3.9', cls: 'rank-tier-c' },
+    { key: 'D', min: 0,   label: 'Pass',      range: '1.0 – 2.4', cls: 'rank-tier-d' }
+  ];
 
-    // Build sorted array
+  function getUserColor(name) {
+    var n = (name || '').toLowerCase();
+    if (n === 'james') return 'var(--both)';
+    if (n === 'savanah') return 'var(--accent)';
+    return 'var(--james)';
+  }
+
+  function getScoreColor(avg) {
+    if (avg >= 6.0) return '#16a34a';
+    if (avg >= 5.0) return '#22c55e';
+    if (avg >= 4.0) return '#eab308';
+    if (avg >= 2.5) return '#f97316';
+    return '#ef4444';
+  }
+
+  function renderVoterPips(votes) {
+    return votes.map(function (v) {
+      return '<span class="rank-pip" style="background:' + getUserColor(v.userName) + '" ' +
+        'title="' + escapeHtml(v.userName) + ': ' + v.rating + '\u2605 — ' + RATING_LABELS[v.rating] + '">' +
+        v.rating + '</span>';
+    }).join('');
+  }
+
+  function renderHoverCard(prop, name) {
+    if (!prop || !prop.image) return '';
+    var price = prop.price ? '$' + prop.price.toLocaleString() : '';
+    return '<div class="rank-hover-card">' +
+      '<img src="' + prop.image + '" alt="' + escapeHtml(name) + '">' +
+      '<div class="rank-hover-card-body">' +
+        '<strong>' + escapeHtml(name) + '</strong>' +
+        (prop.city ? escapeHtml(prop.city) + (prop.county ? ', ' + escapeHtml(prop.county) + ' Co.' : '') : '') +
+        (price ? '<br>' + price : '') +
+        (prop.acres ? ' &middot; ' + prop.acres + ' acres' : '') +
+      '</div></div>';
+  }
+
+  // Store last votes data for re-rendering with filters
+  var lastAllVotes = null;
+  var rankFilterNames = null; // null = all voters
+
+  function updateRankings(allVotes) {
+    lastAllVotes = allVotes;
+    renderRankings();
+  }
+
+  function renderRankings() {
+    var allVotes = lastAllVotes;
+    var container = document.getElementById('rankings');
+    if (!container || !allVotes) return;
+
+    // Collect all voter names across all properties
+    var allVoterNames = {};
+    for (var pid in allVotes) {
+      if (allVotes[pid].votes) {
+        allVotes[pid].votes.forEach(function (v) { allVoterNames[v.userName] = true; });
+      }
+    }
+
+    // Build entries, filtering votes if a filter is active
     var entries = [];
     for (var pid in allVotes) {
-      if (allVotes[pid].count > 0 && !GRAVEYARD_IDS[pid]) {
-        entries.push({
-          pid: pid,
-          name: getDisplayName(pid),
-          avg: allVotes[pid].avg,
-          count: allVotes[pid].count,
-          votes: allVotes[pid].votes
-        });
-      }
+      if (GRAVEYARD_IDS[pid]) continue;
+      var rawVotes = allVotes[pid].votes || [];
+      var filtered = rankFilterNames
+        ? rawVotes.filter(function (v) { return rankFilterNames.indexOf(v.userName) >= 0; })
+        : rawVotes;
+      if (filtered.length === 0) continue;
+      var sum = 0;
+      filtered.forEach(function (v) { sum += v.rating; });
+      var avg = sum / filtered.length;
+      entries.push({
+        pid: pid,
+        name: getDisplayName(pid),
+        avg: avg,
+        count: filtered.length,
+        votes: filtered,
+        allVotes: rawVotes
+      });
     }
     entries.sort(function (a, b) { return b.avg - a.avg || b.count - a.count; });
 
@@ -313,28 +392,124 @@
       return;
     }
 
-    var html = '<div class="section rankings-section">' +
-      '<div class="section-title">Family Rankings</div>' +
-      '<div class="table-wrap"><table class="qt rankings-table"><thead><tr>' +
-      '<th>Rank</th><th>Property</th><th>Avg Rating</th><th>Votes</th><th>Individual Ratings</th>' +
-      '</tr></thead><tbody>';
-
-    entries.forEach(function (e, idx) {
-      var voteCells = e.votes.map(function (v) {
-        return escapeHtml(v.userName) + ': ' + v.rating + '\u2605';
-      }).join(', ');
-
-      html += '<tr>' +
-        '<td><strong>' + (idx + 1) + '</strong></td>' +
-        '<td><a href="#' + e.pid + '">' + escapeHtml(e.name) + '</a></td>' +
-        '<td>' + renderStarsReadonly(e.avg) + ' <strong>' + e.avg.toFixed(1) + '</strong></td>' +
-        '<td>' + e.count + '</td>' +
-        '<td style="font-size:0.78rem">' + voteCells + '</td>' +
-        '</tr>';
+    // Voter filter bar
+    var filterHtml = '<div class="rank-filter">' +
+      '<span class="rank-filter-label">Filter by voter:</span>' +
+      '<button class="rank-filter-btn' + (!rankFilterNames ? ' rank-filter-active' : '') + '" data-filter="all">Everyone</button>';
+    Object.keys(allVoterNames).sort().forEach(function (name) {
+      var active = rankFilterNames && rankFilterNames.indexOf(name) >= 0 && rankFilterNames.length === 1;
+      filterHtml += '<button class="rank-filter-btn' + (active ? ' rank-filter-active' : '') + '" ' +
+        'data-filter="' + escapeHtml(name) + '" style="border-color:' + getUserColor(name) + '">' +
+        '<span class="rank-filter-dot" style="background:' + getUserColor(name) + '"></span>' +
+        escapeHtml(name) + '</button>';
     });
+    // "James & Savanah" shortcut if both exist
+    if (allVoterNames['James'] && allVoterNames['Savanah']) {
+      var jsActive = rankFilterNames && rankFilterNames.length === 2 &&
+        rankFilterNames.indexOf('James') >= 0 && rankFilterNames.indexOf('Savanah') >= 0;
+      filterHtml += '<button class="rank-filter-btn' + (jsActive ? ' rank-filter-active' : '') + '" ' +
+        'data-filter="James+Savanah" style="border-color:var(--accent2)">' +
+        '<span class="rank-filter-dot" style="background:var(--both)"></span>' +
+        '<span class="rank-filter-dot" style="background:var(--accent)"></span>' +
+        'James &amp; Savanah</button>';
+    }
+    filterHtml += '</div>';
 
-    html += '</tbody></table></div></div>';
-    container.innerHTML = html;
+    // Rating scale legend
+    var legend = '<div class="rank-legend">' +
+      '<span class="rank-legend-title">Rating Scale (1–' + MAX_STARS + '):</span>';
+    for (var r = 1; r <= MAX_STARS; r++) {
+      legend += '<span class="rank-legend-item">' +
+        '<span class="rank-legend-dot" style="background:' + RATING_COLORS[r] + '"></span>' +
+        '<span class="rank-legend-num">' + r + '</span> ' + RATING_LABELS[r] +
+        '</span>';
+    }
+    legend += '</div>';
+
+    // Podium (top 3) — render in order: 2nd, 1st, 3rd
+    var podiumOrder = [1, 0, 2];
+    var podiumHtml = '<div class="rank-podium">';
+    podiumOrder.forEach(function (idx) {
+      if (!entries[idx]) return;
+      var e = entries[idx];
+      var place = idx + 1;
+      var prop = PROPERTY_MAP[e.pid] || {};
+      var pct = (e.avg / MAX_STARS * 100).toFixed(0);
+      var ringColor = getScoreColor(e.avg);
+      podiumHtml += '<div class="rank-podium-card rank-podium-' + place + '" style="position:relative">' +
+        '<div class="rank-medal">' + place + '</div>' +
+        (prop.image ? '<img class="rank-podium-img" src="' + prop.image + '" alt="' + escapeHtml(e.name) + '">' : '') +
+        '<div class="rank-ring" style="--pct:' + pct + ';--ring-color:' + ringColor + '">' +
+          '<span class="rank-ring-avg">' + e.avg.toFixed(1) + '</span>' +
+        '</div>' +
+        '<div class="rank-podium-name"><a href="#' + e.pid + '">' + escapeHtml(e.name) + '</a></div>' +
+        (prop.city ? '<div class="rank-podium-city">' + escapeHtml(prop.city) + (prop.county ? ', ' + escapeHtml(prop.county) : '') + '</div>' : '') +
+        '<div class="rank-voters">' + renderVoterPips(e.allVotes || e.votes) + '</div>' +
+        '</div>';
+    });
+    podiumHtml += '</div>';
+
+    // Tier groups
+    var tiersHtml = '<div class="rank-tiers">';
+    var itemIdx = 0;
+    TIER_DEFS.forEach(function (tier, tIdx) {
+      var maxVal = tIdx === 0 ? 999 : TIER_DEFS[tIdx - 1].min;
+      var tierEntries = [];
+      entries.forEach(function (e, idx) {
+        if (e.avg >= tier.min && e.avg < maxVal) {
+          tierEntries.push({ entry: e, rank: idx + 1 });
+        }
+      });
+      if (tierEntries.length === 0) return;
+
+      tiersHtml += '<div class="rank-tier">' +
+        '<div class="rank-tier-header">' +
+          '<span class="rank-tier-badge ' + tier.cls + '">' + tier.key + '</span>' +
+          '<span class="rank-tier-label">' + tier.label + ' (' + tier.range + ')</span>' +
+        '</div>' +
+        '<div class="rank-tier-items">';
+
+      tierEntries.forEach(function (te) {
+        var e = te.entry;
+        var prop = PROPERTY_MAP[e.pid] || {};
+        var delay = (itemIdx * 0.04).toFixed(2);
+        tiersHtml += '<a class="rank-tier-item" href="#' + e.pid + '" style="animation-delay:' + delay + 's;position:relative">' +
+          '<span class="rank-tier-num">' + te.rank + '</span>' +
+          (prop.image ? '<img class="rank-tier-thumb" src="' + prop.image + '" alt="">' : '') +
+          '<span class="rank-tier-name">' +
+            '<span class="rank-tier-name-text">' + escapeHtml(e.name) + '</span>' +
+            (prop.city ? '<span class="rank-tier-city">' + escapeHtml(prop.city) + (prop.county ? ', ' + escapeHtml(prop.county) + ' Co.' : '') + '</span>' : '') +
+          '</span>' +
+          '<span class="rank-tier-voters">' + renderVoterPips(e.allVotes || e.votes) + '</span>' +
+          '<span class="rank-tier-score" style="color:' + getScoreColor(e.avg) + '">' + e.avg.toFixed(1) + '</span>' +
+          renderHoverCard(prop, e.name) +
+          '</a>';
+        itemIdx++;
+      });
+
+      tiersHtml += '</div></div>';
+    });
+    tiersHtml += '</div>';
+
+    container.innerHTML = '<div class="section rankings-section">' +
+      '<div class="section-title">Family Rankings</div>' +
+      filterHtml + legend + podiumHtml + tiersHtml +
+      '</div>';
+
+    // Attach filter click handlers
+    container.querySelectorAll('.rank-filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var val = btn.getAttribute('data-filter');
+        if (val === 'all') {
+          rankFilterNames = null;
+        } else if (val.indexOf('+') >= 0) {
+          rankFilterNames = val.split('+');
+        } else {
+          rankFilterNames = [val];
+        }
+        renderRankings();
+      });
+    });
   }
 
   // --- Overview table augmentation ---

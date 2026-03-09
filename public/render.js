@@ -388,11 +388,38 @@ var PropertyRenderer = (function () {
     return html;
   }
 
-  // --- Render nav links ---
+  // --- Render nav links grouped by county ---
   function renderNavLinks(props) {
-    var html = '';
+    // Group properties by county
+    var counties = {};
+    var countyOrder = [];
     props.forEach(function (p) {
-      html += '<a href="#' + esc(p.id) + '">' + esc(p.navLabel) + '</a>\n';
+      var county = p.county || 'Other';
+      if (!counties[county]) {
+        counties[county] = [];
+        countyOrder.push(county);
+      }
+      counties[county].push(p);
+    });
+    countyOrder.sort();
+
+    var html = '';
+    countyOrder.forEach(function (county) {
+      var items = counties[county];
+      if (items.length === 1) {
+        // Single property — just show as a direct link
+        var p = items[0];
+        html += '<a href="#' + esc(p.id) + '" class="nav-single">' + esc(p.navLabel) + '</a>\n';
+      } else {
+        // County group dropdown
+        html += '<div class="nav-group">' +
+          '<button class="nav-group-btn">' + esc(county) + ' <span class="nav-group-count">' + items.length + '</span></button>' +
+          '<div class="nav-group-dropdown">';
+        items.forEach(function (p) {
+          html += '<a href="#' + esc(p.id) + '">' + esc(p.navLabel) + ' <span class="nav-group-pid">' + p.id.toUpperCase() + '</span></a>';
+        });
+        html += '</div></div>\n';
+      }
     });
     return html;
   }

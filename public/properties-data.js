@@ -24,9 +24,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "150+ DOM with 5 price cuts — motivated seller",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006,
     "taxLabel": "Property Tax (Caldwell Co. 0.60%)",
     "taxAnnual": 2359,
@@ -266,9 +264,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Reduced from $649,000 — massive 23% cut",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.004699999999999999,
     "taxLabel": "Property Tax (Wilkes Co. 0.47%)",
     "taxAnnual": 2341,
@@ -511,9 +507,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Reduced from $549,800 — re-listed after ~6 months total",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.005,
     "taxLabel": "Property Tax (Cherokee Co. 0.50%)",
     "taxAnnual": 2495,
@@ -989,9 +983,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "184 DOM, zero price reductions — inflexible seller",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0038,
     "taxLabel": "Property Tax (Cherokee Co. 0.38%)",
     "taxAnnual": 1628,
@@ -1226,9 +1218,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "6 DOM — will move fast!",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0075,
     "taxLabel": "Property Tax (Johnston Co. ~0.75%)",
     "taxAnnual": 2100,
@@ -1467,9 +1457,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Reduced from $475K — tax assessment $221K vs $465K asking",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006999999999999999,
     "taxLabel": "Property Tax (Randolph Co. ~0.70%)",
     "taxAnnual": 2200,
@@ -1704,9 +1692,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "NEW CONSTRUCTION — to be built",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006999999999999999,
     "taxLabel": "Property Tax (Nash Co. ~0.70%)",
     "taxAnnual": 2050,
@@ -1937,9 +1923,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "FSBO slashed $100K (16.7%) from $600K",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006,
     "taxLabel": "Property Tax (Columbus Co. ~0.60%)",
     "taxAnnual": 1900,
@@ -2174,9 +2158,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "310+ DOM — fell out of contingency once, likely financing issues",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0059,
     "taxLabel": "Property Tax (Alleghany Co. ~0.59%)",
     "taxAnnual": 1625,
@@ -2411,9 +2393,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "~120 DOM — dual-address listing (554 & 554A)",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006,
     "taxLabel": "Property Tax (Camden Co. ~0.60%)",
     "taxAnnual": 1800,
@@ -2644,9 +2624,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "~65 DOM in Seaside Bay gated community",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0045000000000000005,
     "taxLabel": "Property Tax (Brunswick Co. ~0.45%)",
     "taxAnnual": 1550,
@@ -2882,9 +2860,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "~180 DOM — unpermitted sqft, overpriced flip attempt",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0085,
     "taxLabel": "Property Tax (Halifax Co. ~0.85%)",
     "taxAnnual": 2100,
@@ -3118,9 +3094,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "108 DOM, recent $16K reduction",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.008,
     "taxLabel": "Property Tax (Chatham Co. ~0.80%)",
     "taxAnnual": 1850,
@@ -3359,9 +3333,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "MLS #258386",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.004699999999999999,
     "taxLabel": "Property Tax (Ashe Co. 0.47%)",
     "taxAnnual": 2110,
@@ -3588,9 +3560,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0062,
     "taxLabel": "Property Tax (Rutherford Co. 0.62%)",
     "taxAnnual": 2634,
@@ -3809,9 +3779,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006,
     "taxLabel": "Property Tax (Caldwell Co. 0.60%)",
     "taxAnnual": 2550,
@@ -4038,9 +4006,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0062,
     "taxLabel": "Property Tax (Rutherford Co. 0.62%)",
     "taxAnnual": 2759,
@@ -4259,17 +4225,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0061,
+    "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
+    "taxAnnual": 2683,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Murphy Walmart",
     "scores": {
       "price": 7,
       "acreage": 2,
@@ -4459,17 +4423,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0061,
+    "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
+    "taxAnnual": 3050,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Murphy Walmart",
     "scores": {
       "price": 5,
       "acreage": 6,
@@ -4627,7 +4589,7 @@ var PROPERTIES = [
     "lat": 35.2154467,
     "lng": -83.9946968,
     "county": "Cherokee",
-    "price": 410000,
+    "price": 397500,
     "listingLink": "https://www.zillow.com/homedetails/344-Woody-Branch-Rd-Murphy-NC-28906/230511291_zpid/",
     "image": "https://photos.zillowstatic.com/fp/08084c80116c77d37e2973e2d7bcec11-cc_ft_1152.webp",
     "beds": 3,
@@ -4638,20 +4600,18 @@ var PROPERTIES = [
     "yearBuilt": 1990,
     "type": "Site-Built",
     "typeBadge": "b-sfr",
-    "status": "Off-Market",
-    "statusClass": "status-removed",
-    "statusNote": "Sold Feb 2023 for $410,000",
-    "badges": [
-      "b-removed"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Relisted — reduced from $449K to $397.5K (MLS #415800)",
+    "badges": [],
+    "taxRate": 0.0061,
+    "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
+    "taxAnnual": 2425,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~20 min",
+    "toTownSub": "to Murphy Walmart",
     "scores": {
       "price": 8,
       "acreage": 8,
@@ -4843,17 +4803,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0061,
+    "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
+    "taxAnnual": 1860,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Murphy Walmart",
     "scores": {
       "price": 10,
       "acreage": 3,
@@ -5045,17 +5003,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0056,
+    "taxLabel": "Property Tax (Mitchell Co. 0.56%)",
+    "taxAnnual": 2800,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~20 min",
+    "toTownSub": "to Spruce Pine Walmart",
     "scores": {
       "price": 5,
       "acreage": 5,
@@ -5269,17 +5225,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.004975,
+    "taxLabel": "Property Tax (Caldwell Co. 0.5%)",
+    "taxAnnual": 2483,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Lenoir Walmart",
     "scores": {
       "price": 5,
       "acreage": 5,
@@ -5481,17 +5435,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0065,
+    "taxLabel": "Property Tax (Yadkin Co. 0.65%)",
+    "taxAnnual": 2925,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Elkin Walmart",
     "scores": {
       "price": 7,
       "acreage": 5,
@@ -5689,17 +5641,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00513,
+    "taxLabel": "Property Tax (Surry Co. 0.51%)",
+    "taxAnnual": 2539,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Mount Airy Walmart",
     "scores": {
       "price": 6,
       "acreage": 9,
@@ -5885,17 +5835,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0063,
+    "taxLabel": "Property Tax (Person Co. 0.63%)",
+    "taxAnnual": 2835,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~20 min",
+    "toTownSub": "to Roxboro Walmart",
     "scores": {
       "price": 7,
       "acreage": 8,
@@ -6089,17 +6037,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00505,
+    "taxLabel": "Property Tax (Franklin Co. 0.51%)",
+    "taxAnnual": 2398,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~28 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~12 min",
+    "toTownSub": "to Louisburg Walmart",
     "scores": {
       "price": 5,
       "acreage": 8,
@@ -6294,14 +6240,14 @@ var PROPERTIES = [
     "statusClass": "status-active",
     "statusNote": "Price corrected to $450,000",
     "badges": [],
-    "taxRate": 0.0083,
-    "taxLabel": "Property Tax (Johnston Co. 0.83%)",
-    "taxAnnual": 0,
+    "taxRate": 0.0052,
+    "taxLabel": "Property Tax (Johnston Co. 0.52%)",
+    "taxAnnual": 2340,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~28 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Four Oaks Walmart",
     "scores": {
       "price": 6,
       "acreage": 6,
@@ -6468,17 +6414,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00777,
+    "taxLabel": "Property Tax (Anson Co. 0.78%)",
+    "taxAnnual": 3877,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~25 min",
+    "toTownSub": "to Rockingham Walmart",
     "scores": {
       "price": 5,
       "acreage": 6,
@@ -6651,14 +6595,14 @@ var PROPERTIES = [
     "badges": [
       "b-removed"
     ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "taxRate": 0.004342,
+    "taxLabel": "Property Tax (Union Co. 0.43%)",
+    "taxAnnual": 2040,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~20 min",
+    "toTownSub": "to Monroe Walmart",
     "scores": {
       "price": 6,
       "acreage": 5,
@@ -6840,17 +6784,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
+    "taxAnnual": 2190,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Forest City Walmart",
     "scores": {
       "price": 9,
       "acreage": 5,
@@ -7036,17 +6978,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
+    "taxAnnual": 2662,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Forest City Walmart",
     "scores": {
       "price": 6,
       "acreage": 8,
@@ -7248,17 +7188,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
+    "taxAnnual": 2384,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Forest City Walmart",
     "scores": {
       "price": 8,
       "acreage": 5,
@@ -7427,18 +7365,18 @@ var PROPERTIES = [
     "typeBadge": "b-sfr",
     "status": "Active",
     "statusClass": "status-active",
-    "statusNote": "",
+    "statusNote": "Listed 3/6/2026 — MLS# 4351597",
     "badges": [
       "b-new"
     ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "taxRate": 0.0058,
+    "taxLabel": "Property Tax (Burke Co. 0.58%)",
+    "taxAnnual": 2106,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Valdese/Lenoir, I-40",
     "scores": {
       "price": 9,
       "acreage": 10,
@@ -7644,17 +7582,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0063,
+    "taxLabel": "Property Tax (Nash Co. 0.63%)",
+    "taxAnnual": 2173,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~32 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Rocky Mount Walmart",
     "scores": {
       "price": 10,
       "acreage": 6,
@@ -7820,17 +7756,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0.0123,
-    "taxLabel": "Property Tax (Orange Co. 1.23%)",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.006383,
+    "taxLabel": "Property Tax (Orange Co. 0.64%)",
+    "taxAnnual": 3594,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Hillsborough Walmart",
     "scores": {
       "price": 7,
       "acreage": 5,
@@ -8016,17 +7950,15 @@ var PROPERTIES = [
     "status": "Pending",
     "statusClass": "status-pending",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0077,
+    "taxLabel": "Property Tax (Robeson Co. 0.77%)",
+    "taxAnnual": 3465,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~31 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to St. Pauls Walmart",
     "scores": {
       "price": 7,
       "acreage": 8,
@@ -8220,17 +8152,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0054,
+    "taxLabel": "Property Tax (Davidson Co. 0.54%)",
+    "taxAnnual": 2429,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Thomasville Walmart",
     "scores": {
       "price": 7,
       "acreage": 5,
@@ -8391,14 +8321,14 @@ var PROPERTIES = [
     "badges": [
       "b-pend"
     ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "taxRate": 0.0062,
+    "taxLabel": "Property Tax (Montgomery Co. 0.62%)",
+    "taxAnnual": 3091,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Biscoe Walmart",
     "scores": {
       "price": 5,
       "acreage": 7,
@@ -8584,17 +8514,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00655,
+    "taxLabel": "Property Tax (Onslow Co. 0.66%)",
+    "taxAnnual": 3273,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~33 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Jacksonville Walmart",
     "scores": {
       "price": 5,
       "acreage": 5,
@@ -8788,17 +8716,15 @@ var PROPERTIES = [
     "status": "Pending",
     "statusClass": "status-pending",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
+    "taxAnnual": 2555,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Forest City Walmart",
     "scores": {
       "price": 7,
       "acreage": 6,
@@ -9001,14 +8927,14 @@ var PROPERTIES = [
     "statusClass": "status-active",
     "statusNote": "",
     "badges": [],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "taxRate": 0.005663,
+    "taxLabel": "Property Tax (Pitt Co. 0.57%)",
+    "taxAnnual": 2265,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~32 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Greenville Walmart",
     "scores": {
       "price": 8,
       "acreage": 8,
@@ -9186,17 +9112,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.004975,
+    "taxLabel": "Property Tax (Caldwell Co. 0.5%)",
+    "taxAnnual": 2189,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Lenoir Walmart",
     "scores": {
       "price": 7,
       "acreage": 8,
@@ -9370,17 +9294,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0099,
+    "taxLabel": "Property Tax (Scotland Co. 0.99%)",
+    "taxAnnual": 5099,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~31 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Laurinburg Walmart",
     "scores": {
       "price": 4,
       "acreage": 6,
@@ -9594,17 +9516,15 @@ var PROPERTIES = [
     "status": "Sale Pending",
     "statusClass": "status-pending",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0062,
+    "taxLabel": "Property Tax (Montgomery Co. 0.62%)",
+    "taxAnnual": 2474,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Biscoe Walmart",
     "scores": {
       "price": 8,
       "acreage": 8,
@@ -9802,17 +9722,15 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "",
-    "badges": [
-      "b-new"
-    ],
-    "taxRate": 0,
-    "taxLabel": "",
-    "taxAnnual": 0,
+    "badges": [],
+    "taxRate": 0.0051,
+    "taxLabel": "Property Tax (Ashe Co. 0.51%)",
+    "taxAnnual": 2397,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to West Jefferson Walmart",
     "scores": {
       "price": 6,
       "acreage": 10,
@@ -10037,10 +9955,10 @@ var PROPERTIES = [
     "taxLabel": "",
     "taxAnnual": 1246,
     "hoa": 0,
-    "drive": "",
-    "driveSub": "",
-    "toTown": "",
-    "toTownSub": "",
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Lenoir Walmart",
     "scores": {
       "price": 8,
       "acreage": 6,
@@ -10060,49 +9978,49 @@ var PROPERTIES = [
     "highlight": "Fully remodeled 3/2 ranch on 5.5+ acres with creek and natural spring. RA20 zoning — livestock permitted. Move-in ready.",
     "highlights": [
       {
-        "icon": "\ud83c\udfe0",
+        "icon": "🏠",
         "text": "Fully remodeled — move-in ready, modern updates throughout"
       },
       {
-        "icon": "\ud83c\udf0a",
+        "icon": "🌊",
         "text": "Creek running through property + natural spring"
       },
       {
-        "icon": "\ud83d\udc04",
+        "icon": "🐄",
         "text": "RA20 zoning — rural agricultural, livestock explicitly permitted"
       },
       {
-        "icon": "\ud83d\udcb0",
+        "icon": "💰",
         "text": "USDA eligible — potential zero-down financing"
       }
     ],
     "proximity": [
       {
-        "icon": "\u26fd",
+        "icon": "⛽",
         "label": "Gas Station",
         "value": "~10 mi",
         "ref": false
       },
       {
-        "icon": "\ud83d\uded2",
+        "icon": "🛒",
         "label": "Grocery (Lenoir)",
         "value": "~15 mi",
         "ref": false
       },
       {
-        "icon": "\ud83c\udfe5",
+        "icon": "🏥",
         "label": "Caldwell Memorial Hospital",
         "value": "~15-20 mi",
         "ref": false
       },
       {
-        "icon": "\ud83c\udfeb",
+        "icon": "🏫",
         "label": "Collettsville School K-8",
         "value": "~2 mi",
         "ref": false
       },
       {
-        "icon": "\ud83c\udfeb",
+        "icon": "🏫",
         "label": "West Caldwell High",
         "value": "~3.3 mi",
         "ref": false
@@ -10110,77 +10028,77 @@ var PROPERTIES = [
     ],
     "cardPros": [
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Fully remodeled — move-in ready, modern updates throughout"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Creek + natural spring on property — great for livestock and irrigation"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "RA20 zoning — rural agricultural, livestock explicitly permitted"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Full basement, partially finished, with garage door access"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "2-car attached garage — shop/storage from day one"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Fireplace — backup heat source"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Paved road access — asphalt"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "$1,246/yr taxes — very low"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "USDA, FHA, VA eligible — flexible financing"
       },
       {
-        "icon": "\u2713",
+        "icon": "✓",
         "text": "Gas cooktop — propane service already set up"
       }
     ],
     "cardCons": [
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Only 3 bed / 2 bath — minimum for a family, no dedicated office"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "1,807 sqft livable — modest for a family (basement adds space)"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Well water — needs inspection and testing"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Only 5.5-6 acres — barely meets minimum, far less than Dogwood's 20"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Caldwell County = Helene disaster area — needs thorough inspection"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Flip pricing — bought $305K in 2022, listing at $415K (36% markup)"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Internet unknown — rural Caldwell County, verify broadband"
       },
       {
-        "icon": "\u2717",
+        "icon": "✗",
         "text": "Septic could be original 1992 system — approaching end of life"
       }
     ],

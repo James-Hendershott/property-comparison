@@ -36,7 +36,7 @@ async function init() {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER NOT NULL REFERENCES users(id),
       property_id TEXT NOT NULL,
-      rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 5),
+      rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 7),
       updated_at TEXT DEFAULT (datetime('now')),
       UNIQUE(user_id, property_id)
     )
@@ -81,6 +81,40 @@ async function init() {
       updated_at TEXT DEFAULT (datetime('now'))
     )
   `);
+
+  // --- Migration: expand rating scale from 5 to 7 ---
+  // Recreate votes table with CHECK(1-7) and migrate existing ratings: 3→4, 4→5, 5→7
+  try {
+    const info = db.exec("SELECT sql FROM sqlite_master WHERE type='table' AND name='votes'");
+    if (info.length > 0 && info[0].values[0][0].indexOf('BETWEEN 1 AND 5') >= 0) {
+      console.log('Migrating votes table: expanding rating scale 5→7...');
+      db.run('ALTER TABLE votes RENAME TO votes_old');
+      db.run(`
+        CREATE TABLE votes (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER NOT NULL REFERENCES users(id),
+          property_id TEXT NOT NULL,
+          rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 7),
+          updated_at TEXT DEFAULT (datetime('now')),
+          UNIQUE(user_id, property_id)
+        )
+      `);
+      db.run(`INSERT INTO votes (id, user_id, property_id, rating, updated_at)
+              SELECT id, user_id, property_id,
+                CASE
+                  WHEN rating = 5 THEN 7
+                  WHEN rating = 4 THEN 5
+                  WHEN rating = 3 THEN 4
+                  ELSE rating
+                END,
+                updated_at
+              FROM votes_old`);
+      db.run('DROP TABLE votes_old');
+      console.log('Rating migration complete.');
+    }
+  } catch (e) {
+    console.error('Rating migration error (non-fatal):', e.message);
+  }
 
   save();
 }
