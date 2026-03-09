@@ -1,3 +1,65 @@
+/* ── REGION SECTIONS (collapsible card groups) ── */
+.region-section {
+  margin: 0.5rem auto;
+  max-width: 1100px;
+}
+.region-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  background: linear-gradient(135deg, #1e3528 0%, #24422f 100%);
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  margin-bottom: 0.5rem;
+}
+.region-toggle:hover {
+  background: linear-gradient(135deg, #24422f 0%, #2d5a3d 100%);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+.region-toggle-name {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0ece3;
+  letter-spacing: -0.2px;
+}
+.region-toggle-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.region-toggle-icon {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1rem;
+  transition: transform 0.25s;
+}
+.region-cards {
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  overflow: hidden;
+}
+.region-collapsed .region-cards {
+  max-height: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+.region-collapsed .region-toggle-icon {
+  transform: rotate(-90deg);
+}
+.region-collapsed .region-toggle {
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+
 /* ── PROPERTY MAP ── */
 .map-popup {
   width: 280px;
@@ -521,10 +583,16 @@
 
 /* Tier item rows */
 .rank-tier-items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 3px;
   margin-left: 42px;
+}
+@media (min-width: 900px) {
+  .rank-tier-items { grid-template-columns: 1fr 1fr; gap: 4px; }
+}
+@media (min-width: 1400px) {
+  .rank-tier-items { grid-template-columns: 1fr 1fr 1fr; }
 }
 .rank-tier-item {
   display: flex;

@@ -118,19 +118,24 @@
       showUserModal();
     });
 
-    var navRight = document.querySelector('.nav-right');
-    navRight.parentNode.insertBefore(pill, navRight);
+    var nav = document.querySelector('.nav');
+    if (nav) nav.appendChild(pill);
   }
 
   // --- Rankings nav link ---
   function addRankingsNavLink() {
     var nav = document.querySelector('.nav');
-    var navRight = document.querySelector('.nav-right');
+    if (!nav) return;
+    var graveLink = nav.querySelector('.nav-grave');
     var link = document.createElement('a');
     link.href = '#rankings';
     link.textContent = 'Rankings';
     link.className = 'nav-rankings-link';
-    nav.insertBefore(link, navRight);
+    if (graveLink) {
+      nav.insertBefore(link, graveLink);
+    } else {
+      nav.appendChild(link);
+    }
   }
 
   // --- User modal ---
@@ -302,7 +307,42 @@
         '<div class="vote-row-details" data-details></div>';
 
       card.appendChild(voteRow);
+
+      // Print button per card
+      if (!card.querySelector('.card-print-btn')) {
+        var printBtn = document.createElement('button');
+        printBtn.className = 'card-print-btn';
+        printBtn.title = 'Print this property';
+        printBtn.innerHTML = '<i class="bi bi-printer"></i>';
+        printBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          printSingleCard(pid);
+        });
+        card.appendChild(printBtn);
+      }
     });
+  }
+
+  // Print a single property card
+  function printSingleCard(pid) {
+    var card = document.getElementById(pid);
+    if (!card) return;
+    var clone = card.cloneNode(true);
+    clone.style.cssText = 'box-shadow:none;border:1px solid #ddd;max-width:700px;margin:0 auto;overflow:visible;position:relative;';
+    // Remove interactive elements from clone
+    clone.querySelectorAll('.card-print-btn, .vote-row, .notes-row, .card-details-bar, .edit-btn').forEach(function (el) { el.remove(); });
+    var w = window.open('', '_blank');
+    if (!w) return;
+    w.document.write('<!DOCTYPE html><html><head><title>Print ' + pid.toUpperCase() + '</title>');
+    // Copy stylesheets
+    document.querySelectorAll('link[rel="stylesheet"], style').forEach(function (s) {
+      w.document.write(s.outerHTML);
+    });
+    w.document.write('</head><body style="padding:1.5rem;background:#fff;">');
+    w.document.write(clone.outerHTML);
+    w.document.write('</body></html>');
+    w.document.close();
+    setTimeout(function () { w.print(); }, 400);
   }
 
   // --- Update vote UI with current data ---
@@ -813,6 +853,12 @@
           card.classList.remove('graveyarded');
         }
       });
+
+      // Update header property count (non-graveyard)
+      var totalProps = typeof PROPERTIES !== 'undefined' ? PROPERTIES.length : 0;
+      var activeCount = totalProps - Object.keys(GRAVEYARD_IDS).length;
+      var subtitle = document.getElementById('header-subtitle');
+      if (subtitle) subtitle.textContent = activeCount + ' Properties \u00b7 North Carolina';
 
       // Sync map markers with graveyard state
       if (propertyMap) {
@@ -1863,7 +1909,7 @@
       }
 
       var popupHtml =
-        '<div class="map-popup" onclick="document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' +
+        '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
           '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
           '<div class="map-popup-overlay">' +
             '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +
@@ -1915,7 +1961,7 @@
     }
 
     var popupHtml =
-      '<div class="map-popup" onclick="document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' +
+      '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
         '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
         '<div class="map-popup-overlay">' +
           '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +

@@ -470,6 +470,65 @@ var PropertyRenderer = (function () {
     }
   }
 
+  // --- Render cards grouped by region into collapsible sections ---
+  function renderCardsByRegion(props) {
+    var propById = {};
+    props.forEach(function (p) { propById[p.id] = p; });
+
+    var html = '';
+    var assigned = {};
+
+    REGIONS.forEach(function (region) {
+      var items = [];
+      region.ids.forEach(function (id) {
+        if (propById[id]) { items.push(propById[id]); assigned[id] = true; }
+      });
+      if (items.length === 0) return;
+
+      var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      html += '<div class="region-section" id="' + sectionId + '">';
+      html += '<button class="region-toggle" data-region="' + sectionId + '">';
+      html += '<span class="region-toggle-name">' + esc(region.name) + '</span>';
+      html += '<span class="region-toggle-count">' + items.length + ' properties</span>';
+      html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
+      html += '</button>';
+      html += '<div class="region-cards">';
+      items.forEach(function (p) { html += renderCard(p); });
+      html += '</div></div>';
+    });
+
+    // Stragglers
+    var stragglers = props.filter(function (p) { return !assigned[p.id]; });
+    if (stragglers.length > 0) {
+      html += '<div class="region-section" id="region-other">';
+      html += '<button class="region-toggle" data-region="region-other">';
+      html += '<span class="region-toggle-name">Other</span>';
+      html += '<span class="region-toggle-count">' + stragglers.length + ' properties</span>';
+      html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
+      html += '</button>';
+      html += '<div class="region-cards">';
+      stragglers.forEach(function (p) { html += renderCard(p); });
+      html += '</div></div>';
+    }
+
+    return html;
+  }
+
+  // --- Build a lookup: property id → region section id ---
+  function buildRegionMap(props) {
+    var map = {};
+    var propById = {};
+    props.forEach(function (p) { propById[p.id] = true; });
+
+    REGIONS.forEach(function (region) {
+      var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      region.ids.forEach(function (id) {
+        if (propById[id]) map[id] = sectionId;
+      });
+    });
+    return map;
+  }
+
   // --- Initial render (populates all containers) ---
   function renderAll(props) {
     // Nav links
@@ -488,14 +547,53 @@ var PropertyRenderer = (function () {
       tbody.innerHTML = tableHtml;
     }
 
-    // Cards container
+    // Cards container — grouped by region
     var cardsContainer = document.getElementById('cards-container');
     if (cardsContainer) {
-      var cardsHtml = '';
-      props.forEach(function (p) {
-        cardsHtml += renderCard(p);
+      cardsContainer.innerHTML = renderCardsByRegion(props);
+      initRegionToggles();
+    }
+  }
+
+  // --- Region section toggle behavior ---
+  function initRegionToggles() {
+    document.querySelectorAll('.region-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var section = btn.closest('.region-section');
+        section.classList.toggle('region-collapsed');
       });
-      cardsContainer.innerHTML = cardsHtml;
+    });
+
+    // Intercept all clicks on links that point to property cards (#pN)
+    // This covers nav dropdowns, overview table links, rankings links, etc.
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href^="#p"]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      // Only handle property card anchors (#p followed by digits)
+      if (!/^#p\d+$/.test(href)) return;
+      var pid = href.slice(1);
+      var target = document.getElementById(pid);
+      if (!target) return;
+      // Don't intercept if the link is inside a card itself
+      if (link.closest('.card[id^="p"]')) return;
+      e.preventDefault();
+      openRegionForProperty(pid);
+      setTimeout(function () {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    });
+  }
+
+  // --- Open region section for a given property id ---
+  function openRegionForProperty(pid) {
+    var regionMap = buildRegionMap(typeof PROPERTIES !== 'undefined' ? PROPERTIES : []);
+    var sectionId = regionMap[pid];
+    if (sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section && section.classList.contains('region-collapsed')) {
+        section.classList.remove('region-collapsed');
+      }
     }
   }
 
@@ -514,6 +612,8 @@ var PropertyRenderer = (function () {
     renderNavLinks: renderNavLinks,
     rerenderProperty: rerenderProperty,
     renderAll: renderAll,
+    openRegionForProperty: openRegionForProperty,
+    REGIONS: REGIONS,
     scoreTotal: scoreTotal,
     fmt: fmt,
     fmtPrice: fmtPrice,
