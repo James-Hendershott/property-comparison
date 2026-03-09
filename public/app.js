@@ -33,10 +33,10 @@
       }).then(r => r.json());
     },
     getVotes: function () { return fetch('/api/votes').then(r => r.json()); },
-    castVote: function (userId, propertyId, rating) {
+    castVote: function (userId, propertyId, rating, likes, dislikes) {
       return fetch('/api/votes', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: userId, propertyId: propertyId, rating: rating })
+        body: JSON.stringify({ userId: userId, propertyId: propertyId, rating: rating, likes: likes || '', dislikes: dislikes || '' })
       }).then(r => r.json());
     },
     getRankings: function () { return fetch('/api/rankings').then(r => r.json()); },
@@ -222,6 +222,68 @@
     return s;
   }
 
+  // --- Vote justification modal ---
+  var pendingVote = null; // { pid, rating, callback }
+
+  function showVoteModal(pid, rating, existingLikes, existingDislikes, onSubmit) {
+    var propName = getDisplayName(pid);
+    var label = RATING_LABELS[rating] || '';
+    var modal = document.getElementById('vote-justify-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'vote-justify-modal';
+      modal.className = 'vote-justify-overlay';
+      modal.innerHTML =
+        '<div class="vote-justify-card">' +
+          '<div class="vote-justify-header">' +
+            '<span class="vote-justify-title"></span>' +
+            '<span class="vote-justify-rating"></span>' +
+          '</div>' +
+          '<div class="vote-justify-fields">' +
+            '<label class="vote-justify-label vj-likes-label"><i class="bi bi-hand-thumbs-up"></i> Likes</label>' +
+            '<textarea class="vote-justify-input" id="vj-likes" placeholder="What do you like about this property?" rows="2"></textarea>' +
+            '<label class="vote-justify-label vj-dislikes-label"><i class="bi bi-hand-thumbs-down"></i> Dislikes</label>' +
+            '<textarea class="vote-justify-input" id="vj-dislikes" placeholder="Any concerns or drawbacks?" rows="2"></textarea>' +
+          '</div>' +
+          '<div class="vote-justify-actions">' +
+            '<button class="vote-justify-skip" id="vj-skip">Skip</button>' +
+            '<button class="vote-justify-submit" id="vj-submit">Submit Rating</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(modal);
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeVoteModal(true);
+      });
+      document.getElementById('vj-skip').addEventListener('click', function () {
+        closeVoteModal(true);
+      });
+      document.getElementById('vj-submit').addEventListener('click', function () {
+        closeVoteModal(false);
+      });
+    }
+
+    modal.querySelector('.vote-justify-title').textContent = propName;
+    modal.querySelector('.vote-justify-rating').textContent = rating + '\u2605 — ' + label;
+    modal.querySelector('.vote-justify-rating').style.color = RATING_COLORS[rating] || '#999';
+    document.getElementById('vj-likes').value = existingLikes || '';
+    document.getElementById('vj-dislikes').value = existingDislikes || '';
+    pendingVote = { pid: pid, rating: rating, onSubmit: onSubmit };
+    modal.classList.add('open');
+    setTimeout(function () { document.getElementById('vj-likes').focus(); }, 100);
+  }
+
+  function closeVoteModal(skip) {
+    var modal = document.getElementById('vote-justify-modal');
+    if (modal) modal.classList.remove('open');
+    if (pendingVote) {
+      var likes = skip ? '' : (document.getElementById('vj-likes').value || '').trim();
+      var dislikes = skip ? '' : (document.getElementById('vj-dislikes').value || '').trim();
+      pendingVote.onSubmit(pendingVote.rating, likes, dislikes);
+      pendingVote = null;
+    }
+  }
+
   // --- Inject vote rows into each card ---
   function injectVoteRows() {
     document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
@@ -253,17 +315,23 @@
       var starsContainer = row.querySelector('[data-stars]');
       starsContainer.innerHTML = '';
       var myRating = 0;
+      var myLikes = '';
+      var myDislikes = '';
       if (data && currentUser) {
         for (var i = 0; i < data.votes.length; i++) {
           if (data.votes[i].userId === currentUser.id) {
             myRating = data.votes[i].rating;
+            myLikes = data.votes[i].likes || '';
+            myDislikes = data.votes[i].dislikes || '';
             break;
           }
         }
       }
       var stars = createStars(pid, myRating, function (rating) {
-        API.castVote(currentUser.id, pid, rating).then(function () {
-          refreshAllVotes();
+        showVoteModal(pid, rating, myLikes, myDislikes, function (r, likes, dislikes) {
+          API.castVote(currentUser.id, pid, r, likes, dislikes).then(function () {
+            refreshAllVotes();
+          });
         });
       });
       starsContainer.appendChild(stars);
@@ -276,11 +344,19 @@
         avgEl.textContent = 'No votes yet';
       }
 
-      // Individual votes
+      // Individual votes with likes/dislikes
       var detailsEl = row.querySelector('[data-details]');
       if (data && data.votes.length > 0) {
         detailsEl.innerHTML = data.votes.map(function (v) {
-          return '<span class="vote-chip">' + escapeHtml(v.userName) + ': ' + v.rating + '\u2605</span>';
+          var chip = '<span class="vote-chip">' + escapeHtml(v.userName) + ': ' + v.rating + '\u2605</span>';
+          var feedback = '';
+          if (v.likes || v.dislikes) {
+            feedback = '<div class="vote-feedback">';
+            if (v.likes) feedback += '<span class="vote-fb-like"><i class="bi bi-hand-thumbs-up-fill"></i> ' + escapeHtml(v.likes) + '</span>';
+            if (v.dislikes) feedback += '<span class="vote-fb-dislike"><i class="bi bi-hand-thumbs-down-fill"></i> ' + escapeHtml(v.dislikes) + '</span>';
+            feedback += '</div>';
+          }
+          return chip + feedback;
         }).join(' ');
       } else {
         detailsEl.innerHTML = '';

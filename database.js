@@ -116,6 +116,20 @@ async function init() {
     console.error('Rating migration error (non-fatal):', e.message);
   }
 
+  // --- Migration: add likes/dislikes columns to votes ---
+  try {
+    const cols = db.exec("PRAGMA table_info(votes)");
+    const colNames = cols.length > 0 ? cols[0].values.map(function(r) { return r[1]; }) : [];
+    if (colNames.indexOf('likes') < 0) {
+      console.log('Adding likes/dislikes columns to votes table...');
+      db.run("ALTER TABLE votes ADD COLUMN likes TEXT DEFAULT ''");
+      db.run("ALTER TABLE votes ADD COLUMN dislikes TEXT DEFAULT ''");
+      console.log('Likes/dislikes columns added.');
+    }
+  } catch (e) {
+    console.error('Likes/dislikes migration error (non-fatal):', e.message);
+  }
+
   save();
 }
 
@@ -149,20 +163,20 @@ function getOrCreateUser(name) {
   return { id: inserted[0].id, name: trimmed };
 }
 
-function castVote(userId, propertyId, rating) {
+function castVote(userId, propertyId, rating, likes, dislikes) {
   run(
-    `INSERT INTO votes (user_id, property_id, rating, updated_at)
-     VALUES (?, ?, ?, datetime('now'))
+    `INSERT INTO votes (user_id, property_id, rating, likes, dislikes, updated_at)
+     VALUES (?, ?, ?, ?, ?, datetime('now'))
      ON CONFLICT(user_id, property_id)
-     DO UPDATE SET rating = excluded.rating, updated_at = datetime('now')`,
-    [userId, propertyId, rating]
+     DO UPDATE SET rating = excluded.rating, likes = excluded.likes, dislikes = excluded.dislikes, updated_at = datetime('now')`,
+    [userId, propertyId, rating, likes || '', dislikes || '']
   );
   save();
 }
 
 function getAllVotes() {
   const rows = query(`
-    SELECT v.property_id, v.rating, u.name AS user_name, u.id AS user_id
+    SELECT v.property_id, v.rating, v.likes, v.dislikes, u.name AS user_name, u.id AS user_id
     FROM votes v JOIN users u ON v.user_id = u.id
     ORDER BY v.property_id, u.name
   `);
@@ -175,6 +189,8 @@ function getAllVotes() {
       userId: row.user_id,
       userName: row.user_name,
       rating: row.rating,
+      likes: row.likes || '',
+      dislikes: row.dislikes || '',
     });
     grouped[row.property_id].total += row.rating;
     grouped[row.property_id].count += 1;

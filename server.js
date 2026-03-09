@@ -43,14 +43,14 @@ app.get('/api/users', (_req, res) => {
 
 app.post('/api/votes', (req, res) => {
   try {
-    const { userId, propertyId, rating } = req.body;
+    const { userId, propertyId, rating, likes, dislikes } = req.body;
     if (!userId || !propertyId || !rating) {
       return res.status(400).json({ error: 'userId, propertyId, and rating are required' });
     }
     if (rating < 1 || rating > 7) {
       return res.status(400).json({ error: 'Rating must be between 1 and 7' });
     }
-    db.castVote(userId, propertyId, rating);
+    db.castVote(userId, propertyId, rating, likes, dislikes);
     res.json({ ok: true });
   } catch (err) {
     res.status(500).json({ error: err.message });

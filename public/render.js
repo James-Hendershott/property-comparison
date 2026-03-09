@@ -388,39 +388,57 @@ var PropertyRenderer = (function () {
     return html;
   }
 
-  // --- Render nav links grouped by county ---
+  // --- Render nav links grouped by geographic region ---
+  var REGIONS = [
+    { name: 'Western Mtns',   ids: ['p3','p5','p19','p20','p21','p22'] },
+    { name: 'Foothills',      ids: ['p1','p16','p17','p18','p24','p32','p33','p34','p35','p42','p44','p48'] },
+    { name: 'High Country',   ids: ['p10','p15','p23','p47'] },
+    { name: 'N. Piedmont',    ids: ['p2','p4','p25','p26','p27','p37'] },
+    { name: 'C. Piedmont',    ids: ['p7','p14','p39','p40','p46'] },
+    { name: 'S. Piedmont',    ids: ['p30','p31','p45'] },
+    { name: 'Eastern',        ids: ['p6','p8','p13','p28','p29','p36','p43'] },
+    { name: 'Coastal',        ids: ['p9','p11','p12','p38','p41'] }
+  ];
+
   function renderNavLinks(props) {
-    // Group properties by county
-    var counties = {};
-    var countyOrder = [];
-    props.forEach(function (p) {
-      var county = p.county || 'Other';
-      if (!counties[county]) {
-        counties[county] = [];
-        countyOrder.push(county);
-      }
-      counties[county].push(p);
-    });
-    countyOrder.sort();
+    var propById = {};
+    props.forEach(function (p) { propById[p.id] = p; });
 
     var html = '';
-    countyOrder.forEach(function (county) {
-      var items = counties[county];
-      if (items.length === 1) {
-        // Single property — just show as a direct link
-        var p = items[0];
-        html += '<a href="#' + esc(p.id) + '" class="nav-single">' + esc(p.navLabel) + '</a>\n';
-      } else {
-        // County group dropdown
-        html += '<div class="nav-group">' +
-          '<button class="nav-group-btn">' + esc(county) + ' <span class="nav-group-count">' + items.length + '</span></button>' +
-          '<div class="nav-group-dropdown">';
-        items.forEach(function (p) {
-          html += '<a href="#' + esc(p.id) + '">' + esc(p.navLabel) + ' <span class="nav-group-pid">' + p.id.toUpperCase() + '</span></a>';
-        });
-        html += '</div></div>\n';
-      }
+    REGIONS.forEach(function (region) {
+      var items = [];
+      region.ids.forEach(function (id) {
+        if (propById[id]) items.push(propById[id]);
+      });
+      if (items.length === 0) return;
+
+      html += '<div class="nav-group">' +
+        '<button class="nav-group-btn">' + esc(region.name) +
+        ' <span class="nav-group-count">' + items.length + '</span></button>' +
+        '<div class="nav-group-dropdown">';
+      items.forEach(function (p) {
+        html += '<a href="#' + esc(p.id) + '">' +
+          '<span class="nav-dd-label">' + esc(p.navLabel) + '</span>' +
+          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + p.id.toUpperCase() + '</span></a>';
+      });
+      html += '</div></div>\n';
     });
+
+    // Catch any properties not in a region
+    var assigned = {};
+    REGIONS.forEach(function (r) { r.ids.forEach(function (id) { assigned[id] = true; }); });
+    var stragglers = props.filter(function (p) { return !assigned[p.id]; });
+    if (stragglers.length > 0) {
+      html += '<div class="nav-group">' +
+        '<button class="nav-group-btn">Other <span class="nav-group-count">' + stragglers.length + '</span></button>' +
+        '<div class="nav-group-dropdown">';
+      stragglers.forEach(function (p) {
+        html += '<a href="#' + esc(p.id) + '">' +
+          '<span class="nav-dd-label">' + esc(p.navLabel) + '</span>' +
+          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + p.id.toUpperCase() + '</span></a>';
+      });
+      html += '</div></div>\n';
+    }
     return html;
   }
 
