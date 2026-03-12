@@ -10156,5 +10156,1127 @@ var PROPERTIES = [
       ],
       "note": "Caldwell County was heavily impacted by Hurricane Helene. Creek and spring on property elevate flood risk. Renovation quality must be verified — flip property."
     }
+  },
+  {
+    "id": "p49",
+    "num": 49,
+    "navLabel": "Toney Rd",
+    "address": "436 Toney Rd",
+    "city": "Bostic",
+    "state": "NC",
+    "zip": "28018",
+    "lat": 35.457323,
+    "lng": -81.811017,
+    "county": "Rutherford",
+    "price": 519900,
+    "listingLink": "https://www.coldwellbankerhomes.com/nc/bostic/436-toney-rd/pid_70002912/",
+    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/839/4346839_0.jpg",
+    "beds": 3,
+    "bath": 3.5,
+    "sqft": 3487,
+    "acres": 6.91,
+    "acresSub": "fenced pasture, pond, creek",
+    "yearBuilt": 2003,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Just listed 3/9/2026 — MLS# 4346839",
+    "badges": ["b-new"],
+    "taxRate": 0.00565,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 2938,
+    "hoa": 0,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Forest City",
+    "scores": {
+      "price": 5,
+      "acreage": 7,
+      "schools": 9,
+      "outbldgs": 7,
+      "town": 7,
+      "hospital": 6,
+      "hazards": 7,
+      "beach": 4,
+      "forested": 7,
+      "living": 8
+    },
+    "offerRange": "$480K – $500K",
+    "offerStrategy": "Above $500K cap — last sold $402K in Dec 2021, negotiate to under $500K",
+    "offerRationale": [
+      "Last sold Dec 2021 for $402K — 29% markup in 4 years",
+      "Cash/Conventional only — limits buyer pool, adds leverage",
+      "Above $500K cap — seller must come down for FHA/VA buyers",
+      "Roof and HVAC both original 2003 — 23 years old, deduct replacement costs"
+    ],
+    "tableOfferNote": "Last sold $402K in 2021 — negotiate to under $500K",
+    "highlight": "Closest match to 'family playground' vision — fenced pasture, chicken house, pond, creek, mountain views, wrap-around deck, full basement on 6.91 unrestricted acres. Sunshine Elementary 0.3 mi away (8/10 GreatSchools, 90th percentile NC elementary).",
+    "highlights": [
+      {
+        "icon": "🏡",
+        "text": "Fenced pasture + chicken house + pond + creek — turnkey homestead"
+      },
+      {
+        "icon": "🏫",
+        "text": "Sunshine Elementary 0.3 mi — 8/10 GreatSchools, 90th percentile"
+      },
+      {
+        "icon": "🏔️",
+        "text": "Mountain views from wrap-around deck + cathedral ceiling family room"
+      },
+      {
+        "icon": "🏠",
+        "text": "Full basement (1,800+ sqft) — finish for huge living expansion"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~10 mi",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Forest City",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Sunshine Elementary (8/10)",
+        "value": "0.3 mi — walking distance",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "East Rutherford Middle",
+        "value": "~6.7 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "East Rutherford High",
+        "value": "~8 mi",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Fenced pasture — already set up for livestock"
+      },
+      {
+        "icon": "✓",
+        "text": "Chicken house — outbuilding currently in use as chicken house"
+      },
+      {
+        "icon": "✓",
+        "text": "Small pond + creek on property — fishing, livestock water, kid recreation"
+      },
+      {
+        "icon": "✓",
+        "text": "Mountain views from cathedral ceiling family room + wrap-around deck"
+      },
+      {
+        "icon": "✓",
+        "text": "6.91 unrestricted acres — great mix of cleared, pasture, and wooded"
+      },
+      {
+        "icon": "✓",
+        "text": "2-car attached garage (639 sqft) — proper enclosed garage"
+      },
+      {
+        "icon": "✓",
+        "text": "Full basement — partially finished with family room, rec room, full bath"
+      },
+      {
+        "icon": "✓",
+        "text": "Sunshine Elementary 0.3 mi — 8/10 GreatSchools, B+ Niche, 90th percentile NC"
+      },
+      {
+        "icon": "✓",
+        "text": "Site-built 2003 — only 23 years old, no HOA"
+      },
+      {
+        "icon": "✓",
+        "text": "3.5 baths — 3 full + 1 half, well above average"
+      },
+      {
+        "icon": "🐴",
+        "text": "Livestock allowed — unrestricted land, no HOA, fenced pasture ready"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "$519,900 — above $500K cap by $20K"
+      },
+      {
+        "icon": "✗",
+        "text": "Cash/Conventional only — no FHA, VA, or USDA"
+      },
+      {
+        "icon": "✗",
+        "text": "Last sold Dec 2021 for $402K — 29% markup in 4 years"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bedrooms — septic rated for 3 bedrooms only"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unknown — rural Rutherford County"
+      },
+      {
+        "icon": "✗",
+        "text": "Well and septic — both need inspection"
+      },
+      {
+        "icon": "✗",
+        "text": "Roof + HVAC both original 2003 — 23 years old, nearing replacement"
+      },
+      {
+        "icon": "✗",
+        "text": "Taxes $2,938/yr — highest in Rutherford cluster"
+      }
+    ],
+    "familyFit": [
+      "Closest match to family playground vision — pond, creek, pasture, chicken house",
+      "Sunshine Elementary 0.3 mi is the best school proximity in the entire search (8/10, 90th percentile)",
+      "Full basement adds 1,800+ sqft of expansion potential for growing family"
+    ],
+    "verifyItems": [
+      {
+        "label": "Cash/Conventional Restriction",
+        "text": "No FHA/VA/USDA — verify why. Could indicate structural, well, septic, or appraisal issue"
+      },
+      {
+        "label": "Roof & HVAC Age",
+        "text": "Both original 2003 (23 years) — get condition reports and replacement quotes"
+      },
+      {
+        "label": "Internet Options",
+        "text": "Rural Rutherford County — verify broadband availability before offer"
+      },
+      {
+        "label": "Well & Septic",
+        "text": "Well water quality test and septic inspection required"
+      },
+      {
+        "label": "Flood Zone",
+        "text": "Pond + creek on property — verify FEMA flood zone status"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify why Cash/Conventional only — could signal major issue"
+      },
+      {
+        "urgent": true,
+        "text": "Roof inspection — original 2003 architectural shingle, 23 years old"
+      },
+      {
+        "urgent": true,
+        "text": "HVAC assessment — original 2003 heat pump"
+      },
+      {
+        "urgent": false,
+        "text": "Well water quality and flow rate test"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection and pump history"
+      },
+      {
+        "urgent": false,
+        "text": "Internet availability verification"
+      },
+      {
+        "urgent": false,
+        "text": "Radon test — western NC foothills area"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County, NC foothills",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "Flooding — pond + creek on property"
+        },
+        {
+          "level": "mod",
+          "text": "Radon risk — western NC foothills"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — rural wooded setting"
+        },
+        {
+          "level": "low",
+          "text": "Hurricane exposure — inland foothills, moderate wind risk"
+        }
+      ],
+      "note": "Pond and creek elevate flood risk — verify FEMA flood zone. Radon testing recommended for western NC foothills properties."
+    }
+  },
+  {
+    "id": "p50",
+    "num": 50,
+    "navLabel": "Padgett Burns",
+    "address": "142 Padgett Burns Rd",
+    "city": "Forest City",
+    "state": "NC",
+    "zip": "28043",
+    "lat": 35.404110,
+    "lng": -81.887341,
+    "county": "Rutherford",
+    "price": 409900,
+    "listingLink": "https://www.zillow.com/homedetails/142-Padgett-Burns-Rd-Forest-City-NC-28043/102166718_zpid/",
+    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/085/3804085_0.jpg",
+    "beds": 3,
+    "bath": 4,
+    "sqft": 1915,
+    "acres": 2.51,
+    "acresSub": "mostly cleared land",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Relisted ~Mar 2026 — previously sold $320K in Feb 2022",
+    "badges": ["b-new"],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 2332,
+    "hoa": 0,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Forest City / Rutherfordton",
+    "scores": {
+      "price": 6,
+      "acreage": 2,
+      "schools": 7,
+      "outbldgs": 2,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 6,
+      "beach": 4,
+      "forested": 5,
+      "living": 8
+    },
+    "offerRange": "$370K – $385K",
+    "offerStrategy": "Flip pricing — $320K to $409,900 (28% markup). Negotiate hard on reno quality.",
+    "offerRationale": [
+      "Flip pricing — bought $320K in Feb 2022, relisted at $409,900 (28% markup)",
+      "Below 5-acre minimum at 2.51 acres — significant drawback",
+      "Adjacent 4.3 ac vacant parcel listed for $85K — possible bundle to 6.8 ac total",
+      "Year built unknown — structural concerns, negotiate accordingly"
+    ],
+    "tableOfferNote": "Flip pricing from $320K — negotiate hard, consider adjacent lot bundle",
+    "highlight": "Three-level home with floor-to-ceiling fireplace, dedicated office (13'2\" × 17'7\"), and 1,500+ sqft walk-out lower level on 2.51 acres. Adjacent 4.3 ac lot available for $85K (6.8 ac total). Below 5-acre minimum — \"light restrictions\" need verification for livestock.",
+    "highlights": [
+      {
+        "icon": "💼",
+        "text": "Dedicated office 13'2\" × 17'7\" — one of the largest home offices in search"
+      },
+      {
+        "icon": "🏠",
+        "text": "Three-level design — 1,915 sqft finished + 1,500 sqft walk-out lower level"
+      },
+      {
+        "icon": "🔥",
+        "text": "Floor-to-ceiling fireplace in great room"
+      },
+      {
+        "icon": "🌐",
+        "text": "Internet options — Spectrum fiber, Vyve cable, AT&T, PANGAEA fiber"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~5 mi",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Forest City / Rutherfordton",
+        "value": "~10 min each",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "FC-Dunbar Elementary (8/10)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Chase High School (B Niche)",
+        "value": "~10-15 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Dedicated office 13'2\" × 17'7\" — one of the largest home offices in search"
+      },
+      {
+        "icon": "✓",
+        "text": "Three-level design — 1,915 sqft + 1,500 sqft walk-out lower level"
+      },
+      {
+        "icon": "✓",
+        "text": "Floor-to-ceiling fireplace in great room"
+      },
+      {
+        "icon": "✓",
+        "text": "Primary suite with balcony — his/hers walk-in closets, tile shower"
+      },
+      {
+        "icon": "✓",
+        "text": "Internet confirmed — Spectrum fiber, Vyve cable, AT&T, PANGAEA nonprofit fiber"
+      },
+      {
+        "icon": "✓",
+        "text": "Rutherford County Schools — above average per Niche (53% math, 51% reading)"
+      },
+      {
+        "icon": "✓",
+        "text": "$409,900 under $500K cap"
+      },
+      {
+        "icon": "✓",
+        "text": "Rutherford Regional Medical Center ~10 min"
+      },
+      {
+        "icon": "✓",
+        "text": "Screened-in side porch + rear deck"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "BELOW 5-ACRE MINIMUM — only 2.51 acres"
+      },
+      {
+        "icon": "✗",
+        "text": "Flip pricing — $320K to $409,900 (28% markup in 4 years)"
+      },
+      {
+        "icon": "✗",
+        "text": "No significant outbuildings — 1-car garage + screened porch only"
+      },
+      {
+        "icon": "✗",
+        "text": "Year built unknown — structural condition uncertain"
+      },
+      {
+        "icon": "✗",
+        "text": "'Light restrictions' in Padgett Burns — livestock may be prohibited"
+      },
+      {
+        "icon": "✗",
+        "text": "$214/sqft — high for Forest City market ($126/sqft median)"
+      },
+      {
+        "icon": "✗",
+        "text": "Walk-out lower level unfinished"
+      },
+      {
+        "icon": "✗",
+        "text": "Rutherford County — Hurricane Helene exposure"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — 'light restrictions' must be verified for livestock"
+      }
+    ],
+    "familyFit": [
+      "Dedicated home office is ideal for remote work — largest in the search",
+      "Adjacent 4.3 ac lot ($85K) could bring total to 6.8 acres if bundled",
+      "Internet confirmed with multiple providers — critical for remote work"
+    ],
+    "verifyItems": [
+      {
+        "label": "Deed Restrictions",
+        "text": "'Light restrictions' in Padgett Burns — MUST verify livestock is permitted before proceeding"
+      },
+      {
+        "label": "Adjacent Lot",
+        "text": "4.3 ac vacant parcel at same address listed for $85K — verify availability and bundle potential"
+      },
+      {
+        "label": "Year Built / Structure",
+        "text": "Year built unknown — full structural inspection required"
+      },
+      {
+        "label": "Flip Improvements",
+        "text": "Sold $320K in 2022, now $409,900 — verify what improvements were made to justify markup"
+      },
+      {
+        "label": "Water & Sewer",
+        "text": "Verify well or city water, septic or public sewer"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify deed restrictions — 'light restrictions' may prohibit livestock (DEALBREAKER)"
+      },
+      {
+        "urgent": true,
+        "text": "Confirm adjacent 4.3 ac lot availability — needed to meet 5-acre minimum"
+      },
+      {
+        "urgent": true,
+        "text": "Verify flip improvements — what was done to justify $90K markup?"
+      },
+      {
+        "urgent": false,
+        "text": "Structural inspection — year built unknown"
+      },
+      {
+        "urgent": false,
+        "text": "Water/sewer verification — well or city? septic or public?"
+      },
+      {
+        "urgent": false,
+        "text": "Walk-out lower level moisture inspection"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County, NC foothills (Forest City area)",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "Hurricane Helene — Rutherford County affected"
+        },
+        {
+          "level": "low",
+          "text": "Flooding — mostly cleared land, low risk"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — moderate for foothills"
+        }
+      ],
+      "note": "Rutherford County experienced Hurricane Helene impacts. Mostly cleared land reduces flood risk. Verify any storm damage."
+    }
+  },
+  {
+    "id": "p51",
+    "num": 51,
+    "navLabel": "Goldston",
+    "address": "1858 Lakewood Falls Rd",
+    "city": "Goldston",
+    "state": "NC",
+    "zip": "27252",
+    "lat": 35.523206,
+    "lng": -79.384520,
+    "county": "Chatham",
+    "price": 479900,
+    "listingLink": "https://www.coldwellbankerhomes.com/nc/goldston/1858-lakewood-falls-rd/pid_69923692/",
+    "image": "https://ssl.cdn-redfin.com/photo/102/bigphoto/129/10150129_0.jpg",
+    "beds": 4,
+    "bath": 3,
+    "sqft": 1728,
+    "acres": 5.99,
+    "acresSub": "Lakewood Falls community, 5+ acre lots",
+    "yearBuilt": 1981,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Just listed 3/4/2026 — MLS# 10150129",
+    "badges": ["b-new"],
+    "taxRate": 0.00336,
+    "taxLabel": "Property Tax (Chatham Co.)",
+    "taxAnnual": 1614,
+    "hoa": 0,
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Goldston; Sanford/Pittsboro ~15-20 min",
+    "scores": {
+      "price": 5,
+      "acreage": 6,
+      "schools": 7,
+      "outbldgs": 2,
+      "town": 8,
+      "hospital": 6,
+      "hazards": 8,
+      "beach": 5,
+      "forested": 6,
+      "living": 8
+    },
+    "offerRange": "$440K – $465K",
+    "offerStrategy": "Near top of budget — negotiate on age (1981) and lack of outbuildings",
+    "offerRationale": [
+      "$479,900 near top of budget — need meaningful discount",
+      "Built 1981 (45 years) — deduct for systems age, well, septic",
+      "Only 1-car garage, no outbuildings — weakest outbuilding situation in search",
+      "R-1 zoning — livestock restrictions possible, reduces buyer pool"
+    ],
+    "tableOfferNote": "1981 build + no outbuildings — negotiate on age and systems",
+    "highlight": "Beautifully remodeled 4-bed/3-bath on 5.99 acres in Chatham County's Lakewood Falls. Metal roof (40-70yr lifespan), private office, virtual tour available. R-1 zoning — MUST verify livestock is permitted.",
+    "highlights": [
+      {
+        "icon": "🏠",
+        "text": "Beautifully remodeled — updated finishes throughout, move-in ready"
+      },
+      {
+        "icon": "🛡️",
+        "text": "Metal roof — 40-70 year lifespan, no roof worries"
+      },
+      {
+        "icon": "💼",
+        "text": "Private office on main floor — ready for remote work"
+      },
+      {
+        "icon": "🏫",
+        "text": "Chatham County Schools — above average district (59% math, 57% reading)"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Sanford/Pittsboro)",
+        "value": "~15-20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Sanford / Pittsboro / Siler City",
+        "value": "~15-20 min each",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Central Carolina Hospital (Sanford)",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "JS Waters Elementary",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Chatham Central High (5/10)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~30 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "4 bedrooms / 3 full baths — exceeds 3-bed minimum"
+      },
+      {
+        "icon": "✓",
+        "text": "Private office on main floor — ready for remote work"
+      },
+      {
+        "icon": "✓",
+        "text": "Beautifully remodeled — move-in ready with updated finishes"
+      },
+      {
+        "icon": "✓",
+        "text": "5.99 acres — meets 5-acre minimum"
+      },
+      {
+        "icon": "✓",
+        "text": "Metal roof — 40-70 year lifespan, huge long-term savings"
+      },
+      {
+        "icon": "✓",
+        "text": "Chatham County Schools — above average district per Niche"
+      },
+      {
+        "icon": "✓",
+        "text": "Taxes only $1,614/yr — very affordable"
+      },
+      {
+        "icon": "✓",
+        "text": "Central NC location — access to Raleigh, Durham, Greensboro"
+      },
+      {
+        "icon": "✓",
+        "text": "63 photos + virtual tour available"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "$479,900 — near top of budget"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 1,728 sqft — modest for 4-bed/3-bath"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 1-car garage — no outbuildings, barn, or shop"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1981 — 45 years old, original structure"
+      },
+      {
+        "icon": "✗",
+        "text": "Well and septic on 45-year-old property"
+      },
+      {
+        "icon": "✗",
+        "text": "R-1 zoning — NOT agricultural, livestock may be restricted"
+      },
+      {
+        "icon": "✗",
+        "text": "Chatham Central High at 5/10 — weakest link in school district"
+      },
+      {
+        "icon": "✗",
+        "text": "$277/sqft — high for rural Chatham County"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — R-1 zoning + Lakewood Falls subdivision may prohibit livestock"
+      }
+    ],
+    "familyFit": [
+      "4 bedrooms + office exceeds family space needs",
+      "Metal roof eliminates a major long-term maintenance concern",
+      "Central NC location provides access to multiple metro areas"
+    ],
+    "verifyItems": [
+      {
+        "label": "Livestock Restrictions",
+        "text": "R-1 zoning + Lakewood Falls subdivision — MUST verify farm animals are permitted (DEALBREAKER)"
+      },
+      {
+        "label": "Heating System",
+        "text": "Listed as 'Other' — verify what heating system is installed"
+      },
+      {
+        "label": "Exterior Material",
+        "text": "Listed as 'Other' — verify exterior construction material"
+      },
+      {
+        "label": "Internet",
+        "text": "Rural Chatham County — verify broadband availability"
+      },
+      {
+        "label": "Well & Septic",
+        "text": "Both on a 45-year-old property — full inspection required"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify livestock allowed — R-1 zoning + Lakewood Falls covenants (DEALBREAKER)"
+      },
+      {
+        "urgent": true,
+        "text": "Identify heating system — listed as 'Other'"
+      },
+      {
+        "urgent": true,
+        "text": "Verify internet availability — rural location"
+      },
+      {
+        "urgent": false,
+        "text": "Well water quality and flow rate test"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — potentially 45 years old"
+      },
+      {
+        "urgent": false,
+        "text": "Lead paint disclosure — built 1981 (after 1978 cutoff but verify)"
+      }
+    ],
+    "envHazards": {
+      "location": "Chatham County, NC piedmont",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flooding — piedmont terrain, low risk"
+        },
+        {
+          "level": "low",
+          "text": "Hurricane — inland piedmont, wind risk only"
+        },
+        {
+          "level": "special",
+          "text": "Asbestos possible — 1981 build"
+        }
+      ],
+      "note": "Chatham County piedmont location has lower natural hazard risk than mountain or coastal properties. 1981 build date is after the 1978 lead paint cutoff but asbestos may still be present."
+    }
+  },
+  {
+    "id": "p52",
+    "num": 52,
+    "navLabel": "Uphill Ln",
+    "address": "2196 Uphill Ln",
+    "city": "Lenoir",
+    "state": "NC",
+    "zip": "28645",
+    "lat": 35.972241,
+    "lng": -81.565438,
+    "county": "Caldwell",
+    "price": 349900,
+    "listingLink": "https://www.zillow.com/homedetails/2196-Uphill-Ln-Lenoir-NC-28645/70112519_zpid/",
+    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/774/4322774_0.jpg",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 2032,
+    "acres": 10.67,
+    "acresSub": "Blue Ridge Mountain views, Grandfather Mountain visible",
+    "yearBuilt": 1977,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "BACK ON MARKET — 267 DOM, 6 price cuts from $550K. Price cut $20K on 3/9/2026.",
+    "badges": ["b-new"],
+    "taxRate": 0.006,
+    "taxLabel": "Property Tax (Caldwell Co. 0.60%)",
+    "taxAnnual": 1521,
+    "hoa": 0,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Lenoir, just off Hwy 321",
+    "scores": {
+      "price": 9,
+      "acreage": 9,
+      "schools": 5,
+      "outbldgs": 6,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 5,
+      "beach": 3,
+      "forested": 8,
+      "living": 5
+    },
+    "offerRange": "$310K – $330K",
+    "offerStrategy": "267 DOM + 6 price cuts + back on market = massive leverage. Push hard.",
+    "offerRationale": [
+      "267 cumulative DOM with 36% total price reduction ($550K → $349,900)",
+      "Back on market after failed contract — seller extremely motivated",
+      "Built 1977 (48 years) — roof, HVAC, well, septic all potentially $50-80K in repairs",
+      "USDA/FHA/VA eligible — zero-down financing possible"
+    ],
+    "tableOfferNote": "267 DOM, 36% price cuts, back on market — massive leverage",
+    "highlight": "Best price-per-acre with mountain views in the search — 10.67 acres with Grandfather Mountain views for $349,900. Second building ('similar to a house') + small barn. Massive 36% price decline from $550K over 10 months. RA-20 zoning — livestock-friendly.",
+    "highlights": [
+      {
+        "icon": "💰",
+        "text": "$349,900 for 10.67 acres — $32,793/acre with mountain views"
+      },
+      {
+        "icon": "🏔️",
+        "text": "Blue Ridge Mountain views — Grandfather Mountain visible"
+      },
+      {
+        "icon": "🏠",
+        "text": "Second building on property — guest house, workshop, or rental potential"
+      },
+      {
+        "icon": "📉",
+        "text": "267 DOM, 6 price cuts, 36% total reduction — extreme negotiation leverage"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~10 mi",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Lenoir)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Lenoir",
+        "value": "~15 min via Hwy 321",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Caldwell UNC Health",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Happy Valley Elementary (6/10)",
+        "value": "~1.6 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Hibriten High (4/10)",
+        "value": "~5 mi",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "$349,900 for 10.67 acres — best price-per-acre with mountain views"
+      },
+      {
+        "icon": "✓",
+        "text": "Blue Ridge Mountain views — Grandfather Mountain visible"
+      },
+      {
+        "icon": "✓",
+        "text": "Second building — 'similar to a house', guest house/workshop/rental potential"
+      },
+      {
+        "icon": "✓",
+        "text": "Small barn at bottom of property"
+      },
+      {
+        "icon": "✓",
+        "text": "Spacious basement — partially finished (614 sqft) with walk-out access"
+      },
+      {
+        "icon": "✓",
+        "text": "RA-20 zoning — Rural Agricultural, livestock-friendly"
+      },
+      {
+        "icon": "✓",
+        "text": "No HOA, no subdivision restrictions"
+      },
+      {
+        "icon": "✓",
+        "text": "USDA, FHA, VA eligible — flexible financing including zero-down"
+      },
+      {
+        "icon": "✓",
+        "text": "Massive negotiation leverage — 267 DOM, 6 price cuts, back on market"
+      },
+      {
+        "icon": "✓",
+        "text": "Taxes only $1,521/yr — very low"
+      },
+      {
+        "icon": "🐴",
+        "text": "Livestock allowed — RA-20 Rural Agricultural zoning, no HOA, 10.67 acres"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Built 1977 — 48 years old, major systems nearing or past end of life"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 1,418 sqft above ground (2,032 sqft total with basement)"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bed / 2 bath — minimum, no dedicated home office"
+      },
+      {
+        "icon": "✗",
+        "text": "267 DOM with 36% price reduction — biggest red flag in the search"
+      },
+      {
+        "icon": "✗",
+        "text": "Previous contract fell through — 'no fault of seller'"
+      },
+      {
+        "icon": "✗",
+        "text": "Caldwell County = Helene disaster area"
+      },
+      {
+        "icon": "✗",
+        "text": "Detached carport only — no enclosed garage"
+      },
+      {
+        "icon": "✗",
+        "text": "Hibriten High 4/10 — weak high school"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unknown — rural Caldwell County"
+      },
+      {
+        "icon": "✗",
+        "text": "'Uphill Ln' suggests steep terrain — winter access concerns"
+      }
+    ],
+    "familyFit": [
+      "10.67 acres provides maximum space for homesteading and livestock",
+      "Second building = instant guest house or workshop from day one",
+      "Proximity to Boone/Blowing Rock for mountain recreation"
+    ],
+    "verifyItems": [
+      {
+        "label": "Why 267 DOM?",
+        "text": "Was it purely overpricing or are there structural/access/environmental defects? Critical to answer before offer."
+      },
+      {
+        "label": "Previous Contract",
+        "text": "'Back on market, no fault of seller' — request disclosure on why previous contract fell through"
+      },
+      {
+        "label": "Second Building",
+        "text": "Verify: permitted? condition? utilities connected? Could be major asset or major liability"
+      },
+      {
+        "label": "Hurricane Helene",
+        "text": "Caldwell County FEMA disaster area — inspect all structures, drainage, foundation"
+      },
+      {
+        "label": "Major Systems",
+        "text": "1977 build — roof, HVAC, plumbing, electrical, well, septic all need full inspection"
+      },
+      {
+        "label": "Access/Terrain",
+        "text": "'Uphill Ln' — verify winter access, driveway grade, 4WD requirement"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Determine why property won't sell — 267 DOM, $200K in cuts"
+      },
+      {
+        "urgent": true,
+        "text": "Verify Hurricane Helene impact — Caldwell County FEMA disaster area"
+      },
+      {
+        "urgent": true,
+        "text": "Inspect second building — permitted? structural condition? utilities?"
+      },
+      {
+        "urgent": true,
+        "text": "Full systems inspection — roof, HVAC, plumbing, electrical (all 48 years old)"
+      },
+      {
+        "urgent": false,
+        "text": "Well water quality and flow rate test"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — potentially original 1977 system"
+      },
+      {
+        "urgent": false,
+        "text": "Internet availability verification"
+      },
+      {
+        "urgent": false,
+        "text": "Winter access test — drive 'Uphill Ln' in bad conditions"
+      },
+      {
+        "urgent": false,
+        "text": "Radon test — western NC foothills"
+      }
+    ],
+    "envHazards": {
+      "location": "Caldwell County, western NC foothills (Happy Valley area)",
+      "pills": [
+        {
+          "level": "high",
+          "text": "Hurricane Helene — Caldwell County FEMA disaster area"
+        },
+        {
+          "level": "mod",
+          "text": "Landslide risk — 'Uphill Ln' steep terrain"
+        },
+        {
+          "level": "mod",
+          "text": "Flooding — mountain drainage"
+        },
+        {
+          "level": "mod",
+          "text": "Radon — western NC foothills"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — wooded mountain setting"
+        },
+        {
+          "level": "special",
+          "text": "Asbestos possible — 1977 build (pre-ban)"
+        }
+      ],
+      "note": "Caldwell County FEMA disaster area from Hurricane Helene. Steep terrain ('Uphill Ln') elevates landslide and access risks. 1977 build may contain asbestos. Radon testing recommended."
+    }
   }
 ];

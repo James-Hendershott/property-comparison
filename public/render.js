@@ -391,10 +391,10 @@ var PropertyRenderer = (function () {
   // --- Render nav links grouped by geographic region ---
   var REGIONS = [
     { name: 'Western Mtns',   ids: ['p3','p5','p19','p20','p21','p22'] },
-    { name: 'Foothills',      ids: ['p1','p16','p17','p18','p24','p32','p33','p34','p35','p42','p44','p48'] },
+    { name: 'Foothills',      ids: ['p1','p16','p17','p18','p24','p32','p33','p34','p35','p42','p44','p48','p49','p50','p52'] },
     { name: 'High Country',   ids: ['p10','p15','p23','p47'] },
     { name: 'N. Piedmont',    ids: ['p2','p4','p25','p26','p27','p37'] },
-    { name: 'C. Piedmont',    ids: ['p7','p14','p39','p40','p46'] },
+    { name: 'C. Piedmont',    ids: ['p7','p14','p39','p40','p46','p51'] },
     { name: 'S. Piedmont',    ids: ['p30','p31','p45'] },
     { name: 'Eastern',        ids: ['p6','p8','p13','p28','p29','p36','p43'] },
     { name: 'Coastal',        ids: ['p9','p11','p12','p38','p41'] }
