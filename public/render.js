@@ -126,6 +126,7 @@ var PropertyRenderer = (function () {
       if (b === 'b-new') html += '<span class="badge b-new">NEW</span>';
       else if (b === 'b-removed') html += '<span class="badge b-removed">REMOVED</span>';
       else if (b === 'b-pend') html += '<span class="badge b-pend">PENDING</span>';
+      else if (b === 'b-livestock') html += '<span class="badge b-livestock">\uD83D\uDEA8 LIVESTOCK?</span>';
     });
     html += '<span class="badge ' + esc(p.typeBadge) + '">' + esc(p.type) + '</span>';
     html += '</div>'; // card-badges
@@ -380,6 +381,7 @@ var PropertyRenderer = (function () {
     p.badges.forEach(function (b) {
       if (b === 'b-new') html += '<span class="badge b-new">NEW</span> ';
       else if (b === 'b-removed') html += '<span class="badge b-removed">REMOVED</span> ';
+      else if (b === 'b-livestock') html += '<span class="badge b-livestock">\uD83D\uDEA8 LIVESTOCK?</span> ';
     });
     html += '<span class="' + esc(p.statusClass) + '">' + esc(p.status) + '</span>';
     html += '</td>';
