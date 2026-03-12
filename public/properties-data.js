@@ -408,6 +408,10 @@ var PROPERTIES = [
       {
         "icon": "✗",
         "text": "Top of budget at ~$500K"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — $200/yr HOA CC&Rs must be verified for livestock (DEALBREAKER if prohibited)"
       }
     ],
     "familyFit": [
@@ -455,8 +459,8 @@ var PROPERTIES = [
         "text": "River bank erosion assessment"
       },
       {
-        "urgent": false,
-        "text": "HOA covenant review — verify outbuilding/livestock rules"
+        "urgent": true,
+        "text": "HOA covenant review — verify livestock (horses, chickens, goats) permitted under $200/yr HOA (DEALBREAKER)"
       }
     ],
     "envHazards": {
@@ -2063,6 +2067,10 @@ var PROPERTIES = [
       {
         "icon": "✗",
         "text": "Top of budget at ~$500K for a questionable listing"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — must verify property is outside Whiteville town limits for livestock"
       }
     ],
     "familyFit": [
@@ -2096,6 +2104,10 @@ var PROPERTIES = [
       {
         "urgent": true,
         "text": "Research property history — why $100K cut and still sitting?"
+      },
+      {
+        "urgent": true,
+        "text": "Verify outside Whiteville town limits — town rules may prohibit livestock (DEALBREAKER)"
       },
       {
         "urgent": false,
@@ -3230,6 +3242,10 @@ var PROPERTIES = [
       {
         "icon": "✗",
         "text": "No significant outbuildings mentioned"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — horses allowed but goats, chickens, cattle unverified under $150/yr HOA"
       }
     ],
     "familyFit": [
@@ -3271,6 +3287,10 @@ var PROPERTIES = [
       {
         "urgent": false,
         "text": "Creek flooding history research"
+      },
+      {
+        "urgent": true,
+        "text": "Verify all livestock species allowed — horses confirmed, must verify goats, chickens, cattle under $150/yr HOA (DEALBREAKER)"
       },
       {
         "urgent": false,
@@ -6908,11 +6928,24 @@ var PROPERTIES = [
       {
         "icon": "✗",
         "text": "Price may have increased to $409K from initial $384,900"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — $400/yr HOA gated community likely prohibits livestock (DEALBREAKER)"
       }
     ],
     "familyFit": [],
-    "verifyItems": [],
+    "verifyItems": [
+      {
+        "label": "Livestock Restrictions",
+        "text": "$400/yr HOA in Golden Valley Estates gated community — MUST verify farm animals are permitted (DEALBREAKER)"
+      }
+    ],
     "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify HOA allows livestock — $400/yr gated community HOA likely prohibits farm animals (DEALBREAKER)"
+      },
       {
         "urgent": false,
         "text": "Well water quality test"
@@ -6920,10 +6953,6 @@ var PROPERTIES = [
       {
         "urgent": false,
         "text": "Septic inspection (perked for septic)"
-      },
-      {
-        "urgent": false,
-        "text": "Review HOA covenants and restrictions"
       },
       {
         "urgent": false,
@@ -7114,11 +7143,24 @@ var PROPERTIES = [
       {
         "icon": "✗",
         "text": "~15 min to Forest City for basic amenities"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Farm animals policy — $400/yr HOA gated community likely prohibits livestock (DEALBREAKER)"
       }
     ],
     "familyFit": [],
-    "verifyItems": [],
+    "verifyItems": [
+      {
+        "label": "Livestock Restrictions",
+        "text": "$400/yr HOA in Golden Valley Estates gated community — MUST verify farm animals are permitted (DEALBREAKER)"
+      }
+    ],
     "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify HOA allows livestock — $400/yr gated community HOA likely prohibits farm animals (DEALBREAKER)"
+      },
       {
         "urgent": false,
         "text": "Well water quality test"
@@ -7126,10 +7168,6 @@ var PROPERTIES = [
       {
         "urgent": false,
         "text": "Septic system verification"
-      },
-      {
-        "urgent": false,
-        "text": "Review HOA covenants and restrictions"
       },
       {
         "urgent": false,
