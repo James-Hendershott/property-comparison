@@ -758,9 +758,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Brand new listing — year built & details unverified",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.006999999999999999,
     "taxLabel": "Property Tax (Rockingham Co. ~0.70%)",
     "taxAnnual": 2900,
@@ -7439,9 +7437,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Listed 3/6/2026 — MLS# 4351597",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0.0058,
     "taxLabel": "Property Tax (Burke Co. 0.58%)",
     "taxAnnual": 2106,
@@ -10034,9 +10030,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "Just listed 3/7/2026 — MLS# 4353932",
-    "badges": [
-      "b-new"
-    ],
+    "badges": [],
     "taxRate": 0,
     "taxLabel": "",
     "taxAnnual": 1246,
@@ -11383,7 +11377,7 @@ var PROPERTIES = [
     "county": "McDowell",
     "price": 314900,
     "listingLink": "https://www.coldwellbankerhomes.com/carolinas/124-fairfield-ln/pid_70097056/",
-    "image": "https://photos.zillowstatic.com/fp/dd5264b1d1042a8fe33ba262272bdf3d-cc_ft_1152.webp",
+    "image": "https://m1.cbhomes.com/p/620/4337723/90D6F3FC2272459/pdl23tp.webp",
     "beds": 3,
     "bath": 2,
     "sqft": 1484,

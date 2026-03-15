@@ -1597,91 +1597,119 @@
     });
   }
 
-  // --- New Properties banner + filter ---
-  function initNewPropertiesBanner() {
-    var newProps = [];
-    if (typeof PROPERTIES !== 'undefined') {
-      PROPERTIES.forEach(function (p) {
-        if (p._isNew && !GRAVEYARD_IDS[p.id]) newProps.push(p);
+  // --- Filter bar (tag-based filtering) ---
+  function initFilterBar() {
+    if (typeof PROPERTIES === 'undefined') return;
+    var bar = document.getElementById('filter-bar');
+    if (!bar) return;
+
+    var filters = [
+      {
+        key: 'isNew', label: 'NEW', icon: 'bi bi-stars',
+        test: function (p) { return p._isNew && !GRAVEYARD_IDS[p.id]; }
+      },
+      {
+        key: 'livestock', label: 'LIVESTOCK\u{1F6A8}', icon: '',
+        test: function (p) { return p.badges && p.badges.indexOf('b-livestock') >= 0 && !GRAVEYARD_IDS[p.id]; }
+      },
+      {
+        key: '5acres', label: '5+ Acres', icon: '',
+        test: function (p) { return p.acres >= 5 && !GRAVEYARD_IDS[p.id]; }
+      },
+      {
+        key: 'mfg', label: 'Manufactured', icon: '',
+        test: function (p) { return p.typeBadge === 'b-mfg' && !GRAVEYARD_IDS[p.id]; }
+      },
+      {
+        key: 'sfr', label: 'Site-Built', icon: '',
+        test: function (p) { return p.typeBadge === 'b-sfr' && !GRAVEYARD_IDS[p.id]; }
+      }
+    ];
+
+    var activeKey = null;
+
+    filters.forEach(function (f) {
+      var matching = PROPERTIES.filter(f.test);
+      if (matching.length === 0) return;
+
+      var pill = document.createElement('button');
+      pill.className = 'filter-pill';
+      pill.setAttribute('data-filter', f.key);
+      var inner = '';
+      if (f.icon) inner += '<span class="' + f.icon + '"></span> ';
+      inner += f.label;
+      inner += ' <span class="filter-pill-count">' + matching.length + '</span>';
+      pill.innerHTML = inner;
+
+      pill.addEventListener('click', function () {
+        if (activeKey === f.key) {
+          activeKey = null;
+          pill.classList.remove('active');
+          showAll();
+        } else {
+          var prev = bar.querySelector('.filter-pill.active');
+          if (prev) prev.classList.remove('active');
+          activeKey = f.key;
+          pill.classList.add('active');
+          applyFilter(f);
+        }
       });
+
+      bar.appendChild(pill);
+    });
+
+    function applyFilter(f) {
+      var matchIds = {};
+      var matchPids = [];
+      PROPERTIES.forEach(function (p) {
+        if (f.test(p)) { matchIds[p.id] = true; matchPids.push(p.id); }
+      });
+
+      // Cards
+      document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+        card.style.display = matchIds[card.id] ? '' : 'none';
+      });
+
+      // Region sections — hide empty ones, expand ones with matches
+      document.querySelectorAll('.region-section').forEach(function (section) {
+        var hasVisible = section.querySelector('.card[id^="p"]:not([style*="display: none"])');
+        if (hasVisible) {
+          section.classList.remove('region-filtered-out');
+          var rc = section.querySelector('.region-cards');
+          var tog = section.querySelector('.region-toggle');
+          if (rc) { rc.classList.add('expanded'); if (tog) tog.classList.add('expanded'); }
+        } else {
+          section.classList.add('region-filtered-out');
+        }
+      });
+
+      // Overview table
+      document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+        var link = row.querySelector('a[href^="#p"]');
+        if (!link) return;
+        var pid = link.getAttribute('href').slice(1);
+        row.style.display = matchIds[pid] ? '' : 'none';
+      });
+
+      // Map
+      filterMapRegion(matchPids);
     }
 
-    var banner = document.getElementById('new-props-banner');
-    var btn = document.getElementById('new-props-btn');
-    var countEl = document.getElementById('new-props-count');
-    var labelEl = document.getElementById('new-props-label');
-    if (!banner || !btn || newProps.length === 0) return;
-
-    banner.style.display = '';
-    countEl.textContent = newProps.length;
-
-    var isFiltered = false;
-    var newIds = {};
-    newProps.forEach(function (p) { newIds[p.id] = true; });
-
-    var newPids = newProps.map(function (p) { return p.id; });
-
-    btn.addEventListener('click', function () {
-      isFiltered = !isFiltered;
-      btn.classList.toggle('active', isFiltered);
-
-      if (isFiltered) {
-        labelEl.textContent = 'Showing New Only';
-        // Hide all non-new cards, show new ones, expand their regions
-        document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
-          card.style.display = newIds[card.id] ? '' : 'none';
-        });
-        // Collapse regions with no visible new cards, expand those with new cards
-        document.querySelectorAll('.region-section').forEach(function (section) {
-          var hasNewCard = section.querySelector('.card[id^="p"]:not([style*="display: none"])');
-          var regionCards = section.querySelector('.region-cards');
-          var toggle = section.querySelector('.region-toggle');
-          if (hasNewCard && regionCards) {
-            regionCards.classList.add('expanded');
-            if (toggle) toggle.classList.add('expanded');
-          } else if (regionCards) {
-            regionCards.classList.remove('expanded');
-            if (toggle) toggle.classList.remove('expanded');
-          }
-        });
-        // Filter overview table to show only new properties
-        document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
-          var link = row.querySelector('a[href^="#p"]');
-          if (!link) return;
-          var pid = link.getAttribute('href').slice(1);
-          row.style.display = newIds[pid] ? '' : 'none';
-        });
-        // Filter map to show only new property markers
-        filterMapRegion(newPids);
-        // Scroll to first new card
-        var first = document.getElementById(newProps[0].id);
-        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        labelEl.textContent = 'New Properties Added';
-        // Show all cards again
-        document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
-          card.style.display = '';
-        });
-        // Restore all region sections
-        document.querySelectorAll('.region-section').forEach(function (section) {
-          var regionCards = section.querySelector('.region-cards');
-          var toggle = section.querySelector('.region-toggle');
-          if (regionCards) {
-            regionCards.classList.add('expanded');
-            if (toggle) toggle.classList.add('expanded');
-          }
-        });
-        // Restore overview table (respect graveyard)
-        document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
-          var link = row.querySelector('a[href^="#p"]');
-          if (!link) return;
-          var pid = link.getAttribute('href').slice(1);
-          row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
-        });
-        // Restore all map markers
-        clearMapFilter();
-      }
-    });
+    function showAll() {
+      document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+        card.style.display = GRAVEYARD_IDS[card.id] ? 'none' : '';
+      });
+      document.querySelectorAll('.region-section').forEach(function (section) {
+        section.classList.remove('region-filtered-out');
+      });
+      document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+        var link = row.querySelector('a[href^="#p"]');
+        if (!link) return;
+        var pid = link.getAttribute('href').slice(1);
+        row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
+      });
+      clearMapFilter();
+    }
   }
 
   // --- Collapsible overview table ---
@@ -2214,7 +2242,7 @@
     initCollapsibleDetails();
     initCollapsibleOverview();
     initCollapsibleGraveyard();
-    initNewPropertiesBanner();
+    initFilterBar();
 
     // --- Nav spacer: match fixed nav height ---
     function syncNavSpacer() {
