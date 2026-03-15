@@ -1597,6 +1597,61 @@
     });
   }
 
+  // --- New Properties banner + filter ---
+  function initNewPropertiesBanner() {
+    var newProps = [];
+    if (typeof PROPERTIES !== 'undefined') {
+      PROPERTIES.forEach(function (p) {
+        if (p._isNew && !GRAVEYARD_IDS[p.id]) newProps.push(p);
+      });
+    }
+
+    var banner = document.getElementById('new-props-banner');
+    var btn = document.getElementById('new-props-btn');
+    var countEl = document.getElementById('new-props-count');
+    var labelEl = document.getElementById('new-props-label');
+    if (!banner || !btn || newProps.length === 0) return;
+
+    banner.style.display = '';
+    countEl.textContent = newProps.length;
+
+    var isFiltered = false;
+    var newIds = {};
+    newProps.forEach(function (p) { newIds[p.id] = true; });
+
+    btn.addEventListener('click', function () {
+      isFiltered = !isFiltered;
+      btn.classList.toggle('active', isFiltered);
+
+      if (isFiltered) {
+        labelEl.textContent = 'Showing New Only';
+        // Hide all non-new cards, show new ones, expand their regions
+        document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+          card.style.display = newIds[card.id] ? '' : 'none';
+        });
+        // Expand all region sections that contain new properties
+        document.querySelectorAll('.region-section').forEach(function (section) {
+          var hasNewCard = section.querySelector('.card[id^="p"]:not([style*="display: none"])');
+          var regionCards = section.querySelector('.region-cards');
+          var toggle = section.querySelector('.region-toggle');
+          if (hasNewCard && regionCards) {
+            regionCards.classList.add('expanded');
+            if (toggle) toggle.classList.add('expanded');
+          }
+        });
+        // Scroll to first new card
+        var first = document.getElementById(newProps[0].id);
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        labelEl.textContent = 'New Properties Added';
+        // Show all cards again
+        document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+          card.style.display = '';
+        });
+      }
+    });
+  }
+
   // --- Collapsible overview table ---
   function initCollapsibleOverview() {
     var ov = document.getElementById('overview');
@@ -2127,6 +2182,7 @@
     initCollapsibleDetails();
     initCollapsibleOverview();
     initCollapsibleGraveyard();
+    initNewPropertiesBanner();
 
     // --- Nav spacer: match fixed nav height ---
     function syncNavSpacer() {

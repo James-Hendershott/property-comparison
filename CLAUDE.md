@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A comprehensive real estate comparison dashboard for evaluating 48 rural property listings in North Carolina. Includes a family voting system (1-7 star ratings), interactive Leaflet map with property pins, and aggregate rankings with podium/tier visualization. Served via Express + Docker at `homes.shottsserver.com`.
+A comprehensive real estate comparison dashboard for evaluating 60 rural property listings in North Carolina. Includes a family voting system (1-7 star ratings), interactive Leaflet map with property pins, and aggregate rankings with podium/tier visualization. Served via Express + Docker at `homes.shottsserver.com`.
 
 ## Architecture
 
 - **server.js**: Express server serving `public/` as static files with REST API under `/api/`
 - **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`, `getPropertyEdits()`, `setPropertyEdits()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
 - **public/index.html**: CSS in `<style>`, lightweight HTML (~1,100 lines) — CSS custom properties in `:root`, containers for rendered content, Leaflet map section, internet guide, graveyard, footer. Leaflet CDN loaded in `<head>`.
-- **public/properties-data.js**: Single source of truth for all 48 properties as `var PROPERTIES = [...]`. Each property has `lat`/`lng` for map pins. Rendered client-side by `render.js`.
+- **public/properties-data.js**: Single source of truth for all 60 properties as `var PROPERTIES = [...]`. Each property has `lat`/`lng` for map pins and `dateAdded` for "new" badge computation. Rendered client-side by `render.js`.
 - **public/nc-boundary.js**: Simplified NC state boundary polygon (61 coordinate pairs) for map overlay mask.
-- **public/render.js**: Renders nav links (grouped by county with dropdown menus), overview table rows, and property cards from PROPERTIES data.
-- **public/app.js**: Vanilla JS IIFE — user identification, 7-star ratings, **rankings with podium top-3 + S/A/B/C/D tier groups + voter filtering**, overview table augmentation, notes system, monthly breakdown toggles, graveyard move/restore, property edit modal, **interactive Leaflet map** with NC boundary mask and hover popups, **collapsible overview table**, collapsible graveyard, table filtering/sorting, 30s polling
-- **public/app.css**: Map popup styles (`map-popup-`), voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings podium/tier styles (`rank-podium-`, `rank-tier-`, `rank-filter-`, `rank-ring`, `rank-legend-`), collapsible overview (`overview-toggle-`), collapsible graveyard (`graveyard-toggle-`), nav county groups (`nav-group-`), nav user (`nav-user`)
+- **public/render.js**: Renders nav links (grouped by region with dropdown menus), overview table rows, and property cards from PROPERTIES data. Computes dynamic "NEW" flags from `dateAdded` (4-day window) and shows "Added Xd ago" for older properties.
+- **public/app.js**: Vanilla JS IIFE — user identification, 7-star ratings, **rankings with podium top-3 + S/A/B/C/D tier groups + voter filtering**, overview table augmentation, notes system, monthly breakdown toggles, graveyard move/restore, property edit modal, **interactive Leaflet map** with NC boundary mask and hover popups, **collapsible overview table**, collapsible graveyard, table filtering/sorting, **"New Properties Added" filter banner**, 30s polling
+- **public/app.css**: Map popup styles (`map-popup-`), voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings podium/tier styles (`rank-podium-`, `rank-tier-`, `rank-filter-`, `rank-ring`, `rank-legend-`), collapsible overview (`overview-toggle-`), collapsible graveyard (`graveyard-toggle-`), nav county groups (`nav-group-`), nav user (`nav-user`), new properties banner (`new-props-`)
 
 ### One-Time Utility Scripts (`scripts/` — do not re-run)
 
@@ -106,10 +106,11 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **Monthly breakdown**: Each `.card-monthly` has expandable breakdown (`.monthly-toggle` + `.monthly-breakdown`). Calculated at 6.5%/30yr/3.5% down (FHA) with P&I + tax + insurance + PMI (0.55%)
 - **MUST DO section**: `.must-do` with `.must-do-grid` (2-col) containing `.must-do-item` elements. Universal + conditional items per property
 - **Environmental hazards**: `.env-hazards` section with `.env-pill-low`, `.env-pill-mod`, `.env-pill-high`, `.env-pill-severe`, `.env-pill-special` pills
-- **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing), `.b-removed` (gray)
+- **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing, auto-computed from `dateAdded`), `.b-removed` (gray), `.b-livestock` (livestock policy flag). `.badge-added-ago` shows "Added Xd ago" for properties past the 4-day new window.
 - **Graveyard section**: `#graveyard` below cards — static `.graveyard-card` entries for permanently removed properties + `#graveyard-dynamic` container for DB-driven entries (move/restore via UI)
 - **Nav county groups**: Properties grouped by county in nav bar. Multi-property counties render as hover dropdown buttons (`.nav-group` > `.nav-group-btn` + `.nav-group-dropdown`). Single-property counties render as direct links.
-- **Nav anchors**: `#p1` through `#p48` matching card `id` attributes (gaps for removed properties)
+- **Nav anchors**: `#p1` through `#p60` matching card `id` attributes (gaps for removed properties)
+- **New properties banner**: `#new-props-banner` below nav — auto-shows when properties with `dateAdded` within 4 days exist. Click toggles filter (hides non-new cards, expands regions). `initNewPropertiesBanner()` in app.js.
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings. Collapsed by default via `initCollapsibleOverview()`
 - **Property map**: Leaflet map (`#property-map`) with circle markers for all non-graveyarded properties. NC boundary mask grays out area outside state. `maxBounds` restricts panning to NC. Hover shows popup with thumbnail + stats. Click navigates to card. Map syncs with graveyard state.
 - **Rankings visualization**: Podium top-3 (glassmorphic cards with conic-gradient score rings, medal badges, voter pips). Below: S/A/B/C/D tier groups with thumbnail rows, hover preview cards. Voter filter bar allows filtering by individual voter or "James & Savanah" shortcut.
@@ -118,7 +119,8 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 
 ## When Adding a New Property
 
-1. Add property object to `public/properties-data.js` with all required fields including `lat`/`lng`
-2. Update the header subtitle property count in `index.html`
+1. Add property object to `public/properties-data.js` with all required fields including `lat`/`lng` and `dateAdded` (today's date as `"YYYY-MM-DD"`)
+2. Add the property ID to the appropriate region in `render.js` REGIONS array
 3. Nav links, overview table rows, and cards are auto-rendered by `render.js`
 4. Voting UI, notes, edit buttons, and map pins are auto-injected by `app.js`
+5. The "NEW" badge is auto-computed from `dateAdded` — properties within 4 days show NEW, older properties show "Added Xd ago". No manual `b-new` badge management needed.

@@ -2,6 +2,7 @@ var PROPERTIES = [
   {
     "id": "p1",
     "num": 1,
+    "dateAdded": "2026-02-20",
     "navLabel": "Lenoir",
     "address": "5933 Nubbin Creek Rd",
     "city": "Lenoir",
@@ -242,6 +243,7 @@ var PROPERTIES = [
   {
     "id": "p2",
     "num": 2,
+    "dateAdded": "2026-02-20",
     "navLabel": "Hays",
     "address": "128 Golden Trout Dr",
     "city": "Hays",
@@ -489,6 +491,7 @@ var PROPERTIES = [
   {
     "id": "p3",
     "num": 3,
+    "dateAdded": "2026-02-20",
     "navLabel": "Murphy",
     "address": "530 Hanging Dog Rd",
     "city": "Murphy",
@@ -732,6 +735,7 @@ var PROPERTIES = [
   {
     "id": "p4",
     "num": 4,
+    "dateAdded": "2026-02-20",
     "navLabel": "Madison",
     "address": "485 Amos Rd",
     "city": "Madison",
@@ -965,6 +969,7 @@ var PROPERTIES = [
   {
     "id": "p5",
     "num": 5,
+    "dateAdded": "2026-02-20",
     "navLabel": "Murphy 2",
     "address": "118 Hothouse Rd",
     "city": "Murphy",
@@ -1200,6 +1205,7 @@ var PROPERTIES = [
   {
     "id": "p6",
     "num": 6,
+    "dateAdded": "2026-02-20",
     "navLabel": "Clayton",
     "address": "308 Legare Ct",
     "city": "Clayton",
@@ -1439,6 +1445,7 @@ var PROPERTIES = [
   {
     "id": "p7",
     "num": 7,
+    "dateAdded": "2026-02-20",
     "navLabel": "Randleman",
     "address": "6916 Lawrence Farm Ln",
     "city": "Randleman",
@@ -1674,6 +1681,7 @@ var PROPERTIES = [
   {
     "id": "p8",
     "num": 8,
+    "dateAdded": "2026-02-20",
     "navLabel": "Nashville",
     "address": "1667 Pecan Dr #25",
     "city": "Nashville",
@@ -1905,6 +1913,7 @@ var PROPERTIES = [
   {
     "id": "p9",
     "num": 9,
+    "dateAdded": "2026-02-20",
     "navLabel": "Whiteville",
     "address": "701 Best Rd",
     "city": "Whiteville",
@@ -2148,6 +2157,7 @@ var PROPERTIES = [
   {
     "id": "p10",
     "num": 10,
+    "dateAdded": "2026-02-20",
     "navLabel": "Glade Valley",
     "address": "290 Stardust Ln",
     "city": "Glade Valley",
@@ -2383,6 +2393,7 @@ var PROPERTIES = [
   {
     "id": "p11",
     "num": 11,
+    "dateAdded": "2026-02-20",
     "navLabel": "Camden",
     "address": "554 N Trotman Rd",
     "city": "Camden",
@@ -2614,6 +2625,7 @@ var PROPERTIES = [
   {
     "id": "p12",
     "num": 12,
+    "dateAdded": "2026-02-20",
     "navLabel": "Supply",
     "address": "380 Hardwood Dr SW",
     "city": "Supply",
@@ -2850,6 +2862,7 @@ var PROPERTIES = [
   {
     "id": "p13",
     "num": 13,
+    "dateAdded": "2026-02-20",
     "navLabel": "Scotland Neck",
     "address": "13619 US Highway 258",
     "city": "Scotland Neck",
@@ -3084,6 +3097,7 @@ var PROPERTIES = [
   {
     "id": "p14",
     "num": 14,
+    "dateAdded": "2026-02-20",
     "navLabel": "Siler City",
     "address": "596 Greenbrier Farm Trl",
     "city": "Siler City",
@@ -3331,6 +3345,7 @@ var PROPERTIES = [
   {
     "id": "p15",
     "num": 15,
+    "dateAdded": "2026-02-20",
     "navLabel": "Creston",
     "address": "1411 Cabbage Creek Rd",
     "city": "Creston",
@@ -3558,6 +3573,7 @@ var PROPERTIES = [
   {
     "id": "p16",
     "num": 16,
+    "dateAdded": "2026-02-20",
     "navLabel": "Union Mills",
     "address": "2459 Camp Creek Rd",
     "city": "Union Mills",
@@ -3777,6 +3793,7 @@ var PROPERTIES = [
   {
     "id": "p17",
     "num": 17,
+    "dateAdded": "2026-02-20",
     "navLabel": "Lenoir 2",
     "address": "4913 Celia Creek Rd",
     "city": "Lenoir",
@@ -4004,6 +4021,7 @@ var PROPERTIES = [
   {
     "id": "p18",
     "num": 18,
+    "dateAdded": "2026-02-20",
     "navLabel": "Union Mills 2",
     "address": "188 California Branch",
     "city": "Union Mills",
@@ -4223,6 +4241,7 @@ var PROPERTIES = [
   {
     "id": "p19",
     "num": 19,
+    "dateAdded": "2026-03-04",
     "navLabel": "Sunset Ln",
     "address": "981 Sunset Ln",
     "city": "Murphy",
@@ -4421,6 +4440,7 @@ var PROPERTIES = [
   {
     "id": "p20",
     "num": 20,
+    "dateAdded": "2026-03-04",
     "navLabel": "Dickey Rd",
     "address": "1054 Dickey Rd",
     "city": "Murphy",
@@ -4601,6 +4621,7 @@ var PROPERTIES = [
   {
     "id": "p21",
     "num": 21,
+    "dateAdded": "2026-03-04",
     "navLabel": "Woody Branch",
     "address": "344 Woody Branch Rd",
     "city": "Murphy",
@@ -4801,6 +4822,7 @@ var PROPERTIES = [
   {
     "id": "p22",
     "num": 22,
+    "dateAdded": "2026-03-04",
     "navLabel": "Concord Trl",
     "address": "97 Concord Trl",
     "city": "Murphy",
@@ -5001,6 +5023,7 @@ var PROPERTIES = [
   {
     "id": "p23",
     "num": 23,
+    "dateAdded": "2026-03-04",
     "navLabel": "Bakersville",
     "address": "1010-1014 Melton Branch Rd",
     "city": "Bakersville",
@@ -5223,6 +5246,7 @@ var PROPERTIES = [
   {
     "id": "p24",
     "num": 24,
+    "dateAdded": "2026-03-04",
     "navLabel": "Wildwood Rd",
     "address": "255 Wildwood Rd",
     "city": "Lenoir",
@@ -5433,6 +5457,7 @@ var PROPERTIES = [
   {
     "id": "p25",
     "num": 25,
+    "dateAdded": "2026-03-04",
     "navLabel": "Hamptonville",
     "address": "1012 Tuckda Way",
     "city": "Hamptonville",
@@ -5639,6 +5664,7 @@ var PROPERTIES = [
   {
     "id": "p26",
     "num": 26,
+    "dateAdded": "2026-03-04",
     "navLabel": "Mount Airy",
     "address": "200 Englewood Trl",
     "city": "Mount Airy",
@@ -5833,6 +5859,7 @@ var PROPERTIES = [
   {
     "id": "p27",
     "num": 27,
+    "dateAdded": "2026-03-04",
     "navLabel": "Semora",
     "address": "409 Reaves Ln",
     "city": "Semora",
@@ -6035,6 +6062,7 @@ var PROPERTIES = [
   {
     "id": "p28",
     "num": 28,
+    "dateAdded": "2026-03-04",
     "navLabel": "Franklinton",
     "address": "45 Softwood Dr",
     "city": "Franklinton",
@@ -6237,6 +6265,7 @@ var PROPERTIES = [
   {
     "id": "p29",
     "num": 29,
+    "dateAdded": "2026-03-04",
     "navLabel": "Four Oaks",
     "address": "2222 Elevation Rd",
     "city": "Four Oaks",
@@ -6412,6 +6441,7 @@ var PROPERTIES = [
   {
     "id": "p30",
     "num": 30,
+    "dateAdded": "2026-03-04",
     "navLabel": "Wadesboro",
     "address": "4815 State Hwy 109 S",
     "city": "Wadesboro",
@@ -6590,6 +6620,7 @@ var PROPERTIES = [
   {
     "id": "p31",
     "num": 31,
+    "dateAdded": "2026-03-04",
     "navLabel": "Marshville",
     "address": "1925 Sojourn Rd",
     "city": "Marshville",
@@ -6782,6 +6813,7 @@ var PROPERTIES = [
   {
     "id": "p32",
     "num": 32,
+    "dateAdded": "2026-03-04",
     "navLabel": "Mtn Lookout",
     "address": "485 Mountain Lookout Dr",
     "city": "Bostic",
@@ -6985,6 +7017,7 @@ var PROPERTIES = [
   {
     "id": "p33",
     "num": 33,
+    "dateAdded": "2026-03-04",
     "navLabel": "Amelia Ln",
     "address": "206 Amelia Ln",
     "city": "Bostic",
@@ -7204,6 +7237,7 @@ var PROPERTIES = [
   {
     "id": "p34",
     "num": 34,
+    "dateAdded": "2026-03-04",
     "navLabel": "Rutherfordton",
     "address": "203 Burnt Chimney Ln",
     "city": "Rutherfordton",
@@ -7382,6 +7416,7 @@ var PROPERTIES = [
   {
     "id": "p35",
     "num": 35,
+    "dateAdded": "2026-03-04",
     "navLabel": "Dogwood Vis",
     "address": "1906 Dogwood Vis",
     "city": "Lenoir",
@@ -7598,6 +7633,7 @@ var PROPERTIES = [
   {
     "id": "p36",
     "num": 36,
+    "dateAdded": "2026-03-04",
     "navLabel": "Rocky Mount",
     "address": "199 Rainbow Trl",
     "city": "Rocky Mount",
@@ -7772,6 +7808,7 @@ var PROPERTIES = [
   {
     "id": "p37",
     "num": 37,
+    "dateAdded": "2026-03-04",
     "navLabel": "Cedar Grove",
     "address": "2754 Olivian Corbett Rd",
     "city": "Cedar Grove",
@@ -7966,6 +8003,7 @@ var PROPERTIES = [
   {
     "id": "p38",
     "num": 38,
+    "dateAdded": "2026-03-04",
     "navLabel": "Saint Pauls",
     "address": "10765 Barker Ten Mile Rd",
     "city": "Saint Pauls",
@@ -8168,6 +8206,7 @@ var PROPERTIES = [
   {
     "id": "p39",
     "num": 39,
+    "dateAdded": "2026-03-04",
     "navLabel": "Thomasville",
     "address": "156 Payne Rd",
     "city": "Thomasville",
@@ -8334,6 +8373,7 @@ var PROPERTIES = [
   {
     "id": "p40",
     "num": 40,
+    "dateAdded": "2026-03-04",
     "navLabel": "Troy",
     "address": "445 Warner Rd",
     "city": "Troy",
@@ -8530,6 +8570,7 @@ var PROPERTIES = [
   {
     "id": "p41",
     "num": 41,
+    "dateAdded": "2026-03-04",
     "navLabel": "Jacksonville",
     "address": "153 Porters Ridge Rd",
     "city": "Jacksonville",
@@ -8732,6 +8773,7 @@ var PROPERTIES = [
   {
     "id": "p42",
     "num": 42,
+    "dateAdded": "2026-03-04",
     "navLabel": "Forest City",
     "address": "159 Big Island Rd",
     "city": "Forest City",
@@ -8942,6 +8984,7 @@ var PROPERTIES = [
   {
     "id": "p43",
     "num": 43,
+    "dateAdded": "2026-03-04",
     "navLabel": "Greenville",
     "address": "2122 Briley Rd",
     "city": "Greenville",
@@ -9128,6 +9171,7 @@ var PROPERTIES = [
   {
     "id": "p44",
     "num": 44,
+    "dateAdded": "2026-03-04",
     "navLabel": "Fox Rd",
     "address": "4263 Fox Rd",
     "city": "Lenoir",
@@ -9310,6 +9354,7 @@ var PROPERTIES = [
   {
     "id": "p45",
     "num": 45,
+    "dateAdded": "2026-03-04",
     "navLabel": "Gibson",
     "address": "8701 X Way Rd",
     "city": "Gibson",
@@ -9532,6 +9577,7 @@ var PROPERTIES = [
   {
     "id": "p46",
     "num": 46,
+    "dateAdded": "2026-03-04",
     "navLabel": "Candor",
     "address": "132 W Moore St",
     "city": "Candor",
@@ -9738,6 +9784,7 @@ var PROPERTIES = [
   {
     "id": "p47",
     "num": 47,
+    "dateAdded": "2026-03-04",
     "navLabel": "Lansing",
     "address": "1424 Fairview Church Rd",
     "city": "Lansing",
@@ -9964,6 +10011,7 @@ var PROPERTIES = [
   {
     "id": "p48",
     "num": 48,
+    "dateAdded": "2026-03-08",
     "navLabel": "Rocky Rd",
     "address": "4386 Rocky Rd",
     "city": "Lenoir",
@@ -10198,6 +10246,7 @@ var PROPERTIES = [
   {
     "id": "p49",
     "num": 49,
+    "dateAdded": "2026-03-12",
     "navLabel": "Toney Rd",
     "address": "436 Toney Rd",
     "city": "Bostic",
@@ -10482,6 +10531,7 @@ var PROPERTIES = [
   {
     "id": "p50",
     "num": 50,
+    "dateAdded": "2026-03-12",
     "navLabel": "Padgett Burns",
     "address": "142 Padgett Burns Rd",
     "city": "Forest City",
@@ -10748,6 +10798,7 @@ var PROPERTIES = [
   {
     "id": "p51",
     "num": 51,
+    "dateAdded": "2026-03-12",
     "navLabel": "Goldston",
     "address": "1858 Lakewood Falls Rd",
     "city": "Goldston",
@@ -11014,6 +11065,7 @@ var PROPERTIES = [
   {
     "id": "p52",
     "num": 52,
+    "dateAdded": "2026-03-12",
     "navLabel": "Uphill Ln",
     "address": "2196 Uphill Ln",
     "city": "Lenoir",
@@ -11315,6 +11367,2170 @@ var PROPERTIES = [
         }
       ],
       "note": "Caldwell County FEMA disaster area from Hurricane Helene. Steep terrain ('Uphill Ln') elevates landslide and access risks. 1977 build may contain asbestos. Radon testing recommended."
+    }
+  },
+  {
+    "id": "p53",
+    "num": 53,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Marion",
+    "address": "124 Fairfield Ln",
+    "city": "Marion",
+    "state": "NC",
+    "zip": "28752",
+    "lat": 35.6365,
+    "lng": -82.0170,
+    "county": "McDowell",
+    "price": 314900,
+    "listingLink": "https://www.coldwellbankerhomes.com/carolinas/124-fairfield-ln/pid_70097056/",
+    "image": "https://photos.zillowstatic.com/fp/dd5264b1d1042a8fe33ba262272bdf3d-cc_ft_1152.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1484,
+    "acres": 5,
+    "acresSub": "OU (Open Use) zoning, mountain foothills at ~2,000 ft",
+    "yearBuilt": 2026,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Coming Soon",
+    "statusClass": "status-active",
+    "statusNote": "Under construction — showings start 3/24/2026. MLS# 4337723",
+    "badges": ["b-new", "b-livestock"],
+    "taxRate": 0.005675,
+    "taxLabel": "Property Tax (McDowell Co. 0.57%)",
+    "taxAnnual": 1787,
+    "hoa": 0,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Marion",
+    "scores": {
+      "price": 10,
+      "acreage": 5,
+      "schools": 4,
+      "outbldgs": 1,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 6,
+      "beach": 3,
+      "forested": 6,
+      "living": 5
+    },
+    "offerRange": "$300K – $315K",
+    "offerStrategy": "New construction — negotiate builder incentives + closing credit",
+    "offerRationale": [
+      "$314,900 is already the lowest price in search meeting 5-acre threshold",
+      "Builder offering $2,500 closing credit — push for $5,000+",
+      "No outbuildings, no garage, vinyl siding — builder-grade finishes justify negotiation",
+      "Coming Soon status — negotiate before showings open to wider market"
+    ],
+    "tableOfferNote": "New construction, $2,500 closing credit offered — push for more",
+    "highlight": "Brand new 2026 construction on 5 acres at ~2,000 ft for $314,900 — lowest price meeting the 5-acre threshold. OU (Open Use) zoning = total freedom for livestock and outbuildings. No HOA. Builder: 2020 Builders LLC, \"Balsam Knob\" model. I-40 corridor — Asheville ~35 min, Lake James ~15 min.",
+    "highlights": [
+      {
+        "icon": "🏗️",
+        "text": "Brand new 2026 construction — zero deferred maintenance, full warranty"
+      },
+      {
+        "icon": "💰",
+        "text": "$314,900 for 5 acres — lowest price meeting acreage threshold"
+      },
+      {
+        "icon": "🐴",
+        "text": "OU (Open Use) zoning — livestock and outbuildings unrestricted"
+      },
+      {
+        "icon": "🏔️",
+        "text": "I-40 corridor — Asheville ~35 min, Lake James ~15 min"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station (Marion)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Walmart (Marion)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Marion",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Asheville",
+        "value": "~35 min via I-40",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "McDowell Hospital (Marion)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Pleasant Gardens Elem (B- Niche)",
+        "value": "~1.1 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏞️",
+        "label": "Lake James",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "BRAND NEW 2026 construction — zero deferred maintenance, builder warranty"
+      },
+      {
+        "icon": "✓",
+        "text": "$314,900 for 5 acres — best price-to-value in entire search"
+      },
+      {
+        "icon": "✓",
+        "text": "OU (Open Use) zoning — most permissive designation, no HOA"
+      },
+      {
+        "icon": "✓",
+        "text": "Site-built — FHA, VA, conventional financing all accepted"
+      },
+      {
+        "icon": "✓",
+        "text": "I-40 corridor — Asheville 35 min, Lake James 15 min, Pisgah NF nearby"
+      },
+      {
+        "icon": "✓",
+        "text": "New well + new septic — freshly installed systems with full lifespan"
+      },
+      {
+        "icon": "✓",
+        "text": "All appliances convey including refrigerator — move-in ready"
+      },
+      {
+        "icon": "✓",
+        "text": "$135-185K budget surplus for outbuildings and improvements"
+      },
+      {
+        "icon": "🐴",
+        "text": "Livestock allowed — OU (Open Use) zoning, no HOA, 5 acres"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Only 1,484 sqft — smallest livable space of any serious contender"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bed / 2 bath — minimum, no home office without converting bedroom"
+      },
+      {
+        "icon": "✗",
+        "text": "No garage — driveway only, no covered parking or workshop"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings at all — blank slate, need to build everything"
+      },
+      {
+        "icon": "✗",
+        "text": "Vinyl siding + vinyl/tile flooring — builder-grade finishes"
+      },
+      {
+        "icon": "✗",
+        "text": "Gravel road — dust, mud, winter access concerns at 2,000 ft"
+      },
+      {
+        "icon": "✗",
+        "text": "Pleasant Gardens Elem rated D by NC DOI — mixed school signals"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unverified — gravel road at 2,000 ft may lack cable/fiber"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Builder quality unknown — research 2020 Builders LLC reputation"
+      }
+    ],
+    "familyFit": [
+      "Brand new home = safest for kids (no lead paint, no aging systems)",
+      "Lake James 15 min + Pisgah NF = excellent family recreation",
+      "OU zoning on 5 acres = kids can have chickens, goats, explore freely"
+    ],
+    "verifyItems": [
+      {
+        "label": "Internet at Address",
+        "text": "Gravel road at 2,000 ft — Spectrum cable may not reach. Verify ISP availability before any commitment."
+      },
+      {
+        "label": "Deed Restrictions",
+        "text": "Fairfield Estates subdivision may have recorded covenants even without HOA. Check deed reference 1508/915."
+      },
+      {
+        "label": "Builder Quality",
+        "text": "Research 2020 Builders LLC — NC contractor license, BBB, Google reviews, prior builds."
+      },
+      {
+        "label": "Lot Usability",
+        "text": "5 acres at 2,000 ft could be steep/rocky. How much is flat/cleared? Walk the property."
+      },
+      {
+        "label": "Helene Impact",
+        "text": "McDowell County is western NC foothills — verify any localized Helene damage to Fairfield Estates area."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify internet at this specific address — dealbreaker if no broadband"
+      },
+      {
+        "urgent": true,
+        "text": "Check deed for recorded covenants in Fairfield Estates"
+      },
+      {
+        "urgent": true,
+        "text": "Research builder (2020 Builders LLC) — reputation, warranty terms"
+      },
+      {
+        "urgent": false,
+        "text": "Walk the 5-acre lot to assess terrain, usability, views"
+      },
+      {
+        "urgent": false,
+        "text": "Verify well flow rate (GPM) and water quality test results"
+      },
+      {
+        "urgent": false,
+        "text": "Confirm gravel road is county-maintained and winter-accessible"
+      }
+    ],
+    "envHazards": {
+      "location": "McDowell County, western NC foothills (~2,000 ft elevation)",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "Hurricane Helene — McDowell County foothills exposure"
+        },
+        {
+          "level": "mod",
+          "text": "Winter access — gravel road at 2,000 ft elevation"
+        },
+        {
+          "level": "low",
+          "text": "Landslide — mountain terrain"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — wooded mountain setting"
+        }
+      ],
+      "note": "Western NC foothills at ~2,000 ft. Gravel road may be difficult in winter ice/snow. McDowell County had some Helene exposure. Overall moderate hazard profile."
+    }
+  },
+  {
+    "id": "p54",
+    "num": 54,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Bath",
+    "address": "755 Breezy Shore Rd",
+    "city": "Bath",
+    "state": "NC",
+    "zip": "27808",
+    "lat": 35.4750,
+    "lng": -76.7880,
+    "county": "Beaufort",
+    "price": 490000,
+    "listingLink": "https://www.coldwellbanker.com/nc/bath/755-breezy-shore-rd/lid-P00800000H7fktcr9DBfUDtF8ypJtzx1HcaiQTd8",
+    "image": "https://images-listings.coldwellbanker.com/NC_CCAR/10/05/59/78/9/_P/100559789_P00.jpg?width=1024",
+    "beds": 4,
+    "bath": 2,
+    "sqft": 2008,
+    "acres": 3.27,
+    "acresSub": "waterfront with shared deeded Pamlico River access",
+    "yearBuilt": 2000,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Brand new listing — 3 DOM. MLS# 100559789",
+    "badges": ["b-new"],
+    "taxRate": 0.00445,
+    "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
+    "taxAnnual": 2181,
+    "hoa": 0,
+    "drive": "~31 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Bath; Washington NC ~15 min",
+    "scores": {
+      "price": 3,
+      "acreage": 3,
+      "schools": 6,
+      "outbldgs": 8,
+      "town": 6,
+      "hospital": 6,
+      "hazards": 2,
+      "beach": 7,
+      "forested": 4,
+      "living": 5
+    },
+    "offerRange": "$450K – $475K",
+    "offerStrategy": "Near budget ceiling — negotiate on rural location and hurricane risk",
+    "offerRationale": [
+      "$490K near budget ceiling — need meaningful discount to fund improvements",
+      "Rural Beaufort County — area median much lower, $490K is aggressive",
+      "Hurricane/flood risk increases carrying costs — factor insurance into negotiation",
+      "Outbuilding apartment needs separate septic ($15-30K) — deduct from offer"
+    ],
+    "tableOfferNote": "$490K near budget ceiling — negotiate to $450-465K range",
+    "highlight": "30x40 two-story outbuilding (workshop + 600 sqft unfinished apartment above) is the standout feature. 4-bed/2-bath on 3.27 acres with shared deeded Pamlico River access. Bath is the oldest town in NC (1705). Washington NC 15 min, Greenville ~35 min.",
+    "highlights": [
+      {
+        "icon": "🏭",
+        "text": "30x40 two-story outbuilding — 1,200 sqft workshop + 600 sqft apartment potential"
+      },
+      {
+        "icon": "🏠",
+        "text": "4 bed / 2 bath / 2,008 sqft — exceeds bedroom minimum"
+      },
+      {
+        "icon": "🚣",
+        "text": "Shared deeded water access to Pamlico River — kayaking, fishing, boating"
+      },
+      {
+        "icon": "🏛️",
+        "text": "Bath — oldest town in NC (1705), historic charm"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station (Bath/Washington)",
+        "value": "~5-15 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Walmart (Washington NC)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Washington NC (county seat)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Greenville (ECU)",
+        "value": "~35 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Beaufort Co. Medical (Washington)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Vidant Medical (Greenville)",
+        "value": "~35 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Bath Elementary (above avg)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~31 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "30x40 two-story outbuilding — best outbuilding near this price point"
+      },
+      {
+        "icon": "✓",
+        "text": "600 sqft unfinished apartment above workshop — rental, office, or guest suite potential"
+      },
+      {
+        "icon": "✓",
+        "text": "4 bed / 2 bath / 2,008 sqft — exceeds 3-bed minimum"
+      },
+      {
+        "icon": "✓",
+        "text": "Shared deeded Pamlico River access — kayaking, fishing, boating"
+      },
+      {
+        "icon": "✓",
+        "text": "Built 2000 — only 26 years old, systems should have significant life"
+      },
+      {
+        "icon": "✓",
+        "text": "Bath is the oldest town in NC (1705) — genuine historic charm"
+      },
+      {
+        "icon": "✓",
+        "text": "Washington NC 15 min, Greenville ~35 min for full services"
+      },
+      {
+        "icon": "✓",
+        "text": "Brightspeed fiber (45%) + Suddenlink cable (45%) — verify at address"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "$490,000 — at budget ceiling with zero room for improvements"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3.27 acres — below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "HURRICANE EXPOSURE — eastern NC coastal plain, Florence/Dorian/Matthew all hit area"
+      },
+      {
+        "icon": "✗",
+        "text": "Flood zone risk — near Pamlico River, flood insurance could be $2-5K+/yr"
+      },
+      {
+        "icon": "✗",
+        "text": "Apartment needs separate septic ($15-30K before finishing interior)"
+      },
+      {
+        "icon": "✗",
+        "text": "Bath is tiny (~250 people) — very limited daily services"
+      },
+      {
+        "icon": "✗",
+        "text": "$244/sqft — highest price per sqft in entire search"
+      },
+      {
+        "icon": "✗",
+        "text": "Sparse listing — no HVAC, water, sewer, or interior details provided"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Livestock zoning unknown — Bath is incorporated historic village"
+      }
+    ],
+    "familyFit": [
+      "Pamlico River access = kayaking, fishing, crabbing with kids",
+      "30x40 outbuilding is versatile for kids' projects, workshop, covered play",
+      "Schools decent — Bath Elem above avg, Chocowinity Middle B Niche"
+    ],
+    "verifyItems": [
+      {
+        "label": "Flood Zone",
+        "text": "Pamlico River coastal property — FEMA flood zone check mandatory. Could add $2-5K+/yr in insurance."
+      },
+      {
+        "label": "Hurricane History",
+        "text": "Has this property been damaged by Florence (2018), Dorian (2019), Matthew (2016)?"
+      },
+      {
+        "label": "Internet at Address",
+        "text": "Bath has Brightspeed fiber (45%) and Suddenlink cable (45%) — verify at 755 Breezy Shore Rd specifically."
+      },
+      {
+        "label": "Water & Sewer",
+        "text": "Listing doesn't specify — likely well and septic. Verify source, age, condition."
+      },
+      {
+        "label": "Livestock in Bath",
+        "text": "Bath is an incorporated historic village — town may have animal ordinances despite rural county."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "FEMA flood zone check — dealbreaker if flood insurance costs $3-5K+/yr"
+      },
+      {
+        "urgent": true,
+        "text": "Verify internet at this address — fiber or cable availability"
+      },
+      {
+        "urgent": true,
+        "text": "Check hurricane damage history — Florence, Dorian, Matthew impacts"
+      },
+      {
+        "urgent": false,
+        "text": "Verify HVAC, water source, sewer type — listing is very sparse"
+      },
+      {
+        "urgent": false,
+        "text": "Confirm livestock permitted in Bath town limits"
+      },
+      {
+        "urgent": false,
+        "text": "Get quotes for apartment septic installation and finishing costs"
+      }
+    ],
+    "envHazards": {
+      "location": "Beaufort County, eastern NC coastal plain — Pamlico River",
+      "pills": [
+        {
+          "level": "high",
+          "text": "Hurricane exposure — Florence, Dorian, Matthew all hit area"
+        },
+        {
+          "level": "high",
+          "text": "Flood risk — Pamlico River waterfront, check FEMA zone"
+        },
+        {
+          "level": "mod",
+          "text": "Wind/hail — coastal NC requires separate windstorm policy"
+        },
+        {
+          "level": "special",
+          "text": "Flood insurance mandatory if in FEMA zone — $2-5K+/yr"
+        }
+      ],
+      "note": "Eastern NC coastal plain on the Pamlico River. Direct hurricane and flood exposure. Florence (2018), Dorian (2019), Matthew (2016) all impacted Beaufort County. Flood insurance likely required."
+    }
+  },
+  {
+    "id": "p55",
+    "num": 55,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Lincolnton",
+    "address": "5958 Hoover Elmore Rd",
+    "city": "Lincolnton",
+    "state": "NC",
+    "zip": "28092",
+    "lat": 35.4500,
+    "lng": -81.3200,
+    "county": "Lincoln",
+    "price": 415000,
+    "listingLink": "https://www.zillow.com/homedetails/5958-Hoover-Elmore-Rd-Lincolnton-NC-28092/83956719_zpid/",
+    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/809/4267809_0.jpg",
+    "beds": 3,
+    "bath": 1,
+    "sqft": 1699,
+    "acres": 6.36,
+    "acresSub": "country property with creek, wired barn, second septic",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Active — $415,000. MLS# 4267809 (Canopy MLS). Listed by Judy Brandt, RE/MAX Crossroads",
+    "badges": ["b-livestock"],
+    "taxRate": 0.00499,
+    "taxLabel": "Property Tax (Lincoln Co. 0.50%)",
+    "taxAnnual": 2071,
+    "hoa": 0,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Lincolnton; Charlotte ~45 min",
+    "scores": {
+      "price": 7,
+      "acreage": 7,
+      "schools": 9,
+      "outbldgs": 6,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 4,
+      "forested": 5,
+      "living": 1
+    },
+    "offerRange": "$370K – $400K",
+    "offerStrategy": "\"Dated\" condition + only 1 bathroom justifies $15-30K discount",
+    "offerRationale": [
+      "\"A bit dated\" acknowledged in listing — expect $30-50K in renovation needs",
+      "Only 1 bathroom is a near-disqualifier — deduct $15-25K for 2nd bath addition",
+      "Year built unknown — systems inspection may reveal additional deductions",
+      "Second septic already installed — saves $15-30K for ADU potential"
+    ],
+    "tableOfferNote": "Dated condition + 1 bath — negotiate on renovation costs ($370-400K)",
+    "highlight": "Best school district in the entire NC search — Lincoln County Schools rated \"highly rated\" by Niche (60% math, 53% reading). 6.36 acres with wired barn/workshop, creek, second septic tank, and fireplace. Charlotte ~45 min. Only 1 bathroom is the dealbreaker to solve.",
+    "highlights": [
+      {
+        "icon": "🏫",
+        "text": "Lincoln County Schools — \"highly rated\" by Niche (60% math, 53% reading)"
+      },
+      {
+        "icon": "🌊",
+        "text": "Creek alongside property — water feature, livestock water, irrigation"
+      },
+      {
+        "icon": "🏭",
+        "text": "Wired barn/workshop + shed/carport — existing outbuilding infrastructure"
+      },
+      {
+        "icon": "🔧",
+        "text": "Second septic already installed — ADU/guest house ready"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Lincolnton)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Lincolnton (county seat)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Charlotte",
+        "value": "~45 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Atrium Health Lincoln",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Assigned School (VERIFY zone)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "BEST SCHOOL DISTRICT — Lincoln County 60% math, 53% reading proficiency"
+      },
+      {
+        "icon": "✓",
+        "text": "6.36 acres — clears 5-acre preference with creek and usable land"
+      },
+      {
+        "icon": "✓",
+        "text": "Wired barn/workshop — electrical service already run, convertible to horse barn"
+      },
+      {
+        "icon": "✓",
+        "text": "Creek alongside property — livestock water and irrigation potential"
+      },
+      {
+        "icon": "✓",
+        "text": "Second septic tank already installed — ADU/guest house potential ($15-30K saved)"
+      },
+      {
+        "icon": "✓",
+        "text": "Fireplace in living room — backup heat, ambiance"
+      },
+      {
+        "icon": "✓",
+        "text": "Charlotte ~45 min — airport, Costco, major medical, employment access"
+      },
+      {
+        "icon": "✓",
+        "text": "$35-85K under budget — room for bathroom addition and renovations"
+      },
+      {
+        "icon": "🐴",
+        "text": "Livestock likely allowed — rural Lincoln County, needs verification"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "ONLY 1 BATHROOM — serious problem for family of 4+. Adding 2nd costs $15-25K."
+      },
+      {
+        "icon": "✗",
+        "text": "\"A bit dated\" — listing acknowledges home needs updating"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 1,699 sqft — modest for a family"
+      },
+      {
+        "icon": "✗",
+        "text": "Year built unknown — likely 1960s-1980s, aging systems probable"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bedrooms — minimum, no office without converting bedroom"
+      },
+      {
+        "icon": "✗",
+        "text": "Piedmont climate — hotter and more humid than mountain foothills"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unknown — western Lincoln County is rural"
+      },
+      {
+        "icon": "⚠️",
+        "text": "School zones vary — Lincoln County is highly rated overall but verify SPECIFIC schools"
+      }
+    ],
+    "familyFit": [
+      "Best school district in entire search — Lincoln County 60% math, if assigned schools are top-tier this is the education win",
+      "6 acres with creek and barn = kids exploring, livestock, garden potential",
+      "Charlotte 45 min = family day trips, airport for visiting family from UT"
+    ],
+    "verifyItems": [
+      {
+        "label": "Year Built",
+        "text": "Age unknown — critical for assessing systems condition. Request from agent or county records."
+      },
+      {
+        "label": "Assigned Schools",
+        "text": "Lincoln County is highly rated overall but has F-rated schools too. VERIFY exact schools for this address."
+      },
+      {
+        "label": "Second Bathroom",
+        "text": "Can a 2nd bath be added within existing footprint or does it require an addition?"
+      },
+      {
+        "label": "Internet",
+        "text": "Western Lincoln County is rural — verify broadband at this address."
+      },
+      {
+        "label": "Barn Condition",
+        "text": "Wired barn/workshop — verify structural condition, roofing, electrical capacity."
+      },
+      {
+        "label": "Creek Flood Zone",
+        "text": "Creek on property — check FEMA map for any flood zone designation."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify assigned schools — specific schools matter more than district average"
+      },
+      {
+        "urgent": true,
+        "text": "Determine year built — critical for systems assessment"
+      },
+      {
+        "urgent": true,
+        "text": "Assess feasibility of adding 2nd bathroom"
+      },
+      {
+        "urgent": true,
+        "text": "Verify internet availability at this address"
+      },
+      {
+        "urgent": false,
+        "text": "Full home inspection — roof, HVAC, electrical, plumbing all unknown"
+      },
+      {
+        "urgent": false,
+        "text": "Well water test and flow rate"
+      },
+      {
+        "urgent": false,
+        "text": "Primary septic inspection and condition check"
+      }
+    ],
+    "envHazards": {
+      "location": "Lincoln County, NC piedmont/foothills",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flooding — creek on property, check FEMA map"
+        },
+        {
+          "level": "low",
+          "text": "Hurricane — inland piedmont, wind risk only"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — rural setting"
+        }
+      ],
+      "note": "Lincoln County piedmont location has lower natural hazard risk than mountain or coastal properties. Creek on property requires flood zone verification."
+    }
+  },
+  {
+    "id": "p56",
+    "num": 56,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Marble",
+    "address": "510 Mountain Top Rd",
+    "city": "Marble",
+    "state": "NC",
+    "zip": "28905",
+    "lat": 35.1530,
+    "lng": -83.9490,
+    "county": "Cherokee",
+    "price": 334900,
+    "listingLink": "https://www.zillow.com/homedetails/510-Mountain-Top-Rd-Marble-NC-28905/230512896_zpid/",
+    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/140/153140_0.jpg",
+    "beds": 2,
+    "bath": 2,
+    "sqft": 1736,
+    "acres": 2,
+    "acresSub": "mountain setting with branch/creek nearby, manicured lawn",
+    "yearBuilt": 1985,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "~260 DOM, reduced from $349,900. MLS# 416810 (NEGA) / 153140 (Canopy)",
+    "badges": [],
+    "taxRate": 0.0061,
+    "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
+    "taxAnnual": 2043,
+    "hoa": 0,
+    "drive": "~30 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Murphy; Andrews ~10 min",
+    "scores": {
+      "price": 8,
+      "acreage": 2,
+      "schools": 5,
+      "outbldgs": 1,
+      "town": 5,
+      "hospital": 4,
+      "hazards": 6,
+      "beach": 2,
+      "forested": 5,
+      "living": 4
+    },
+    "offerRange": "$285K – $315K",
+    "offerStrategy": "260 DOM + $15K price cut = strong leverage. Push hard.",
+    "offerRationale": [
+      "260 days on market — property clearly struggling to find buyers",
+      "$15K price reduction already taken — seller showing willingness to negotiate",
+      "Only 2 bed / 2 acres — limited buyer pool for below-minimum specs",
+      "Built 1985 (41 years) — aging systems, shared well adds complexity"
+    ],
+    "tableOfferNote": "260 DOM, price already cut $15K — major negotiation leverage ($285-315K)",
+    "highlight": "Updated mountain ranch with finished walk-out basement (family room + bonus room + full bath + laundry), wood-burning stove, covered porch. Shared well with one neighbor. $334,900 with strong negotiation leverage at 260 DOM. Near Murphy and Andrews.",
+    "highlights": [
+      {
+        "icon": "📉",
+        "text": "260 DOM + $15K price cut — strong negotiation leverage"
+      },
+      {
+        "icon": "🏠",
+        "text": "Finished walk-out basement — family room, bonus room, full bath, laundry"
+      },
+      {
+        "icon": "🔥",
+        "text": "Wood-burning stove + heat pump — dual heating options"
+      },
+      {
+        "icon": "💰",
+        "text": "$334,900 well under budget — $115-165K surplus for improvements"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Murphy/Andrews)",
+        "value": "~10-15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Murphy",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Andrews",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Murphy Medical Center",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Marble Elementary (B- Niche)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~30 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "$334,900 with major negotiation leverage — could buy for $300K or less"
+      },
+      {
+        "icon": "✓",
+        "text": "Finished walk-out basement — effectively 2,400+ sqft of functional space"
+      },
+      {
+        "icon": "✓",
+        "text": "Wood-burning stove — real heat backup, free heat with firewood"
+      },
+      {
+        "icon": "✓",
+        "text": "Updated kitchen — breakfast bar, island, functional for family meals"
+      },
+      {
+        "icon": "✓",
+        "text": "Double-pane windows — energy efficiency upgrade"
+      },
+      {
+        "icon": "✓",
+        "text": "Covered porch + lower patio — two outdoor living levels"
+      },
+      {
+        "icon": "✓",
+        "text": "Near Nantahala National Forest — scenic mountain recreation"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "ONLY 2 BEDROOMS — below 3-bed minimum"
+      },
+      {
+        "icon": "✗",
+        "text": "ONLY 2 ACRES — well below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "260 DOM — sitting 9 months, something keeping buyers away"
+      },
+      {
+        "icon": "✗",
+        "text": "Shared well with one neighbor — adds complexity, well agreement needed"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings — no garage, shop, or barn"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1985 (41 years) — aging systems, roof/septic age unknown"
+      },
+      {
+        "icon": "✗",
+        "text": "Far western NC — Murphy is 2+ hrs from Asheville, limited services"
+      },
+      {
+        "icon": "✗",
+        "text": "Cherokee County internet uncertain — Blue Ridge EMC fiber ~49% coverage"
+      }
+    ],
+    "familyFit": [
+      "2 bedrooms is tough for family — kids sharing room or one in basement bonus room",
+      "Mountain setting is beautiful for kids — wildlife, streams, hiking",
+      "Murphy is remote — limited kids' activities compared to I-40 corridor towns"
+    ],
+    "verifyItems": [
+      {
+        "label": "Internet",
+        "text": "Cherokee County — call Blue Ridge Mountain EMC (706-379-3121) or SkyTek for fiber/fixed wireless."
+      },
+      {
+        "label": "Shared Well Agreement",
+        "text": "What are the terms? Who pays for repairs? What's the flow rate?"
+      },
+      {
+        "label": "Basement Egress",
+        "text": "Bonus room could serve as 3rd bedroom — does it have proper egress window?"
+      },
+      {
+        "label": "260 DOM",
+        "text": "Why isn't this selling? Price? Location? Condition? Ask agent directly."
+      },
+      {
+        "label": "Helene Impact",
+        "text": "Cherokee County western NC — verify any Helene damage to property."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify internet at this address — Cherokee County broadband uncertain"
+      },
+      {
+        "urgent": true,
+        "text": "Review shared well agreement terms and flow rate"
+      },
+      {
+        "urgent": true,
+        "text": "Check if basement bonus room has egress window for 3rd bedroom"
+      },
+      {
+        "urgent": false,
+        "text": "Roof age inspection — 41-year-old home"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — age and condition unknown"
+      },
+      {
+        "urgent": false,
+        "text": "Winter road access — 'Mountain Top Rd' at elevation"
+      }
+    ],
+    "envHazards": {
+      "location": "Cherokee County, far western NC mountains",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "Hurricane Helene — western NC mountains exposure"
+        },
+        {
+          "level": "mod",
+          "text": "Landslide — 'Mountain Top Rd' steep terrain"
+        },
+        {
+          "level": "mod",
+          "text": "Winter access — mountain road at elevation"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — wooded mountain setting"
+        }
+      ],
+      "note": "Far western NC mountain terrain. Mountain road may be difficult in winter. Helene exposure possible. Not coastal, so no hurricane/flood risk from water."
+    }
+  },
+  {
+    "id": "p57",
+    "num": 57,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Oxford",
+    "address": "4551 Sugar Maple Rd",
+    "city": "Oxford",
+    "state": "NC",
+    "zip": "27565",
+    "lat": 36.3100,
+    "lng": -78.6050,
+    "county": "Granville",
+    "price": 319000,
+    "listingLink": "https://www.redfin.com/NC/Oxford/4551-Sugar-Maple-Rd-27565/home/50270778",
+    "image": "https://images-listings.coldwellbanker.com/RD/10/15/23/73/_P/10152373_P00.jpg?width=1024",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1400,
+    "acres": 2.53,
+    "acresSub": "heavily wooded lot, manufactured home",
+    "yearBuilt": 1998,
+    "type": "Manufactured",
+    "typeBadge": "b-mfg",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Active — $319,000. MLS# 10130993 (Doorify/Triangle MLS)",
+    "badges": [],
+    "taxRate": 0.00631,
+    "taxLabel": "Property Tax (Granville Co. 0.63%)",
+    "taxAnnual": 2013,
+    "hoa": 0,
+    "drive": "~28 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Oxford; Durham ~35 min",
+    "scores": {
+      "price": 5,
+      "acreage": 1,
+      "schools": 1,
+      "outbldgs": 0,
+      "town": 5,
+      "hospital": 5,
+      "hazards": 5,
+      "beach": 2,
+      "forested": 3,
+      "living": 1
+    },
+    "offerRange": "$280K – $300K",
+    "offerStrategy": "Manufactured home + small lot = limited buyer pool, negotiate hard",
+    "offerRationale": [
+      "Manufactured home classification limits financing and appreciation",
+      "Only 2.53 acres — well below 5-acre preference, reduces value",
+      "No outbuildings at all — nothing to work with",
+      "Granville County schools rated below average — F-rated elementary"
+    ],
+    "tableOfferNote": "Manufactured home, 2.53 ac, no outbuildings — negotiate to $280-300K",
+    "highlight": "Heavily wooded 2.53-acre lot with mature trees and privacy. Recent updates: new HVAC (2021), new roof (2022). Ranch-style with vaulted ceilings and primary suite. Durham ~35 min via I-85. However, manufactured home classification, weak schools, no outbuildings, and undersized lot make this a poor fit for the family vision.",
+    "highlights": [
+      {
+        "icon": "🌲",
+        "text": "Heavily wooded 2.53 acres — mature hardwoods, strong privacy"
+      },
+      {
+        "icon": "🔧",
+        "text": "New HVAC (2021) + new roof (2022) — big-ticket maintenance handled"
+      },
+      {
+        "icon": "💰",
+        "text": "$319K leaves $130-180K budget headroom"
+      },
+      {
+        "icon": "🏙️",
+        "text": "Durham ~35 min via I-85 — Research Triangle access"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Oxford)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Oxford",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Durham",
+        "value": "~35 min via I-85",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Granville Health System",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "West Oxford Elem (5/10 GS, F state)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~28 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Heavily wooded 2.53 acres — mature trees, privacy, tranquil setting"
+      },
+      {
+        "icon": "✓",
+        "text": "New HVAC (2021) + new roof (2022) — major maintenance handled"
+      },
+      {
+        "icon": "✓",
+        "text": "Ranch-style — single story, vaulted ceilings, practical layout"
+      },
+      {
+        "icon": "✓",
+        "text": "Primary suite with walk-in closet, double vanity, garden tub"
+      },
+      {
+        "icon": "✓",
+        "text": "No HOA — freedom to modify (subject to county zoning)"
+      },
+      {
+        "icon": "✓",
+        "text": "$319K — massive budget headroom for improvements"
+      },
+      {
+        "icon": "✓",
+        "text": "Durham ~35 min — metro access for healthcare, shopping, employment"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Manufactured/modular home — limits financing, insurance, resale, appreciation"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 2.53 acres — well below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings — no barn, shop, shed, or detached garage"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 1,400 sqft — tight for growing family with remote work"
+      },
+      {
+        "icon": "✗",
+        "text": "Granville County Schools below average — West Oxford Elem rated F by state"
+      },
+      {
+        "icon": "✗",
+        "text": "Driveway parking only — no garage or carport"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unknown — rural road, no fiber/cable confirmed"
+      },
+      {
+        "icon": "✗",
+        "text": "Neighbors are similar manufactured homes on ~1-acre lots"
+      }
+    ],
+    "familyFit": [
+      "Wooded lot is great for kids exploring but 2.53 acres limits the vision",
+      "Schools are a concern — West Oxford Elem has poor state ratings",
+      "No workshop or outbuilding space for building projects"
+    ],
+    "verifyItems": [
+      {
+        "label": "Home Classification",
+        "text": "Manufactured vs modular vs site-built — affects financing, insurance, resale. Check Granville County tax records."
+      },
+      {
+        "label": "Livestock Zoning",
+        "text": "Granville County zoning for this parcel unknown. Call Planning & Zoning at (919) 693-5240."
+      },
+      {
+        "label": "Internet",
+        "text": "No fiber or cable confirmed for Sugar Maple Rd. Check Spectrum, AT&T availability."
+      },
+      {
+        "label": "Septic Age",
+        "text": "Home from 1998 — new pressure tank noted but septic tank age unknown."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify manufactured vs modular classification — affects everything"
+      },
+      {
+        "urgent": true,
+        "text": "Verify internet availability — critical for remote work"
+      },
+      {
+        "urgent": true,
+        "text": "Check Granville County zoning for livestock permissions"
+      },
+      {
+        "urgent": false,
+        "text": "Well water quality test"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — potentially 28 years old"
+      },
+      {
+        "urgent": false,
+        "text": "FEMA flood zone check"
+      }
+    ],
+    "envHazards": {
+      "location": "Granville County, NC northern piedmont",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flooding — piedmont terrain, verify FEMA map"
+        },
+        {
+          "level": "low",
+          "text": "Hurricane — inland piedmont, wind risk only"
+        },
+        {
+          "level": "special",
+          "text": "Manufactured home — higher vulnerability to wind/storm damage"
+        }
+      ],
+      "note": "Northern piedmont location has low natural hazard risk. Manufactured home classification increases vulnerability to wind events."
+    }
+  },
+  {
+    "id": "p58",
+    "num": 58,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Laurinburg",
+    "address": "1203 Turnpike Rd",
+    "city": "Laurinburg",
+    "state": "NC",
+    "zip": "28352",
+    "lat": 34.7740,
+    "lng": -79.4620,
+    "county": "Scotland",
+    "price": 399000,
+    "listingLink": "https://www.coldwellbanker.com/nc/laurinburg/1203-turnpike-rd/lid-P00800000H7ioTVdjMwBA9XgEHsU0tEQpGA200f9",
+    "image": "https://images-listings.coldwellbanker.com/NC_CCAR/10/05/60/00/1/_P/100560001_P00.jpg?width=1024",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2638,
+    "acres": 5.12,
+    "acresSub": "corner lot with mature trees, pool, privacy fencing",
+    "yearBuilt": 1977,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Brand new listing 3/13/2026. MLS# 100560001. Prior sale $249,500 (2021)",
+    "badges": ["b-new"],
+    "taxRate": 0.0072,
+    "taxLabel": "Property Tax (Scotland Co. 0.72%)",
+    "taxAnnual": 2228,
+    "hoa": 0,
+    "drive": "~27 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Laurinburg; Fayetteville ~50 min",
+    "scores": {
+      "price": 6,
+      "acreage": 7,
+      "schools": 1,
+      "outbldgs": 3,
+      "town": 7,
+      "hospital": 6,
+      "hazards": 6,
+      "beach": 3,
+      "forested": 5,
+      "living": 5
+    },
+    "offerRange": "$350K – $375K",
+    "offerStrategy": "60% markup since 2021 ($249.5K → $399K) — push back hard on overpricing",
+    "offerRationale": [
+      "Seller bought for $249,500 in 2021 — 60% markup in 5 years is aggressive",
+      "Laurinburg median home price ~$204K — $399K is well above market",
+      "Built 1977 (49 years) — aging pool, septic, roof, systems need deductions",
+      "Scotland County school quality limits buyer pool significantly"
+    ],
+    "tableOfferNote": "Bought at $249K in 2021 — 60% markup. Negotiate to $350-375K.",
+    "highlight": "5.12-acre corner lot with 2,638 sqft split-level brick home, in-ground pool with gazebo, outbuilding, and park across the street. Near hospital and shopping. BUT: Scotland County schools rank #268/321 in NC (elementary 1/10, middle 1/10) — near-disqualifying. 60% price markup since 2021 purchase.",
+    "highlights": [
+      {
+        "icon": "🏡",
+        "text": "5.12 acres — clears acreage preference with corner lot configuration"
+      },
+      {
+        "icon": "🏊",
+        "text": "In-ground pool with gazebo and 50x50 privacy-fenced area"
+      },
+      {
+        "icon": "🧱",
+        "text": "2,638 sqft split-level brick — durable, spacious, multiple living areas"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Scotland County schools #268/321 — elementary 1/10, middle 1/10"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Shopping (Laurinburg)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Laurinburg",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Fayetteville",
+        "value": "~50 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Scotland Health (Laurinburg)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Sycamore Lane Elem (1/10 GS)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Scotland Early College High (9/10)",
+        "value": "competitive enrollment",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~27 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "5.12 acres — clears acreage preference, corner lot with mature trees"
+      },
+      {
+        "icon": "✓",
+        "text": "2,638 sqft split-level — generous space with multiple living areas"
+      },
+      {
+        "icon": "✓",
+        "text": "Brick construction — durable, low-maintenance exterior"
+      },
+      {
+        "icon": "✓",
+        "text": "In-ground pool with gazebo — family recreation ready"
+      },
+      {
+        "icon": "✓",
+        "text": "Outbuilding present — storage or workspace potential"
+      },
+      {
+        "icon": "✓",
+        "text": "Park directly across the street — great for kids"
+      },
+      {
+        "icon": "✓",
+        "text": "Wood-burning stove + propane + gas-log fireplace — multiple heat sources"
+      },
+      {
+        "icon": "✓",
+        "text": "No HOA, zoned R-20 — residential flexibility"
+      },
+      {
+        "icon": "✓",
+        "text": "Near hospital, shopping, restaurants — Laurinburg amenities within minutes"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Scotland County Schools #268/321 — Sycamore Lane Elem 1/10, Carver Middle 1/10, F grades"
+      },
+      {
+        "icon": "✗",
+        "text": "60% price markup since 2021 ($249.5K → $399K) — likely overpriced"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1977 — 49 years old, aging plumbing, electrical, foundation"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bedrooms — minimum for growing family"
+      },
+      {
+        "icon": "✗",
+        "text": "Carport not garage — 2-car carport is covered but not enclosed"
+      },
+      {
+        "icon": "✗",
+        "text": "Pool = ongoing maintenance — chemicals, insurance, resurfacing costs"
+      },
+      {
+        "icon": "✗",
+        "text": "Propane heating — leased tank, ongoing fuel costs"
+      },
+      {
+        "icon": "✗",
+        "text": "Laurinburg geographically remote — Fayetteville ~50 min, Charlotte ~90 min"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Livestock zoning unknown — R-20 may restrict farm animals"
+      }
+    ],
+    "familyFit": [
+      "Pool, gazebo, park across the street = strong family playground setup",
+      "Scotland County schools are near-disqualifying — same pattern as Anson County",
+      "Scotland Early College High (9/10) could offset if enrollment is viable"
+    ],
+    "verifyItems": [
+      {
+        "label": "Livestock under R-20",
+        "text": "Does Scotland County R-20 zoning permit chickens, goats, horses? Call Planning Department."
+      },
+      {
+        "label": "School Options",
+        "text": "Scotland Early College High is 9/10 — is enrollment realistic for your family? Contact district."
+      },
+      {
+        "label": "Internet",
+        "text": "No fiber/cable mentioned — verify Spectrum or other broadband at this address."
+      },
+      {
+        "label": "Septic Age",
+        "text": "Built 1977 — septic could be original (49 years old). Full inspection critical."
+      },
+      {
+        "label": "Pool Condition",
+        "text": "Pool age, liner, pump, heater all unknown — could need $10-30K in repairs."
+      },
+      {
+        "label": "Electrical Panel",
+        "text": "1977 home may have outdated panel (Federal Pacific, Zinsco) — home inspection."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify livestock permissions under R-20 zoning — dealbreaker"
+      },
+      {
+        "urgent": true,
+        "text": "Assess school options — Scotland Early College High viability"
+      },
+      {
+        "urgent": true,
+        "text": "Verify internet availability at this address"
+      },
+      {
+        "urgent": true,
+        "text": "Full systems inspection — 49-year-old home needs thorough review"
+      },
+      {
+        "urgent": false,
+        "text": "Pool inspection — age, condition, repair costs"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — potentially original 1977 system"
+      },
+      {
+        "urgent": false,
+        "text": "Negotiate on 60% markup — target $350-375K range"
+      }
+    ],
+    "envHazards": {
+      "location": "Scotland County, NC southern piedmont/sandhills",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "Hurricane — southeastern NC, wind/rain exposure"
+        },
+        {
+          "level": "low",
+          "text": "Flooding — check FEMA map for 5-acre corner lot"
+        },
+        {
+          "level": "special",
+          "text": "Asbestos/lead possible — 1977 build (pre-ban era)"
+        }
+      ],
+      "note": "Scotland County southern piedmont. Moderate hurricane wind exposure. 1977 build may contain asbestos or lead paint. Pool adds insurance liability."
+    }
+  },
+  {
+    "id": "p59",
+    "num": 59,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Belhaven",
+    "address": "39025 US Highway 264 Byp",
+    "city": "Belhaven",
+    "state": "NC",
+    "zip": "27810",
+    "lat": 35.5420,
+    "lng": -76.6310,
+    "county": "Beaufort",
+    "price": 335000,
+    "listingLink": "https://www.zillow.com/homedetails/39025-Us-Highway-264-Byp-Belhaven-NC-27810/461017940_zpid/",
+    "image": "https://images-listings.coldwellbanker.com/NC_CCAR/10/05/60/05/0/_P/100560050_P00.jpg?width=1024",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2176,
+    "acres": 4.5,
+    "acresSub": "homestead with fruit trees, chicken coop, workshop, barn",
+    "yearBuilt": 1998,
+    "type": "Modular/Pre-Fab",
+    "typeBadge": "b-mfg",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Brand new listing 3/13/2026. MLS# 132135 (OBAR) / 100560050 (Hive)",
+    "badges": ["b-new", "b-livestock"],
+    "taxRate": 0.00445,
+    "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
+    "taxAnnual": 2005,
+    "hoa": 0,
+    "drive": "~31 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Belhaven; Washington NC ~30 min",
+    "scores": {
+      "price": 9,
+      "acreage": 6,
+      "schools": 5,
+      "outbldgs": 9,
+      "town": 5,
+      "hospital": 4,
+      "hazards": 3,
+      "beach": 7,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "$300K – $325K",
+    "offerStrategy": "Brand new listing but extreme isolation limits buyer pool",
+    "offerRationale": [
+      "Remote Belhaven location severely limits buyer pool — negotiate on isolation",
+      "Modular/pre-fab construction — limits financing options and appreciation",
+      "Hurricane and flood risk = elevated carrying costs, deduct from offer",
+      "28-year-old septic, unknown outbuilding conditions — inspection deductions"
+    ],
+    "tableOfferNote": "Remote eastern NC — negotiate on isolation factor ($300-325K)",
+    "highlight": "The most homestead-ready property in the entire search. Chicken coop (automated door!), 3-section barn, ~1,000 sqft workshop with porch, storage shed, fish pond, established fruit trees (fig, pecan, pear, peach, grapevines). 3-bed/2.5-bath on ~4.5 acres with public water. $335,000 leaves huge budget surplus. Trade-off: extreme geographic isolation.",
+    "highlights": [
+      {
+        "icon": "🐔",
+        "text": "Turnkey homestead — chicken coop (automated door), 3-section barn, workshop"
+      },
+      {
+        "icon": "🏭",
+        "text": "~1,000 sqft workshop with porch + barn + storage shed"
+      },
+      {
+        "icon": "🌳",
+        "text": "Established fruit trees — fig, pecan, pear, peach, crab apple, grapevines"
+      },
+      {
+        "icon": "💰",
+        "text": "$335K leaves $115-165K surplus for improvements and reserves"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station (Belhaven)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Washington NC)",
+        "value": "~30 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Belhaven (~500 people)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Washington NC",
+        "value": "~30 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Greenville (ECU / Vidant)",
+        "value": "~1.5 hr",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Belhaven clinic (limited)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "School (VERIFY county/district)",
+        "value": "~14-18 mi",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~31 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "BEST OUTBUILDINGS IN SEARCH — 3-section barn, ~1,000 sqft workshop, shed, chicken coop"
+      },
+      {
+        "icon": "✓",
+        "text": "Chicken coop with automated door — start keeping chickens day one"
+      },
+      {
+        "icon": "✓",
+        "text": "Established fruit orchard — fig, pecan, pear, peach, crab apple, grapevines"
+      },
+      {
+        "icon": "✓",
+        "text": "Updated kitchen — granite countertops, island, modern light fixtures"
+      },
+      {
+        "icon": "✓",
+        "text": "Clawfoot soaking tub + walk-in closet in primary — quality details"
+      },
+      {
+        "icon": "✓",
+        "text": "Two screened-in porches (front and back) — NC evenings"
+      },
+      {
+        "icon": "✓",
+        "text": "Public water — not dependent on well for drinking water"
+      },
+      {
+        "icon": "✓",
+        "text": "$335K — massive budget headroom ($115-165K surplus)"
+      },
+      {
+        "icon": "✓",
+        "text": "No HOA, no subdivision — listing explicitly markets homesteading"
+      },
+      {
+        "icon": "✓",
+        "text": "Low taxes — $2,005/yr"
+      },
+      {
+        "icon": "🐴",
+        "text": "Livestock allowed — chicken coop already there, homesteading marketed"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "EXTREME ISOLATION — Belhaven pop ~500, Washington 30 min, Greenville 1.5 hr"
+      },
+      {
+        "icon": "✗",
+        "text": "Modular/pre-fab construction — financing, insurance, resale implications"
+      },
+      {
+        "icon": "✗",
+        "text": "~4.5 acres — just below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "School distance extreme — nearest schools 14-18+ mi away"
+      },
+      {
+        "icon": "✗",
+        "text": "Healthcare access — nearest full hospital (Vidant) is 1.5+ hrs"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet massive question mark — rural eastern NC, Starlink may be only option"
+      },
+      {
+        "icon": "✗",
+        "text": "Hurricane and flood exposure — Florence hit Belhaven hard"
+      },
+      {
+        "icon": "✗",
+        "text": "On US Highway 264 — potential road noise"
+      },
+      {
+        "icon": "✗",
+        "text": "28-year-old septic — age unknown, needs inspection"
+      },
+      {
+        "icon": "⚠️",
+        "text": "County unclear — Beaufort vs Hyde affects school district and taxes"
+      }
+    ],
+    "familyFit": [
+      "Most homestead-ready property — fruit trees, chicken coop, barn, workshop = family outdoor lifestyle vision",
+      "Social isolation is real — Belhaven has ~500 people, limited youth activities",
+      "School bus rides could be 30-45+ min each way — taxing on young kids"
+    ],
+    "verifyItems": [
+      {
+        "label": "County Jurisdiction",
+        "text": "Beaufort vs Hyde County — determines school district and tax rate. Check county tax records."
+      },
+      {
+        "label": "Internet",
+        "text": "Rural eastern NC — verify broadband at this address. Check BroadbandNow, Spectrum, CenturyLink."
+      },
+      {
+        "label": "Flood Zone",
+        "text": "Eastern NC, low elevation, near Pungo River. FEMA flood map check mandatory."
+      },
+      {
+        "label": "Modular Classification",
+        "text": "HUD-code manufactured vs state-code modular — dramatically affects financing and insurance."
+      },
+      {
+        "label": "Outbuilding Condition",
+        "text": "Barn, workshop, shed, coop — ages and conditions all unknown. Inspect in person."
+      },
+      {
+        "label": "Highway Noise",
+        "text": "Property on US Highway 264 — visit at different times to assess road noise."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "Verify internet at this address — dealbreaker for two remote workers"
+      },
+      {
+        "urgent": true,
+        "text": "Confirm county (Beaufort vs Hyde) — determines schools and taxes"
+      },
+      {
+        "urgent": true,
+        "text": "FEMA flood zone check — flood insurance could be very costly"
+      },
+      {
+        "urgent": true,
+        "text": "Verify modular vs manufactured classification"
+      },
+      {
+        "urgent": false,
+        "text": "In-person inspection of all outbuildings"
+      },
+      {
+        "urgent": false,
+        "text": "Septic inspection — 28 years old"
+      },
+      {
+        "urgent": false,
+        "text": "Assess road noise from Highway 264"
+      },
+      {
+        "urgent": false,
+        "text": "Verify school bus service and ride times"
+      }
+    ],
+    "envHazards": {
+      "location": "Beaufort/Hyde County, eastern NC coastal plain — near Pungo River",
+      "pills": [
+        {
+          "level": "severe",
+          "text": "Hurricane exposure — Florence devastated Belhaven area"
+        },
+        {
+          "level": "high",
+          "text": "Flood risk — low elevation coastal plain near Pungo River"
+        },
+        {
+          "level": "mod",
+          "text": "Wind/hail — eastern NC coastal windstorm exposure"
+        },
+        {
+          "level": "special",
+          "text": "Flood insurance likely mandatory — could add $2-5K+/yr"
+        }
+      ],
+      "note": "Extreme eastern NC coastal plain near the Pungo River. Belhaven was severely impacted by Hurricane Florence (2018). High flood and hurricane risk. Flood insurance very likely required."
+    }
+  },
+  {
+    "id": "p60",
+    "num": 60,
+    "dateAdded": "2026-03-15",
+    "navLabel": "Chocowinity",
+    "address": "199 Yeats Creek Rd",
+    "city": "Chocowinity",
+    "state": "NC",
+    "zip": "27817",
+    "lat": 35.4960,
+    "lng": -77.0680,
+    "county": "Beaufort",
+    "price": 525000,
+    "listingLink": "https://www.coldwellbanker.com/nc/chocowinity/199-yates-creek-rd/lid-P00800000H7hzVLKiPKks4l2y9BRtFn06QsPbr3M",
+    "image": "https://images-listings.coldwellbanker.com/NC_CCAR/10/05/59/96/9/_P/100559969_P02.jpg?width=1024",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2031,
+    "acres": 2.72,
+    "acresSub": "waterfront HOA lot on Yeats Creek, Long Point Landing",
+    "yearBuilt": 2019,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "On market ~1 year (listed March 2025). MLS# 100497224. HOA community.",
+    "badges": [],
+    "taxRate": 0.00445,
+    "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
+    "taxAnnual": 1587,
+    "hoa": 300,
+    "drive": "~29 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Chocowinity; Washington NC ~10 min",
+    "scores": {
+      "price": 1,
+      "acreage": 1,
+      "schools": 6,
+      "outbldgs": 0,
+      "town": 7,
+      "hospital": 5,
+      "hazards": 2,
+      "beach": 3,
+      "forested": 4,
+      "living": 1
+    },
+    "offerRange": "$450K – $475K",
+    "offerStrategy": "12+ months on market = very motivated seller — aggressive lowball",
+    "offerRationale": [
+      "$525K is over the $450-500K budget ceiling",
+      "12+ months on market = seller extremely motivated, significant leverage",
+      "MLS explicitly states 'Horses: No' — hard livestock disqualifier",
+      "HOA (Long Point Landing, $300/yr) restricts property use and modifications"
+    ],
+    "tableOfferNote": "12+ months DOM, over budget at $525K — lowball to $450K if interested",
+    "highlight": "Beautiful 2019 stick-built waterfront home on Yeats Creek with private pier, floating boat dock, wraparound porch, and 2-car attached garage. Beaufort County Schools are above average (Niche B). HOWEVER: MLS states \"Horses: No\" — HOA community with livestock restrictions. Over budget at $525K. Only 2.72 acres. LIKELY DISQUALIFIED.",
+    "highlights": [
+      {
+        "icon": "🚤",
+        "text": "Waterfront — private pier + floating boat dock on Yeats Creek"
+      },
+      {
+        "icon": "🏠",
+        "text": "2019 stick-built — modern construction, only 6-7 years old"
+      },
+      {
+        "icon": "🏫",
+        "text": "Beaufort County Schools — Niche B, best schools in this batch"
+      },
+      {
+        "icon": "⛔",
+        "text": "DISQUALIFIER: MLS states 'Horses: No' — HOA livestock restriction"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Gas Station",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Grocery (Washington NC)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Chocowinity / Washington NC",
+        "value": "~5-10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Greenville (ECU / Vidant)",
+        "value": "~45 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Beaufort Co. Medical (Washington)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Chocowinity Elem (Niche B)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~29 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Stick-built 2019 — modern construction, minimal maintenance concerns"
+      },
+      {
+        "icon": "✓",
+        "text": "Waterfront on Yeats Creek — private pier + floating boat dock"
+      },
+      {
+        "icon": "✓",
+        "text": "Wraparound porch + screened-in back porch — farmhouse aesthetic"
+      },
+      {
+        "icon": "✓",
+        "text": "2-car attached garage — proper enclosed garage"
+      },
+      {
+        "icon": "✓",
+        "text": "Beaufort County Schools (Niche B) — best school situation in this batch"
+      },
+      {
+        "icon": "✓",
+        "text": "Brightspeed internet confirmed at address — remote work viable"
+      },
+      {
+        "icon": "✓",
+        "text": "Granite counters, shiplap accents, LVP flooring — quality finishes"
+      },
+      {
+        "icon": "✓",
+        "text": "Wooded cul-de-sac — natural privacy, brooks, streams"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "⛔ MLS states 'Horses: No' — HARD LIVESTOCK DISQUALIFIER"
+      },
+      {
+        "icon": "✗",
+        "text": "⛔ HOA community (Long Point Landing) — restricts animals and modifications"
+      },
+      {
+        "icon": "✗",
+        "text": "⛔ Over budget at $525,000 — exceeds ~$450-500K ceiling"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 2.72 acres — well below 5-acre preference, HOA prevents expansion"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings — no barn, workshop, or shed beyond garage"
+      },
+      {
+        "icon": "✗",
+        "text": "On market ~1 year — suggests overpricing or market resistance"
+      },
+      {
+        "icon": "✗",
+        "text": "City limits (Chocowinity) — triple restriction layer: city + county + HOA"
+      },
+      {
+        "icon": "✗",
+        "text": "Waterfront = hurricane and flood zone concerns"
+      }
+    ],
+    "familyFit": [
+      "Beautiful waterfront home — kids would love the creek, pier, and dock",
+      "Schools are the best in this batch (Beaufort County Niche B)",
+      "NOT a homestead — HOA + 'Horses: No' + 2.72 acres = wrong property for the vision"
+    ],
+    "verifyItems": [
+      {
+        "label": "HOA CCRs",
+        "text": "Request full Long Point Landing covenants. Contact Sharon Tripp, President (252-943-7674)."
+      },
+      {
+        "label": "Livestock Scope",
+        "text": "Does 'Horses: No' extend to all livestock (chickens, goats)? Almost certainly yes in HOA."
+      },
+      {
+        "label": "Why 12+ Months DOM",
+        "text": "On market since March 2025 — is there a known issue beyond price?"
+      },
+      {
+        "label": "Flood Zone",
+        "text": "Waterfront on Yeats Creek — very likely in FEMA flood zone. Get insurance quote."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "LIVESTOCK RESTRICTION = HARD DISQUALIFIER — MLS states 'Horses: No', HOA community"
+      },
+      {
+        "urgent": true,
+        "text": "Property is over budget at $525K — only consider if seller accepts $450K"
+      },
+      {
+        "urgent": false,
+        "text": "Review full HOA CCRs if still considering"
+      },
+      {
+        "urgent": false,
+        "text": "FEMA flood zone check for waterfront property"
+      }
+    ],
+    "envHazards": {
+      "location": "Beaufort County, eastern NC — waterfront on Yeats Creek",
+      "pills": [
+        {
+          "level": "high",
+          "text": "Hurricane exposure — eastern NC coastal county"
+        },
+        {
+          "level": "high",
+          "text": "Flood risk — waterfront property on Yeats Creek"
+        },
+        {
+          "level": "mod",
+          "text": "Wind/hail — coastal windstorm exposure"
+        },
+        {
+          "level": "special",
+          "text": "Flood insurance likely mandatory"
+        }
+      ],
+      "note": "Waterfront property on Yeats Creek in eastern NC. High hurricane and flood exposure. Flood insurance very likely required."
     }
   }
 ];

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<link rel="stylesheet" href="app.css?v=22">
+<link rel="stylesheet" href="app.css?v=23">
 <style>
 :root {
   --bg:       #f4f1eb;
@@ -1029,6 +1029,15 @@ table.qt {
   </div>
 </nav>
 <div class="nav-spacer"></div>
+
+<!-- ── NEW PROPERTIES BANNER (hidden when none are new) ── -->
+<div id="new-props-banner" class="new-props-banner" style="display:none">
+  <button id="new-props-btn" class="new-props-btn">
+    <span class="bi bi-stars"></span>
+    <span id="new-props-label">New Properties Added</span>
+    <span id="new-props-count" class="new-props-count"></span>
+  </button>
+</div>
 
 <!-- ── FAMILY RANKINGS (injected by app.js) ── -->
 <div id="rankings"></div>

@@ -1,3 +1,60 @@
+/* ── NEW PROPERTIES BANNER ── */
+.new-props-banner {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(135deg, #064e2e 0%, #0a6b3f 50%, #064e2e 100%);
+  border-bottom: 2px solid rgba(74, 222, 128, 0.3);
+}
+.new-props-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(74, 222, 128, 0.15);
+  border: 1.5px solid rgba(74, 222, 128, 0.4);
+  border-radius: 99px;
+  color: #d1fae5;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  animation: pulse-new 2s ease-in-out infinite;
+}
+.new-props-btn:hover {
+  background: rgba(74, 222, 128, 0.3);
+  border-color: rgba(74, 222, 128, 0.6);
+  transform: translateY(-1px);
+}
+.new-props-btn.active {
+  background: rgba(74, 222, 128, 0.35);
+  border-color: #4ade80;
+  animation: none;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
+}
+.new-props-count {
+  background: #4ade80;
+  color: #064e2e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  min-width: 1.3rem;
+  text-align: center;
+}
+
+/* "Added Xd ago" badge on cards */
+.badge-added-ago {
+  display: inline-block;
+  font-size: 0.65rem;
+  color: var(--muted);
+  background: var(--tag-bg);
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
 /* ── REGION SECTIONS (collapsible card groups) ── */
 .region-section {
   margin: 0;
