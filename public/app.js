@@ -1619,6 +1619,8 @@
     var newIds = {};
     newProps.forEach(function (p) { newIds[p.id] = true; });
 
+    var newPids = newProps.map(function (p) { return p.id; });
+
     btn.addEventListener('click', function () {
       isFiltered = !isFiltered;
       btn.classList.toggle('active', isFiltered);
@@ -1629,7 +1631,7 @@
         document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
           card.style.display = newIds[card.id] ? '' : 'none';
         });
-        // Expand all region sections that contain new properties
+        // Collapse regions with no visible new cards, expand those with new cards
         document.querySelectorAll('.region-section').forEach(function (section) {
           var hasNewCard = section.querySelector('.card[id^="p"]:not([style*="display: none"])');
           var regionCards = section.querySelector('.region-cards');
@@ -1637,8 +1639,20 @@
           if (hasNewCard && regionCards) {
             regionCards.classList.add('expanded');
             if (toggle) toggle.classList.add('expanded');
+          } else if (regionCards) {
+            regionCards.classList.remove('expanded');
+            if (toggle) toggle.classList.remove('expanded');
           }
         });
+        // Filter overview table to show only new properties
+        document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+          var link = row.querySelector('a[href^="#p"]');
+          if (!link) return;
+          var pid = link.getAttribute('href').slice(1);
+          row.style.display = newIds[pid] ? '' : 'none';
+        });
+        // Filter map to show only new property markers
+        filterMapRegion(newPids);
         // Scroll to first new card
         var first = document.getElementById(newProps[0].id);
         if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1648,6 +1662,24 @@
         document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
           card.style.display = '';
         });
+        // Restore all region sections
+        document.querySelectorAll('.region-section').forEach(function (section) {
+          var regionCards = section.querySelector('.region-cards');
+          var toggle = section.querySelector('.region-toggle');
+          if (regionCards) {
+            regionCards.classList.add('expanded');
+            if (toggle) toggle.classList.add('expanded');
+          }
+        });
+        // Restore overview table (respect graveyard)
+        document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+          var link = row.querySelector('a[href^="#p"]');
+          if (!link) return;
+          var pid = link.getAttribute('href').slice(1);
+          row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
+        });
+        // Restore all map markers
+        clearMapFilter();
       }
     });
   }
