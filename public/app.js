@@ -902,6 +902,9 @@
 
       // Rebuild map region buttons to reflect graveyard changes
       addMapRegionButtons();
+
+      // Re-apply active filter if one is set (polling resets visibility)
+      if (window._reapplyActiveFilter) window._reapplyActiveFilter();
     });
   }
 
@@ -1710,6 +1713,14 @@
       });
       clearMapFilter();
     }
+
+    // Expose so polling refresh can re-apply active filter
+    window._reapplyActiveFilter = function () {
+      if (activeKey) {
+        var f = filters.find(function (x) { return x.key === activeKey; });
+        if (f) applyFilter(f);
+      }
+    };
   }
 
   // --- Collapsible overview table ---
