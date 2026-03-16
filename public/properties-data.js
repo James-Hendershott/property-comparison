@@ -12198,7 +12198,7 @@ var PROPERTIES = [
     "county": "Cherokee",
     "price": 334900,
     "listingLink": "https://www.zillow.com/homedetails/510-Mountain-Top-Rd-Marble-NC-28905/230512896_zpid/",
-    "image": "https://ssl.cdn-redfin.com/photo/103/bigphoto/140/153140_0.jpg",
+    "image": "https://photos.zillowstatic.com/fp/dd5264b1d1042a8fe33ba262272bdf3d-cc_ft_1152.webp",
     "beds": 2,
     "bath": 2,
     "sqft": 1736,
