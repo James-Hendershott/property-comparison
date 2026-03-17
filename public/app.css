@@ -1,3 +1,36 @@
+/* ── WALKTHROUGH VIDEO BUTTON ── */
+.walkthrough-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: rgba(220, 38, 38, 0.92);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transition: all 0.15s;
+  z-index: 5;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.walkthrough-btn:hover {
+  background: rgba(220, 38, 38, 1);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 24px rgba(220, 38, 38, 0.5);
+}
+.walkthrough-btn .bi {
+  font-size: 1rem;
+}
+
 /* ── FILTER BAR ── */
 .filter-bar {
   display: flex;

@@ -1816,6 +1816,34 @@
     });
   }
 
+  // --- Walkthrough video buttons ---
+  function initWalkthroughButtons() {
+    fetch('/api/walkthroughs').then(function (r) { return r.json(); }).then(function (map) {
+      if (!map || !Object.keys(map).length) return;
+      // Build lookup: address → video URL
+      var propMap = {};
+      if (typeof PROPERTIES !== 'undefined') {
+        PROPERTIES.forEach(function (p) { propMap[p.address] = p; });
+      }
+      Object.keys(map).forEach(function (addr) {
+        var p = propMap[addr];
+        if (!p) return;
+        var card = document.getElementById(p.id);
+        if (!card) return;
+        // Insert walkthrough button overlaying the bottom of the card image
+        var cardMap = card.querySelector('.card-map');
+        if (!cardMap) return;
+        cardMap.style.position = 'relative';
+        var btn = document.createElement('a');
+        btn.href = map[addr];
+        btn.target = '_blank';
+        btn.className = 'walkthrough-btn';
+        btn.innerHTML = '<span class="bi bi-camera-video-fill"></span> Watch Walkthrough';
+        cardMap.appendChild(btn);
+      });
+    }).catch(function () { /* no walkthroughs available */ });
+  }
+
   // --- Mobile nav toggle (collapse region buttons) ---
   function initMobileNavToggle() {
     var btn = document.getElementById('nav-mobile-toggle');
@@ -2315,6 +2343,7 @@
     initCollapsibleGraveyard();
     initFilterBar();
     initMobileNavToggle();
+    initWalkthroughButtons();
 
     // --- Nav spacer: match fixed nav height ---
     function syncNavSpacer() {

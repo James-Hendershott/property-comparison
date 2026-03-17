@@ -18,6 +18,26 @@ app.use(express.static(path.join(__dirname, 'public'), {
   }
 }));
 
+// --- Walkthrough videos ---
+const walkthroughDir = path.join(__dirname, 'docs', 'walkthrough-videos');
+app.use('/walkthrough', express.static(walkthroughDir));
+
+app.get('/api/walkthroughs', (req, res) => {
+  const fs = require('fs');
+  try {
+    const files = fs.readdirSync(walkthroughDir).filter(f => f.endsWith('.mp4'));
+    const map = {};
+    files.forEach(f => {
+      // 142-Padgett-Burns-Rd-walkthrough.mp4 → "142 Padgett Burns Rd"
+      const addr = f.replace(/-walkthrough\.mp4$/i, '').replace(/-/g, ' ');
+      map[addr] = '/walkthrough/' + f;
+    });
+    res.json(map);
+  } catch (e) {
+    res.json({});
+  }
+});
+
 // --- API Routes ---
 
 app.post('/api/users', (req, res) => {

@@ -16,7 +16,7 @@
 ## ⭐ #1 — 152 N Quail Run, Forest City — OUR TOP PICK
 
 ![152 N Quail Run](https://cdn-all.roveridx.com/rover-images-canopy/CAR4343918/03162026154739_1600_0.webp)
-> **🔗 [View Listing](https://rumblingbald.com/nc/forest-city/quail-run/152-n-quail-run/)**
+> **🔗 [View Listing](https://rumblingbald.com/nc/forest-city/quail-run/152-n-quail-run/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/152-N-Quail-Run-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -40,7 +40,7 @@ Move-in ready brick ranch. New roof, granite kitchen, LVP flooring, gas fireplac
 ## ⭐ #2 — 3343 Hollis Rd, Ellenboro — BEST ACREAGE
 
 ![3343 Hollis Rd](https://photos.zillowstatic.com/fp/ca9d71a94f6aab5292d23b8eaca2376d-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/3343-Hollis-Rd-Ellenboro-NC-28040/214098035_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/3343-Hollis-Rd-Ellenboro-NC-28040/214098035_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/3343-Hollis-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -67,7 +67,7 @@ Move-in ready brick ranch. New roof, granite kitchen, LVP flooring, gas fireplac
 ## S Tier — "Moss" — 142 Padgett Burns Rd, Forest City
 
 ![142 Padgett Burns Rd](https://ssl.cdn-redfin.com/photo/103/bigphoto/085/3804085_0.jpg)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/142-Padgett-Burns-Rd-Forest-City-NC-28043/102166718_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/142-Padgett-Burns-Rd-Forest-City-NC-28043/102166718_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/142-Padgett-Burns-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -94,7 +94,7 @@ Three-level design with 13'2" x 17'7" dedicated office. Screened porch (13x23), 
 ### 5933 Nubbin Creek Rd, Lenoir
 
 ![5933 Nubbin Creek Rd](https://ssl.cdn-redfin.com/photo/103/bigphoto/119/4299119_0.jpg)
-> **🔗 [View Listing](https://www.redfin.com/NC/Lenoir/5933-Nubbin-Creek-Rd-28645/home/119524579)**
+> **🔗 [View Listing](https://www.redfin.com/NC/Lenoir/5933-Nubbin-Creek-Rd-28645/home/119524579)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/5933-Nubbin-Creek-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -117,7 +117,7 @@ Deep mountain privacy. 7.52 wooded acres. Brown Mountain ATV access.
 ### 159 Big Island Rd, Forest City — HORSE PROPERTY
 
 ![159 Big Island Rd](https://photos.zillowstatic.com/fp/ecbd45a8a127457b981d996851ee4217-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/159-Big-Island-Rd-Forest-City-NC-28043/102147657_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/159-Big-Island-Rd-Forest-City-NC-28043/102147657_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/159-Big-Island-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -140,7 +140,7 @@ Best equestrian setup — fenced pasture, 2-stall barn w/tack room, run-in shelt
 ### 4386 Rocky Rd, Lenoir
 
 ![4386 Rocky Rd](https://m.cbhomes.com/p/620/4353932/9ae088Ab8F4C48c/pdl23tp.webp)
-> **🔗 [View Listing](https://www.coldwellbankerhomes.com/nc/lenoir/4386-rocky-rd/pid_69991764/)**
+> **🔗 [View Listing](https://www.coldwellbankerhomes.com/nc/lenoir/4386-rocky-rd/pid_69991764/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/4386-Rocky-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -166,7 +166,7 @@ Fully remodeled. Creek + natural spring. RA-20 (livestock OK). USDA eligible.
 ### 4913 Celia Creek Rd, Lenoir — MOTIVATED SELLER
 
 ![4913 Celia Creek Rd](https://photos.zillowstatic.com/fp/6b6654b2f7fc8d51c96c9f92eace6236-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/4913-Celia-Creek-Rd-Lenoir-NC-28645/249250112_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/4913-Celia-Creek-Rd-Lenoir-NC-28645/249250112_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/4913-Celia-Creek-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -189,7 +189,7 @@ Best acreage-to-price ratio — 13.65 acres with 2,000 ft of creek frontage. 201
 ### 2196 Uphill Ln, Lenoir — "Hazel" — EXTREME VALUE
 
 ![2196 Uphill Ln](https://ssl.cdn-redfin.com/photo/103/bigphoto/774/4322774_0.jpg)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/2196-Uphill-Ln-Lenoir-NC-28645/70112519_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/2196-Uphill-Ln-Lenoir-NC-28645/70112519_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/2196-Uphill-Ln-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -216,7 +216,7 @@ Best acreage-to-price ratio — 13.65 acres with 2,000 ft of creek frontage. 201
 ### 124 Fairfield Ln, Marion — BEST BUDGET PLAY
 
 ![124 Fairfield Ln](https://m1.cbhomes.com/p/620/4337723/90D6F3FC2272459/pdl23tp.webp)
-> **🔗 [View Listing](https://www.coldwellbankerhomes.com/carolinas/124-fairfield-ln/pid_70097056/)**
+> **🔗 [View Listing](https://www.coldwellbankerhomes.com/carolinas/124-fairfield-ln/pid_70097056/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/124-Fairfield-Ln-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -238,7 +238,7 @@ Brand new construction. Lowest price with 5+ acres. $135–185K budget remaining
 ### 315 Walker Store Rd, Ellenboro — GREAT SCHOOLS
 
 ![315 Walker Store Rd](https://photos.zillowstatic.com/fp/805719404761bc1d87b457b84da8e39b-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/315-Walker-Store-Rd-Ellenboro-NC-28040/102117337_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/315-Walker-Store-Rd-Ellenboro-NC-28040/102117337_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/315-Walker-Store-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -260,7 +260,7 @@ Finished basement with fireplace, bonus room, full bath. 1-car basement garage +
 ### 104 Glenn Oaks Dr, Lawndale — LOWEST PRICE
 
 ![104 Glenn Oaks Dr](https://photos.zillowstatic.com/fp/d4ef959616655aa8b448ad1606e7602c-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/104-Glenn-Oaks-Dr-Lawndale-NC-28090/93008857_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/104-Glenn-Oaks-Dr-Lawndale-NC-28090/93008857_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/104-Glenn-Oaks-Dr-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -285,7 +285,7 @@ Fully renovated — new roof, HVAC, windows, kitchen, baths. In-law suite with s
 ### 3306 Christie Rd, Hudson
 
 ![3306 Christie Rd](https://photos.zillowstatic.com/fp/6910f3a3c6b916913d43633bf5343bcb-cc_ft_576.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/3306-Christie-Rd-Hudson-NC-28638/333945614_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/3306-Christie-Rd-Hudson-NC-28638/333945614_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/3306-Christie-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -306,7 +306,7 @@ Brick ranch with tons of recent updates (plumbing, windows, septic, baths, gutte
 ### 1246 Bob Falls Rd, Shelby — NEW CONSTRUCTION
 
 ![1246 Bob Falls Rd](https://photos.zillowstatic.com/fp/fb05675cb76c1e13bdaa9681118129cf-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/1246-Bob-Falls-Rd-Shelby-NC-28150/452310970_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/1246-Bob-Falls-Rd-Shelby-NC-28150/452310970_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/1246-Bob-Falls-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -327,7 +327,7 @@ New construction ranch. Cathedral ceilings, quartz counters, soaking tub. Spring
 ### 753 Arbor Grove Church Rd, Millers Creek
 
 ![753 Arbor Grove Church Rd](https://photos.zillowstatic.com/fp/05d707a6e7c737e9525361348c646402-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/753-Arbor-Grove-Church-Rd-Millers-Creek-NC-28651/2065826802_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/753-Arbor-Grove-Church-Rd-Millers-Creek-NC-28651/2065826802_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/753-Arbor-Grove-Church-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -348,7 +348,7 @@ Well-maintained brick home. Covered gazebo, pergola, finished basement with bonu
 ### 5740 Crouse Rd, Crouse — BIG ACREAGE
 
 ![5740 Crouse Rd](https://photos.zillowstatic.com/fp/c25835f707d0849ea138dbfef5d5e40a-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/5740-Crouse-Rd-Crouse-NC-28033/6105049_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/5740-Crouse-Rd-Crouse-NC-28033/6105049_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/5740-Crouse-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -370,7 +370,7 @@ Renovated 1940 farmhouse on 11.48 acres (~5 clear, rest wooded). Propane heat.
 ### 917 Zeline Ave NE, Valdese — HISTORIC
 
 ![917 Zeline Ave NE](https://photos.zillowstatic.com/fp/acbdb4a6b8b0c5ed56f404e3ae2e1917-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/917-Zeline-Ave-NE-Valdese-NC-28690/227225368_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/917-Zeline-Ave-NE-Valdese-NC-28690/227225368_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/917-Zeline-Ave-NE-walkthrough.mp4)**
 
 | | |
 |---|---|
@@ -392,7 +392,7 @@ Renovated 1940 farmhouse on 11.48 acres (~5 clear, rest wooded). Propane heat.
 ### 218 Fulbright Rd, Stony Point
 
 ![218 Fulbright Rd](https://photos.zillowstatic.com/fp/cd17dba6188b6fcffeb14c48faa50548-cc_ft_1152.webp)
-> **🔗 [View Listing](https://www.zillow.com/homedetails/218-Fulbright-Rd-Stony-Point-NC-28678/55462567_zpid/)**
+> **🔗 [View Listing](https://www.zillow.com/homedetails/218-Fulbright-Rd-Stony-Point-NC-28678/55462567_zpid/)** · **🎬 [Watch Walkthrough](https://homes.shottsserver.com/walkthrough/218-Fulbright-Rd-walkthrough.mp4)**
 
 | | |
 |---|---|
