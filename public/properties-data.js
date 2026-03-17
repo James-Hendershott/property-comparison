@@ -11388,7 +11388,7 @@ var PROPERTIES = [
     "typeBadge": "b-sfr",
     "status": "Coming Soon",
     "statusClass": "status-active",
-    "statusNote": "Under construction — showings start 3/24/2026. MLS# 4337723",
+    "statusNote": "MLS# 4337723. Completion ~3/18, showings 3/24. 2020 Builders LLC 'Balsam Knob' model. EXP Realty. OU zoning. 2,000 ft elevation. Gravel road. Fairfield Estates subdivision. Cash/Conv/FHA/VA (no USDA). Up to $2,500 closing credit. Schools: Pleasant Gardens Elem 8/10, West McDowell JH 2/10, McDowell High 3/10.",
     "badges": ["b-new", "b-livestock"],
     "taxRate": 0.005675,
     "taxLabel": "Property Tax (McDowell Co. 0.57%)",
