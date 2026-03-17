@@ -13964,8 +13964,8 @@ var PROPERTIES = [
     "city": "Ellenboro",
     "state": "NC",
     "zip": "28040",
-    "lat": 35.3650,
-    "lng": -81.9750,
+    "lat": 35.4381,
+    "lng": -81.6894,
     "county": "Cleveland",
     "price": 499900,
     "listingLink": "https://www.zillow.com/homedetails/3343-Hollis-Rd-Ellenboro-NC-28040/214098035_zpid/",
@@ -14192,8 +14192,8 @@ var PROPERTIES = [
     "city": "Hudson",
     "state": "NC",
     "zip": "28638",
-    "lat": 35.74,
-    "lng": -81.50,
+    "lat": 35.8553,
+    "lng": -81.4450,
     "county": "Caldwell",
     "price": 349900,
     "listingLink": "https://www.zillow.com/homedetails/3306-Christie-Rd-Hudson-NC-28638/333945614_zpid/",
@@ -14373,8 +14373,8 @@ var PROPERTIES = [
     "city": "Ellenboro",
     "state": "NC",
     "zip": "28040",
-    "lat": 35.33,
-    "lng": -81.76,
+    "lat": 35.2889,
+    "lng": -81.7893,
     "county": "Rutherford",
     "price": 355000,
     "listingLink": "https://www.zillow.com/homedetails/315-Walker-Store-Rd-Ellenboro-NC-28040/102117337_zpid/",
@@ -14554,27 +14554,27 @@ var PROPERTIES = [
     "city": "Millers Creek",
     "state": "NC",
     "zip": "28651",
-    "lat": 36.17,
-    "lng": -81.24,
+    "lat": 36.2027,
+    "lng": -81.2564,
     "county": "Wilkes",
-    "price": 416000,
+    "price": 399000,
     "listingLink": "https://www.zillow.com/homedetails/753-Arbor-Grove-Church-Rd-Millers-Creek-NC-28651/2065826802_zpid/",
-    "image": "",
+    "image": "https://photos.zillowstatic.com/fp/05d707a6e7c737e9525361348c646402-cc_ft_1152.webp",
     "beds": 3,
     "bath": 2,
-    "sqft": 1369,
+    "sqft": 2023,
     "acres": 2.0,
     "acresSub": "covered gazebo, raised garden beds, brick exterior",
     "yearBuilt": 1988,
-    "type": "Manufactured",
-    "typeBadge": "b-mfg",
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
     "status": "Active",
     "statusClass": "status-active",
-    "statusNote": "MANUFACTURED/MODULAR HOME — hard dealbreaker per family criteria.",
+    "statusNote": "MLS# 1205867 (Triad MLS). NOT manufactured — Stick/Site Built brick. 61 DOM. Price: $424,900→$416K→$399K (3 cuts). Zestimate $392K. DM Properties. R1 zoning. FEMA Zone X. Public water. Septic. No HOA. Covered gazebo, pergola, finished basement bonus 654 sqft, basement garage. Small branch/creek at front. Schools: Millers Creek Elem 7/10, West Wilkes Middle 3/10, West Wilkes High 4/10.",
     "badges": [],
     "taxRate": 0.0055,
     "taxLabel": "Property Tax (Wilkes Co. ~0.55%)",
-    "taxAnnual": 2288,
+    "taxAnnual": 1552,
     "hoa": 0,
     "drive": "~26 hr",
     "driveSub": "cross-country from Farmington UT",
@@ -14592,31 +14592,32 @@ var PROPERTIES = [
       "forested": 5,
       "living": 5
     },
-    "offerRange": "N/A — dealbreaker",
-    "offerStrategy": "Not recommended — manufactured home is a hard dealbreaker.",
+    "offerRange": "$365K – $385K",
+    "offerStrategy": "3 price cuts + 61 DOM — seller motivated. Zestimate $392K supports mid-range offer.",
     "offerRationale": [
-      "Manufactured/modular home — automatic disqualification per family criteria",
-      "Financing restrictions on manufactured homes",
-      "Resale value concerns with manufactured type"
+      "3 price cuts ($424.9K→$416K→$399K) shows seller flexibility",
+      "61 DOM — not urgent but accumulating",
+      "Zestimate $392K — current ask near fair value",
+      "Only 2 acres limits buyer pool"
     ],
-    "tableOfferNote": "DEALBREAKER — manufactured home",
-    "highlight": "\u26d4 MANUFACTURED HOME — hard dealbreaker. Meticulously maintained modular on 2 acres with covered gazebo, raised garden beds, brick exterior. But manufactured = automatic no.",
+    "tableOfferNote": "$365K–$385K — 3 cuts, 61 DOM",
+    "highlight": "Well-maintained brick home on 2 beautiful acres in Millers Creek. Covered gazebo, pergola, finished basement bonus room (654 sqft), basement garage with remote entry. Small branch/creek. Stone fireplace with gas logs. Only 2 acres — below preference.",
     "highlights": [
       {
-        "icon": "\u26d4",
-        "text": "MANUFACTURED HOME — automatic dealbreaker per family criteria"
-      },
-      {
         "icon": "🏡",
-        "text": "2 acres with covered gazebo, raised garden beds"
+        "text": "2 acres with covered gazebo, pergola, raised garden beds"
       },
       {
         "icon": "🧱",
-        "text": "Brick exterior, meticulously maintained"
+        "text": "Brick exterior, well-maintained site-built home"
+      },
+      {
+        "icon": "🏠",
+        "text": "Finished basement bonus room (654 sqft) + basement garage"
       },
       {
         "icon": "💰",
-        "text": "$416K for manufactured on 2 acres — poor value proposition"
+        "text": "$399K after 3 price cuts — Zestimate $392K"
       }
     ],
     "proximity": [
@@ -14662,36 +14663,49 @@ var PROPERTIES = [
     "cardCons": [
       {
         "icon": "✗",
-        "text": "MANUFACTURED HOME — hard dealbreaker, automatic disqualification"
-      },
-      {
-        "icon": "✗",
         "text": "Only 2 acres — well below 5-acre preference"
       },
       {
         "icon": "✗",
-        "text": "$416K for manufactured on 2 acres — overpriced for type"
+        "text": "West Wilkes Middle 3/10, West Wilkes High 4/10 — weak secondary schools"
       },
       {
         "icon": "✗",
-        "text": "Financing restrictions typical for manufactured homes"
+        "text": "Small branch/creek at front of property — potential drainage concern"
+      },
+      {
+        "icon": "✗",
+        "text": "Septic system — standard for rural but needs inspection"
       }
     ],
     "familyFit": [
-      "Manufactured home is an automatic no — family criteria excludes this type",
-      "Would need to be site-built to even consider",
-      "Property grounds are nice but home type is disqualifying"
+      "Solid brick home with nice outdoor features — gazebo, pergola, garden beds",
+      "Finished basement adds 654 sqft bonus space — good for family activities",
+      "Only 2 acres is a significant drawback vs 5+ acre preference",
+      "High Country location means cooler summers but harsher winters"
     ],
     "verifyItems": [
       {
-        "label": "N/A",
-        "text": "Dealbreaker — manufactured home. No further verification needed."
+        "label": "Septic",
+        "text": "Verify septic system age and condition — request inspection"
+      },
+      {
+        "label": "Basement",
+        "text": "Confirm finished basement is permitted/included in livable sqft"
+      },
+      {
+        "label": "Creek",
+        "text": "Check if branch/creek causes any flooding or drainage issues"
       }
     ],
     "mustDo": [
       {
-        "urgent": true,
-        "text": "SKIP — manufactured home is a hard dealbreaker"
+        "urgent": false,
+        "text": "Verify basement finish is permitted and included in tax records"
+      },
+      {
+        "urgent": false,
+        "text": "Inspect septic system — request records"
       }
     ],
     "envHazards": {
@@ -14714,8 +14728,8 @@ var PROPERTIES = [
     "city": "Shelby",
     "state": "NC",
     "zip": "28150",
-    "lat": 35.29,
-    "lng": -81.54,
+    "lat": 35.3427,
+    "lng": -81.6425,
     "county": "Cleveland",
     "price": 439900,
     "listingLink": "https://www.zillow.com/homedetails/1246-Bob-Falls-Rd-Shelby-NC-28150/452310970_zpid/",
@@ -14896,8 +14910,8 @@ var PROPERTIES = [
     "city": "Crouse",
     "state": "NC",
     "zip": "28033",
-    "lat": 35.4225,
-    "lng": -81.3222,
+    "lat": 35.4365,
+    "lng": -81.3657,
     "county": "Lincoln",
     "price": 499000,
     "listingLink": "https://www.zillow.com/homedetails/5740-Crouse-Rd-Crouse-NC-28033/6105049_zpid/",
@@ -15082,7 +15096,7 @@ var PROPERTIES = [
     "city": "Stony Point",
     "state": "NC",
     "zip": "28678",
-    "lat": 35.7849,
+    "lat": 35.7864,
     "lng": -81.0945,
     "county": "Iredell",
     "price": 410000,
@@ -15264,8 +15278,8 @@ var PROPERTIES = [
     "city": "Lawndale",
     "state": "NC",
     "zip": "28090",
-    "lat": 35.414,
-    "lng": -81.563,
+    "lat": 35.4478,
+    "lng": -81.5036,
     "county": "Cleveland",
     "price": 330000,
     "listingLink": "https://www.zillow.com/homedetails/104-Glenn-Oaks-Dr-Lawndale-NC-28090/93008857_zpid/",
