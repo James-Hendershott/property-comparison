@@ -13966,68 +13966,68 @@ var PROPERTIES = [
     "zip": "28040",
     "lat": 35.3650,
     "lng": -81.9750,
-    "county": "Rutherford",
-    "price": 515000,
+    "county": "Cleveland",
+    "price": 499900,
     "listingLink": "https://www.zillow.com/homedetails/3343-Hollis-Rd-Ellenboro-NC-28040/214098035_zpid/",
     "image": "https://photos.zillowstatic.com/fp/a33efc3ee01be5d58c40a7e439f66b0d-cc_ft_1152.webp",
     "beds": 3,
     "bath": 2,
-    "sqft": 2120,
+    "sqft": 2052,
     "acres": 15.96,
-    "acresSub": "fenced pasture, creek, rock outcroppings, raised gardens, South Mountain views",
+    "acresSub": "~14 ac fenced livestock perimeter (2025), stream, wooded trails, fruit trees, chicken coop",
     "yearBuilt": 2014,
-    "type": "Site-Built",
-    "typeBadge": "b-sfr",
+    "type": "Modular",
+    "typeBadge": "b-mfg",
     "status": "Active",
     "statusClass": "status-active",
-    "statusNote": "MLS# 4085081. Originally 49 ac (Whitetail Properties), subdivided to 15.96 ac. Listed by Beth Helton and Associates.",
-    "badges": [],
-    "taxRate": 0.0057,
-    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
-    "taxAnnual": 2936,
+    "statusNote": "MLS# 4347403. ⚠️ MODULAR HOME (Champion Home Builders). FLIP: sold $475K Apr 2024, listed $525K Feb 2026, cut to $499,900. David Brown, 4 Seasons Homes and Land.",
+    "badges": ["b-livestock"],
+    "taxRate": 0.00635,
+    "taxLabel": "Property Tax (Cleveland Co. ~0.64%)",
+    "taxAnnual": 2118,
     "hoa": 0,
     "drive": "~26 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
     "scores": {
-      "price": 8,
+      "price": 6,
       "acreage": 10,
-      "schools": 6,
-      "outbldgs": 10,
+      "schools": 5,
+      "outbldgs": 5,
       "town": 7,
       "hospital": 7,
-      "hazards": 7,
+      "hazards": 8,
       "beach": 2,
       "forested": 8,
-      "living": 5
+      "living": 6
     },
-    "offerRange": "$475K – $495K",
-    "offerStrategy": "Subdivided parcel — seller may be investor looking for return. Negotiate citing fixer-upper condition.",
+    "offerRange": "$460K – $480K",
+    "offerStrategy": "FLIP: sold $475K Apr 2024, now $499,900. Cite modular construction, no major outbuildings.",
     "offerRationale": [
-      "$515K exceeds $450-500K ceiling — must negotiate down",
-      "Home described as fixer-upper — budget $30-80K renovation on top",
-      "Property was subdivided from 49 ac — seller likely investor, motivated",
-      "Barn + outbuildings are $50-100K+ replacement value — strong asset"
+      "FLIP: sold $475K Apr 2024, relisted $525K, cut to $499,900",
+      "MODULAR HOME — dealbreaker for many buyers, limits resale",
+      "No barn or major outbuildings despite 16 acres",
+      "Schools weak: Burns Middle 4/10, Burns High 3/10"
     ],
-    "tableOfferNote": "Top pick — negotiate from $515K to $475-495K citing fixer-upper condition",
-    "highlight": "HIGHEST SCORING PROPERTY. 15.96 acres of working horse farm with custom Mennonite-built 10-stall barn, 2-stall barn, fenced pasture, creek, rock outcroppings, raised gardens, South Mountain views, and 100x200 arena pad. End of paved road, no HOA, unrestricted. Home is a fixer-upper (built 2014). 30 mi from Tryon International Equestrian Center.",
+    "tableOfferNote": "MODULAR home — potential dealbreaker. Flip from $475K. Strong land, weak structure type.",
+    "highlight": "⚠️ MODULAR HOME (Champion Home Builders). 15.96 acres with new livestock fencing (2025), stream, wooded trails, chicken coop, fruit trees, 550 sqft detached garage. Home in excellent condition, split bedroom plan. HOWEVER: modular construction is a hard dealbreaker. FLIP: sold $475K Apr 2024. Spectrum fiber confirmed. FEMA Zone X. County water.",
     "highlights": [
       {
-        "icon": "🐴",
-        "text": "10-stall Mennonite barn — feed chutes, 6-ft loft, tack room ($50-100K replacement)"
-      },
-      {
         "icon": "🏡",
-        "text": "15.96 acres — 3x the minimum, fenced pasture, creek, rock outcroppings"
+        "text": "15.96 acres with new 4' livestock perimeter fencing (2025), stream, wooded trails"
       },
       {
-        "icon": "🔧",
-        "text": "2-stall barn + outbuilding + 100x200 arena pad — best outbuilding package in search"
+        "icon": "🐔",
+        "text": "Chicken coop, fruit trees, cleared pasture — gentleman's farm setup"
       },
       {
-        "icon": "⚠️",
-        "text": "Home is a fixer-upper — land and barns are the star, house needs work"
+        "icon": "🌐",
+        "text": "Spectrum fiber optic internet CONFIRMED — rare for rural property"
+      },
+      {
+        "icon": "⛔",
+        "text": "MODULAR HOME (Champion Home Builders) — hard dealbreaker per family criteria"
       }
     ],
     "proximity": [
@@ -14057,8 +14057,14 @@ var PROPERTIES = [
       },
       {
         "icon": "🏫",
-        "label": "Rutherford Co. Schools (above avg)",
-        "value": "~10 min",
+        "label": "Union Elementary (7/10)",
+        "value": "~5 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Burns High (3/10)",
+        "value": "~9 mi",
         "ref": false
       },
       {
@@ -14071,119 +14077,107 @@ var PROPERTIES = [
     "cardPros": [
       {
         "icon": "✓",
-        "text": "15.96 acres — 3x the 5-acre minimum. Fenced pasture, creek, gardens, diverse topography."
+        "text": "15.96 acres with new 4' livestock perimeter fencing (2025) — animals on day one"
       },
       {
         "icon": "✓",
-        "text": "Custom Mennonite 10-stall barn — feed chutes, 6-ft loft, tack room. $50-100K+ to build."
+        "text": "Stream, wooded trails (ATV/hiking), cleared pasture, fruit trees, chicken coop"
       },
       {
         "icon": "✓",
-        "text": "Second 2-stall barn with 2 tack rooms — additional animal housing/storage"
+        "text": "Spectrum fiber optic internet CONFIRMED — rare for rural property"
       },
       {
         "icon": "✓",
-        "text": "100x200 cleared arena pad — prepped for future arena or large outbuilding"
+        "text": "550 sqft detached insulated garage + storage building + 12x20 shed"
       },
       {
         "icon": "✓",
-        "text": "Creek + rock outcroppings + raised gardens — family adventure playground"
+        "text": "County/public water (not well) — more reliable"
       },
       {
         "icon": "✓",
-        "text": "End of paved road — maximum privacy, dead-end access"
+        "text": "Home in excellent condition — recently painted, updated appliances, split bedroom plan"
       },
       {
         "icon": "✓",
-        "text": "No HOA, unrestricted — built for livestock, animals on day one"
+        "text": "FEMA Zone X — minimal flood risk. Whole-house generator hookup."
       },
       {
         "icon": "✓",
-        "text": "South Mountain views — scenic foothills backdrop"
+        "text": "No HOA, R15 zoning, horse amenities noted in MLS. FHA/VA/Conventional accepted."
       }
     ],
     "cardCons": [
       {
         "icon": "✗",
-        "text": "$515K at/above budget ceiling — needs negotiation to $475-495K"
+        "text": "⛔ MODULAR HOME (Champion Home Builders) — hard dealbreaker per family criteria"
       },
       {
         "icon": "✗",
-        "text": "Home is a fixer-upper — condition unknown, could be cosmetic or structural"
+        "text": "FLIP: sold $475K Apr 2024, listed $525K Feb 2026, cut to $499,900"
       },
       {
         "icon": "✗",
-        "text": "Only 3 bed / 2 bath — may need 4th bedroom for growing family"
+        "text": "Schools weak: Burns Middle 4/10, Burns High 3/10"
       },
       {
         "icon": "✗",
-        "text": "Internet UNKNOWN — rural Ellenboro, verify broadband availability"
+        "text": "No barn — only garage, repurposed tractor-trailer storage, shed, chicken coop"
       },
       {
         "icon": "✗",
-        "text": "Subdivided from 49 ac — confirm all outbuildings on THIS 15.96 ac parcel"
-      },
-      {
-        "icon": "✗",
-        "text": "Well/septic ages unknown — inspect both"
+        "text": "Previously approved for dog camp — verify if any commercial zoning implications remain"
       }
     ],
     "familyFit": [
-      "Matches the family vision more completely than any other property",
-      "Animals on day one — fenced pasture, 10-stall barn, livestock-ready",
-      "Creek + rock outcroppings = kids' adventure playground",
-      "Fixer-upper home is the main concern — plan for renovation with kids"
+      "15.96 acres with fencing, stream, trails — land is perfect for the family vision",
+      "Chicken coop + fruit trees + pasture = homestead ready",
+      "BUT: modular home is a hard dealbreaker per family criteria",
+      "If you can accept modular construction, this is otherwise very strong"
     ],
     "verifyItems": [
       {
-        "label": "Parcel Survey",
-        "text": "Request plat/survey confirming all outbuildings are on the 15.96 ac parcel, not the remaining ~33 ac."
+        "label": "Modular vs Manufactured",
+        "text": "Champion Home Builders makes both. Confirm if this is modular (built to state code, on permanent foundation) vs manufactured (HUD code, on chassis). Modular is higher quality."
       },
       {
-        "label": "Home Condition",
-        "text": "Contractor walkthrough — what does 'fixer-upper' actually mean? Cosmetic ($20-40K) or structural ($80K+)?"
+        "label": "Dog Camp Approval",
+        "text": "Was previously approved for dog camp by Cleveland Co. Planning — verify no commercial zoning implications."
       },
       {
-        "label": "Internet",
-        "text": "Check Spectrum, AT&T, Brightspeed at this address. Starlink as fallback."
-      },
-      {
-        "label": "Adjacent Parcel",
-        "text": "Who owns the remaining ~33 ac? What's planned for it?"
+        "label": "Septic Capacity",
+        "text": "Septic recently pumped — get capacity rating and inspection."
       }
     ],
     "mustDo": [
       {
         "urgent": true,
-        "text": "CONFIRM ALL OUTBUILDINGS ON THIS PARCEL — property was subdivided from 49 ac"
+        "text": "⛔ MODULAR HOME — hard dealbreaker. Verify if modular (state code) vs manufactured (HUD code)."
       },
       {
         "urgent": true,
-        "text": "CONTRACTOR WALKTHROUGH — fixer-upper scope determines total cost"
-      },
-      {
-        "urgent": true,
-        "text": "VERIFY INTERNET — rural Ellenboro, broadband required for WFH"
+        "text": "FLIP CHECK — sold $475K Apr 2024, now $499,900. What improvements were made?"
       },
       {
         "urgent": false,
-        "text": "Well/septic inspection"
+        "text": "Septic inspection (recently pumped, get capacity)"
       },
       {
         "urgent": false,
-        "text": "FEMA flood zone check (creek on property)"
+        "text": "Verify dog camp zoning approval has no commercial implications"
       }
     ],
     "envHazards": {
-      "location": "Rutherford County foothills — end of paved road near Ellenboro",
+      "location": "Cleveland County foothills — Ellenboro area, FEMA Zone X confirmed",
       "pills": [
         {
           "level": "low",
-          "text": "Standard foothills weather — no extreme hazards"
+          "text": "FEMA Zone X — minimal flood risk confirmed"
         },
         {
           "level": "low",
-          "text": "Creek flood risk — verify FEMA zone for creek corridor"
+          "text": "Standard foothills weather — no extreme hazards"
         }
       ],
       "note": "Rutherford County foothills. Creek on property may have portions in FEMA zone. Otherwise standard risk profile."
