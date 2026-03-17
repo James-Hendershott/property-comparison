@@ -3800,7 +3800,7 @@ var PROPERTIES = [
     "lat": 35.8694,
     "lng": -81.6497,
     "county": "Caldwell",
-    "price": 425000,
+    "price": 385000,
     "listingLink": "https://www.zillow.com/homedetails/4913-Celia-Creek-Rd-Lenoir-NC-28645/249250112_zpid/",
     "image": "https://photos.zillowstatic.com/fp/6b6654b2f7fc8d51c96c9f92eace6236-cc_ft_1152.webp",
     "beds": 3,
@@ -8789,9 +8789,9 @@ var PROPERTIES = [
     "yearBuilt": 1965,
     "type": "Site-Built",
     "typeBadge": "b-sfr",
-    "status": "Pending",
-    "statusClass": "status-pending",
-    "statusNote": "Went pending — possible price reduction before offer accepted",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Back to active — confirmed on Zillow 3/17/2026",
     "badges": [],
     "taxRate": 0.00569,
     "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
@@ -10542,7 +10542,7 @@ var PROPERTIES = [
     "sqft": 1915,
     "acres": 2.51,
     "acresSub": "mostly cleared land",
-    "yearBuilt": 0,
+    "yearBuilt": 1979,
     "type": "Site-Built",
     "typeBadge": "b-sfr",
     "status": "Active",
@@ -13953,6 +13953,240 @@ var PROPERTIES = [
         }
       ],
       "note": "Standard Rutherford County foothills risk. No creek on this specific property (unlike 281 N Quail Run)."
+    }
+  },
+  {
+    "id": "p63",
+    "num": 63,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Ellenboro",
+    "address": "3343 Hollis Rd",
+    "city": "Ellenboro",
+    "state": "NC",
+    "zip": "28040",
+    "lat": 35.3650,
+    "lng": -81.9750,
+    "county": "Rutherford",
+    "price": 515000,
+    "listingLink": "https://www.zillow.com/homedetails/3343-Hollis-Rd-Ellenboro-NC-28040/214098035_zpid/",
+    "image": "https://photos.zillowstatic.com/fp/a33efc3ee01be5d58c40a7e439f66b0d-cc_ft_1152.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 2120,
+    "acres": 15.96,
+    "acresSub": "fenced pasture, creek, rock outcroppings, raised gardens, South Mountain views",
+    "yearBuilt": 2014,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4085081. Originally 49 ac (Whitetail Properties), subdivided to 15.96 ac. Listed by Beth Helton and Associates.",
+    "badges": [],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 2936,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
+    "scores": {
+      "price": 8,
+      "acreage": 10,
+      "schools": 6,
+      "outbldgs": 10,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 8,
+      "living": 5
+    },
+    "offerRange": "$475K – $495K",
+    "offerStrategy": "Subdivided parcel — seller may be investor looking for return. Negotiate citing fixer-upper condition.",
+    "offerRationale": [
+      "$515K exceeds $450-500K ceiling — must negotiate down",
+      "Home described as fixer-upper — budget $30-80K renovation on top",
+      "Property was subdivided from 49 ac — seller likely investor, motivated",
+      "Barn + outbuildings are $50-100K+ replacement value — strong asset"
+    ],
+    "tableOfferNote": "Top pick — negotiate from $515K to $475-495K citing fixer-upper condition",
+    "highlight": "HIGHEST SCORING PROPERTY. 15.96 acres of working horse farm with custom Mennonite-built 10-stall barn, 2-stall barn, fenced pasture, creek, rock outcroppings, raised gardens, South Mountain views, and 100x200 arena pad. End of paved road, no HOA, unrestricted. Home is a fixer-upper (built 2014). 30 mi from Tryon International Equestrian Center.",
+    "highlights": [
+      {
+        "icon": "🐴",
+        "text": "10-stall Mennonite barn — feed chutes, 6-ft loft, tack room ($50-100K replacement)"
+      },
+      {
+        "icon": "🏡",
+        "text": "15.96 acres — 3x the minimum, fenced pasture, creek, rock outcroppings"
+      },
+      {
+        "icon": "🔧",
+        "text": "2-stall barn + outbuilding + 100x200 arena pad — best outbuilding package in search"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Home is a fixer-upper — land and barns are the star, house needs work"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Ellenboro / Forest City / Rutherfordton",
+        "value": "5–15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "🐴",
+        "label": "Tryon Int'l Equestrian Center",
+        "value": "~30 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Rutherford Co. Schools (above avg)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "15.96 acres — 3x the 5-acre minimum. Fenced pasture, creek, gardens, diverse topography."
+      },
+      {
+        "icon": "✓",
+        "text": "Custom Mennonite 10-stall barn — feed chutes, 6-ft loft, tack room. $50-100K+ to build."
+      },
+      {
+        "icon": "✓",
+        "text": "Second 2-stall barn with 2 tack rooms — additional animal housing/storage"
+      },
+      {
+        "icon": "✓",
+        "text": "100x200 cleared arena pad — prepped for future arena or large outbuilding"
+      },
+      {
+        "icon": "✓",
+        "text": "Creek + rock outcroppings + raised gardens — family adventure playground"
+      },
+      {
+        "icon": "✓",
+        "text": "End of paved road — maximum privacy, dead-end access"
+      },
+      {
+        "icon": "✓",
+        "text": "No HOA, unrestricted — built for livestock, animals on day one"
+      },
+      {
+        "icon": "✓",
+        "text": "South Mountain views — scenic foothills backdrop"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "$515K at/above budget ceiling — needs negotiation to $475-495K"
+      },
+      {
+        "icon": "✗",
+        "text": "Home is a fixer-upper — condition unknown, could be cosmetic or structural"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bed / 2 bath — may need 4th bedroom for growing family"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet UNKNOWN — rural Ellenboro, verify broadband availability"
+      },
+      {
+        "icon": "✗",
+        "text": "Subdivided from 49 ac — confirm all outbuildings on THIS 15.96 ac parcel"
+      },
+      {
+        "icon": "✗",
+        "text": "Well/septic ages unknown — inspect both"
+      }
+    ],
+    "familyFit": [
+      "Matches the family vision more completely than any other property",
+      "Animals on day one — fenced pasture, 10-stall barn, livestock-ready",
+      "Creek + rock outcroppings = kids' adventure playground",
+      "Fixer-upper home is the main concern — plan for renovation with kids"
+    ],
+    "verifyItems": [
+      {
+        "label": "Parcel Survey",
+        "text": "Request plat/survey confirming all outbuildings are on the 15.96 ac parcel, not the remaining ~33 ac."
+      },
+      {
+        "label": "Home Condition",
+        "text": "Contractor walkthrough — what does 'fixer-upper' actually mean? Cosmetic ($20-40K) or structural ($80K+)?"
+      },
+      {
+        "label": "Internet",
+        "text": "Check Spectrum, AT&T, Brightspeed at this address. Starlink as fallback."
+      },
+      {
+        "label": "Adjacent Parcel",
+        "text": "Who owns the remaining ~33 ac? What's planned for it?"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "CONFIRM ALL OUTBUILDINGS ON THIS PARCEL — property was subdivided from 49 ac"
+      },
+      {
+        "urgent": true,
+        "text": "CONTRACTOR WALKTHROUGH — fixer-upper scope determines total cost"
+      },
+      {
+        "urgent": true,
+        "text": "VERIFY INTERNET — rural Ellenboro, broadband required for WFH"
+      },
+      {
+        "urgent": false,
+        "text": "Well/septic inspection"
+      },
+      {
+        "urgent": false,
+        "text": "FEMA flood zone check (creek on property)"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County foothills — end of paved road near Ellenboro",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        },
+        {
+          "level": "low",
+          "text": "Creek flood risk — verify FEMA zone for creek corridor"
+        }
+      ],
+      "note": "Rutherford County foothills. Creek on property may have portions in FEMA zone. Otherwise standard risk profile."
     }
   }
 ];
