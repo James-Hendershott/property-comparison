@@ -13526,5 +13526,433 @@ var PROPERTIES = [
       ],
       "note": "Waterfront property on Yeats Creek in eastern NC. High hurricane and flood exposure. Flood insurance very likely required."
     }
+  },
+  {
+    "id": "p61",
+    "num": 61,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Forest City 3",
+    "address": "281 N Quail Run",
+    "city": "Forest City",
+    "state": "NC",
+    "zip": "28043",
+    "lat": 35.3039,
+    "lng": -81.8835,
+    "county": "Rutherford",
+    "price": 552000,
+    "listingLink": "https://www.purplemartinrealtyinc.com/our-active-listings",
+    "image": "",
+    "beds": 3,
+    "bath": 3,
+    "sqft": 3748,
+    "acres": 9.72,
+    "acresSub": "end of cul-de-sac, creek with gazebo, RV hookup",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4276143. FLIP ALERT: sold Nov 2025 for $390K, relisted at $552K (41% markup). Listed by Purple Martin Realty.",
+    "badges": ["b-livestock"],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 3146,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to downtown Forest City",
+    "scores": {
+      "price": 2,
+      "acreage": 8,
+      "schools": 6,
+      "outbldgs": 7,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 7,
+      "living": 5
+    },
+    "offerRange": "$420K – $460K",
+    "offerStrategy": "Massive flip — sold $390K Nov 2025, asking $552K. Aggressive lowball warranted.",
+    "offerRationale": [
+      "Sold for $390K just 4 months ago — 41% markup with carpet removal only",
+      "Listing says 'ready for you to transform' = flipper did NOT renovate",
+      "No city taxes is a plus but doesn't justify $162K markup",
+      "9.72 acres at cul-de-sac with creek is strong land value"
+    ],
+    "tableOfferNote": "FLIP: sold $390K Nov 2025, now $552K — lowball to ~$430K",
+    "highlight": "9.72 acres at end of cul-de-sac with creek, gazebo, extra-large garage/workshop, storage building, and RV hookup. Custom builder's home. HOWEVER: massive flip — sold Nov 2025 for $390K, relisted at $552K (41% markup) with minimal improvements. Needs cosmetic work (carpet removed). Price is $52K over budget ceiling.",
+    "highlights": [
+      {
+        "icon": "🏡",
+        "text": "9.72 acres at end of cul-de-sac — maximum privacy, dead-end road"
+      },
+      {
+        "icon": "🌊",
+        "text": "Creek with gazebo — natural water feature and gathering spot"
+      },
+      {
+        "icon": "🔧",
+        "text": "Extra-large garage/workshop + storage building — two outbuildings"
+      },
+      {
+        "icon": "⚠️",
+        "text": "FLIP: Sold $390K Nov 2025, relisted $552K — 41% markup, minimal work done"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Downtown Forest City",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Chase High (Niche B)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "9.72 acres at end of cul-de-sac — nearly double the 5-ac preference"
+      },
+      {
+        "icon": "✓",
+        "text": "Creek with gazebo + RV hookup — infrastructure for outdoor living"
+      },
+      {
+        "icon": "✓",
+        "text": "Extra-large garage/workshop + storage building — two outbuildings already"
+      },
+      {
+        "icon": "✓",
+        "text": "No city taxes — outside Forest City limits"
+      },
+      {
+        "icon": "✓",
+        "text": "Custom builder's home — site-built, quality construction"
+      },
+      {
+        "icon": "✓",
+        "text": "Finished bonus room with half bath — potential 4th bedroom or office"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "⚠️ FLIP: Sold $390K Nov 2025, relisted $552K — 41% markup, minimal work"
+      },
+      {
+        "icon": "✗",
+        "text": "⛔ Over budget at $552K — $52K above stretch max"
+      },
+      {
+        "icon": "✗",
+        "text": "Needs cosmetic work — carpet removed, 'ready for you to transform'"
+      },
+      {
+        "icon": "✗",
+        "text": "Quail Run subdivision — covenants may restrict livestock (VERIFY)"
+      },
+      {
+        "icon": "✗",
+        "text": "Year built unknown — age-related risks unassessable"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unverified — outside city limits on rural cul-de-sac"
+      }
+    ],
+    "familyFit": [
+      "Creek + gazebo is a strong family feature — outdoor play, nature, exploration",
+      "End of cul-de-sac = safe for kids, no through traffic",
+      "Needs renovation with kids — manageable if home is livable during work",
+      "At $552K, budget is blown — no room for outbuilding additions"
+    ],
+    "verifyItems": [
+      {
+        "label": "Livestock Covenants",
+        "text": "Request Quail Run subdivision covenants from Rutherford County Register of Deeds. No livestock = no deal."
+      },
+      {
+        "label": "Flip Justification",
+        "text": "What improvements were made since the $390K purchase 4 months ago? Appears to be carpet removal only."
+      },
+      {
+        "label": "Internet",
+        "text": "Verify broadband at this specific rural address. Forest City has good city coverage but this is outside limits."
+      },
+      {
+        "label": "Year Built",
+        "text": "Check Rutherford County tax records for construction date."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "VERIFY LIVESTOCK — Quail Run subdivision covenants must allow farm animals"
+      },
+      {
+        "urgent": true,
+        "text": "FLIP ALERT — Sold $390K four months ago, now $552K. Negotiate aggressively or walk."
+      },
+      {
+        "urgent": false,
+        "text": "Verify internet availability at exact address"
+      },
+      {
+        "urgent": false,
+        "text": "FEMA flood check — creek on property"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County foothills — Quail Run cul-de-sac",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flood risk near creek — verify FEMA zone"
+        },
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Creek on property may have portions in FEMA flood zone. Otherwise standard foothills risk profile."
+    }
+  },
+  {
+    "id": "p62",
+    "num": 62,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Forest City 4",
+    "address": "152 N Quail Run",
+    "city": "Forest City",
+    "state": "NC",
+    "zip": "28043",
+    "lat": 35.3045,
+    "lng": -81.8787,
+    "county": "Rutherford",
+    "price": 480000,
+    "listingLink": "https://www.coldwellbankerhomes.com/nc/forest-city/152-n-quail-run/pid_70129469/",
+    "image": "",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2329,
+    "acres": 4.23,
+    "acresSub": "landscaped, level backyard",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Brand new listing. Coldwell Banker. Move-in ready, recently remodeled.",
+    "badges": [],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 2736,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Forest City — restaurants, shops, Rails to Trails",
+    "scores": {
+      "price": 5,
+      "acreage": 4,
+      "schools": 6,
+      "outbldgs": 0,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 5,
+      "living": 7
+    },
+    "offerRange": "$450K – $465K",
+    "offerStrategy": "New listing — Forest City homes average 120 DOM and sell ~4% below list",
+    "offerRationale": [
+      "$480K for 4.23 acres with no outbuildings is expensive",
+      "Forest City homes sell ~4% below list on average",
+      "Under 5-acre preference — scoring ding",
+      "Compare unfavorably to other properties with more acreage at similar price"
+    ],
+    "tableOfferNote": "New listing — offer $450-465K, cite no outbuildings + under 5 acres",
+    "highlight": "Move-in ready brick ranch on 4.23 landscaped acres. Recently remodeled — new carpet, LVP flooring, fresh paint, brand new roof, granite countertops, stainless appliances. Flexible office space for WFH. Near downtown Forest City. HOWEVER: under 5 acres, no outbuildings, $480K near budget ceiling, and Quail Run subdivision covenants may restrict livestock.",
+    "highlights": [
+      {
+        "icon": "🏠",
+        "text": "Move-in ready — brand new roof, fresh remodel, zero deferred maintenance"
+      },
+      {
+        "icon": "💼",
+        "text": "Main-level office/multipurpose room — ready for remote work"
+      },
+      {
+        "icon": "🏫",
+        "text": "Rutherford County Schools — above average district"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Only 4.23 acres — below 5-acre preference, no outbuildings"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Downtown Forest City",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Chase High (Niche B)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Move-in ready — brand new roof, new flooring, fresh paint, granite kitchen"
+      },
+      {
+        "icon": "✓",
+        "text": "Main-level office room — ideal for remote work setup"
+      },
+      {
+        "icon": "✓",
+        "text": "Beautifully landscaped 4.23 acres — well-maintained grounds"
+      },
+      {
+        "icon": "✓",
+        "text": "Rutherford County Schools — above average district, Chase High B"
+      },
+      {
+        "icon": "✓",
+        "text": "Minutes to downtown Forest City — restaurants, Rails to Trails, amphitheater"
+      },
+      {
+        "icon": "✓",
+        "text": "One-level living — brick ranch, no stairs for daily bedroom access"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Only 4.23 acres — below 5-acre preference, limited expansion room"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings — no barn, workshop, shed, or garage beyond carport"
+      },
+      {
+        "icon": "✗",
+        "text": "$480K near budget ceiling — poor value vs. properties with more land and outbuildings"
+      },
+      {
+        "icon": "✗",
+        "text": "Quail Run subdivision — covenants may restrict livestock (VERIFY)"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bedrooms — bonus room upstairs is not technically a bedroom"
+      },
+      {
+        "icon": "✗",
+        "text": "No creek, pond, or natural water features — manicured, not homestead"
+      }
+    ],
+    "familyFit": [
+      "Move-in ready = no renovation stress during relocation with kids",
+      "Office space on main level is great for remote work",
+      "Not a homestead — this is a nice suburban home on acreage, not the family playground vision",
+      "Downtown Forest City is walkable and family-friendly"
+    ],
+    "verifyItems": [
+      {
+        "label": "Livestock Covenants",
+        "text": "Request Quail Run subdivision covenants from listing agent. Do they permit chickens, goats, horses?"
+      },
+      {
+        "label": "City Limits",
+        "text": "Is this inside or outside Forest City city limits? City limits = zoning restrictions + city taxes."
+      },
+      {
+        "label": "Internet",
+        "text": "Verify broadband availability at this specific address."
+      },
+      {
+        "label": "Year Built",
+        "text": "Unknown — check Rutherford County tax records."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "VERIFY LIVESTOCK — Quail Run subdivision covenants must allow farm animals"
+      },
+      {
+        "urgent": false,
+        "text": "Confirm whether property is inside or outside city limits"
+      },
+      {
+        "urgent": false,
+        "text": "Verify internet at exact address"
+      },
+      {
+        "urgent": false,
+        "text": "Determine year built from county tax records"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County foothills — Quail Run subdivision",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills hazard profile — no extreme risks"
+        }
+      ],
+      "note": "Standard Rutherford County foothills risk. No creek on this specific property (unlike 281 N Quail Run)."
+    }
   }
 ];
