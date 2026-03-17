@@ -14188,5 +14188,709 @@ var PROPERTIES = [
       ],
       "note": "Rutherford County foothills. Creek on property may have portions in FEMA zone. Otherwise standard risk profile."
     }
+  },
+  {
+    "id": "p64",
+    "num": 64,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Hudson",
+    "address": "3306 Christie Rd",
+    "city": "Hudson",
+    "state": "NC",
+    "zip": "28638",
+    "lat": 35.74,
+    "lng": -81.50,
+    "county": "Caldwell",
+    "price": 349900,
+    "listingLink": "https://www.zillow.com/homedetails/3306-Christie-Rd-Hudson-NC-28638/333945614_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1683,
+    "acres": 4.48,
+    "acresSub": "saltwater pool, zip line, chain-link dog lot",
+    "yearBuilt": 1971,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4354685. Listed 3/7/2026. Five Stone Real Estate.",
+    "badges": [],
+    "taxRate": 0.00569,
+    "taxLabel": "Property Tax (Caldwell Co. ~0.57%)",
+    "taxAnnual": 1991,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Hudson; Lenoir ~10 min; Hickory ~20 min",
+    "scores": {
+      "price": 8,
+      "acreage": 4,
+      "schools": 5,
+      "outbldgs": 2,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 6,
+      "beach": 2,
+      "forested": 5,
+      "living": 6
+    },
+    "offerRange": "$330K – $345K",
+    "offerStrategy": "Solid brick ranch under budget — negotiate citing 1971 build age and needed updates.",
+    "offerRationale": [
+      "Listed at $349,900 — well under budget ceiling",
+      "1971 build — likely needs roof, HVAC, or plumbing updates",
+      "4.48 acres is just under 5-acre preference"
+    ],
+    "tableOfferNote": "Under budget — negotiate from $349K citing 1971 age",
+    "highlight": "Brick ranch on 4.48 acres. Updated kitchen with granite countertops, den with wood-burning fireplace, French doors to spacious deck, saltwater pool, zip line for kids, chain-link dog lot. Caldwell County.",
+    "highlights": [
+      {
+        "icon": "🏊",
+        "text": "Saltwater pool — unique amenity, great for summer"
+      },
+      {
+        "icon": "🏡",
+        "text": "4.48 acres — just under 5-acre target but still spacious"
+      },
+      {
+        "icon": "🔧",
+        "text": "Updated kitchen with granite countertops, wood-burning fireplace"
+      },
+      {
+        "icon": "🎢",
+        "text": "Zip line + dog lot — kid and pet friendly from day one"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Lenoir)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Hudson / Lenoir / Hickory",
+        "value": "5–20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Caldwell Memorial Hospital",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Well under budget at $349,900 — leaves room for improvements"
+      },
+      {
+        "icon": "✓",
+        "text": "Saltwater pool, zip line, dog lot — family-ready outdoor features"
+      },
+      {
+        "icon": "✓",
+        "text": "Updated kitchen with granite countertops, wood-burning fireplace"
+      },
+      {
+        "icon": "✓",
+        "text": "Brick construction — solid, low-maintenance exterior"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "4.48 acres — just under the 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1971 — likely needs roof, HVAC, plumbing assessment"
+      },
+      {
+        "icon": "✗",
+        "text": "Pool maintenance adds ongoing cost (~$1-3K/yr)"
+      },
+      {
+        "icon": "✗",
+        "text": "Limited outbuildings — no barn or workshop noted"
+      }
+    ],
+    "familyFit": [
+      "Pool and zip line = instant kid paradise",
+      "Dog lot is a plus for family pets",
+      "Under 5 acres limits livestock ambitions",
+      "Caldwell County schools are average — verify specific zone"
+    ],
+    "verifyItems": [
+      {
+        "label": "Home Inspection",
+        "text": "1971 build — inspect roof, HVAC, plumbing, electrical, and foundation."
+      },
+      {
+        "label": "Pool Condition",
+        "text": "Saltwater pool liner, pump, heater ages — budget for potential replacement."
+      },
+      {
+        "label": "Internet",
+        "text": "Check Spectrum / AT&T at this address for broadband availability."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "FULL HOME INSPECTION — 1971 build, check all major systems"
+      },
+      {
+        "urgent": false,
+        "text": "Pool inspection — liner, pump, heater condition"
+      },
+      {
+        "urgent": false,
+        "text": "Verify internet service options at address"
+      }
+    ],
+    "envHazards": {
+      "location": "Caldwell County foothills — Hudson area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Caldwell County foothills. Standard risk profile for the area."
+    }
+  },
+  {
+    "id": "p65",
+    "num": 65,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Ellenboro 2",
+    "address": "315 Walker Store Rd",
+    "city": "Ellenboro",
+    "state": "NC",
+    "zip": "28040",
+    "lat": 35.33,
+    "lng": -81.76,
+    "county": "Rutherford",
+    "price": 355000,
+    "listingLink": "https://www.zillow.com/homedetails/315-Walker-Store-Rd-Ellenboro-NC-28040/102117337_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 3,
+    "sqft": 1671,
+    "acres": 1.97,
+    "acresSub": "Amish-built work shed, concrete driveway",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4351901. Split-foyer with partially finished basement. Amish-built work shed. Motivated seller.",
+    "badges": [],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
+    "taxAnnual": 2024,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
+    "scores": {
+      "price": 8,
+      "acreage": 2,
+      "schools": 6,
+      "outbldgs": 5,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 5,
+      "living": 6
+    },
+    "offerRange": "$335K – $350K",
+    "offerStrategy": "Motivated seller — negotiate citing small lot and unknown build year.",
+    "offerRationale": [
+      "Listed at $355K — under budget",
+      "Motivated seller noted in listing — leverage for lower offer",
+      "Only 1.97 acres — well below 5-acre preference"
+    ],
+    "tableOfferNote": "Motivated seller — negotiate down from $355K",
+    "highlight": "Move-in ready split-foyer on 1.97 acres. Partially finished basement, Amish-built large work shed, concrete driveway. Only 1.97 acres — below 5-acre preference. Motivated seller.",
+    "highlights": [
+      {
+        "icon": "🏠",
+        "text": "Split-foyer with partially finished basement — extra living space"
+      },
+      {
+        "icon": "🔨",
+        "text": "Amish-built large work shed — quality construction outbuilding"
+      },
+      {
+        "icon": "💰",
+        "text": "Motivated seller — room to negotiate below $355K asking"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Only 1.97 acres — well below 5-acre family preference"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Forest City)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Ellenboro / Forest City / Rutherfordton",
+        "value": "5–15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Under budget at $355K — motivated seller may accept less"
+      },
+      {
+        "icon": "✓",
+        "text": "Amish-built work shed — high-quality outbuilding included"
+      },
+      {
+        "icon": "✓",
+        "text": "Partially finished basement — bonus living/storage space"
+      },
+      {
+        "icon": "✓",
+        "text": "Move-in ready — no major renovation needed"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Only 1.97 acres — well below 5-acre preference for livestock"
+      },
+      {
+        "icon": "✗",
+        "text": "Year built unknown — could mean older home with hidden issues"
+      },
+      {
+        "icon": "✗",
+        "text": "Split-foyer layout — stairs at every entry, less ideal for young kids"
+      },
+      {
+        "icon": "✗",
+        "text": "3 bed / 3 bath on 1,671 sqft — tight layout"
+      }
+    ],
+    "familyFit": [
+      "Move-in ready is a plus for quick relocation",
+      "Work shed great for hobby/workshop space",
+      "1.97 acres severely limits livestock and outdoor goals",
+      "Split-foyer stairs a concern with toddlers"
+    ],
+    "verifyItems": [
+      {
+        "label": "Home Age",
+        "text": "Year built unknown — pull county records or request seller disclosure for actual age."
+      },
+      {
+        "label": "Basement",
+        "text": "Inspect partially finished basement — check for moisture, mold, proper egress."
+      },
+      {
+        "label": "Internet",
+        "text": "Check broadband availability — Spectrum, AT&T, Brightspeed at this address."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "DETERMINE BUILD YEAR — unknown age is a red flag, pull county records"
+      },
+      {
+        "urgent": true,
+        "text": "FULL HOME INSPECTION — unknown year means unknown system ages"
+      },
+      {
+        "urgent": false,
+        "text": "Basement moisture test"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County foothills — Ellenboro area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Rutherford County foothills. Standard risk profile for the area."
+    }
+  },
+  {
+    "id": "p66",
+    "num": 66,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Millers Creek",
+    "address": "753 Arbor Grove Church Rd",
+    "city": "Millers Creek",
+    "state": "NC",
+    "zip": "28651",
+    "lat": 36.17,
+    "lng": -81.24,
+    "county": "Wilkes",
+    "price": 416000,
+    "listingLink": "https://www.zillow.com/homedetails/753-Arbor-Grove-Church-Rd-Millers-Creek-NC-28651/2065826802_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1369,
+    "acres": 2.0,
+    "acresSub": "covered gazebo, raised garden beds, brick exterior",
+    "yearBuilt": 1988,
+    "type": "Manufactured",
+    "typeBadge": "b-mfg",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MANUFACTURED/MODULAR HOME — hard dealbreaker per family criteria.",
+    "badges": [],
+    "taxRate": 0.0055,
+    "taxLabel": "Property Tax (Wilkes Co. ~0.55%)",
+    "taxAnnual": 2288,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to North Wilkesboro; Wilkesboro ~15 min",
+    "scores": {
+      "price": 5,
+      "acreage": 2,
+      "schools": 5,
+      "outbldgs": 2,
+      "town": 6,
+      "hospital": 6,
+      "hazards": 6,
+      "beach": 1,
+      "forested": 5,
+      "living": 5
+    },
+    "offerRange": "N/A — dealbreaker",
+    "offerStrategy": "Not recommended — manufactured home is a hard dealbreaker.",
+    "offerRationale": [
+      "Manufactured/modular home — automatic disqualification per family criteria",
+      "Financing restrictions on manufactured homes",
+      "Resale value concerns with manufactured type"
+    ],
+    "tableOfferNote": "DEALBREAKER — manufactured home",
+    "highlight": "\u26d4 MANUFACTURED HOME — hard dealbreaker. Meticulously maintained modular on 2 acres with covered gazebo, raised garden beds, brick exterior. But manufactured = automatic no.",
+    "highlights": [
+      {
+        "icon": "\u26d4",
+        "text": "MANUFACTURED HOME — automatic dealbreaker per family criteria"
+      },
+      {
+        "icon": "🏡",
+        "text": "2 acres with covered gazebo, raised garden beds"
+      },
+      {
+        "icon": "🧱",
+        "text": "Brick exterior, meticulously maintained"
+      },
+      {
+        "icon": "💰",
+        "text": "$416K for manufactured on 2 acres — poor value proposition"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (North Wilkesboro)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "North Wilkesboro / Wilkesboro",
+        "value": "10–15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Wilkes Medical Center",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Meticulously maintained — brick exterior, well-kept grounds"
+      },
+      {
+        "icon": "✓",
+        "text": "Covered gazebo and raised garden beds — nice outdoor features"
+      },
+      {
+        "icon": "✓",
+        "text": "High Country location — cooler summers, mountain access"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "MANUFACTURED HOME — hard dealbreaker, automatic disqualification"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 2 acres — well below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "$416K for manufactured on 2 acres — overpriced for type"
+      },
+      {
+        "icon": "✗",
+        "text": "Financing restrictions typical for manufactured homes"
+      }
+    ],
+    "familyFit": [
+      "Manufactured home is an automatic no — family criteria excludes this type",
+      "Would need to be site-built to even consider",
+      "Property grounds are nice but home type is disqualifying"
+    ],
+    "verifyItems": [
+      {
+        "label": "N/A",
+        "text": "Dealbreaker — manufactured home. No further verification needed."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "SKIP — manufactured home is a hard dealbreaker"
+      }
+    ],
+    "envHazards": {
+      "location": "Wilkes County — Millers Creek / High Country",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard mountain weather — winter ice/snow possible"
+        }
+      ],
+      "note": "Wilkes County High Country. Higher elevation means cooler temps, occasional winter weather."
+    }
+  },
+  {
+    "id": "p67",
+    "num": 67,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Shelby",
+    "address": "1246 Bob Falls Rd",
+    "city": "Shelby",
+    "state": "NC",
+    "zip": "28150",
+    "lat": 35.29,
+    "lng": -81.54,
+    "county": "Cleveland",
+    "price": 500000,
+    "listingLink": "https://www.zillow.com/homedetails/1246-Bob-Falls-Rd-Shelby-NC-28150/452310970_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 1711,
+    "acres": 3.0,
+    "acresSub": "new construction, 339 sqft outdoor living space, front porch",
+    "yearBuilt": 2025,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "New construction 2025/2026. EXP Realty LLC.",
+    "badges": [],
+    "taxRate": 0.0063,
+    "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
+    "taxAnnual": 3150,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~10 min",
+    "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~50 min",
+    "scores": {
+      "price": 4,
+      "acreage": 3,
+      "schools": 6,
+      "outbldgs": 0,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 4,
+      "living": 7
+    },
+    "offerRange": "$475K – $490K",
+    "offerStrategy": "New construction at budget ceiling — negotiate citing no outbuildings and only 3 acres.",
+    "offerRationale": [
+      "$500K is the absolute budget ceiling",
+      "No outbuildings — everything must be built from scratch",
+      "Only 3 acres — below 5-acre preference",
+      "New construction may have builder incentives"
+    ],
+    "tableOfferNote": "At budget ceiling — negotiate from $500K citing small acreage",
+    "highlight": "New construction ranch on 3 acres. High cathedral ceilings, wide plank LVP floors, statement fireplace, 339 sqft outdoor living space, front porch. At budget ceiling at $500K. Only 3 acres.",
+    "highlights": [
+      {
+        "icon": "🏗️",
+        "text": "Brand new 2025 construction — no deferred maintenance, everything under warranty"
+      },
+      {
+        "icon": "✨",
+        "text": "High cathedral ceilings, wide plank LVP floors, statement fireplace"
+      },
+      {
+        "icon": "🏡",
+        "text": "339 sqft outdoor living space + front porch — generous outdoor areas"
+      },
+      {
+        "icon": "⚠️",
+        "text": "At $500K budget ceiling with only 3 acres and zero outbuildings"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Shelby)",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Shelby / Gastonia / Charlotte",
+        "value": "10–50 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Atrium Health Cleveland",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Brand new construction — everything under builder warranty"
+      },
+      {
+        "icon": "✓",
+        "text": "Modern finishes — cathedral ceilings, LVP floors, statement fireplace"
+      },
+      {
+        "icon": "✓",
+        "text": "339 sqft outdoor living space — great for entertaining"
+      },
+      {
+        "icon": "✓",
+        "text": "Close to Shelby amenities — grocery, hospital, schools within 15 min"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "$500K at absolute budget ceiling — zero room for negotiation upward"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 acres — below 5-acre preference for livestock"
+      },
+      {
+        "icon": "✗",
+        "text": "Zero outbuildings — barn, shed, fencing all must be built from scratch"
+      },
+      {
+        "icon": "✗",
+        "text": "New construction in rural area — verify well/septic included in build"
+      }
+    ],
+    "familyFit": [
+      "New home = no renovation headaches, move-in ready",
+      "Modern layout good for family with young kids",
+      "3 acres limits livestock plans — would need to buy adjacent land",
+      "No outbuildings means significant additional investment for homestead goals"
+    ],
+    "verifyItems": [
+      {
+        "label": "Builder Warranty",
+        "text": "Confirm warranty terms — structural, systems, appliances coverage periods."
+      },
+      {
+        "label": "Well & Septic",
+        "text": "Verify well and septic are included in build or if additional cost."
+      },
+      {
+        "label": "Internet",
+        "text": "Check broadband availability — Spectrum, AT&T at this address."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "CONFIRM FINAL PRICE — new construction may have change orders or upgrades not in list price"
+      },
+      {
+        "urgent": true,
+        "text": "VERIFY WELL/SEPTIC INCLUDED — sometimes separate cost on new builds"
+      },
+      {
+        "urgent": false,
+        "text": "Walk the 3-acre lot — confirm boundaries and usable land"
+      }
+    ],
+    "envHazards": {
+      "location": "Cleveland County foothills — Shelby area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Cleveland County foothills. Standard risk profile. New construction should meet current building codes."
+    }
   }
 ];
