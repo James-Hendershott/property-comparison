@@ -1797,6 +1797,47 @@
     });
   }
 
+  // --- Mobile nav toggle (collapse region buttons) ---
+  function initMobileNavToggle() {
+    var btn = document.getElementById('nav-mobile-toggle');
+    var center = document.getElementById('nav-center');
+    if (!btn || !center) return;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = center.classList.toggle('open');
+      btn.classList.toggle('active', open);
+      // Recalc nav spacer when panel opens/closes
+      setTimeout(function () {
+        var nav = document.querySelector('.nav');
+        var spacer = document.querySelector('.nav-spacer');
+        if (nav && spacer) spacer.style.height = nav.offsetHeight + (open ? center.offsetHeight : 0) + 'px';
+      }, 10);
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!center.classList.contains('open')) return;
+      if (center.contains(e.target) || btn.contains(e.target)) return;
+      center.classList.remove('open');
+      btn.classList.remove('active');
+      var nav = document.querySelector('.nav');
+      var spacer = document.querySelector('.nav-spacer');
+      if (nav && spacer) spacer.style.height = nav.offsetHeight + 'px';
+    });
+
+    // Close when a region link is clicked
+    center.addEventListener('click', function (e) {
+      if (e.target.closest('.nav-group-dropdown a')) {
+        center.classList.remove('open');
+        btn.classList.remove('active');
+        var nav = document.querySelector('.nav');
+        var spacer = document.querySelector('.nav-spacer');
+        if (nav && spacer) spacer.style.height = nav.offsetHeight + 'px';
+      }
+    });
+  }
+
   // --- Overview table filter ---
   function initTableFilter() {
     var section = document.getElementById('overview');
@@ -2254,6 +2295,7 @@
     initCollapsibleOverview();
     initCollapsibleGraveyard();
     initFilterBar();
+    initMobileNavToggle();
 
     // --- Nav spacer: match fixed nav height ---
     function syncNavSpacer() {

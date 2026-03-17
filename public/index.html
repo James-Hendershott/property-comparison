@@ -237,6 +237,36 @@ body {
   white-space: nowrap;
 }
 
+/* Mobile regions toggle — hidden on desktop */
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.25);
+  background: rgba(74,222,128,0.08);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.nav-mobile-toggle:hover,
+.nav-mobile-toggle.active {
+  background: rgba(74,222,128,0.15);
+  border-color: rgba(74,222,128,0.35);
+}
+.nav-mobile-chevron {
+  font-size: 0.55rem;
+  transition: transform 0.2s;
+}
+.nav-mobile-toggle.active .nav-mobile-chevron {
+  transform: rotate(180deg);
+}
+
 /* Per-card print button */
 .card-print-btn {
   position: absolute;
@@ -465,12 +495,30 @@ table.qt {
   .header p { font-size: 0.72rem; margin-top: 0.15rem; }
 
   /* Compact nav on mobile — icons only */
-  .nav { padding: 0.2rem 0.4rem; gap: 0.15rem; }
+  .nav { padding: 0.2rem 0.4rem; gap: 0.15rem; flex-wrap: nowrap; }
   .nav-link-text { display: none; }
   .nav-icon-link { font-size: 0.78rem; padding: 0.3rem 0.5rem; }
-  .nav-group-btn { font-size: 0.68rem; padding: 0.25rem 0.45rem; }
+
+  /* Show mobile toggle, hide inline region buttons */
+  .nav-mobile-toggle { display: inline-flex; }
+  .nav-center {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f1712;
+    border-bottom: 1px solid rgba(74,222,128,0.15);
+    padding: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 99;
+  }
+  .nav-center.open { display: flex; }
+  .nav-group-btn { font-size: 0.72rem; padding: 0.3rem 0.55rem; }
   .nav-group-count { font-size: 0.5rem; padding: 0.02rem 0.18rem; }
-  .nav-center { gap: 0.12rem; }
 }
 /* Multi-column compact card styles */
 @media (min-width: 1200px) {
@@ -1034,7 +1082,11 @@ table.qt {
     <a href="#overview" class="nav-icon-link nav-table" title="Quick Comparison Overview"><span class="bi bi-table"></span><span class="nav-link-text"> Overview</span></a>
     <a href="#property-map-section" class="nav-icon-link nav-map" title="Interactive property map"><svg class="nav-svg-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8.5 1.724C10.037.903 12.232.861 14 2v12c-1.768-1.139-3.963-1.097-5.5-.278V1.724zM8 1.783C6.465.932 4.233.869 2.429 1.96l-.134.079A.5.5 0 0 0 2 2.5v11a.5.5 0 0 0 .742.44l.096-.054C4.473 12.919 6.547 12.876 8 13.7V1.783z"/></svg><span class="nav-link-text"> Map</span></a>
   </div>
-  <div class="nav-center">
+  <button class="nav-mobile-toggle" id="nav-mobile-toggle" title="Browse regions">
+    <span class="bi bi-geo-alt-fill"></span> <span class="nav-mobile-toggle-label">Regions</span>
+    <span class="bi bi-chevron-down nav-mobile-chevron"></span>
+  </button>
+  <div class="nav-center" id="nav-center">
     <span id="nav-properties"></span>
   </div>
   <div class="nav-right">
