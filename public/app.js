@@ -863,6 +863,25 @@
         var pid = href.slice(1);
         a.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
       });
+
+      // Update nav group counts and hide empty groups
+      document.querySelectorAll('.nav-group').forEach(function (group) {
+        var links = group.querySelectorAll('.nav-group-dropdown a[href^="#p"]');
+        var visible = 0;
+        links.forEach(function (a) {
+          if (a.style.display !== 'none') visible++;
+        });
+        var countEl = group.querySelector('.nav-group-count');
+        if (countEl) countEl.textContent = visible;
+        group.style.display = visible === 0 ? 'none' : '';
+      });
+
+      // Hide region sections where all cards are graveyarded
+      document.querySelectorAll('.region-section').forEach(function (section) {
+        var hasVisible = section.querySelector('.card[id^="p"]:not(.graveyarded)');
+        section.classList.toggle('region-filtered-out', !hasVisible);
+      });
+
       document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
         var link = row.querySelector('a[href^="#p"]');
         if (!link) return;
