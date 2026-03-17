@@ -14892,5 +14892,745 @@ var PROPERTIES = [
       ],
       "note": "Cleveland County foothills. Standard risk profile. New construction should meet current building codes."
     }
+  },
+  {
+    "id": "p68",
+    "num": 68,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Crouse",
+    "address": "5740 Crouse Rd",
+    "city": "Crouse",
+    "state": "NC",
+    "zip": "28033",
+    "lat": 35.4225,
+    "lng": -81.3222,
+    "county": "Lincoln",
+    "price": 499000,
+    "listingLink": "https://www.zillow.com/homedetails/5740-Crouse-Rd-Crouse-NC-28033/6105049_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1482,
+    "acres": 11.48,
+    "acresSub": "~5 ac clear, rest wooded",
+    "yearBuilt": 1940,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Under Contract",
+    "statusClass": "status-pending",
+    "statusNote": "MLS# 4269161. UNDER CONTRACT. Price cut from ~$575K to $499K. Renovated farmhouse.",
+    "badges": [],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Lincoln Co. ~0.57%)",
+    "taxAnnual": 2844,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Lincolnton; Gastonia ~25 min; Charlotte ~45 min",
+    "scores": {
+      "price": 6,
+      "acreage": 9,
+      "schools": 6,
+      "outbldgs": 2,
+      "town": 6,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 8,
+      "living": 5
+    },
+    "offerRange": "Under Contract",
+    "offerStrategy": "Under contract — monitor for fallthrough. If it returns to market, price already reduced from $575K.",
+    "offerRationale": [
+      "Already reduced from ~$575K to $499K — significant cut",
+      "Under contract — may not be available",
+      "1940 build requires renovation budget for lead/asbestos remediation",
+      "11.48 acres is excellent — rare at this price point"
+    ],
+    "tableOfferNote": "Under Contract — monitor for fallthrough",
+    "highlight": "Renovated farmhouse on 11.48 private acres (~5 ac clear, rest wooded). Bright open floor plan, updated kitchen/baths. UNDER CONTRACT — may not be available. Built 1940 — lead/asbestos concerns.",
+    "highlights": [
+      {
+        "icon": "🌳",
+        "text": "11.48 acres — ~5 cleared, rest wooded. Excellent acreage for the price"
+      },
+      {
+        "icon": "🏠",
+        "text": "Renovated farmhouse with updated kitchen and bathrooms, open floor plan"
+      },
+      {
+        "icon": "💰",
+        "text": "Price cut from ~$575K to $499K — already discounted"
+      },
+      {
+        "icon": "⚠️",
+        "text": "UNDER CONTRACT — may not be available. Built 1940 — lead/asbestos risk"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Lincolnton)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Gastonia / Charlotte",
+        "value": "25–45 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Atrium Health Lincoln",
+        "value": "~18 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "11.48 acres — one of the largest parcels in the search, mix of cleared and wooded"
+      },
+      {
+        "icon": "✓",
+        "text": "Price reduced from ~$575K to $499K — already discounted significantly"
+      },
+      {
+        "icon": "✓",
+        "text": "Renovated interior — updated kitchen, baths, bright open floor plan"
+      },
+      {
+        "icon": "✓",
+        "text": "Private setting with mature trees and mixed-use acreage"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "UNDER CONTRACT — may not be available"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1940 — lead paint, asbestos, outdated wiring/plumbing likely"
+      },
+      {
+        "icon": "✗",
+        "text": "1482 sqft is small for a 3-bed — limited living space"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings mentioned — barn/shed must be built"
+      }
+    ],
+    "familyFit": [
+      "11.48 acres is excellent for livestock, gardens, kids to roam",
+      "Renovated interior is move-in ready despite 1940 build year",
+      "Only 3 bed / 1482 sqft — tight for a growing family",
+      "1940 construction means lead/asbestos remediation may be needed for child safety"
+    ],
+    "verifyItems": [
+      {
+        "label": "Lead & Asbestos",
+        "text": "1940 build — get full lead/asbestos inspection before closing. Budget for remediation."
+      },
+      {
+        "label": "Contract Status",
+        "text": "Under contract — check if backup offers are accepted or monitor for fallthrough."
+      },
+      {
+        "label": "Well & Septic",
+        "text": "Verify well flow rate and septic condition — older rural property."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "MONITOR CONTRACT STATUS — this property is under contract, watch for fallthrough"
+      },
+      {
+        "urgent": true,
+        "text": "LEAD/ASBESTOS INSPECTION — 1940 build requires full hazmat inspection before purchase"
+      },
+      {
+        "urgent": false,
+        "text": "Walk all 11.48 acres — confirm boundary lines, cleared vs. wooded areas, drainage"
+      }
+    ],
+    "envHazards": {
+      "location": "Lincoln County foothills — Crouse area",
+      "pills": [
+        {
+          "level": "mod",
+          "text": "1940 build — lead paint & asbestos probable"
+        },
+        {
+          "level": "low",
+          "text": "Standard foothills weather risk"
+        }
+      ],
+      "note": "Lincoln County foothills. Primary concern is 1940 construction — lead and asbestos remediation likely needed. Standard weather risk profile."
+    }
+  },
+  {
+    "id": "p69",
+    "num": 69,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Stony Point",
+    "address": "218 Fulbright Rd",
+    "city": "Stony Point",
+    "state": "NC",
+    "zip": "28678",
+    "lat": 35.7849,
+    "lng": -81.0945,
+    "county": "Iredell",
+    "price": 424000,
+    "listingLink": "https://www.zillow.com/homedetails/218-Fulbright-Rd-Stony-Point-NC-28678/55462567_zpid/",
+    "image": "",
+    "beds": 4,
+    "bath": 2,
+    "sqft": 1764,
+    "acres": 2.32,
+    "acresSub": "two lots included, Patriots Point subdivision",
+    "yearBuilt": 2002,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 3784807. Patriots Point subdivision — verify covenants for livestock. Two lots included. 800+ sqft unfinished upstairs with plumbing.",
+    "badges": [],
+    "taxRate": 0.0055,
+    "taxLabel": "Property Tax (Iredell Co. ~0.55%)",
+    "taxAnnual": 2332,
+    "hoa": 0,
+    "drive": "~25 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Statesville; Hickory ~20 min; Charlotte ~60 min",
+    "scores": {
+      "price": 6,
+      "acreage": 2,
+      "schools": 6,
+      "outbldgs": 5,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 4,
+      "living": 7
+    },
+    "offerRange": "$400K – $415K",
+    "offerStrategy": "Offer below asking citing small acreage and subdivision covenant restrictions on livestock.",
+    "offerRationale": [
+      "2.32 acres is well below 5-acre preference",
+      "Subdivision covenants may restrict livestock — major concern",
+      "800+ sqft unfinished upstairs adds future value but needs investment",
+      "Good amenities — pool, hot tub, detached garage"
+    ],
+    "tableOfferNote": "Offer $400–415K citing small acreage, covenant restrictions",
+    "highlight": "4-bed home on 2.32 acres (two lots). Patriots Point subdivision. Fireplace, hot tub, pool, 24x24 detached 2-car garage, new deck, bonus room. 800+ sqft unfinished upstairs. Only 2.32 ac. Subdivision covenants may restrict livestock.",
+    "highlights": [
+      {
+        "icon": "🏠",
+        "text": "4-bed home with fireplace, pool, hot tub, new deck, bonus room"
+      },
+      {
+        "icon": "🔧",
+        "text": "800+ sqft unfinished upstairs with plumbing — ready for expansion"
+      },
+      {
+        "icon": "🚗",
+        "text": "24x24 detached 2-car garage — excellent outbuilding"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Only 2.32 ac in subdivision — covenants may restrict livestock"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Statesville)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Statesville / Hickory",
+        "value": "15–20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Iredell Memorial Hospital",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~25 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "4 bedrooms — good space for a family, plus 800+ sqft unfinished upstairs"
+      },
+      {
+        "icon": "✓",
+        "text": "24x24 detached 2-car garage — workshop/storage ready"
+      },
+      {
+        "icon": "✓",
+        "text": "Pool, hot tub, new deck — excellent outdoor living amenities"
+      },
+      {
+        "icon": "✓",
+        "text": "Close to Statesville and Hickory — good access to towns"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Only 2.32 acres — well below 5-acre preference for homesteading"
+      },
+      {
+        "icon": "✗",
+        "text": "Patriots Point subdivision — covenants likely restrict livestock, outbuildings"
+      },
+      {
+        "icon": "✗",
+        "text": "Pool maintenance costs — ongoing expense for inground pool"
+      },
+      {
+        "icon": "✗",
+        "text": "Unfinished upstairs needs investment to convert to living space"
+      }
+    ],
+    "familyFit": [
+      "4 beds + future upstairs expansion = room to grow",
+      "Pool and hot tub great for family recreation",
+      "Subdivision may restrict livestock — verify covenants before offer",
+      "Only 2.32 acres severely limits homestead/farming goals"
+    ],
+    "verifyItems": [
+      {
+        "label": "HOA / Covenants",
+        "text": "Get full Patriots Point covenants — check livestock, outbuilding, and fence restrictions."
+      },
+      {
+        "label": "Pool Condition",
+        "text": "Inspect pool equipment, liner, and plumbing. Get maintenance cost estimates."
+      },
+      {
+        "label": "Upstairs Buildout",
+        "text": "Get contractor quote for finishing 800+ sqft upstairs — plumbing already roughed in."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "GET SUBDIVISION COVENANTS — verify livestock, poultry, outbuilding restrictions before offer"
+      },
+      {
+        "urgent": true,
+        "text": "POOL INSPECTION — inground pool needs professional inspection for leaks, equipment age"
+      },
+      {
+        "urgent": false,
+        "text": "Get contractor quote for finishing upstairs — factor into total budget"
+      }
+    ],
+    "envHazards": {
+      "location": "Iredell County foothills — Stony Point area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Iredell County foothills. Low risk profile. 2002 construction within modern building codes."
+    }
+  },
+  {
+    "id": "p70",
+    "num": 70,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Lawndale",
+    "address": "104 Glenn Oaks Dr",
+    "city": "Lawndale",
+    "state": "NC",
+    "zip": "28090",
+    "lat": 35.414,
+    "lng": -81.563,
+    "county": "Cleveland",
+    "price": 350000,
+    "listingLink": "https://www.zillow.com/homedetails/104-Glenn-Oaks-Dr-Lawndale-NC-28090/93008857_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 3,
+    "sqft": 2373,
+    "acres": 3.28,
+    "acresSub": "renovated ranch with basement",
+    "yearBuilt": 1977,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4296735. Completely renovated ranch — new roof, siding, HVAC, windows, kitchen, baths.",
+    "badges": [],
+    "taxRate": 0.0063,
+    "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
+    "taxAnnual": 2205,
+    "hoa": 0,
+    "drive": "~26 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~15 min",
+    "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~55 min",
+    "scores": {
+      "price": 9,
+      "acreage": 3,
+      "schools": 6,
+      "outbldgs": 2,
+      "town": 7,
+      "hospital": 7,
+      "hazards": 7,
+      "beach": 2,
+      "forested": 5,
+      "living": 7
+    },
+    "offerRange": "$330K – $345K",
+    "offerStrategy": "Strong value at $350K — offer slightly below citing small acreage and no outbuildings.",
+    "offerRationale": [
+      "$350K is excellent value for 2373 sqft fully renovated",
+      "Only 3.28 acres — below 5-acre preference",
+      "No outbuildings — barn/shed needed for homesteading",
+      "1977 build but completely renovated — reduces age concerns"
+    ],
+    "tableOfferNote": "Offer $330–345K — great value, small acreage",
+    "highlight": "Completely renovated ranch on 3.28 acres. New roof, HVAC, windows, kitchen with granite, second kitchen in basement. Great value at $350K. Only 3.28 ac — below 5-acre preference.",
+    "highlights": [
+      {
+        "icon": "💰",
+        "text": "Excellent value at $350K for 2373 sqft — completely renovated"
+      },
+      {
+        "icon": "🔧",
+        "text": "New roof, siding, HVAC, windows, kitchen, baths — move-in ready"
+      },
+      {
+        "icon": "🏠",
+        "text": "Second kitchen in basement — perfect for in-law suite or rental"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Only 3.28 acres — below 5-acre preference for livestock/homesteading"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Shelby)",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Shelby / Gastonia",
+        "value": "15–30 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Atrium Health Cleveland",
+        "value": "~18 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~26 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "$350K for 2373 sqft fully renovated — best price-per-sqft in the search"
+      },
+      {
+        "icon": "✓",
+        "text": "Completely renovated — new roof, HVAC, windows, kitchen, baths"
+      },
+      {
+        "icon": "✓",
+        "text": "Second kitchen in basement — versatile for in-law suite or rental income"
+      },
+      {
+        "icon": "✓",
+        "text": "3 full bathrooms — uncommon at this price point"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Only 3.28 acres — below 5-acre preference for livestock"
+      },
+      {
+        "icon": "✗",
+        "text": "No outbuildings mentioned — barn/shed must be built"
+      },
+      {
+        "icon": "✗",
+        "text": "1977 original build — foundation, plumbing, electrical may still be original"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bedrooms — tight for a growing family"
+      }
+    ],
+    "familyFit": [
+      "Excellent value frees up budget for outbuildings and land improvements",
+      "Basement with second kitchen = future in-law suite or teen space",
+      "3.28 acres workable for small-scale homesteading but limits livestock",
+      "Only 3 bedrooms on main level — may need basement conversion for more space"
+    ],
+    "verifyItems": [
+      {
+        "label": "Foundation & Structure",
+        "text": "1977 build — verify foundation, framing, and plumbing weren't just cosmetically covered."
+      },
+      {
+        "label": "Septic for Basement",
+        "text": "Confirm septic system can handle basement kitchen/bath usage."
+      },
+      {
+        "label": "Renovation Permits",
+        "text": "Verify all renovation work was permitted — roof, HVAC, electrical, plumbing."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "VERIFY RENOVATION QUALITY — ensure work was permitted and not just cosmetic over old systems"
+      },
+      {
+        "urgent": true,
+        "text": "FOUNDATION INSPECTION — 1977 build may have settling, moisture, or structural issues under new finishes"
+      },
+      {
+        "urgent": false,
+        "text": "Check septic capacity — second kitchen in basement adds load to system"
+      }
+    ],
+    "envHazards": {
+      "location": "Cleveland County foothills — Lawndale area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Cleveland County foothills. Standard risk profile. Renovated 1977 build — verify lead/asbestos remediation was done during renovation."
+    }
+  },
+  {
+    "id": "p71",
+    "num": 71,
+    "dateAdded": "2026-03-17",
+    "navLabel": "Valdese",
+    "address": "917 Zeline Ave NE",
+    "city": "Valdese",
+    "state": "NC",
+    "zip": "28690",
+    "lat": 35.7473,
+    "lng": -81.5500,
+    "county": "Burke",
+    "price": 430000,
+    "listingLink": "https://www.zillow.com/homedetails/917-Zeline-Ave-NE-Valdese-NC-28690/227225368_zpid/",
+    "image": "",
+    "beds": 4,
+    "bath": 3,
+    "sqft": 2464,
+    "acres": 2.5,
+    "acresSub": "creek, rolling slope, wooded lot",
+    "yearBuilt": 1901,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4228522. Classic Waldensian home, BUILT 1901 (125 yrs). Historic bread oven on property. Zimmerman Realty.",
+    "badges": [],
+    "taxRate": 0.0055,
+    "taxLabel": "Property Tax (Burke Co. ~0.55%)",
+    "taxAnnual": 2365,
+    "hoa": 0,
+    "drive": "~25 hr",
+    "driveSub": "cross-country from Farmington UT",
+    "toTown": "~5 min",
+    "toTownSub": "to Valdese; Morganton ~10 min; Hickory ~25 min",
+    "scores": {
+      "price": 6,
+      "acreage": 2,
+      "schools": 5,
+      "outbldgs": 2,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 6,
+      "beach": 2,
+      "forested": 6,
+      "living": 7
+    },
+    "offerRange": "$390K – $410K",
+    "offerStrategy": "Offer well below asking citing 1901 build year, lead/asbestos remediation costs, and small acreage.",
+    "offerRationale": [
+      "1901 build — 125 years old, major structural/hazmat concerns",
+      "Only 2.5 acres — below 5-acre preference",
+      "Lead paint, asbestos, knob-and-tube wiring likely",
+      "Creek and rolling slope may have flooding/drainage issues"
+    ],
+    "tableOfferNote": "Offer $390–410K citing 1901 build age and remediation costs",
+    "highlight": "Classic 1901 Waldensian home on 2.5 acres with creek, rolling slope, wooded lot. 4 bed/3 bath, large rear deck. Historic bread oven. HOWEVER: built 1901 — major lead/asbestos/structural concerns. Only 2.5 ac.",
+    "highlights": [
+      {
+        "icon": "🏛️",
+        "text": "Historic 1901 Waldensian home — unique character, 4 bed/3 bath, 2464 sqft"
+      },
+      {
+        "icon": "🌊",
+        "text": "Creek on property, wooded lot with rolling terrain — scenic setting"
+      },
+      {
+        "icon": "🏘️",
+        "text": "Walking distance to Valdese — one of the closest-to-town properties"
+      },
+      {
+        "icon": "⚠️",
+        "text": "Built 1901 (125 yrs) — expect lead, asbestos, outdated wiring/plumbing, structural issues"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Valdese/Morganton)",
+        "value": "~5–10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Morganton / Hickory",
+        "value": "10–25 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Carolinas HealthCare Blue Ridge",
+        "value": "~12 min",
+        "ref": false
+      },
+      {
+        "icon": "📍",
+        "label": "Farmington UT",
+        "value": "~25 hr drive",
+        "ref": true
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "4 bed/3 bath, 2464 sqft — spacious historic home with character"
+      },
+      {
+        "icon": "✓",
+        "text": "Creek on property, wooded lot — scenic and private setting"
+      },
+      {
+        "icon": "✓",
+        "text": "Walking distance to Valdese — excellent town access, 5 min to amenities"
+      },
+      {
+        "icon": "✓",
+        "text": "Historic bread oven — unique Waldensian heritage feature"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "Built 1901 — lead paint, asbestos, knob-and-tube wiring, outdated plumbing virtually certain"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 2.5 acres — well below 5-acre preference for homesteading"
+      },
+      {
+        "icon": "✗",
+        "text": "125-year-old structure — foundation, framing, roof all need thorough inspection"
+      },
+      {
+        "icon": "✗",
+        "text": "Creek + rolling slope — potential flooding, drainage, and erosion issues"
+      }
+    ],
+    "familyFit": [
+      "4 bed/3 bath gives family room to grow — spacious layout",
+      "Walking distance to town is great for family convenience",
+      "1901 build is a major concern with young kids — lead remediation essential",
+      "Only 2.5 acres limits livestock and homesteading ambitions"
+    ],
+    "verifyItems": [
+      {
+        "label": "Lead & Asbestos",
+        "text": "1901 build — comprehensive lead/asbestos testing mandatory. Budget $10K–$30K for remediation."
+      },
+      {
+        "label": "Structural Integrity",
+        "text": "125-year-old structure needs engineer inspection — foundation, framing, load-bearing walls."
+      },
+      {
+        "label": "Flood Zone",
+        "text": "Creek on property — check FEMA flood maps and verify flood insurance requirements."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "FULL HAZMAT INSPECTION — 1901 build virtually guarantees lead, asbestos, possibly knob-and-tube wiring"
+      },
+      {
+        "urgent": true,
+        "text": "STRUCTURAL ENGINEER — 125-year-old home needs professional structural assessment before offer"
+      },
+      {
+        "urgent": false,
+        "text": "Check creek flood history and FEMA flood zone status — may affect insurance costs"
+      }
+    ],
+    "envHazards": {
+      "location": "Burke County foothills — Valdese area",
+      "pills": [
+        {
+          "level": "high",
+          "text": "1901 build — lead paint & asbestos virtually certain"
+        },
+        {
+          "level": "mod",
+          "text": "Creek on property — flooding/erosion risk"
+        },
+        {
+          "level": "low",
+          "text": "Standard foothills weather"
+        }
+      ],
+      "note": "Burke County foothills. Major concern is 1901 construction — lead, asbestos, and outdated systems. Creek adds flooding risk. Budget significant remediation costs."
+    }
   }
 ];
