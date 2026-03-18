@@ -1835,6 +1835,7 @@
         var cardMap = card.querySelector('.card-map');
         if (!cardMap) return;
         cardMap.style.position = 'relative';
+        cardMap.style.overflow = 'visible';
         var btn = document.createElement('button');
         btn.className = 'walkthrough-btn';
         btn.innerHTML = '<span class="bi bi-camera-video-fill"></span> Watch Walkthrough';
