@@ -15644,5 +15644,220 @@ var PROPERTIES = [
       ],
       "note": "Burke County foothills. Major concern is 1901 construction — lead, asbestos, and outdated systems. Creek adds flooding risk. Budget significant remediation costs."
     }
+  },
+  {
+    "id": "p72",
+    "num": 72,
+    "dateAdded": "2026-03-18",
+    "navLabel": "Bostic 2",
+    "address": "1737 Whitesides Rd",
+    "city": "Bostic",
+    "state": "NC",
+    "zip": "28043",
+    "lat": 35.3870,
+    "lng": -81.8550,
+    "county": "Rutherford",
+    "price": 415000,
+    "listingLink": "https://www.zillow.com/homedetails/1737-Whitesides-Rd-Bostic-NC-28043/102236001_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 2586,
+    "acres": 4.7,
+    "acresSub": "2,058 above + 528 finished basement. Mature woods. Mountain views. 500 sqft guest cottage w/bath. Well + septic.",
+    "yearBuilt": 1967,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MLS# 4358974. JUST LISTED (15 hrs). Previously listed Aug 2025 at $499K, cut to $449,900, removed Dec 2025, relisted $415K (17% below original). Zestimate $431K. EXP Realty. Full brick. FEMA Zone X. Residential zoning. No subdivision. Fully renovated 2023. 500 sqft guest cottage w/bath. Outdoor kitchen, chicken coop, firepit area.",
+    "badges": [],
+    "taxRate": 0.0057,
+    "taxLabel": "Property Tax (Rutherford Co.)",
+    "taxAnnual": 2167,
+    "hoa": 0,
+    "elemSchool": "Mt Vernon-Ruth (5/10)",
+    "elemSchoolSub": "PK-5, 1 mi",
+    "toTown": "~5 min",
+    "toTownSub": "to Rutherfordton & Forest City",
+    "scores": {
+      "price": 7,
+      "acreage": 4,
+      "schools": 5,
+      "outbldgs": 8,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 8,
+      "internet": 5,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "$390K – $410K",
+    "offerStrategy": "Relisted at $415K after $84K in cuts from $499K. Zestimate $431K supports asking. But previous listing failure + 1967 age = leverage.",
+    "offerRationale": [
+      "Previously listed $499K (Aug 2025), cut to $449,900, removed, relisted $415K — 17% total reduction",
+      "Zestimate $431K — asking is below Zestimate, fair pricing",
+      "1967 build (58 yrs) — budget for systems assessment despite 2023 renovation",
+      "Only 4.7 acres — just below 5-acre preference"
+    ],
+    "tableOfferNote": "Relisted at $415K (was $499K). Zestimate $431K. Guest cottage + outdoor kitchen.",
+    "highlight": "Full-brick ranch on 4.7 wooded acres with mountain views. Fully renovated 2023 — new interior finishes, updated fixtures. 500 sqft detached guest cottage with bath (rental/office potential). Outdoor kitchen with grill, fridge, timber countertops. Covered firepit area. Enclosed chicken coop + run. Two covered parking areas. Water/septic/power hookups throughout for RV or additional structures. Minutes from Rutherfordton and Forest City.",
+    "highlights": [
+      {
+        "icon": "🏠",
+        "text": "500 sqft guest cottage with bath — rental income, office, or multi-gen living"
+      },
+      {
+        "icon": "🍳",
+        "text": "Outdoor kitchen (grill, fridge, timber countertops) + covered firepit area"
+      },
+      {
+        "icon": "🐔",
+        "text": "Enclosed chicken coop + run — livestock on day one"
+      },
+      {
+        "icon": "⛰️",
+        "text": "4.7 wooded acres with mountain views, fully renovated 2023"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "🛒",
+        "label": "Grocery (Rutherfordton/Forest City)",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Rutherford Regional Medical",
+        "value": "~10 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Mt Vernon-Ruth Elem (5/10)",
+        "value": "~1 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "R-S Central High (4/10)",
+        "value": "~3.6 mi",
+        "ref": false
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "Full-brick ranch — fully renovated 2023, new finishes throughout"
+      },
+      {
+        "icon": "✓",
+        "text": "500 sqft detached guest cottage with bath — rental/office/multi-gen"
+      },
+      {
+        "icon": "✓",
+        "text": "Outdoor kitchen (grill, fridge, countertops) + covered firepit area"
+      },
+      {
+        "icon": "✓",
+        "text": "Enclosed chicken coop + run — livestock ready"
+      },
+      {
+        "icon": "✓",
+        "text": "Water/septic/power hookups throughout property — RV or expansion ready"
+      },
+      {
+        "icon": "✓",
+        "text": "4.7 wooded acres with mountain views, mature landscaping"
+      },
+      {
+        "icon": "✓",
+        "text": "Minutes from both Rutherfordton and Forest City"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "1967 build (58 yrs) — despite 2023 reno, foundation/framing/systems are original"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 4.7 acres — just below 5-acre preference"
+      },
+      {
+        "icon": "✗",
+        "text": "Only 3 bed / 2 bath on main level — guest cottage adds flexibility but isn't connected"
+      },
+      {
+        "icon": "✗",
+        "text": "Schools: Mt Vernon-Ruth 5/10, R-S Middle 4/10, R-S Central 4/10"
+      },
+      {
+        "icon": "✗",
+        "text": "Previously failed to sell at $449-499K — why? Pricing or condition?"
+      },
+      {
+        "icon": "✗",
+        "text": "Internet unverified — rural Bostic address"
+      }
+    ],
+    "familyFit": [
+      "Guest cottage could be James or Savanah's WFH office — private, separate, with bath",
+      "Chicken coop + run = livestock on day one, no building needed",
+      "Outdoor kitchen + firepit = family gathering space",
+      "Wooded 4.7 acres with mountain views — close to the vision",
+      "1967 build is a concern but 2023 renovation addresses much of it"
+    ],
+    "verifyItems": [
+      {
+        "label": "Internet",
+        "text": "Verify broadband at this rural Bostic address. Critical for WFH."
+      },
+      {
+        "label": "Guest Cottage",
+        "text": "Is the cottage permitted? Zoning allows rental use? Plumbing/electrical condition?"
+      },
+      {
+        "label": "Renovation Scope",
+        "text": "2023 renovation — what exactly was done? Did they address electrical, plumbing, foundation, or just cosmetics?"
+      },
+      {
+        "label": "Livestock Zoning",
+        "text": "Residential zoning — confirm livestock is allowed. No subdivision or HOA."
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "VERIFY INTERNET — rural Bostic, broadband essential for WFH"
+      },
+      {
+        "urgent": true,
+        "text": "VERIFY LIVESTOCK — Residential zoning, no HOA, but confirm with Rutherford County"
+      },
+      {
+        "urgent": false,
+        "text": "Inspect 1967 foundation, framing, and original systems beneath 2023 renovation"
+      },
+      {
+        "urgent": false,
+        "text": "Guest cottage — permitted? Condition? Rental feasibility?"
+      }
+    ],
+    "envHazards": {
+      "location": "Rutherford County foothills — Bostic area, wooded lot",
+      "pills": [
+        {
+          "level": "low",
+          "text": "FEMA Zone X — minimal flood risk"
+        },
+        {
+          "level": "low",
+          "text": "Standard foothills weather — no extreme hazards"
+        }
+      ],
+      "note": "Rutherford County foothills. FEMA Zone X confirmed. Wooded lot with mountain views."
+    }
   }
 ];
