@@ -876,10 +876,33 @@
         group.style.display = visible === 0 ? 'none' : '';
       });
 
-      // Hide region sections where all cards are graveyarded
+      // Hide region sections where all cards are graveyarded + update counts
       document.querySelectorAll('.region-section').forEach(function (section) {
-        var hasVisible = section.querySelector('.card[id^="p"]:not(.graveyarded)');
-        section.classList.toggle('region-filtered-out', !hasVisible);
+        var allCards = section.querySelectorAll('.card[id^="p"]');
+        var visibleCount = 0;
+        allCards.forEach(function (c) { if (!c.classList.contains('graveyarded')) visibleCount++; });
+        section.classList.toggle('region-filtered-out', visibleCount === 0);
+        var countEl = section.querySelector('.region-toggle-count');
+        if (countEl) countEl.textContent = visibleCount + ' properties';
+      });
+
+      // Update filter pill counts to exclude graveyarded
+      document.querySelectorAll('.filter-pill').forEach(function (pill) {
+        var key = pill.getAttribute('data-filter');
+        if (!key) return;
+        var tests = {
+          isNew: function (p) { return p._isNew && !GRAVEYARD_IDS[p.id]; },
+          livestock: function (p) { return p.badges && p.badges.indexOf('b-livestock') >= 0 && !GRAVEYARD_IDS[p.id]; },
+          '5acres': function (p) { return p.acres >= 5 && !GRAVEYARD_IDS[p.id]; },
+          mfg: function (p) { return p.typeBadge === 'b-mfg' && !GRAVEYARD_IDS[p.id]; },
+          sfr: function (p) { return p.typeBadge === 'b-sfr' && !GRAVEYARD_IDS[p.id]; }
+        };
+        if (tests[key] && typeof PROPERTIES !== 'undefined') {
+          var count = PROPERTIES.filter(tests[key]).length;
+          var countEl = pill.querySelector('.filter-pill-count');
+          if (countEl) countEl.textContent = count;
+          pill.style.display = count === 0 ? 'none' : '';
+        }
       });
 
       document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
