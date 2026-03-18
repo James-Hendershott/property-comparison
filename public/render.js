@@ -525,7 +525,7 @@ var PropertyRenderer = (function () {
       html += '<div class="region-section" id="' + sectionId + '">';
       html += '<button class="region-toggle" data-region="' + sectionId + '">';
       html += '<span class="region-toggle-name">' + esc(region.name) + '</span>';
-      html += '<span class="region-toggle-count">' + items.length + ' properties</span>';
+      html += '<span class="region-toggle-count">...</span>';
       if (hasNew) html += '<span class="badge b-new">NEW</span>';
       html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
       html += '</button>';
@@ -541,7 +541,7 @@ var PropertyRenderer = (function () {
       html += '<div class="region-section" id="region-other">';
       html += '<button class="region-toggle" data-region="region-other">';
       html += '<span class="region-toggle-name">Other</span>';
-      html += '<span class="region-toggle-count">' + stragglers.length + ' properties</span>';
+      html += '<span class="region-toggle-count">...</span>';
       if (stragHasNew) html += '<span class="badge b-new">NEW</span>';
       html += '<i class="bi bi-chevron-down region-toggle-icon"></i>';
       html += '</button>';

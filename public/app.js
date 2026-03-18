@@ -1683,16 +1683,13 @@
     var activeKey = null;
 
     filters.forEach(function (f) {
-      var matching = PROPERTIES.filter(f.test);
-      if (matching.length === 0) return;
-
       var pill = document.createElement('button');
       pill.className = 'filter-pill';
       pill.setAttribute('data-filter', f.key);
       var inner = '';
       if (f.icon) inner += '<span class="' + f.icon + '"></span> ';
       inner += f.label;
-      inner += ' <span class="filter-pill-count">' + matching.length + '</span>';
+      inner += ' <span class="filter-pill-count">...</span>';
       pill.innerHTML = inner;
 
       pill.addEventListener('click', function () {
