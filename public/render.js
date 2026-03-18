@@ -204,8 +204,8 @@ var PropertyRenderer = (function () {
     html += '<div class="stat"><div class="stat-label">Built</div><div class="stat-val">' + (p.yearBuilt || '—') + '</div></div>';
 
     // Optional stats — only render if present
-    if (p.drive) {
-      html += '<div class="stat"><div class="stat-label">Drive</div><div class="stat-val">' + esc(p.drive) + '</div>' + (p.driveSub ? '<div class="stat-sub">' + esc(p.driveSub) + '</div>' : '') + '</div>';
+    if (p.elemSchool) {
+      html += '<div class="stat"><div class="stat-label">Elem School</div><div class="stat-val">' + esc(p.elemSchool) + '</div>' + (p.elemSchoolSub ? '<div class="stat-sub">' + esc(p.elemSchoolSub) + '</div>' : '') + '</div>';
     }
     if (p.toTown) {
       html += '<div class="stat"><div class="stat-label">To Town</div><div class="stat-val">' + esc(p.toTown) + '</div>' + (p.toTownSub ? '<div class="stat-sub">' + esc(p.toTownSub) + '</div>' : '') + '</div>';

@@ -30,8 +30,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co. 0.60%)",
     "taxAnnual": 2359,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Happy Valley (6/10)",
+    "elemSchoolSub": "PK-8, 1.6 mi",
     "toTown": "~15 min",
     "toTownSub": "to Lenoir Walmart",
     "scores": {
@@ -271,8 +271,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Wilkes Co. 0.47%)",
     "taxAnnual": 2341,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~25 min",
     "toTownSub": "to North Wilkesboro Walmart",
     "scores": {
@@ -519,8 +519,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.50%)",
     "taxAnnual": 2495,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5-7 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -763,8 +763,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rockingham Co. ~0.70%)",
     "taxAnnual": 2900,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Eden Walmart",
     "scores": {
@@ -995,8 +995,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.38%)",
     "taxAnnual": 1628,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15-20 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -1231,8 +1231,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Johnston Co. ~0.75%)",
     "taxAnnual": 2100,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5-10 min",
     "toTownSub": "to Clayton Walmart",
     "scores": {
@@ -1471,8 +1471,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Randolph Co. ~0.70%)",
     "taxAnnual": 2200,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Asheboro/Randleman Walmart",
     "scores": {
@@ -1707,8 +1707,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Nash Co. ~0.70%)",
     "taxAnnual": 2050,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10-15 min",
     "toTownSub": "to Nashville/Rocky Mount Walmart",
     "scores": {
@@ -1939,8 +1939,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Columbus Co. ~0.60%)",
     "taxAnnual": 1900,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10-15 min",
     "toTownSub": "to Whiteville Walmart",
     "scores": {
@@ -2183,8 +2183,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Alleghany Co. ~0.59%)",
     "taxAnnual": 1625,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~20-25 min",
     "toTownSub": "to Sparta or Galax VA",
     "scores": {
@@ -2419,8 +2419,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Camden Co. ~0.60%)",
     "taxAnnual": 1800,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15-20 min",
     "toTownSub": "to Elizabeth City",
     "scores": {
@@ -2651,8 +2651,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Brunswick Co. ~0.45%)",
     "taxAnnual": 1550,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10-15 min",
     "toTownSub": "to Shallotte/Supply area",
     "scores": {
@@ -2888,8 +2888,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Halifax Co. ~0.85%)",
     "taxAnnual": 2100,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15-20 min",
     "toTownSub": "to Scotland Neck/Halifax",
     "scores": {
@@ -3123,8 +3123,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Chatham Co. ~0.80%)",
     "taxAnnual": 1850,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Siler City",
     "scores": {
@@ -3371,8 +3371,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Ashe Co. 0.47%)",
     "taxAnnual": 2110,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~25 min",
     "toTownSub": "to West Jefferson",
     "scores": {
@@ -3599,8 +3599,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.62%)",
     "taxAnnual": 2634,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Marion",
     "scores": {
@@ -3819,8 +3819,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co.)",
     "taxAnnual": 2550,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Gamewell (1/10)",
+    "elemSchoolSub": "PK-5, 3.7 mi",
     "toTown": "~15 min",
     "toTownSub": "to Lenoir Walmart",
     "scores": {
@@ -4047,8 +4047,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.62%)",
     "taxAnnual": 2759,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Marion",
     "scores": {
@@ -4267,8 +4267,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
     "taxAnnual": 2683,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -4466,8 +4466,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
     "taxAnnual": 3050,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -4647,8 +4647,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
     "taxAnnual": 2425,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~20 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -4848,8 +4848,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
     "taxAnnual": 1860,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Murphy Walmart",
     "scores": {
@@ -5049,8 +5049,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Mitchell Co. 0.56%)",
     "taxAnnual": 2800,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~20 min",
     "toTownSub": "to Spruce Pine Walmart",
     "scores": {
@@ -5272,8 +5272,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co. 0.5%)",
     "taxAnnual": 2483,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Lenoir Walmart",
     "scores": {
@@ -5483,8 +5483,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Yadkin Co. 0.65%)",
     "taxAnnual": 2925,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Elkin Walmart",
     "scores": {
@@ -5690,8 +5690,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Surry Co. 0.51%)",
     "taxAnnual": 2539,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Mount Airy Walmart",
     "scores": {
@@ -5885,8 +5885,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Person Co. 0.63%)",
     "taxAnnual": 2835,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~20 min",
     "toTownSub": "to Roxboro Walmart",
     "scores": {
@@ -6088,8 +6088,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Franklin Co. 0.51%)",
     "taxAnnual": 2398,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~12 min",
     "toTownSub": "to Louisburg Walmart",
     "scores": {
@@ -6291,8 +6291,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Johnston Co. 0.52%)",
     "taxAnnual": 2340,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Four Oaks Walmart",
     "scores": {
@@ -6467,8 +6467,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Anson Co. 0.78%)",
     "taxAnnual": 3877,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~25 min",
     "toTownSub": "to Rockingham Walmart",
     "scores": {
@@ -6648,8 +6648,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Union Co. 0.43%)",
     "taxAnnual": 2040,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~20 min",
     "toTownSub": "to Monroe Walmart",
     "scores": {
@@ -6839,8 +6839,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
     "taxAnnual": 2190,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Forest City Walmart",
     "scores": {
@@ -7043,8 +7043,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
     "taxAnnual": 2662,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Forest City Walmart",
     "scores": {
@@ -7263,8 +7263,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
     "taxAnnual": 2384,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Forest City Walmart",
     "scores": {
@@ -7442,8 +7442,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Burke Co. 0.58%)",
     "taxAnnual": 2106,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Valdese/Lenoir, I-40",
     "scores": {
@@ -7657,8 +7657,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Nash Co. 0.63%)",
     "taxAnnual": 2173,
     "hoa": 0,
-    "drive": "~32 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Rocky Mount Walmart",
     "scores": {
@@ -7832,8 +7832,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Orange Co. 0.64%)",
     "taxAnnual": 3594,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Hillsborough Walmart",
     "scores": {
@@ -8027,8 +8027,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Robeson Co. 0.77%)",
     "taxAnnual": 3465,
     "hoa": 0,
-    "drive": "~31 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to St. Pauls Walmart",
     "scores": {
@@ -8230,8 +8230,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Davidson Co. 0.54%)",
     "taxAnnual": 2429,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Thomasville Walmart",
     "scores": {
@@ -8399,8 +8399,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Montgomery Co. 0.62%)",
     "taxAnnual": 3091,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Biscoe Walmart",
     "scores": {
@@ -8594,8 +8594,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Onslow Co. 0.66%)",
     "taxAnnual": 3273,
     "hoa": 0,
-    "drive": "~33 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Jacksonville Walmart",
     "scores": {
@@ -8797,8 +8797,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. 0.57%)",
     "taxAnnual": 2555,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "TBD — verify",
+    "elemSchoolSub": "likely Chase zone",
     "toTown": "~10 min",
     "toTownSub": "to Forest City Walmart",
     "scores": {
@@ -9008,8 +9008,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Pitt Co. 0.57%)",
     "taxAnnual": 2265,
     "hoa": 0,
-    "drive": "~32 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Greenville Walmart",
     "scores": {
@@ -9195,8 +9195,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co. 0.5%)",
     "taxAnnual": 2189,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Lenoir Walmart",
     "scores": {
@@ -9378,8 +9378,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Scotland Co. 0.99%)",
     "taxAnnual": 5099,
     "hoa": 0,
-    "drive": "~31 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Laurinburg Walmart",
     "scores": {
@@ -9601,8 +9601,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Montgomery Co. 0.62%)",
     "taxAnnual": 2474,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Biscoe Walmart",
     "scores": {
@@ -9808,8 +9808,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Ashe Co. 0.51%)",
     "taxAnnual": 2397,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to West Jefferson Walmart",
     "scores": {
@@ -10035,8 +10035,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co.)",
     "taxAnnual": 1663,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Collettsville (6/10)",
+    "elemSchoolSub": "PK-8, 2.1 mi",
     "toTown": "~15 min",
     "toTownSub": "to Lenoir Walmart",
     "scores": {
@@ -10268,8 +10268,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
     "taxAnnual": 2938,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Sunshine (8/10)",
+    "elemSchoolSub": "PK-5, 0.3 mi",
     "toTown": "~15 min",
     "toTownSub": "to Forest City",
     "scores": {
@@ -10553,8 +10553,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
     "taxAnnual": 2210,
     "hoa": 0,
-    "drive": "~26 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Mt Vernon-Ruth (5/10)",
+    "elemSchoolSub": "PK-5, 1.5 mi",
     "toTown": "~5 min",
     "toTownSub": "to downtown Forest City",
     "scores": {
@@ -10820,8 +10820,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Chatham Co.)",
     "taxAnnual": 1614,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5 min",
     "toTownSub": "to Goldston; Sanford/Pittsboro ~15-20 min",
     "scores": {
@@ -11087,8 +11087,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co.)",
     "taxAnnual": 1521,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Happy Valley (6/10)",
+    "elemSchoolSub": "PK-8, 1.6 mi",
     "toTown": "~15 min",
     "toTownSub": "to Lenoir, just off Hwy 321",
     "scores": {
@@ -11394,8 +11394,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (McDowell Co. 0.57%)",
     "taxAnnual": 1787,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Pleasant Gardens (8/10)",
+    "elemSchoolSub": "PK-5, 1.2 mi",
     "toTown": "~10 min",
     "toTownSub": "to Marion",
     "scores": {
@@ -11671,8 +11671,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
     "taxAnnual": 2181,
     "hoa": 0,
-    "drive": "~31 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5 min",
     "toTownSub": "to Bath; Washington NC ~15 min",
     "scores": {
@@ -11944,8 +11944,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Lincoln Co. 0.50%)",
     "taxAnnual": 2071,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Lincolnton; Charlotte ~45 min",
     "scores": {
@@ -12215,8 +12215,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cherokee Co. 0.61%)",
     "taxAnnual": 2043,
     "hoa": 0,
-    "drive": "~30 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~15 min",
     "toTownSub": "to Murphy; Andrews ~10 min",
     "scores": {
@@ -12474,8 +12474,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Granville Co. 0.63%)",
     "taxAnnual": 2013,
     "hoa": 0,
-    "drive": "~28 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Oxford; Durham ~35 min",
     "scores": {
@@ -12725,8 +12725,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Scotland Co. 0.72%)",
     "taxAnnual": 2228,
     "hoa": 0,
-    "drive": "~27 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5 min",
     "toTownSub": "to Laurinburg; Fayetteville ~50 min",
     "scores": {
@@ -13006,8 +13006,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
     "taxAnnual": 2005,
     "hoa": 0,
-    "drive": "~31 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~10 min",
     "toTownSub": "to Belhaven; Washington NC ~30 min",
     "scores": {
@@ -13307,8 +13307,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Beaufort Co. 0.45%)",
     "taxAnnual": 1587,
     "hoa": 300,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5 min",
     "toTownSub": "to Chocowinity; Washington NC ~10 min",
     "scores": {
@@ -13558,8 +13558,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
     "taxAnnual": 3146,
     "hoa": 0,
-    "drive": "~26 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "",
+    "elemSchoolSub": "",
     "toTown": "~5 min",
     "toTownSub": "to downtown Forest City",
     "scores": {
@@ -13774,8 +13774,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
     "taxAnnual": 2736,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Forrest W Hunt (5/10)",
+    "elemSchoolSub": "PK-5, 1.6 mi",
     "toTown": "~5 min",
     "toTownSub": "to Forest City — restaurants, shops, Rails to Trails",
     "scores": {
@@ -13793,13 +13793,13 @@ var PROPERTIES = [
     "offerRange": "$450K – $465K",
     "offerStrategy": "New listing — Forest City homes average 120 DOM and sell ~4% below list",
     "offerRationale": [
-      "$480K for 4.23 acres with no outbuildings is expensive",
+      "$480K for 4.23 acres is near budget ceiling",
       "Forest City homes sell ~4% below list on average",
       "Under 5-acre preference — scoring ding",
       "Compare unfavorably to other properties with more acreage at similar price"
     ],
-    "tableOfferNote": "New listing — offer $450-465K, cite no outbuildings + under 5 acres",
-    "highlight": "Move-in ready brick ranch on 4.23 landscaped acres. Recently remodeled — new carpet, LVP flooring, fresh paint, brand new roof, granite countertops, stainless appliances. Flexible office space for WFH. Near downtown Forest City. HOWEVER: under 5 acres, no outbuildings, $480K near budget ceiling, and Quail Run subdivision covenants may restrict livestock.",
+    "tableOfferNote": "New listing — offer $450-465K, Zestimate $461K supports. Under 5 acres.",
+    "highlight": "Move-in ready brick ranch on 4.23 landscaped acres. Recently remodeled — new roof, LVP flooring, granite kitchen. Multiple outbuildings (24x11 w/power, 24x16 w/garage door, storage bldg). Double garage w/unfinished room above. Outdoor kitchen with grill, pizza oven, fireplace. Flexible office for WFH. Near downtown Forest City. HOWEVER: under 5 acres, $480K near budget ceiling, Quail Run covenants may restrict livestock.",
     "highlights": [
       {
         "icon": "🏠",
@@ -13815,7 +13815,7 @@ var PROPERTIES = [
       },
       {
         "icon": "⚠️",
-        "text": "Only 4.23 acres — below 5-acre preference, no outbuildings"
+        "text": "Only 4.23 acres — below 5-acre preference"
       }
     ],
     "proximity": [
@@ -13874,6 +13874,10 @@ var PROPERTIES = [
       {
         "icon": "✓",
         "text": "One-level living — brick ranch, no stairs for daily bedroom access"
+      },
+      {
+        "icon": "✓",
+        "text": "Multiple outbuildings — 24x11 w/power, 24x16 w/garage door, storage bldg, outdoor kitchen"
       }
     ],
     "cardCons": [
@@ -13883,7 +13887,7 @@ var PROPERTIES = [
       },
       {
         "icon": "✗",
-        "text": "No outbuildings — no barn, workshop, shed, or garage beyond carport"
+        "text": "$480K near budget ceiling for 4.23 acres — less land than similarly priced options"
       },
       {
         "icon": "✗",
@@ -13986,8 +13990,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.64%)",
     "taxAnnual": 2118,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Union (7/10)",
+    "elemSchoolSub": "5.3 mi",
     "toTown": "~5 min",
     "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
     "scores": {
@@ -14214,8 +14218,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co.)",
     "taxAnnual": 2038,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Dudley Shoals (6/10)",
+    "elemSchoolSub": "PK-5, 2.9 mi",
     "toTown": "~5 min",
     "toTownSub": "to Hudson; Lenoir ~10 min; Hickory ~20 min",
     "scores": {
@@ -14395,8 +14399,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co.)",
     "taxAnnual": 163,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Cliffside (9/10)",
+    "elemSchoolSub": "K-5, 3.2 mi",
     "toTown": "~5 min",
     "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
     "scores": {
@@ -14576,8 +14580,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Wilkes Co. ~0.55%)",
     "taxAnnual": 1552,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Millers Creek (7/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~10 min",
     "toTownSub": "to North Wilkesboro; Wilkesboro ~15 min",
     "scores": {
@@ -14750,8 +14754,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
     "taxAnnual": 2700,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Springmore (9/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~10 min",
     "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~50 min",
     "scores": {
@@ -14932,8 +14936,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Lincoln Co. ~0.57%)",
     "taxAnnual": 1377,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Norris S Childers (6/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~15 min",
     "toTownSub": "to Lincolnton; Gastonia ~25 min; Charlotte ~45 min",
     "scores": {
@@ -15118,8 +15122,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Iredell Co. ~0.55%)",
     "taxAnnual": 1626,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Sharon (7/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~15 min",
     "toTownSub": "to Statesville; Hickory ~20 min; Charlotte ~60 min",
     "scores": {
@@ -15300,8 +15304,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
     "taxAnnual": 558,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Fallston (4/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~15 min",
     "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~55 min",
     "scores": {
@@ -15482,8 +15486,8 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Burke Co. 0.58%)",
     "taxAnnual": 3307,
     "hoa": 0,
-    "drive": "~29 hr",
-    "driveSub": "cross-country from Farmington UT",
+    "elemSchool": "Valdese (5/10)",
+    "elemSchoolSub": "verify assignment",
     "toTown": "~5 min",
     "toTownSub": "to Valdese; Morganton ~10 min; Hickory ~25 min",
     "scores": {

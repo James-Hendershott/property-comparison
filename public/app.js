@@ -995,7 +995,7 @@
     vals.acres = String(p.acres);
     vals.acresSub = p.acresSub || '';
     vals.yearBuilt = String(p.yearBuilt || '');
-    vals.drive = p.drive || '';
+    vals.elemSchool = p.elemSchool || '';
     vals.toTown = p.toTown || '';
     vals.tax = p.taxAnnual ? PropertyRenderer.fmtPrice(p.taxAnnual) + '/yr' : '';
     vals.status = p.status || 'Active';
@@ -1076,7 +1076,7 @@
       field('acres', 'Acres', 'text', vals.acres || ''),
       field('acresSub', 'Acres Subtitle', 'text', vals.acresSub || ''),
       field('yearBuilt', 'Year Built', 'text', vals.yearBuilt || ''),
-      field('drive', 'Drive Time', 'text', vals.drive || ''),
+      field('elemSchool', 'Elem School', 'text', vals.elemSchool || ''),
       field('toTown', 'To Town', 'text', vals.toTown || ''),
       field('tax', 'Annual Tax', 'text', vals.tax || '')
     ]);
@@ -1283,7 +1283,7 @@
       if (edits.acres) merged.acres = parseFloat(edits.acres) || merged.acres;
       if (edits.acresSub !== undefined) merged.acresSub = edits.acresSub;
       if (edits.yearBuilt) merged.yearBuilt = parseInt(edits.yearBuilt) || merged.yearBuilt;
-      if (edits.drive) merged.drive = edits.drive;
+      if (edits.elemSchool) merged.elemSchool = edits.elemSchool;
       if (edits.toTown) merged.toTown = edits.toTown;
       if (edits.tax) {
         var taxNum = parseInt(String(edits.tax).replace(/[^0-9]/g, ''), 10);
