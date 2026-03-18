@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A comprehensive real estate comparison dashboard for evaluating 60 rural property listings in North Carolina. Includes a family voting system (1-7 star ratings), interactive Leaflet map with property pins, and aggregate rankings with podium/tier visualization. Served via Express + Docker at `homes.shottsserver.com`.
+A comprehensive real estate comparison dashboard for evaluating 71 rural property listings in North Carolina (18 active, 53 graveyarded). Includes a family voting system (1-7 star ratings), interactive Leaflet map (modal), rankings with podium/tier visualization (modal), walkthrough video player, lot-line image toggle, and aggregate scoring. Served via Express + Docker at `homes.shottsserver.com`.
 
 ## Architecture
 
-- **server.js**: Express server serving `public/` as static files with REST API under `/api/`
+- **server.js**: Express server serving `public/` as static files, `/walkthrough/` for videos, `/lot-lines/` for images, with REST API under `/api/` (includes `GET /api/walkthroughs` and `GET /api/lot-lines`)
 - **database.js**: SQLite via `sql.js` (pure WASM, no native compilation). Exports `init()`, `getOrCreateUser()`, `castVote()`, `getAllVotes()`, `getRankings()`, `getUsers()`, `createNote()`, `getAllNotes()`, `deleteNote()`, `getPropertyNames()`, `setPropertyName()`, `moveToGraveyard()`, `getGraveyard()`, `restoreFromGraveyard()`, `getPropertyEdits()`, `setPropertyEdits()`. Every write operation calls `save()` which serializes the entire DB to `data/votes.db` via `fs.writeFileSync`.
 - **public/index.html**: CSS in `<style>`, lightweight HTML (~1,100 lines) — CSS custom properties in `:root`, containers for rendered content, Leaflet map section, internet guide, graveyard, footer. Leaflet CDN loaded in `<head>`.
-- **public/properties-data.js**: Single source of truth for all 60 properties as `var PROPERTIES = [...]`. Each property has `lat`/`lng` for map pins and `dateAdded` for "new" badge computation. Rendered client-side by `render.js`.
+- **public/properties-data.js**: Single source of truth for all 71 properties as `var PROPERTIES = [...]`. Each property has `lat`/`lng` for map pins, `dateAdded` for "new" badge, `elemSchool`/`elemSchoolSub` for school display, and scores including `internet` (replaced `beach`). Rendered client-side by `render.js`.
 - **public/nc-boundary.js**: Simplified NC state boundary polygon (61 coordinate pairs) for map overlay mask.
 - **public/render.js**: Renders nav links (grouped by region with dropdown menus), overview table rows, and property cards from PROPERTIES data. Computes dynamic "NEW" flags from `dateAdded` (4-day window) and shows "Added Xd ago" for older properties.
-- **public/app.js**: Vanilla JS IIFE — user identification, 7-star ratings, **rankings with podium top-3 + S/A/B/C/D tier groups + voter filtering**, overview table augmentation, notes system, monthly breakdown toggles, graveyard move/restore, property edit modal, **interactive Leaflet map** with NC boundary mask and hover popups, **collapsible overview table**, collapsible graveyard, table filtering/sorting, **multi-tag filter bar** (NEW, LIVESTOCK?, 5+ Acres, Manufactured, Site-Built), 30s polling
-- **public/app.css**: Map popup styles (`map-popup-`), voting styles (`vote-`), notes styles (`notes-`), monthly breakdown styles (`monthly-`/`mb-`), rankings podium/tier styles (`rank-podium-`, `rank-tier-`, `rank-filter-`, `rank-ring`, `rank-legend-`), collapsible overview (`overview-toggle-`), collapsible graveyard (`graveyard-toggle-`), nav county groups (`nav-group-`), nav user (`nav-user`), filter bar (`filter-bar`, `filter-pill`)
+- **public/app.js**: Vanilla JS IIFE — user identification, 7-star ratings, **rankings modal**, overview table augmentation, notes system, monthly breakdown toggles, graveyard move/restore, property edit modal, **map modal** with Leaflet, **collapsible overview table**, collapsible graveyard, table filtering/sorting, **multi-tag filter bar** (counts exclude graveyarded), **walkthrough video player** (inline on card), **lot-line image toggle** (with acreage badge), **mobile nav toggle**, 30s polling. DEFAULT_NAMES uses `address` field (not navLabel). All p-number displays replaced with addresses.
+- **public/app.css**: Walkthrough player styles (`walkthrough-btn`, `walkthrough-player`), lot-line styles (`lot-overlay`, `lot-acres-badge`, `lot-toggle-btn`), modal styles (`modal-overlay`, `modal-content`), map popup styles (`map-popup-`), voting styles (`vote-`), notes styles (`notes-`), rankings styles (`rank-podium-`, `rank-tier-`), filter bar (`filter-bar`, `filter-pill`), mobile nav (`nav-mobile-toggle`)
 
 ### One-Time Utility Scripts (`scripts/` — do not re-run)
 
@@ -61,7 +61,7 @@ No test framework or linter is configured. There are no build steps — all fron
 **SSH:** `ssh unraid` (configured in `~/.ssh/config`, uses `~/.ssh/id_unraid` key, connects as `root@192.168.1.153`)
 **Container name:** `homes-shottsserver`
 **App path:** `/mnt/cache/appdata/property-comparison/`
-**Volume mount:** Only `data/` is mounted (`-v .../data:/app/data`). The `public/` folder is baked into the image.
+**Volume mounts:** `data/` for DB, `docs/walkthrough-videos/` for videos, `docs/lot-lines/` for images. The `public/` folder is baked into the image.
 **Port mapping:** Host 3080 → Container 3000
 **Note:** `docker-compose` is not installed on this Unraid; use `docker build` + `docker run` directly.
 
@@ -71,7 +71,7 @@ Deploy steps:
 scp public/* root@192.168.1.153:/mnt/cache/appdata/property-comparison/public/
 
 # 2. Rebuild image and restart container
-ssh unraid "cd /mnt/cache/appdata/property-comparison && docker build -t property-comparison . && docker stop homes-shottsserver && docker rm homes-shottsserver && docker run -d --name homes-shottsserver --restart unless-stopped -p 3080:3000 -v /mnt/cache/appdata/property-comparison/data:/app/data property-comparison"
+ssh unraid "cd /mnt/cache/appdata/property-comparison && docker build -t property-comparison . && docker stop homes-shottsserver && docker rm homes-shottsserver && docker run -d --name homes-shottsserver --restart unless-stopped -p 3080:3000 -v /mnt/cache/appdata/property-comparison/data:/app/data -v /mnt/cache/appdata/property-comparison/docs/walkthrough-videos:/app/docs/walkthrough-videos -v /mnt/cache/appdata/property-comparison/docs/lot-lines:/app/docs/lot-lines property-comparison"
 ```
 
 ## Prerequisites
@@ -97,6 +97,8 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 | `GET` | `/api/property-edits` | All property field overrides (JSON blobs) |
 | `POST` | `/api/property-edits` | Upsert field edits: `{ userId, propertyId, edits }` |
 | `DELETE` | `/api/graveyard/:propertyId` | Restore property from graveyard |
+| `GET` | `/api/walkthroughs` | Map of address→video URL (prefers `-web.mp4`) |
+| `GET` | `/api/lot-lines` | Map of address→lot-line image URL |
 
 ## Key Patterns
 
@@ -109,7 +111,10 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 - **Badge classes**: `.b-pend`, `.b-mfg`, `.b-sfr`, `.b-oor`, `.b-new` (green pulsing, auto-computed from `dateAdded`), `.b-removed` (gray), `.b-livestock` (livestock policy flag). `.badge-added-ago` shows "Added Xd ago" for properties past the 4-day new window.
 - **Graveyard section**: `#graveyard` below cards — static `.graveyard-card` entries for permanently removed properties + `#graveyard-dynamic` container for DB-driven entries (move/restore via UI)
 - **Nav county groups**: Properties grouped by county in nav bar. Multi-property counties render as hover dropdown buttons (`.nav-group` > `.nav-group-btn` + `.nav-group-dropdown`). Single-property counties render as direct links.
-- **Nav anchors**: `#p1` through `#p60` matching card `id` attributes (gaps for removed properties)
+- **Nav anchors**: `#p1` through `#p71` matching card `id` attributes (gaps for removed properties). Nav displays addresses (not p-numbers).
+- **Walkthrough videos**: `initWalkthroughButtons()` fetches `/api/walkthroughs`, injects red button on card image + inline `<video>` player. Videos in `docs/walkthrough-videos/`, naming: `{address-with-dashes}-walkthrough.mp4`. Compressed `-web.mp4` preferred. Survives card re-renders via `reinjectCardUI()`.
+- **Lot-line images**: `initLotLines()` fetches `/api/lot-lines`, injects toggle button (top-left of image) that swaps to lot-line screenshot with green acreage badge overlay. Images in `docs/lot-lines/`, naming: `{address-with-dashes}.png`.
+- **Modal overlays**: Rankings and Map open as modals (`#rankings-modal`, `#map-modal`) from nav icons instead of inline sections. Close on background click or X button. Map calls `invalidateSize()` on open.
 - **Filter bar**: `#filter-bar` below nav — horizontally scrollable pill buttons for tag-based filtering: NEW, LIVESTOCK?, 5+ Acres, Manufactured, Site-Built. Each filter controls cards, map markers, overview table, and region sections. All filters exclude graveyard items. `initFilterBar()` in app.js. Styles: `.filter-bar`, `.filter-pill`, `.filter-pill-count`, `.filter-pill.active`.
 - **Mobile responsive**: `@media (max-width: 768px)` compacts header (reduced padding/fonts), nav (icons only via `.nav-link-text` hidden), filter bar (smaller pills), and cards (single column).
 - **Overview table** (id `overview`): class `.qt`, JS adds a "Family" column with avg ratings. Collapsed by default via `initCollapsibleOverview()`
@@ -125,3 +130,22 @@ The `data/` directory must exist before starting the server (the DB file `data/v
 3. Nav links, overview table rows, and cards are auto-rendered by `render.js`
 4. Voting UI, notes, edit buttons, and map pins are auto-injected by `app.js`
 5. The "NEW" badge is auto-computed from `dateAdded` — properties within 4 days show NEW, older properties show "Added Xd ago". No manual `b-new` badge management needed.
+
+## Adding Walkthrough Videos
+
+1. Save as `docs/walkthrough-videos/{address-with-dashes}-walkthrough.mp4` (e.g., `142-Padgett-Burns-Rd-walkthrough.mp4`)
+2. Compress with ffmpeg: `ffmpeg -i input.mp4 -vf "scale=1920:-2" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -movflags +faststart output-web.mp4`
+3. SCP to Unraid: `scp docs/walkthrough-videos/*-web.mp4 root@192.168.1.153:/mnt/cache/appdata/property-comparison/docs/walkthrough-videos/`
+4. Button appears automatically on matching card
+
+## Adding Lot Line Images
+
+1. Save as `docs/lot-lines/{address-with-dashes}.png` (e.g., `142-Padgett-Burns-Rd.png`)
+2. SCP to Unraid: `scp docs/lot-lines/*.png root@192.168.1.153:/mnt/cache/appdata/property-comparison/docs/lot-lines/`
+3. "Lot Lines" toggle appears automatically on matching card with acreage badge
+
+## Scoring Categories
+
+10 categories, 10 points each, 100 total. `internet` replaced `beach` as of March 18, 2026.
+- price, acreage, schools, outbldgs, town, hospital, hazards, **internet**, forested, living
+- Internet scale: 10=fiber confirmed at address, 8=cable likely, 5=uncertain, 2=Starlink likely, 1=no broadband
