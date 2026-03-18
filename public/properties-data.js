@@ -15287,7 +15287,7 @@ var PROPERTIES = [
     "county": "Cleveland",
     "price": 330000,
     "listingLink": "https://www.zillow.com/homedetails/104-Glenn-Oaks-Dr-Lawndale-NC-28090/93008857_zpid/",
-    "image": "https://photos.zillowstatic.com/fp/d4ef959616655aa8b448ad1606e7602c-cc_ft_1152.webp",
+    "image": "https://photos.zillowstatic.com/fp/43f79c3508517e9e38f9d9bf9ded4c1d-cc_ft_1152.webp",
     "beds": 4,
     "bath": 3,
     "sqft": 2373,
