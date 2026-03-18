@@ -13782,7 +13782,7 @@ var PROPERTIES = [
       "price": 5,
       "acreage": 4,
       "schools": 6,
-      "outbldgs": 0,
+      "outbldgs": 6,
       "town": 8,
       "hospital": 7,
       "hazards": 7,
