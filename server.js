@@ -18,6 +18,26 @@ app.use(express.static(path.join(__dirname, 'public'), {
   }
 }));
 
+// --- Lot line images ---
+const lotLinesDir = path.join(__dirname, 'docs', 'lot-lines');
+app.use('/lot-lines', express.static(lotLinesDir));
+
+app.get('/api/lot-lines', (req, res) => {
+  const fs = require('fs');
+  try {
+    const files = fs.readdirSync(lotLinesDir).filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f));
+    const map = {};
+    files.forEach(f => {
+      // 142-Padgett-Burns-Rd.png → "142 Padgett Burns Rd"
+      const addr = f.replace(/\.(png|jpg|jpeg|webp)$/i, '').replace(/-/g, ' ');
+      map[addr] = '/lot-lines/' + f;
+    });
+    res.json(map);
+  } catch (e) {
+    res.json({});
+  }
+});
+
 // --- Walkthrough videos ---
 const walkthroughDir = path.join(__dirname, 'docs', 'walkthrough-videos');
 app.use('/walkthrough', express.static(walkthroughDir));

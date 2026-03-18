@@ -31,6 +31,62 @@
   font-size: 1rem;
 }
 
+/* ── LOT LINES TOGGLE ── */
+.lot-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  z-index: 4;
+}
+.lot-acres-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(74, 222, 128, 0.95);
+  color: #0a0f0c;
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  letter-spacing: 0.02em;
+}
+.lot-toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.7rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  z-index: 6;
+  transition: all 0.15s;
+}
+.lot-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255,255,255,0.4);
+}
+.lot-toggle-btn.active {
+  background: rgba(74, 222, 128, 0.2);
+  border-color: rgba(74, 222, 128, 0.5);
+  color: #4ade80;
+}
+
 /* ── WALKTHROUGH PLAYER ── */
 .walkthrough-player {
   background: #0a0f0c;

@@ -1313,8 +1313,11 @@
     var card = document.getElementById(pid);
     if (!card) return;
 
-    // Re-inject walkthrough button if video exists
+    // Re-inject lot lines + walkthrough buttons if available
     var p = PROPERTY_MAP[pid] || (typeof PROPERTIES !== 'undefined' && PROPERTIES.find(function(x){return x.id===pid;}));
+    if (p && LOT_LINES_MAP[p.address]) {
+      injectLotLineToggle(card, p.address, LOT_LINES_MAP[p.address], p.acres);
+    }
     if (p && WALKTHROUGH_MAP[p.address]) {
       injectWalkthroughButton(card, p.address, WALKTHROUGH_MAP[p.address]);
     }
@@ -1820,6 +1823,58 @@
       bar.classList.toggle('expanded', expanded);
       bar.querySelector('.graveyard-toggle-arrow').innerHTML = expanded ? '&#9652;' : '&#9662;';
     });
+  }
+
+  // --- Lot line image toggle ---
+  var LOT_LINES_MAP = {};
+
+  function injectLotLineToggle(card, addr, lotUrl, acres) {
+    if (!card || card.querySelector('.lot-toggle-btn')) return;
+    var cardMap = card.querySelector('.card-map');
+    if (!cardMap) return;
+    cardMap.style.position = 'relative';
+
+    // Lot image overlay (hidden by default)
+    var overlay = document.createElement('div');
+    overlay.className = 'lot-overlay';
+    overlay.style.display = 'none';
+    overlay.innerHTML =
+      '<img src="' + lotUrl + '" alt="Lot lines" style="width:100%;height:100%;object-fit:contain;background:#1a1a1a;">' +
+      '<div class="lot-acres-badge">' + acres + ' ac</div>';
+    cardMap.appendChild(overlay);
+
+    // Toggle button
+    var btn = document.createElement('button');
+    btn.className = 'lot-toggle-btn';
+    btn.innerHTML = '<span class="bi bi-grid-3x3"></span> Lot Lines';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var showing = overlay.style.display !== 'none';
+      overlay.style.display = showing ? 'none' : 'flex';
+      btn.classList.toggle('active', !showing);
+      btn.innerHTML = showing
+        ? '<span class="bi bi-grid-3x3"></span> Lot Lines'
+        : '<span class="bi bi-image"></span> Photo';
+    });
+    cardMap.appendChild(btn);
+  }
+
+  function initLotLines() {
+    fetch('/api/lot-lines').then(function (r) { return r.json(); }).then(function (map) {
+      if (!map || !Object.keys(map).length) return;
+      LOT_LINES_MAP = map;
+      var propMap = {};
+      if (typeof PROPERTIES !== 'undefined') {
+        PROPERTIES.forEach(function (p) { propMap[p.address] = p; });
+      }
+      Object.keys(map).forEach(function (addr) {
+        var p = propMap[addr];
+        if (!p) return;
+        var card = document.getElementById(p.id);
+        if (!card) return;
+        injectLotLineToggle(card, addr, map[addr], p.acres);
+      });
+    }).catch(function () {});
   }
 
   // --- Walkthrough video buttons + inline player ---
@@ -2398,6 +2453,7 @@
     initCollapsibleGraveyard();
     initFilterBar();
     initMobileNavToggle();
+    initLotLines();
     initWalkthroughButtons();
 
     // --- Nav spacer: match fixed nav height ---
