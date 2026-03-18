@@ -109,7 +109,7 @@ var PropertyRenderer = (function () {
   // --- Score total ---
   function scoreTotal(scores) {
     var total = 0;
-    var keys = ['price', 'acreage', 'schools', 'outbldgs', 'town', 'hospital', 'hazards', 'beach', 'forested', 'living'];
+    var keys = ['price', 'acreage', 'schools', 'outbldgs', 'town', 'hospital', 'hazards', 'internet', 'forested', 'living'];
     keys.forEach(function (k) {
       total += (scores[k] || 0);
     });
@@ -119,10 +119,10 @@ var PropertyRenderer = (function () {
   // --- Score bar labels ---
   var SCORE_LABELS = {
     price: 'Price', acreage: 'Acreage', schools: 'Schools', outbldgs: 'Outbldgs',
-    town: 'Town', hospital: 'Hospital', hazards: 'Hazards', beach: 'Beach',
+    town: 'Town', hospital: 'Hospital', hazards: 'Hazards', internet: 'Internet',
     forested: 'Forested', living: 'Living'
   };
-  var SCORE_KEYS = ['price', 'acreage', 'schools', 'outbldgs', 'town', 'hospital', 'hazards', 'beach', 'forested', 'living'];
+  var SCORE_KEYS = ['price', 'acreage', 'schools', 'outbldgs', 'town', 'hospital', 'hazards', 'internet', 'forested', 'living'];
 
   // --- Render a single card ---
   function renderCard(p) {

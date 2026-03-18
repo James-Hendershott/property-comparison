@@ -1,5 +1,5 @@
 // Score tooltip explanations for all properties
-// Each property has 10 category tips: price, acreage, schools, outbldgs, town, hospital, hazards, beach, forested, living
+// Each property has 10 category tips: price, acreage, schools, outbldgs, town, hospital, hazards, internet, forested, living
 var SCORE_TIPS = {
   p1: {
     price: '$429,900 for 2,262 sqft on 7.5 acres. Five price reductions from original ask — motivated seller.',
@@ -9,7 +9,7 @@ var SCORE_TIPS = {
     town: '~15 min to Lenoir Walmart. Decent access to daily necessities in Caldwell County.',
     hospital: '~20 min to Caldwell Memorial Hospital. Reasonable emergency access.',
     hazards: 'Hurricane Helene FEMA disaster zone. Landslide risk on mountain terrain. Creek flooding possible.',
-    beach: '~4 hrs to nearest NC beach. Deep mountain location, far from coast.',
+    internet: 'Rural mountain address in Caldwell County. Starlink likely only option. Major WFH concern.',
     forested: 'Heavy tree cover on 7.5 mountain acres. Pisgah National Forest nearby. Best ATV access — Brown Mountain OHV 15-20 mi.',
     living: '2,262 sqft, 3 bed / 2 bath. Solid living space but only 2 bathrooms for a family.'
   },
@@ -21,7 +21,7 @@ var SCORE_TIPS = {
     town: '~20 min to North Wilkesboro. Adequate town access in foothills region.',
     hospital: '~25 min to Wilkes Medical Center. Acceptable drive time for emergencies.',
     hazards: 'SEVERE flood risk with 200 ft river frontage. Helene FEMA disaster area. Bank erosion ongoing.',
-    beach: '~4 hrs to NC coast. Deep foothills location.',
+    internet: 'Fiber/cable internet available (Wilkes Communications, Spectrum). Decent broadband options for a rural area.',
     forested: 'Mixed wooded acreage along river. Attractive setting but flood-prone lowlands.',
     living: '2,311 sqft, 3 bed / 2 bath. 2017 build with modern systems. Fiber internet available.'
   },
@@ -33,7 +33,7 @@ var SCORE_TIPS = {
     town: 'Best town score — under 10 min to Murphy. Excellent daily convenience.',
     hospital: 'Murphy Medical Center very close. Best hospital proximity in Cherokee County.',
     hazards: 'Cherokee County largely spared by Helene. Low hurricane risk. Some landslide risk.',
-    beach: '~5+ hrs to coast. Far western NC, farthest from beach.',
+    internet: 'Remote Cherokee County mountain location. Starlink/satellite likely only option. FIBER mentioned in listing but verify at exact address.',
     forested: 'Heavily wooded, near Nantahala National Forest. Outstanding forest setting.',
     living: '2,967 sqft, 4 bed / 5 bath. Marble floors, heart-pine hardwood, 3 master suites. FIBER internet.'
   },
@@ -45,7 +45,7 @@ var SCORE_TIPS = {
     town: '~15 min to Madison. Good town access for Piedmont NC.',
     hospital: '~20 min to Annie Penn Hospital/Morehead. Reasonable access.',
     hazards: 'Inland Piedmont — moderate hurricane/tropical storm exposure. Low flood and wildfire risk.',
-    beach: '~3.5 hrs to NC coast. Central Piedmont location.',
+    internet: 'Rural Rockingham County Piedmont. Fixed wireless or limited broadband likely. Verify providers at address.',
     forested: 'Mostly cleared/open acreage. Minimal forest cover.',
     living: '2,280 sqft, 4 bed / 2 bath. Spacious with 4 bedrooms but only 2 baths.'
   },
@@ -57,7 +57,7 @@ var SCORE_TIPS = {
     town: '~15 min to Murphy. Decent but not as close as p3.',
     hospital: '~20 min to Murphy Medical. Slightly farther than p3.',
     hazards: 'Cherokee Co. spared by Helene. Low risk overall. Some landslide risk.',
-    beach: '~5+ hrs to coast. Far western NC location.',
+    internet: 'Remote Cherokee County mountain address. Starlink/satellite likely only option. WFH risk.',
     forested: 'Wooded mountain setting on 5.73 acres. Good tree cover.',
     living: '2,228 sqft, 4 bed / 2 bath. Lowest county tax rate at 0.38%. 184 DOM — inflexible seller.'
   },
@@ -69,7 +69,7 @@ var SCORE_TIPS = {
     town: 'Near Clayton, ~20-25 min to Costco/Raleigh. Excellent metro convenience.',
     hospital: 'Multiple hospitals in Raleigh metro within 20-30 min. Best hospital access.',
     hazards: 'Piedmont — moderate hurricane remnants. Low flood and wildfire risk.',
-    beach: '~2.5 hrs to NC coast. Reasonable beach trip distance.',
+    internet: 'Near Clayton/Raleigh metro. Cable/fiber widely available in area. Good broadband expected.',
     forested: 'Mostly cleared/suburban land. Minimal forest character.',
     living: '1,678 sqft, 3 bed / 2 bath. All major systems replaced. Smaller living space.'
   },
@@ -81,7 +81,7 @@ var SCORE_TIPS = {
     town: '~15 min to Asheboro/Randleman. Good small-town access. Uwharrie OHV ~25-30 mi.',
     hospital: '~20 min to Randolph Health. Good regional access.',
     hazards: 'Piedmont — moderate hurricane remnants. Low flood risk. Low tornado risk.',
-    beach: '~3 hrs to NC coast. Central Piedmont location.',
+    internet: 'Rural Randolph County Piedmont. Cable available but uncertain at exact address. Verify Spectrum coverage.',
     forested: 'Mixed wooded and cleared acreage. Some tree cover.',
     living: '2,424 sqft, 4 bed / 3 bath. Modular construction type needs verification.'
   },
@@ -93,7 +93,7 @@ var SCORE_TIPS = {
     town: '~10 min to Nashville/Rocky Mount. Good eastern NC town access.',
     hospital: '~15 min to Nash General. Good proximity.',
     hazards: 'Eastern NC — HIGH hurricane exposure. Possible wetlands on lot. Flat terrain.',
-    beach: '~2 hrs to NC coast. Closer beach access than mountain properties.',
+    internet: 'Near Nashville/Rocky Mount. Cable available in area. Decent broadband expected for eastern NC.',
     forested: 'Flat, cleared subdivision land. No significant forest.',
     living: '2,628 sqft, 5 bed / 3.5 bath. Best bedroom count. New with warranties. Adams Homes builder.'
   },
@@ -105,7 +105,7 @@ var SCORE_TIPS = {
     town: '~10 min to Whiteville. Good town access.',
     hospital: '~15 min to Columbus Regional. Reasonable.',
     hazards: 'Southeastern NC coast — HIGH hurricane exposure. Flooding risk on flat terrain.',
-    beach: '~45 min to NC beaches. Best beach proximity in the group.',
+    internet: 'Near Whiteville — cable/fiber available in town area. Strong broadband likely at this location.',
     forested: 'Mixed cleared and wooded. Southeast coastal plain.',
     living: '3,678 sqft, 4 bed / 3.5 bath. Largest in NC group. All-brick single-story.'
   },
@@ -117,7 +117,7 @@ var SCORE_TIPS = {
     town: '~25 min to Sparta. Remote mountain area with limited services.',
     hospital: '~30 min to Alleghany Memorial. Longer drive for emergencies.',
     hazards: 'Blue Ridge mountain terrain — landslide and winter storm risks. 31-yr manufactured home vulnerable.',
-    beach: '~4.5 hrs to coast. Deep mountain location.',
+    internet: 'Remote Alleghany County Blue Ridge location. DSL or satellite likely — limited broadband options.',
     forested: 'Heavily wooded Blue Ridge setting. Borders Parkway land.',
     living: '1,729 sqft, 3 bed / 2 bath. 31-year-old double-wide — severe financing obstacles. LAND purchase.'
   },
@@ -129,7 +129,7 @@ var SCORE_TIPS = {
     town: '~15 min to Elizabeth City. Limited local shopping.',
     hospital: '~25 min to Sentara Albemarle. Moderate drive.',
     hazards: 'Coastal NE NC — HIGH hurricane exposure. Flat Albemarle Sound terrain. Nor\'easters.',
-    beach: '~40-50 min to Virginia Beach/Outer Banks. Great beach proximity.',
+    internet: 'Camden County near Elizabeth City. Cable/fiber available in area. Strong broadband expected.',
     forested: 'Flat coastal terrain. Minimal forest cover.',
     living: '1,242 sqft, 3 bed / 2 bath. Smallest living space. 2022 build is newest in group.'
   },
@@ -141,7 +141,7 @@ var SCORE_TIPS = {
     town: '~10 min to Shallotte/Supply. Good coastal town access.',
     hospital: '~15 min to Brunswick Novant. Good access.',
     hazards: 'SEVERE hurricane exposure. Storm surge risk. Salt air corrosion.',
-    beach: 'Best beach proximity — ~15 min to ocean. True coastal living.',
+    internet: 'Brunswick County coastal community. Fiber/cable available. Best broadband situation near beach.',
     forested: 'Coastal community — some tree cover but not heavily forested.',
     living: '1,477 sqft, 4 bed / 2 bath. Compact but 4 bedrooms. [REMOVED from active list]'
   },
@@ -153,7 +153,7 @@ var SCORE_TIPS = {
     town: '~15 min to Scotland Neck. Small town services.',
     hospital: '~30 min to Vidant Roanoke-Chowan. Longer drive.',
     hazards: 'Eastern NC — hurricane exposure. Part of sqft is UNPERMITTED — structural risk unknown.',
-    beach: '~2 hrs to coast. Eastern NC location.',
+    internet: 'Rural Halifax County eastern NC. Cable available but uncertain at exact address. Verify coverage.',
     forested: 'Mostly cleared farmland with some trees.',
     living: '2,848 sqft (permitted) / 3,600 total. 3 bed / 3 bath. UNPERMITTED construction is a liability.'
   },
@@ -165,7 +165,7 @@ var SCORE_TIPS = {
     town: '~15 min to Siler City. Small town access.',
     hospital: '~20 min to Chatham Hospital. Adequate.',
     hazards: 'FEMA Flood Fringe zone — flood insurance required. Creek flooding risk. Modular construction.',
-    beach: '~3 hrs to NC coast. Central Piedmont.',
+    internet: 'Rural Chatham County Piedmont. Cable available but uncertain at exact address. Verify Spectrum reach.',
     forested: 'Mixed wooded and cleared. Creek adds character.',
     living: '2,522 sqft, 3 bed / 2 bath. Off-frame modular construction. Creek access is nice.'
   },
@@ -177,7 +177,7 @@ var SCORE_TIPS = {
     town: '~30 min to West Jefferson. Remote mountain area.',
     hospital: '~35 min to Ashe Memorial. Longer emergency drive.',
     hazards: 'Mountain terrain — landslide risk. Springs/stream on property. Winter weather at high elevation.',
-    beach: '~5 hrs to coast. Remote mountain location.',
+    internet: 'Remote Ashe County mountain at high elevation. Starlink/satellite likely only option. WFH concern.',
     forested: 'Mixed pasture and timber on 44 acres. Some cleared, some wooded.',
     living: '1,245 sqft, 3 bed / 1 bath. House needs work. Only 1 bathroom is a major limitation.'
   },
@@ -189,7 +189,7 @@ var SCORE_TIPS = {
     town: '~15 min to Marion. Practical mountain town access.',
     hospital: '~20 min to McDowell Hospital in Marion. Good proximity.',
     hazards: 'Creek on property — moderate flood risk. Foothills terrain, low landslide risk.',
-    beach: '~4 hrs to NC coast. Western foothills location.',
+    internet: 'Rural McDowell/Rutherford County foothills. Fixed wireless or limited broadband likely. Verify at address.',
     forested: 'Wooded foothills setting with creek. Attractive natural character.',
     living: '1,944 sqft, 3 bed / 2.5 bath. Charming 2-story on creek property.'
   },
@@ -201,7 +201,7 @@ var SCORE_TIPS = {
     town: '~15 min to Lenoir. Good town access in Caldwell County.',
     hospital: '~20 min to Caldwell Memorial. Reasonable.',
     hazards: 'Helene FEMA disaster area. Creek frontage adds flood risk. Mountain landslide risk.',
-    beach: '~4 hrs to coast. Mountain foothills location.',
+    internet: 'Rural Caldwell County near Lenoir. DSL/satellite likely — limited broadband. Uncertain coverage.',
     forested: 'Heavily wooded mountain acreage with creek. Good forest setting.',
     living: '1,798 sqft, 3 bed / 3 bath. 2017 build — newest mountain home. Three full baths is a plus.'
   },
@@ -213,7 +213,7 @@ var SCORE_TIPS = {
     town: '~15 min to Marion. Good mountain town access.',
     hospital: '~20 min to McDowell Hospital. Reasonable.',
     hazards: 'Low overall risk — no major flooding or Helene damage in this area.',
-    beach: '~4 hrs to NC coast. Western foothills location.',
+    internet: 'Rural Rutherford/McDowell County foothills. Fixed wireless or limited broadband likely. Verify at address.',
     forested: 'Rolling open land with some tree cover. More pastoral than forested.',
     living: '2,335 sqft, 3 bed / 3 bath. Spacious with 3 full baths. Year built unknown.'
   },
@@ -225,7 +225,7 @@ var SCORE_TIPS = {
     town: 'Under 10 min to Murphy. Excellent daily convenience.',
     hospital: 'Murphy Medical Center very close. Top hospital proximity.',
     hazards: 'Cherokee Co. spared by Helene. Some mountain landslide risk. Low overall.',
-    beach: '~5+ hrs to coast. Far western NC.',
+    internet: 'Remote Cherokee County mountain area. Starlink/satellite likely only option. WFH concern.',
     forested: 'Wooded mountain lot with long-range views. Near Blue Ridge.',
     living: '2,715 sqft, 3 bed / 3 bath. Stunning mountain home — rock fireplace, vaulted ceilings, hardwood.'
   },
@@ -237,7 +237,7 @@ var SCORE_TIPS = {
     town: '~15 min to Murphy. Adequate town access.',
     hospital: 'Murphy Medical nearby. Good emergency access.',
     hazards: 'Cherokee Co. largely spared by Helene. Mountain landslide risk is moderate.',
-    beach: '~5+ hrs to coast. Far western NC.',
+    internet: 'Remote Cherokee County. Starlink/satellite likely only option. WFH dealbreaker risk.',
     forested: 'Heavily wooded mountain lot. Private forested setting. Virtual tour available.',
     living: '1,456 sqft, only 2 bed / 2 bath. Too small for a family — major living space limitation.'
   },
@@ -249,7 +249,7 @@ var SCORE_TIPS = {
     town: '~15 min to Murphy. Good mountain town access.',
     hospital: '~20 min to Murphy Medical. Reasonable.',
     hazards: 'Cherokee Co. spared by Helene. Mountaintop — minimal flood risk. Wildfire risk in wooded area.',
-    beach: '~5+ hrs to coast. Far western NC.',
+    internet: 'Remote Cherokee County mountaintop behind private gate. Starlink/satellite likely only option.',
     forested: 'Heavily wooded mountaintop. Creek, firepit area. Strong forest setting.',
     living: '2,352 sqft, 3 bed / 2 bath. Finished basement, wrap-around porch. Brand new HVAC.'
   },
@@ -261,7 +261,7 @@ var SCORE_TIPS = {
     town: '~15 min to Murphy. Good town access.',
     hospital: 'Murphy Medical Center nearby. Top proximity.',
     hazards: 'Cherokee Co. largely spared by Helene. Adjacent national forest — wildfire risk.',
-    beach: '~5+ hrs to coast. Far western NC.',
+    internet: 'Remote Cherokee County near USFS land. Starlink/satellite likely only option. WFH concern.',
     forested: 'Wooded lot backing to USFS land. Excellent extended forest access.',
     living: '1,344 sqft, 3 bed / 2 bath. Updated ranch — granite countertops, new roof. Small but modern.'
   },
@@ -273,7 +273,7 @@ var SCORE_TIPS = {
     town: '~30 min to Spruce Pine. Remote mountain area. Limited services.',
     hospital: '~35 min to Blue Ridge Regional. Long emergency drive.',
     hazards: 'Mitchell County impacted by Helene. HIGH landslide risk at 3,000+ ft. Creek flooding.',
-    beach: '~4.5 hrs to coast. Deep mountain location.',
+    internet: 'Remote Mitchell County at 3,000+ ft elevation. Starlink/satellite likely only option. WFH risk.',
     forested: 'Wooded mountain setting with creek. Attractive forest character.',
     living: '2,894 sqft total across structures. 3 bed / 3 bath. Unique multi-structure setup.'
   },
@@ -285,7 +285,7 @@ var SCORE_TIPS = {
     town: '~10 min to Lenoir. Close town access.',
     hospital: '~15 min to Caldwell Memorial. Good proximity.',
     hazards: 'Caldwell had some Helene impacts. Creek/drainage risk on 5 acres.',
-    beach: '~4 hrs to NC coast. Foothills location.',
+    internet: 'Near Lenoir in Caldwell County. DSL/satellite likely — limited broadband. Uncertain coverage.',
     forested: 'Mixed cleared and wooded. Pool and buildings reduce forest feel.',
     living: '3,180 sqft, 4 bed / 3.5 bath. Historic 1914 home — elegant hardwoods, fireplace, stove.'
   },
@@ -297,7 +297,7 @@ var SCORE_TIPS = {
     town: '~15 min to Yadkinville. Small town access.',
     hospital: '~25 min to Wake Forest Baptist (Davie). Moderate drive.',
     hazards: 'Inland piedmont — low hurricane, flood, and wildfire risk across the board.',
-    beach: '~3.5 hrs to NC coast. Piedmont foothills.',
+    internet: 'Rural Yadkin County Piedmont foothills. Fixed wireless or limited broadband likely. Verify at address.',
     forested: 'Mixed cleared and wooded. Piedmont character.',
     living: '2,467 sqft, 4 bed / 3 bath. Main level bedrooms, upstairs loft/flex. Solid family home.'
   },
@@ -309,7 +309,7 @@ var SCORE_TIPS = {
     town: '~10 min to Mount Airy ("Mayberry"). Charming small town.',
     hospital: '~15 min to Northern Hospital of Surry County. Good access.',
     hazards: 'Low risk across the board — foothills piedmont location.',
-    beach: '~4 hrs to NC coast. Northern NC foothills.',
+    internet: 'Rural Surry County near Mount Airy. DSL/satellite likely — limited broadband in wooded areas.',
     forested: '16 heavily wooded acres with hunting infrastructure. Outstanding forest setting.',
     living: '2,057 sqft, 3 bed / 1.5 bath. Only 1.5 baths is a limitation. Under contract.'
   },
@@ -321,7 +321,7 @@ var SCORE_TIPS = {
     town: '~20 min to Roxboro. Rural piedmont — limited services.',
     hospital: '~25 min to Person Memorial. Moderate drive.',
     hazards: '2 ponds + creek add moderate flooding risk. Otherwise low piedmont risk.',
-    beach: '~3 hrs to NC coast. Northern piedmont.',
+    internet: 'Rural Person County Piedmont. Cable available but uncertain at exact address. Verify coverage.',
     forested: 'Mixed cleared and wooded piedmont. Ponds add natural character.',
     living: '2,016 sqft, 3 bed / 3 bath. Three full baths. Flex room and den.'
   },
@@ -333,7 +333,7 @@ var SCORE_TIPS = {
     town: '~20 min to Franklinton, ~40 min to Raleigh. Near metro but rural feel.',
     hospital: '~30 min to WakeMed/Rex in Raleigh. Longer drive but world-class facilities.',
     hazards: 'Inland piedmont — low hurricane, flood, and wildfire risk.',
-    beach: '~2.5 hrs to NC coast. Decent beach access from northern piedmont.',
+    internet: 'Near Franklinton, Franklin County. Cable available in area. Decent broadband expected near Raleigh metro.',
     forested: '10 fully wooded acres. Outstanding private forest setting.',
     living: '1,318 sqft, 3 bed / 2 bath. Smallest home in the mid-price range. Ranch style.'
   },
@@ -345,7 +345,7 @@ var SCORE_TIPS = {
     town: '~10 min to Four Oaks, ~35 min to Smithfield. Good I-95 corridor access.',
     hospital: '~15 min to Johnston Medical Center. Good proximity.',
     hazards: 'Eastern NC — moderate hurricane wind/rain. Flat terrain, verify flood zones.',
-    beach: '~2 hrs to NC coast. Eastern location has better beach access.',
+    internet: 'Near Four Oaks/Smithfield, Johnston County. Cable/fiber likely available in this corridor. Good broadband expected.',
     forested: 'Mostly cleared agricultural land. Limited forest cover.',
     living: '1,512 sqft, 3 bed / 2 bath. Site-built 1997. Modest living space.'
   },
@@ -357,7 +357,7 @@ var SCORE_TIPS = {
     town: '~10 min to Wadesboro. Small town on Highway 109.',
     hospital: '~10 min to Atrium Health Anson. Excellent hospital proximity.',
     hazards: 'Inland piedmont — low risk across the board.',
-    beach: '~3 hrs to NC coast. South-central piedmont.',
+    internet: 'Rural Anson County Piedmont. Cable available but uncertain at exact address. Verify providers.',
     forested: 'Mostly cleared land. Minimal forest cover.',
     living: '2,330 sqft, 4 bed / 2 bath. Good size with 4 bedrooms. Price jump is suspicious.'
   },
@@ -369,7 +369,7 @@ var SCORE_TIPS = {
     town: '~15 min to Marshville, ~40 min to Charlotte. Good metro access.',
     hospital: '~25 min to Atrium Health Monroe. Moderate drive.',
     hazards: 'Inland piedmont — low hurricane, flood, and wildfire risk.',
-    beach: '~3 hrs to NC coast. South-central piedmont.',
+    internet: 'Near Marshville, Union County. Cable available but uncertain at exact address. Verify coverage.',
     forested: 'Wooded lot in rural setting. Some forest character.',
     living: '1,530 sqft, 3 bed / 2 bath. Built 1986. Compact living space.'
   },
@@ -381,7 +381,7 @@ var SCORE_TIPS = {
     town: '~20 min to Forest City/Rutherfordton. Mountain town access.',
     hospital: '~25 min to Rutherford Regional. Moderate drive.',
     hazards: 'Some Helene impacts in Rutherford. Foothills landslide risk moderate.',
-    beach: '~4 hrs to NC coast. Western foothills.',
+    internet: 'Golden Valley Estates, Rutherford County. Fixed wireless or limited broadband likely in gated mountain community.',
     forested: 'Wooded foothills lot with mountain views. Attractive setting.',
     living: '1,530 sqft, 3 bed / 2 bath. Mountain views but compact living space.'
   },
@@ -393,7 +393,7 @@ var SCORE_TIPS = {
     town: '~20 min to Forest City. Mountain foothills access.',
     hospital: '~25 min to Rutherford Regional. Moderate drive.',
     hazards: 'Some Helene impacts. Stream on property — verify flood zones. Foothills landslide risk.',
-    beach: '~4 hrs to NC coast. Western foothills.',
+    internet: 'Golden Valley Estates, Rutherford County. Fixed wireless or limited broadband likely in mountain community.',
     forested: 'Heavily wooded 11 acres. Log cabin setting with mountain views from every window.',
     living: '1,360 sqft, 3 bed / 2 bath. Log cabin — secluded one-level, large deck, total privacy.'
   },
@@ -405,7 +405,7 @@ var SCORE_TIPS = {
     town: '~10 min to Rutherfordton. Good small-town access.',
     hospital: '~10 min to Rutherford Regional. Excellent hospital proximity.',
     hazards: 'Some Helene impacts in Rutherford. Low landslide risk at this elevation.',
-    beach: '~4 hrs to NC coast. Western foothills.',
+    internet: 'Near Rutherfordton. Fixed wireless or limited broadband likely in this foothills area. Verify providers.',
     forested: 'Mixed cleared and wooded. New construction site.',
     living: '1,400 sqft, 3 bed / 2 bath. Brand new 2024 build — modern systems, warranties.'
   },
@@ -417,7 +417,7 @@ var SCORE_TIPS = {
     town: '~15 min to Lenoir. Good Caldwell County access.',
     hospital: '~20 min to Caldwell Memorial. Reasonable.',
     hazards: 'Caldwell had Helene impacts. 20 acres means more drainage/creek risk to verify.',
-    beach: '~4 hrs to NC coast. Mountain foothills.',
+    internet: 'Rural Caldwell County near Lenoir. DSL/satellite likely — limited broadband. Uncertain at this address.',
     forested: 'Mixed wooded and cleared on 20 acres. Good forest coverage.',
     living: '3,662 sqft, 3 bed / 2 bath. Largest living space. Coming Soon listing.'
   },
@@ -429,7 +429,7 @@ var SCORE_TIPS = {
     town: '~10 min to Rocky Mount. Good eastern NC city access.',
     hospital: '~10 min to Nash UNC Health Care. Excellent proximity.',
     hazards: 'Eastern NC — HIGH hurricane exposure. Coastal plain flooding risk.',
-    beach: '~2 hrs to NC coast. Eastern location helps.',
+    internet: 'Near Rocky Mount. Cable available in area. Decent broadband expected for eastern NC suburb.',
     forested: 'Mostly flat cleared land. Minimal forest cover.',
     living: '1,831 sqft, 3 bed / 2 bath. Adequate living space. 1988 build.'
   },
@@ -441,7 +441,7 @@ var SCORE_TIPS = {
     town: '~10 mi to Hillsborough, ~20 min to Chapel Hill/Durham. Excellent metro access.',
     hospital: '~20 min to UNC Hospitals in Chapel Hill. World-class medical care.',
     hazards: 'Inland piedmont — very low risk across the board. Safest hazard profile.',
-    beach: '~3 hrs to NC coast. Central NC location.',
+    internet: 'Research Triangle area (Orange County). Excellent broadband infrastructure. Cable/fiber widely available.',
     forested: 'Mixed wooded and cleared acreage. Piedmont character.',
     living: '2,430 sqft, 4 bed / 3 bath. 1997 build. Spacious family home in top school district.'
   },
@@ -453,7 +453,7 @@ var SCORE_TIPS = {
     town: '~10 min to St. Pauls, ~20 min to Lumberton. Good town access.',
     hospital: '~15 min to Southeastern Regional Medical. Reasonable.',
     hazards: 'Eastern NC — HIGH hurricane exposure. HIGH flood risk with pond and creek on property.',
-    beach: '~1.5 hrs to NC coast. Closer coastal access.',
+    internet: 'Near Saint Pauls/Lumberton, Robeson County. Cable/fiber likely available in this area. Good broadband expected.',
     forested: 'Mixed cleared and wooded. Pond and creek add water features.',
     living: '2,636 sqft, 3 bed / 3 bath. Updated flooring, kitchen, bathrooms, appliances, electrical.'
   },
@@ -465,7 +465,7 @@ var SCORE_TIPS = {
     town: '~10 min to Thomasville, ~20 min to High Point. Good Piedmont access.',
     hospital: '~10 min to Thomasville Medical/Novant. Excellent proximity.',
     hazards: 'Inland piedmont — very low risk. Best hazard profile in Piedmont.',
-    beach: '~3.5 hrs to NC coast. Central piedmont.',
+    internet: 'Near Thomasville, Davidson County. Fixed wireless or limited broadband likely. Verify at exact address.',
     forested: 'Mostly cleared land. Limited forest character.',
     living: '1,971 sqft, 3 bed / 2 bath. 1936 ranch needing renovation. Plantation shutters, wood/tile.'
   },
@@ -477,7 +477,7 @@ var SCORE_TIPS = {
     town: '~10 min to Troy. Good small-town access.',
     hospital: '~10 min to FirstHealth Montgomery. Best hospital proximity score.',
     hazards: 'Inland piedmont — low risk. 10 wooded acres have moderate wildfire risk.',
-    beach: '~3 hrs to NC coast. South-central piedmont.',
+    internet: 'Near Troy, Montgomery County. Cable available but uncertain at exact address on 10 wooded acres.',
     forested: '10 heavily wooded acres. Outstanding private forest setting.',
     living: '2,612 sqft, 3 bed / 3 bath. Log cabin — vaulted ceiling, rock fireplace, bonus room.'
   },
@@ -489,7 +489,7 @@ var SCORE_TIPS = {
     town: '~15 min to Jacksonville. Good military/coastal town access.',
     hospital: '~15 min to Onslow Memorial. Good proximity.',
     hazards: 'SEVERE hurricane risk — coastal NC. HIGH flood risk on coastal plain.',
-    beach: '~30 min to Topsail Beach/Emerald Isle. Excellent beach proximity.',
+    internet: 'Near Jacksonville/Camp Lejeune, Onslow County. Cable/fiber available. Strong broadband expected near military base.',
     forested: 'Mixed cleared and wooded. Coastal plain character.',
     living: '2,930 sqft, 3 bed / 2.5 bath. Open-concept, den with fireplace, master suite, bonus rooms.'
   },
@@ -501,7 +501,7 @@ var SCORE_TIPS = {
     town: '~10 min to Forest City. Good mountain town access.',
     hospital: '~15 min to Rutherford Regional. Reasonable.',
     hazards: 'Some Helene impacts. Low landslide and flood risk at this elevation.',
-    beach: '~4 hrs to NC coast. Western foothills.',
+    internet: 'Rural Rutherford County near Forest City. Cable available but uncertain at exact address. Verify Spectrum/Vyve.',
     forested: 'Mostly cleared pasture land. Level and usable.',
     living: '2,202 sqft, 3 bed / 2 bath. Massive family room with vaulted ceiling and fireplace.'
   },
@@ -513,7 +513,7 @@ var SCORE_TIPS = {
     town: '~15 min to Greenville. Good university city access (ECU).',
     hospital: '~15 min to Vidant Medical Center. Major regional hospital.',
     hazards: 'Eastern NC — HIGH hurricane exposure. Coastal plain flooding risk.',
-    beach: '~1.5 hrs to NC coast. Good beach access.',
+    internet: 'Near Greenville (ECU area), Pitt County. Cable/fiber widely available. Strong broadband expected.',
     forested: 'Mostly cleared agricultural land. Limited forest.',
     living: '2,040 sqft, 3 bed / 2 bath. Manufactured home (2020 build). Modern but manufactured.'
   },
@@ -525,7 +525,7 @@ var SCORE_TIPS = {
     town: '~15 min to Lenoir. Good Caldwell County access.',
     hospital: '~20 min to Caldwell Memorial. Reasonable.',
     hazards: 'Caldwell had Helene impacts. Low landslide risk in this area.',
-    beach: '~4 hrs to NC coast. Mountain foothills.',
+    internet: 'Rural Caldwell County near Lenoir. DSL/satellite likely — limited broadband at this address.',
     forested: 'Wooded backyard with private setting. Sunroom overlooking forest.',
     living: '1,860 sqft, 3 bed / 2 bath. All-brick ranch with full basement. 1938 build — character home.'
   },
@@ -537,7 +537,7 @@ var SCORE_TIPS = {
     town: '~15 min to Laurinburg. Small town access.',
     hospital: '~20 min to Scotland Memorial. Adequate.',
     hazards: 'Inland sandhills — very low risk. Pond on property is only concern.',
-    beach: '~2 hrs to NC coast. Southern piedmont.',
+    internet: 'Near Gibson/Laurinburg, Scotland County. Cable available in area. Decent broadband expected.',
     forested: 'Mostly cleared/manicured grounds. Not forested — estate landscape.',
     living: '3,247 sqft, 4 bed / 3 bath. Historic 1825 — 9ft+ ceilings, luxury primary suite. Timeless.'
   },
@@ -549,7 +549,7 @@ var SCORE_TIPS = {
     town: '~10 min to Candor. Small town but has essentials.',
     hospital: '~20 min to FirstHealth Montgomery. Reasonable.',
     hazards: 'Inland piedmont — very low risk across the board. Outstanding safety profile.',
-    beach: '~3 hrs to NC coast. South-central piedmont.',
+    internet: 'Near Candor, Montgomery County. Cable available but uncertain at exact address. Verify providers.',
     forested: '~8 of 11 acres are wooded. Strong forest setting with cleared farmland too.',
     living: '3,069 sqft, 4 bed / 3 bath. Spacious farmhouse — chopping block countertops, formal dining.'
   },
@@ -561,8 +561,296 @@ var SCORE_TIPS = {
     town: '~25 min to West Jefferson. Remote mountain area.',
     hospital: '~30 min to Ashe Memorial. Longer emergency drive.',
     hazards: 'Mountain exposure — moderate hurricane/landslide risk. Heavy winter ice/snow in Ashe County.',
-    beach: '~5 hrs to coast. Remote mountain — farthest from beach.',
+    internet: 'Remote Ashe County mountain. Starlink/satellite likely only option. WFH dealbreaker risk.',
     forested: 'Mixed pasture and wooded mountain land. Mountain views.',
     living: '2,128 sqft, 5 bed / 2 bath. Charming farmhouse. No AC. 5 bedrooms is a plus. Taxes only $1,300/yr.'
+  },
+  p48: {
+    price: '$415,000 for 6.21 acres near Collettsville. Good value for Caldwell County.',
+    acreage: '6.21 acres — good size with mountain character.',
+    schools: 'Caldwell County schools rated 4/10. Below average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~15 min to Lenoir Walmart. Decent Caldwell County access.',
+    hospital: '~20 min to Caldwell Memorial. Reasonable.',
+    hazards: 'Caldwell County Helene impacts. Remote mountain road — verify access.',
+    internet: 'Near Collettsville, remote Caldwell County. DSL/satellite likely — limited broadband. WFH concern.',
+    forested: 'Wooded mountain setting on 6+ acres.',
+    living: '2,317 sqft, 3 bed / 2 bath. 1992 site-built on mountain acreage.'
+  },
+  p49: {
+    price: '$519,900 — over budget ceiling. Premium for 3,487 sqft on nearly 7 acres.',
+    acreage: '6.91 acres in Rutherford County foothills. Above average.',
+    schools: 'Rutherford County schools rated 9/10. Among the best in search.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~15 min to Forest City. Good mountain town access.',
+    hospital: '~20 min to Rutherford Regional. Reasonable.',
+    hazards: 'Some Helene impacts in Rutherford. Low landslide risk at this elevation.',
+    internet: 'Rural Rutherford County near Bostic. Fixed wireless or limited broadband likely. Verify providers.',
+    forested: 'Mixed cleared and wooded foothills acreage.',
+    living: '3,487 sqft, 3 bed / 3.5 bath. 2003 build — spacious with modern systems.'
+  },
+  p50: {
+    price: '$409,900 for 2.51 acres. Flip pricing from $320K (2022). Negotiate hard.',
+    acreage: '2.51 acres — below 5-acre preference. Adjacent 4.3 ac lot available.',
+    schools: 'Rutherford County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings. Walk-out lower level provides extra space.',
+    town: '~5 min to downtown Forest City. Excellent town access.',
+    hospital: '~10 min to Rutherford Regional. Good proximity.',
+    hazards: 'Low risk overall. Good elevation in Forest City area.',
+    internet: 'Confirmed Spectrum/Vyve/PANGAEA broadband at address. Among the best internet situations in search.',
+    forested: 'Mixed wooded and cleared on 2.5 acres.',
+    living: '1,915 sqft, 3 bed / 4 bath. Three-level home with dedicated office and walk-out lower level.'
+  },
+  p51: {
+    price: '$479,900 near budget ceiling. Good value for Chatham County near Research Triangle.',
+    acreage: '5.99 acres in Chatham County. Meets minimum threshold.',
+    schools: 'Chatham County schools rated 7/10. Above average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Goldston; Sanford/Pittsboro 15-20 min. Good access.',
+    hospital: '~20 min to Chatham Hospital. Adequate.',
+    hazards: 'Inland piedmont — low risk across the board.',
+    internet: 'Rural Chatham County near Goldston. Cable available but uncertain at exact address. Verify providers.',
+    forested: 'Mixed cleared and wooded Piedmont acreage.',
+    living: '1,728 sqft, 4 bed / 3 bath. 1981 build. Compact but 4 bedrooms.'
+  },
+  p52: {
+    price: '$349,900 for 10.67 acres — excellent value. Best price-to-acreage in Caldwell.',
+    acreage: '10.67 acres just off Hwy 321. Well above average.',
+    schools: 'Caldwell County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~15 min to Lenoir, just off Hwy 321. Good access.',
+    hospital: '~20 min to Caldwell Memorial. Reasonable.',
+    hazards: 'Caldwell County Helene impacts. Verify drainage on 10+ acres.',
+    internet: 'Off Hwy 321 near Lenoir. Spectrum 81% coverage in Lenoir area — uncertain at exact address.',
+    forested: 'Wooded mountain setting on 10+ acres. Good forest cover.',
+    living: '2,032 sqft, 3 bed / 2 bath. 1977 build on large acreage.'
+  },
+  p53: {
+    price: '$314,900 — lowest active price. New 2026 construction.',
+    acreage: '5 acres on gravel road at ~2,000 ft elevation.',
+    schools: 'McDowell County schools rated 4/10. Below average.',
+    outbldgs: 'New construction — no outbuildings yet.',
+    town: '~10 min to Marion. Good mountain town access.',
+    hospital: '~15 min to McDowell Hospital. Good proximity.',
+    hazards: 'Gravel road access. Mountain terrain — some landslide risk.',
+    internet: 'Gravel road at 2,000 ft elevation. Only 23% fiber coverage in area. Starlink likely only option.',
+    forested: 'Wooded mountain setting at elevation.',
+    living: '1,484 sqft, 3 bed / 2 bath. Brand new 2026 build — modern systems, warranties.'
+  },
+  p54: {
+    price: '$490,000 near budget ceiling. Coastal Beaufort County premium.',
+    acreage: '3.27 acres — below 5-acre preference.',
+    schools: 'Beaufort County schools rated 6/10. Above average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Bath; Washington NC ~15 min. Good coastal town access.',
+    hospital: '~20 min to Vidant Beaufort. Reasonable.',
+    hazards: 'Coastal eastern NC — HIGH hurricane exposure. Flat terrain flooding risk.',
+    internet: 'Near Bath/Washington NC. Cable/fiber likely available in area. Good broadband expected.',
+    forested: 'Coastal plain — mixed cleared and wooded.',
+    living: '2,008 sqft, 4 bed / 2 bath. 2000 build in historic Bath area.'
+  },
+  p55: {
+    price: '$410,000 for 6.36 acres. Fair value for Lincoln County near Charlotte.',
+    acreage: '6.36 acres — above 5-acre minimum. Good size.',
+    schools: 'Lincoln County schools rated 9/10. Among the best in search.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~15 min to Lincolnton; Charlotte ~45 min. Good metro access.',
+    hospital: '~20 min to Lincoln County hospital. Reasonable.',
+    hazards: 'Low risk Piedmont foothills location.',
+    internet: 'Rural Lincoln County. Fixed wireless or limited broadband likely. Verify at exact address.',
+    forested: 'Mixed cleared and wooded foothills acreage.',
+    living: '1,699 sqft, 3 bed / 1 bath. Only 1 bathroom is a major limitation.'
+  },
+  p56: {
+    price: '$334,900 for 2 acres near Murphy. Budget-friendly Cherokee County.',
+    acreage: 'Only 2 acres — well below 5-acre preference.',
+    schools: 'Cherokee County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~15 min to Murphy; Andrews ~10 min. Decent access.',
+    hospital: '~20 min to Murphy Medical. Reasonable.',
+    hazards: 'Cherokee County largely spared by Helene. Some mountain risk.',
+    internet: 'Remote Cherokee County near Marble. Starlink/satellite likely only option. WFH concern.',
+    forested: 'Wooded mountain lot near Murphy.',
+    living: '1,736 sqft, 2 bed / 2 bath. Only 2 bedrooms — too small for a family.'
+  },
+  p57: {
+    price: '$319,000 for manufactured home near Oxford. Budget option.',
+    acreage: '2.53 acres — below 5-acre preference.',
+    schools: 'Granville County schools rated 1/10. Worst in search.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~10 min to Oxford; Durham ~35 min. Near metro.',
+    hospital: '~15 min to Granville Health. Reasonable.',
+    hazards: 'Inland piedmont — low risk overall.',
+    internet: 'Rural Granville County near Oxford. Starlink/satellite likely only option. No broadband confirmed.',
+    forested: 'Mixed cleared and wooded Piedmont.',
+    living: '1,400 sqft, 3 bed / 2 bath. Manufactured home — financing limitations.'
+  },
+  p58: {
+    price: '$399,000 for 5.12 acres. Good value for Scotland County.',
+    acreage: '5.12 acres — meets minimum threshold.',
+    schools: 'Scotland County schools rated 1/10. Among the worst.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Laurinburg; Fayetteville ~50 min. Good local access.',
+    hospital: '~15 min to Scotland Memorial. Reasonable.',
+    hazards: 'Inland sandhills — low risk overall.',
+    internet: 'Rural Scotland County near Laurinburg. DSL/satellite likely — limited broadband options.',
+    forested: 'Mixed cleared and wooded sandhills.',
+    living: '2,638 sqft, 3 bed / 2.5 bath. 1977 build. Spacious home.'
+  },
+  p59: {
+    price: '$335,000 for 4.5 acres. Good value for eastern NC.',
+    acreage: '4.5 acres — close to 5-acre minimum.',
+    schools: 'Beaufort County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~10 min to Belhaven; Washington NC ~30 min.',
+    hospital: '~15 min to Vidant Pungo. Reasonable.',
+    hazards: 'Coastal eastern NC — HIGH hurricane exposure.',
+    internet: 'Near Belhaven, Beaufort County. Cable/fiber likely available in area. Good broadband expected.',
+    forested: 'Mixed cleared and wooded eastern NC.',
+    living: '2,176 sqft, 3 bed / 2.5 bath. 1998 modular/pre-fab home.'
+  },
+  p60: {
+    price: '$525,000 — over budget. Coastal Beaufort County premium.',
+    acreage: '2.72 acres — below 5-acre preference.',
+    schools: 'Beaufort County schools rated 6/10. Above average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Chocowinity; Washington NC ~10 min. Excellent access.',
+    hospital: '~15 min to Vidant Beaufort. Good.',
+    hazards: 'Coastal eastern NC — moderate hurricane exposure.',
+    internet: 'Rural Beaufort County near Chocowinity. DSL/satellite likely — limited broadband options.',
+    forested: 'Coastal plain — mixed cleared and wooded.',
+    living: '2,031 sqft, 3 bed / 2.5 bath. 2019 build — nearly new.'
+  },
+  p61: {
+    price: '$552,000 — well over budget. Premium for 9.72 acres near Forest City.',
+    acreage: '9.72 acres — excellent acreage for Rutherford County.',
+    schools: 'Rutherford County schools rated 6/10. Slightly above average.',
+    outbldgs: 'Verify outbuildings on 9+ acre property.',
+    town: '~5 min to downtown Forest City. Excellent access.',
+    hospital: '~10 min to Rutherford Regional. Good proximity.',
+    hazards: 'Some Helene impacts. Low risk at this location.',
+    internet: 'Rural Rutherford County near Forest City. Starlink/satellite likely only option at this address.',
+    forested: 'Mixed cleared and wooded on 9+ acres.',
+    living: '3,748 sqft, 3 bed / 3 bath. Large home but year built unknown.'
+  },
+  p62: {
+    price: '$480,000 near budget ceiling for Rutherford County.',
+    acreage: '4.23 acres — below 5-acre preference.',
+    schools: 'Rutherford County schools rated 6/10. Slightly above average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Forest City. Excellent town access.',
+    hospital: '~10 min to Rutherford Regional. Good proximity.',
+    hazards: 'Low risk. Good location near Forest City.',
+    internet: 'Near Forest City — good broadband coverage in area. Cable likely available but verify at exact address.',
+    forested: 'Mixed cleared and wooded.',
+    living: '2,329 sqft, 3 bed / 3 bath. 1988 build. Good living space.'
+  },
+  p63: {
+    price: '$499,900 at budget ceiling for 15.96 acres. Fair value for acreage.',
+    acreage: '15.96 acres with livestock fencing, stream, trails. Outstanding acreage.',
+    schools: 'Cleveland County schools rated 5/10. Average.',
+    outbldgs: '550 sqft detached garage, chicken coop, fruit trees. Good homesteading setup.',
+    town: '~5 min to Ellenboro; Forest City ~10 min. Good access.',
+    hospital: '~15 min to Cleveland Regional. Reasonable.',
+    hazards: 'Low risk Rutherford/Cleveland County area.',
+    internet: 'Spectrum fiber optic confirmed at address. Best internet situation in search.',
+    forested: 'Mixed wooded and cleared on 16 acres. Trails through forest.',
+    living: '2,052 sqft, 3 bed / 2 bath. 2014 modular in excellent condition.'
+  },
+  p64: {
+    price: '$349,900 for 4.48 acres. Budget-friendly Caldwell County.',
+    acreage: '4.48 acres — close to 5-acre minimum.',
+    schools: 'Caldwell County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Hudson; Lenoir ~10 min; Hickory ~20 min. Good access.',
+    hospital: '~15 min to Caldwell Memorial. Reasonable.',
+    hazards: 'Caldwell County — moderate Helene impacts in area.',
+    internet: 'Caldwell County RA-20 zone near Hudson. Cable available but uncertain at exact address.',
+    forested: 'Mixed cleared and wooded.',
+    living: '1,683 sqft, 3 bed / 2 bath. 1971 build. Compact but functional.'
+  },
+  p65: {
+    price: '$355,000 for 2.88 acres. Good value for Rutherford County.',
+    acreage: '2.88 acres — below 5-acre preference.',
+    schools: 'Rutherford County schools rated 6/10. Slightly above average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Ellenboro; Forest City ~10 min. Good access.',
+    hospital: '~15 min to Rutherford Regional. Reasonable.',
+    hazards: 'Low risk. Good foothills location.',
+    internet: 'Rural Rutherford County near Ellenboro. Cable available but uncertain at exact address.',
+    forested: 'Mixed cleared and wooded.',
+    living: '2,672 sqft, 3 bed / 3 bath. 1979 build. Spacious home.'
+  },
+  p66: {
+    price: '$399,000 for 2 acres in Wilkes County. Fair value.',
+    acreage: 'Only 2 acres — well below 5-acre preference.',
+    schools: 'Wilkes County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~10 min to North Wilkesboro. Good town access.',
+    hospital: '~15 min to Wilkes Medical Center. Reasonable.',
+    hazards: 'Low risk foothills location. Public water available.',
+    internet: 'Rural Wilkes County near Millers Creek. Cable available but uncertain at exact address. Public water is a plus.',
+    forested: 'Mixed cleared and wooded.',
+    living: '2,023 sqft, 3 bed / 2 bath. 1988 site-built with public water.'
+  },
+  p67: {
+    price: '$439,900 for new 2025 construction on 3 acres near Shelby.',
+    acreage: '3 acres — below 5-acre preference.',
+    schools: 'Cleveland County schools rated 6/10. Above average.',
+    outbldgs: 'New construction — no outbuildings yet.',
+    town: '~10 min to Shelby; Gastonia ~30 min; Charlotte ~50 min. Good access.',
+    hospital: '~15 min to Cleveland Regional. Reasonable.',
+    hazards: 'Low risk. Good Cleveland County location.',
+    internet: 'Cleveland County near Shelby — county water available. Cable likely in area. Decent broadband expected.',
+    forested: 'Mostly cleared new construction site.',
+    living: '1,687 sqft, 3 bed / 3 bath. Brand new 2025 build with modern systems.'
+  },
+  p68: {
+    price: '$499,000 at budget ceiling for 11.48 acres. Fair value for Lincoln County.',
+    acreage: '11.48 acres — excellent acreage. Well above average.',
+    schools: 'Lincoln County schools rated 6/10. Above average.',
+    outbldgs: 'Verify outbuildings on 11+ acre property.',
+    town: '~15 min to Lincolnton; Charlotte ~45 min. Good metro access.',
+    hospital: '~20 min to Lincoln County hospital. Reasonable.',
+    hazards: 'Rural foothills — low risk. Well and septic.',
+    internet: 'Rural Lincoln County with well/septic. Fixed wireless or limited broadband likely. Verify providers.',
+    forested: 'Heavily wooded 11+ acres. Outstanding forest setting.',
+    living: '1,482 sqft, 3 bed / 2 bath. 1940 build — lead/asbestos risk. Needs renovation.'
+  },
+  p69: {
+    price: '$410,000 for 2.32 acres. Mid-range for Iredell County.',
+    acreage: '2.32 acres — well below 5-acre preference.',
+    schools: 'Iredell County schools rated 6/10. Above average.',
+    outbldgs: 'Verify outbuildings. 800+ sqft unfinished upstairs adds potential.',
+    town: '~15 min to Statesville; Hickory ~20 min; Charlotte ~60 min. Good access.',
+    hospital: '~15 min to Iredell Memorial. Good proximity.',
+    hazards: 'Low risk Piedmont foothills location.',
+    internet: 'Iredell County near Stony Point. Cable likely available in area. Decent broadband expected.',
+    forested: 'Mostly cleared with some tree cover.',
+    living: '2,022 sqft, 4 bed / 2 bath. 2002 modular with 800+ sqft unfinished upstairs.'
+  },
+  p70: {
+    price: '$330,000 for 3.28 acres. Budget-friendly Cleveland County.',
+    acreage: '3.28 acres — below 5-acre preference.',
+    schools: 'Cleveland County schools rated 4/10. Below average.',
+    outbldgs: 'No outbuildings — would need to build from scratch.',
+    town: '~15 min to Shelby; Gastonia ~30 min; Charlotte ~55 min. Good access.',
+    hospital: '~20 min to Cleveland Regional. Moderate.',
+    hazards: 'Low risk rural Cleveland County.',
+    internet: 'Rural Cleveland County near Lawndale. Fixed wireless or limited broadband likely. Verify at address.',
+    forested: 'Mixed cleared and wooded.',
+    living: '2,373 sqft, 4 bed / 3 bath. 1977 build. Fully renovated flip.'
+  },
+  p71: {
+    price: '$420,000 for 2.5 acres in town. Fair value for Burke County.',
+    acreage: 'Only 2.5 acres — well below 5-acre preference.',
+    schools: 'Burke County schools rated 5/10. Average.',
+    outbldgs: 'Verify outbuildings on property.',
+    town: '~5 min to Valdese; Morganton ~10 min; Hickory ~25 min. Excellent access.',
+    hospital: '~10 min to UNC Health Blue Ridge. Good proximity.',
+    hazards: 'In-town location — low risk. City water and sewer.',
+    internet: 'In-town Valdese location with city water and sewer. Cable/fiber widely available. Strong broadband expected.',
+    forested: 'Some wooded areas on 2.5 acres.',
+    living: '2,172 sqft, 4 bed / 3 bath. 1901 historic build — lead/asbestos risk. City utilities.'
   }
 };

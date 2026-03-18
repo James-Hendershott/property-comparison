@@ -42,7 +42,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 3,
+      "internet": 1,
       "forested": 8,
       "living": 6
     },
@@ -283,7 +283,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 3,
-      "beach": 3,
+      "internet": 3,
       "forested": 6,
       "living": 6
     },
@@ -531,7 +531,7 @@ var PROPERTIES = [
       "town": 10,
       "hospital": 10,
       "hazards": 8,
-      "beach": 2,
+      "internet": 2,
       "forested": 8,
       "living": 8
     },
@@ -775,7 +775,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 6,
-      "beach": 4,
+      "internet": 4,
       "forested": 3,
       "living": 8
     },
@@ -1007,7 +1007,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 6,
       "hazards": 8,
-      "beach": 2,
+      "internet": 2,
       "forested": 7,
       "living": 8
     },
@@ -1243,7 +1243,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 10,
       "hazards": 7,
-      "beach": 7,
+      "internet": 7,
       "forested": 4,
       "living": 5
     },
@@ -1483,7 +1483,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 6,
-      "beach": 5,
+      "internet": 5,
       "forested": 5,
       "living": 8
     },
@@ -1719,7 +1719,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 6,
+      "internet": 6,
       "forested": 3,
       "living": 10
     },
@@ -1951,7 +1951,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 9,
+      "internet": 9,
       "forested": 5,
       "living": 8
     },
@@ -2195,7 +2195,7 @@ var PROPERTIES = [
       "town": 5,
       "hospital": 6,
       "hazards": 5,
-      "beach": 3,
+      "internet": 3,
       "forested": 8,
       "living": 5
     },
@@ -2431,7 +2431,7 @@ var PROPERTIES = [
       "town": 6,
       "hospital": 6,
       "hazards": 4,
-      "beach": 9,
+      "internet": 9,
       "forested": 4,
       "living": 5
     },
@@ -2663,7 +2663,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 2,
-      "beach": 10,
+      "internet": 10,
       "forested": 4,
       "living": 6
     },
@@ -2900,7 +2900,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 5,
       "hazards": 3,
-      "beach": 6,
+      "internet": 6,
       "forested": 4,
       "living": 8
     },
@@ -3135,7 +3135,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 5,
+      "internet": 5,
       "forested": 5,
       "living": 6
     },
@@ -3383,7 +3383,7 @@ var PROPERTIES = [
       "town": 5,
       "hospital": 5,
       "hazards": 7,
-      "beach": 2,
+      "internet": 2,
       "forested": 6,
       "living": 4
     },
@@ -3611,7 +3611,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 6,
       "living": 5
     },
@@ -3831,7 +3831,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 3,
+      "internet": 2,
       "forested": 7,
       "living": 5
     },
@@ -4059,7 +4059,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 8,
-      "beach": 4,
+      "internet": 4,
       "forested": 5,
       "living": 6
     },
@@ -4279,7 +4279,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 9,
       "hazards": 8,
-      "beach": 2,
+      "internet": 2,
       "forested": 6,
       "living": 7
     },
@@ -4478,7 +4478,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 9,
       "hazards": 7,
-      "beach": 2,
+      "internet": 2,
       "forested": 9,
       "living": 3
     },
@@ -4659,7 +4659,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 7,
-      "beach": 2,
+      "internet": 2,
       "forested": 8,
       "living": 6
     },
@@ -4860,7 +4860,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 9,
       "hazards": 7,
-      "beach": 2,
+      "internet": 2,
       "forested": 8,
       "living": 5
     },
@@ -5061,7 +5061,7 @@ var PROPERTIES = [
       "town": 4,
       "hospital": 5,
       "hazards": 4,
-      "beach": 2,
+      "internet": 2,
       "forested": 7,
       "living": 7
     },
@@ -5284,7 +5284,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 6,
-      "beach": 3,
+      "internet": 3,
       "forested": 4,
       "living": 9
     },
@@ -5495,7 +5495,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 9,
-      "beach": 4,
+      "internet": 4,
       "forested": 5,
       "living": 8
     },
@@ -5702,7 +5702,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 9,
-      "beach": 3,
+      "internet": 3,
       "forested": 9,
       "living": 5
     },
@@ -5897,7 +5897,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 5,
+      "internet": 5,
       "forested": 5,
       "living": 6
     },
@@ -6100,7 +6100,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 5,
       "hazards": 9,
-      "beach": 6,
+      "internet": 6,
       "forested": 9,
       "living": 5
     },
@@ -6303,7 +6303,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 7,
       "hazards": 6,
-      "beach": 7,
+      "internet": 7,
       "forested": 4,
       "living": 5
     },
@@ -6479,7 +6479,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 9,
       "hazards": 9,
-      "beach": 5,
+      "internet": 5,
       "forested": 4,
       "living": 8
     },
@@ -6660,7 +6660,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 7,
       "hazards": 9,
-      "beach": 5,
+      "internet": 5,
       "forested": 6,
       "living": 5
     },
@@ -6851,7 +6851,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 5,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 6,
       "living": 5
     },
@@ -7055,7 +7055,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 5,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 8,
       "living": 5
     },
@@ -7275,7 +7275,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 5,
       "living": 5
     },
@@ -7454,7 +7454,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 6,
-      "beach": 3,
+      "internet": 3,
       "forested": 9,
       "living": 8
     },
@@ -7669,7 +7669,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 6,
+      "internet": 6,
       "forested": 3,
       "living": 5
     },
@@ -7844,7 +7844,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 5,
       "hazards": 9,
-      "beach": 5,
+      "internet": 5,
       "forested": 5,
       "living": 8
     },
@@ -8039,7 +8039,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 7,
       "hazards": 3,
-      "beach": 7,
+      "internet": 7,
       "forested": 5,
       "living": 7
     },
@@ -8242,7 +8242,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 9,
       "hazards": 9,
-      "beach": 4,
+      "internet": 4,
       "forested": 4,
       "living": 5
     },
@@ -8411,7 +8411,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 10,
       "hazards": 8,
-      "beach": 5,
+      "internet": 5,
       "forested": 9,
       "living": 7
     },
@@ -8606,7 +8606,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 2,
-      "beach": 9,
+      "internet": 9,
       "forested": 4,
       "living": 7
     },
@@ -8809,7 +8809,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 3,
       "living": 6
     },
@@ -9020,7 +9020,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 4,
-      "beach": 8,
+      "internet": 8,
       "forested": 4,
       "living": 6
     },
@@ -9207,7 +9207,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 8,
       "hazards": 7,
-      "beach": 3,
+      "internet": 3,
       "forested": 7,
       "living": 5
     },
@@ -9390,7 +9390,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 9,
-      "beach": 6,
+      "internet": 6,
       "forested": 2,
       "living": 9
     },
@@ -9613,7 +9613,7 @@ var PROPERTIES = [
       "town": 9,
       "hospital": 7,
       "hazards": 9,
-      "beach": 5,
+      "internet": 5,
       "forested": 7,
       "living": 9
     },
@@ -9820,7 +9820,7 @@ var PROPERTIES = [
       "town": 6,
       "hospital": 5,
       "hazards": 6,
-      "beach": 2,
+      "internet": 2,
       "forested": 5,
       "living": 9
     },
@@ -10047,7 +10047,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 6,
       "hazards": 5,
-      "beach": 3,
+      "internet": 2,
       "forested": 8,
       "living": 7
     },
@@ -10280,7 +10280,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 6,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 7,
       "living": 8
     },
@@ -10565,7 +10565,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 8,
-      "beach": 4,
+      "internet": 9,
       "forested": 5,
       "living": 8
     },
@@ -10832,7 +10832,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 6,
       "hazards": 8,
-      "beach": 5,
+      "internet": 5,
       "forested": 6,
       "living": 8
     },
@@ -11099,7 +11099,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 5,
-      "beach": 3,
+      "internet": 4,
       "forested": 8,
       "living": 5
     },
@@ -11406,7 +11406,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 6,
-      "beach": 3,
+      "internet": 1,
       "forested": 6,
       "living": 5
     },
@@ -11683,7 +11683,7 @@ var PROPERTIES = [
       "town": 6,
       "hospital": 6,
       "hazards": 2,
-      "beach": 7,
+      "internet": 7,
       "forested": 4,
       "living": 5
     },
@@ -11956,7 +11956,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 4,
+      "internet": 4,
       "forested": 5,
       "living": 1
     },
@@ -12227,7 +12227,7 @@ var PROPERTIES = [
       "town": 5,
       "hospital": 4,
       "hazards": 6,
-      "beach": 2,
+      "internet": 2,
       "forested": 5,
       "living": 4
     },
@@ -12486,7 +12486,7 @@ var PROPERTIES = [
       "town": 5,
       "hospital": 5,
       "hazards": 5,
-      "beach": 2,
+      "internet": 2,
       "forested": 3,
       "living": 1
     },
@@ -12737,7 +12737,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 6,
       "hazards": 6,
-      "beach": 3,
+      "internet": 3,
       "forested": 5,
       "living": 5
     },
@@ -13018,7 +13018,7 @@ var PROPERTIES = [
       "town": 5,
       "hospital": 4,
       "hazards": 3,
-      "beach": 7,
+      "internet": 7,
       "forested": 7,
       "living": 7
     },
@@ -13319,7 +13319,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 5,
       "hazards": 2,
-      "beach": 3,
+      "internet": 3,
       "forested": 4,
       "living": 1
     },
@@ -13570,7 +13570,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 2,
       "forested": 7,
       "living": 5
     },
@@ -13786,7 +13786,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 5,
       "forested": 5,
       "living": 7
     },
@@ -13998,7 +13998,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 8,
-      "beach": 2,
+      "internet": 10,
       "forested": 8,
       "living": 6
     },
@@ -14226,7 +14226,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 6,
-      "beach": 2,
+      "internet": 4,
       "forested": 5,
       "living": 6
     },
@@ -14407,7 +14407,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 4,
       "forested": 5,
       "living": 6
     },
@@ -14588,7 +14588,7 @@ var PROPERTIES = [
       "town": 6,
       "hospital": 6,
       "hazards": 6,
-      "beach": 1,
+      "internet": 4,
       "forested": 5,
       "living": 5
     },
@@ -14762,7 +14762,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 5,
       "forested": 4,
       "living": 7
     },
@@ -14944,7 +14944,7 @@ var PROPERTIES = [
       "town": 6,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 3,
       "forested": 8,
       "living": 5
     },
@@ -15130,7 +15130,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 5,
       "forested": 4,
       "living": 7
     },
@@ -15312,7 +15312,7 @@ var PROPERTIES = [
       "town": 7,
       "hospital": 7,
       "hazards": 7,
-      "beach": 2,
+      "internet": 3,
       "forested": 5,
       "living": 7
     },
@@ -15494,7 +15494,7 @@ var PROPERTIES = [
       "town": 8,
       "hospital": 7,
       "hazards": 6,
-      "beach": 2,
+      "internet": 8,
       "forested": 6,
       "living": 7
     },
