@@ -15659,7 +15659,7 @@ var PROPERTIES = [
     "county": "Rutherford",
     "price": 415000,
     "listingLink": "https://www.zillow.com/homedetails/1737-Whitesides-Rd-Bostic-NC-28043/102236001_zpid/",
-    "image": "",
+    "image": "https://ssl.cdn-redfin.com/photo/103/mbpaddedwide/974/genMid.4358974_0.jpg",
     "beds": 3,
     "bath": 2,
     "sqft": 2586,
