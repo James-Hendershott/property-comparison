@@ -1816,11 +1816,10 @@
     });
   }
 
-  // --- Walkthrough video buttons ---
+  // --- Walkthrough video buttons + inline player ---
   function initWalkthroughButtons() {
     fetch('/api/walkthroughs').then(function (r) { return r.json(); }).then(function (map) {
       if (!map || !Object.keys(map).length) return;
-      // Build lookup: address → video URL
       var propMap = {};
       if (typeof PROPERTIES !== 'undefined') {
         PROPERTIES.forEach(function (p) { propMap[p.address] = p; });
@@ -1830,15 +1829,57 @@
         if (!p) return;
         var card = document.getElementById(p.id);
         if (!card) return;
-        // Insert walkthrough button overlaying the bottom of the card image
+        var videoUrl = map[addr];
+
+        // Button on the image
         var cardMap = card.querySelector('.card-map');
         if (!cardMap) return;
         cardMap.style.position = 'relative';
-        var btn = document.createElement('a');
-        btn.href = map[addr];
-        btn.target = '_blank';
+        var btn = document.createElement('button');
         btn.className = 'walkthrough-btn';
         btn.innerHTML = '<span class="bi bi-camera-video-fill"></span> Watch Walkthrough';
+
+        // Player container (hidden until clicked)
+        var playerWrap = document.createElement('div');
+        playerWrap.className = 'walkthrough-player';
+        playerWrap.style.display = 'none';
+        playerWrap.innerHTML =
+          '<div class="walkthrough-player-header">' +
+            '<span><span class="bi bi-camera-video-fill"></span> Walkthrough Video — ' + addr + '</span>' +
+            '<button class="walkthrough-close">&times;</button>' +
+          '</div>' +
+          '<video controls preload="metadata" playsinline>' +
+            '<source src="' + videoUrl + '" type="video/mp4">' +
+          '</video>';
+
+        // Insert player after the highlight band
+        var highlight = card.querySelector('.highlight-band');
+        if (highlight) {
+          highlight.parentNode.insertBefore(playerWrap, highlight.nextSibling);
+        } else {
+          card.appendChild(playerWrap);
+        }
+
+        // Toggle player on button click
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var showing = playerWrap.style.display !== 'none';
+          playerWrap.style.display = showing ? 'none' : 'block';
+          if (!showing) {
+            playerWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            var vid = playerWrap.querySelector('video');
+            if (vid) vid.pause();
+          }
+        });
+
+        // Close button
+        playerWrap.querySelector('.walkthrough-close').addEventListener('click', function () {
+          playerWrap.style.display = 'none';
+          var vid = playerWrap.querySelector('video');
+          if (vid) vid.pause();
+        });
+
         cardMap.appendChild(btn);
       });
     }).catch(function () { /* no walkthroughs available */ });

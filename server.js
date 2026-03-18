@@ -27,10 +27,19 @@ app.get('/api/walkthroughs', (req, res) => {
   try {
     const files = fs.readdirSync(walkthroughDir).filter(f => f.endsWith('.mp4'));
     const map = {};
+    // Prefer -web.mp4 (compressed) over raw .mp4
     files.forEach(f => {
-      // 142-Padgett-Burns-Rd-walkthrough.mp4 → "142 Padgett Burns Rd"
-      const addr = f.replace(/-walkthrough\.mp4$/i, '').replace(/-/g, ' ');
-      map[addr] = '/walkthrough/' + f;
+      if (f.endsWith('-web.mp4')) {
+        const addr = f.replace(/-walkthrough-web\.mp4$/i, '').replace(/-/g, ' ');
+        map[addr] = '/walkthrough/' + f;
+      }
+    });
+    // Fill in any that don't have a -web version
+    files.forEach(f => {
+      if (!f.endsWith('-web.mp4')) {
+        const addr = f.replace(/-walkthrough\.mp4$/i, '').replace(/-/g, ' ');
+        if (!map[addr]) map[addr] = '/walkthrough/' + f;
+      }
     });
     res.json(map);
   } catch (e) {
