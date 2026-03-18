@@ -16,7 +16,7 @@
   var CUSTOM_NAMES = {};
   var GRAVEYARD_IDS = {};
   Object.keys(PROPERTY_MAP).forEach(function (pid) {
-    DEFAULT_NAMES[pid] = PROPERTY_MAP[pid].navLabel;
+    DEFAULT_NAMES[pid] = PROPERTY_MAP[pid].address;
   });
 
   function getDisplayName(pid) {
@@ -318,7 +318,7 @@
     clone.querySelectorAll('.card-print-btn, .vote-row, .notes-row, .card-details-bar, .edit-btn').forEach(function (el) { el.remove(); });
     var w = window.open('', '_blank');
     if (!w) return;
-    w.document.write('<!DOCTYPE html><html><head><title>Print ' + pid.toUpperCase() + '</title>');
+    w.document.write('<!DOCTYPE html><html><head><title>Print ' + getDisplayName(pid) + '</title>');
     // Copy stylesheets
     document.querySelectorAll('link[rel="stylesheet"], style').forEach(function (s) {
       w.document.write(s.outerHTML);
@@ -902,7 +902,7 @@
         return '<div class="graveyard-card">' +
           '<div class="graveyard-header">' +
           '  <span class="badge b-removed">REMOVED</span>' +
-          '  <strong>' + escapeHtml(e.property_id.toUpperCase()) + ' \u2014 ' + escapeHtml(name) + '</strong>' +
+          '  <strong>' + escapeHtml(name) + '</strong>' +
           '  <span>Moved by ' + escapeHtml(e.user_name) + ' \u00b7 ' + date + '</span>' +
           '  <button class="graveyard-restore" data-restore-pid="' + escapeHtml(e.property_id) + '">Restore</button>' +
           '</div>' +
@@ -2229,7 +2229,7 @@
         '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
           '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
           '<div class="map-popup-overlay">' +
-            '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +
+            '<div class="map-popup-id">' + (p.address || pid) + ', ' + (p.city || '') + '</div>' +
             '<div class="map-popup-price">$' + (p.price ? p.price.toLocaleString() : '?') + '</div>' +
             '<div class="map-popup-stats">' + (p.beds || '?') + 'bd/' + (p.bath || '?') + 'ba · ' +
               (p.sqft ? p.sqft.toLocaleString() : '?') + ' sqft · ' + (p.acres || '?') + ' ac</div>' +
@@ -2250,7 +2250,7 @@
       marker.on('mouseover', function () { this.openPopup(); });
 
       // Bind tooltip with property ID for quick reference
-      marker.bindTooltip(pid.toUpperCase(), {
+      marker.bindTooltip((p.address || pid), {
         permanent: false,
         direction: 'top',
         offset: [0, -10],
@@ -2281,7 +2281,7 @@
       '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
         '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
         '<div class="map-popup-overlay">' +
-          '<div class="map-popup-id">' + pid.toUpperCase() + ' — ' + (p.city || '') + '</div>' +
+          '<div class="map-popup-id">' + (p.address || pid) + ', ' + (p.city || '') + '</div>' +
           '<div class="map-popup-price">$' + (p.price ? p.price.toLocaleString() : '?') + '</div>' +
           '<div class="map-popup-stats">' + (p.beds || '?') + 'bd/' + (p.bath || '?') + 'ba · ' +
             (p.sqft ? p.sqft.toLocaleString() : '?') + ' sqft · ' + (p.acres || '?') + ' ac</div>' +
@@ -2300,7 +2300,7 @@
 
     marker.bindPopup(popupHtml, { closeButton: false, maxWidth: 300 });
     marker.on('mouseover', function () { this.openPopup(); });
-    marker.bindTooltip(pid.toUpperCase(), {
+    marker.bindTooltip((p.address || pid), {
       permanent: false, direction: 'top', offset: [0, -10]
     });
 

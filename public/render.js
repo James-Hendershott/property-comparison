@@ -454,7 +454,7 @@ var PropertyRenderer = (function () {
       items.forEach(function (p) {
         html += '<a href="#' + esc(p.id) + '">' +
           '<span class="nav-dd-label">' + esc(p.navLabel) + '</span>' +
-          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + p.id.toUpperCase() + '</span></a>';
+          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + esc(p.address) + '</span></a>';
       });
       html += '</div></div>\n';
     });
@@ -470,7 +470,7 @@ var PropertyRenderer = (function () {
       stragglers.forEach(function (p) {
         html += '<a href="#' + esc(p.id) + '">' +
           '<span class="nav-dd-label">' + esc(p.navLabel) + '</span>' +
-          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + p.id.toUpperCase() + '</span></a>';
+          '<span class="nav-dd-meta">' + esc(p.county || '') + ' · ' + esc(p.address) + '</span></a>';
       });
       html += '</div></div>\n';
     }
