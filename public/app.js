@@ -2188,6 +2188,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 18
     }).addTo(propertyMap);
+    window.propertyMap = propertyMap; // expose for modal resize
 
     // Gray mask outside NC boundary
     if (typeof NC_BOUNDARY !== 'undefined') {

@@ -80,6 +80,59 @@ body {
 .leg-b  { background: #5b21b6; color: #fff; }
 .leg-w  { background: #c0392b; color: #fff; }
 
+/* ── MODAL OVERLAYS ── */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-content {
+  background: var(--surface, #fff);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.modal-large {
+  width: 95vw;
+  max-width: 1200px;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--accent, #4ade80);
+  border-bottom: 1px solid var(--border, rgba(74,222,128,0.12));
+  flex-shrink: 0;
+}
+.modal-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  line-height: 1;
+}
+.modal-close:hover { color: #fff; }
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0;
+}
+
 /* ── STICKY NAV ── */
 .nav {
   position: fixed;
@@ -1078,9 +1131,9 @@ table.qt {
 <!-- ── NAV ── -->
 <nav class="nav">
   <div class="nav-left">
-    <a href="#rankings" class="nav-icon-link nav-rankings" title="Family Rankings"><span class="bi bi-trophy-fill"></span><span class="nav-link-text"> Rankings</span></a>
+    <a href="javascript:void(0)" class="nav-icon-link nav-rankings" title="Family Rankings" onclick="document.getElementById('rankings-modal').style.display='flex'"><span class="bi bi-trophy-fill"></span><span class="nav-link-text"> Rankings</span></a>
     <a href="#overview" class="nav-icon-link nav-table" title="Quick Comparison Overview"><span class="bi bi-table"></span><span class="nav-link-text"> Overview</span></a>
-    <a href="#property-map-section" class="nav-icon-link nav-map" title="Interactive property map"><svg class="nav-svg-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8.5 1.724C10.037.903 12.232.861 14 2v12c-1.768-1.139-3.963-1.097-5.5-.278V1.724zM8 1.783C6.465.932 4.233.869 2.429 1.96l-.134.079A.5.5 0 0 0 2 2.5v11a.5.5 0 0 0 .742.44l.096-.054C4.473 12.919 6.547 12.876 8 13.7V1.783z"/></svg><span class="nav-link-text"> Map</span></a>
+    <a href="javascript:void(0)" class="nav-icon-link nav-map" title="Interactive property map" onclick="var m=document.getElementById('map-modal');m.style.display='flex';if(typeof propertyMap!=='undefined'&&propertyMap)propertyMap.invalidateSize();"><svg class="nav-svg-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8.5 1.724C10.037.903 12.232.861 14 2v12c-1.768-1.139-3.963-1.097-5.5-.278V1.724zM8 1.783C6.465.932 4.233.869 2.429 1.96l-.134.079A.5.5 0 0 0 2 2.5v11a.5.5 0 0 0 .742.44l.096-.054C4.473 12.919 6.547 12.876 8 13.7V1.783z"/></svg><span class="nav-link-text"> Map</span></a>
   </div>
   <button class="nav-mobile-toggle" id="nav-mobile-toggle" title="Browse regions">
     <span class="bi bi-geo-alt-fill"></span> <span class="nav-mobile-toggle-label">Regions</span>
@@ -1098,8 +1151,16 @@ table.qt {
 <!-- ── FILTER BAR (populated by app.js) ── -->
 <div id="filter-bar" class="filter-bar"></div>
 
-<!-- ── FAMILY RANKINGS (injected by app.js) ── -->
-<div id="rankings"></div>
+<!-- ── FAMILY RANKINGS (modal, injected by app.js) ── -->
+<div class="modal-overlay" id="rankings-modal" style="display:none;" onclick="if(event.target===this)this.style.display='none'">
+  <div class="modal-content modal-large">
+    <div class="modal-header">
+      <span class="bi bi-trophy-fill"></span> Family Rankings
+      <button class="modal-close" onclick="document.getElementById('rankings-modal').style.display='none'">&times;</button>
+    </div>
+    <div class="modal-body" id="rankings"></div>
+  </div>
+</div>
 
 <!-- ── QUICK OVERVIEW TABLE ── -->
 <div class="section" id="overview">
@@ -1131,10 +1192,19 @@ table.qt {
   </p>
 </div>
 
-<!-- ── PROPERTY MAP ── -->
-<div class="section" id="property-map-section">
-  <div class="section-title">Property Locations</div>
-  <div id="property-map" style="height:500px;border-radius:var(--card-r);border:1px solid var(--border);"></div>
+<!-- ── PROPERTY MAP (modal) ── -->
+<div class="modal-overlay" id="map-modal" style="display:none;" onclick="if(event.target===this)this.style.display='none'">
+  <div class="modal-content modal-large">
+    <div class="modal-header">
+      <svg class="nav-svg-icon" viewBox="0 0 16 16" fill="currentColor" style="width:1em;height:1em;vertical-align:-0.1em;"><path d="M8.5 1.724C10.037.903 12.232.861 14 2v12c-1.768-1.139-3.963-1.097-5.5-.278V1.724zM8 1.783C6.465.932 4.233.869 2.429 1.96l-.134.079A.5.5 0 0 0 2 2.5v11a.5.5 0 0 0 .742.44l.096-.054C4.473 12.919 6.547 12.876 8 13.7V1.783z"/></svg> Property Map
+      <button class="modal-close" onclick="document.getElementById('map-modal').style.display='none'">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="property-map-section">
+        <div id="property-map" style="height:70vh;border-radius:8px;"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
