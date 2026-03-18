@@ -1313,6 +1313,12 @@
     var card = document.getElementById(pid);
     if (!card) return;
 
+    // Re-inject walkthrough button if video exists
+    var p = PROPERTY_MAP[pid] || (typeof PROPERTIES !== 'undefined' && PROPERTIES.find(function(x){return x.id===pid;}));
+    if (p && WALKTHROUGH_MAP[p.address]) {
+      injectWalkthroughButton(card, p.address, WALKTHROUGH_MAP[p.address]);
+    }
+
     // Re-inject vote row
     if (!card.querySelector('.vote-row')) {
       var voteRow = document.createElement('div');
@@ -1817,71 +1823,78 @@
   }
 
   // --- Walkthrough video buttons + inline player ---
+  var WALKTHROUGH_MAP = {}; // addr → videoUrl, populated on init
+  var WALKTHROUGH_PROP_MAP = {}; // addr → property
+
+  function injectWalkthroughButton(card, addr, videoUrl) {
+    if (!card || card.querySelector('.walkthrough-btn')) return; // already has button
+
+    // Button on the image
+    var cardMap = card.querySelector('.card-map');
+    if (!cardMap) return;
+    cardMap.style.position = 'relative';
+    cardMap.style.overflow = 'visible';
+    var btn = document.createElement('button');
+    btn.className = 'walkthrough-btn';
+    btn.innerHTML = '<span class="bi bi-camera-video-fill"></span> Watch Walkthrough';
+
+    // Player container (hidden until clicked)
+    var playerWrap = document.createElement('div');
+    playerWrap.className = 'walkthrough-player';
+    playerWrap.style.display = 'none';
+    playerWrap.innerHTML =
+      '<div class="walkthrough-player-header">' +
+        '<span><span class="bi bi-camera-video-fill"></span> Walkthrough Video — ' + addr + '</span>' +
+        '<button class="walkthrough-close">&times;</button>' +
+      '</div>' +
+      '<video controls preload="metadata" playsinline>' +
+        '<source src="' + videoUrl + '" type="video/mp4">' +
+      '</video>';
+
+    // Insert player after the highlight band
+    var highlight = card.querySelector('.highlight-band');
+    if (highlight) {
+      highlight.parentNode.insertBefore(playerWrap, highlight.nextSibling);
+    } else {
+      card.appendChild(playerWrap);
+    }
+
+    // Toggle player on button click
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var showing = playerWrap.style.display !== 'none';
+      playerWrap.style.display = showing ? 'none' : 'block';
+      if (!showing) {
+        playerWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        var vid = playerWrap.querySelector('video');
+        if (vid) vid.pause();
+      }
+    });
+
+    // Close button
+    playerWrap.querySelector('.walkthrough-close').addEventListener('click', function () {
+      playerWrap.style.display = 'none';
+      var vid = playerWrap.querySelector('video');
+      if (vid) vid.pause();
+    });
+
+    cardMap.appendChild(btn);
+  }
+
   function initWalkthroughButtons() {
     fetch('/api/walkthroughs').then(function (r) { return r.json(); }).then(function (map) {
       if (!map || !Object.keys(map).length) return;
-      var propMap = {};
+      WALKTHROUGH_MAP = map;
       if (typeof PROPERTIES !== 'undefined') {
-        PROPERTIES.forEach(function (p) { propMap[p.address] = p; });
+        PROPERTIES.forEach(function (p) { WALKTHROUGH_PROP_MAP[p.address] = p; });
       }
       Object.keys(map).forEach(function (addr) {
-        var p = propMap[addr];
+        var p = WALKTHROUGH_PROP_MAP[addr];
         if (!p) return;
         var card = document.getElementById(p.id);
         if (!card) return;
-        var videoUrl = map[addr];
-
-        // Button on the image
-        var cardMap = card.querySelector('.card-map');
-        if (!cardMap) return;
-        cardMap.style.position = 'relative';
-        cardMap.style.overflow = 'visible';
-        var btn = document.createElement('button');
-        btn.className = 'walkthrough-btn';
-        btn.innerHTML = '<span class="bi bi-camera-video-fill"></span> Watch Walkthrough';
-
-        // Player container (hidden until clicked)
-        var playerWrap = document.createElement('div');
-        playerWrap.className = 'walkthrough-player';
-        playerWrap.style.display = 'none';
-        playerWrap.innerHTML =
-          '<div class="walkthrough-player-header">' +
-            '<span><span class="bi bi-camera-video-fill"></span> Walkthrough Video — ' + addr + '</span>' +
-            '<button class="walkthrough-close">&times;</button>' +
-          '</div>' +
-          '<video controls preload="metadata" playsinline>' +
-            '<source src="' + videoUrl + '" type="video/mp4">' +
-          '</video>';
-
-        // Insert player after the highlight band
-        var highlight = card.querySelector('.highlight-band');
-        if (highlight) {
-          highlight.parentNode.insertBefore(playerWrap, highlight.nextSibling);
-        } else {
-          card.appendChild(playerWrap);
-        }
-
-        // Toggle player on button click
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          var showing = playerWrap.style.display !== 'none';
-          playerWrap.style.display = showing ? 'none' : 'block';
-          if (!showing) {
-            playerWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          } else {
-            var vid = playerWrap.querySelector('video');
-            if (vid) vid.pause();
-          }
-        });
-
-        // Close button
-        playerWrap.querySelector('.walkthrough-close').addEventListener('click', function () {
-          playerWrap.style.display = 'none';
-          var vid = playerWrap.querySelector('video');
-          if (vid) vid.pause();
-        });
-
-        cardMap.appendChild(btn);
+        injectWalkthroughButton(card, addr, map[addr]);
       });
     }).catch(function () { /* no walkthroughs available */ });
   }
