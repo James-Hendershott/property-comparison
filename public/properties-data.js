@@ -3826,7 +3826,7 @@ var PROPERTIES = [
     "scores": {
       "price": 8,
       "acreage": 8,
-      "schools": 5,
+      "schools": 2,
       "outbldgs": 5,
       "town": 8,
       "hospital": 8,
@@ -3835,10 +3835,10 @@ var PROPERTIES = [
       "forested": 7,
       "living": 5
     },
-    "offerRange": "$390K – $415K",
-    "offerStrategy": "2017 build, 13.65 acres, creek frontage",
+    "offerRange": "$340K – $365K",
+    "offerStrategy": "MOTIVATED SELLER — $40K cut today. Zestimate $377K. Schools terrible (1/10 elem). Offer well below.",
     "offerRationale": [],
-    "tableOfferNote": "2017 build, 13.65 acres, creek frontage",
+    "tableOfferNote": "Motivated seller, $40K cut 3/17. Zestimate $377K. Start at $340K.",
     "highlight": "Newest build in the NC additions — 2017 construction with 13.65 acres and creek frontage. Three full bathrooms. Modern systems that won't need replacement for years. Same Lenoir area as P41 but with newer home and more acreage.",
     "highlights": [
       {
@@ -13630,7 +13630,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -13774,7 +13774,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co. ~0.57%)",
     "taxAnnual": 2736,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Forest City — restaurants, shops, Rails to Trails",
@@ -13846,7 +13846,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -13986,7 +13986,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.64%)",
     "taxAnnual": 2118,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
@@ -14002,8 +14002,8 @@ var PROPERTIES = [
       "forested": 8,
       "living": 6
     },
-    "offerRange": "$460K – $480K",
-    "offerStrategy": "FLIP: sold $475K Apr 2024, now $499,900. Cite modular construction, no major outbuildings.",
+    "offerRange": "$440K – $465K",
+    "offerStrategy": "MODULAR + FLIP ($475K→$499,900). If modular is acceptable, negotiate citing classification concern.",
     "offerRationale": [
       "FLIP: sold $475K Apr 2024, relisted $525K, cut to $499,900",
       "MODULAR HOME — dealbreaker for many buyers, limits resale",
@@ -14070,7 +14070,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -14214,7 +14214,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Caldwell Co.)",
     "taxAnnual": 2038,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Hudson; Lenoir ~10 min; Hickory ~20 min",
@@ -14279,7 +14279,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -14395,7 +14395,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Rutherford Co.)",
     "taxAnnual": 163,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Ellenboro; Forest City ~10 min; Rutherfordton ~15 min",
@@ -14411,7 +14411,7 @@ var PROPERTIES = [
       "forested": 5,
       "living": 6
     },
-    "offerRange": "$335K – $350K",
+    "offerRange": "$325K – $345K",
     "offerStrategy": "Motivated seller — negotiate citing small lot and unknown build year.",
     "offerRationale": [
       "Listed at $355K — under budget",
@@ -14460,7 +14460,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -14576,7 +14576,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Wilkes Co. ~0.55%)",
     "taxAnnual": 1552,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~10 min",
     "toTownSub": "to North Wilkesboro; Wilkesboro ~15 min",
@@ -14642,7 +14642,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -14750,7 +14750,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
     "taxAnnual": 2700,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~10 min",
     "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~50 min",
@@ -14766,15 +14766,15 @@ var PROPERTIES = [
       "forested": 4,
       "living": 7
     },
-    "offerRange": "$475K – $490K",
-    "offerStrategy": "New construction at budget ceiling — negotiate citing no outbuildings and only 3 acres.",
+    "offerRange": "$410K – $425K",
+    "offerStrategy": "273 DOM! 5 price cuts. New construction sitting unsold. Significant leverage.",
     "offerRationale": [
       "$500K is the absolute budget ceiling",
       "No outbuildings — everything must be built from scratch",
       "Only 3 acres — below 5-acre preference",
       "New construction may have builder incentives"
     ],
-    "tableOfferNote": "At budget ceiling — negotiate from $500K citing small acreage",
+    "tableOfferNote": "273 DOM, 5 cuts. New construction not selling. Offer $410-425K.",
     "highlight": "New construction ranch on 3 acres. High cathedral ceilings, wide plank LVP floors, statement fireplace, 339 sqft outdoor living space, front porch. At budget ceiling at $500K. Only 3 acres.",
     "highlights": [
       {
@@ -14816,7 +14816,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -14932,7 +14932,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Lincoln Co. ~0.57%)",
     "taxAnnual": 1377,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~15 min",
     "toTownSub": "to Lincolnton; Gastonia ~25 min; Charlotte ~45 min",
@@ -14948,8 +14948,8 @@ var PROPERTIES = [
       "forested": 8,
       "living": 5
     },
-    "offerRange": "Under Contract",
-    "offerStrategy": "Under contract — monitor for fallthrough. If it returns to market, price already reduced from $575K.",
+    "offerRange": "$450K – $475K",
+    "offerStrategy": "272 DOM! $76K in cuts from $575K. Zestimate $485K. 1940 build = lead/asbestos leverage.",
     "offerRationale": [
       "Already reduced from ~$575K to $499K — significant cut",
       "Under contract — may not be available",
@@ -14998,7 +14998,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -15118,7 +15118,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Iredell Co. ~0.55%)",
     "taxAnnual": 1626,
     "hoa": 0,
-    "drive": "~25 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~15 min",
     "toTownSub": "to Statesville; Hickory ~20 min; Charlotte ~60 min",
@@ -15184,7 +15184,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~25 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -15300,7 +15300,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cleveland Co. ~0.63%)",
     "taxAnnual": 558,
     "hoa": 0,
-    "drive": "~26 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~15 min",
     "toTownSub": "to Shelby; Gastonia ~30 min; Charlotte ~55 min",
@@ -15316,15 +15316,15 @@ var PROPERTIES = [
       "forested": 5,
       "living": 7
     },
-    "offerRange": "$330K – $345K",
-    "offerStrategy": "Strong value at $350K — offer slightly below citing small acreage and no outbuildings.",
+    "offerRange": "$285K – $310K",
+    "offerStrategy": "MASSIVE FLIP: $110K→$330K (201% markup). 186 DOM, 4 price cuts. Extreme leverage.",
     "offerRationale": [
       "$350K is excellent value for 2373 sqft fully renovated",
       "Only 3.28 acres — below 5-acre preference",
       "No outbuildings — barn/shed needed for homesteading",
       "1977 build but completely renovated — reduces age concerns"
     ],
-    "tableOfferNote": "Offer $330–345K — great value, small acreage",
+    "tableOfferNote": "201% flip markup. 186 DOM. Start at $285K.",
     "highlight": "Completely renovated ranch on 3.28 acres. New roof, HVAC, windows, kitchen with granite, second kitchen in basement. Great value at $350K. Only 3.28 ac — below 5-acre preference.",
     "highlights": [
       {
@@ -15366,7 +15366,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~26 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
@@ -15482,7 +15482,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Burke Co. 0.58%)",
     "taxAnnual": 3307,
     "hoa": 0,
-    "drive": "~25 hr",
+    "drive": "~29 hr",
     "driveSub": "cross-country from Farmington UT",
     "toTown": "~5 min",
     "toTownSub": "to Valdese; Morganton ~10 min; Hickory ~25 min",
@@ -15498,7 +15498,7 @@ var PROPERTIES = [
       "forested": 6,
       "living": 7
     },
-    "offerRange": "$390K – $410K",
+    "offerRange": "$370K – $395K",
     "offerStrategy": "Offer well below asking citing 1901 build year, lead/asbestos remediation costs, and small acreage.",
     "offerRationale": [
       "1901 build — 125 years old, major structural/hazmat concerns",
@@ -15548,7 +15548,7 @@ var PROPERTIES = [
       {
         "icon": "📍",
         "label": "Farmington UT",
-        "value": "~25 hr drive",
+        "value": "~29 hr drive",
         "ref": true
       }
     ],
