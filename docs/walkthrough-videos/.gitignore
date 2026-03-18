@@ -1,0 +1,2 @@
+# Walkthrough videos are too large for git — served via Docker volume mount
+*.mp4
