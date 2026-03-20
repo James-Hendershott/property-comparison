@@ -428,7 +428,7 @@ var PropertyRenderer = (function () {
     { name: 'Western Mtns',   ids: ['p3','p5','p19','p20','p21','p22','p56'] },
     { name: 'Foothills',      ids: ['p1','p16','p17','p18','p24','p32','p33','p34','p35','p42','p44','p48','p49','p50','p52','p53','p55','p61','p62','p63','p64','p65','p67','p68','p69','p70','p71','p72'] },
     { name: 'High Country',   ids: ['p10','p15','p23','p47','p66'] },
-    { name: 'N. Piedmont',    ids: ['p2','p4','p25','p26','p27','p37','p57'] },
+    { name: 'N. Piedmont',    ids: ['p2','p4','p25','p26','p27','p37','p57','p73'] },
     { name: 'C. Piedmont',    ids: ['p7','p14','p39','p40','p46','p51'] },
     { name: 'S. Piedmont',    ids: ['p30','p31','p45','p58'] },
     { name: 'Eastern',        ids: ['p6','p8','p13','p28','p29','p36','p43','p59'] },

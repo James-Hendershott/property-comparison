@@ -15859,5 +15859,314 @@ var PROPERTIES = [
       ],
       "note": "Rutherford County foothills. FEMA Zone X confirmed. Wooded lot with mountain views."
     }
+  },
+  {
+    "id": "p73",
+    "num": 73,
+    "dateAdded": "2026-03-20",
+    "navLabel": "Boonville",
+    "address": "1729 Richmond Hill Church Rd",
+    "city": "Boonville",
+    "state": "NC",
+    "zip": "27011",
+    "lat": 36.2542,
+    "lng": -80.6319,
+    "county": "Yadkin",
+    "price": 439900,
+    "listingLink": "https://www.zillow.com/homedetails/1729-Richmond-Hill-Church-Rd-Boonville-NC-27011/194269728_zpid/",
+    "image": "",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1694,
+    "acres": 16.61,
+    "acresSub": "Working farm since 1960s. Fenced pastures. Multiple barns, chicken coop, storage bldg. Well + septic. RA zoning.",
+    "yearBuilt": 1952,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Coming Soon",
+    "statusClass": "status-pending",
+    "statusNote": "MLS# 1212959 (Triad MLS). Coming Soon — listing date 3/21/2026. Owner sale. Agent: Kara Farrar (336-396-7690), TKB Realty / EXP. Prior sale $370K (Nov 2021). Zestimate $337,800 — ask $102K above Zestimate. Tax assessed $132,635. Accepts FHA/VA/conventional/cash.",
+    "badges": [],
+    "taxRate": 0.0065,
+    "taxLabel": "Property Tax (Yadkin Co. 0.65%)",
+    "taxAnnual": 1010,
+    "hoa": 0,
+    "elemSchool": "Fall Creek Elem (7/10)",
+    "elemSchoolSub": "PK-5, 2.9 mi",
+    "toTown": "~5 min",
+    "toTownSub": "to Boonville; ~15 min to Yadkinville",
+    "scores": {
+      "price": 7,
+      "acreage": 10,
+      "schools": 7,
+      "outbldgs": 9,
+      "town": 6,
+      "hospital": 5,
+      "hazards": 8,
+      "internet": 10,
+      "forested": 5,
+      "living": 5
+    },
+    "offerRange": "$400K – $420K",
+    "offerStrategy": "Prior sale $370K (Nov 2021). Zestimate $337,800 vs ask $439,900 — significant appraisal risk. Pull comps for 10+ ac farm properties in Yadkin County.",
+    "offerRationale": [
+      "Prior sale $370K only 4.5 years ago — $70K appreciation is aggressive for rural Yadkin County",
+      "Zestimate $337,800 — ask is $102K above Zestimate, appraisal risk is real",
+      "1952 build (74 yrs) — despite updates, foundation/structural age is a concern",
+      "16.61 acres of working farm with outbuildings adds value but comps will be scarce",
+      "Tax assessed at $132,635 — massive gap from ask"
+    ],
+    "tableOfferNote": "Working farm, 16.61 ac, fiber internet. Zestimate $337K vs ask $440K — appraisal risk.",
+    "highlight": "16.61-acre working farm in Yadkin County. Brick ranch with extensive updates (roof, HVAC, plumbing, wiring, kitchen, baths). Multiple barns with updated electrical and concrete floors. Custom chicken coop, large storage building with porch, raised garden beds. Back patio with custom outdoor fireplace and gazebo. Unfinished basement (1,162 sqft expansion potential). 1 Gbps Spectrum fiber confirmed. RA zoning, no HOA. Fall Creek Elementary 7/10.",
+    "highlights": [
+      {
+        "icon": "🌾",
+        "text": "16.61-acre working farm — fenced pastures maintained since 1960s"
+      },
+      {
+        "icon": "🐔",
+        "text": "Custom chicken coop + multiple barns (one with updated electrical & concrete floors)"
+      },
+      {
+        "icon": "🌐",
+        "text": "1 Gbps Spectrum fiber CONFIRMED — best connectivity of any property"
+      },
+      {
+        "icon": "🏫",
+        "text": "Fall Creek Elementary 7/10 + Forbush Middle 7/10 — top schools in search"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "⛽",
+        "label": "Boonville",
+        "value": "~5 min",
+        "ref": false
+      },
+      {
+        "icon": "🛒",
+        "label": "Yadkinville",
+        "value": "~15 min",
+        "ref": false
+      },
+      {
+        "icon": "🏙️",
+        "label": "Elkin",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "🏥",
+        "label": "Winston-Salem hospitals",
+        "value": "~45 min",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Fall Creek Elem (7/10)",
+        "value": "2.9 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Forbush Middle (7/10)",
+        "value": "8.8 mi",
+        "ref": false
+      },
+      {
+        "icon": "🏫",
+        "label": "Forbush High (3/10)",
+        "value": "8.6 mi",
+        "ref": false
+      },
+      {
+        "icon": "🛣️",
+        "label": "I-77 / US-421",
+        "value": "nearby",
+        "ref": false
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "✓",
+        "text": "16.61 acres of working farm — fenced pastures maintained since 1960s"
+      },
+      {
+        "icon": "✓",
+        "text": "Custom chicken coop — turnkey for day-one egg production"
+      },
+      {
+        "icon": "✓",
+        "text": "Multiple barns — one with updated electrical and concrete floors"
+      },
+      {
+        "icon": "✓",
+        "text": "Large newer storage building with porch + raised garden beds"
+      },
+      {
+        "icon": "✓",
+        "text": "Fall Creek Elementary 7/10 + Forbush Middle 7/10 — best schools in search"
+      },
+      {
+        "icon": "✓",
+        "text": "1 Gbps Spectrum fiber CONFIRMED"
+      },
+      {
+        "icon": "✓",
+        "text": "Extensive updates — roof (2021), HVAC (2016), plumbing, wiring, kitchen, baths"
+      },
+      {
+        "icon": "✓",
+        "text": "Back patio with custom outdoor fireplace + gazebo"
+      },
+      {
+        "icon": "✓",
+        "text": "Unfinished basement — 1,162 sqft expansion potential"
+      },
+      {
+        "icon": "✓",
+        "text": "$1,010/yr property tax on 16.61 acres — extremely low"
+      },
+      {
+        "icon": "✓",
+        "text": "RA zoning — livestock is the intended use. No HOA"
+      },
+      {
+        "icon": "✓",
+        "text": "Coming Soon — first-mover advantage before MLS launch"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "✗",
+        "text": "1,694 sqft livable — compact for family with 2 remote workers"
+      },
+      {
+        "icon": "✗",
+        "text": "Built 1952 — 74 years old, foundation and structural age concerns"
+      },
+      {
+        "icon": "✗",
+        "text": "Propane forced air heat + window units supplementing central air"
+      },
+      {
+        "icon": "✗",
+        "text": "Forbush High School only 3/10 — concern for high school years"
+      },
+      {
+        "icon": "✗",
+        "text": "Boonville is very small (~1,200 people) — limited services"
+      },
+      {
+        "icon": "✗",
+        "text": "Zestimate $337,800 vs asking $439,900 — significant appraisal risk"
+      },
+      {
+        "icon": "✗",
+        "text": "Well and septic ages unknown"
+      }
+    ],
+    "familyFit": [
+      "Chicken coop, barns, gardens, 16 acres of pasture = the family farm vision on day one",
+      "Outdoor fireplace + gazebo = family gathering space",
+      "Fall Creek Elementary (7/10) is best elementary of any property evaluated",
+      "Basement provides future expansion for office, playroom, or bedroom",
+      "Yadkin Valley wine country — vineyards, agritourism, Pilot Mountain State Park nearby",
+      "Winston-Salem 45 min for hospitals, airport, full urban services"
+    ],
+    "verifyItems": [
+      {
+        "label": "Seller motivation",
+        "text": "Why selling after only 4.5 years?"
+      },
+      {
+        "label": "Permits",
+        "text": "Verify permits for new plumbing and new wiring work"
+      },
+      {
+        "label": "HVAC",
+        "text": "Why window units supplementing central air? Capacity issue?"
+      },
+      {
+        "label": "Propane costs",
+        "text": "Get 12 months of propane bills"
+      },
+      {
+        "label": "Basement",
+        "text": "Check for moisture issues in unfinished basement"
+      },
+      {
+        "label": "Well",
+        "text": "Well depth, age, water quality test"
+      },
+      {
+        "label": "Septic",
+        "text": "Septic age, last pump/inspection"
+      },
+      {
+        "label": "Outbuildings",
+        "text": "Barn count, sizes, conditions — verify all structures"
+      },
+      {
+        "label": "Acreage",
+        "text": "Breakdown — flat/usable pasture vs steep/wooded"
+      },
+      {
+        "label": "Road",
+        "text": "State-maintained and paved?"
+      },
+      {
+        "label": "Deed",
+        "text": "Restrictions, easements, conservation restrictions?"
+      },
+      {
+        "label": "Appraisal",
+        "text": "Pull comps for 10+ ac farm properties in Yadkin County — Zestimate gap is concerning"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "APPRAISAL RISK — Zestimate $337K vs ask $440K. Pull farm comps before offering."
+      },
+      {
+        "urgent": true,
+        "text": "VERIFY PERMITS — new plumbing and wiring work needs permit verification"
+      },
+      {
+        "urgent": false,
+        "text": "Schedule tour ASAP — Coming Soon listing, first-mover advantage"
+      },
+      {
+        "urgent": false,
+        "text": "Full systems inspection — 1952 home (foundation, framing, electrical, plumbing)"
+      },
+      {
+        "urgent": false,
+        "text": "Well and septic inspection — ages unknown"
+      },
+      {
+        "urgent": false,
+        "text": "Property survey — verify 16.61 acre boundaries and usable acreage"
+      },
+      {
+        "urgent": false,
+        "text": "Get 12 months propane bills"
+      }
+    ],
+    "envHazards": {
+      "location": "Yadkin County, NC Piedmont — rural farmland",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flooding — verify drainage on 16+ acres of farmland"
+        },
+        {
+          "level": "low",
+          "text": "Standard Piedmont weather — no extreme hazards"
+        }
+      ],
+      "note": "Yadkin County Piedmont. Rural farmland setting. Low hazard profile. Verify drainage patterns on 16.61 acres."
+    }
   }
 ];
