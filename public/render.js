@@ -81,7 +81,7 @@ var PropertyRenderer = (function () {
   function computeNewFlags(props) {
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    var cutoff = 4; // days
+    var cutoff = 2; // days
 
     props.forEach(function (p) {
       if (!p.dateAdded) {
