@@ -452,9 +452,10 @@ var PropertyRenderer = (function () {
     { name: 'NY — St. Lawrence Co.', ids: ['p75','p77','p78','p83'] },
     { name: 'NY — Herkimer / Fulton', ids: ['p80','p81'] },
     { name: 'NY — Jefferson / Lewis', ids: ['p76','p85'] },
-    { name: 'NY — Otsego Co.',       ids: ['p86','p87','p88'] },
-    { name: 'NY — Clinton Co.',      ids: ['p90'] },
-    { name: 'NY — Cortland / Other', ids: ['p84','p89'] }
+    { name: 'NY — Otsego Co.',       ids: ['p86','p87','p88','p96'] },
+    { name: 'NY — Clinton Co.',      ids: ['p90','p94'] },
+    { name: 'NY — Schoharie Co.',    ids: ['p89','p95'] },
+    { name: 'NY — Cortland / Other', ids: ['p84','p91','p92','p93'] }
   ];
 
   function renderNavLinks(props) {
