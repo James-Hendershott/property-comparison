@@ -2237,6 +2237,9 @@
   var mapMarkers = {}; // pid -> marker
   var ncMaskLayer = null;
   var ncBorderLayer = null;
+  var nyMaskLayer = null;
+  var nyBorderLayer = null;
+  var bothMaskLayer = null; // mask with both NC+NY cut out for "All" view
 
   function initPropertyMap() {
     var container = document.getElementById('property-map');
@@ -2254,30 +2257,30 @@
     }).addTo(propertyMap);
     window.propertyMap = propertyMap; // expose for modal resize
 
-    // Gray mask outside NC boundary — stored as layers for toggling
-    if (typeof NC_BOUNDARY !== 'undefined') {
-      var ncLatLngs = NC_BOUNDARY.map(function (c) { return [c[1], c[0]]; });
-      var world = [
-        [90, -180], [90, 180], [-90, 180], [-90, -180], [90, -180]
-      ];
-      ncMaskLayer = L.polygon([world, ncLatLngs], {
-        color: 'none',
-        fillColor: '#888',
-        fillOpacity: 0.45,
-        interactive: false
-      });
-      ncBorderLayer = L.polyline(ncLatLngs, {
-        color: '#2d5a3a',
-        weight: 2,
-        opacity: 0.7,
-        interactive: false
-      });
-      // Only add to map if viewing NC or All
-      if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
-        ncMaskLayer.addTo(propertyMap);
-        ncBorderLayer.addTo(propertyMap);
-      }
+    // Gray mask outside state boundaries — stored as layers for toggling
+    var world = [
+      [90, -180], [90, 180], [-90, 180], [-90, -180], [90, -180]
+    ];
+    var maskStyle = { color: 'none', fillColor: '#888', fillOpacity: 0.45, interactive: false };
+    var borderStyle = { color: '#2d5a3a', weight: 2, opacity: 0.7, interactive: false };
+
+    var ncLatLngs = (typeof NC_BOUNDARY !== 'undefined') ? NC_BOUNDARY.map(function (c) { return [c[1], c[0]]; }) : null;
+    var nyLatLngs = (typeof NY_BOUNDARY !== 'undefined') ? NY_BOUNDARY.map(function (c) { return [c[1], c[0]]; }) : null;
+
+    if (ncLatLngs) {
+      ncMaskLayer = L.polygon([world, ncLatLngs], maskStyle);
+      ncBorderLayer = L.polyline(ncLatLngs, borderStyle);
     }
+    if (nyLatLngs) {
+      nyMaskLayer = L.polygon([world, nyLatLngs], maskStyle);
+      nyBorderLayer = L.polyline(nyLatLngs, borderStyle);
+    }
+    if (ncLatLngs && nyLatLngs) {
+      bothMaskLayer = L.polygon([world, ncLatLngs, nyLatLngs], maskStyle);
+    }
+
+    // Add the right mask for the initial state
+    addStateMaskToMap(currentStateFilter);
 
     var bounds = [];
     Object.keys(PROPERTY_MAP).forEach(function (pid) {
@@ -2295,7 +2298,7 @@
       }
 
       var popupHtml =
-        '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
+        '<div class="map-popup" onclick="document.getElementById(\'map-modal\').style.display=\'none\';PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
           '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
           '<div class="map-popup-overlay">' +
             '<div class="map-popup-id">' + (p.address || pid) + ', ' + (p.city || '') + '</div>' +
@@ -2353,7 +2356,7 @@
     }
 
     var popupHtml =
-      '<div class="map-popup" onclick="PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
+      '<div class="map-popup" onclick="document.getElementById(\'map-modal\').style.display=\'none\';PropertyRenderer.openRegionForProperty(\'' + pid + '\');setTimeout(function(){document.getElementById(\'' + pid + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})},60)">' +
         '<div class="map-popup-img" style="background-image:url(' + (p.image || '') + ')"></div>' +
         '<div class="map-popup-overlay">' +
           '<div class="map-popup-id">' + (p.address || pid) + ', ' + (p.city || '') + '</div>' +
@@ -2538,6 +2541,30 @@
     }
   }
 
+  // --- Swap state mask on map ---
+  function removeAllMasks() {
+    [ncMaskLayer, ncBorderLayer, nyMaskLayer, nyBorderLayer, bothMaskLayer].forEach(function (layer) {
+      if (layer && propertyMap && propertyMap.hasLayer(layer)) propertyMap.removeLayer(layer);
+    });
+  }
+
+  function addStateMaskToMap(state) {
+    if (!propertyMap) return;
+    removeAllMasks();
+    if (state === 'NC') {
+      if (ncMaskLayer) ncMaskLayer.addTo(propertyMap);
+      if (ncBorderLayer) ncBorderLayer.addTo(propertyMap);
+    } else if (state === 'NY') {
+      if (nyMaskLayer) nyMaskLayer.addTo(propertyMap);
+      if (nyBorderLayer) nyBorderLayer.addTo(propertyMap);
+    } else {
+      // "All" — mask everything except both states
+      if (bothMaskLayer) bothMaskLayer.addTo(propertyMap);
+      if (ncBorderLayer) ncBorderLayer.addTo(propertyMap);
+      if (nyBorderLayer) nyBorderLayer.addTo(propertyMap);
+    }
+  }
+
   // --- State filter (NC / NY / All) ---
   function initStateFilter() {
     var toggle = document.getElementById('state-toggle');
@@ -2597,23 +2624,9 @@
       row.style.display = visible ? '' : 'none';
     });
 
-    // Map — toggle NC mask, show/hide markers, fit bounds
+    // Map — swap mask, show/hide markers, fit bounds
     if (propertyMap) {
-      // NC mask layers
-      if (ncMaskLayer) {
-        if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
-          if (!propertyMap.hasLayer(ncMaskLayer)) ncMaskLayer.addTo(propertyMap);
-        } else {
-          if (propertyMap.hasLayer(ncMaskLayer)) propertyMap.removeLayer(ncMaskLayer);
-        }
-      }
-      if (ncBorderLayer) {
-        if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
-          if (!propertyMap.hasLayer(ncBorderLayer)) ncBorderLayer.addTo(propertyMap);
-        } else {
-          if (propertyMap.hasLayer(ncBorderLayer)) propertyMap.removeLayer(ncBorderLayer);
-        }
-      }
+      addStateMaskToMap(currentStateFilter);
 
       // Markers
       var bounds = [];
@@ -2685,6 +2698,16 @@
 
   // --- Init ---
   function init() {
+    // Close modals on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        ['map-modal', 'rankings-modal'].forEach(function (id) {
+          var modal = document.getElementById(id);
+          if (modal && modal.style.display !== 'none') modal.style.display = 'none';
+        });
+      }
+    });
+
     restructureCardHeaders();
     loadUser();
     injectVoteRows();

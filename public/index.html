@@ -118,15 +118,17 @@ body {
 }
 .modal-close {
   margin-left: auto;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.7);
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 0 0.3rem;
+  padding: 0.1rem 0.5rem;
   line-height: 1;
+  transition: all 0.15s;
 }
-.modal-close:hover { color: #fff; }
+.modal-close:hover { background: rgba(255,255,255,0.2); color: #fff; }
 .modal-body {
   overflow-y: auto;
   flex: 1;
@@ -1275,6 +1277,7 @@ table.qt {
 
 <script src="properties-data.js?v=8"></script>
 <script src="nc-boundary.js?v=1"></script>
+<script src="ny-boundary.js?v=1"></script>
 <script src="score-tips.js?v=2"></script>
 <script src="render.js?v=10"></script>
 <script src="app.js?v=24"></script>
