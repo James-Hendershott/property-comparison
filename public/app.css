@@ -1873,3 +1873,51 @@ thead th {
   .card-details-bar { padding: 0.4rem 0.9rem; }
   .card-details-bar-label { font-size: 0.8rem; }
 }
+
+/* ── STATE TOGGLE (NC / NY / All) ── */
+.state-toggle {
+  display: inline-flex;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.state-btn {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  background: transparent;
+  color: #b5c4b8;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.03em;
+}
+.state-btn.active {
+  background: var(--accent, #3a6b4a);
+  color: #fff;
+}
+.state-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.15);
+  color: #e8e4da;
+}
+
+/* ── NEW BADGE TYPES ── */
+.b-internet-unknown {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #f59e0b !important;
+}
+.b-no-fha {
+  background: transparent !important;
+  color: #dc2626 !important;
+  border: 2px solid #dc2626 !important;
+  font-weight: 700;
+}
+.b-apa {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #3b82f6 !important;
+}

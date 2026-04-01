@@ -15,6 +15,7 @@
   var DEFAULT_NAMES = {};
   var CUSTOM_NAMES = {};
   var GRAVEYARD_IDS = {};
+  var currentStateFilter = 'NY'; // NC | NY | All — default to NY (active search)
   Object.keys(PROPERTY_MAP).forEach(function (pid) {
     DEFAULT_NAMES[pid] = PROPERTY_MAP[pid].address;
   });
@@ -864,8 +865,13 @@
         a.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
       });
 
-      // Update nav group counts and hide empty groups
+      // Update nav group counts and hide empty groups (respecting state filter)
       document.querySelectorAll('.nav-group').forEach(function (group) {
+        var groupState = group.getAttribute('data-state');
+        if (currentStateFilter !== 'All' && groupState !== currentStateFilter) {
+          group.style.display = 'none';
+          return;
+        }
         var links = group.querySelectorAll('.nav-group-dropdown a[href^="#p"]');
         var visible = 0;
         links.forEach(function (a) {
@@ -876,17 +882,23 @@
         group.style.display = visible === 0 ? 'none' : '';
       });
 
-      // Hide region sections where all cards are graveyarded + update counts
+      // Hide region sections where all cards are graveyarded + update counts (respecting state filter)
       document.querySelectorAll('.region-section').forEach(function (section) {
+        var sectionState = section.getAttribute('data-state');
+        if (currentStateFilter !== 'All' && sectionState !== currentStateFilter) {
+          section.style.display = 'none';
+          return;
+        }
+        section.style.display = '';
         var allCards = section.querySelectorAll('.card[id^="p"]');
         var visibleCount = 0;
-        allCards.forEach(function (c) { if (!c.classList.contains('graveyarded')) visibleCount++; });
+        allCards.forEach(function (c) { if (!c.classList.contains('graveyarded') && c.style.display !== 'none') visibleCount++; });
         section.classList.toggle('region-filtered-out', visibleCount === 0);
         var countEl = section.querySelector('.region-toggle-count');
         if (countEl) countEl.textContent = visibleCount + ' properties';
       });
 
-      // Update filter pill counts to exclude graveyarded
+      // Update filter pill counts to exclude graveyarded and respect state filter
       document.querySelectorAll('.filter-pill').forEach(function (pill) {
         var key = pill.getAttribute('data-filter');
         if (!key) return;
@@ -898,7 +910,9 @@
           sfr: function (p) { return p.typeBadge === 'b-sfr' && !GRAVEYARD_IDS[p.id]; }
         };
         if (tests[key] && typeof PROPERTIES !== 'undefined') {
-          var count = PROPERTIES.filter(tests[key]).length;
+          var count = PROPERTIES.filter(function (p) {
+            return (currentStateFilter === 'All' || p.state === currentStateFilter) && tests[key](p);
+          }).length;
           var countEl = pill.querySelector('.filter-pill-count');
           if (countEl) countEl.textContent = count;
           pill.style.display = count === 0 ? 'none' : '';
@@ -909,7 +923,9 @@
         var link = row.querySelector('a[href^="#p"]');
         if (!link) return;
         var pid = link.getAttribute('href').slice(1);
-        row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
+        var rowState = row.getAttribute('data-state');
+        var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || rowState === currentStateFilter);
+        row.style.display = visible ? '' : 'none';
       });
 
       // Render dynamic graveyard entries
@@ -1709,11 +1725,15 @@
       bar.appendChild(pill);
     });
 
+    function stateMatch(p) {
+      return currentStateFilter === 'All' || p.state === currentStateFilter;
+    }
+
     function applyFilter(f) {
       var matchIds = {};
       var matchPids = [];
       PROPERTIES.forEach(function (p) {
-        if (f.test(p)) { matchIds[p.id] = true; matchPids.push(p.id); }
+        if (stateMatch(p) && f.test(p)) { matchIds[p.id] = true; matchPids.push(p.id); }
       });
 
       // Cards
@@ -1723,6 +1743,12 @@
 
       // Region sections — hide empty ones, expand ones with matches
       document.querySelectorAll('.region-section').forEach(function (section) {
+        var sectionState = section.getAttribute('data-state');
+        if (currentStateFilter !== 'All' && sectionState !== currentStateFilter) {
+          section.style.display = 'none';
+          return;
+        }
+        section.style.display = '';
         var hasVisible = section.querySelector('.card[id^="p"]:not([style*="display: none"])');
         if (hasVisible) {
           section.classList.remove('region-filtered-out');
@@ -1748,16 +1774,27 @@
 
     function showAll() {
       document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
-        card.style.display = GRAVEYARD_IDS[card.id] ? 'none' : '';
+        var pid = card.id;
+        var p = PROPERTY_MAP[pid];
+        var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || (p && p.state === currentStateFilter));
+        card.style.display = visible ? '' : 'none';
       });
       document.querySelectorAll('.region-section').forEach(function (section) {
-        section.classList.remove('region-filtered-out');
+        var sectionState = section.getAttribute('data-state');
+        if (currentStateFilter !== 'All' && sectionState !== currentStateFilter) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = '';
+          section.classList.remove('region-filtered-out');
+        }
       });
       document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
         var link = row.querySelector('a[href^="#p"]');
         if (!link) return;
         var pid = link.getAttribute('href').slice(1);
-        row.style.display = GRAVEYARD_IDS[pid] ? 'none' : '';
+        var rowState = row.getAttribute('data-state');
+        var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || rowState === currentStateFilter);
+        row.style.display = visible ? '' : 'none';
       });
       clearMapFilter();
     }
@@ -1767,6 +1804,17 @@
       if (activeKey) {
         var f = filters.find(function (x) { return x.key === activeKey; });
         if (f) applyFilter(f);
+      } else {
+        showAll();
+      }
+    };
+
+    // Expose for state filter to clear pill
+    window._clearActiveFilterPill = function () {
+      if (activeKey) {
+        var prev = bar.querySelector('.filter-pill.active');
+        if (prev) prev.classList.remove('active');
+        activeKey = null;
       }
     };
   }
@@ -2187,22 +2235,18 @@
   // --- Property Map (Leaflet) ---
   var propertyMap = null;
   var mapMarkers = {}; // pid -> marker
+  var ncMaskLayer = null;
+  var ncBorderLayer = null;
 
   function initPropertyMap() {
     var container = document.getElementById('property-map');
     if (!container || typeof L === 'undefined') return;
 
-    // NC bounding box with padding for maxBounds
-    var ncBounds = L.latLngBounds(
-      L.latLng(33.5, -84.8),  // SW corner (with padding)
-      L.latLng(37.0, -75.0)   // NE corner (with padding)
-    );
-
+    // Initial bounds — will be set by state filter
     propertyMap = L.map('property-map', {
       scrollWheelZoom: true,
-      maxBounds: ncBounds,
       maxBoundsViscosity: 1.0,
-      minZoom: 6
+      minZoom: 5
     });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -2210,26 +2254,29 @@
     }).addTo(propertyMap);
     window.propertyMap = propertyMap; // expose for modal resize
 
-    // Gray mask outside NC boundary
+    // Gray mask outside NC boundary — stored as layers for toggling
     if (typeof NC_BOUNDARY !== 'undefined') {
       var ncLatLngs = NC_BOUNDARY.map(function (c) { return [c[1], c[0]]; });
-      // World polygon with NC cut out (inverted mask)
       var world = [
         [90, -180], [90, 180], [-90, 180], [-90, -180], [90, -180]
       ];
-      L.polygon([world, ncLatLngs], {
+      ncMaskLayer = L.polygon([world, ncLatLngs], {
         color: 'none',
         fillColor: '#888',
         fillOpacity: 0.45,
         interactive: false
-      }).addTo(propertyMap);
-      // NC border outline
-      L.polyline(ncLatLngs, {
+      });
+      ncBorderLayer = L.polyline(ncLatLngs, {
         color: '#2d5a3a',
         weight: 2,
         opacity: 0.7,
         interactive: false
-      }).addTo(propertyMap);
+      });
+      // Only add to map if viewing NC or All
+      if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
+        ncMaskLayer.addTo(propertyMap);
+        ncBorderLayer.addTo(propertyMap);
+      }
     }
 
     var bounds = [];
@@ -2239,7 +2286,8 @@
       if (!p.lat || !p.lng) return;
 
       var latlng = [p.lat, p.lng];
-      bounds.push(latlng);
+      var matchesState = (currentStateFilter === 'All' || p.state === currentStateFilter);
+      if (matchesState) bounds.push(latlng);
 
       var totalScore = 0;
       if (p.scores) {
@@ -2265,7 +2313,9 @@
         weight: 2,
         opacity: 1,
         fillOpacity: 0.85
-      }).addTo(propertyMap);
+      });
+      // Only add to map if matches current state filter
+      if (matchesState) marker.addTo(propertyMap);
 
       marker.bindPopup(popupHtml, { closeButton: false, maxWidth: 300, className: '' });
       marker.on('mouseover', function () { this.openPopup(); });
@@ -2283,9 +2333,13 @@
 
     if (bounds.length > 0) {
       propertyMap.fitBounds(bounds, { padding: [30, 30] });
+    } else if (currentStateFilter === 'NY') {
+      propertyMap.setView([43.5, -75.0], 7);
     } else {
       propertyMap.setView([35.5, -80.0], 7);
     }
+    // Set maxBounds based on state
+    updateMapBounds();
   }
 
   function addMapMarker(pid) {
@@ -2387,12 +2441,21 @@
     if (!propertyMap) return;
     Object.keys(mapMarkers).forEach(function (pid) {
       var m = mapMarkers[pid];
-      if (!propertyMap.hasLayer(m) && !GRAVEYARD_IDS[pid]) propertyMap.addLayer(m);
+      var p = PROPERTY_MAP[pid];
+      var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || (p && p.state === currentStateFilter));
+      if (visible) {
+        if (!propertyMap.hasLayer(m)) propertyMap.addLayer(m);
+      } else {
+        if (propertyMap.hasLayer(m)) propertyMap.removeLayer(m);
+      }
       m.setStyle({ fillColor: '#3a6b4a', color: '#1e3528', weight: 2, fillOpacity: 0.85, radius: 8 });
     });
     var bounds = [];
     Object.keys(mapMarkers).forEach(function (pid) {
-      if (!GRAVEYARD_IDS[pid]) bounds.push(mapMarkers[pid].getLatLng());
+      var p = PROPERTY_MAP[pid];
+      if (!GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || (p && p.state === currentStateFilter))) {
+        bounds.push(mapMarkers[pid].getLatLng());
+      }
     });
     if (bounds.length > 0) {
       propertyMap.fitBounds(bounds, { padding: [30, 30] });
@@ -2429,9 +2492,11 @@
 
     Object.keys(regionData).forEach(function (sectionId) {
       var region = regionData[sectionId];
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
       var btn = document.createElement('button');
       btn.className = 'map-region-btn';
       btn.setAttribute('data-region', sectionId);
+      btn.setAttribute('data-state', regionState);
       btn.textContent = region.name;
       var countSpan = document.createElement('span');
       countSpan.className = 'map-region-btn-count';
@@ -2442,6 +2507,10 @@
         btn.classList.add('active');
         filterMapRegion(region.pids);
       });
+      // Show/hide based on current state filter
+      if (currentStateFilter !== 'All' && regionState !== currentStateFilter) {
+        btn.style.display = 'none';
+      }
       container.appendChild(btn);
     });
 
@@ -2456,6 +2525,163 @@
   // Expose for render.js region toggles
   window._mapFilterRegion = filterMapRegion;
   window._mapClearFilter = clearMapFilter;
+
+  // --- Map bounds helper ---
+  function updateMapBounds() {
+    if (!propertyMap) return;
+    if (currentStateFilter === 'NY') {
+      propertyMap.setMaxBounds(L.latLngBounds(L.latLng(40.0, -80.0), L.latLng(46.0, -71.0)));
+    } else if (currentStateFilter === 'NC') {
+      propertyMap.setMaxBounds(L.latLngBounds(L.latLng(33.5, -84.8), L.latLng(37.0, -75.0)));
+    } else {
+      propertyMap.setMaxBounds(L.latLngBounds(L.latLng(33.0, -85.0), L.latLng(46.5, -71.0)));
+    }
+  }
+
+  // --- State filter (NC / NY / All) ---
+  function initStateFilter() {
+    var toggle = document.getElementById('state-toggle');
+    if (!toggle) return;
+
+    toggle.querySelectorAll('.state-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var newState = btn.getAttribute('data-state');
+        if (newState === currentStateFilter) return;
+        toggle.querySelectorAll('.state-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentStateFilter = newState;
+        applyStateFilter();
+      });
+    });
+
+    // Apply initial state filter
+    applyStateFilter();
+  }
+
+  function applyStateFilter() {
+    // Clear any active pill filter first
+    if (window._clearActiveFilterPill) window._clearActiveFilterPill();
+
+    // Nav groups
+    document.querySelectorAll('.nav-group').forEach(function (group) {
+      var groupState = group.getAttribute('data-state');
+      group.style.display = (currentStateFilter === 'All' || groupState === currentStateFilter) ? '' : 'none';
+    });
+
+    // Cards — show/hide by state + graveyard
+    document.querySelectorAll('.card[id^="p"]').forEach(function (card) {
+      var pid = card.id;
+      var p = PROPERTY_MAP[pid];
+      var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || (p && p.state === currentStateFilter));
+      card.style.display = visible ? '' : 'none';
+    });
+
+    // Region sections
+    document.querySelectorAll('.region-section').forEach(function (section) {
+      var sectionState = section.getAttribute('data-state');
+      if (currentStateFilter !== 'All' && sectionState !== currentStateFilter) {
+        section.style.display = 'none';
+      } else {
+        section.style.display = '';
+        section.classList.remove('region-filtered-out');
+      }
+    });
+
+    // Overview table
+    document.querySelectorAll('#overview table.qt tbody tr').forEach(function (row) {
+      var link = row.querySelector('a[href^="#p"]');
+      if (!link) return;
+      var pid = link.getAttribute('href').slice(1);
+      var rowState = row.getAttribute('data-state');
+      var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || rowState === currentStateFilter);
+      row.style.display = visible ? '' : 'none';
+    });
+
+    // Map — toggle NC mask, show/hide markers, fit bounds
+    if (propertyMap) {
+      // NC mask layers
+      if (ncMaskLayer) {
+        if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
+          if (!propertyMap.hasLayer(ncMaskLayer)) ncMaskLayer.addTo(propertyMap);
+        } else {
+          if (propertyMap.hasLayer(ncMaskLayer)) propertyMap.removeLayer(ncMaskLayer);
+        }
+      }
+      if (ncBorderLayer) {
+        if (currentStateFilter === 'NC' || currentStateFilter === 'All') {
+          if (!propertyMap.hasLayer(ncBorderLayer)) ncBorderLayer.addTo(propertyMap);
+        } else {
+          if (propertyMap.hasLayer(ncBorderLayer)) propertyMap.removeLayer(ncBorderLayer);
+        }
+      }
+
+      // Markers
+      var bounds = [];
+      Object.keys(mapMarkers).forEach(function (pid) {
+        var p = PROPERTY_MAP[pid];
+        var m = mapMarkers[pid];
+        var visible = !GRAVEYARD_IDS[pid] && (currentStateFilter === 'All' || (p && p.state === currentStateFilter));
+        if (visible) {
+          if (!propertyMap.hasLayer(m)) m.addTo(propertyMap);
+          m.setStyle({ fillColor: '#3a6b4a', color: '#1e3528', weight: 2, fillOpacity: 0.85, radius: 8 });
+          bounds.push(m.getLatLng());
+        } else {
+          if (propertyMap.hasLayer(m)) propertyMap.removeLayer(m);
+        }
+      });
+
+      updateMapBounds();
+
+      if (bounds.length > 0) {
+        propertyMap.fitBounds(bounds, { padding: [30, 30] });
+      } else if (currentStateFilter === 'NY') {
+        propertyMap.setView([43.5, -75.0], 7);
+      } else {
+        propertyMap.setView([35.5, -80.0], 7);
+      }
+
+      // Update map region buttons visibility
+      document.querySelectorAll('.map-region-btn[data-state]').forEach(function (btn) {
+        var btnState = btn.getAttribute('data-state');
+        btn.style.display = (currentStateFilter === 'All' || btnState === currentStateFilter) ? '' : 'none';
+      });
+      // Reset "All" button to active
+      document.querySelectorAll('.map-region-btn.active').forEach(function (b) { b.classList.remove('active'); });
+      var allBtn = document.querySelector('.map-region-btn[data-region="all"]');
+      if (allBtn) allBtn.classList.add('active');
+    }
+
+    // Update filter pill counts
+    document.querySelectorAll('.filter-pill').forEach(function (pill) {
+      var key = pill.getAttribute('data-filter');
+      if (!key || typeof PROPERTIES === 'undefined') return;
+      var tests = {
+        isNew: function (p) { return p._isNew && !GRAVEYARD_IDS[p.id]; },
+        livestock: function (p) { return p.badges && p.badges.indexOf('b-livestock') >= 0 && !GRAVEYARD_IDS[p.id]; },
+        '5acres': function (p) { return p.acres >= 5 && !GRAVEYARD_IDS[p.id]; },
+        mfg: function (p) { return p.typeBadge === 'b-mfg' && !GRAVEYARD_IDS[p.id]; },
+        sfr: function (p) { return p.typeBadge === 'b-sfr' && !GRAVEYARD_IDS[p.id]; }
+      };
+      if (tests[key]) {
+        var count = PROPERTIES.filter(function (p) {
+          return (currentStateFilter === 'All' || p.state === currentStateFilter) && tests[key](p);
+        }).length;
+        var countEl = pill.querySelector('.filter-pill-count');
+        if (countEl) countEl.textContent = count;
+        pill.style.display = count === 0 ? 'none' : '';
+      }
+    });
+
+    // Update region toggle counts
+    document.querySelectorAll('.region-section').forEach(function (section) {
+      if (section.style.display === 'none') return;
+      var allCards = section.querySelectorAll('.card[id^="p"]');
+      var visibleCount = 0;
+      allCards.forEach(function (c) { if (c.style.display !== 'none') visibleCount++; });
+      var countEl = section.querySelector('.region-toggle-count');
+      if (countEl) countEl.textContent = visibleCount + ' properties';
+    });
+  }
 
   // --- Init ---
   function init() {
@@ -2547,6 +2773,7 @@
     initTableFilter();
     initPropertyMap();
     addMapRegionButtons();
+    initStateFilter();
     renderNavPill();
 
     if (!currentUser) {

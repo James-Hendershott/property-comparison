@@ -103,6 +103,14 @@ var PropertyRenderer = (function () {
       } else if (!p._isNew && idx >= 0) {
         p.badges.splice(idx, 1);
       }
+
+      // Auto-add b-internet-unknown when internet score is 2
+      var iuIdx = p.badges.indexOf('b-internet-unknown');
+      if (p.scores && p.scores.internet === 2) {
+        if (iuIdx === -1) p.badges.push('b-internet-unknown');
+      } else {
+        if (iuIdx >= 0) p.badges.splice(iuIdx, 1);
+      }
     });
   }
 
@@ -157,6 +165,9 @@ var PropertyRenderer = (function () {
       else if (b === 'b-removed') html += '<span class="badge b-removed">REMOVED</span>';
       else if (b === 'b-pend') html += '<span class="badge b-pend">PENDING</span>';
       else if (b === 'b-livestock') html += '<span class="badge b-livestock">\uD83D\uDEA8 LIVESTOCK?</span>';
+      else if (b === 'b-internet-unknown') html += '<span class="badge b-internet-unknown">\u26A0\uFE0F INTERNET UNVERIFIED</span>';
+      else if (b === 'b-no-fha') html += '<span class="badge b-no-fha">NO FHA</span>';
+      else if (b === 'b-apa') html += '<span class="badge b-apa">APA BLUE LINE</span>';
     });
     html += '<span class="badge ' + esc(p.typeBadge) + '">' + esc(p.type) + '</span>';
     if (p._daysSinceAdded != null && !p._isNew) {
@@ -389,7 +400,7 @@ var PropertyRenderer = (function () {
     var m = calcMonthly(p.price, p.taxRate, p.hoa, p.taxAnnual);
     var total = scoreTotal(p.scores);
 
-    var html = '<tr>';
+    var html = '<tr data-state="' + esc(p.state) + '">';
     html += '<td>' + p.num + '</td>';
     html += '<td><a href="#' + esc(p.id) + '">' + esc(p.address + ', ' + p.city + ' ' + p.state) + '</a></td>';
     html += '<td class="td-price">' + fmtPrice(p.price) + '</td>';
@@ -400,7 +411,8 @@ var PropertyRenderer = (function () {
     html += '<td>' + p.acres + '</td>';
     html += '<td><span class="badge ' + esc(p.typeBadge) + '">' + esc(p.type) + '</span></td>';
     html += '<td>' + (p.yearBuilt || '\u2014') + '</td>';
-    html += '<td><strong style="color:var(--accent)">' + total + '</strong>/100</td>';
+    var scoreStyle = (p.scores && p.scores.internet === 2) ? ' style="background:rgba(251,191,36,0.2)"' : '';
+    html += '<td' + scoreStyle + '><strong style="color:var(--accent)">' + total + '</strong>/100</td>';
 
     // Offer column
     html += '<td style="white-space:nowrap"><strong>' + esc(p.offerRange) + '</strong>';
@@ -415,6 +427,9 @@ var PropertyRenderer = (function () {
       if (b === 'b-new') html += '<span class="badge b-new">NEW</span> ';
       else if (b === 'b-removed') html += '<span class="badge b-removed">REMOVED</span> ';
       else if (b === 'b-livestock') html += '<span class="badge b-livestock">\uD83D\uDEA8 LIVESTOCK?</span> ';
+      else if (b === 'b-internet-unknown') html += '<span class="badge b-internet-unknown">\u26A0\uFE0F INTERNET</span> ';
+      else if (b === 'b-no-fha') html += '<span class="badge b-no-fha">NO FHA</span> ';
+      else if (b === 'b-apa') html += '<span class="badge b-apa">APA</span> ';
     });
     html += '<span class="' + esc(p.statusClass) + '">' + esc(p.status) + '</span>';
     html += '</td>';
@@ -432,7 +447,14 @@ var PropertyRenderer = (function () {
     { name: 'C. Piedmont',    ids: ['p7','p14','p39','p40','p46','p51'] },
     { name: 'S. Piedmont',    ids: ['p30','p31','p45','p58'] },
     { name: 'Eastern',        ids: ['p6','p8','p13','p28','p29','p36','p43','p59'] },
-    { name: 'Coastal',        ids: ['p9','p11','p12','p38','p41','p54','p60'] }
+    { name: 'Coastal',        ids: ['p9','p11','p12','p38','p41','p54','p60'] },
+    { name: 'NY — Washington Co.',    ids: ['p74','p79','p82'] },
+    { name: 'NY — St. Lawrence Co.', ids: ['p75','p77','p78','p83'] },
+    { name: 'NY — Herkimer / Fulton', ids: ['p80','p81'] },
+    { name: 'NY — Jefferson / Lewis', ids: ['p76','p85'] },
+    { name: 'NY — Otsego Co.',       ids: ['p86','p87','p88'] },
+    { name: 'NY — Clinton Co.',      ids: ['p90'] },
+    { name: 'NY — Cortland / Other', ids: ['p84','p89'] }
   ];
 
   function renderNavLinks(props) {
@@ -447,7 +469,8 @@ var PropertyRenderer = (function () {
       });
       if (items.length === 0) return;
 
-      html += '<div class="nav-group">' +
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
+      html += '<div class="nav-group" data-state="' + regionState + '">' +
         '<button class="nav-group-btn">' + esc(region.name) +
         ' <span class="nav-group-count">' + items.length + '</span></button>' +
         '<div class="nav-group-dropdown">';
@@ -522,7 +545,8 @@ var PropertyRenderer = (function () {
 
       var hasNew = items.some(function (p) { return p.badges && p.badges.indexOf('b-new') >= 0; });
       var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      html += '<div class="region-section" id="' + sectionId + '">';
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
+      html += '<div class="region-section" id="' + sectionId + '" data-state="' + regionState + '">';
       html += '<button class="region-toggle" data-region="' + sectionId + '">';
       html += '<span class="region-toggle-name">' + esc(region.name) + '</span>';
       html += '<span class="region-toggle-count">...</span>';

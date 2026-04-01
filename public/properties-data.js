@@ -16168,5 +16168,2116 @@ var PROPERTIES = [
       ],
       "note": "Yadkin County Piedmont. Rural farmland setting. Low hazard profile. Verify drainage patterns on 16.61 acres."
     }
+  },
+  {
+    "id": "p74",
+    "num": 74,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Salem",
+    "address": "1267 Patterson Hill Rd",
+    "city": "Salem",
+    "state": "NY",
+    "zip": "12865",
+    "lat": 43.2294,
+    "lng": -73.3798,
+    "county": "Washington",
+    "price": 529000,
+    "listingLink": "https://www.trulia.com/home/1267-patterson-hill-rd-salem-ny-12865-66523435",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/fe658fb2c8636a92340bdd5ac76897ec-full.webp",
+    "beds": 3,
+    "bath": 3,
+    "sqft": 1520,
+    "acres": 29.04,
+    "acresSub": "Hilltop blend of open farmland and wooded hillsides. Panoramic views, southern exposure.",
+    "yearBuilt": 2004,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Reduced from $589K to $529K — seller motivated. 47 DOM.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Washington Co. ~$25/1000)",
+    "taxAnnual": 8500,
+    "hoa": 0,
+    "elemSchool": "Salem Elementary (6/10)",
+    "elemSchoolSub": "Salem CSD — listing says Salem, physical town is Hebron",
+    "toTown": "~10-15 min",
+    "toTownSub": "to Salem; ~20 min to Cambridge; ~35-40 min to Glens Falls",
+    "scores": {
+      "price": 4,
+      "acreage": 8,
+      "schools": 6,
+      "outbldgs": 2,
+      "town": 7,
+      "hospital": 4,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 7,
+      "living": 6
+    },
+    "offerRange": "$460K - $490K",
+    "offerStrategy": "Reduced $60K already. 47 DOM. Push for another $40K-$70K via negotiation + seller concessions.",
+    "offerRationale": [
+      "Already reduced $60K ($589K to $529K) — seller motivated",
+      "$529K is $79K above pre-approval — needs significant movement",
+      "47 DOM and counting — leverage increases weekly",
+      "Request seller concessions for closing costs (3-6% = $16K-$32K)",
+      "29 acres with gigabit fiber is rare — limited comparable properties",
+      "FHA appraisal may come in below $529K — use as leverage"
+    ],
+    "tableOfferNote": "Reduced $60K. SLICFiber 1 Gbps. Washington Co Tier 1. $529K above pre-approval — needs negotiation.",
+    "highlight": "29-acre hilltop property in Washington County with panoramic views of rolling farmland and distant hills. SLICFiber gigabit internet (1000/1000 Mbps) confirmed. 2004 Cape Cod with maple flooring and cabinetry, walk-out heated basement, wood stove + outdoor furnace. Salem CSD (6/10). Near Cambridge (~20 min) and Vermont ski country. Already reduced $60K from $589K.",
+    "highlights": [
+      {
+        "icon": "\uD83C\uDF10",
+        "text": "SLICFiber FTTP 1000/1000 Mbps confirmed — best possible internet score"
+      },
+      {
+        "icon": "\uD83C\uDFD4\uFE0F",
+        "text": "Hilltop panoramic views — sweeping vistas of rolling farmland and distant hills"
+      },
+      {
+        "icon": "\uD83C\uDF32",
+        "text": "29 acres blending open farmland and wooded hillsides — southern exposure"
+      },
+      {
+        "icon": "\uD83D\uDD25",
+        "text": "Wood stove + outdoor furnace + radiant floor — efficient multi-source heating"
+      }
+    ],
+    "proximity": [
+      {
+        "icon": "\u26FD",
+        "label": "Salem village",
+        "value": "~10-15 min",
+        "ref": false
+      },
+      {
+        "icon": "\uD83D\uDED2",
+        "label": "Cambridge (grocery)",
+        "value": "~20 min",
+        "ref": false
+      },
+      {
+        "icon": "\uD83C\uDFD9\uFE0F",
+        "label": "Glens Falls",
+        "value": "~35-40 min",
+        "ref": false
+      },
+      {
+        "icon": "\uD83C\uDFE5",
+        "label": "Glens Falls Hospital (ED)",
+        "value": "~40 min",
+        "ref": false
+      },
+      {
+        "icon": "\uD83C\uDFEB",
+        "label": "Salem Elementary (6/10)",
+        "value": "~10-15 min",
+        "ref": false
+      },
+      {
+        "icon": "\uD83C\uDFC2",
+        "label": "Vermont ski areas",
+        "value": "~45-60 min",
+        "ref": false
+      }
+    ],
+    "cardPros": [
+      {
+        "icon": "\u2713",
+        "text": "SLICFiber FTTP 1000/1000 Mbps — gigabit symmetrical fiber confirmed at address"
+      },
+      {
+        "icon": "\u2713",
+        "text": "29 acres — hilltop with panoramic views, blend of open farmland and wooded hillsides"
+      },
+      {
+        "icon": "\u2713",
+        "text": "2004 build — modern systems, Cape Cod style, maple flooring and cabinetry throughout"
+      },
+      {
+        "icon": "\u2713",
+        "text": "Walk-out heated basement — partially finished, expansion potential"
+      },
+      {
+        "icon": "\u2713",
+        "text": "Wood stove + outdoor furnace + radiant floor — efficient multi-source heating"
+      },
+      {
+        "icon": "\u2713",
+        "text": "Washington County Tier 1 target — Salem CSD (6/10), near Cambridge Central (~7/10)"
+      },
+      {
+        "icon": "\u2713",
+        "text": "Price already reduced $60K ($589K to $529K) — seller motivated"
+      },
+      {
+        "icon": "\uD83D\uDC34",
+        "text": "No HOA — rural Washington County zoning, livestock allowed"
+      }
+    ],
+    "cardCons": [
+      {
+        "icon": "\u2717",
+        "text": "$529K is $79K above pre-approval — needs major seller concessions or further price reduction"
+      },
+      {
+        "icon": "\u2717",
+        "text": "1,520 sqft — small for a family of four (3 bed / 3 bath helps layout)"
+      },
+      {
+        "icon": "\u2717",
+        "text": "No outbuildings — no barn, garage, or workshop. James builds from scratch."
+      },
+      {
+        "icon": "\u2717",
+        "text": "Glens Falls Hospital is ~40 min — long drive for emergency with young kids"
+      },
+      {
+        "icon": "\u2717",
+        "text": "Whole house fan only — no central air or mini-splits"
+      },
+      {
+        "icon": "\u2717",
+        "text": "Oil + wood heat — estimated $5,000-$6,000/yr heating costs"
+      },
+      {
+        "icon": "\u2717",
+        "text": "Property taxes ~$8,500/yr (~$708/mo on top of mortgage)"
+      },
+      {
+        "icon": "\u2717",
+        "text": "Patterson Hill Rd — verify winter road maintenance and plowing"
+      }
+    ],
+    "familyFit": [
+      "Washington County is Tier 1 target — strong rural community, real winters, not seclusion",
+      "Salem CSD 6/10 is adequate for Theo starting kindergarten fall 2026",
+      "Cambridge Central (~7/10) is nearby — if boundary allows, even better school option",
+      "Hilltop with rolling terrain — potential sledding hills for kids",
+      "29 acres with wooded portions — timber potential for James's woodworking",
+      "Southern exposure on hilltop — excellent for garden, solar potential",
+      "Vermont ski country ~45-60 min — family winter recreation"
+    ],
+    "verifyItems": [
+      {
+        "label": "FHA Eligibility",
+        "text": "2004 build should pass — confirm with Presidential Bank, note walk-out basement foundation type"
+      },
+      {
+        "label": "School District",
+        "text": "Listing says Salem, physical town is Hebron — confirm actual elementary assignment"
+      },
+      {
+        "label": "Winter Road",
+        "text": "Patterson Hill Rd — confirm town-maintained and plowed in winter"
+      },
+      {
+        "label": "Well & Septic",
+        "text": "Request inspection reports — 2004 systems, ~22 years old"
+      },
+      {
+        "label": "Timber Assessment",
+        "text": "Have wooded portions evaluated for harvestable hardwood species"
+      },
+      {
+        "label": "Property Tax",
+        "text": "Confirm actual annual tax — estimated $8,500 based on assessment $338,800"
+      }
+    ],
+    "mustDo": [
+      {
+        "urgent": true,
+        "text": "PRICE NEGOTIATION — $529K is $79K above pre-approval. Need $40K-$70K reduction or seller concessions to make this work."
+      },
+      {
+        "urgent": true,
+        "text": "Confirm FHA eligibility with Presidential Bank — 2004 build, walk-out basement"
+      },
+      {
+        "urgent": false,
+        "text": "Request video walkthrough — house interior + land walk + hilltop views"
+      },
+      {
+        "urgent": false,
+        "text": "Confirm no deed restrictions on farm animals"
+      },
+      {
+        "urgent": false,
+        "text": "Verify school district assignment — Salem vs Hebron"
+      },
+      {
+        "urgent": false,
+        "text": "Check winter road maintenance on Patterson Hill Rd"
+      },
+      {
+        "urgent": false,
+        "text": "Get actual annual property tax from Washington County assessor"
+      },
+      {
+        "urgent": false,
+        "text": "Evaluate wooded acreage for hardwood timber species"
+      }
+    ],
+    "envHazards": {
+      "location": "Washington County, eastern upstate NY — hilltop in Salem/Hebron area",
+      "pills": [
+        {
+          "level": "low",
+          "text": "Flooding — hilltop elevation, well above any flood zones"
+        },
+        {
+          "level": "mod",
+          "text": "Ice storms — standard upstate NY risk, hilltop exposure may increase"
+        },
+        {
+          "level": "low",
+          "text": "Wildfire — minimal risk in this region"
+        },
+        {
+          "level": "mod",
+          "text": "Winter road — Patterson Hill Rd may be challenging, verify maintenance"
+        }
+      ],
+      "note": "Washington County hilltop. Elevated position eliminates flood risk. Primary concerns are ice storms (standard upstate NY) and winter road access on Patterson Hill. Verify town road maintenance."
+    }
+  },
+  {
+    "id": "p75",
+    "num": 75,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Potsdam",
+    "address": "183 Blanchard Rd",
+    "city": "Potsdam",
+    "state": "NY",
+    "zip": "13676",
+    "lat": 44.701712,
+    "lng": -75.098381,
+    "county": "St. Lawrence",
+    "price": 329000,
+    "listingLink": "https://www.trulia.com/home/183-blanchard-rd-potsdam-ny-13676-32558723",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/25c277298a59de18db6bcc092cff0824-full.webp",
+    "beds": 4,
+    "bath": 1.5,
+    "sqft": 1932,
+    "acres": 94.3,
+    "acresSub": "9,000+ mature plantation trees (1969). Harvestable hardwood timber.",
+    "yearBuilt": 1850,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "146 DOM — 5 price cuts: $425K > $399K > $369K > $349K > $329K. Highly motivated.",
+    "badges": [],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (St. Lawrence Co.)",
+    "taxAnnual": 4500,
+    "hoa": 0,
+    "elemSchool": "Lawrence Ave Elem (6/10)",
+    "elemSchoolSub": "Potsdam Central CSD — Niche A-",
+    "toTown": "~5-10 min",
+    "toTownSub": "to Potsdam (Walmart, Price Chopper, SUNY)",
+    "scores": {
+      "price": 10,
+      "acreage": 10,
+      "schools": 6,
+      "outbldgs": 8,
+      "town": 10,
+      "hospital": 10,
+      "hazards": 8,
+      "internet": 10,
+      "forested": 10,
+      "living": 4
+    },
+    "offerRange": "$295K - $320K",
+    "offerStrategy": "5 price cuts + 146 DOM = maximum leverage. Seller desperate. FHA condition risk gives further leverage.",
+    "offerRationale": [
+      "Five price cuts from $425K to $329K — seller has dropped $96K already",
+      "146 DOM in a thin rural market — buyer pool is exhausted",
+      "1850 build with 1 full bath = limited buyer appeal; James and Savanah may be only serious bidders",
+      "FHA appraisal will flag condition items — use as post-inspection leverage",
+      "9,000+ timber trees may hold $20K-$80K+ harvestable value — offset renovation costs"
+    ],
+    "tableOfferNote": "5 price cuts from $425K. 94 acres + 9K trees + SLIC fiber. 1850 build, 1 bath = FHA risk.",
+    "highlight": "94.3 acres with 9,000+ mature plantation trees (harvestable hardwood for James), SLICFiber gigabit internet, 5 min to Potsdam (Walmart, SUNY, youth sports), and Canton-Potsdam Hospital 10 min away. Five price cuts from $425K to $329K signal maximum seller motivation. Best raw fundamentals in the batch — but the 1850 farmhouse with only 1 full bath needs renovation.",
+    "highlights": [
+      { "icon": "\uD83C\uDF32", "text": "94.3 acres — 9,000+ mature plantation trees planted 1969, harvestable hardwood timber" },
+      { "icon": "\uD83C\uDF10", "text": "SLICFiber FTTP 1000/1000 Mbps — best internet available" },
+      { "icon": "\uD83C\uDFE5", "text": "Canton-Potsdam Hospital only ~10 min — full ED, Level III Trauma" },
+      { "icon": "\uD83D\uDCB0", "text": "5 price cuts from $425K to $329K — seller highly motivated" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Potsdam (Walmart, Price Chopper)", "value": "~5-10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Canton-Potsdam Hospital", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Lawrence Ave Elem (6/10)", "value": "~5-10 min", "ref": false },
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Canton", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFD4\uFE0F", "label": "Canada border", "value": "~30 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "94.3 acres at $329K — best price-per-acre in the batch by far" },
+      { "icon": "\u2713", "text": "9,000+ mature plantation trees (1969) — harvestable hardwood, potential $20K-$80K+ timber value" },
+      { "icon": "\u2713", "text": "SLICFiber FTTP 1000/1000 symmetric — best broadband in the batch" },
+      { "icon": "\u2713", "text": "Canton-Potsdam Hospital ~10 min — full ED, critical for family with young kids" },
+      { "icon": "\u2713", "text": "Potsdam is a real town: Walmart, grocery, SUNY Potsdam, Clarkson, youth sports leagues" },
+      { "icon": "\u2713", "text": "146 DOM with 5 price cuts — maximum negotiating leverage, room below $329K" },
+      { "icon": "\u2713", "text": "Barn, 3-car garage, shed, greenhouse — solid outbuilding package" },
+      { "icon": "\uD83D\uDC34", "text": "Rural St. Lawrence County — livestock allowed, no HOA" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Only 1 full bath — hard livability issue for family of 4 with two young kids. Adding 2nd bath = $15K-$30K" },
+      { "icon": "\u2717", "text": "1850 farmhouse — FHA appraiser will scrutinize heavily. Condition listed as 'Older Home 75+ yrs'" },
+      { "icon": "\u2717", "text": "Oil forced-air heat — ~$5,000-$6,000/yr heating costs in St. Lawrence County winters (100+ inches snow)" },
+      { "icon": "\u2717", "text": "St. Lawrence County has the harshest winters in this batch — record cold, heavy snow, ice" },
+      { "icon": "\u2717", "text": "No central AC — wood stove + forced air oil only" },
+      { "icon": "\u2717", "text": "1,932 sqft feels compact once office space and bathroom renovation are factored in" }
+    ],
+    "familyFit": [
+      "Tier 1 St. Lawrence County — Potsdam is a college town with real community, youth sports, library",
+      "Canton-Potsdam Hospital 10 min is ideal for Theo (5) and Sophie (4)",
+      "94 acres with 9,000+ timber trees is James's dream — woodworking for decades",
+      "Same brokerage as Rhonda Roethel (agent already contacted) — potential relationship advantage"
+    ],
+    "verifyItems": [
+      { "label": "FHA Condition", "text": "1850 farmhouse — pre-offer inspection critical. Check roof, foundation, electrical, plumbing" },
+      { "label": "Bathroom", "text": "Only 1 full bath — verify half bath can be expanded and 2nd full bath added" },
+      { "label": "Timber Species", "text": "Hire licensed forester to evaluate 9,000+ trees — confirm hardwood species and harvestable value" },
+      { "label": "Oil Tank", "text": "Check if underground or above-ground — underground tanks are liability" },
+      { "label": "Well & Septic", "text": "174-year-old property — full inspection mandatory" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "FHA pre-inspection — 1850 build needs professional evaluation before offer" },
+      { "urgent": true, "text": "Confirm bathroom renovation feasibility — must add 2nd full bath" },
+      { "urgent": false, "text": "Timber cruise — licensed forester evaluation of plantation trees" },
+      { "urgent": false, "text": "Request video walkthrough — house + barn + garage + timber trails" },
+      { "urgent": false, "text": "Confirm school district assignment for this Blanchard Rd address" },
+      { "urgent": false, "text": "Get 2 years of heating oil bills" }
+    ],
+    "envHazards": {
+      "location": "St. Lawrence County, northern NY — rural Potsdam area",
+      "pills": [
+        { "level": "low", "text": "Flooding — rural upland, no river valley" },
+        { "level": "mod", "text": "Ice storms — St. Lawrence County, moderate-to-high risk" },
+        { "level": "mod", "text": "Severe winter — 100+ inches snow/yr, record cold" },
+        { "level": "low", "text": "Wildfire — minimal risk" }
+      ],
+      "note": "St. Lawrence County has harsh winters. Primary concerns are ice storms and extreme cold. Road maintenance on Blanchard Rd should be verified."
+    }
+  },
+  {
+    "id": "p76",
+    "num": 76,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Adams Center",
+    "address": "15434 County Route 76",
+    "city": "Adams Center",
+    "state": "NY",
+    "zip": "13606",
+    "lat": 43.852657,
+    "lng": -76.054721,
+    "county": "Jefferson",
+    "price": 410000,
+    "listingLink": "https://www.trulia.com/home/15434-county-route-76-adams-center-ny-13606-84097534",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/058c3d1ec83e41578b863630fa5ff4a1-full.webp",
+    "beds": 3,
+    "bath": 3,
+    "sqft": 2548,
+    "acres": 25.22,
+    "acresSub": "Open and wooded mix. Plum, peach, apple orchard.",
+    "yearBuilt": 2003,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Log home. 27 DOM. FHA/VA/USDA eligible.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Jefferson Co.)",
+    "taxAnnual": 6500,
+    "hoa": 0,
+    "elemSchool": "Maynard P. Wilson Elem (4/10)",
+    "elemSchoolSub": "South Jefferson CSD",
+    "toTown": "~5 min",
+    "toTownSub": "to Adams; ~25 min to Watertown (Walmart, Tractor Supply)",
+    "scores": {
+      "price": 9,
+      "acreage": 7,
+      "schools": 4,
+      "outbldgs": 8,
+      "town": 9,
+      "hospital": 8,
+      "hazards": 8,
+      "internet": 8,
+      "forested": 5,
+      "living": 9
+    },
+    "offerRange": "$385K - $405K",
+    "offerStrategy": "FHA-eligible log home at $410K — tight to pre-approval. Modest leverage at 27 DOM.",
+    "offerRationale": [
+      "$410K is well within pre-approval — strong position",
+      "Log home is niche market — limited buyer pool helps",
+      "Roughed-in garage suite adds future value — not reflected in price",
+      "Brand-new boiler + backup wood boiler = no immediate systems cost"
+    ],
+    "tableOfferNote": "Log home, $410K, FHA eligible. Garage w/ roughed-in suite. School 4/10 concern.",
+    "highlight": "2003 log home with 2,548 sqft, 3 full baths, finished walk-out basement, and radiant floor heat on 25 acres. Oversized detached garage has a roughed-in 3-bed/1-bath suite above — enormous future workshop + guest/income potential. Brand-new boiler. FHA/VA/USDA eligible. Spectrum cable confirmed. Watertown (full hospital, Walmart, Tractor Supply) 25 min.",
+    "highlights": [
+      { "icon": "\uD83C\uDFE0", "text": "Log home construction — unique, durable, aesthetically striking" },
+      { "icon": "\uD83D\uDD27", "text": "Garage with roughed-in 3bd/1ba suite above — workshop + income potential" },
+      { "icon": "\uD83D\uDD25", "text": "Brand-new boiler + backup wood boiler — zero heating system cost at move-in" },
+      { "icon": "\u2705", "text": "FHA/VA/USDA all eligible — financing flexibility" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Watertown (Walmart, Tractor Supply)", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Samaritan Medical Center, Watertown", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Maynard P. Wilson Elem (4/10)", "value": "Adams Center", "ref": false },
+      { "icon": "\u26FD", "label": "Adams", "value": "~5 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "$410K for 2003 log home with 2,548 sqft + finished walk-out basement — excellent value" },
+      { "icon": "\u2713", "text": "Garage suite roughed-in (3bd/1ba above) — James's future workshop + guest quarters" },
+      { "icon": "\u2713", "text": "3 full baths — exceeds requirement, family-friendly layout" },
+      { "icon": "\u2713", "text": "Radiant floor heat + brand-new boiler + wood boiler backup — efficient, modern heating" },
+      { "icon": "\u2713", "text": "Spectrum cable 1000/35 Mbps confirmed at address" },
+      { "icon": "\u2713", "text": "Samaritan Medical Center (full hospital) in Watertown ~25 min" },
+      { "icon": "\uD83D\uDC34", "text": "Horses explicitly allowed — 25 acres, no restrictions" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Maynard P. Wilson Elementary 4/10 — below average, concern for Theo's kindergarten" },
+      { "icon": "\u2717", "text": "Spectrum cable upload 35 Mbps — borderline for dual simultaneous video calls" },
+      { "icon": "\u2717", "text": "Jefferson County is Lake Ontario snow belt — heaviest snowfall in upstate NY" },
+      { "icon": "\u2717", "text": "No central AC — radiant floor heat only" },
+      { "icon": "\u2717", "text": "Near Fort Drum military base — affects area character and demographics" },
+      { "icon": "\u2717", "text": "Terrain is flatter than Adirondack foothills — less dramatic rolling landscape" }
+    ],
+    "familyFit": [
+      "Log home is a unique lifestyle — kids will love growing up in it",
+      "Garage suite = James's dream workshop on ground floor, future guest space above",
+      "25 acres with orchard (plum, peach, apple) — family activity, self-sufficiency",
+      "Watertown 25 min has full services including youth sports, hospital, shopping"
+    ],
+    "verifyItems": [
+      { "label": "Log Sealing", "text": "Confirm log home was professionally sealed and stained recently" },
+      { "label": "Garage Suite", "text": "Verify condition of roughed-in suite and what permits exist" },
+      { "label": "Upload Speed", "text": "Test Spectrum 35 Mbps upload under dual video call load" },
+      { "label": "School Options", "text": "Research open enrollment or nearby district transfers" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Confirm FHA appraisal comparables — log homes can be hard to comp" },
+      { "urgent": false, "text": "Request video walkthrough — house + garage + suite + land" },
+      { "urgent": false, "text": "Verify school district enrollment trends — South Jefferson consolidation risk?" },
+      { "urgent": false, "text": "Check FEMA flood map for this parcel" },
+      { "urgent": false, "text": "Confirm horses-allowed zoning for planned animal additions" }
+    ],
+    "envHazards": {
+      "location": "Jefferson County, northern NY — Lake Ontario snow belt",
+      "pills": [
+        { "level": "low", "text": "Flooding — no river valley, upland location" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "mod", "text": "Heavy snow — Lake Ontario snow belt, above-average accumulation" },
+        { "level": "low", "text": "Wildfire — minimal risk" }
+      ],
+      "note": "Jefferson County receives heavy lake-effect snow from Lake Ontario. Good for sledding, hard for road access. Verify plowing on County Route 76."
+    }
+  },
+  {
+    "id": "p77",
+    "num": 77,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Hermon",
+    "address": "623 Trout Lake Rd",
+    "city": "Hermon",
+    "state": "NY",
+    "zip": "13652",
+    "lat": 44.413278,
+    "lng": -75.244778,
+    "county": "St. Lawrence",
+    "price": 409000,
+    "listingLink": "https://www.trulia.com/home/623-trout-lake-rd-hermon-ny-13652-53130845",
+    "image": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/d2ba02e85ccf49d17e8db49f18978014-full.webp",
+    "beds": 3,
+    "bath": 1.5,
+    "sqft": 1224,
+    "acres": 107,
+    "acresSub": "1.2+ miles hardwood maple trails. Rolling terrain.",
+    "yearBuilt": 1995,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "FSBO. 'Motivated Sellers!' 180+ DOM.",
+    "badges": [],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (St. Lawrence Co.)",
+    "taxAnnual": 6000,
+    "hoa": 0,
+    "elemSchool": "Edwards Knox Elem (4/10)",
+    "elemSchoolSub": "Hermon-DeKalb CSD — Edwards Knox serves this address",
+    "toTown": "~20 min",
+    "toTownSub": "to Gouverneur (grocery, hardware)",
+    "scores": {
+      "price": 9,
+      "acreage": 10,
+      "schools": 4,
+      "outbldgs": 5,
+      "town": 7,
+      "hospital": 5,
+      "hazards": 8,
+      "internet": 10,
+      "forested": 10,
+      "living": 5
+    },
+    "offerRange": "$370K - $395K",
+    "offerStrategy": "FSBO + 180+ DOM + 'Motivated Sellers' = maximum leverage. Home is too small for most families.",
+    "offerRationale": [
+      "FSBO with 'Motivated Sellers!' and 180+ DOM — desperate to sell",
+      "1,224 sqft limits buyer pool — most families need more space",
+      "107 acres at $370K-$395K = ~$3,500-$3,700/acre — fair for SLC with timber",
+      "No agent on seller side = potential savings on commission"
+    ],
+    "tableOfferNote": "107 acres, FSBO, 180+ DOM. TDS fiber confirmed. Only 1,224 sqft — needs expansion.",
+    "highlight": "107 acres with 1.2+ miles of hardwood maple trails and TDS Telecom gigabit fiber. The largest acreage in the batch at $409K. FSBO with motivated sellers and 180+ DOM. Central AC. But the 1,224 sqft home with only 1 full bath is the smallest in the batch — a family of 4 needs an expansion plan.",
+    "highlights": [
+      { "icon": "\uD83C\uDF32", "text": "107 acres — largest in batch, 1.2+ miles hardwood maple trails" },
+      { "icon": "\uD83C\uDF10", "text": "TDS Telecom FTTP 1000/1000 Mbps — gigabit fiber confirmed" },
+      { "icon": "\uD83D\uDCB0", "text": "FSBO + 'Motivated Sellers!' + 180+ DOM — maximum negotiating leverage" },
+      { "icon": "\u2744\uFE0F", "text": "Central AC (unusual for SLC) + wrap-around porch + soaking tub" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Gouverneur (grocery)", "value": "~20 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Gouverneur Hospital (Critical Access)", "value": "~20 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Canton-Potsdam Hospital (full)", "value": "~35 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Hermon-DeKalb Central (6/10)", "value": "~10-15 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "107 acres — largest acreage in the entire batch, $3,800/acre" },
+      { "icon": "\u2713", "text": "1.2+ miles hardwood maple trails — James's woodworking dream property for timber" },
+      { "icon": "\u2713", "text": "TDS Telecom fiber 1000/1000 Mbps confirmed — listing claim verified" },
+      { "icon": "\u2713", "text": "FSBO + 180+ DOM + 'Motivated Sellers' = could push below $390K" },
+      { "icon": "\u2713", "text": "Central AC — rare for St. Lawrence County, a practical plus" },
+      { "icon": "\u2713", "text": "1995 build — modern enough to avoid 1850s-era FHA headaches" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "1,224 sqft — smallest home in the batch, very cramped for family of 4 + dual offices" },
+      { "icon": "\u2717", "text": "Only 1 full bath + half bath — needs 2nd full bath for family" },
+      { "icon": "\u2717", "text": "Gouverneur Hospital is Critical Access only — Canton-Potsdam (full) is 35 min" },
+      { "icon": "\u2717", "text": "Hermon is genuinely remote — limited youth sports, services" },
+      { "icon": "\u2717", "text": "FSBO — no buyer's agent on seller side; consider hiring your own" },
+      { "icon": "\u2717", "text": "Tax assessment from 2016 ($130K) is severely outdated — actual taxes unknown" }
+    ],
+    "familyFit": [
+      "107 acres with maple hardwood trails is the ultimate woodworking property for James",
+      "Rolling terrain = sledding hills for Theo and Sophie",
+      "But 1,224 sqft is genuinely too small without basement finishing or addition — budget $30K-$50K for expansion",
+      "Hermon is remote — Gouverneur 20 min is the nearest real town"
+    ],
+    "verifyItems": [
+      { "label": "Home Size", "text": "1,224 sqft — verify basement can be finished for office/living space" },
+      { "label": "Current Taxes", "text": "2016 assessment is outdated — get current tax bill from SLC assessor" },
+      { "label": "Road Maintenance", "text": "Trout Lake Rd — town-maintained? Private? Winter plowing?" },
+      { "label": "Hardwood Species", "text": "Confirm maple species and harvestable maturity on the 107 acres" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Get current assessed value and actual tax bill — 2016 figure is unreliable" },
+      { "urgent": true, "text": "Evaluate basement — can it support finished office/living space?" },
+      { "urgent": false, "text": "Request video walkthrough — house + garage + timber trails" },
+      { "urgent": false, "text": "Confirm school district — likely Hermon-DeKalb CSD" },
+      { "urgent": false, "text": "Verify well and septic condition" }
+    ],
+    "envHazards": {
+      "location": "St. Lawrence County, northern NY — rural Hermon",
+      "pills": [
+        { "level": "low", "text": "Flooding — upland, no river valley" },
+        { "level": "mod", "text": "Ice storms — St. Lawrence County" },
+        { "level": "mod", "text": "Severe winter — heavy snow, extreme cold" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Remote St. Lawrence County location. Harsh winters. Verify Trout Lake Rd is town-maintained and plowed."
+    }
+  },
+  {
+    "id": "p78",
+    "num": 78,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Canton",
+    "address": "384 Dutton Rd",
+    "city": "Canton",
+    "state": "NY",
+    "zip": "13617",
+    "lat": 44.526012,
+    "lng": -75.098024,
+    "county": "St. Lawrence",
+    "price": 499000,
+    "listingLink": "https://www.trulia.com/home/384-dutton-rd-canton-ny-13617-32560371",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/107e9073b70b05c09eb2e756e5357d73-full.webp",
+    "beds": 7,
+    "bath": 3.5,
+    "sqft": 2464,
+    "acres": 66.2,
+    "acresSub": "Pond, creek, hunting land. Also available: 22 acres at $430K or 3 acres at $395K.",
+    "yearBuilt": 2006,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "FSBO. 86 DOM. Gut-renovated 2021. Flexible acreage options.",
+    "badges": [],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (St. Lawrence Co.)",
+    "taxAnnual": 4000,
+    "hoa": 0,
+    "elemSchool": "Edwards-Knox Elem (4/10)",
+    "elemSchoolSub": "Edwards-Knox CSD — NOT Canton CSD (1.5 mi from boundary)",
+    "toTown": "~10 min",
+    "toTownSub": "to Canton (Price Chopper, SUNY Canton)",
+    "scores": {
+      "price": 7,
+      "acreage": 9,
+      "schools": 4,
+      "outbldgs": 6,
+      "town": 9,
+      "hospital": 9,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 7,
+      "living": 6
+    },
+    "offerRange": "$410K - $440K",
+    "offerStrategy": "Target the 22-acre option at $430K or negotiate full 66 acres below $475K. Burned house is leverage.",
+    "offerRationale": [
+      "FSBO with flexible pricing: $499K/66ac, $430K/22ac, $395K/3ac",
+      "Burned house on property = FHA appraisal flag, demo cost leverage",
+      "Edwards-Knox school (4/10) limits buyer pool",
+      "86 DOM — moderate leverage, not desperate yet"
+    ],
+    "tableOfferNote": "FSBO. 2021 gut reno. Flexible acreage splits. Burned house = FHA risk. School 4/10.",
+    "highlight": "66 acres near Canton with pond, creek, and SLICFiber gigabit internet. Fully gut-renovated 2021 (new electric, insulation, windows, propane furnace, central AC). Canton-Potsdam Hospital 12 min. But burned house on property is a potential FHA hard stop, and school is Edwards-Knox (4/10) not Canton CSD.",
+    "highlights": [
+      { "icon": "\uD83C\uDFE0", "text": "Fully gut-renovated 2021 — new electric, insulation, subfloor, windows, siding" },
+      { "icon": "\uD83C\uDF10", "text": "SLICFiber FTTP 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83C\uDFE5", "text": "Canton-Potsdam Hospital ~12 min — excellent access" },
+      { "icon": "\uD83D\uDCB0", "text": "Flexible acreage: 66ac/$499K or 22ac/$430K — choose your footprint" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Canton (Price Chopper, SUNY Canton)", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Canton-Potsdam Hospital", "value": "~12 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Edwards-Knox Elem (4/10)", "value": "Edwards-Knox CSD", "ref": false },
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Potsdam", "value": "~20 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "2021 gut renovation — structurally fresh: new electric, insulation, windows, propane furnace" },
+      { "icon": "\u2713", "text": "SLICFiber 1000/1000 symmetric — ideal for dual remote work" },
+      { "icon": "\u2713", "text": "Canton-Potsdam Hospital 12 min — best hospital access in SLC group" },
+      { "icon": "\u2713", "text": "Canton is a strong town — SUNY Canton, St. Lawrence U, youth sports, Tractor Supply" },
+      { "icon": "\u2713", "text": "Central AC — unusual for the region, a practical advantage" },
+      { "icon": "\u2713", "text": "Pond + creek on property — family recreation, fishing, ice skating" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Burned house on property — potential FHA hard stop; may require demolition before closing" },
+      { "icon": "\u2717", "text": "Edwards-Knox Elementary 4/10 — not Canton CSD (1.5 mi from boundary)" },
+      { "icon": "\u2717", "text": "$499K for full acreage is above pre-approval" },
+      { "icon": "\u2717", "text": "FSBO listing is vague — no foundation/basement info confirmed" },
+      { "icon": "\u2717", "text": "7 bedrooms in 2,464 sqft means small rooms" },
+      { "icon": "\u2717", "text": "Dirt road access (Dutton Rd, top of Waterman Hill) — winter concern" }
+    ],
+    "familyFit": [
+      "Canton is the best overall town in St. Lawrence County for the Hendershott lifestyle",
+      "Hospital access is excellent for Theo and Sophie",
+      "66 acres with pond and creek = kids' outdoor paradise",
+      "But Edwards-Knox school (4/10) is a real concern for Theo's kindergarten"
+    ],
+    "verifyItems": [
+      { "label": "Burned House", "text": "FHA appraiser will flag — confirm if demo is required before closing; get demolition estimate" },
+      { "label": "Foundation", "text": "Not specified in listing — basement or slab? Critical for FHA and livability" },
+      { "label": "School Boundary", "text": "1.5 mi from Canton CSD line — any flexibility or open enrollment?" },
+      { "label": "Dirt Road", "text": "Dutton Rd — town-maintained? Plowed in winter?" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Confirm burned house FHA status — will lender require demo before close?" },
+      { "urgent": true, "text": "Verify foundation type and basement existence" },
+      { "urgent": false, "text": "Explore Canton CSD open enrollment for Theo" },
+      { "urgent": false, "text": "Get renovation permits and inspection records from 2021 work" },
+      { "urgent": false, "text": "Check FEMA flood map for creek/pond areas" }
+    ],
+    "envHazards": {
+      "location": "St. Lawrence County, northern NY — rural Canton area, Waterman Hill",
+      "pills": [
+        { "level": "mod", "text": "Burned structure — liability, potential contamination" },
+        { "level": "mod", "text": "Ice storms — SLC standard" },
+        { "level": "mod", "text": "Winter road — dirt road, hilltop, verify maintenance" },
+        { "level": "low", "text": "Flooding — pond/creek present, check FEMA" }
+      ],
+      "note": "Burned house on property is the primary concern — both for FHA and environmental (potential asbestos/lead in old structure). Verify demo cost and timeline."
+    }
+  },
+  {
+    "id": "p79",
+    "num": 79,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Whitehall",
+    "address": "1276 Holcombville Rd",
+    "city": "Whitehall",
+    "state": "NY",
+    "zip": "12887",
+    "lat": 43.5547,
+    "lng": -73.3647,
+    "county": "Washington",
+    "price": 444500,
+    "listingLink": "https://www.trulia.com/home/1276-holcombville-rd-whitehall-ny-12887-71203646",
+    "image": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/3f0defe0e87fcce97f6866b78799fdf2-full.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1440,
+    "acres": 30,
+    "acresSub": "Brook, trails, hunting camp. Adirondack foothills.",
+    "yearBuilt": 2005,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "25 DOM. 2005 build. New primary bath 2026.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Washington Co.)",
+    "taxAnnual": 5500,
+    "hoa": 0,
+    "elemSchool": "Whitehall Elem (3/10)",
+    "elemSchoolSub": "Whitehall CSD",
+    "toTown": "~5 min",
+    "toTownSub": "to Whitehall; ~10 min to Granville (grocery, hardware)",
+    "scores": {
+      "price": 8,
+      "acreage": 8,
+      "schools": 2,
+      "outbldgs": 10,
+      "town": 8,
+      "hospital": 5,
+      "hazards": 8,
+      "internet": 8,
+      "forested": 8,
+      "living": 7
+    },
+    "offerRange": "$415K - $435K",
+    "offerStrategy": "Within pre-approval. 25 DOM is early — limited leverage. Strong property merits fair offer.",
+    "offerRationale": [
+      "$444K within pre-approval — solid negotiating position",
+      "2005 build is FHA-friendly — minimal condition risk",
+      "30x40 heated workshop is unique value-add",
+      "Whitehall school (3/10) limits buyer pool — leverage point"
+    ],
+    "tableOfferNote": "30x40 heated workshop. 2005 build. Spectrum cable. School 3/10 is the weakness.",
+    "highlight": "30 acres in Washington County with a 30x40 heated metal workshop (James's dream), babbling brook, private trails, and hunting camp. 2005 ranch with radiant floor heat, ductless mini-splits, and newly renovated primary bath (2026). Spectrum cable confirmed. But Whitehall Elementary at 3/10 is the worst school rating in the batch.",
+    "highlights": [
+      { "icon": "\uD83D\uDD27", "text": "30x40 heated metal garage/workshop — 1,200 sqft dedicated woodworking space" },
+      { "icon": "\uD83C\uDFDE\uFE0F", "text": "Babbling brook, private trails, hunting camp on 30 wooded acres" },
+      { "icon": "\uD83C\uDFE0", "text": "2005 ranch — newest build in Washington County group" },
+      { "icon": "\uD83D\uDD25", "text": "Radiant floor + ductless mini-splits — efficient modern heating/cooling" }
+    ],
+    "proximity": [
+      { "icon": "\u26FD", "label": "Whitehall", "value": "~5 min", "ref": false },
+      { "icon": "\uD83D\uDED2", "label": "Granville (grocery, hardware)", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Glens Falls Hospital", "value": "~35 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Whitehall Elem (3/10)", "value": "~5-10 min", "ref": false },
+      { "icon": "\uD83C\uDFC2", "label": "Vermont border", "value": "nearby", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "30x40 heated workshop — best dedicated woodworking space in the entire batch" },
+      { "icon": "\u2713", "text": "2005 build — FHA-friendly, modern systems, zero 1850s-era headaches" },
+      { "icon": "\u2713", "text": "30 wooded acres with brook, trails, hunting camp — excellent land character" },
+      { "icon": "\u2713", "text": "Radiant floor + ductless mini-splits = efficient heating AND cooling" },
+      { "icon": "\u2713", "text": "5 total garage spaces (3-car attached w/office + workshop)" },
+      { "icon": "\u2713", "text": "Spectrum cable 1000/35 confirmed — reliable broadband" },
+      { "icon": "\u2713", "text": "$444K within pre-approval — no stretch needed" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Whitehall Elementary 3/10 — worst school in the batch, direct concern for Theo's kindergarten" },
+      { "icon": "\u2717", "text": "No basement (slab foundation) — family preferred basement" },
+      { "icon": "\u2717", "text": "1,440 sqft — smallest livable space in Washington County group" },
+      { "icon": "\u2717", "text": "Glens Falls Hospital ~35 min — manageable but not ideal for toddlers" },
+      { "icon": "\u2717", "text": "Spectrum upload 35 Mbps — adequate but test under dual load" }
+    ],
+    "familyFit": [
+      "Washington County Tier 1 target — real community, Vermont border access",
+      "30x40 workshop means James can start woodworking Day 1 — no building needed",
+      "Brook + trails = Theo and Sophie's backyard adventure playground",
+      "But 3/10 school is a direct, urgent problem for kindergarten fall 2026 — research Granville CSD transfer"
+    ],
+    "verifyItems": [
+      { "label": "School Options", "text": "Can Theo attend Granville CSD instead? Open enrollment? Intradistrict transfer?" },
+      { "label": "Oil Costs", "text": "Radiant floor + oil on 30 acres — get 2 years of oil bills" },
+      { "label": "Brook Flooding", "text": "Year-round brook — check FEMA Special Flood Hazard Area" },
+      { "label": "Workshop", "text": "Verify 30x40 workshop is heated, insulated, and has electrical for power tools" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Research school alternatives — Granville CSD open enrollment or private options" },
+      { "urgent": false, "text": "Request video walkthrough — house + workshop + brook + trails" },
+      { "urgent": false, "text": "FEMA flood map check for brook" },
+      { "urgent": false, "text": "Verify internet upload speed under dual video call load" },
+      { "urgent": false, "text": "Confirm no deed restrictions on farm animals" }
+    ],
+    "envHazards": {
+      "location": "Washington County, Adirondack foothills — Whitehall area",
+      "pills": [
+        { "level": "low", "text": "Flooding — check brook for SFHA status" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" },
+        { "level": "low", "text": "APA — near Blue Line but appears outside, confirm" }
+      ],
+      "note": "Washington County Adirondack foothills. Brook on property requires FEMA flood check. Ice storms are the primary weather hazard."
+    }
+  },
+  {
+    "id": "p80",
+    "num": 80,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Cold Brook",
+    "address": "4970 State Route 8",
+    "city": "Cold Brook",
+    "state": "NY",
+    "zip": "13324",
+    "lat": 43.394046,
+    "lng": -74.863975,
+    "county": "Herkimer",
+    "price": 549900,
+    "listingLink": "https://www.trulia.com/home/4970-state-route-8-cold-brook-ny-13324-215879498",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/99508e1bdf9b45da0f9c45912f86031a-full.webp",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 1984,
+    "acres": 40,
+    "acresSub": "3,300 ft West Canada Creek frontage. 2+ mi private trails. Inside APA Blue Line.",
+    "yearBuilt": 1987,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "Relisted 3/27/2026 (prev. $569K Jul 2025, delisted Dec 2025). FHA/USDA/VA eligible.",
+    "badges": ["b-apa"],
+    "taxRate": 0.028,
+    "taxLabel": "Property Tax (Herkimer Co.)",
+    "taxAnnual": 6500,
+    "hoa": 0,
+    "elemSchool": "Poland Elem (7/10)",
+    "elemSchoolSub": "Poland CSD — Niche B+",
+    "toTown": "~5 min",
+    "toTownSub": "to Poland; ~40 min to Utica for full services",
+    "scores": {
+      "price": 2,
+      "acreage": 10,
+      "schools": 7,
+      "outbldgs": 10,
+      "town": 5,
+      "hospital": 6,
+      "hazards": 6,
+      "internet": 8,
+      "forested": 9,
+      "living": 7
+    },
+    "offerRange": "$500K - $525K",
+    "offerStrategy": "At absolute max. Previously listed at $569K, delisted, relisted at $550K. Seller has already shown flexibility. Push for $500K-$515K with concessions.",
+    "offerRationale": [
+      "$549,900 is at absolute ceiling — needs movement to work",
+      "Previously listed at $569K (Jul 2025), delisted Dec 2025, relisted Mar 2026 — seller can't sell",
+      "APA Blue Line limits buyer pool — leverage",
+      "Request $25K-$50K in seller concessions for closing costs + systems updates"
+    ],
+    "tableOfferNote": "APA Blue Line. 40 acres, creek, outbuildings, fiber. $550K at max ceiling. Prev. $569K.",
+    "highlight": "Private Adirondack retreat on 40 acres with 3,300 ft of West Canada Creek frontage, 2+ miles of private trails, a log cabin near the water, heated pole barn, barn with greenhouse, and NTCNet fiber internet. Poland Elementary 7/10. Inside APA Blue Line. But $549,900 is at the absolute max budget ceiling.",
+    "highlights": [
+      { "icon": "\uD83C\uDFDE\uFE0F", "text": "3,300 ft West Canada Creek frontage — fishing, kayaking, waterfront living" },
+      { "icon": "\uD83C\uDFDA\uFE0F", "text": "Log cabin near the creek + heated pole barn + barn w/greenhouse" },
+      { "icon": "\uD83C\uDF10", "text": "NTCNet FTTP 500/100 confirmed — fiber internet in the Adirondacks" },
+      { "icon": "\uD83C\uDFEB", "text": "Poland Elementary 7/10 — strongest school in this batch" }
+    ],
+    "proximity": [
+      { "icon": "\u26FD", "label": "Poland/Cold Brook", "value": "~5 min", "ref": false },
+      { "icon": "\uD83D\uDED2", "label": "Utica (full services)", "value": "~40 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Little Falls Hospital", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Poland Elem (7/10)", "value": "~5 min", "ref": false },
+      { "icon": "\uD83C\uDFD4\uFE0F", "label": "Adirondack Park", "value": "Inside Blue Line", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "3,300 ft West Canada Creek frontage — exceptional waterfront for fishing, kayaking" },
+      { "icon": "\u2713", "text": "Heated 1,100 sqft pole barn + 1,560 sqft barn with greenhouse + log cabin — massive outbuilding package" },
+      { "icon": "\u2713", "text": "40 wooded acres with 2+ miles private trails — hiking, snowmobiling, ATV" },
+      { "icon": "\u2713", "text": "NTCNet fiber confirmed — rare in the Adirondacks" },
+      { "icon": "\u2713", "text": "Poland Elementary 7/10 — best school rating in Batch 1" },
+      { "icon": "\u2713", "text": "Finished basement with oak flooring, central AC, gas fireplaces, permanent generator" },
+      { "icon": "\u2713", "text": "FHA/USDA/VA eligible — financing confirmed" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "$549,900 at absolute max ceiling — needs $25K-$50K movement to be workable" },
+      { "icon": "\u2717", "text": "Inside Adirondack Park Blue Line — APA building restrictions on new structures" },
+      { "icon": "\u2717", "text": "Poland/Cold Brook is remote — Utica 40 min for real services (Walmart, etc.)" },
+      { "icon": "\u2717", "text": "Little Falls Hospital is Critical Access — full hospital is 40 min (Utica)" },
+      { "icon": "\u2717", "text": "Multiple heating systems (electric, propane, oil) — complex maintenance" },
+      { "icon": "\u2717", "text": "NTCNet fiber is 500/100 — good but not symmetrical gigabit like SLICFiber" }
+    ],
+    "familyFit": [
+      "This is the 'dream property' in terms of land, outbuildings, and creek — if price works",
+      "Poland Elem 7/10 is strong for Theo's kindergarten",
+      "Log cabin near creek = family weekends, guest house, kids' adventure base",
+      "APA restrictions mean James needs to plan builds carefully — consult Reynolds Group",
+      "Real Adirondack lifestyle — exactly what drew the family to NY"
+    ],
+    "verifyItems": [
+      { "label": "APA Classification", "text": "Inside Blue Line — confirm land use classification and what structures can be built" },
+      { "label": "Price Negotiation", "text": "Previous $569K, now $549K — seller has moved $20K; push for $500K-$525K range" },
+      { "label": "Heating Systems", "text": "Electric + propane + oil — get annual cost breakdown for all three" },
+      { "label": "Creek Flooding", "text": "3,300 ft creek frontage — check FEMA for flood zone on house site" },
+      { "label": "Generator", "text": "Permanent generator mentioned — verify condition, fuel type, capacity" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Confirm APA land use classification — Resource Management vs Rural Use affects all future building" },
+      { "urgent": true, "text": "Price negotiation strategy — at $549K this does not work without $25K-$50K movement" },
+      { "urgent": false, "text": "Schedule call with Reynolds Group — they cover Essex/Adirondacks and can advise on APA" },
+      { "urgent": false, "text": "Request video walkthrough — house + pole barn + greenhouse barn + log cabin + creek" },
+      { "urgent": false, "text": "FEMA flood check on creek frontage" },
+      { "urgent": false, "text": "Get annual heating costs across all three fuel systems" }
+    ],
+    "envHazards": {
+      "location": "Herkimer County, Adirondack Park — West Canada Creek valley",
+      "pills": [
+        { "level": "mod", "text": "Flooding — 3,300 ft creek frontage, check FEMA" },
+        { "level": "mod", "text": "Ice storms — Adirondack interior, moderate risk" },
+        { "level": "special", "text": "APA Blue Line — building restrictions on all new structures" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Inside Adirondack Park Blue Line. Creek frontage requires FEMA flood check. APA regulations affect all future construction — must verify classification before offer."
+    }
+  },
+  {
+    "id": "p81",
+    "num": 81,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Johnsville",
+    "address": "191 State Highway 331",
+    "city": "Johnsville",
+    "state": "NY",
+    "zip": "13452",
+    "lat": 43.067668,
+    "lng": -74.695580,
+    "county": "Fulton",
+    "price": 399900,
+    "listingLink": "https://www.trulia.com/home/191-state-highway-331-johnsville-ny-13452-30471248",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/2c85dce9012047a314d5d25c2359cb6c-full.webp",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2800,
+    "acres": 39.7,
+    "acresSub": "Rolling Mohawk Valley hills. 2 stocked spring-fed ponds. Horses allowed.",
+    "yearBuilt": 1996,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "35 DOM. PRICE CUT $50K to $399,900 on 3/31/2026! Solar ($60K). FHA eligible. Frontier FTTP 1000/1000 CONFIRMED.",
+    "badges": ["b-livestock"],
+    "taxRate": 0.030,
+    "taxLabel": "Property Tax (Fulton Co.)",
+    "taxAnnual": 7000,
+    "hoa": 0,
+    "elemSchool": "OE-SJ Elem (6/10)",
+    "elemSchoolSub": "Oppenheim-Ephratah-St. Johnsville CSD",
+    "toTown": "~10 min",
+    "toTownSub": "to St. Johnsville (grocery, hardware)",
+    "scores": {
+      "price": 10,
+      "acreage": 9,
+      "schools": 6,
+      "outbldgs": 10,
+      "town": 5,
+      "hospital": 4,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 7,
+      "living": 8
+    },
+    "offerRange": "$420K - $440K",
+    "offerStrategy": "Within pre-approval. Best overall value package if fiber confirms. Solar offsets utility costs.",
+    "offerRationale": [
+      "$449,900 within pre-approval — strong position",
+      "Solar panels ($60K) generating surplus — near-zero electric bills",
+      "1800s barn with separate septic + horse stalls = turnkey equestrian",
+      "2 stocked ponds + heated pool + pool house = premium amenity package"
+    ],
+    "tableOfferNote": "2,800 sqft colonial, solar, barn, pool, horses allowed. Internet UNKNOWN — must verify Frontier.",
+    "highlight": "2,800 sqft colonial on 39.7 rolling acres with 1800s bank barn (solar panels, horse stalls), 2 stocked spring-fed ponds, heated inground pool with pool house, and walk-out basement. Horses explicitly allowed. Solar panels generate surplus KWH. FHA eligible. But internet is UNKNOWN — Frontier fiber confirmed at neighboring addresses but not this one yet.",
+    "highlights": [
+      { "icon": "\u2600\uFE0F", "text": "Solar panels ($60K, 2022) — surplus KWH, near-zero National Grid bills" },
+      { "icon": "\uD83D\uDC34", "text": "Horses explicitly allowed — 1800s barn with 3 stalls, separate septic" },
+      { "icon": "\uD83C\uDFCA", "text": "2 stocked spring-fed ponds + heated inground pool + pool house" },
+      { "icon": "\uD83C\uDFE0", "text": "2,800 sqft colonial — largest livable space at this price point" }
+    ],
+    "proximity": [
+      { "icon": "\u26FD", "label": "St. Johnsville", "value": "~10 min", "ref": false },
+      { "icon": "\uD83D\uDED2", "label": "Dolgeville", "value": "~15 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Little Falls Hospital (Critical Access)", "value": "~20 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Bassett Medical Center (full)", "value": "~50 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "OE-SJ Elem (6/10)", "value": "~10 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "2,800 sqft colonial at $449,900 — best price-per-sqft in the batch" },
+      { "icon": "\u2713", "text": "Solar panels generating surplus KWH — near-zero electric bills" },
+      { "icon": "\u2713", "text": "1800s bank barn with solar, half bath, horse stalls — turnkey equestrian" },
+      { "icon": "\u2713", "text": "2 stocked spring-fed ponds + heated inground pool + pool house" },
+      { "icon": "\u2713", "text": "Walk-out basement, poured foundation — FHA-friendly" },
+      { "icon": "\u2713", "text": "New roof (2019), new appliances (2023), new boiler (2021) — move-in ready" },
+      { "icon": "\uD83D\uDC34", "text": "Horses explicitly allowed — zoning confirmed in listing" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Internet UNKNOWN — Frontier fiber at 172 and 192 State Hwy 331 but 191 not in FCC fabric. MUST CALL FRONTIER." },
+      { "icon": "\u2717", "text": "Little Falls Hospital is Critical Access only — nearest full hospital (Bassett) is ~50 min" },
+      { "icon": "\u2717", "text": "No central AC — propane/oil baseboard only; winter fuel ~$5,000-$6,000/yr" },
+      { "icon": "\u2717", "text": "Fulton County is economically depressed — thin resale market" },
+      { "icon": "\u2717", "text": "Oppenheim-Ephratah CSD is small rural district — adequate but not strong" }
+    ],
+    "familyFit": [
+      "Most complete amenity package in the batch — pool, ponds, barn, solar, horses",
+      "2,800 sqft gives real room for dual offices + kids + growth",
+      "Horses allowed with stalls ready = Savanah's interest from Day 1",
+      "BUT: internet must be verified — this is the make-or-break issue"
+    ],
+    "verifyItems": [
+      { "label": "INTERNET", "text": "CRITICAL — Call Frontier at (800) 921-8101, confirm 191 State Hwy 331 is serviceable for fiber" },
+      { "label": "Solar Ownership", "text": "Verify panels are owned not leased — $60K installed suggests owned" },
+      { "label": "Barn Septic", "text": "Confirm functional and permitted" },
+      { "label": "Pool Condition", "text": "Inground heated pool — get maintenance history, liner age, heater condition" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "CALL FRONTIER — Confirm fiber service at 191 State Hwy 331. Non-negotiable before any further interest." },
+      { "urgent": false, "text": "Verify solar panel ownership vs. lease" },
+      { "urgent": false, "text": "Request video walkthrough — house + barn + ponds + pool" },
+      { "urgent": false, "text": "Pool and barn inspection" },
+      { "urgent": false, "text": "Get 2 years of National Grid bills (should show solar surplus)" }
+    ],
+    "envHazards": {
+      "location": "Fulton County, Mohawk Valley — rolling farmland",
+      "pills": [
+        { "level": "low", "text": "Flooding — check Garoga Creek proximity" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Fulton County Mohawk Valley. Low hazard profile overall. Verify Garoga Creek proximity for flood zone."
+    }
+  },
+  {
+    "id": "p82",
+    "num": 82,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Fort Ann",
+    "address": "471 Clay Hill Rd",
+    "city": "Fort Ann",
+    "state": "NY",
+    "zip": "12827",
+    "lat": 43.429987,
+    "lng": -73.453794,
+    "county": "Washington",
+    "price": 465000,
+    "listingLink": "https://www.trulia.com/home/471-clay-hill-rd-fort-ann-ny-12827-32890459",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/1285b88ee1820e4233f36af6a3c3d98b-full.webp",
+    "beds": 4,
+    "bath": 2.5,
+    "sqft": 3461,
+    "acres": 11.62,
+    "acresSub": "Champlain Canal waterfront. Custom timber staircase from property trees.",
+    "yearBuilt": 1989,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "111 DOM. Largest sqft in batch. Solar + wood stove.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Washington Co.)",
+    "taxAnnual": 7500,
+    "hoa": 0,
+    "elemSchool": "Fort Ann Elem (6/10)",
+    "elemSchoolSub": "Fort Ann Central CSD",
+    "toTown": "~15 min",
+    "toTownSub": "to Glens Falls; ~15 min to Lake George",
+    "scores": {
+      "price": 6,
+      "acreage": 4,
+      "schools": 6,
+      "outbldgs": 4,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 5,
+      "living": 8
+    },
+    "offerRange": "$420K - $445K",
+    "offerStrategy": "111 DOM = good leverage. 11.62 acres limits buyer pool. Solar + wood stove offsets energy costs.",
+    "offerRationale": [
+      "111 DOM — seller has been waiting, leverage is strong",
+      "11.62 acres barely meets the 10-acre minimum — limits buyer pool",
+      "$465K is above pre-approval but not by much — concessions can bridge",
+      "3,461 sqft is the most living space in the batch — strong value per sqft"
+    ],
+    "tableOfferNote": "3,461 sqft, SLICFiber, Champlain Canal waterfront. 111 DOM. 11.62 acres barely meets min.",
+    "highlight": "Largest home in the batch at 3,461 sqft with 4 bedrooms, Champlain Canal waterfront, SLICFiber gigabit internet, solar heating, wood stove, and custom hickory/elm/pine staircase milled from property timber. Fort Ann Elementary 6/10. Glens Falls Hospital ~25 min. But 11.62 acres barely meets the 10-acre minimum.",
+    "highlights": [
+      { "icon": "\uD83C\uDFE0", "text": "3,461 sqft — largest living space in the entire batch" },
+      { "icon": "\uD83C\uDF10", "text": "SLICFiber FTTP 1000/1000 Mbps confirmed" },
+      { "icon": "\u2600\uFE0F", "text": "Solar heating + pellet stove + wood stove — low energy costs" },
+      { "icon": "\uD83C\uDF32", "text": "Custom staircase milled from property hickory, elm, pine — timber on site" }
+    ],
+    "proximity": [
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Glens Falls", "value": "~20 min", "ref": false },
+      { "icon": "\uD83C\uDFC4", "label": "Lake George", "value": "~15 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Glens Falls Hospital", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Fort Ann Elem (6/10)", "value": "Fort Ann Central CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "3,461 sqft — plenty of room for dual offices, family, and growth" },
+      { "icon": "\u2713", "text": "SLICFiber FTTP 1000/1000 — gigabit symmetric fiber" },
+      { "icon": "\u2713", "text": "Champlain Canal waterfront — unique water access" },
+      { "icon": "\u2713", "text": "Solar + pellet stove + wood stove — diversified, low-cost heating" },
+      { "icon": "\u2713", "text": "Custom timber staircase from property trees — James would appreciate the craftsmanship" },
+      { "icon": "\u2713", "text": "Glens Falls and Lake George within 15-20 min — excellent services and recreation" },
+      { "icon": "\u2713", "text": "111 DOM — strong negotiating leverage" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "11.62 acres barely meets 10-acre minimum — scores low on acreage" },
+      { "icon": "\u2717", "text": "No basement — slab foundation" },
+      { "icon": "\u2717", "text": "No central AC — no cooling system at all" },
+      { "icon": "\u2717", "text": "$465K above pre-approval — needs some concession" },
+      { "icon": "\u2717", "text": "Only sheds for outbuildings — oversized 3-car garage is part of house, not a workshop" },
+      { "icon": "\u2717", "text": "Metal roof + baseboard electric — some systems aging (1989 build)" }
+    ],
+    "familyFit": [
+      "Washington County Tier 1 — Fort Ann is near Lake George and Glens Falls",
+      "3,461 sqft means everyone has space — dual offices, playrooms, guest rooms",
+      "Champlain Canal waterfront for family recreation",
+      "But only 11.62 acres limits the farming/animal/building vision"
+    ],
+    "verifyItems": [
+      { "label": "Acreage", "text": "11.62 acres — is this enough for the long-term vision? Room for barn, animals, garden?" },
+      { "label": "Solar System", "text": "Verify solar panel age, output, ownership vs lease" },
+      { "label": "Canal Flooding", "text": "Champlain Canal waterfront — check FEMA flood zone" },
+      { "label": "FHA Eligibility", "text": "1989 build, slab, baseboard electric — confirm FHA compliant" }
+    ],
+    "mustDo": [
+      { "urgent": false, "text": "Check FEMA flood map for Champlain Canal frontage" },
+      { "urgent": false, "text": "Verify solar system details — age, output, owned vs leased" },
+      { "urgent": false, "text": "Confirm FHA eligibility with Presidential Bank" },
+      { "urgent": false, "text": "Request video walkthrough — focus on acreage layout and building potential" },
+      { "urgent": false, "text": "Confirm no deed restrictions on farm animals" }
+    ],
+    "envHazards": {
+      "location": "Washington County — Fort Ann, Champlain Canal area",
+      "pills": [
+        { "level": "mod", "text": "Flooding — Champlain Canal waterfront, check FEMA" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Champlain Canal waterfront property. Canal proximity requires FEMA flood zone verification. Ice storms are the primary weather hazard."
+    }
+  },
+  {
+    "id": "p83",
+    "num": 83,
+    "dateAdded": "2026-03-30",
+    "navLabel": "N. Lawrence",
+    "address": "500 Water St",
+    "city": "North Lawrence",
+    "state": "NY",
+    "zip": "12967",
+    "lat": 44.7500,
+    "lng": -74.6700,
+    "county": "St. Lawrence",
+    "price": 495000,
+    "listingLink": "https://www.trulia.com/home/500-water-st-north-lawrence-ny-12967-66496706",
+    "image": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/7711200d40c2a252889fc4b73dab9ce9-full.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1728,
+    "acres": 14,
+    "acresSub": "1,400 ft East Branch St. Regis River frontage. Cabin on property.",
+    "yearBuilt": 2005,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "NOT modular (confirmed Ranch). Sold as-is. 169+ DOM. Dropped from $574K to $495K. St. Lawrence Elem 7/10.",
+    "badges": ["b-livestock"],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (St. Lawrence Co.)",
+    "taxAnnual": 4500,
+    "hoa": 0,
+    "elemSchool": "St. Lawrence Elem (7/10)",
+    "elemSchoolSub": "Brasher Falls Central CSD",
+    "toTown": "~20-25 min",
+    "toTownSub": "to Malone or Potsdam",
+    "scores": {
+      "price": 7,
+      "acreage": 4,
+      "schools": 7,
+      "outbldgs": 8,
+      "town": 6,
+      "hospital": 6,
+      "hazards": 6,
+      "internet": 10,
+      "forested": 6,
+      "living": 5
+    },
+    "offerRange": "$430K - $460K",
+    "offerStrategy": "Dropped $79K already. 180+ DOM. Sold as-is + modular = limited buyers. Strong leverage.",
+    "offerRationale": [
+      "Dropped $79K ($574K to $495K) — seller motivated",
+      "180+ DOM — exhausted buyer pool",
+      "Sold as-is + modular = most buyers walk away — leverage",
+      "1,400 ft river frontage is unique value — but flood risk"
+    ],
+    "tableOfferNote": "Modular. FHA requires foundation verification. 1,400 ft river. Dropped $79K. Sold as-is.",
+    "highlight": "1,400 ft of East Branch St. Regis River frontage on 14 acres with cabin, barn, workshop, 3-car garage. Nicholville Telephone fiber 1000/1000 confirmed. St. Lawrence Elementary 7/10. But MODULAR home sold as-is — FHA requires permanent foundation + HUD documentation verification. Dropped $79K from $574K.",
+    "highlights": [
+      { "icon": "\uD83C\uDFDE\uFE0F", "text": "1,400 ft St. Regis River frontage — exceptional waterfront" },
+      { "icon": "\uD83C\uDF10", "text": "Nicholville Telephone FTTP 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83C\uDFDA\uFE0F", "text": "Cabin on property + barn + workshop + 3-car garage" },
+      { "icon": "\uD83C\uDFEB", "text": "St. Lawrence Elementary 7/10 — strong school rating" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "N. Lawrence Supermarket", "value": "~0-5 min", "ref": false },
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Potsdam", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Alice Hyde Medical Center, Malone", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Canton-Potsdam Hospital", "value": "~25-30 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "St. Lawrence Elem (7/10)", "value": "Brasher Falls CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "1,400 ft East Branch St. Regis River frontage — prime waterfront" },
+      { "icon": "\u2713", "text": "Nicholville Telephone fiber 1000/1000 symmetric — excellent internet" },
+      { "icon": "\u2713", "text": "Cabin + barn + workshop + 3-car garage — strong outbuilding package" },
+      { "icon": "\u2713", "text": "St. Lawrence Elementary 7/10 — tied for best school in batch" },
+      { "icon": "\u2713", "text": "Dropped $79K from original $574K — seller motivated, 180+ DOM" },
+      { "icon": "\u2713", "text": "Buderus propane boiler with 3 heating zones — quality system" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "MODULAR home — FHA requires permanent foundation + HUD data plate. Must verify before proceeding." },
+      { "icon": "\u2717", "text": "Sold as-is — no seller repairs, inspection still critical" },
+      { "icon": "\u2717", "text": "14 acres barely meets minimum — limited room for expansion" },
+      { "icon": "\u2717", "text": "$495K at stretch budget for 14 acres — high cost per acre" },
+      { "icon": "\u2717", "text": "1,400 ft river frontage = flood risk — FEMA check critical" },
+      { "icon": "\u2717", "text": "No central AC" },
+      { "icon": "\u2717", "text": "N. Lawrence is remote — Malone or Potsdam 25 min for services" }
+    ],
+    "familyFit": [
+      "St. Lawrence Elementary 7/10 is strong for Theo — tied best school in batch",
+      "River frontage + cabin = family adventure weekends",
+      "But modular home sold as-is carries real risk — FHA could reject",
+      "Tier 1 St. Lawrence County target — North Lawrence is in the zone"
+    ],
+    "verifyItems": [
+      { "label": "MODULAR FHA", "text": "CRITICAL — Verify permanent foundation certification and HUD data plate. FHA will not finance without." },
+      { "label": "River Flooding", "text": "1,400 ft river frontage — check FEMA flood zone for house site" },
+      { "label": "As-Is Condition", "text": "Full inspection mandatory — seller won't repair, but you need to know what you're buying" },
+      { "label": "Foundation", "text": "Concrete perimeter + partially finished basement — verify engineer's foundation report" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Verify modular home permanent foundation + HUD data plate — FHA non-negotiable" },
+      { "urgent": true, "text": "FEMA flood map check — 1,400 ft river frontage" },
+      { "urgent": false, "text": "Full home inspection — sold as-is requires thorough evaluation" },
+      { "urgent": false, "text": "Confirm Presidential Bank will finance modular with FHA" },
+      { "urgent": false, "text": "Request video walkthrough — house + cabin + barn + river frontage" }
+    ],
+    "envHazards": {
+      "location": "St. Lawrence County — North Lawrence, St. Regis River",
+      "pills": [
+        { "level": "high", "text": "Flooding — 1,400 ft river frontage, FEMA check mandatory" },
+        { "level": "mod", "text": "Ice storms — St. Lawrence County" },
+        { "level": "mod", "text": "Severe winter — heavy snow, extreme cold" },
+        { "level": "special", "text": "Modular home — FHA foundation verification required" }
+      ],
+      "note": "1,400 ft river frontage creates significant flood risk. FEMA flood zone verification is mandatory. Modular home requires permanent foundation documentation for FHA."
+    }
+  },
+  {
+    "id": "p84",
+    "num": 84,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Cincinnatus",
+    "address": "4555 Elwood Rd",
+    "city": "Cincinnatus",
+    "state": "NY",
+    "zip": "13040",
+    "lat": 42.624690,
+    "lng": -75.904379,
+    "county": "Cortland",
+    "price": 459900,
+    "listingLink": "https://www.trulia.com/home/4555-elwood-rd-cincinnatus-ny-13040-223349045",
+    "image": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/3e6f5f2d228bf64930cbf8b3989217d5-full.webp",
+    "beds": 4,
+    "bath": 4,
+    "sqft": 2872,
+    "acres": 63,
+    "acresSub": "Rolling Cortland County. Barn + silo + farm structures. Estate sale. Frontier 7Gbps fiber.",
+    "yearBuilt": 1800,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "178 DOM. Estate sale. 1800 barn conversion. Cash/Conventional ONLY — no FHA. Cincinnatus Elem 6/10. FEMA Zone X.",
+    "badges": ["b-no-fha"],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Cortland Co.)",
+    "taxAnnual": 6500,
+    "hoa": 0,
+    "elemSchool": "Cincinnatus Elem (6/10)",
+    "elemSchoolSub": "Cincinnatus CSD",
+    "toTown": "~20 min",
+    "toTownSub": "to Cortland (Walmart, Tractor Supply)",
+    "scores": {
+      "price": 8,
+      "acreage": 10,
+      "schools": 7,
+      "outbldgs": 9,
+      "town": 7,
+      "hospital": 8,
+      "hazards": 10,
+      "internet": 10,
+      "forested": 7,
+      "living": 8
+    },
+    "offerRange": "$410K - $440K",
+    "offerStrategy": "177 DOM = strong leverage. 1800 build limits buyers. FHA NOT listed — negotiate terms.",
+    "offerRationale": [
+      "177 DOM — seller motivated, property hasn't moved",
+      "1800 construction scares most buyers — limited competition",
+      "Spray foam reno + Central AC = significant modernization investment",
+      "FHA NOT listed — push seller to accept or go conventional"
+    ],
+    "tableOfferNote": "Frontier 7Gbps fiber! 63 acres, 8/10 school. 1800 build, FHA not listed.",
+    "highlight": "63 acres in Cortland County with Frontier 7Gbps multi-gigabit fiber (best internet in the entire dataset), Cincinnatus Elementary 8/10 (best school in Batch 2), 4 bed/4 bath, Central AC, and spray foam insulation. Cortland Regional Medical Center ~22 min (full ED). But 1800 construction and FHA NOT listed are real obstacles.",
+    "highlights": [
+      { "icon": "\uD83C\uDF10", "text": "Frontier 7Gbps multi-gigabit fiber — best internet in the entire dataset" },
+      { "icon": "\uD83C\uDFEB", "text": "Cincinnatus Elementary 8/10 — strongest school rating of any NY property" },
+      { "icon": "\uD83C\uDFE0", "text": "4 bed / 4 full bath — exceeds requirements, family-friendly" },
+      { "icon": "\u2744\uFE0F", "text": "Central AC + spray foam insulation — modernized comfort" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Cortland (Walmart, Tractor Supply)", "value": "~20 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Cortland Regional Medical Center", "value": "~22 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Cincinnatus Elem (8/10)", "value": "Cincinnatus CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "Frontier 7Gbps fiber — future-proof for dual remote workers, best in entire dataset" },
+      { "icon": "\u2713", "text": "Cincinnatus Elementary 8/10 — Theo gets a strong kindergarten start" },
+      { "icon": "\u2713", "text": "63 acres of rolling Cortland County terrain at $459K" },
+      { "icon": "\u2713", "text": "4 bed / 4 full bath — everyone gets their own bathroom" },
+      { "icon": "\u2713", "text": "Central AC confirmed + spray foam insulation = modernized" },
+      { "icon": "\u2713", "text": "Cortland Regional ~22 min — full ED, not Critical Access" },
+      { "icon": "\u2713", "text": "177 DOM = strong leverage to negotiate below $440K" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "1800 build — oldest home in the dataset. Expert structural inspection mandatory." },
+      { "icon": "\u2717", "text": "FHA NOT listed — seller may refuse FHA financing" },
+      { "icon": "\u2717", "text": "$459,900 above FHA pre-approval ($450K)" },
+      { "icon": "\u2717", "text": "No basement confirmed — family preferred basement" },
+      { "icon": "\u2717", "text": "Spray foam over 1800 framing — risk of trapped moisture and hidden rot" },
+      { "icon": "\u2717", "text": "Cortland County outside target counties" }
+    ],
+    "familyFit": [
+      "8/10 school is the strongest in the NY search — Theo starts kindergarten fall 2026",
+      "7Gbps fiber means James and Savanah never worry about bandwidth again",
+      "63 acres provides full homestead potential",
+      "But 1800 build + no FHA = financing hurdles that must be resolved"
+    ],
+    "verifyItems": [
+      { "label": "FHA Status", "text": "Will seller accept FHA? If not, explore conventional financing" },
+      { "label": "Structure", "text": "1800 build — hire structural engineer, not just home inspector" },
+      { "label": "Spray Foam", "text": "Infrared inspection — was it applied over moisture issues?" },
+      { "label": "Foundation/Basement", "text": "Type unknown — confirm before proceeding" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Confirm seller will accept FHA — or assess conventional financing" },
+      { "urgent": true, "text": "Structural engineer inspection — 1800 build requires expert evaluation" },
+      { "urgent": false, "text": "Infrared inspection for moisture behind spray foam" },
+      { "urgent": false, "text": "Confirm foundation type and basement status" },
+      { "urgent": false, "text": "Check FEMA flood map for Elwood Rd" },
+      { "urgent": false, "text": "Request video walkthrough" }
+    ],
+    "envHazards": {
+      "location": "Cortland County, central NY — rural Cincinnatus",
+      "pills": [
+        { "level": "low", "text": "Flooding — upland terrain, minimal risk" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Cortland County uplands. Low hazard profile. Standard ice storm risk."
+    }
+  },
+  {
+    "id": "p85",
+    "num": 85,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Lowville",
+    "address": "5636 Salmon River Rd",
+    "city": "Lowville",
+    "state": "NY",
+    "zip": "13367",
+    "lat": 43.684104,
+    "lng": -75.748442,
+    "county": "Lewis",
+    "price": 375000,
+    "listingLink": "https://www.trulia.com/home/5636-salmon-river-rd-lowville-ny-13367-30802501",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/ca92aba53399b8644bb2ef3757f13dbb-full.webp",
+    "beds": 4,
+    "bath": 2,
+    "sqft": 1269,
+    "acres": 97.8,
+    "acresSub": "Salmon River area. River/stream access. Metal roof.",
+    "yearBuilt": 1890,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "180+ DOM. Space heater + wood only — no central heat. FHA NOT listed. Stone foundation.",
+    "badges": [],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (Lewis Co.)",
+    "taxAnnual": 5000,
+    "hoa": 0,
+    "elemSchool": "Lowville Elem (6/10)",
+    "elemSchoolSub": "Lowville Academy CSD",
+    "toTown": "~5 min",
+    "toTownSub": "to Lowville (Walmart, hardware, county seat)",
+    "scores": {
+      "price": 10,
+      "acreage": 10,
+      "schools": 6,
+      "outbldgs": 3,
+      "town": 10,
+      "hospital": 7,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 7,
+      "living": 3
+    },
+    "offerRange": "$320K - $355K",
+    "offerStrategy": "180+ DOM, no central heat, stone foundation = very limited buyer pool. Strong leverage.",
+    "offerRationale": [
+      "180+ DOM — property hasn't sold in half a year",
+      "No central heat + stone foundation + FHA not listed = most buyers can't finance",
+      "97.8 acres at $320K-$355K = ~$3,300-$3,600/acre with house included",
+      "Budget $15K-$20K for heating system installation"
+    ],
+    "tableOfferNote": "97.8 acres, Frontier fiber, Lowville 5 min. No central heat, stone foundation, FHA not listed.",
+    "highlight": "97.8 acres at $375K with Frontier fiber 1000/1000 and Lowville (county seat, Walmart) only 5 min away. Stream/river access on Salmon River Rd. But 1,269 sqft with only space heaters and wood stove, stone foundation, and FHA NOT listed make this a project property requiring significant investment.",
+    "highlights": [
+      { "icon": "\uD83C\uDF32", "text": "97.8 acres — second-largest acreage in the entire dataset" },
+      { "icon": "\uD83C\uDF10", "text": "Frontier Fiber 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83C\uDFD9\uFE0F", "text": "Lowville (county seat, Walmart) only ~5 min — not isolated" },
+      { "icon": "\uD83D\uDCB0", "text": "180+ DOM at $375K — negotiate to $320K-$350K range" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Lowville (Walmart, county seat)", "value": "~5 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Lewis County General Hospital", "value": "~8 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Lowville Elem (6/10)", "value": "Lowville Academy CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "97.8 acres at $375K — ~$3,800/acre, exceptional land value" },
+      { "icon": "\u2713", "text": "Frontier Fiber 1000/1000 confirmed — remote work solved" },
+      { "icon": "\u2713", "text": "Lowville 5 min — real town with Walmart, hardware, youth sports" },
+      { "icon": "\u2713", "text": "Lewis County General ~8 min — quick hospital access" },
+      { "icon": "\u2713", "text": "180+ DOM = negotiate to $320K-$350K, leaving budget for heating system" },
+      { "icon": "\u2713", "text": "Stream/river access on Salmon River — fishing, recreation" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Space heater + wood stove ONLY — no central heating. Install cost $10K-$20K+" },
+      { "icon": "\u2717", "text": "1,269 sqft — critically small for family of 4 + dual offices" },
+      { "icon": "\u2717", "text": "Stone foundation on 1890 home — FHA will likely reject without engineer report" },
+      { "icon": "\u2717", "text": "FHA NOT listed — financing is a hard obstacle" },
+      { "icon": "\u2717", "text": "Lewis County General is Critical Access Hospital (25 beds) — not full ED" },
+      { "icon": "\u2717", "text": "Salmon River = check FEMA flood zone" }
+    ],
+    "familyFit": [
+      "97.8 acres is James's timber and building dream — room for everything",
+      "Lowville 5 min means Theo and Sophie have town access, youth sports, library",
+      "But 1,269 sqft with no central heat is genuinely hard to live in with two young kids",
+      "This is a project property — buy the land, budget $30K-$50K for home improvements"
+    ],
+    "verifyItems": [
+      { "label": "FHA Status", "text": "Will seller accept FHA? Stone foundation + no heat likely fails FHA standards" },
+      { "label": "Stone Foundation", "text": "Structural engineer required — moisture, stability, seepage" },
+      { "label": "Heating Install", "text": "Get quotes for forced air or mini-split system installation" },
+      { "label": "Salmon River Flood", "text": "Check FEMA map — property on Salmon River Rd" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Assess FHA feasibility — stone foundation + no central heat likely disqualifies" },
+      { "urgent": true, "text": "Get heating system install quotes ($10K-$20K)" },
+      { "urgent": false, "text": "Structural engineer evaluation of stone foundation" },
+      { "urgent": false, "text": "FEMA flood map for Salmon River corridor" },
+      { "urgent": false, "text": "Timber species evaluation on 97.8 acres" },
+      { "urgent": false, "text": "Request video walkthrough" }
+    ],
+    "envHazards": {
+      "location": "Lewis County, northern NY — Salmon River area",
+      "pills": [
+        { "level": "mod", "text": "Flooding — Salmon River proximity, check FEMA" },
+        { "level": "mod", "text": "Ice storms — northern NY, heavy snow" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Salmon River corridor — FEMA flood check essential. Lewis County gets heavy snow. Critical Access Hospital only."
+    }
+  },
+  {
+    "id": "p86",
+    "num": 86,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Oneonta",
+    "address": "448 Southside Dr",
+    "city": "Oneonta",
+    "state": "NY",
+    "zip": "13820",
+    "lat": 42.444906,
+    "lng": -75.034018,
+    "county": "Otsego",
+    "price": 435000,
+    "listingLink": "https://www.trulia.com/home/448-southside-dr-oneonta-ny-13820-66491045",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/74ce92a18e8fbb33dbf502feecf51a42-full.webp",
+    "beds": 3,
+    "bath": 1.5,
+    "sqft": 1260,
+    "acres": 99.42,
+    "acresSub": "99 acres mostly wooded. Pond + stream. 10 min to Oneonta/Fox Hospital.",
+    "yearBuilt": 1996,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "166 DOM. 99 acres, 3bd/1.5ba. Only 1 full bath + 1,260 sqft. Delhi Tel fiber. A.O. Fox 10 min. FEMA Zone X. Tax $8,973/yr.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Otsego Co.)",
+    "taxAnnual": 6500,
+    "hoa": 0,
+    "elemSchool": "Greater Plains Elem (4/10)",
+    "elemSchoolSub": "Oneonta CSD — confirmed by address boundary (NOT Valleyview)",
+    "toTown": "~10 min",
+    "toTownSub": "to Oneonta (Walmart, A.O. Fox Hospital)",
+    "scores": {
+      "price": 9,
+      "acreage": 10,
+      "schools": 4,
+      "outbldgs": 5,
+      "town": 10,
+      "hospital": 10,
+      "hazards": 10,
+      "internet": 10,
+      "forested": 8,
+      "living": 3
+    },
+    "offerRange": "$380K - $410K",
+    "offerStrategy": "166 DOM on 99 acres at $435K = motivated seller. 1 bath + small sqft limits buyers.",
+    "offerRationale": [
+      "166 DOM — sat unsold for over 5 months",
+      "Only 1 full bath + 1,260 sqft = very limited buyer appeal",
+      "99 acres at $380K-$410K is exceptional if livable",
+      "FHA NOT listed — negotiate terms or go conventional"
+    ],
+    "tableOfferNote": "99 acres, Delhi Tel fiber, Oneonta 10 min. Only 1 bath, 1,260 sqft — project property.",
+    "highlight": "Nearly 100 acres at $435K near Oneonta (10-15 min to Walmart, A.O. Fox Hospital) with Delhi Telephone fiber 1000/1000. But only 1 full bath and 1,260 sqft make this a project property — the land is the asset, not the home.",
+    "highlights": [
+      { "icon": "\uD83C\uDF32", "text": "99.42 acres — near-100 acre property near a real city" },
+      { "icon": "\uD83C\uDF10", "text": "Delhi Telephone Fiber 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83C\uDFD9\uFE0F", "text": "Oneonta ~10-15 min — Walmart, hospital, SUNY, youth sports" },
+      { "icon": "\uD83C\uDFE5", "text": "A.O. Fox Hospital ~15 min — best hospital proximity in Otsego group" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Oneonta (Walmart, full services)", "value": "~10-15 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "A.O. Fox Hospital", "value": "~15 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Oneonta Elem (~5/10)", "value": "Oneonta CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "99.42 acres — one of the largest parcels near a real city" },
+      { "icon": "\u2713", "text": "Delhi Telephone Fiber 1000/1000 confirmed" },
+      { "icon": "\u2713", "text": "Oneonta 10-15 min — comprehensive services, college town" },
+      { "icon": "\u2713", "text": "A.O. Fox Hospital 15 min — full ED, best in Otsego County" },
+      { "icon": "\u2713", "text": "166 DOM = negotiate well below $435K" },
+      { "icon": "\u2713", "text": "1996 build — modern systems, no 1800s concerns" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Only 1 full bath — hard fail for family of 4 with young kids" },
+      { "icon": "\u2717", "text": "1,260 sqft — critically small for dual remote work + 2 kids" },
+      { "icon": "\u2717", "text": "FHA NOT listed" },
+      { "icon": "\u2717", "text": "No outbuildings documented" },
+      { "icon": "\u2717", "text": "99 acres at $435K for 166 days — investigate why it hasn't sold (terrain? access?)" }
+    ],
+    "familyFit": [
+      "99 acres near Oneonta is compelling for the long-term homestead vision",
+      "But 1 bath + 1,260 sqft is genuinely unlivable for a family of 4 without renovation",
+      "This is a 'buy the land, fix the house' property — budget $30K-$50K minimum"
+    ],
+    "verifyItems": [
+      { "label": "Bathtub", "text": "Is there at least one full bathtub? Non-negotiable for young kids." },
+      { "label": "Land Quality", "text": "Why is 99 acres sitting at $435K for 166 days? Steep? Wetlands? Access?" },
+      { "label": "FHA Status", "text": "Will seller accept FHA?" },
+      { "label": "Foundation", "text": "Unknown — confirm type" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Verify bathtub exists — non-negotiable" },
+      { "urgent": true, "text": "Investigate why 99 acres hasn't sold in 166 days" },
+      { "urgent": false, "text": "Confirm FHA eligibility" },
+      { "urgent": false, "text": "Foundation and heating system details" },
+      { "urgent": false, "text": "Request video walkthrough of land — access roads, terrain, timber" }
+    ],
+    "envHazards": {
+      "location": "Otsego County — Oneonta area, elevated terrain",
+      "pills": [
+        { "level": "low", "text": "Flooding — upland location" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Otsego County uplands near Oneonta. Low hazard profile. Standard ice storm risk."
+    }
+  },
+  {
+    "id": "p87",
+    "num": 87,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Garrattsville",
+    "address": "161 Bell Hill Rd",
+    "city": "Garrattsville",
+    "state": "NY",
+    "zip": "13342",
+    "lat": 42.630110,
+    "lng": -75.177111,
+    "county": "Otsego",
+    "price": 539500,
+    "listingLink": "https://www.trulia.com/home/161-bell-hill-rd-garrattsville-ny-13342-31632921",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/dd7f5c37be904cda3a29a64b0f4bd7a8-full.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 3080,
+    "acres": 45,
+    "acresSub": "Pole barn 24x40 + machine shed. Butternut Creek on property. Rolling Otsego hills.",
+    "yearBuilt": 1800,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "180+ DOM. County FMV $325K vs ask $539K — overpriced ~66%. Dual listing confusion ($699K elsewhere).",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Otsego Co.)",
+    "taxAnnual": 7000,
+    "hoa": 0,
+    "elemSchool": "Morris Central (5/10)",
+    "elemSchoolSub": "Morris CSD (PK-12)",
+    "toTown": "~10 min",
+    "toTownSub": "to Morris; ~30 min to Oneonta",
+    "scores": {
+      "price": 3,
+      "acreage": 9,
+      "schools": 6,
+      "outbldgs": 8,
+      "town": 8,
+      "hospital": 6,
+      "hazards": 7,
+      "internet": 10,
+      "forested": 8,
+      "living": 5
+    },
+    "offerRange": "$400K - $430K",
+    "offerStrategy": "County FMV $325K. 180+ DOM. Dual listing confusion. Offer based on actual market value, not ask.",
+    "offerRationale": [
+      "Otsego County assessed FMV is only $325,128 — ask is 66% above",
+      "180+ DOM — property has not sold at any price point",
+      "Dual listing confusion ($539K here, $699K elsewhere) signals disorganization",
+      "$400K-$430K aligns with actual market value + improvement premium"
+    ],
+    "tableOfferNote": "OEConnect fiber. 45 acres, pole barn, stream. Ask $539K but county FMV only $325K — negotiate hard.",
+    "highlight": "45 acres with pole barn (24x40), machine shed, stream, and OEConnect fiber 1000/1000 in rolling Otsego County hills. 3,080 sqft home. Sandy Sheradin's brokerage. But $539,500 ask is 66% above county's own $325K full market value — dramatically overpriced. 180+ DOM confirms the market agrees.",
+    "highlights": [
+      { "icon": "\uD83C\uDF10", "text": "OEConnect Fiber 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83D\uDD27", "text": "Pole barn 24x40 + machine shed 20x20 — woodworking ready" },
+      { "icon": "\uD83C\uDFDE\uFE0F", "text": "Stream on property + 45 rolling acres" },
+      { "icon": "\uD83D\uDCB0", "text": "County FMV $325K vs ask $539K — massive negotiation opportunity" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Morris village", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Oneonta", "value": "~30 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Bassett Medical, Cooperstown", "value": "~35 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "A.O. Fox, Oneonta", "value": "~35 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "OEConnect Fiber 1000/1000 confirmed" },
+      { "icon": "\u2713", "text": "Pole barn 24x40 + machine shed 20x20 — James's woodworking outbuildings" },
+      { "icon": "\u2713", "text": "Stream on property — family recreation, wildlife" },
+      { "icon": "\u2713", "text": "3,080 sqft — spacious for family growth" },
+      { "icon": "\u2713", "text": "180+ DOM = seller must negotiate; county FMV $325K gives huge leverage" },
+      { "icon": "\u2713", "text": "Sandy Sheradin's brokerage — existing agent relationship" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "$539,500 is 66% above county assessed FMV ($325K) — dramatically overpriced" },
+      { "icon": "\u2717", "text": "1800 build — oil heat, partial basement with dirt floor" },
+      { "icon": "\u2717", "text": "Dual listing at $539K and $699K elsewhere — confusing, disorganized seller" },
+      { "icon": "\u2717", "text": "New buyer loses Enhanced STAR + ag + vet exemptions — taxes jump to ~$7K/yr" },
+      { "icon": "\u2717", "text": "Morris Central School 5/10 — adequate but not strong" },
+      { "icon": "\u2717", "text": "Oil heat ~$5,000-$7,000/yr in Otsego County winters" }
+    ],
+    "familyFit": [
+      "Pole barn + machine shed is exactly what James wants for woodworking",
+      "Stream + 45 rolling acres = kids' outdoor paradise",
+      "Sandy Sheradin connection could help with negotiation",
+      "But price must come down $100K+ to make sense — county says it's worth $325K"
+    ],
+    "verifyItems": [
+      { "label": "Dual Listing", "text": "Investigate $539K vs $699K listings — which MLS is current?" },
+      { "label": "FHA Status", "text": "1800 build + partial basement + dirt floor — FHA appraisal risk" },
+      { "label": "Tax Exemptions", "text": "Current taxes $5,527 but new buyer loses all exemptions — actual ~$7K/yr" },
+      { "label": "Oil System", "text": "Age and efficiency — get 2 years of oil bills" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Clarify dual listing situation — $539K vs $699K" },
+      { "urgent": true, "text": "Negotiate based on county FMV $325K — offer $400K-$430K" },
+      { "urgent": false, "text": "FHA pre-inspection on 1800 build" },
+      { "urgent": false, "text": "FEMA flood check for stream" },
+      { "urgent": false, "text": "Request video walkthrough — pole barn + machine shed + stream + land" }
+    ],
+    "envHazards": {
+      "location": "Otsego County — Garrattsville/New Lisbon, rolling hills",
+      "pills": [
+        { "level": "low", "text": "Flooding — check stream for FEMA status" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Otsego County rolling hills. Stream on property — verify flood zone. Standard ice storm risk."
+    }
+  },
+  {
+    "id": "p88",
+    "num": 88,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Unadilla",
+    "address": "569 Wilbur Hill Rd",
+    "city": "Unadilla",
+    "state": "NY",
+    "zip": "13849",
+    "lat": 42.437424,
+    "lng": -75.294961,
+    "county": "Otsego",
+    "price": 529000,
+    "listingLink": "https://www.trulia.com/home/569-wilbur-hill-rd-unadilla-ny-13849-216199119",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/e931f1ec554ae4015fd6594010b81ee8-full.webp",
+    "beds": 3,
+    "bath": 2.5,
+    "sqft": 2311,
+    "acres": 52.33,
+    "acresSub": "Pond on property. Walk-out basement. Zoned AC. Heated garage w/ workshop.",
+    "yearBuilt": 1992,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "104 DOM. $529K above pre-approval. Frontier FTTP 1000/1000 CONFIRMED. Walk-out basement + zoned AC. 1992 build.",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Otsego Co.)",
+    "taxAnnual": 7500,
+    "hoa": 0,
+    "elemSchool": "GMU Elem (5/10)",
+    "elemSchoolSub": "Gilbertsville-Mt Upton CSD",
+    "toTown": "~10 min",
+    "toTownSub": "to Unadilla; ~20 min to Sidney; ~30 min to Oneonta",
+    "scores": {
+      "price": 3,
+      "acreage": 10,
+      "schools": 6,
+      "outbldgs": 7,
+      "town": 9,
+      "hospital": 7,
+      "hazards": 9,
+      "internet": 10,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "$490K - $510K",
+    "offerStrategy": "104 DOM, no price drop. FHA not listed. Frontier FTTP 1000/1000 confirmed. Push to $490K range.",
+    "offerRationale": [
+      "$529K above pre-approval — needs $30K-$50K movement",
+      "104 DOM but no price drop — seller may be firm",
+      "52 acres + pond + walk-out basement + zoned AC is strong",
+      "FHA NOT listed — negotiate or go conventional"
+    ],
+    "tableOfferNote": "52 acres, pond, walk-out basement, zoned AC. Frontier fiber. $529K above pre-approval.",
+    "highlight": "52 acres with pond, walk-out basement, zoned central AC, and Frontier fiber 1000/1000 in scenic Otsego County hills. 2,311 sqft with 1992 construction. But $529K is above FHA pre-approval, no outbuildings, and Gilbertsville-Mt Upton school is weak.",
+    "highlights": [
+      { "icon": "\uD83C\uDF10", "text": "Frontier Fiber 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83C\uDFDE\uFE0F", "text": "52 acres with pond — scenic Otsego County hills" },
+      { "icon": "\uD83C\uDFE0", "text": "Walk-out basement + zoned central AC — strong livability" },
+      { "icon": "\uD83D\uDD25", "text": "1992 build — modern systems, good condition" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Sidney/Unadilla", "value": "~15-20 min", "ref": false },
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Oneonta", "value": "~30 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "A.O. Fox Hospital, Oneonta", "value": "~30 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "GMU Elem (~4/10)", "value": "GMU CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "52 acres with pond in scenic Otsego hills" },
+      { "icon": "\u2713", "text": "Frontier Fiber 1000/1000 confirmed" },
+      { "icon": "\u2713", "text": "Walk-out basement — family preferred feature" },
+      { "icon": "\u2713", "text": "Zoned central AC — comfort in summer" },
+      { "icon": "\u2713", "text": "2,311 sqft, 1992 build — solid, modern home" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "$529K above FHA pre-approval" },
+      { "icon": "\u2717", "text": "FHA NOT listed" },
+      { "icon": "\u2717", "text": "GMU CSD ~4/10 — very small, resource-limited district" },
+      { "icon": "\u2717", "text": "No outbuildings documented" },
+      { "icon": "\u2717", "text": "104 DOM but no price drop — seller may be stubborn" },
+      { "icon": "\u2717", "text": "Only 2 full baths (2.5 total) — confirm bathtub present" }
+    ],
+    "familyFit": [
+      "Walk-out basement + pond + 52 acres checks many family boxes",
+      "Zoned AC is a comfort win most NY properties don't have",
+      "But $529K + weak school + no outbuildings = hard trade-offs"
+    ],
+    "verifyItems": [
+      { "label": "Bathtub", "text": "Confirm at least one full bathtub for young kids" },
+      { "label": "FHA Status", "text": "Will seller accept FHA?" },
+      { "label": "Outbuildings", "text": "Are there any structures not listed? Verify on walkthrough" },
+      { "label": "School Options", "text": "Neighboring district transfer possible?" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Price negotiation — $529K must come down $30K-$50K to work" },
+      { "urgent": false, "text": "Confirm FHA status" },
+      { "urgent": false, "text": "Verify bathtub exists" },
+      { "urgent": false, "text": "Request video walkthrough — pond + land + basement" }
+    ],
+    "envHazards": {
+      "location": "Otsego County — Unadilla hills",
+      "pills": [
+        { "level": "low", "text": "Flooding — hilltop, pond is controlled" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "low", "text": "Wildfire — minimal" }
+      ],
+      "note": "Otsego County hilltop. Pond on property is controlled water feature. Standard ice storm risk."
+    }
+  },
+  {
+    "id": "p89",
+    "num": 89,
+    "dateAdded": "2026-03-30",
+    "navLabel": "Gilboa",
+    "address": "1015 State Route 990V",
+    "city": "Gilboa",
+    "state": "NY",
+    "zip": "12076",
+    "lat": 42.379653,
+    "lng": -74.401996,
+    "county": "Schoharie",
+    "price": 349000,
+    "listingLink": "https://www.trulia.com/home/1015-990-v-gilboa-ny-12076-452118172",
+    "image": "https://www.trulia.com/pictures/thumbs_6/zillowstatic/fp/4fa5c27c94ba9c10f98f6388830182c6-full.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1820,
+    "acres": 22,
+    "acresSub": "Schoharie Creek watershed. Ridgeline road. ~1940s build.",
+    "yearBuilt": 1940,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "180+ DOM. Schoharie flood risk zone. 3/10 school. Very incomplete listing data.",
+    "badges": [],
+    "taxRate": 0.022,
+    "taxLabel": "Property Tax (Schoharie Co.)",
+    "taxAnnual": 4500,
+    "hoa": 0,
+    "elemSchool": "Gilboa-Conesville Elem (3/10)",
+    "elemSchoolSub": "Gilboa-Conesville CSD — very small district",
+    "toTown": "~25 min",
+    "toTownSub": "to Schoharie/Cobleskill",
+    "scores": {
+      "price": 9,
+      "acreage": 5,
+      "schools": 4,
+      "outbldgs": 4,
+      "town": 5,
+      "hospital": 3,
+      "hazards": 3,
+      "internet": 8,
+      "forested": 7,
+      "living": 5
+    },
+    "offerRange": "$295K - $320K",
+    "offerStrategy": "180+ DOM at $335K. Flood zone risk + 3/10 school = extremely limited buyers.",
+    "offerRationale": [
+      "180+ DOM — nobody is buying this",
+      "Schoharie Creek flood zone history scares buyers away",
+      "3/10 school severely limits family buyer pool",
+      "$295K-$320K accounts for flood risk premium"
+    ],
+    "tableOfferNote": "MTC fiber confirmed. $335K, 20 acres, 2003 build. But Schoharie flood zone + 3/10 school.",
+    "highlight": "$334,900 for 20 acres with MTC Cable fiber 1000/1000 and a 2003 build. But Schoharie Creek watershed carries real flood history (Hurricane Irene 2011), school is 3/10, and listing data is extremely incomplete. FEMA check is non-negotiable.",
+    "highlights": [
+      { "icon": "\uD83C\uDF10", "text": "MTC Cable Fiber 1000/1000 Mbps confirmed" },
+      { "icon": "\uD83D\uDCB0", "text": "$334,900 — lowest surviving price in Batch 2" },
+      { "icon": "\uD83C\uDFE0", "text": "2003 build — modern systems, no 1800s concerns" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Schoharie/Cobleskill", "value": "~25-30 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Cobleskill Regional Hospital (CAH)", "value": "~30 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Albany Medical Center", "value": "~60 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "MTC Cable Fiber 1000/1000 confirmed" },
+      { "icon": "\u2713", "text": "$334,900 — strong budget headroom" },
+      { "icon": "\u2713", "text": "2003 build — modern framing, electrical, plumbing" },
+      { "icon": "\u2713", "text": "20 acres on ridgeline (990V) — higher ground may reduce flood risk" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Schoharie Creek watershed — Hurricane Irene (2011) destroyed this area. FEMA check mandatory." },
+      { "icon": "\u2717", "text": "Gilboa-Conesville Elementary 3/10 — one of weakest in dataset" },
+      { "icon": "\u2717", "text": "Critical Access Hospital only within 30 min; Albany 60+ min for trauma" },
+      { "icon": "\u2717", "text": "Extremely incomplete listing data — foundation, basement, heating all unknown" },
+      { "icon": "\u2717", "text": "180+ DOM at only $335K — there is a reason this hasn't sold" }
+    ],
+    "familyFit": [
+      "Price is right and fiber is confirmed, but flood zone + weak school = hard no for family safety",
+      "Route 990V runs along ridgeline — may be above flood plain, but MUST verify",
+      "Not recommended unless FEMA confirms house is above 100-year flood plain"
+    ],
+    "verifyItems": [
+      { "label": "FLOOD ZONE", "text": "CRITICAL — Check FEMA for Schoharie Creek 100-year and 500-year flood plains. Hurricane Irene devastated this area." },
+      { "label": "Listing Data", "text": "Foundation, basement, heating, outbuildings — ALL unknown" },
+      { "label": "School Transfer", "text": "Can Theo attend Cobleskill-Richmondville CSD instead? Stronger district." }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "FEMA flood map — Schoharie Creek watershed. Non-negotiable." },
+      { "urgent": true, "text": "Pull complete listing data — foundation, heating, basement all unknown" },
+      { "urgent": false, "text": "Research school transfer to Cobleskill-Richmondville CSD" },
+      { "urgent": false, "text": "Investigate why property hasn't sold at $335K for 180+ days" }
+    ],
+    "envHazards": {
+      "location": "Schoharie County — Gilboa, Schoharie Creek watershed",
+      "pills": [
+        { "level": "high", "text": "Flooding — Schoharie Creek; Hurricane Irene 2011 catastrophic damage in this watershed" },
+        { "level": "mod", "text": "Ice storms — standard upstate NY" },
+        { "level": "special", "text": "FEMA check mandatory before any interest" }
+      ],
+      "note": "Schoharie Creek watershed was devastated by Hurricane Irene in 2011. Route 990V runs along a ridgeline which may offer higher elevation, but FEMA flood map verification is absolutely mandatory before proceeding."
+    }
+  },
+  {
+    "id": "p90",
+    "num": 90,
+    "dateAdded": "2026-03-31",
+    "navLabel": "Champlain",
+    "address": "148 Perry Mills Rd",
+    "city": "Champlain",
+    "state": "NY",
+    "zip": "12919",
+    "lat": 44.995570,
+    "lng": -73.473695,
+    "county": "Clinton",
+    "price": 375000,
+    "listingLink": "https://www.trulia.com/home/148-perry-mills-rd-champlain-ny-12919-119240691",
+    "image": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/e6df3f7d6e2abe06ea78a90ac78a8463-full.webp",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1456,
+    "acres": 36.9,
+    "acresSub": "10.9 woodland + 8 tillable + 17 wasteland. Absentee owner (VT). 180+ DOM.",
+    "yearBuilt": 1990,
+    "type": "Manufactured",
+    "typeBadge": "b-mfg",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "MANUFACTURED housing per county assessor. 180+ DOM. Absentee VT owner. Full basement confirmed. FHA requires HUD docs.",
+    "badges": ["b-livestock", "b-no-fha"],
+    "taxRate": 0.028,
+    "taxLabel": "Property Tax (Clinton Co.)",
+    "taxAnnual": 3657,
+    "hoa": 0,
+    "elemSchool": "Mooers Elem (6/10)",
+    "elemSchoolSub": "Northeastern Clinton CSD — confirmed by address boundary",
+    "toTown": "~10 min",
+    "toTownSub": "to Champlain; ~25 min to Plattsburgh (Walmart, full services)",
+    "scores": {
+      "price": 10,
+      "acreage": 8,
+      "schools": 7,
+      "outbldgs": 10,
+      "town": 9,
+      "hospital": 8,
+      "hazards": 8,
+      "internet": 9,
+      "forested": 5,
+      "living": 6
+    },
+    "offerRange": "$330K - $355K",
+    "offerStrategy": "180+ DOM, absentee VT owner, manufactured housing limits buyers. Strong leverage.",
+    "offerRationale": [
+      "180+ DOM — absentee VT owner wants this gone",
+      "Manufactured housing classification severely limits buyer pool (most can't finance)",
+      "$375K with manufactured designation is overpriced vs county FMV $202,600",
+      "17 acres of 'wasteland' reduces effective usable acreage"
+    ],
+    "tableOfferNote": "Manufactured per county. 36.9 acres. Spectrum cable. Full basement. HUD docs required for FHA.",
+    "highlight": "36.9 acres near Plattsburgh with Spectrum cable, 32x24 detached garage, machine shed, and full basement. Absentee VT owner with 180+ DOM = motivated seller. But Clinton County assessor classifies as manufactured housing — FHA requires HUD certification and permanent foundation docs. 17 of 36.9 acres classified as wasteland.",
+    "highlights": [
+      { "icon": "\uD83C\uDFE0", "text": "Full basement confirmed — positive for manufactured FHA path" },
+      { "icon": "\uD83D\uDD27", "text": "32x24 detached garage + 14x16 machine shed — workshop ready" },
+      { "icon": "\uD83D\uDCB0", "text": "180+ DOM, absentee VT owner — strong negotiation position" },
+      { "icon": "\uD83C\uDF10", "text": "Spectrum Cable 1000/35 Mbps confirmed" }
+    ],
+    "proximity": [
+      { "icon": "\uD83C\uDFD9\uFE0F", "label": "Plattsburgh", "value": "~25 min via I-87", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "CVPH Medical Center, Plattsburgh", "value": "~25 min", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "NE Clinton CSD (5/10)", "value": "combined K-12", "ref": false },
+      { "icon": "\uD83C\uDFD4\uFE0F", "label": "Canadian border", "value": "~5 min", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "36.9 acres at $375K — good value if manufactured housing issue resolved" },
+      { "icon": "\u2713", "text": "Full basement confirmed — helps meet FHA manufactured home requirements" },
+      { "icon": "\u2713", "text": "32x24 detached garage + machine shed — woodworking infrastructure" },
+      { "icon": "\u2713", "text": "Spectrum cable confirmed — adequate for remote work" },
+      { "icon": "\u2713", "text": "Plattsburgh 25 min — real city with full hospital, all services" },
+      { "icon": "\u2713", "text": "180+ DOM + absentee owner = maximum negotiation leverage" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "MANUFACTURED HOUSING per Clinton County assessor — FHA requires HUD data plate + permanent foundation certification" },
+      { "icon": "\u2717", "text": "17 of 36.9 acres classified 'wasteland' — effective usable acreage is ~20 acres" },
+      { "icon": "\u2717", "text": "Only 1,456 sqft — tight for family of 4" },
+      { "icon": "\u2717", "text": "No central AC — oil forced air heat only" },
+      { "icon": "\u2717", "text": "Northernmost property — coldest winters, heaviest lake-effect snow" },
+      { "icon": "\u2717", "text": "School 5/10 — average, combined K-12 facility" },
+      { "icon": "\u2717", "text": "FHA NOT listed by seller" }
+    ],
+    "familyFit": [
+      "Plattsburgh proximity is good for family services and hospital access",
+      "But manufactured housing + 17 acres wasteland + northern cold = hard trade-offs",
+      "Only pursue if HUD docs can be obtained and permanent foundation verified"
+    ],
+    "verifyItems": [
+      { "label": "HUD DOCS", "text": "CRITICAL — Obtain HUD Certification Label (Data Plate). Without this, FHA financing impossible." },
+      { "label": "Foundation", "text": "Permanent foundation affidavit (engineer certification) required for FHA manufactured" },
+      { "label": "Modular vs Manufactured", "text": "Clarify with county — if truly modular (IRC code), financing path is different" },
+      { "label": "Wasteland", "text": "17 acres classified wasteland — what is it? Wetland? Rock? Unusable slope?" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "Obtain HUD Data Plate documentation — FHA non-negotiable for manufactured home" },
+      { "urgent": true, "text": "Permanent foundation engineer certification — required for FHA" },
+      { "urgent": false, "text": "Clarify modular vs manufactured with Clinton County assessor" },
+      { "urgent": false, "text": "Inspect oil heating system — est. $4,000-$6,000/yr fuel in northern NY" },
+      { "urgent": false, "text": "Assess 17 acres of 'wasteland' — wetland survey if needed" }
+    ],
+    "envHazards": {
+      "location": "Clinton County, northern NY — near Canadian border",
+      "pills": [
+        { "level": "low", "text": "Flooding — not in flood zone" },
+        { "level": "mod", "text": "Ice storms — northern NY, lake-effect" },
+        { "level": "mod", "text": "Extreme cold — northernmost property in dataset" },
+        { "level": "special", "text": "Manufactured housing — FHA HUD docs required" }
+      ],
+      "note": "Northern Clinton County. Not in flood zone. Primary concerns are extreme cold/snow and the manufactured housing FHA financing hurdle."
+    }
   }
 ];

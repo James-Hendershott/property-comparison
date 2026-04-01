@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<link rel="stylesheet" href="app.css?v=24">
+<link rel="stylesheet" href="app.css?v=25">
 <style>
 :root {
   --bg:       #f4f1eb;
@@ -1134,6 +1134,11 @@ table.qt {
     <a href="javascript:void(0)" class="nav-icon-link nav-rankings" title="Family Rankings" onclick="document.getElementById('rankings-modal').style.display='flex'"><span class="bi bi-trophy-fill"></span><span class="nav-link-text"> Rankings</span></a>
     <a href="#overview" class="nav-icon-link nav-table" title="Quick Comparison Overview"><span class="bi bi-table"></span><span class="nav-link-text"> Overview</span></a>
     <a href="javascript:void(0)" class="nav-icon-link nav-map" title="Interactive property map" onclick="var m=document.getElementById('map-modal');m.style.display='flex';if(typeof propertyMap!=='undefined'&&propertyMap)propertyMap.invalidateSize();"><svg class="nav-svg-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8.5 1.724C10.037.903 12.232.861 14 2v12c-1.768-1.139-3.963-1.097-5.5-.278V1.724zM8 1.783C6.465.932 4.233.869 2.429 1.96l-.134.079A.5.5 0 0 0 2 2.5v11a.5.5 0 0 0 .742.44l.096-.054C4.473 12.919 6.547 12.876 8 13.7V1.783z"/></svg><span class="nav-link-text"> Map</span></a>
+    <div class="state-toggle" id="state-toggle">
+      <button class="state-btn" data-state="NC">NC</button>
+      <button class="state-btn active" data-state="NY">NY</button>
+      <button class="state-btn" data-state="All">All</button>
+    </div>
   </div>
   <button class="nav-mobile-toggle" id="nav-mobile-toggle" title="Browse regions">
     <span class="bi bi-geo-alt-fill"></span> <span class="nav-mobile-toggle-label">Regions</span>
@@ -1268,10 +1273,10 @@ table.qt {
   <p style="margin-top:0.4rem;">Mortgage estimates: 6.5% / 30yr / 3.5% down (FHA) + est. taxes & insurance. Not a commitment to lend. Verify all listing statuses before touring. Maps © Google.</p>
 </footer>
 
-<script src="properties-data.js?v=7"></script>
+<script src="properties-data.js?v=8"></script>
 <script src="nc-boundary.js?v=1"></script>
 <script src="score-tips.js?v=2"></script>
-<script src="render.js?v=9"></script>
-<script src="app.js?v=23"></script>
+<script src="render.js?v=10"></script>
+<script src="app.js?v=24"></script>
 </body>
 </html>
