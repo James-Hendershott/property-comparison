@@ -18960,5 +18960,559 @@ var PROPERTIES = [
       ],
       "note": "Otsego County uplands. Low hazard profile. Standard ice storm risk."
     }
+  },
+  {
+    "id": "p97",
+    "num": 97,
+    "dateAdded": "2026-04-01",
+    "navLabel": "Enosburg Falls",
+    "address": "7677 Chester Arthur Rd",
+    "city": "Enosburg Falls",
+    "state": "VT",
+    "zip": "05450",
+    "lat": 44.854449,
+    "lng": -72.805500,
+    "county": "Franklin",
+    "price": 425000,
+    "listingLink": "https://www.redfin.com/VT/Enosburg-Falls/7677-Chester-Arthur-Rd-05450/home/95119265",
+    "image": "https://ssl.cdn-redfin.com/photo/231/mbphotov3/704/genMid.5080704_1_V.jpg",
+    "beds": 4,
+    "bath": 2.5,
+    "sqft": 2946,
+    "acres": 10,
+    "acresSub": "Exactly 10 acres \u2014 at absolute minimum. Wooded + field/pasture. Verify actual acreage.",
+    "yearBuilt": 1974,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "\u26A0\uFE0F NEEDS RESEARCH: VT taxes rising 22% in 2026. Act 250 regs. Verify fiber provider. Verify exact acreage \u2265 10 ac.",
+    "badges": ["b-no-fha"],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Franklin Co., VT \u2014 VERIFY on vtaxs.vermont.gov)",
+    "taxAnnual": 6410,
+    "hoa": 0,
+    "elemSchool": "\u26A0\uFE0F TBD \u2014 Enosburg Falls Elem (VERIFY on greatschools.org)",
+    "elemSchoolSub": "Enosburg Falls school district \u2014 rating unconfirmed",
+    "toTown": "~10-15 min",
+    "toTownSub": "to Enosburg Falls",
+    "scores": {
+      "price": 8,
+      "acreage": 4,
+      "schools": 5,
+      "outbldgs": 6,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 8,
+      "internet": 8,
+      "forested": 7,
+      "living": 8
+    },
+    "offerRange": "$390K - $415K",
+    "offerStrategy": "10 acres at minimum threshold. 1974 build needs inspection. VT taxes rising sharply.",
+    "offerRationale": [
+      "$425K within pre-approval",
+      "1974 build \u2014 50 years old, inspection findings = leverage",
+      "VT property taxes jumped 22% in 2026 \u2014 future cost concern",
+      "Only 10 acres limits buyer pool vs larger properties"
+    ],
+    "tableOfferNote": "\u26A0\uFE0F VT PROPERTY \u2014 Fiber per listing (VERIFY). 2,946 sqft. VT taxes rising 22%. Act 250 regs. Only 10 acres.",
+    "highlight": "\u26A0\uFE0F VERMONT PROPERTY \u2014 shows in 'All' filter only. Fiber internet confirmed in listing (provider TBD \u2014 VERIFY on FCC map). 4 bed/2.5 bath, 2,946 sqft ranch with wood stove + heat pump. $425K within pre-approval. But exactly 10 acres (minimum), 1974 build, VT taxes surging 22% in 2026, and Act 250 land use regulations may restrict future building.",
+    "highlights": [
+      { "icon": "\uD83C\uDF10", "text": "\u26A0\uFE0F Fiber internet per listing \u2014 NEEDS FCC VERIFICATION (provider unknown)" },
+      { "icon": "\uD83C\uDFE0", "text": "4 bed / 2.5 bath, 2,946 sqft \u2014 excellent living space" },
+      { "icon": "\uD83D\uDD25", "text": "Heat pump + wood stove \u2014 efficient dual heating" },
+      { "icon": "\uD83C\uDF3E", "text": "Field/pasture + wooded \u2014 mixed land for animals and timber" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Enosburg Falls", "value": "~10-15 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Northwestern Medical Center, St. Albans", "value": "~25-30 min (est.)", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Enosburg Falls Elem (\u26A0\uFE0F VERIFY rating)", "value": "TBD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "Fiber internet confirmed in listing \u2014 rare for rural (VERIFY provider on FCC)" },
+      { "icon": "\u2713", "text": "4 bed / 2.5 bath, nearly 3,000 sqft \u2014 excellent for family" },
+      { "icon": "\u2713", "text": "$425K within FHA pre-approval" },
+      { "icon": "\u2713", "text": "Wood frame exterior appeals to woodworker" },
+      { "icon": "\u2713", "text": "Heat pump + wood stove for efficient heating" },
+      { "icon": "\u2713", "text": "Field/pasture land for animals" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "Only 10 acres \u2014 absolute minimum, no room for error. VERIFY exact acreage." },
+      { "icon": "\u2717", "text": "1974 build \u2014 50 years old, likely needs updates" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F Vermont property taxes rising 22% in 2026 \u2014 verify current bill on vtaxs.vermont.gov" },
+      { "icon": "\u2717", "text": "Dug well water source \u2014 verify quality and flow" },
+      { "icon": "\u2717", "text": "Dirt/gravel road \u2014 winter maintenance concern" },
+      { "icon": "\u2717", "text": "Act 250 regulations may restrict future building on property" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F School rating UNVERIFIED \u2014 check greatschools.org" }
+    ],
+    "familyFit": [
+      "Nearly 3,000 sqft with 4 beds and 2.5 baths is excellent for family of 4",
+      "Fiber internet (if confirmed) solves the #1 rural concern",
+      "But VT tax surge and Act 250 building restrictions are real concerns"
+    ],
+    "verifyItems": [
+      { "label": "\u26A0\uFE0F INTERNET", "text": "Verify fiber on FCC broadband map \u2014 listing says available but provider unknown" },
+      { "label": "\u26A0\uFE0F ACREAGE", "text": "Verify exactly 10 acres or more \u2014 at absolute minimum threshold" },
+      { "label": "\u26A0\uFE0F TAXES", "text": "VT taxes surging 22% \u2014 verify 2026 bill on vtaxs.vermont.gov" },
+      { "label": "\u26A0\uFE0F ACT 250", "text": "Vermont Act 250 land use law \u2014 does it restrict building on this parcel?" },
+      { "label": "School", "text": "Enosburg Falls Elementary \u2014 get GreatSchools rating" },
+      { "label": "Well Water", "text": "Dug well \u2014 test quality and flow rate" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "\u26A0\uFE0F Verify fiber internet on FCC broadband map \u2014 provider and speed unknown" },
+      { "urgent": true, "text": "\u26A0\uFE0F Verify exact acreage is \u2265 10 acres" },
+      { "urgent": true, "text": "\u26A0\uFE0F Check VT property tax for 2026 on vtaxs.vermont.gov (22% increase reported)" },
+      { "urgent": true, "text": "Check Act 250 applicability for this parcel" },
+      { "urgent": false, "text": "Get Enosburg Falls Elementary school rating" },
+      { "urgent": false, "text": "Well water quality test" }
+    ],
+    "envHazards": {
+      "location": "Franklin County, VT \u2014 northern Vermont near Canadian border",
+      "pills": [
+        { "level": "low", "text": "Flooding \u2014 no major flood risk noted" },
+        { "level": "mod", "text": "Ice storms \u2014 northern VT standard" },
+        { "level": "mod", "text": "Extreme cold \u2014 northern Vermont winters" }
+      ],
+      "note": "Northern Vermont. Low flood risk. Standard northern New England winter hazards."
+    }
+  },
+  {
+    "id": "p98",
+    "num": 98,
+    "dateAdded": "2026-04-01",
+    "navLabel": "Port Leyden",
+    "address": "7109 Walker Rd",
+    "city": "Port Leyden",
+    "state": "NY",
+    "zip": "13433",
+    "lat": 43.599699,
+    "lng": -75.358064,
+    "county": "Lewis",
+    "price": 299000,
+    "listingLink": "https://www.redfin.com/NY/Port-Leyden/7109-Walker-Rd-13433/home/133447735",
+    "image": "https://ssl.cdn-redfin.com/photo/72/mbphotov3/105/genMid.S1635105_0_V.jpg",
+    "beds": 5,
+    "bath": 1.5,
+    "sqft": 2136,
+    "acres": 12.6,
+    "acresSub": "12.6 acres. 6-car heated garage with workshop. Horses allowed. \u26A0\uFE0F Public records say 3 beds \u2014 VERIFY actual count.",
+    "yearBuilt": 1900,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "\u26A0\uFE0F NEEDS RESEARCH: Internet UNKNOWN (Lewis Co. = high satellite risk). Only 1.5 bath. 1900 stone foundation \u2014 FHA risk. Oil heat.",
+    "badges": ["b-no-fha"],
+    "taxRate": 0.015,
+    "taxLabel": "Property Tax (Lewis Co. \u2014 VERIFY with county)",
+    "taxAnnual": 3733,
+    "hoa": 0,
+    "elemSchool": "South Lewis Elem (7/10)",
+    "elemSchoolSub": "South Lewis CSD",
+    "toTown": "~15-20 min",
+    "toTownSub": "to Lowville",
+    "scores": {
+      "price": 10,
+      "acreage": 5,
+      "schools": 8,
+      "outbldgs": 10,
+      "town": 8,
+      "hospital": 7,
+      "hazards": 8,
+      "internet": 2,
+      "forested": 5,
+      "living": 5
+    },
+    "offerRange": "$260K - $285K",
+    "offerStrategy": "1900 build + stone foundation + only 1.5 bath + oil heat = very limited buyer pool. $299K is already low.",
+    "offerRationale": [
+      "$299K is already excellent value for 12.6 acres + 6-car heated garage",
+      "1900 stone foundation + oil heat scares most buyers",
+      "Only 1.5 baths \u2014 family deterrent",
+      "If internet fails FCC check \u2014 this goes to Graveyard"
+    ],
+    "tableOfferNote": "\u26A0\uFE0F INTERNET UNKNOWN (Lewis Co.). $299K, 6-car heated garage, 12.6 ac. 1900 stone. Only 1.5 bath. Oil heat.",
+    "highlight": "$299,000 for 12.6 acres with a 6-car heated garage/workshop (woodworker\u2019s dream), horses allowed, South Lewis Elem 7/10, and very low taxes ($3,733/yr). But internet is UNKNOWN in very rural Lewis County (high satellite-only risk), only 1.5 baths, 1900 stone foundation (FHA risk), and oil baseboard heat ($4K-$6K/yr).",
+    "highlights": [
+      { "icon": "\uD83D\uDD27", "text": "6-car heated garage with workshop \u2014 woodworker\u2019s dream" },
+      { "icon": "\uD83D\uDCB0", "text": "$299K with $3,733/yr taxes \u2014 incredible value" },
+      { "icon": "\uD83C\uDFEB", "text": "South Lewis Elementary 7/10 \u2014 strong school" },
+      { "icon": "\uD83D\uDC34", "text": "Horses explicitly allowed per listing" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Lowville", "value": "~15-20 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Lewis County General Hospital", "value": "~15-20 min (\u26A0\uFE0F verify if full ED)", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "South Lewis Elem (7/10)", "value": "South Lewis CSD", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "6-car heated garage with workshop \u2014 best workshop setup in the entire dataset" },
+      { "icon": "\u2713", "text": "$299K with $3,733/yr taxes \u2014 most affordable property by far" },
+      { "icon": "\u2713", "text": "South Lewis Elementary 7/10 \u2014 strong school" },
+      { "icon": "\u2713", "text": "Horses allowed per listing" },
+      { "icon": "\u2713", "text": "5 bedrooms (if confirmed) \u2014 room for offices" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "\u26A0\uFE0F INTERNET UNKNOWN \u2014 Lewis County is very rural, HIGH satellite-only risk. FCC check is make-or-break." },
+      { "icon": "\u2717", "text": "Only 1.5 baths \u2014 family of 4 needs 2nd full bath ($15K-$30K to add)" },
+      { "icon": "\u2717", "text": "1900 stone foundation \u2014 FHA almost certainly ineligible" },
+      { "icon": "\u2717", "text": "Oil baseboard heat \u2014 expensive ($4,000-$6,000/yr)" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F Public records say 3 beds vs listing\u2019s 5 \u2014 VERIFY actual count" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F Verify hospital is full ED, not Critical Access only" }
+    ],
+    "familyFit": [
+      "6-car heated garage is James\u2019s ultimate workshop setup",
+      "But internet is make-or-break \u2014 if satellite-only, this is dead",
+      "Only 1.5 baths is a hard constraint for 2 young kids"
+    ],
+    "verifyItems": [
+      { "label": "\u26A0\uFE0F INTERNET", "text": "FCC broadband check \u2014 CRITICAL. Lewis County has high satellite-only risk. If no wired broadband \u2192 GRAVEYARD." },
+      { "label": "\u26A0\uFE0F BEDS", "text": "Public records say 3 beds, listing says 5 \u2014 verify on walkthrough" },
+      { "label": "FHA", "text": "1900 stone foundation \u2014 almost certainly ineligible" },
+      { "label": "Hospital", "text": "Lewis County General \u2014 full ED or Critical Access?" },
+      { "label": "Heat Cost", "text": "Oil baseboard \u2014 get annual cost estimate" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "\u26A0\uFE0F FCC broadband check \u2014 if satellite-only, property goes to Graveyard immediately" },
+      { "urgent": true, "text": "Verify actual bedroom count (3 vs 5)" },
+      { "urgent": false, "text": "Confirm hospital has full ED" },
+      { "urgent": false, "text": "Oil heat cost estimate" },
+      { "urgent": false, "text": "County tax verification" }
+    ],
+    "envHazards": {
+      "location": "Lewis County \u2014 Port Leyden, rural Tug Hill region",
+      "pills": [
+        { "level": "low", "text": "Flooding \u2014 no flood risk indicated" },
+        { "level": "mod", "text": "Ice storms / heavy snow \u2014 Tug Hill Plateau is snowiest region in NY" },
+        { "level": "low", "text": "Wildfire \u2014 minimal" }
+      ],
+      "note": "Lewis County Tug Hill region. Known for extreme snowfall. Low flood risk."
+    }
+  },
+  {
+    "id": "p99",
+    "num": 99,
+    "dateAdded": "2026-04-01",
+    "navLabel": "Johnsburg",
+    "address": "2140 NY-8",
+    "city": "Johnsburg",
+    "state": "NY",
+    "zip": "12843",
+    "lat": 43.770,
+    "lng": -73.990,
+    "county": "Warren",
+    "price": 355000,
+    "listingLink": "https://www.redfin.com/NY/Johnsburg/2140-New-York-8-12843/home/193822018",
+    "image": "https://ssl.cdn-redfin.com/photo/190/mbphotov3/276/genMid.202520276_0_V.jpg",
+    "beds": 5,
+    "bath": 3,
+    "sqft": 1826,
+    "acres": 0,
+    "acresSub": "\u26A0\uFE0F ACREAGE UNKNOWN \u2014 must verify from listing or county records",
+    "yearBuilt": 0,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "\u26A0\uFE0F HEAVILY INCOMPLETE: Acreage TBD, year built TBD, foundation TBD, school TBD, internet TBD, outbuildings TBD. CHECK APA BLUE LINE.",
+    "badges": [],
+    "taxRate": 0,
+    "taxLabel": "\u26A0\uFE0F Property Tax UNKNOWN \u2014 verify with Warren County",
+    "taxAnnual": 0,
+    "hoa": 0,
+    "elemSchool": "\u26A0\uFE0F TBD \u2014 verify school district",
+    "elemSchoolSub": "Johnsburg area \u2014 unconfirmed",
+    "toTown": "~5-10 min",
+    "toTownSub": "to North Creek (near Gore Mountain)",
+    "scores": {
+      "price": 10,
+      "acreage": 5,
+      "schools": 5,
+      "outbldgs": 5,
+      "town": 6,
+      "hospital": 4,
+      "hazards": 5,
+      "internet": 2,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "TBD \u2014 needs full vetting",
+    "offerStrategy": "Cannot make offer until acreage, year built, internet, and APA status are confirmed.",
+    "offerRationale": [
+      "$355K under $400K \u2014 strong price if property checks out",
+      "5 bed / 3 bath is excellent",
+      "Too many unknowns to form strategy"
+    ],
+    "tableOfferNote": "\u26A0\uFE0F INCOMPLETE: $355K, 5bd/3ba. Acreage/year/internet/school/tax ALL UNKNOWN. Check APA Blue Line.",
+    "highlight": "\u26A0\uFE0F THIS PROPERTY NEEDS FULL VETTING. $355K for 5 bed/3 bath near North Creek (Gore Mountain). But acreage unknown, year built unknown, internet unknown, school unknown, tax unknown. CHECK APA BLUE LINE STATUS \u2014 Warren County is partially inside Adirondack Park. If inside APA, building restrictions apply.",
+    "highlights": [
+      { "icon": "\u26A0\uFE0F", "text": "HEAVILY INCOMPLETE \u2014 most data fields need research" },
+      { "icon": "\uD83D\uDCB0", "text": "$355K under budget with 5 bed / 3 bath" },
+      { "icon": "\u26F7\uFE0F", "text": "Near Gore Mountain / North Creek \u2014 Adirondack location" },
+      { "icon": "\u26A0\uFE0F", "text": "CHECK APA BLUE LINE \u2014 building restrictions if inside Adirondack Park" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "North Creek", "value": "~5-10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Glens Falls Hospital", "value": "~45-50 min (est.)", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "$355K under budget" },
+      { "icon": "\u2713", "text": "5 bed / 3 bath \u2014 meets all family requirements" },
+      { "icon": "\u2713", "text": "Adirondack region \u2014 likely heavily wooded" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "\u26A0\uFE0F ACREAGE UNKNOWN \u2014 must verify. If under 10 acres \u2192 Graveyard" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F YEAR BUILT UNKNOWN \u2014 affects FHA eligibility" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F INTERNET UNKNOWN \u2014 FCC check needed" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F CHECK APA BLUE LINE \u2014 if inside Adirondack Park, building restrictions apply" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F TAX UNKNOWN \u2014 verify with Warren County" },
+      { "icon": "\u2717", "text": "Glens Falls Hospital ~45-50 min \u2014 poor hospital access" }
+    ],
+    "familyFit": [
+      "Cannot evaluate family fit until basic data is confirmed",
+      "5 bed/3 bath at $355K looks promising on paper",
+      "But APA restrictions could block James\u2019s building plans"
+    ],
+    "verifyItems": [
+      { "label": "\u26A0\uFE0F ACREAGE", "text": "UNKNOWN \u2014 verify from listing details or Warren County records" },
+      { "label": "\u26A0\uFE0F APA", "text": "CHECK if inside Adirondack Park Blue Line \u2014 building restrictions" },
+      { "label": "\u26A0\uFE0F INTERNET", "text": "FCC broadband check needed" },
+      { "label": "\u26A0\uFE0F YEAR BUILT", "text": "Unknown \u2014 affects FHA eligibility" },
+      { "label": "\u26A0\uFE0F TAX", "text": "Unknown \u2014 verify with Warren County" },
+      { "label": "\u26A0\uFE0F SCHOOL", "text": "Unknown \u2014 verify district assignment" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "\u26A0\uFE0F Verify acreage \u2014 if under 10 acres, goes to Graveyard" },
+      { "urgent": true, "text": "\u26A0\uFE0F Check APA Blue Line status \u2014 if inside, building restrictions apply" },
+      { "urgent": true, "text": "\u26A0\uFE0F FCC broadband check" },
+      { "urgent": true, "text": "\u26A0\uFE0F Get year built, foundation type, school district, tax bill" }
+    ],
+    "envHazards": {
+      "location": "Warren County \u2014 Johnsburg, Adirondack region",
+      "pills": [
+        { "level": "mod", "text": "Ice storms / heavy snow \u2014 Adirondack region" },
+        { "level": "special", "text": "\u26A0\uFE0F CHECK APA BLUE LINE \u2014 may be inside Adirondack Park" },
+        { "level": "special", "text": "\u26A0\uFE0F Flood zone \u2014 verify on FEMA (Adirondack rivers)" }
+      ],
+      "note": "Warren County is partially inside Adirondack Park. If property is inside APA Blue Line, all building requires APA permits. Verify flood zone status for Adirondack river areas."
+    }
+  },
+  {
+    "id": "p100",
+    "num": 100,
+    "dateAdded": "2026-04-01",
+    "navLabel": "Ticonderoga",
+    "address": "75 Forest Way",
+    "city": "Ticonderoga",
+    "state": "NY",
+    "zip": "12883",
+    "lat": 43.864930,
+    "lng": -73.483740,
+    "county": "Essex",
+    "price": 395000,
+    "listingLink": "https://www.redfin.com/NY/Ticonderoga/75-Forest-Way-12883/home/127350088",
+    "image": "https://ssl.cdn-redfin.com/photo/190/mbphotov3/423/genMid.202610423_0_V.jpg",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 2280,
+    "acres": 10,
+    "acresSub": "~10 acres per API (436,471 sqft). LOG HOME. \u26A0\uFE0F LIKELY INSIDE APA BLUE LINE.",
+    "yearBuilt": 2005,
+    "type": "Log Home",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "\u26A0\uFE0F NEEDS RESEARCH: Essex County \u2014 LIKELY inside APA Blue Line. Internet TBD. Tax TBD. Only 3 beds. Log home.",
+    "badges": ["b-apa"],
+    "taxRate": 0,
+    "taxLabel": "\u26A0\uFE0F Property Tax UNKNOWN \u2014 verify with Essex County",
+    "taxAnnual": 0,
+    "hoa": 0,
+    "elemSchool": "\u26A0\uFE0F TBD \u2014 verify school district",
+    "elemSchoolSub": "Ticonderoga area \u2014 unconfirmed",
+    "toTown": "~10 min",
+    "toTownSub": "to Ticonderoga",
+    "scores": {
+      "price": 10,
+      "acreage": 4,
+      "schools": 5,
+      "outbldgs": 5,
+      "town": 7,
+      "hospital": 5,
+      "hazards": 5,
+      "internet": 2,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "TBD \u2014 needs full vetting",
+    "offerStrategy": "Cannot make offer until internet, APA status, tax, and school are confirmed.",
+    "offerRationale": [
+      "$395K under $400K \u2014 within budget",
+      "2005 log home, 2,280 sqft, 3 bed / 2 bath",
+      "Too many unknowns to form strategy"
+    ],
+    "tableOfferNote": "\u26A0\uFE0F INCOMPLETE: Log home, $395K, 3bd/2ba. \u26A0\uFE0F LIKELY APA BLUE LINE. Internet/tax/school TBD.",
+    "highlight": "\u26A0\uFE0F NEEDS FULL VETTING. 2005 log home at $395K with 3 bed/2 bath and 2,280 sqft on ~10 acres. Essex County is LIKELY INSIDE APA BLUE LINE \u2014 building restrictions would apply. Internet, tax, and school all unknown. Only 3 beds (family may need 4).",
+    "highlights": [
+      { "icon": "\u26A0\uFE0F", "text": "LIKELY INSIDE APA BLUE LINE \u2014 Essex County. Verify before proceeding." },
+      { "icon": "\uD83C\uDFE0", "text": "2005 log home \u2014 unique construction, 2,280 sqft" },
+      { "icon": "\uD83D\uDCB0", "text": "$395K under $400K budget" },
+      { "icon": "\u26A0\uFE0F", "text": "Internet, tax, school ALL UNKNOWN" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Ticonderoga", "value": "~10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "Moses Ludington Hospital", "value": "~10 min (\u26A0\uFE0F verify if open/full ED)", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "$395K under budget" },
+      { "icon": "\u2713", "text": "2005 log home \u2014 modern build, unique character" },
+      { "icon": "\u2713", "text": "3 bed / 2 full bath, 2,280 sqft" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "\u26A0\uFE0F LIKELY INSIDE APA BLUE LINE \u2014 building restrictions, APA permits required" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F INTERNET UNKNOWN \u2014 FCC check needed" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F TAX UNKNOWN \u2014 verify with Essex County" },
+      { "icon": "\u2717", "text": "Only 3 beds \u2014 family may need 4 for dual offices" },
+      { "icon": "\u2717", "text": "~10 acres at minimum threshold \u2014 verify exact acreage" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F SCHOOL UNKNOWN" }
+    ],
+    "familyFit": [
+      "Log home is charming but only 3 beds limits office space",
+      "Cannot evaluate fully until APA status and internet confirmed"
+    ],
+    "verifyItems": [
+      { "label": "\u26A0\uFE0F APA", "text": "CHECK if inside Adirondack Park Blue Line \u2014 building restrictions" },
+      { "label": "\u26A0\uFE0F INTERNET", "text": "FCC broadband check needed" },
+      { "label": "\u26A0\uFE0F TAX", "text": "Unknown \u2014 verify with Essex County" },
+      { "label": "\u26A0\uFE0F SCHOOL", "text": "Unknown \u2014 verify district and rating" },
+      { "label": "Acreage", "text": "Verify exact acreage \u2265 10 acres" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "\u26A0\uFE0F Verify APA Blue Line status \u2014 Essex County is largely inside the Park" },
+      { "urgent": true, "text": "\u26A0\uFE0F FCC broadband check" },
+      { "urgent": true, "text": "Get tax bill, school district, exact acreage" }
+    ],
+    "envHazards": {
+      "location": "Essex County \u2014 Ticonderoga, eastern Adirondacks",
+      "pills": [
+        { "level": "mod", "text": "Ice storms / heavy snow \u2014 Adirondack region" },
+        { "level": "special", "text": "\u26A0\uFE0F LIKELY INSIDE APA BLUE LINE \u2014 building restrictions" }
+      ],
+      "note": "Essex County is largely inside Adirondack Park. APA Blue Line verification is mandatory. If inside, all building/timber harvesting requires APA permits."
+    }
+  },
+  {
+    "id": "p101",
+    "num": 101,
+    "dateAdded": "2026-04-01",
+    "navLabel": "Delhi",
+    "address": "2463 Glen Burnie Rd",
+    "city": "Delhi",
+    "state": "NY",
+    "zip": "13753",
+    "lat": 42.289911,
+    "lng": -74.843250,
+    "county": "Delaware",
+    "price": 510000,
+    "listingLink": "https://www.redfin.com/NY/Delhi/2463-Glen-Burnie-Rd-13753/home/125970000",
+    "image": "https://ssl.cdn-redfin.com/photo/190/bigphoto/713/R1665713_V.jpg",
+    "beds": 3,
+    "bath": 2,
+    "sqft": 1680,
+    "acres": 11.27,
+    "acresSub": "11.27 acres. 2014 build. \u26A0\uFE0F 9/10 FLOOD FACTOR. Delaware County Irene/Lee history.",
+    "yearBuilt": 2014,
+    "type": "Site-Built",
+    "typeBadge": "b-sfr",
+    "status": "Active",
+    "statusClass": "status-active",
+    "statusNote": "\u26A0\uFE0F 9/10 FLOOD FACTOR. $510K above pre-approval. Brand new listing (Apr 1). 2014 build. Internet TBD. Previous sale $395K (2022).",
+    "badges": [],
+    "taxRate": 0.025,
+    "taxLabel": "Property Tax (Delaware Co. \u2014 VERIFY on co.delaware.ny.us)",
+    "taxAnnual": 6419,
+    "hoa": 0,
+    "elemSchool": "Delhi Elem (6/10)",
+    "elemSchoolSub": "Delhi CSD",
+    "toTown": "~5-10 min",
+    "toTownSub": "to Delhi (Main Street shops, farmers markets)",
+    "scores": {
+      "price": 4,
+      "acreage": 5,
+      "schools": 6,
+      "outbldgs": 5,
+      "town": 10,
+      "hospital": 9,
+      "hazards": 1,
+      "internet": 2,
+      "forested": 7,
+      "living": 7
+    },
+    "offerRange": "$440K - $470K",
+    "offerStrategy": "9/10 flood factor is massive leverage. Previous sale $395K in 2022. $510K is aspirational.",
+    "offerRationale": [
+      "$510K above pre-approval \u2014 needs major movement",
+      "9/10 flood factor = most buyers walk away",
+      "Previous sale $395K in Aug 2022 \u2014 only 3.5 years ago",
+      "Delaware County (Irene/Lee history) makes flood insurance expensive"
+    ],
+    "tableOfferNote": "\u26A0\uFE0F 9/10 FLOOD FACTOR. $510K above budget. 2014 build. Delhi 5 min. Internet TBD. Prev sold $395K (2022).",
+    "highlight": "\u26A0\uFE0F 9/10 FLOOD FACTOR \u2014 near-certain flooding risk. 2014 build on 11.27 acres, 5 min to Delhi. Radiant floor heat + wood stove. Poultry coop on property. Bramley Mountain trails nearby. But $510K is above pre-approval, only 3 beds, internet unknown, and flood risk is nearly disqualifying. Previous sale $395K in 2022.",
+    "highlights": [
+      { "icon": "\u26A0\uFE0F", "text": "9/10 FLOOD FACTOR \u2014 80%+ chance of flood in next 30 years" },
+      { "icon": "\uD83C\uDFE0", "text": "2014 build \u2014 modern, move-in ready, radiant heat + wood stove" },
+      { "icon": "\uD83C\uDFD9\uFE0F", "text": "Delhi ~5 min \u2014 Main Street, shops, farmers markets" },
+      { "icon": "\uD83C\uDFE5", "text": "O\u2019Connor Hospital ~5-10 min (\u26A0\uFE0F verify if full ED)" }
+    ],
+    "proximity": [
+      { "icon": "\uD83D\uDED2", "label": "Delhi", "value": "~5-10 min", "ref": false },
+      { "icon": "\uD83C\uDFE5", "label": "O\u2019Connor Hospital", "value": "~5-10 min (\u26A0\uFE0F verify ED)", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "Delhi Elem (6/10)", "value": "Delhi CSD", "ref": false },
+      { "icon": "\u26F0\uFE0F", "label": "Bramley Mountain Fire Tower trail", "value": "walking distance", "ref": false }
+    ],
+    "cardPros": [
+      { "icon": "\u2713", "text": "2014 build \u2014 modern construction, move-in ready" },
+      { "icon": "\u2713", "text": "Radiant floor heating + wood stove \u2014 efficient" },
+      { "icon": "\u2713", "text": "Delhi 5 min \u2014 shops, dining, farmers markets" },
+      { "icon": "\u2713", "text": "Poultry coop already on property" },
+      { "icon": "\u2713", "text": "Catskill foothills, wooded rolling hills" }
+    ],
+    "cardCons": [
+      { "icon": "\u2717", "text": "\u26A0\uFE0F 9/10 FLOOD FACTOR \u2014 estimated 80%+ chance of flood reaching building in 30 years" },
+      { "icon": "\u2717", "text": "$510K above FHA pre-approval" },
+      { "icon": "\u2717", "text": "Only 3 beds \u2014 family may need 4" },
+      { "icon": "\u2717", "text": "\u26A0\uFE0F INTERNET UNKNOWN \u2014 listing says 'High Speed' but FCC check needed" },
+      { "icon": "\u2717", "text": "Propane heat (leased tank) \u2014 expensive" },
+      { "icon": "\u2717", "text": "Spring water source \u2014 verify quality" },
+      { "icon": "\u2717", "text": "Previous sale $395K in 2022 \u2014 asking $115K more after 3.5 years" }
+    ],
+    "familyFit": [
+      "2014 build near Delhi is appealing for daily convenience",
+      "But 9/10 flood factor is a serious safety concern for young family",
+      "Flood insurance costs could add $3K-$10K/yr to carrying costs"
+    ],
+    "verifyItems": [
+      { "label": "\u26A0\uFE0F FLOOD", "text": "FEMA flood map \u2014 verify if house is in Special Flood Hazard Area. Delaware County has catastrophic flood history (Irene 2011)." },
+      { "label": "\u26A0\uFE0F INTERNET", "text": "FCC broadband check \u2014 listing says 'High Speed' but no specifics" },
+      { "label": "Hospital", "text": "O\u2019Connor Hospital \u2014 verify if full ED or limited services" },
+      { "label": "Taxes", "text": "Verify on co.delaware.ny.us \u2014 $6,419 per MLS" },
+      { "label": "Flood Insurance", "text": "Get quote \u2014 could be $3K-$10K/yr in SFHA" }
+    ],
+    "mustDo": [
+      { "urgent": true, "text": "\u26A0\uFE0F FEMA flood map check \u2014 msc.fema.gov. If in SFHA, likely disqualifying." },
+      { "urgent": true, "text": "\u26A0\uFE0F FCC broadband check" },
+      { "urgent": false, "text": "Verify O\u2019Connor Hospital ED status" },
+      { "urgent": false, "text": "County tax verification" },
+      { "urgent": false, "text": "Flood insurance cost estimate" }
+    ],
+    "envHazards": {
+      "location": "Delaware County \u2014 Delhi, Catskill foothills",
+      "pills": [
+        { "level": "severe", "text": "\u26A0\uFE0F 9/10 FLOOD FACTOR \u2014 near-certain flooding in 30 years" },
+        { "level": "high", "text": "Delaware County \u2014 Irene/Lee 2011 catastrophic flooding" },
+        { "level": "mod", "text": "Ice storms \u2014 upstate NY standard" }
+      ],
+      "note": "Delaware County was devastated by Hurricane Irene and Tropical Storm Lee in 2011. Property has 9/10 flood factor per First Street. FEMA flood map verification is MANDATORY. If in Special Flood Hazard Area, flood insurance will be extremely expensive and property may be effectively uninsurable."
+    }
   }
 ];

@@ -451,11 +451,14 @@ var PropertyRenderer = (function () {
     { name: 'NY — Washington Co.',    ids: ['p74','p79','p82'] },
     { name: 'NY — St. Lawrence Co.', ids: ['p75','p77','p78','p83'] },
     { name: 'NY — Herkimer / Fulton', ids: ['p80','p81'] },
-    { name: 'NY — Jefferson / Lewis', ids: ['p76','p85'] },
+    { name: 'NY — Jefferson / Lewis', ids: ['p76','p85','p98'] },
     { name: 'NY — Otsego Co.',       ids: ['p86','p87','p88','p96'] },
     { name: 'NY — Clinton Co.',      ids: ['p90','p94'] },
     { name: 'NY — Schoharie Co.',    ids: ['p89','p95'] },
-    { name: 'NY — Cortland / Other', ids: ['p84','p91','p92','p93'] }
+    { name: 'NY — Warren / Essex',   ids: ['p99','p100'] },
+    { name: 'NY — Delaware Co.',     ids: ['p101'] },
+    { name: 'NY — Cortland / Other', ids: ['p84','p91','p92','p93'] },
+    { name: 'VT — Franklin Co.',     ids: ['p97'] }
   ];
 
   function renderNavLinks(props) {
@@ -470,7 +473,7 @@ var PropertyRenderer = (function () {
       });
       if (items.length === 0) return;
 
-      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : region.name.indexOf('VT') === 0 ? 'VT' : 'NC';
       html += '<div class="nav-group" data-state="' + regionState + '">' +
         '<button class="nav-group-btn">' + esc(region.name) +
         ' <span class="nav-group-count">' + items.length + '</span></button>' +
@@ -546,7 +549,7 @@ var PropertyRenderer = (function () {
 
       var hasNew = items.some(function (p) { return p.badges && p.badges.indexOf('b-new') >= 0; });
       var sectionId = 'region-' + region.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : region.name.indexOf('VT') === 0 ? 'VT' : 'NC';
       html += '<div class="region-section" id="' + sectionId + '" data-state="' + regionState + '">';
       html += '<button class="region-toggle" data-region="' + sectionId + '">';
       html += '<span class="region-toggle-name">' + esc(region.name) + '</span>';

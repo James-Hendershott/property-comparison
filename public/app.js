@@ -2495,7 +2495,7 @@
 
     Object.keys(regionData).forEach(function (sectionId) {
       var region = regionData[sectionId];
-      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : 'NC';
+      var regionState = region.name.indexOf('NY') === 0 ? 'NY' : region.name.indexOf('VT') === 0 ? 'VT' : 'NC';
       var btn = document.createElement('button');
       btn.className = 'map-region-btn';
       btn.setAttribute('data-region', sectionId);
