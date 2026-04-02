@@ -17194,15 +17194,15 @@ var PROPERTIES = [
       "forested": 7,
       "living": 8
     },
-    "offerRange": "$420K - $440K",
-    "offerStrategy": "Within pre-approval. Best overall value package if fiber confirms. Solar offsets utility costs.",
+    "offerRange": "$365K - $390K",
+    "offerStrategy": "Price cut $50K to $399,900 — seller motivated. Best overall value package if fiber confirms. Solar offsets utility costs.",
     "offerRationale": [
-      "$449,900 within pre-approval — strong position",
+      "$399,900 after $50K price cut — seller clearly motivated",
       "Solar panels ($60K) generating surplus — near-zero electric bills",
       "1800s barn with separate septic + horse stalls = turnkey equestrian",
       "2 stocked ponds + heated pool + pool house = premium amenity package"
     ],
-    "tableOfferNote": "2,800 sqft colonial, solar, barn, pool, horses allowed. Internet UNKNOWN — must verify Frontier.",
+    "tableOfferNote": "2,800 sqft colonial at $399,900 (cut $50K), solar, barn, pool, horses allowed. Internet UNKNOWN — must verify Frontier.",
     "highlight": "2,800 sqft colonial on 39.7 rolling acres with 1800s bank barn (solar panels, horse stalls), 2 stocked spring-fed ponds, heated inground pool with pool house, and walk-out basement. Horses explicitly allowed. Solar panels generate surplus KWH. FHA eligible. But internet is UNKNOWN — Frontier fiber confirmed at neighboring addresses but not this one yet.",
     "highlights": [
       { "icon": "\u2600\uFE0F", "text": "Solar panels ($60K, 2022) — surplus KWH, near-zero National Grid bills" },
@@ -17218,7 +17218,7 @@ var PROPERTIES = [
       { "icon": "\uD83C\uDFEB", "label": "OE-SJ Elem (6/10)", "value": "~10 min", "ref": false }
     ],
     "cardPros": [
-      { "icon": "\u2713", "text": "2,800 sqft colonial at $449,900 — best price-per-sqft in the batch" },
+      { "icon": "\u2713", "text": "2,800 sqft colonial at $399,900 (cut $50K) — best price-per-sqft in the batch" },
       { "icon": "\u2713", "text": "Solar panels generating surplus KWH — near-zero electric bills" },
       { "icon": "\u2713", "text": "1800s bank barn with solar, half bath, horse stalls — turnkey equestrian" },
       { "icon": "\u2713", "text": "2 stocked spring-fed ponds + heated inground pool + pool house" },
@@ -17425,15 +17425,15 @@ var PROPERTIES = [
       "living": 5
     },
     "offerRange": "$430K - $460K",
-    "offerStrategy": "Dropped $79K already. 180+ DOM. Sold as-is + modular = limited buyers. Strong leverage.",
+    "offerStrategy": "Dropped $79K already. 180+ DOM. Sold as-is = limited buyers. Strong leverage.",
     "offerRationale": [
       "Dropped $79K ($574K to $495K) — seller motivated",
       "180+ DOM — exhausted buyer pool",
-      "Sold as-is + modular = most buyers walk away — leverage",
+      "Sold as-is = most buyers walk away — leverage",
       "1,400 ft river frontage is unique value — but flood risk"
     ],
-    "tableOfferNote": "Modular. FHA requires foundation verification. 1,400 ft river. Dropped $79K. Sold as-is.",
-    "highlight": "1,400 ft of East Branch St. Regis River frontage on 14 acres with cabin, barn, workshop, 3-car garage. Nicholville Telephone fiber 1000/1000 confirmed. St. Lawrence Elementary 7/10. But MODULAR home sold as-is — FHA requires permanent foundation + HUD documentation verification. Dropped $79K from $574K.",
+    "tableOfferNote": "Ranch (confirmed). Sold as-is. 1,400 ft river. Dropped $79K.",
+    "highlight": "1,400 ft of East Branch St. Regis River frontage on 14 acres with cabin, barn, workshop, 3-car garage. Nicholville Telephone fiber 1000/1000 confirmed. St. Lawrence Elementary 7/10. Confirmed Ranch (not modular). Sold as-is. Dropped $79K from $574K.",
     "highlights": [
       { "icon": "\uD83C\uDFDE\uFE0F", "text": "1,400 ft St. Regis River frontage — exceptional waterfront" },
       { "icon": "\uD83C\uDF10", "text": "Nicholville Telephone FTTP 1000/1000 Mbps confirmed" },
@@ -17456,7 +17456,7 @@ var PROPERTIES = [
       { "icon": "\u2713", "text": "Buderus propane boiler with 3 heating zones — quality system" }
     ],
     "cardCons": [
-      { "icon": "\u2717", "text": "MODULAR home — FHA requires permanent foundation + HUD data plate. Must verify before proceeding." },
+      { "icon": "\u2717", "text": "Sold as-is — full inspection mandatory before proceeding" },
       { "icon": "\u2717", "text": "Sold as-is — no seller repairs, inspection still critical" },
       { "icon": "\u2717", "text": "14 acres barely meets minimum — limited room for expansion" },
       { "icon": "\u2717", "text": "$495K at stretch budget for 14 acres — high cost per acre" },
@@ -17489,9 +17489,9 @@ var PROPERTIES = [
         { "level": "high", "text": "Flooding — 1,400 ft river frontage, FEMA check mandatory" },
         { "level": "mod", "text": "Ice storms — St. Lawrence County" },
         { "level": "mod", "text": "Severe winter — heavy snow, extreme cold" },
-        { "level": "special", "text": "Modular home — FHA foundation verification required" }
+        { "level": "special", "text": "Sold as-is — full inspection required" }
       ],
-      "note": "1,400 ft river frontage creates significant flood risk. FEMA flood zone verification is mandatory. Modular home requires permanent foundation documentation for FHA."
+      "note": "1,400 ft river frontage creates significant flood risk. FEMA flood zone verification is mandatory. Sold as-is — thorough inspection required."
     }
   },
   {
@@ -17525,7 +17525,7 @@ var PROPERTIES = [
     "taxLabel": "Property Tax (Cortland Co.)",
     "taxAnnual": 6500,
     "hoa": 0,
-    "elemSchool": "Cincinnatus Elem (6/10)",
+    "elemSchool": "Cincinnatus Elem (8/10)",
     "elemSchoolSub": "Cincinnatus CSD",
     "toTown": "~20 min",
     "toTownSub": "to Cortland (Walmart, Tractor Supply)",
@@ -17635,7 +17635,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "180+ DOM. Space heater + wood only — no central heat. FHA NOT listed. Stone foundation.",
-    "badges": [],
+    "badges": ["b-no-fha"],
     "taxRate": 0.022,
     "taxLabel": "Property Tax (Lewis Co.)",
     "taxAnnual": 5000,
@@ -17749,7 +17749,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "166 DOM. 99 acres, 3bd/1.5ba. Only 1 full bath + 1,260 sqft. Delhi Tel fiber. A.O. Fox 10 min. FEMA Zone X. Tax $8,973/yr.",
-    "badges": [],
+    "badges": ["b-no-fha"],
     "taxRate": 0.025,
     "taxLabel": "Property Tax (Otsego Co.)",
     "taxAnnual": 6500,
@@ -17789,7 +17789,7 @@ var PROPERTIES = [
     "proximity": [
       { "icon": "\uD83D\uDED2", "label": "Oneonta (Walmart, full services)", "value": "~10-15 min", "ref": false },
       { "icon": "\uD83C\uDFE5", "label": "A.O. Fox Hospital", "value": "~15 min", "ref": false },
-      { "icon": "\uD83C\uDFEB", "label": "Oneonta Elem (~5/10)", "value": "Oneonta CSD", "ref": false }
+      { "icon": "\uD83C\uDFEB", "label": "Greater Plains Elem (4/10)", "value": "Oneonta CSD", "ref": false }
     ],
     "cardPros": [
       { "icon": "\u2713", "text": "99.42 acres — one of the largest parcels near a real city" },
@@ -17974,7 +17974,7 @@ var PROPERTIES = [
     "status": "Active",
     "statusClass": "status-active",
     "statusNote": "104 DOM. $529K above pre-approval. Frontier FTTP 1000/1000 CONFIRMED. Walk-out basement + zoned AC. 1992 build.",
-    "badges": [],
+    "badges": ["b-no-fha"],
     "taxRate": 0.025,
     "taxLabel": "Property Tax (Otsego Co.)",
     "taxAnnual": 7500,
@@ -18015,7 +18015,7 @@ var PROPERTIES = [
       { "icon": "\uD83D\uDED2", "label": "Sidney/Unadilla", "value": "~15-20 min", "ref": false },
       { "icon": "\uD83C\uDFD9\uFE0F", "label": "Oneonta", "value": "~30 min", "ref": false },
       { "icon": "\uD83C\uDFE5", "label": "A.O. Fox Hospital, Oneonta", "value": "~30 min", "ref": false },
-      { "icon": "\uD83C\uDFEB", "label": "GMU Elem (~4/10)", "value": "GMU CSD", "ref": false }
+      { "icon": "\uD83C\uDFEB", "label": "GMU Elem (5/10)", "value": "GMU CSD", "ref": false }
     ],
     "cardPros": [
       { "icon": "\u2713", "text": "52 acres with pond in scenic Otsego hills" },
@@ -18107,15 +18107,15 @@ var PROPERTIES = [
       "living": 5
     },
     "offerRange": "$295K - $320K",
-    "offerStrategy": "180+ DOM at $335K. Flood zone risk + 3/10 school = extremely limited buyers.",
+    "offerStrategy": "180+ DOM at $349K. Flood zone risk + 3/10 school = extremely limited buyers.",
     "offerRationale": [
       "180+ DOM — nobody is buying this",
       "Schoharie Creek flood zone history scares buyers away",
       "3/10 school severely limits family buyer pool",
       "$295K-$320K accounts for flood risk premium"
     ],
-    "tableOfferNote": "MTC fiber confirmed. $335K, 20 acres, 2003 build. But Schoharie flood zone + 3/10 school.",
-    "highlight": "$334,900 for 20 acres with MTC Cable fiber 1000/1000 and a 2003 build. But Schoharie Creek watershed carries real flood history (Hurricane Irene 2011), school is 3/10, and listing data is extremely incomplete. FEMA check is non-negotiable.",
+    "tableOfferNote": "MTC fiber confirmed. $349K, 22 acres, 1940 build. But Schoharie flood zone + 3/10 school.",
+    "highlight": "$349,000 for 22 acres with MTC Cable fiber 1000/1000. But Schoharie Creek watershed carries real flood history (Hurricane Irene 2011), school is 3/10, and listing data is extremely incomplete. FEMA check is non-negotiable.",
     "highlights": [
       { "icon": "\uD83C\uDF10", "text": "MTC Cable Fiber 1000/1000 Mbps confirmed" },
       { "icon": "\uD83D\uDCB0", "text": "$334,900 — lowest surviving price in Batch 2" },
@@ -18128,16 +18128,16 @@ var PROPERTIES = [
     ],
     "cardPros": [
       { "icon": "\u2713", "text": "MTC Cable Fiber 1000/1000 confirmed" },
-      { "icon": "\u2713", "text": "$334,900 — strong budget headroom" },
-      { "icon": "\u2713", "text": "2003 build — modern framing, electrical, plumbing" },
-      { "icon": "\u2713", "text": "20 acres on ridgeline (990V) — higher ground may reduce flood risk" }
+      { "icon": "\u2713", "text": "$349,000 — strong budget headroom" },
+      { "icon": "\u2713", "text": "22 acres on ridgeline (990V) — higher ground may reduce flood risk" },
+      { "icon": "\u2713", "text": "1940 build with full inspection needed — but priced accordingly" }
     ],
     "cardCons": [
       { "icon": "\u2717", "text": "Schoharie Creek watershed — Hurricane Irene (2011) destroyed this area. FEMA check mandatory." },
       { "icon": "\u2717", "text": "Gilboa-Conesville Elementary 3/10 — one of weakest in dataset" },
       { "icon": "\u2717", "text": "Critical Access Hospital only within 30 min; Albany 60+ min for trauma" },
       { "icon": "\u2717", "text": "Extremely incomplete listing data — foundation, basement, heating all unknown" },
-      { "icon": "\u2717", "text": "180+ DOM at only $335K — there is a reason this hasn't sold" }
+      { "icon": "\u2717", "text": "180+ DOM at only $349K — there is a reason this hasn't sold" }
     ],
     "familyFit": [
       "Price is right and fiber is confirmed, but flood zone + weak school = hard no for family safety",
@@ -18231,7 +18231,7 @@ var PROPERTIES = [
     "proximity": [
       { "icon": "\uD83C\uDFD9\uFE0F", "label": "Plattsburgh", "value": "~25 min via I-87", "ref": false },
       { "icon": "\uD83C\uDFE5", "label": "CVPH Medical Center, Plattsburgh", "value": "~25 min", "ref": false },
-      { "icon": "\uD83C\uDFEB", "label": "NE Clinton CSD (5/10)", "value": "combined K-12", "ref": false },
+      { "icon": "\uD83C\uDFEB", "label": "NE Clinton CSD (6/10)", "value": "combined K-12", "ref": false },
       { "icon": "\uD83C\uDFD4\uFE0F", "label": "Canadian border", "value": "~5 min", "ref": false }
     ],
     "cardPros": [
